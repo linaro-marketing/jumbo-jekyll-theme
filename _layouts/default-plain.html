@@ -1,0 +1,16 @@
+---
+---
+{% include _theme-includes/_head/head.html %}
+<body>
+        {% include _theme-includes/_navigation/nav.html %}
+        <div class="container-fluid content-container">
+            <div class="row">
+                <div class="container">
+                    {{ content }}
+                </div>
+            </div>
+            {% include _theme-includes/_footer/footer.html %}
+        </div>
+        {% include _theme-includes/_script-includes/javascript.html %}
+</body>
+</html>

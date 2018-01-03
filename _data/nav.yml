@@ -1,0 +1,62 @@
+search: true
+brand:
+    text: OpenDataPlane
+    image: linaro-logo.png
+    url: /
+pages:
+    - title: Home
+      url: /
+    - title: About
+      options:
+          - text: Linaro Overview
+            url: /about/
+          - text: Organisation
+            options:
+                - text: Board of Directors
+                  url: /about/board/
+                - text: Executive Team
+                  url: /about/executive/
+                - text: Technical Steering Committee
+                  url: /about/tsc/
+                - text: Office of the CTO
+                  url: /about/octo/
+            url: /work/
+          - text: Members
+            url: /members/
+          - text: Careers
+            url: /careers/
+    - title: Work
+      options:
+          - text: Core Engineering
+            url: /core/
+          - text: Segment Groups
+            url: /groups/
+          - text: Lead Projects
+            url: /projects/
+          - text: Initiatives
+            url: /initiatives/
+          - text: Professional Services
+            url: /professional-services/
+    - title: Downloads
+      options:
+          - text: Software Downloads
+            url: /downloads/
+          - text: Developers
+            url: /developers/
+    - title: "News & Events"
+      options:
+          - text: "News & Events"
+            url: /hub/
+          - text: News
+            url: /news/
+          - text: Linaro Blog
+            url: /blog/
+          - text: Planet Linaro
+            url: /planet/
+          - text: Linaro Connect
+            url: https://connect.linaro.org
+            external: true
+          - text: Social Media Hub
+            url: /social/
+    - title: Contact
+      url: /contact/

@@ -1,0 +1,447 @@
+//Body
+body {
+    background: $navbar-inverse-bg;
+    letter-spacing: 0.5px;
+    overflow-x: hidden;
+    font-weight: 300;
+    height  : 100%;
+    overflow: auto;
+    font-family: 'LatoWeb', HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+ html.ios7 body {height: 100%;position: fixed;width: 100%;}
+
+ html {
+     height  : 100%;
+    //  overflow: hidden; Will break the sticky navbar - be warned
+}
+
+
+//Make sure the comments sections is beneath content.
+section#comments-section {
+    clear: both;
+}
+
+article.post-content {
+    overflow: auto;
+}
+
+blockquote {
+    padding: 10.5px 21px;
+    margin: 0 0 21px;
+    font-size: 18.75px;
+    border-left: 5px solid $brand-primary;
+}
+.container-fluid.content-container {
+    padding: 10px;
+    padding-bottom: 0;
+}
+.members-img {
+    width: auto;
+    max-height: 100px;
+}
+//Form Styles
+label.error.valid {
+    color: #3c763d;
+}
+label.error {
+    padding: 5px;
+    color: #a94442;
+}
+label.control-label {
+    margin: 0;
+}
+
+//Search Page
+#searchIframe {
+    border:none;
+    top: -60px;
+    height: 1000px;
+}
+#searchEmbed {
+        margin-bottom: 20px;
+        display:block;
+        overflow: auto;
+}
+//Selection for Highlighting Text on Web Page.
+::selection {
+  background: $brand-primary; /* WebKit/Blink Browsers */
+  color: #fff;
+}
+::-moz-selection {
+  background: $brand-primary; /* Gecko Browsers */
+  color: #fff;
+}
+//Search Dropdown input focus
+#searchDropdown input:focus {
+    outline: none;
+}
+//Headings
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'LatoWeb', HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-weight: bold;
+    line-height: 1.1;
+    color: inherit;
+}
+
+//Horizontal Rule Styling
+hr {
+    border-top: 1px solid #eee;
+}
+
+//Paragraphs
+p{
+    font-size: 20px;
+    font-weight:300;
+    color: #000000;
+    line-height: 1.66em;
+    word-wrap: break-word;
+}
+//Padded Paragraph
+.padded-para{
+    padding:20px;
+}
+
+#spaced-para{
+    font-size: 18px;
+    line-height: 40px;
+}
+
+// Paragraphs that are justified.
+p .justified{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+// Tab Content paragraph
+#content-container p {
+    font-size: 20px;
+    color: black;
+    line-height: 1.66em;
+}
+//Main Container Style margin accounts for Nav
+#main-container{
+    margin-top: 66px;
+    overflow-x: hidden;
+}
+
+.main-cont {
+    background-color:#fff;
+}
+
+//Content Container
+.content-container{
+    background-color: #FFF;
+    padding-top:20px;
+    padding-right: 0;
+    padding-left:0;
+}
+
+//Content Container block elemcents
+.content-container p {
+    font-size: 20px;
+    color: black;
+    line-height: 1.66em;
+}
+.content-container ul { font-size:18px; }
+.content-container ol { font-size: 18px;}
+
+
+
+//Homepage Sub Tag
+p.sub-tag {
+    width: 65%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 21px;
+    color: #FFF;
+    font-weight: 200;
+}
+
+// Buttons
+#buttons > a
+{
+    -webkit-border-radius: 20px !important;
+    -moz-border-radius: 20px !important;
+    border-radius: 20px !important;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+}
+
+//Bottom Border Five Pixels.
+.bottom-border-five{ margin-bottom: 5px; }
+
+//Alternate row for theme
+.alternate-row {
+    background-color: #E5E5E5;
+    padding: 40px 0;
+}
+
+.small-img{
+    height:100px;
+    width:auto;
+}
+
+@media (min-width: $screen-md) {
+    .partners-panel {
+        margin-top:80px;
+    }
+    .margin-image {
+        padding:40px;
+    }
+
+}
+
+.margin-top { margin-top: 40px;}
+
+.panel-body.members-panel-body {
+    margin-top: 0;
+    border: 0;
+}
+.new-panel .panel-primary > .panel-heading {
+    color: #000000;
+    font-weight: bold;
+    background-color: transparent;
+    border:0;
+}
+
+// Iframe for Search page.
+#searchIframe {
+    border:none;
+}
+
+//Vertical Center
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+//Contact Hero Banner
+.contact-hero{
+    height:200px;
+    line-height: 200px;
+    text-align: center;
+    font-size:18px;
+    color: #fff;
+    background: url() repeat;
+}
+
+//----------BOOTSTRAP STYLES ----------------
+
+.panel-primary {
+    border:0;
+}
+
+//Bootstrap Glyphicon Override.
+.glyphicon {
+    width: 14px;
+    height: 14px;
+}
+//Remove button focus
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+    outline: none;
+}
+
+//Jumbotron Custom Styling
+.jumbotron{
+    margin-bottom: 0;
+    margin-top:0;
+    padding-bottom:0px;
+    background: #FFF; /* Old browsers */
+    background: -moz-linear-gradient(top, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $jumbotron-top-color 0%,$jumbotron-bottom-color 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$jumbotron-top-color, endColorstr=$jumbotron-bottom-color,GradientType=0 ); /* IE6-9 */
+}
+.container .jumbotron, .container-fluid .jumbotron {
+    border-radius: 0px;
+}
+
+@media(max-width:991px){
+    .partners-panel {
+        height: auto;
+    }
+}
+
+
+// Cookie Consent Setup
+
+a.cc-link {
+    color: $cookie-consent-text !important;
+}
+
+//Mailchimp
+button#mc-embedded-subscribe {
+    background-color: $navbar-inverse-bg;
+    color: $navbar-base-text-color;
+    transition: all 1s ease;
+}
+button#mc-embedded-subscribe:hover {
+    background-color: lighten($footer-bg-color, 20%);
+    color: $navbar-base-text-color;
+    transition: all 1s ease;
+}
+
+.coloured-bp{
+    color: $brand-primary;
+    font-size:12px;
+}
+
+
+// Padding Classes
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.meta {
+    font-size: 12px;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a:hover {
+    color: rgba(0, 0, 0, .87);
+}
+
+
+//Cognito Forms
+//Submit Button
+button#c-submit-button {
+    background-color: $brand-primary;
+    border: 1px solid black;
+}
+
+.c-forms-form-title {
+    display: none;
+}
+
+
+//Style for search
+#searchEmbed {
+    margin-bottom: 20px;
+    display:block;
+    overflow: auto;
+}
+
+
+@media (max-width: 1199px){
+    h1#home-page-title {
+        font-size: 25px;
+    }
+}
+
+
+//fifts columns
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+// Cognito  Forms
+.cognito input {
+    outline: 0;
+}
+.cognito textarea {
+    outline: 0;
+}
+
+
+//Mailchimp  Style
+input#mce-EMAIL {
+    border: 0!important;
+    border-radius: 0 !important;
+    margin-bottom: 10px;
+      outline: none;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+
+}
+
+input#mce-FNAME {
+     border: 0!important;
+    border-radius: 0 !important;
+    margin-bottom: 10px;
+      outline: none;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+input#mce-LNAME {
+     border: 0!important;
+    border-radius: 0 !important;
+    margin-bottom: 10px;
+    outline: none;
+      outline: none;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+
+}
+
+button#mc-embedded-subscribe {
+  border:0;
+  border-radius:0;
+  background-color: $brand-primary;
+  color: white;
+  transition: all 200ms ease;
+}
+
+button#mc-embedded-subscribe:hover{
+  background-color: #252525;
+  color: white;
+  transition: all 200ms ease;
+}

@@ -1,0 +1,23 @@
+<div id="homepage-jumbotron"
+{% if site.data.company.homepage_image %}
+    style="background: #000 url({{site.data.company.homepage_image}}) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position-y: 80px;"
+    class="jumbotron text-center homepage-jumbotron homepage-image-jumbotron"
+{% else %}
+    class="jumbotron text-center homepage-jumbotron"
+{% endif %} >
+  <div class="container">
+    <h1 id="home-page-title" class="fade-in-one" id="homepage-heading">Welcome to the<br />
+      <b>Linaro Jekyll Theme</b></h1>
+    <p id="home-page-text" class="sub-tag center-block fade-in-two">
+      <span>A theme for Linaro Static Jekyll sites.</span><br />
+      <span>Customize this in the _data folder.</span>
+    </p>
+    <p id="buttons"><a class="btn btn-primary btn-lg fade-in-three bottom-border-five" href="https://github.com/kylekirkby/LinaroJekyllTheme" role="button">Customize this in the _data folder</a>&#32;&#32;
+      <a class="btn btn-primary btn-lg fade-in-three bottom-border-five" href="/setup/" role="button">Setup</a></p>
+  </div>
+</div>

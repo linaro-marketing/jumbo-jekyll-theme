@@ -1,0 +1,29 @@
+# favicon: /assets/images/favicon.png?v=2
+name: 96boards
+search-label: 96Boards
+slogan: A theme for Linaro Static Sites
+# github_username: kylekirkby
+# facebook_username: kylekirkby
+# members:
+#     excludes:
+#         - /search/
+
+# newsletter:
+#     enabled: true
+# mailchimp:
+#     enabled: false
+#     id: e3d2abc041
+# Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
+# disqus:
+#     enabled: true
+#     shortname: op-tee
+#
+# google:
+#     analytics: UA-16756069-20
+#     tag_manager: GTM-TDJ7LGH
+
+# homepage_image: /assets/images/background-image.jpg
+# breadcrumb-colour: "#000"
+tags_enabled: False
+# breadcrumb-image: /assets/images/background-image.jpg
+placeholder: /assets/images/placeholder.png

@@ -1,0 +1,34 @@
+<div id="homepage-jumbotron"
+{% if site.data.company.homepage_image %}
+    style="background: #000 url({{site.data.company.homepage_image}}) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position-y: 80px;"
+    class="jumbotron text-center homepage-jumbotron homepage-image-jumbotron"
+{% else %}
+    class="jumbotron text-center homepage-jumbotron"
+{% endif %} >
+  <div class="container">
+        {% if site.data.company.home.hero-image %}
+          <div class="col-md-12">
+            <img src="{{site.data.company.home.hero-image}}" id="home-hero-image" class="img-responsive center-block animated fadeIn" alt="{{site.title}} Home Page Image">
+          </div>
+        {% endif %}
+        {% if site.data.company.home.title %}
+            <h2 id="home-page-title" class="fade-in-one text-center" id="homepage-heading">{{site.data.company.home.title}}</h2>
+        {% endif %}
+        {% if site.data.company.home.sub-title %}
+            <h4 id="home-page-text" class="text-center">{{site.data.company.home.sub-title}}</h4>
+        {% endif %}
+        {% if site.data.company.home.buttons %}
+            <p id="buttons">
+                {% for button in site.data.company.buttons %}
+                    <a class="{{button.class}}" href="{{button.url}}" role="button">{{button.text}}</a>
+                {% endif %}
+            </p>
+        {% endif %}
+  </div>
+  {% include _theme-includes/_page-structure/shape-divider.html %}
+</div>

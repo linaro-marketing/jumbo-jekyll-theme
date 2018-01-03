@@ -1,0 +1,146 @@
+---
+specific_css: /assets/css/blog-pages.css
+specific_js: /assets/js/vendor/lightbox.min.js
+js-package: blog
+css-pack: blog
+layout: empty
+---
+<div class="container-fluid">
+{% if page.showcase_image %}
+    <div class="row" class="blog-featured-img" style="background-color: white;">
+            <div class="img-blog" style="background: linear-gradient(
+                         rgba(20,20,20, .5),
+                         rgba(20,20,20, .5)),
+                         url('{% asset_path '{{page.featured_image}}' %}') no-repeat center center fixed;
+                background-size: cover;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;">
+                <div class="blog-full-page-image-info">
+                    <h1 class="blog-title text-center">{{page.title}}</h1>
+                    {% if page.author %}
+                        {% assign author_object = site.data.authors.entries | where: "shortname", "page.author" %}
+                        <img class="blog-author-image" src="
+                        {% if author_object.avatar %}{{author_object.avatar}}{% else %}/assets/images/avatar-placeholder.png{% endif %}" /><br />
+                        <small class="blog-author text-center">By <em>{% if author_object.name %}{{author_object.name}}{% else %}{{page.author}}{% endif %}</em></small><br />
+                    {% endif %}
+                    {% if page.date %}<small class="blog-date text-center"><em>{{page.date |  date: "%A, %B %-d, %Y"}}</em></small>{% endif %}
+                </div>
+            </div>
+    </div>
+{% endif %}
+</div>
+<div class="container-fluid content-container">
+
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <article class="post-content">
+                        <div class="post-info">
+                            <h1>{{page.title}}</h1>
+                            {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %} {% if page.author %}<em> By <b>{{page.author}}</b> </em>{% endif %}
+                        </div>
+                    {{ content }}
+                </article>
+                <hr />
+                {% if site.data.company.tags_enabled %}
+                <h3>Tags</h3>
+                      {% assign tags = page.tags %}
+                      {% if page.tags %}
+                          {% for tag in tags %}
+                              <a class="btn btn-blog btn-xs post_tag" href="/blog/tag#{{tag | slugify }}">{{tag}}</a>
+                          {% endfor %}
+                      {% else %}
+                         <p>
+                             No tags found.
+                         </p>
+                      {% endif %}
+                {% endif %}
+
+                <section id="comments-section">
+                    {% if page.comments %}
+                        <h3>Comments</h3>
+                        {% include _theme-includes/_third-party/disqus.html %}
+                        <br />
+                    {% endif %}
+                </section>
+            </div>
+            <div class="col-md-3">
+
+                <div class="panel panel-default" class="blog-panel">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Recent Posts</h3>
+                    <i class="glyphicon glyphicon-calendar pull-right" style="margin-top:-15px;"></i>
+                  </div>
+                  <div class="panel-body">
+                      {% for recent_post in site.posts limit: 3 %}
+                          <div class="featured_blog_post">
+                              <div class="row">
+                                  <div class="col-md-9 col-sm-9 col-xs-9 no-padding">
+                                     <a href="{{recent_post.url}}">{{recent_post.title | truncate: 40}}</a>
+                                     <br /><small><em>{{recent_post.date | date: "%A, %B %-d, %Y" }}</em></small>
+                                 </div>
+                                 <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    {% if recent_post.featured_image %}
+                                        data-src="/assets{{recent_post.featured_image}}"
+                                    {% else %}
+                                        data-src="{% if site.data.company.placeholder %}{{site.data.company.placeholder}}{% else %}/assets/images/{{site.data.company.placeholder}}{% endif %}"
+                                    {% endif %}
+                                     alt="{{recent_post.title}}" class="img-responsive lazyload"/>
+                                 </div>
+                              </div>
+                          </div>
+                      {% endfor %}
+                      <div class="panel-view-more text-right"><a href="/blog/">View Blogs</a></div>
+                  </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Other Posts</h3>
+                    <i class="glyphicon glyphicon-list-alt pull-right" style="margin-top:-15px;"></i>
+                  </div>
+                  <div class="panel-body">
+                      {% assign posts = site.posts | sample:5 %}
+                      {% for post in posts %}
+                          <div class="featured_blog_post">
+                              <div class="row">
+                                  <div class="col-md-9 col-sm-9 col-xs-9  no-padding">
+                                     <a href="{{post.url}}">{{post.title | truncate: 40}}</a>
+                                     <br /><small><em>{{post.date | date: "%A, %B %-d, %Y" }}</em></small>
+                                 </div>
+                                 <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                     {% if site.using_assets == true %}
+                                            {% if page.featured_image %}
+                                                data-src="{% asset_path '{{page.featured_image}}' %}"
+                                            {% else %}
+                                                data-src="{% asset_path '{{site.data.company.placeholder}}' %}"
+                                            {% endif %}
+                                    {% else %}
+                                        {% if post.featured_image %}
+                                           data-src="/assets{{post.featured_image}}"
+                                        {% else %}
+                                           data-src="{% if site.data.company.placeholder %}{{site.data.company.placeholder}}{% else %}/assets/images/{{site.data.company.placeholder}}{% endif %}"
+                                        {% endif %}
+                                     {% endif %}
+
+                                      alt="{{post.title}}" class="img-responsive lazyload"/>
+                                 </div>
+                              </div>
+                          </div>
+                      {% endfor %}
+                      <div class="panel-view-more text-right"><a href="/blog/">View Blogs</a></div>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</div>

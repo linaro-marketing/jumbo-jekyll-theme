@@ -1,0 +1,88 @@
+---
+layout: fluid
+---
+{% assign accessories =  site.data.product_db.accessories | where: "accessory_permalink", page.permalink %}
+
+<div class="row">
+    <div class="container">
+        {% assign content = content | strip_newlines %}
+
+        {% if content != "" %}
+        <div class="row">
+            <div class="col-md-8">
+                    {{content}}
+            </div>
+            <div class="col-md-4 hidden-sm hidden-xs">
+                <img id="collection-image" class="img-responsive center-block" src="/images/96boards-logo-300x109.png" alt="96Boards logo small.">
+            </div>
+            <hr />
+        </div><!-- end row-->
+
+        {% endif %}
+    <div class="row">
+
+
+        {% for accessory in accessories %}
+
+            <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img-responsive center-block accessory-image" src="../../product/accessories/{{accessory.accessory_category}}/images/{{ accessory.accessory_images[0]}}" alt="{{accessory.accessory_title}}">
+                        </div>
+                        <div class="col-md-6">
+                            <h3>{{accessory.accessory_title}}</h3>
+                            <p>
+                                {% if accessory.accessory_description%}
+                                    {{accessory.accessory_description}}
+                                {% elsif accessory.accessory_description_list %}
+                                    <ul class="list-group">
+                                        {% for feature in accessory.accessory_description_list %}
+                                            <li class="list-group-item">
+                                                {{ feature }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dropdown dropdown-container btn-group dropup btn-block text-center product-buy-dropdown">
+                                <div class="text-center">
+                                    <a href="{{accessory.accessory_order_link[0]}}" class="btn btn-primary btn-read-more">Order Here</a>
+                                </div>
+                            </div>
+                            {% if accessory.accessory_more_info %}
+                                <div class="dropdown dropdown-container btn-group dropup btn-block text-center product-buy-dropdown">
+                                    <div class="text-center">
+                                            <a href="{{accessory.accessory_more_info}}" class="btn btn-primary btn-read-more">More Info</a>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if accessory.accessory_search_term %}
+                                <div class="col-xs-12">
+                                    Search term:
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="center-block">
+                                        <pre>{{accessory.accessory_search_term}}</pre>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+                    <hr />
+            </div>
+
+
+        {% endfor %}
+
+
+
+
+    </div>
+
+</div><!-- end container-->
+</div><!--end row-->

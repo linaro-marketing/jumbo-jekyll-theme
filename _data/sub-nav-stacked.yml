@@ -1,0 +1,67 @@
+pages:
+  -
+    list:
+      -
+        title: FAQ
+        url: /faq/
+      -
+        title: Git
+        url: https://git.linaro.org/lng/odp.git
+        external: true
+      -
+        title: API
+        url: http://docs.opendataplane.org/snapshots/odp-publish/generic/dox_html/master/latest/linux-generic-doxygen-html/index.html
+        external: true
+      -
+        title: User Guide
+        url: http://docs.opendataplane.org/snapshots/odp-publish/generic/usr_html/master/latest/linux-generic/output/users-guide.html
+        external: true
+      -
+        title: Support
+        url: /comercial-support/
+      -
+        title: Meeting
+        url: https://collaborate.linaro.org/display/ODP/OpenDataPlane
+        external: true
+      -
+        title: Mailing List
+        url: https://lists.linaro.org/mailman/listinfo/lng-odp
+        external: true
+      -
+        title: Existing Applications
+        url: /applications/
+    urls: [/application-writers/]
+  -
+    list:
+      -
+        title: Git
+        url: https://git.linaro.org/lng/odp.git
+        external: true
+      -
+        title: Testing
+        url: /testing/
+      -
+        title: Bugs
+        url: https://bugs.linaro.org/describecomponents.cgi?product=OpenDataPlane%20-%20linux-%20generic%20reference
+        external: true
+      -
+        title: APIs
+        url: https://docs.opendataplane.org/snapshots/odp-publish/generic/dox_html/master/latest/linux-generic-doxygen-html/index.html
+        external: true
+      -
+        title: Implementers Guide
+        url: https://docs.opendataplane.org/snapshots/odp-publish/generic/usr_html/master/latest/linux-generic/output/implementers-guide.html
+        external: true
+      -
+        title: Release Guide
+        url: https://docs.opendataplane.org/snapshots/odp-publish/generic/usr_html/master/latest/linux-generic/output/release-guide.html
+        external: true
+      -
+        title: Contributing
+        url: https://docs.opendataplane.org/snapshots/odp-publish/generic/usr_html/master/latest/linux-generic/output/CONTRIBUTING.html
+        external: true
+      -
+        title: Bylaws
+        url: https://docs.opendataplane.org/snapshots/odp-publish/generic/usr_html/master/latest/linux-generic/output/bylaws-guide.html
+        external: true
+    urls: [/developers/]

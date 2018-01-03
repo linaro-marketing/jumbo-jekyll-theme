@@ -1,0 +1,69 @@
+title: Linaro Jekyll Theme # Default Title of Site
+description: |-
+  This is Linaro's Static Jekyll Theme for static sites.
+destination: _static-site # Destination of the Jekyll site upon build of site.
+permalink: /blog/:title/ # Permalink for the blog posts
+highlighter: rouge # Syntax highlighter
+
+github_username: kylekirkby
+
+markdown: kramdown # Markdown version
+encoding: utf-8
+safe: false # Jekyll configuration for running the site in "Safe" mode.
+google-tag-manager: false
+
+exclude: # Files that should be excluded from the Jekyll build.
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - .git
+  - .asset-cache
+  - _static-site
+  - .sass-cache
+plugins:  # Gems that should be included in the Jekyll builld of this site.
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-readme-index
+  - bootstrap-sass
+  - jekyll-redirect-from
+  - jekyll-tidy
+  - autoprefixer-rails
+  - jekyll-paginate-v2
+  - jekyll-assets
+sass: # Sass configuration - compressed and sass_dir of the root Jekyll assets folder.
+    style: compressed
+    sass_dir: _sass
+jekyll_tidy: # Compress the html and beautify it.
+    compress_html: true
+    exclude: ["assets/**/*.js"] #Add the js file to exclude to stop jekyll tidy errors.
+
+paginate_path: /blog/:num/ # Pagination Path for Blogs
+# Jekyll Pagination V2 Configuration
+pagination:
+    enabled: true
+    per_page: 5
+    trail:
+        before: 2
+        after: 2
+    sort_reverse: true
+    sort_field: 'date'
+
+# Jekyll pagination v2 autopages configuration.
+autopages:
+  enabled: false
+
+#Jekyll Defaults Setup
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/social-media-image.png
+
+# Jekyll Assets plugin - set js and css to true so it compresses on jekyll build
+assets:
+  autoprefixer:
+      browsers: ["last 2 versions","> 5%","IE 9"]
+  sources:
+    - assets/images
+    - assets/images/blog
+    - assets/images/projects

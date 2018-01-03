@@ -1,0 +1,90 @@
+/* -------------------------- Breadcrumb Style -------------------------- */
+/* Bread Crumb Paragraphs */
+
+//Mobile Style for Breadcrumb
+
+@media(max-width:767px){
+    .breadcrumb-container h1, .breadcrumb-container h2, .breadcrumb-container h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .breadcrumb{
+        margin-bottom: 0;
+    }
+    
+    .breadcrumb-container{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+/* Bread Crumb Headings */
+
+.breadcrumb-inner-container  h1, .breadcrumb-inner-container  h2, .breadcrumb-inner-container  h3 {
+    font-weight: 100 !important;
+    letter-spacing: 0 !important;
+    font-size: 34px !important;
+    color: #fff;
+}
+
+/* Bread Crumb Ordered List Style */
+
+// Active Colour
+ol.breadcrumb > li.active {
+    color: $navbar-base-text-color;
+     
+}
+ol.breadcrumb li {
+  font-size: 14px;
+}
+
+ol.breadcrumb > li + li:before {
+  content: "\00bb\00a0";
+}
+
+ol.breadcrumb {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    display: block;
+    padding: 0;
+}
+ol.breadcrumb li a {
+    color: #fff;
+}
+
+ol.breadcrumb span {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    opacity: .5;
+}
+
+ol.breadcrumb li.active span {
+    opacity: 1;
+}
+ol.breadcrumb li span:hover {
+    opacity: 1;
+}
+
+
+/* Bread Crumb Container */
+
+.breadcrumb-container{
+    background-color: $brand-primary !important;
+    background-image: none !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.breadcrumb-container > p {
+    color: #fff;
+}
+
+
+
+
+
