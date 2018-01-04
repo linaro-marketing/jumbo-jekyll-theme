@@ -33,7 +33,7 @@ plugins:  # Gems that should be included in the Jekyll builld of this site.
 sass: # Sass configuration - compressed and sass_dir of the root Jekyll assets folder.
     style: compressed
     sass_dir: _sass
-jekyll_tidy: # Compress the html and beautify it.
+jekyll_tidy: # Compress the html
     compress_html: true
     exclude: ["assets/**/*.js"] #Add the js file to exclude to stop jekyll tidy errors.
 
