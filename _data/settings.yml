@@ -1,12 +1,32 @@
-search-label: Linaro
-
-name: Linaro
-slogan: Leading collaboration in the ARM Ecosystem
+# Mailchimp settings
 mailchimp:
     enabled: true
     id: af6cf590b0
+    
+# Footer Newsletter toggle.
 newsletter:
     enabled: true
+    
+# Settings for the home page
+home:
+    shaped-divider: false
+    # Jumbotron settings for the home page
+    jumbotron:
+        # Title for the home page jumbotron
+        title:
+            first-line: Welcome to the
+            second-line: Jumbo Jekyll Theme
+        # Text to be displayed in the home page jumbotron
+        text:
+            first-line: A theme for Linaro Static Jekyll sites.
+            second-line: Customize this content in the _data/settings.yml
+        # Buttons to be displayed in the Jumbotron
+        buttons:
+            - text: Learn More
+              class: btn btn-primary
+              url: /learn-more/
+        # Background image for the home page located in assets/images
+        background: background-image.png
 
 # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
 github_username: Linaro
@@ -39,9 +59,11 @@ schema:
             county: Cambridge 
             post_code: CB22 7GG
             country_code: UK
+
+# Disqus Comments
 disqus:
     enabled: false
     shortname: Linaro
 
-
+# Placeholder for Missing Images
 placeholder: placeholder.jpg
