@@ -10,6 +10,8 @@
 !robots.txt
 !.htaccess
 !_config.yml
+!_config-staging.yml
+!_config-production.yml
 !Gemfile
 !Gemfile.lock
 !index.md
