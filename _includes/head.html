@@ -1,35 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>
-            {% if page.title %}
-                     {{page.title}} - {{site.title}}
-            {% elsif site.data.company.slogan %}
-                    {{site.title}} - {{site.data.company.slogan}}
-            {% else %}
-                    {{site.title}}
-            {% endif %}
-        </title>
-        {% include _theme-includes/_script-includes/css.html %}
-        <link rel="icon" href="{% if site.data.company.favicon %}{% if site.using_assets %}{% asset_path '{{site.data.company.favicon}}' %}{% else %}{{site.data.company.favicon}}{% endif %}{% else %}/assets/images/favicon.png?v=2{% endif %}" type="image/png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-        {% if site.data.company.google.tag_manager %}
-          {% include _theme-includes/_script-includes/gtm/gtm-script.html %}
+<head>
+    <title>
+        {% if page.title %}
+                 {{page.title}} - {{site.title}}
+        {% elsif site.data.company.slogan %}
+                {{site.title}} - {{site.data.company.slogan}}
+        {% else %}
+                {{site.title}}
         {% endif %}
-        {% if site.data.company.google.analytics %}
-            {% include _theme-includes/_script-includes/google-analytics/script.html %}
-        {% endif %}
-        {% if page.keywords %}
+    </title>
+    {% include css.html %}
+    <link rel="icon" href="{% if site.data.company.favicon %}{% if site.using_assets %}{% asset_path '{{site.data.company.favicon}}' %}{% else %}{{site.data.company.favicon}}{% endif %}{% else %}/assets/images/favicon.png?v=2{% endif %}" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    
+    {% if site.data.settings.google-analytics.tag-manager %}
+      {% include google-tag-manager.html %}
+    {% endif %}
+    
+    {% if site.data.settings.google-analytics.analytics %}
+        {% include google-analytics.html %}
+    {% endif %}
+    
+    {% if page.keywords %}
         <meta name="keywords" content="{{page.keywords}}">
-        {% endif %}
-        {% seo title=false %}
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        {% if site.schema %}
-            {% include schema.html %}
-        {% endif %}
+    {% endif %}
+    
+    {% seo title=false %}
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    {% if site.schema %}
+        {% include schema.html %}
+    {% endif %}
+    
 </head>
