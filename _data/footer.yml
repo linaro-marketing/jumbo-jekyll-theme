@@ -102,7 +102,7 @@ columns:
           url : /
         - text: DragonBoard™ 410c
           url : /
-companylinks:
+company-links:
     - name: Legal
       url: /legal/
     - name: Contact
