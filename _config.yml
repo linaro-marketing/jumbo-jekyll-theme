@@ -1,18 +1,22 @@
-title: Linaro Jekyll Theme # Default Title of Site
+# Default Title of Site
+title: Linaro Jekyll Theme 
+# Description of the site used for default meta description
 description: |-
   This is Linaro's Static Jekyll Theme for static sites.
-destination: _static-site # Destination of the Jekyll site upon build of site.
-permalink: /blog/:title/ # Permalink for the blog posts
-highlighter: rouge # Syntax highlighter
-
-github_username: kylekirkby
-
-markdown: kramdown # Markdown version
+# Destination of the Jekyll site upon build of site.  
+destination: _static-site 
+# Permalink for the blog posts
+permalink: /blog/:title/ 
+# Syntax highlighter
+highlighter: rouge
+# Markdown flavour used by Jekyll to parse markdown.
+markdown: kramdown
+# Default character encoding
 encoding: utf-8
-safe: false # Jekyll configuration for running the site in "Safe" mode.
-google-tag-manager: false
-
-exclude: # Files that should be excluded from the Jekyll build.
+# Jekyll configuration for running the site in "Safe" mode.
+safe: false
+# Files Jekyll will ignore when building the static site.
+exclude:
   - Gemfile
   - Gemfile.lock
   - .gitignore
@@ -20,50 +24,62 @@ exclude: # Files that should be excluded from the Jekyll build.
   - .asset-cache
   - _static-site
   - .sass-cache
-plugins:  # Gems that should be included in the Jekyll builld of this site.
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-readme-index
-  - bootstrap-sass
-  - jekyll-redirect-from
-  - jekyll-tidy
-  - autoprefixer-rails
-  - jekyll-paginate-v2
-  - jekyll-assets
-sass: # Sass configuration - compressed and sass_dir of the root Jekyll assets folder.
+
+# Sass Configuration for the site styles
+sass:
     style: compressed
     sass_dir: _sass
-jekyll_tidy: # Compress the html
+    
+# Compress HTML using the jekyll-tidy plugin.
+jekyll_tidy: 
+    # Toggle compression of HTML
     compress_html: true
-    exclude: ["assets/**/*.js"] #Add the js file to exclude to stop jekyll tidy errors.
+    # JS Path added to exclude to stop errors.
+    exclude: ["assets/**/*.js"] 
+    
+# Permalink style to be used for paginating pages
+paginate_path: /blog/:num/ 
 
-paginate_path: /blog/:num/ # Pagination Path for Blogs
 # Jekyll Pagination V2 Configuration
 pagination:
     enabled: true
     per_page: 5
+    # Number of pages to show either side of the current page i.e - 1, 2, {3}, 4, 5
     trail:
         before: 2
         after: 2
+    # Reverse the order of paginated pages
     sort_reverse: true
+    # Field to sort posts by when paginating
     sort_field: 'date'
 
 # Jekyll pagination v2 autopages configuration.
 autopages:
   enabled: false
 
-#Jekyll Defaults Setup
+# Jekyll defaults - used to set default front matter values to collections and posts
 defaults:
+  #  Set a default Social Media Image
   - scope:
       path: ""
     values:
       image: /assets/images/social-media-image.png
-
-# Jekyll Assets plugin - set js and css to true so it compresses on jekyll build
+      
+# Jekyll Assets setup
 assets:
+  # Compress JS Assets - uses the uglifier plugin 
+  compress:
+        js: true
+  # Autoprefixer default settings
   autoprefixer:
       browsers: ["last 2 versions","> 5%","IE 9"]
+  # These are the paths to look for assets
   sources:
-    - assets/images
-    - assets/images/blog
-    - assets/images/projects
+    - assets/js/
+    - assets/images/
+    - assets/css/
+    
+# Jekyll relative links plugin settings    
+jekyll_relative_links:
+    process_all_collections: true
+    verbose: 1
