@@ -84,3 +84,7 @@ assets:
 jekyll_relative_links:
     process_all_collections: true
     verbose: 1
+    
+plugins:
+    - jekyll-assets
+    - jekyll-seo-tag
