@@ -1,10 +1,10 @@
 # Default Title of Site
-title: Linaro Jekyll Theme 
+title: Jumbo Jekyll Theme
 # Description of the site used for default meta description
 description: |-
-  This is Linaro's Static Jekyll Theme for static sites.
+  The Jumbo Jekyll Theme is used across all Linaro static sites.
 # Destination of the Jekyll site upon build of site.  
-destination: _static-site 
+destination: _site
 # Permalink for the blog posts
 permalink: /blog/:title/ 
 # Syntax highlighter
@@ -28,7 +28,8 @@ exclude:
 # Sass Configuration for the site styles
 sass:
     style: compressed
-    sass_dir: _sass
+    load_paths:
+        - assets/css
     
 # Compress HTML using the jekyll-tidy plugin.
 jekyll_tidy: 
