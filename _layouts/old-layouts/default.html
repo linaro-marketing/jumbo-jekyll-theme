@@ -1,19 +1,16 @@
 ---
+specific_js: /assets/js/app/sticky.js
 js-package: extended
 ---
-{% include _theme-includes/_head/head.html %}
+{% include head.html %}
 <body>
         {% include _theme-includes/_navigation/nav.html %}
         {% include _theme-includes/_page-structure/breadcrumb.html %}
         <div class="container-fluid content-container">
+            {% include _theme-includes/_navigation/tabbed-nav.html %}
             <div class="row">
-                <div class="container no-padding-left">
-                    <div class="col-md-3">
-                    {% include _theme-includes/_navigation/stacked-nav.html %}
-                    </div>
-                    <div class="col-md-9">
-                        {{ content }}
-                    </div>
+                <div class="container">
+                    {{ content }}
                 </div>
             </div>
             {% include _theme-includes/_footer/footer.html %}
