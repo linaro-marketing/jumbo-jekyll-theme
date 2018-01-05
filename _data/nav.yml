@@ -1,8 +1,14 @@
-search: true
+# Search Config
+search:
+    enabled: true
+    label: Linaro
+# Nav Brand Config
 brand:
     text: OpenDataPlane
     image: linaro-logo.png
     url: /
+    
+# Navigation pages
 pages:
     - title: Home
       url: /
