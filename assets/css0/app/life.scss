@@ -1,0 +1,31 @@
+//Linaro Life
+.cover-image{
+    height: 100%;
+    background-color: white;
+    position: relative;
+}
+.cover-image-info {
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 50%;
+    left: 50%;
+    height: 30%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+}
+.cover-image-info strong {
+    font-size: 26px;
+    display: block;
+}
+
+.cover-image-info small {
+    font-size: 26px;
+    display: block;
+}
+
+.container-fluid.linaro-life.no-padding {
+    margin-top: -21px;
+}

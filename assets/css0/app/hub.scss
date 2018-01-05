@@ -1,0 +1,34 @@
+// Hub Page
+.hub-social-media-icon {
+    padding: 20px;
+}
+
+.hub-row{
+    padding-bottom: 70px;
+    margin-bottom:30px;
+    border-bottom: 1px solid #eee;
+}
+
+.hub-block-inner {
+    padding: 15px;
+    background-color:#a681b8;
+}
+.hub-block-inner:hover {
+    opacity: .8;
+}
+.hub-green{
+    background-color: #accb4d;
+}
+.hub-blue{
+    background-color: #0083a9;
+}
+.hub-pink{
+    background-color: #c34969;
+}
+.hub-grey{
+    background-color: #636363;
+}
+
+.hub-block-inner.light > p, .hub-block-inner.light > h3{
+    color: #fff !important;
+}

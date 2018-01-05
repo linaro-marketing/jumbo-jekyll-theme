@@ -1,0 +1,47 @@
+
+//About Page
+div.about-page-text > .col-md-4.did-you-know.no-padding {
+    padding: 14px;
+    padding-left: 10px;
+    font-size: 11px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+div.about-page-text > .col-md-3.did-you-know.no-padding > h2 {
+    padding: -14px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+div.about-page-text > .col-md-7.no-padding {
+    paddding-top:0;
+}
+
+div.about-page-text > .col-md-4.col-md-offset-1.did-you-know.no-padding > h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+div#about-page {
+    text-align: justify;
+}
+
+dt {
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(37,37,37);
+}
+
+//Smallest mobile view
+@media(max-width:767px){
+    .linaro-profile-image {
+        float:none !important;
+        margin-bottom: 10px !important;
+        margin-top: 10px !important;
+    }
+}
+
+    
+

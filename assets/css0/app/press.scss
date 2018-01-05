@@ -1,0 +1,24 @@
+//Download Button
+.linaro-download-button{
+    background-color: $brand-primary;
+    color: white;
+    letter-spacing: 0px;
+    font-size: 10px;
+    text-align: center;
+    box-shadow: 0px 3px 0px 0px #856893;
+    margin-bottom: 3px;
+    transition: 500ms background-color linear;
+
+}
+.linaro-download-button:hover{
+    background-color: #856893;
+    transition: 500ms background-color linear;
+}
+
+a.btn.linaro-download-button {
+    border-radius: 0px;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 10px;
+    text-shadow: 0 1px rgba(0,0,0,.4);
+}

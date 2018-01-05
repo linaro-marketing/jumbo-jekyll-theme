@@ -1,0 +1,47 @@
+search-label: Linaro
+
+name: Linaro
+slogan: Leading collaboration in the ARM Ecosystem
+mailchimp:
+    enabled: true
+    id: af6cf590b0
+newsletter:
+    enabled: true
+
+# Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
+github_username: Linaro
+linkedin_username: 1026961
+google_plus_username: +LinaroOnAir
+facebook_username: LinaroOrg
+youtube_username: linaroorg
+twitter_username: linaroorg
+slideshare_username: linaroorg
+
+# Google Anayltics Setup
+google:
+    tag_manager: GTM-5DLPJQ
+
+# Shema.org Setup -> used in the schema.html include.
+schema:
+    organisation:
+        name: Linaro
+        url: https://www.linaro.org
+        sameAs:
+            - https://twitter.com/linaroorg
+            - https://www.facebook.com/LinaroOrg
+            - https://www.linkedin.com/company/1026961/
+            - https://plus.google.com/+LinaroOnAir
+            - https://github.com/Linaro
+            - https://www.slideshare.net/linaroorg
+        address:
+            street: Harston Mill, Royston Rd 
+            town: Harston 
+            county: Cambridge 
+            post_code: CB22 7GG
+            country_code: UK
+disqus:
+    enabled: false
+    shortname: Linaro
+
+
+placeholder: placeholder.jpg

@@ -1,0 +1,414 @@
+
+div#birds-container {
+top: 200px;
+position: relative;
+}
+
+@media(max-width:767px){
+    div#birds-container {
+        top: -80px;
+        position: relative;
+    }
+}
+
+
+#linaro-latest-tweets .linaro-tweet {
+padding: 20px;
+}
+
+#linaro-latest-tweets .tweet-header {
+overflow: auto;
+padding: 5px;
+border-bottom: 1px solid #eee;
+}
+
+#linaro-latest-tweets .tweet-inner-content {
+    padding-top: 0;
+    padding: 5px;
+    padding-top:0px;
+    padding-right:0px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+#linaro-latest-tweets .tweet-footer {
+overflow: auto;
+padding-top: 0;
+padding: 5px;
+}
+
+// Anything below the large container size
+@media(min-width:1459px){
+    #linaro-latest-tweets .tweet-user-name {
+        padding-left: 35px;
+    }
+}
+
+
+
+p.tweet-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+p.tweet-content::-webkit-scrollbar-track {
+    border: 1px solid #eee;
+}
+
+p.tweet-content::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    border: 1px solid #eee;
+    background-color: #eee;
+}
+
+
+#linaro-latest-tweets  p.tweet-content{
+    font-size: 16px;
+    margin-bottom: 0;
+    height: 130px;
+    padding-right: 5px;
+    overflow-y: scroll;
+}
+
+
+#linaro-latest-tweets  div.tweet-img{
+    width: 100%;
+    padding:0px;
+    margin-top: 0px;
+    height: 170px;
+}
+
+#linaro-latest-tweets  div.tweet-img > img {
+width: 100%;
+height: auto;
+margin-top: 5px;
+}
+
+#linaro-latest-tweets  .tweet-inner {
+border: 1px solid #eee;
+overflow: auto;
+background-color: white;
+z-index: 99999;
+}
+
+.row.tweet-row {
+padding: 10px;
+margin-top:100px;
+margin-bottom: 100px;
+}
+
+#linaro-latest-tweets p.interact {
+margin-bottom: 0;
+float: left;
+width: auto;
+padding-left:5px;
+font-size: 12px;
+}
+#linaro-latest-tweets p.interact > a {
+color: #b3b3b3;
+transition: all .5s linear;
+}
+#linaro-latest-tweets p.interact > a:hover {
+color: #252525;
+}
+#linaro-latest-tweets p.interact > a > i {
+margin-bottom: 0;
+float: left;
+width: 20px;
+margin-right:5px;
+}
+
+
+#linaro-latest-tweets p.tweet-infos {
+margin-bottom: 0px;
+font-size: 12px;
+text-align: right;
+}
+
+#linaro-latest-tweets .tweet-user-img {
+padding: 0;
+}
+#linaro-latest-tweets .tweet-user-img > img {
+    border: 1px solid #eee;
+}
+#linaro-latest-tweets .tweet-user-name {
+   padding:0;
+   padding-left: 20px;
+}
+#linaro-latest-tweets .tweet-user-name a {
+color: #252525;
+}
+#linaro-latest-tweets .tweet-user-name a >  h3 {
+padding: 0;
+margin: 0;
+margin-top: 5px;
+font-size: 16px;
+}
+
+#linaro-latest-tweets .tweet-user-name  a > small {
+padding: 0;
+margin: 0;
+margin-top: 5px;
+font-size: 12px;
+}
+#linaro-latest-tweets .tweet-user-img > a > img {
+border: 1px solid #eee;
+height: 50px;
+}
+
+#linaro-latest-tweets .twitter-bird  {
+    
+padding: 0;
+margin: 0;
+margin-top: 5px;
+font-size: 12px;
+color: #1da1f2;
+transition: all .5s linear;
+}
+#linaro-latest-tweets .twitter-bird > a  {
+color: #1da1f2;
+transition: all .5s linear;
+}
+
+#linaro-latest-tweets .twitter-bird > a:hover {
+color: #106ca5;
+}
+
+
+
+
+.flying-twitter-bird > svg > g > path {
+fill:  #dae1e5;  
+}
+
+.flying-twitter-bird > svg {
+transform: rotate(22deg);
+}
+
+
+.flying-twitter-bird {
+position: absolute;
+left: 0px;
+
+opacity: 0;
+
+animation: movement 30s linear infinite;
+
+transition: all 100ms ease;
+
+}
+
+.flying-twitter-bird.small {
+animation-delay: 6s;
+}
+.flying-twitter-bird.small {
+width: 20px;
+height: 20px;
+}
+.flying-twitter-bird.small.two{
+margin-top: 200px;
+animation-delay: 12s;
+}
+.flying-twitter-bird.small.three {
+margin-top: 160px;
+animation-delay: 18s;
+}
+.flying-twitter-bird.small.four {
+margin-top: 70px;
+animation-delay: 24s;
+}
+.flying-twitter-bird.small.five {
+margin-top: 200px;
+animation-delay: 30s;
+}
+
+.flying-twitter-bird.big {
+height: 60px;
+width: 60px;
+}
+.flying-twitter-bird.big.two {
+margin-top: 200px;    
+animation-delay: 10s;
+}
+
+.flying-twitter-bird.big.three {
+margin-top: 150px;    
+animation-delay: 15s;
+}
+
+.flying-twitter-bird.big.four {
+margin-top: 70px;    
+animation-delay: 20s;
+}
+
+.flying-twitter-bird.big.five {
+margin-top: 180px;    
+animation-delay: 22s;
+}
+
+
+
+
+@keyframes movement{
+0% {
+  left: 0px;
+  transform: rotate(30deg);
+  transform: translateY(0px);
+}
+1%{
+    opacity: 0;
+}
+2%{
+    opacity: .1;
+}
+3%{
+    opacity: .3;
+}
+4%{
+    opacity: .5;
+}
+5%{
+    opacity: .7;
+}
+10% {
+    opacity: 1;
+    transform: rotate(29deg);
+    transform: translateY(2px);
+}
+20% {
+    transform: rotate(28deg);
+    transform: translateY(5px);
+}
+30% {
+    transform: rotate(27deg);
+    transform: translateY(10px);
+}
+40% {
+    transform: rotate(26deg);
+    transform: translateY(15px);
+}
+50% {
+    transform: rotate(26deg);
+    transform: translateY(15px);
+    left: 50vw
+}
+60% {
+    transform: rotate(26deg);
+    transform: translateY(15px);
+}
+70% {
+    transform: rotate(27deg);
+    transform: translateY(10px);
+}
+80% {
+    transform: rotate(28deg);
+    transform: translateY(5px);
+}
+90% {
+    transform: rotate(29deg);
+    transform: translateY(2px);
+}
+95%{
+    opacity: 1;
+}
+96%{
+    opacity: .7;
+}
+97%{
+    opacity: .5;
+}
+98%{
+    opacity: .3;
+}
+99%{
+    opacity: .1;
+}
+100% {
+    transform: rotate(30deg);
+    transform: translateY(0px);
+    opacity: 0;
+    left: 90vw;
+}
+}
+
+@media(max-width:767px){
+@keyframes movement{
+    0% {
+      left: 0px;
+      transform: rotate(30deg);
+      transform: translateY(0px);
+    }
+    1%{
+        opacity: 0;
+    }
+    2%{
+        opacity: .1;
+    }
+    3%{
+        opacity: .3;
+    }
+    4%{
+        opacity: .5;
+    }
+    5%{
+        opacity: .7;
+    }
+    10% {
+        opacity: 1;
+        transform: rotate(29deg);
+        transform: translateY(2px);
+    }
+    20% {
+        transform: rotate(28deg);
+        transform: translateY(5px);
+    }
+    30% {
+        transform: rotate(27deg);
+        transform: translateY(10px);
+    }
+    40% {
+        transform: rotate(26deg);
+        transform: translateY(15px);
+    }
+    50% {
+        transform: rotate(26deg);
+        transform: translateY(15px);
+        left: 50vw
+    }
+    60% {
+        transform: rotate(26deg);
+        transform: translateY(15px);
+    }
+    70% {
+        transform: rotate(27deg);
+        transform: translateY(10px);
+    }
+    80% {
+        transform: rotate(28deg);
+        transform: translateY(5px);
+    }
+    90% {
+        transform: rotate(29deg);transform: translateY(2px);
+        transform: translateY(2px);
+    }
+    95%{
+        opacity: 1;
+    }
+    96%{
+        opacity: .7;
+    }
+    97%{
+        opacity: .5;
+    }
+    98%{
+        opacity: .3;
+    }
+    99%{
+        opacity: .1;
+    }
+    100% {
+        transform: rotate(30deg);
+        transform: translateY(0px);
+        opacity: 0;
+        left: 80vw;
+    }
+}
+}
