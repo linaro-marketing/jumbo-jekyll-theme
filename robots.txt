@@ -1,0 +1,9 @@
+---
+---
+{% if site.production == true %}
+User-agent: *
+Allow: /
+{% else %}
+User-agent: *
+Disallow: /
+{% endif %}

@@ -1,0 +1,111 @@
+
+columns:
+    - title: Column 1
+      url: /
+      items:
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+    - title: Column 2
+      url: /
+      items:
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+    - title: Column 3
+      url: /
+      items:
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+    - title: Column 4
+      url: /
+      items:
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+    - title: Column 5
+      url: /
+      items:
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+    - title: Column 6
+      url: /
+      items:
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+        - text: DragonBoard™ 410c
+          url : /
+company-links:
+    - name: Legal
+      url: /legal/
+    - name: Contact
+      url: /contact/
+    - name: Press
+      url: /press/

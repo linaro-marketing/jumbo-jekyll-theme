@@ -1,0 +1,61 @@
+pages:
+  -
+    list:
+      -
+        title: "96Boards Overview"
+        url: /about/
+      -
+        title: "Specifications"
+        url: "/specifications/"
+      -
+        title: "Compliance"
+        url: "/compliance/"
+      -
+        title: "Membership"
+        url: "/membership/"
+      -
+        title: "News"
+        url: "/news/"
+    urls: [/about/,/specifications/,/compliance/,/membership/,/news/]
+  -
+    list:
+      -
+        title: Latest Boards
+        url: /products/
+      -
+        title: Consumer Edition
+        url: /products/ce/
+      -
+        title: Enterprise Edition
+        url: /products/ee/
+      -
+        title: IoT Edition
+        url: /products/ie/
+      -
+        title: Mezzanine Products
+        url: /products/mezzanine/
+      -
+        title: Accessories
+        url: /products/accessories/
+    urls: [/products/, /products/ce/, /products/ee/, /products/ie/, /products/mezzanine/, /products/accessories/]
+  -
+    list:
+      -
+        title: All Docs
+        url: /products/
+      -
+        title: Consumer Edition
+        url: /products/ce/
+      -
+        title: Enterprise Edition
+        url: /products/ee/
+      -
+        title: IoT Edition
+        url: /products/ie/
+      -
+        title: Mezzanine Products
+        url: /products/mezzanine/
+      -
+        title: Specifications
+        url: /documentation/specifications/
+    urls: [/documentation/, //, /products/ee/, /products/ie/, /products/mezzanine/, /products/accessories/]

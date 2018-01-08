@@ -1,0 +1,262 @@
+---
+layout: fluid
+specific_css: /assets/css/products-pages.css
+specific_js:
+    - /assets/js/vendor/owl.carousel.min.js
+    - /assets/js/vendor/lightbox.min.js
+---
+{% assign product =  site.data.product_db.products | where: "product_permalink", page.permalink | first %}
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                    {{content}}
+            </div>
+            <div class="col-md-4" >
+                <div id="product-image-carousel">
+                    <div class="owl-carousel owl-theme">
+                        {% for product_image in product.product_images %}
+                            {% assign url-name = product.product_permalink | split: "/" %}
+                            {% assign url-name-new = url-name[2] %}
+                            <div class="activity-block item">
+                                <a href="../../product/{{product.product_specification}}/{{url-name-new | downcase}}/images/{{product_image}}" data-lightbox="{{product.product_title}}" data-title="{{product.product_title}}">
+                                    <img data-src="../../product/{{product.product_specification}}/{{url-name-new | downcase}}/images/{{product_image}}" class="owl-lazy img-responsive" alt="{{product_image}}" />
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- <div class="info">
+                    <div class="separator clear-left">
+                        <div class="dropdown dropdown-container btn-group dropup btn-block">
+                            <button type="button" class="btn btn-primary dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Buy
+                            <i class="buy-font-awesome-icon button-icon fa fa-shopping-cart"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <ul class="dropdown-menu">
+                              {% for buy_link in product.product_buy_links %}
+                              <li><a href="{{ buy_link.link-url }}">{{ buy_link.link-title }}</a></li>
+                              {% endfor %}
+                          </ul>
+                        </div>
+                    </div>
+                </div> -->
+
+                {% if product.product_buy_links %}
+                    <ul class="list-group buy-links">
+                        <li href="#" class="list-group-item active"><b title="Buy Now">Buy Now</b><i class="glyphicon glyphicon-shopping-cart pull-right" style="margin-top:8px;"></i></li>
+                        {% for buy_link in product.product_buy_links %}
+                            <li class="list-group-item">
+                                <a href="{{ buy_link.link-url }}">
+                                    <span class="text-left">{{ buy_link.link-title }}</span>
+                                </a>
+
+                                <small>
+                                    {% if buy_link.type == "package" %}<span>Package Deal</span>{% endif %}
+                                    {% if buy_link.type == "board" %}<span>Board</span>{% endif %}
+                                    {% if buy_link.from %}<a href="{{ buy_link.link-url }}">Buy from {{buy_link.from}}</a>{% endif %}
+                                </small>
+
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                <!--Side Panel Start------------------------------->
+                <!-- {% if product.product_buy_links %}
+                <ul class="list-group">
+                    <li href="#" class="list-group-item active"><b>Buy Links</b></li>
+                    {% for buy_link in product.product_buy_links %}
+                        <li class="list-group-item">
+                            <a href="{{ buy_link.link-url }}">
+                                <span class="text-left">{{ buy_link.link-title }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %} -->
+
+                {% if product.product_video[0] %}
+                    <div class="row">
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="lazyload embed-responsive-item"
+                          data-src="{{product.product_video[0]}}">
+                          </iframe>
+                        </div>
+                    </div>
+                    <br />
+                {% endif %}
+                {% if product.product_video[1] %}
+                    <div class="row">
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="lazyload embed-responsive-item"
+                          data-src="{{product.product_video[1]}}">
+                          </iframe>
+                        </div>
+                    </div>
+                    <br />
+                {% endif %}
+
+                {% if product.product_documents %}
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item active"><b title="Documents and Resources">Documents / Resources</b></li>
+                        {% for doc in product.product_documents %}
+                            <li class="list-group-item">
+                                <a href="{{ doc.link }}">
+                                    <span class="text-left">{{ doc.title }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <br />
+                {% endif %}
+
+                {% if product.product_os %}
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item active"><b title="Operating Systems">OS</b></li>
+                        {% for os in product.product_os %}
+                            <li class="list-group-item">
+                                <a href="{{ os.link }}">
+                                    <span class="text-left">{{ os.title }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+
+                {% if product.product_middleware %}
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item active"><b title="Operating Systems">Middleware/SDKS</b></li>
+                        {% for middleware in product.product_middleware %}
+                            <li class="list-group-item">
+                                <a href="{{ middleware.link }}">
+                                    <span class="text-left">{{ middleware.title }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if product.product_third_party_images %}
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item active"><b>Third Party Images</b></li>
+                            {% for image in product.product_third_party_images %}
+                                <li class="list-group-item">
+                                    <a href="{{ image.link }}">
+                                        <span class="text-left">{{ image.title }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if product.product_more_info %}
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item active"><b>More Info</b></li>
+                            {% for info in product.product_more_info %}
+                                <li class="list-group-item">
+                                    <a href="{{ info.link }}">
+                                        <span class="text-left">{{ info.title }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if product.product_media_highlights %}
+                {% assign url-product-name = product.product_permalink | split: "/" %}
+                {% assign url-product-name = url-product-name[2] %}
+
+                {% assign media-highlights = site.data.news.entries | where: "tag", url-product-name %}
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item active"><b>Media Highlights</b></li>
+                            {% for info in media-highlights %}
+                                <li class="list-group-item">
+                                    <a href="{{ info.link }}">
+                                        <span class="text-left">{{ info.title }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                    </ul>
+                {% endif %}
+
+
+
+                <!--Side Panel END---------------------------->
+
+            </div>
+    </div><!-- end row-->
+    <div class="row">
+
+        <div class="col-md-10">
+            <!--Main Section Start---------------------------->
+            {% if product.product_accessories %}
+            <hr/>
+            {% elsif product.product_kits %}
+            <hr/>
+            {% elsif product.product_mezzanine %}
+            <hr/>
+            {% endif %}
+
+            <div class="row product-bottom-panel">
+
+                {% if product.product_accessories %}
+                <div class="col-md-4">
+                    <ul class="list-group" id="features-list">
+                        <a href="/products/accessories/"><li class="list-group-item active"><b>Accessories</b></li></a>
+                        {% for accessory in product.product_accessories %}
+                            <li class="list-group-item">
+                                <a href="{{accessory.link}}">{{ accessory.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% if product.product_mezzanine %}
+                <div class="col-md-4">
+                    <ul class="list-group" id="features-list">
+                        <a href="/products/mezzanine/"><li class="list-group-item active"><b>Mezzanine</b></li></a>
+                        {% for mezzanine in product.product_mezzanine %}
+                            <li class="list-group-item">
+                                <a href="{{mezzanine.link}}">{{ mezzanine.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% if product.product_kits %}
+                <div class="col-md-4">
+                    <ul class="list-group" id="features-list">
+                        <li href="#" class="list-group-item active"><b>Kits</b></li>
+                        {% for kit in product.product_kits %}
+                            <li class="list-group-item">
+                                <a href="{{kit.link}}/">{{ kit.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+
+            </div>
+            <!--Main Section END--------------------------->
+
+
+
+        </div>
+
+        <div class="col-md-2">
+            <!--Side Panel Two Start --------------------------->
+
+            <!--Side Panel Two END--------------------------->
+        </div>
+
+    </div>
+
+</div><!-- end container-->
+</div><!--end row-->

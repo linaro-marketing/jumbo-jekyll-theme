@@ -1,0 +1,50 @@
+{% if site.using_assets == true %}
+    {% if page.js-package %}
+        {% if page.js-package == "extended" %}
+            {% js package-extended %}
+        {% elsif page.js-package == "openhours" %}
+            {% js package-openhours %}
+        {% elsif page.js-package == "home" %}
+            {% js package-home %}
+        {% elsif page.js-package == "search" %}
+            {% js package-search %}
+        {% elsif page.js-package == "contact" %}
+            {% js package-contact %}
+        {% elsif page.js-package == "work" %}
+            {% js package-work %}
+        {% elsif page.js-package == "blog" %}
+            {% js package-blog %}
+        {% else %}
+            {% js package %}
+        {% endif %}
+    {% else %}
+        {% if layout.js-package == "extended" %}
+            {% js package-extended %}
+        {% elsif layout.js-package == "sticky" %}
+            {% js package-sticky %}
+        {% elsif layout.js-package == "work" %}
+            {% js package-work %}
+        {% elsif layout.js-package == "developer-services" %}
+            {% js package-developer-services %}
+        {% elsif layout.js-package == "blog" %}
+            {% js package-blog %}
+        {% else %}
+            {% js package %}
+        {% endif %}
+    {% endif %}
+{% else %}
+    <script src="/assets/js/vendor/jquery.min.js"></script>
+    <script src="/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="/assets/js/app/main.js"></script>
+    <script src="/assets/js/vendor/cookieconsent.min.js"></script>
+    <script src="/assets/js/vendor/lazysizes.min.js"></script>
+    {% if page.specific_js %}
+        {% for script in page.specific_js %}
+            <script src="{{script}}"></script>
+        {% endfor %}
+    {% elsif layout.specific_js %}
+        {% for script in layout.specific_js %}
+            <script src="{{script}}"></script>
+        {% endfor %}
+    {% endif %}
+{% endif %}

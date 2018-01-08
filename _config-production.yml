@@ -1,0 +1,10 @@
+# In order to build for production run:
+# $ jekyll build --config _config.yml, _config-production.yml
+#
+#
+# URL of static site
+url: "https://site-test.linaro.org"
+# Destination folder
+destination: production.site-test.linaro.org
+# Production boolean used in layouts / includes
+production: true

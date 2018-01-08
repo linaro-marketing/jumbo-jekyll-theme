@@ -1,0 +1,239 @@
+
+
+// Search Bar 
+
+button#searchButton {
+    color: $navbar-base-text-color;
+}
+
+@media (min-width: 1200px) {
+    #searchDropdown {
+        top: 16%;
+        min-width: 234px;
+        width:781px;
+        font-size:16px;
+        background-color: $navbar-inverse-bg;
+        right: -2px;
+    }
+    #searchDropdown input {
+        width: 675px;
+        text-align: right;
+        color: $navbar-base-text-color;
+        background-color: $navbar-inverse-bg;
+        outline:0;
+        border:0;
+        outline-style: none;
+        box-shadow: none;
+        border-color: transparent;
+
+    }
+    #searchDropdown input:focus{
+        outline:0;
+        border:0
+    }
+    #searchDropdown button[type="reset"]{
+        font-size:16px;
+        background-color: $navbar-inverse-bg;
+        border:0;
+    }
+    #searchDropdown button[type="reset"]:hover{
+        color: $brand-primary;
+        transition: color 1s ease;
+    }
+
+    #searchDropdown button[type="submit"]{
+        font-size:16px;
+        background-color: $navbar-inverse-bg;
+        border:0;
+    }
+    #searchDropdown button[type="submit"]:hover{
+        color: $brand-primary;
+        transition: color 1s ease;
+    }
+
+}
+
+@media screen and (max-width: 1200px) and (min-width: 0px) {
+    #searchform > div > input.form-control{
+        width:100%;
+    }
+    #searchform{
+        margin-bottom: 20px;
+    }
+    #navbar-collapse {
+        padding-top:5px;
+    }
+    #navbar-buttons{
+        margin-top: -10px;
+    }
+    button.navbar-toggle {
+        margin-right: 10px;
+    }
+    #searchform button.btn.btn-default {
+        height: 45px;
+    }
+
+    .navbar-collapse form[role="search"]{
+        margin-bottom:10px;
+    }
+}
+
+
+.navbar-collapse form[role="search"] {
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    z-index: 0;
+}
+.navbar-collapse form[role="search"] button,
+.navbar-collapse form[role="search"] input {
+    padding: 8px 12px;
+    border-radius: 0px;
+    border-width: 0px;
+    color: $navbar-base-text-color;
+    border-color: rgb(231, 231, 231);
+    box-shadow: none;
+    outline: none;
+}
+ .navbar-collapse form[role="search"] button[type="reset"]:focus {outline:0;background-color: transparent}
+ .navbar-collapse form[role="search"] button[type="reset"]:active {outline:0;background-color: transparent}
+ .navbar-collapse form[role="search"] button[type="submit"]:focus {outline:0;background-color: transparent}
+ .navbar-collapse form[role="search"] button[type="submit"]:active {outline:0;background-color: transparent}
+ .navbar-collapse form[role="search"] button[type="submit"] {
+    background-color: transparent;
+}
+ .navbar-collapse form[role="search"] button[type="submit"]:hover {
+    display: table-cell;
+    color: $brand-primary;
+    transition: color .5s ease;
+   -moz-transition: color .5s ease;
+   -webkit-transition: color .5s ease;
+}
+ .navbar-collapse form[role="search"] input {
+    padding: 16px 12px;
+    font-size: 14pt;
+    font-style: normal;
+    color: $navbar-base-text-color;
+    box-shadow: none;
+    background-color: $navbar-inverse-bg;
+}
+
+@media (min-width: 1200px) {
+
+     .navbar-collapse {
+        padding-top: 0px;
+        padding-right: 38px;
+        margin-right: -40px !important;
+        margin-left: -15px !important;
+
+    }
+     ul.dropdown-menu {
+        margin-top: -1px !important;
+    }
+     .navbar-collapse form[role="search"] {
+        position: absolute;
+        min-width: 50px;
+        display: block;
+    }
+     .navbar-collapse form[role="search"] button {
+        margin-right: 0;
+        min-width: 90px;
+    }
+     .navbar-collapse form[role="search"] button[type="submit"]:hover {
+        color: $brand-primary;
+        transition: color .5s ease;
+       -moz-transition: color .5s ease;
+       -webkit-transition: color .5s ease;
+    }
+     .navbar-collapse form[role="search"] button,
+     .navbar-collapse form[role="search"] input {
+        height:51px;
+        padding: 15px 12px;
+    }
+     .navbar-collapse form[role="search"] input {
+        padding: 25px 12px;
+        font-size: 18pt;
+        opacity: 0;
+        display: none;
+    }
+     .navbar-collapse form[role="search"].active {
+        width: 100%;
+        transition: width 2s ease;
+       -moz-transition: width 2s ease;
+       -webkit-transition: width 2s ease;
+    }
+     .navbar-collapse form[role="search"].active button,
+     .navbar-collapse form[role="search"].active input {
+        display: table-cell;
+        opacity: 1;
+    }
+     .navbar-collapse form[role="search"].active input {
+        width: 650px;
+        height: 51px;
+        text-align: right;
+        transition: width 1s ease;
+        -moz-transition: width 1s ease;
+        -webkit-transition: width 1s ease;
+    }
+     .navbar-collapse form[role="search"].active button[type="submit"] {
+        background-color: transparent;
+    }
+     .navbar-collapse form[role="search"].active button[type="reset"] {
+        min-width: 40px;
+        background-color: $navbar-inverse-bg;
+        display: table-cell;
+    }
+     .navbar-collapse form[role="search"].active button[type="submit"]:hover {
+        display: table-cell;
+        color: $brand-primary;
+        transition: color .5s ease;
+       -moz-transition: color .5s ease;
+       -webkit-transition: color .5s ease;
+    }
+     .navbar-collapse form[role="search"].active button[type="reset"]:hover {
+        display: table-cell;
+        color: $brand-primary;
+        transition: color .5s ease;
+       -moz-transition: color .5s ease;
+       -webkit-transition: color .5s ease;
+    }
+     form#searchform {
+        width: auto;
+        margin-top: 13px;
+    }
+     nav form[role="search"] #searchform  input {
+        height:51px;
+        width: 600px;
+    }
+    #navbar-buttons {
+        margin-right: 40px;
+    }
+
+    #navbar-collapse {
+        width: 80%;
+        float: right;
+    }
+
+}
+
+@media screen and (max-width: 1200px) and (min-width: 0px) {
+    #searchform > div > input.form-control{
+        width:100%;
+    }
+    #searchform{
+        margin-bottom: 20px;
+    }
+    
+    #searchform button.btn.btn-default {
+        height: 45px;
+    }
+    .navbar-collapse form[role="search"]{
+        margin-bottom:10px;
+    }
+}
+
+
+
+

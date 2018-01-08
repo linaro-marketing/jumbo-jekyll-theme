@@ -1,0 +1,29 @@
+// Social
+.row.social-content-row {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.social-col{
+    padding-left:15px;
+    padding-right: 15px;
+}
+.col-xs-12.text-center.social-media-icon-col {
+    font-size: 45px;
+    padding: 25px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 35px;
+}
+.col-xs-12.text-center.social-media-icon-col > a >  i:hover {
+    opacity: .8;
+    transition: all 1s ease;
+}
+.col-xs-12.text-center.social-media-icon-col > a > i.icon-facebook{
+    color: #3b5898;
+}
+.col-xs-12.text-center.social-media-icon-col > i.icon-twitter{
+    color: #1da1f2;
+}
+.col-xs-12.text-center.social-media-icon-col > a > i.icon-youtube{
+    color: #ff0001;
+}

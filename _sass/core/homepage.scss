@@ -1,0 +1,45 @@
+//Home Page Heading
+#homepage-heading {
+    color: $brand-warning;
+    font-size: 30pt;
+    font-weight: normal;
+    line-height: 1.25;
+}
+
+@media(max-width:991px){
+    #homepage-heading {
+        font-size: 26px;
+    }
+    p.sub-tag {
+        width:95%;
+    }
+}
+
+.homepage-shape {
+    margin-bottom: -8px;
+}
+
+.homepage-image-jumbotron {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#home-page-text{
+    color: $home-page-title-text;
+}
+
+#home-page-title{
+    color: $home-page-main-title-color;
+}
+
+#home-hero-image {
+  width: auto;
+  height: 200px;
+}
+
+// Style for Homepage 
+div#main-container.home-container {
+    margin-top: 0;
+}

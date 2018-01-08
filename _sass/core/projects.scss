@@ -1,0 +1,32 @@
+.project_block {
+    display:block;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $gray-lighter;
+}
+.project_image{
+  width: auto;
+  height: 100%;
+}
+  .project_block a:first-child {
+    overflow: hidden;
+    height: 200px;
+    display: block;
+    border: 1px solid #19947b;
+  }
+  p.project_description {
+    font-size: 11px;
+    font-style: italic;
+    height:50px;
+    overflow:hidden;
+    margin-bottom:20px
+}
+div.project_filter_panel{
+    height:auto;
+    padding:10px;
+}
+.project_title {
+    min-height: 35px;
+}
+div.project_filter_panel button {
+    margin-bottom: 20px;
+}
