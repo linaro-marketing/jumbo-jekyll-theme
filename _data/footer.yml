@@ -1,4 +1,7 @@
+# Image to be used in the footer. Default is the Linaro Sprinkle
+image: Linaro-Logo.svg
 
+# Columns to be added to the footer
 columns:
     - title: Column 1
       url: /
