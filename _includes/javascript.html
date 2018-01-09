@@ -1,32 +1,14 @@
-{% if page.js-package %}
-    {% if page.js-package == "extended" %}
-        {% js package-extended %}
-    {% elsif page.js-package == "openhours" %}
-        {% js package-openhours %}
-    {% elsif page.js-package == "home" %}
-        {% js package-home %}
-    {% elsif page.js-package == "search" %}
-        {% js package-search %}
-    {% elsif page.js-package == "contact" %}
-        {% js package-contact %}
-    {% elsif page.js-package == "work" %}
-        {% js package-work %}
-    {% elsif page.js-package == "blog" %}
-        {% js package-blog %}
+{% if layout.js-package %}
+    {% if layout.js-package %}
+        {% capture js-package %}package-{{layout.js-package}}{% endcapture %}
+        {% js {{js-package}} %}
     {% else %}
         {% js package %}
     {% endif %}
 {% else %}
-    {% if layout.js-package == "extended" %}
-        {% js package-extended %}
-    {% elsif layout.js-package == "sticky" %}
-        {% js package-sticky %}
-    {% elsif layout.js-package == "work" %}
-        {% js package-work %}
-    {% elsif layout.js-package == "developer-services" %}
-        {% js package-developer-services %}
-    {% elsif layout.js-package == "blog" %}
-        {% js package-blog %}
+    {% if page.js-package %}
+        {% capture js-package %}package-{{page.js-package}}{% endcapture %}
+        {% js {{js-package}} %}
     {% else %}
         {% js package %}
     {% endif %}
