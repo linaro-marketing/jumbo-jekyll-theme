@@ -21,7 +21,7 @@
                     {% endfor %} {% if site.data.footer.image %}
                     <div class="col-xs-6 col-md-2">
                         <a href="/">
-                            <img src="{% if site.using_assets == true %}{% asset_path '{{site.data.footer.image}}' %}{% else %}{{site.data.footer.image}}{% endif %}" class="footer-logo pull-right" alt="{{site.data.company.name}}" />
+                            <img src="{% if site.data.footer.image %}{% asset_path '{{site.data.footer.image}}' %}{% endif %}" class="footer-logo pull-right" alt="{{site.data.company.name}}" />
                         </a>
                     </div>
                     {% endif %}
