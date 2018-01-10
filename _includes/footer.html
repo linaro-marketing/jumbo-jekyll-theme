@@ -30,7 +30,7 @@
                 <div class="row footer-strip">
                     <div class="container">
                         <div class="col-md-6 company-footer-bottom">
-                            <a href="{{site.data.linaro.url}}"><img src="{{site.data.linaro.footer-logo}}" class="linaro-logo" alt="Linaro Icon" /></a>
+                            <a href="{{site.data.linaro.url}}"><img src="{% asset_path '{{site.data.settings.linaro-footer-image}}' %}" class="linaro-logo" alt="Linaro Icon" /></a>
                             Copyright &copy; {{ 'now' | date: "%Y" }} Linaro Limited <a href="{{site.data.linaro.url}}">{{site.data.linaro.name}}</a>
                             {% for link in site.data.footer.company-links %}
                                 <span class="coloured-bp">&bull;</span>
