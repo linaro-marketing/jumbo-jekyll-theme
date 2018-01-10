@@ -1,16 +1,11 @@
 {% if layout.js-package %}
-    {% if layout.js-package %}
-        {% capture js-package %}package-{{layout.js-package}}{% endcapture %}
-        {% js {{js-package}} %}
-    {% else %}
-        {% js package %}
-    {% endif %}
+    {% capture js-package %}package-{{layout.js-package}}{% endcapture %}
+    {% js {{js-package}} %}
+{% elsif page.js-package %}
+    {% capture js-package %}package-{{page.js-package}}{% endcapture %}
+    {% js {{js-package}} %}
 {% else %}
-    {% if page.js-package %}
-        {% capture js-package %}package-{{page.js-package}}{% endcapture %}
-        {% js {{js-package}} %}
-    {% else %}
-        {% js package %}
-    {% endif %}
+    {% js package %}
 {% endif %}
+
 
