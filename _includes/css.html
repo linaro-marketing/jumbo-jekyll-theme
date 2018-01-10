@@ -1,40 +1,9 @@
-{% if site.using_assets == true %}
-    {% if page.css-pack %}
-        {% if page.css-pack == "openhours" %}
-            <link rel="stylesheet" href="{{ "/assets/css/main-openhours.css" | relative_url }}">
-        {% elsif page.css-pack == "home" %}
-            <link rel="stylesheet" href="{{ "/assets/css/main-home.css" | relative_url }}">
-        {% elsif page.css-pack == "blog" %}
-            <link rel="stylesheet" href="{{ "/assets/css/main-blog.css" | relative_url }}">
-        {% elsif page.css-pack == "products" %}
-            <link rel="stylesheet" href="{{ "/assets/css/main-products.css" | relative_url }}">
-        {% elsif page.css-pack == "projects" %}
-            <link rel="stylesheet" href="{{ "/assets/css/main-projects.css" | relative_url }}">
-        {% elsif page.css-pack == "lightbox" %}
-            <link rel="stylesheet" href="{{ "/assets/css/main-lightbox.css" | relative_url }}">
-        {% else %}
-            <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-        {% endif %}
-    {% else %}
-        {% if layout.css-pack == "products" %}
-            <link rel="stylesheet" href="{{ "/assets/css/main-products.css" | relative_url }}">
-        {% elsif layout.css-pack == "projects" %}
-            <link rel="stylesheet" href="{{ "/assets/css/main-projects.css" | relative_url }}">
-        {% elsif layout.css-pack == "blog" %}
-            <link rel="stylesheet" href="{{ "/assets/css/main-blog.css" | relative_url }}">
-        {% else %}
-            <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-        {% endif %}
-    {% endif %}
+{% if layout.css-package %}
+    {% capture css-package %}/assets/css/main-{{layout.css-package}}.css{% endcapture %}
+    <link rel="stylesheet" href="{{ css-package | relative_url }}">
+{% elsif page.css-package %}
+    {% capture css-package %}/assets/css/main-{{page.css-package}}.css{% endcapture %}
+    <link rel="stylesheet" href="{{ css-package | relative_url }}">
 {% else %}
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-    {% if page.specific_css %}
-        {% for stylesheet in page.specific_css %}
-            <link rel="stylesheet" href="{{stylesheet}}">
-        {% endfor %}
-    {% elsif layout.specific_css %}
-        {% for stylesheet in layout.specific_css %}
-            <link rel="stylesheet" href="{{stylesheet}}">
-        {% endfor %}
-    {% endif %}
 {% endif %}

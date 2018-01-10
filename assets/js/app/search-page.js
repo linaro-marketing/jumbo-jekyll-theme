@@ -35,7 +35,6 @@ function getAllUrlParams(url) {
       return obj;
     }
 
-var searchQuery = getAllUrlParams().q;
+var searchQuery = getAllUrlParams().s;
 
-
-$('#searchIframe').attr('src', "https://search.linaro.org/search/?fields.label=OpTee&q=" + searchQuery);
+$('#searchIframe').attr('src', "https://search.linaro.org/search/?fields.label=Linaro&q=" + searchQuery);

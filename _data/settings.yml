@@ -7,6 +7,9 @@ mailchimp:
 newsletter:
     enabled: true
     
+# Footer Image default is linaro sprinkle
+linaro-footer-image: Linaro-Sprinkle.svg
+    
 # Settings for the home page
 home:
     shaped-divider: false
