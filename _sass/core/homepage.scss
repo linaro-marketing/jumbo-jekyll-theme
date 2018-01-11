@@ -16,10 +16,14 @@
 }
 
 .homepage-shape {
-    margin-bottom: -8px;
+    margin-bottom: -6px;
 }
 
-.homepage-image-jumbotron {
+div#homepage-jumbotron {
+    margin-top: 20px;
+}
+
+#homepage-header {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -27,7 +31,7 @@
 }
 
 #home-page-text{
-    color: $home-page-title-text;
+    color: $home-page-text;
 }
 
 #home-page-title{

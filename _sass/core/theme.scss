@@ -128,14 +128,16 @@ p .justified{
 .main-cont {
     background-color:#fff;
 }
+// Shape Divider Style 
 
+.row.shape-divider {
+    background-color: $brand-primary;
+}
 // Content Container - container used for actual content
 // Not for breadcrumb / nav / footer
 
 #content-container{
     background-color: $body-bg;
-    padding-right: 0;
-    padding-left:0;
     padding-top: 20px;
 }
 
@@ -248,16 +250,14 @@ p.sub-tag {
 }
 
 //Jumbotron Custom Styling
-.jumbotron{
-    margin-bottom: 0;
-    margin-top:0;
-    padding-bottom:0px;
-    background: #FFF; /* Old browsers */
+#homepage-header{
+    background: $jumbotron-bottom-color; /* Old browsers */
     background: -moz-linear-gradient(top, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, $jumbotron-top-color 0%,$jumbotron-bottom-color 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$jumbotron-top-color, endColorstr=$jumbotron-bottom-color,GradientType=0 ); /* IE6-9 */
 }
+
 .container .jumbotron, .container-fluid .jumbotron {
     border-radius: 0px;
 }
