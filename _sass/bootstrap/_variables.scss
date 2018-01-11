@@ -38,9 +38,9 @@ $cookie-consent-btn-bg:   $brand-primary !default;
 $footer-bg-color:         $gray-darker !default;
 $footer-text-color:       #fff !default;
 $sub-footer-color:        #E5E5E5 !default;
-$navbar-base-text-color:  #ffffff !default;
 
-
+// Nav Bar Overrides
+$navbar-text-color:  #ffffff !default;
 
 //== Scaffolding
 //
@@ -381,7 +381,7 @@ $container-lg:                 $container-large-desktop !default;
 //##
 
 // Basics of a navbar
-$navbar-height:                    80px !default;
+$navbar-height:                    66px !default;
 $navbar-margin-bottom:             $line-height-computed !default;
 $navbar-border-radius:             0 !default;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
@@ -408,7 +408,7 @@ $navbar-default-brand-hover-bg:            transparent !default;
 
 // Navbar toggle
 $navbar-default-toggle-hover-bg:           transparent !default;
-$navbar-default-toggle-icon-bar-bg:        $brand-primary !default;
+$navbar-default-toggle-icon-bar-bg:        $navbar-text-color !default;
 $navbar-default-toggle-border-color:       transparent !default;
 
 
