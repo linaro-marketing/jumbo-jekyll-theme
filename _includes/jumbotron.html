@@ -1,19 +1,26 @@
-<div class="container-fluid" id="homepage-header"> <!--Fluid Container -->
+<div class="container-fluid" id="homepage-header" {% if site.data.company.homepage_image %}
+    style="background: #000 url({% asset_path '{{site.data.settings.home.jumbotron.background-image}}' %}) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position-y: 80px;"
+    class="jumbotron text-center homepage-jumbotron homepage-image-jumbotron"
+{% else %}
+    class="jumbotron text-center homepage-jumbotron"
+{% endif %}> <!--Fluid Container -->
     <div class="row"> <!--Row -->
         <div id="homepage-jumbotron"
-            {% if site.data.company.homepage_image %}
-                style="background: #000 url({% asset_path '{{site.data.settings.home.jumbotron.background}}' %}) no-repeat center center fixed;
-                background-size: cover;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-position-y: 80px;"
-                class="jumbotron text-center homepage-jumbotron homepage-image-jumbotron"
-            {% else %}
-                class="jumbotron text-center homepage-jumbotron"
-            {% endif %} > <!--Jumbotron div -->
+             > <!--Jumbotron div -->
             
           <div class="container" id="jumbotron-text"> <!--Container -->
+              
+              {% if site.data.settings.home.jumbotron.image %}
+                  <div class="col-md-12">
+                      <img src="{% asset_path '{{site.data.settings.home.jumbotron.image}}' %}" id="home-hero-image"
+                       class="img-responsive center-block animated fadeIn" alt="{{site.title}} Home Page Image">
+                  </div>
+              {% endif %}
               
               {% if site.data.settings.home.jumbotron.title %}
                   <h1 id="home-page-title" class="fade-in-one" id="homepage-heading">
@@ -37,8 +44,11 @@
                 {% endfor %}
             </p>
             
-          </div>
+          </div>          
           
-        </div> <!--End Jumbotron div -->
+        </div> <!--End Jumbotron div -->        
     </div> <!--row -->
+    {% if site.data.settings.home.shaped-divider %}
+      {% include shape-divider.html %}
+    {% endif %}
 </div> <!--End Container-fluid -->
