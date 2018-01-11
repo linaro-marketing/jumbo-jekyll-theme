@@ -16,7 +16,6 @@ pages:
       options:
           - text: Bootstrap
             url: /css/bootstrap/ 
-            
     - title: Jekyll
       options:
           - text: Plugins

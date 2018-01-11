@@ -15,7 +15,7 @@ home:
     # If this is set then the navigation will be transparent.
     transparent_nav: true
     # If this is set to true then the shape divider will be displayed
-    shaped-divider: false
+    shaped-divider: true
     # Jumbotron settings for the home page
     jumbotron:
         # Title for the home page jumbotron
@@ -35,7 +35,9 @@ home:
               url: 
               class: btn btn-primary btn-lg fade-in-three bottom-border-five
         # Background image for the home page located in assets/images
-        background: background-image.png
+        background-image: background-image.png
+        image: Linaro-Logo.svg
+        
 
 # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
 github_username: Linaro
