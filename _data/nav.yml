@@ -39,12 +39,6 @@ pages:
             url: /js/jquery/
           - text: Bootstrap
             url: /js/bootstrap/
-          - text: Lead Projects
-            url: /projects/
-          - text: Initiatives
-            url: /initiatives/
-          - text: Professional Services
-            url: /professional-services/
             
     - title: Blog
       url: /blog/
