@@ -29,7 +29,11 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "autoprefixer-rails", "~> 7.1"
   spec.add_runtime_dependency "jekyll-paginate-v2", "~> 1.8"
   spec.add_runtime_dependency "jekyll-feed", "~> 0.6"
-  spec.add_runtime_dependency "jekyll-get"
+  
+  # Gem Dependencies required by the jekyll-get plugin.
+  spec.add_runtime_dependency "hash-joiner"
+  
+  
   # 
   # # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
   # spec.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
