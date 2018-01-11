@@ -52,10 +52,6 @@
 
 @media screen and (max-width: $screen-lg) and (min-width: 0px) {
     
-    ul#navbar-buttons>li {
-        padding-top: 15px;
-    }
-    
     button.navbar-toggle {
         margin-right: 10px;
     }
@@ -73,7 +69,7 @@
     color:$brand-primary !important;
 }
 button.btn.btn-default.dropdown-toggle {
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
 }
 
 
@@ -201,7 +197,7 @@ nav.nav-dark .cls-2 {
 }
 
 .dropdown-submenu > ul.dropdown-menu > li > a {
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
 }
 .dropdown-submenu > ul.dropdown-menu > li > a:hover {
     color: $brand-primary;
@@ -218,7 +214,7 @@ nav.nav-dark .cls-2 {
 }
 
 .dropdown-submenu > ul.dropdown-menu > li > a {
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
 }
 .dropdown-submenu > ul.dropdown-menu > li > a:hover {
     color: $brand-primary;
@@ -355,7 +351,7 @@ nav > ul.navbar-right {
         background: transparent;
     }
     #tabbed-nav-bar .nav-tabs>li>a {
-        color: $navbar-base-text-color;
+        color: $navbar-text-color;
     }
     #tabbed-nav-bar .nav-tabs>li>a:hover {
         color: $brand-primary;
@@ -452,7 +448,7 @@ nav > ul.navbar-right {
     font-weight: 700;
 }
 .nav-tabs > li > a {
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
 }
 
 .nav-tabs > li.active > a,
@@ -465,7 +461,7 @@ nav > ul.navbar-right {
 }
 .tab-nav > li > a::after {
     background: $brand-primary none repeat scroll 0% 0%;
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
 }
 
 
@@ -486,12 +482,12 @@ nav > ul.navbar-right {
 }
 
 button#closeForm {
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
 }
 
 @media (max-width: 1199px){
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a.dropdown-item {
-        color: $navbar-base-text-color;
+        color: $navbar-text-color;
     }
 }
 
@@ -508,11 +504,6 @@ li.side-nav-button:first-child {
 .nav-pills > li.side-nav-button>a {
     border-radius: 0px;
     font-size: 16px;
-}
-
-
-ul#navbar-buttons > li {
-    padding-top: 15px;
 }
 
 .dropdown-menu li:hover {
@@ -552,7 +543,7 @@ ul#navbar-buttons > li {
     letter-spacing: 0px;
 }
 .navbar-inverse #navbar-buttons >li>a {
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
 }
 
 .navbar-inverse #navbar-buttons>li>a:hover{
@@ -587,7 +578,7 @@ div#search_bar input {
     text-align: right;
     font-size: 26px;
     background-color: $navbar-inverse-bg;
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
     border-color: inherit;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -613,27 +604,27 @@ div#search_bar button {
     font-size: 16px;
     background-color: $navbar-inverse-bg;
     border:0;
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
 }
 div#search_bar button:hover {
-    background-color: $navbar-base-text-color;
+    background-color: $navbar-text-color;
     color: $navbar-inverse-bg;
 }
 
 div#search_bar input::-webkit-input-placeholder {
-    color: $navbar-base-text-color !important;
+    color: $navbar-text-color !important;
 }
  
 div#search_bar input:-moz-placeholder { /* Firefox 18- */
-    color: $navbar-base-text-color !important;  
+    color: $navbar-text-color !important;  
 }
  
 div#search_bar input::-moz-placeholder {  /* Firefox 19+ */
-    color: $navbar-base-text-color !important;  
+    color: $navbar-text-color !important;  
 }
  
 div#search_bar input:-ms-input-placeholder {  
-    color: $navbar-base-text-color !important;  
+    color: $navbar-text-color !important;  
 }
 
 
@@ -718,6 +709,41 @@ li#linaro-app-menu-item > ul:before {
     }
 }
 
+
+// Nav Bar SVG Base Style 
+#navbar_svg .cls-1 {
+    fill: none;
+}
+
+#navbar_svg .cls-2 {
+    fill: #666;
+}
+
+#navbar_svg .cls-3 {
+    fill: #9c3;
+}
+#navbar_svg .cls-8 {
+    fill: #9c3;
+}
+
+#navbar_svg .cls-4,
+#navbar_svg .cls-5 {
+    fill: #c03;
+}
+
+#navbar_svg .cls-5 {
+    opacity: 0.6;
+}
+
+#navbar_svg .cls-6,
+#navbar_svg .cls-7 {
+    fill: #909;
+}
+
+#navbar_svg .cls-7,
+#navbar_svg .cls-8 {
+    opacity: 0.7;
+}
 
 
 

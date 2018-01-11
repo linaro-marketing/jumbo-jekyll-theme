@@ -1,4 +1,4 @@
-//Body
+// Body Style
 body {
     background: $navbar-inverse-bg;
     letter-spacing: 0.5px;
@@ -10,13 +10,15 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
- html.ios7 body {height: 100%;position: fixed;width: 100%;}
+// Iphone Bug Fix
+html.ios7 body {height: 100%;position: fixed;width: 100%;}
 
- html {
-     height  : 100%;
-    //  overflow: hidden; Will break the sticky navbar - be warned
+
+// HTML Style
+html {
+ height  : 100%;
+//  overflow: hidden; Will break the sticky navbar - be warned
 }
-
 
 //Make sure the comments sections is beneath content.
 section#comments-section {
@@ -118,7 +120,7 @@ p .justified{
     line-height: 1.66em;
 }
 //Main Container Style margin accounts for Nav
-#main-container{
+#wrapper{
     margin-top: 66px;
     overflow-x: hidden;
 }
@@ -127,22 +129,24 @@ p .justified{
     background-color:#fff;
 }
 
-//Content Container
-.content-container{
-    background-color: #FFF;
-    padding-top:20px;
+// Content Container - container used for actual content
+// Not for breadcrumb / nav / footer
+
+#content-container{
+    background-color: $body-bg;
     padding-right: 0;
     padding-left:0;
+    padding-top: 20px;
 }
 
 //Content Container block elemcents
-.content-container p {
+#content-container p {
     font-size: 20px;
     color: black;
     line-height: 1.66em;
 }
-.content-container ul { font-size:18px; }
-.content-container ol { font-size: 18px;}
+#content-container ul { font-size:18px; }
+#content-container ol { font-size: 18px;}
 
 
 
@@ -274,12 +278,12 @@ a.cc-link {
 //Mailchimp
 button#mc-embedded-subscribe {
     background-color: $navbar-inverse-bg;
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
     transition: all 1s ease;
 }
 button#mc-embedded-subscribe:hover {
     background-color: lighten($footer-bg-color, 20%);
-    color: $navbar-base-text-color;
+    color: $navbar-text-color;
     transition: all 1s ease;
 }
 

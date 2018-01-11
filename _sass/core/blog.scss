@@ -16,12 +16,19 @@ div#pagination_panel > ul > li.active > a{
 
 
 
+img.blog-author-image {
+    transition: all 100ms linear;
+}
 
-#main-container small.blog-author.text-center > a > em {
+a:hover > img.blog-author-image {
+    border-color: #d4d4d4;
+}
+
+#wrapper small.blog-author.text-center > a > em {
     color:white;
     transition: all 500ms linear;
 }
-#main-container small.blog-author.text-center > a:hover > em {
+#wrapper small.blog-author.text-center > a:hover > em {
     color:#a681b8;
 }
 
