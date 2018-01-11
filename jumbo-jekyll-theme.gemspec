@@ -1,6 +1,6 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
-  spec.name          = "linaro-jekyll-theme"
+  spec.name          = "jumbo-jekyll-theme"
   spec.version       = "1.3"
   spec.authors       = ["Kyle Kirkby"]
   spec.email         = ["kyle.kirkby@linaro.org"]
@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r{^(assets|_(data|includes|layouts|sass)/|(LICENSE|README|robots)((\.(txt|md|markdown)|$)))}i)
+    f.match(%r{^(assets|_(data|includes|layouts|sass|plugins)/|(LICENSE|README|robots)((\.(txt|md|markdown)|$)))}i)
   end
 
   # spec.files         = []
@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "autoprefixer-rails", "~> 7.1"
   spec.add_runtime_dependency "jekyll-paginate-v2", "~> 1.8"
   spec.add_runtime_dependency "jekyll-feed", "~> 0.6"
+  spec.add_runtime_dependency "jekyll-get"
   # 
   # # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
   # spec.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
