@@ -8,7 +8,7 @@ $(document).ready(function(){
     var nav_height = nav_base.height();
     var search_bar = $("div#search_bar");
 
-    var main_content = $('div#jumbotron-caption');
+    var main_content = $('div#jumbotron-text');
 
     if(nav_light.length || nav_dark.length){
 
