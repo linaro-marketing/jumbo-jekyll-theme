@@ -5,7 +5,7 @@ description: |-
   The Jumbo Jekyll Theme is used across all Linaro static sites.
 # Destination of the Jekyll site upon build of site.  
 destination: _site
-# Permalink for the blog posts
+# Default permalink for blog posts
 permalink: /blog/:title/ 
 # Syntax highlighter
 highlighter: rouge
