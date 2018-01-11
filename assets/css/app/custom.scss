@@ -1,5 +1,5 @@
 
-@media (max-width: 767px) {
+@media (max-width: $screen-sm) {
     ul#tabbed_nav > li {
         width: 100%;
     }
@@ -150,14 +150,12 @@ a.btn.btn-linaro-home.dark:hover {
     height: 110px;
 }
 
-.content-container h3 {
+#content-container h3 {
     color: #9758b7 !important;
 }
-.content-container a h3:hover {
+#content-container a h3:hover {
     opacity: .8;
 }
-
-
 
 .job-openings{
     margin-top:20px;
@@ -198,17 +196,6 @@ ul#tabbed_nav {
     margin-bottom:0 !important;
 }
 
-
-
-
-#footer a.footer-element {
-    color: #252525;
-}
-#footer a.footer-element:hover {
-    color: #9657c3;
-}
-
-
 .col-md-6.company-footer-bottom {
     font-size: 13px;
 }
@@ -224,15 +211,6 @@ a.btn.btn-social-icon:hover i {
 .row.footer-strip {
     border-top-color: #ccc;
 }
-
-#footer .col-md-6.company-footer-bottom a {
-    color: #252525;
-}
-
-#footer .col-md-6.company-footer-bottom a:hover {
-    color: #9657c3;
-}
-
 
 //Wordpress style
 #main-container blockquote, #main-container code, #main-container dl, #main-container fieldset,
@@ -253,15 +231,6 @@ h1, h2, h3, h4, h5, h6 {
 #main-container a:hover {
     text-decoration: none;
     color: darken($brand-primary, 20%);
-}
-
-.content-container ul > li {
-    font-size: 16px;
-    line-height: 26px;
-}
-
-.content-container .c-forms-form-title {
-    display: block;
 }
 
 blockquote{
@@ -287,7 +256,7 @@ ul.nav.nav-pills.nav-stacked li:first-child {
     font-weight: bold;
 }
 
-.content-container ul {
+#content-container ul {
     color: #252525 !important;
     font-size: 16px !important;
 }
@@ -301,18 +270,13 @@ ul {
     font-size: 16px;
 }
 
-
-.container-fluid.content-container {
-    padding-top: 20px !important;
-}
-
-.content-container h1 {
+#content-container h1 {
     color: #393836 !important;
     font-size: 36px !important;
     margin-top: 0;
 }
 
-.content-container h1, .content-container h2, .content-container h3, .content-container h4, .content-container h5 {
+#content-container h1, #content-container h2, #content-container h3, #content-container h4, #content-container h5 {
     color: #393836 !important;
 }
 
@@ -333,7 +297,7 @@ span.connect-darker-blue{
     color: #5990d4;
     font-weight:bold;
 }
-.content-container p {
+#content-container p {
     font-size:16px !important;
     color: #252525 !important;
 }
@@ -701,7 +665,7 @@ div.dark {
     line-height: 1.66em;
 }
 
-.content-container h2 {
+#content-container h2 {
     font-size: 30px;
     color: #3D383E;
     font-weight: 200;
@@ -719,64 +683,6 @@ div.dark {
     padding-left: 10px;
 }
 
-
-
-// Nav Bar SVG Base Style 
-#navbar_svg .cls-1 {
-    fill: none;
-}
-
-#navbar_svg .cls-2 {
-    fill: #666;
-}
-
-#navbar_svg .cls-3 {
-    fill: #9c3;
-}
-#navbar_svg .cls-8 {
-    fill: #9c3;
-}
-
-#navbar_svg .cls-4,
-#navbar_svg .cls-5 {
-    fill: #c03;
-}
-
-#navbar_svg .cls-5 {
-    opacity: 0.6;
-}
-
-#navbar_svg .cls-6,
-#navbar_svg .cls-7 {
-    fill: #909;
-}
-
-#navbar_svg .cls-7,
-#navbar_svg .cls-8 {
-    opacity: 0.7;
-}
-
-
-
-
-#main-container small.blog-author.text-center > a > em {
-    color:white;
-    transition: all 500ms linear;
-}
-#main-container small.blog-author.text-center > a:hover > em {
-    color:#a681b8;
-}
-
-img.blog-author-image {
-    transition: all 100ms linear;
-}
-
-a:hover > img.blog-author-image {
-    border-color: #d4d4d4;
-}
-
-
-
 .embed-responsive-16by9 {
     padding-bottom: 56.25%;
     margin-bottom: 25px;
@@ -789,41 +695,3 @@ article.post-content {
 article.post-content > .col-md-8 {
     padding: 0;
 }
-
-
-
-
-// Navbar App menu Quick style
-// 
-// .navbar-right {
-//     float: right;
-// }
-// .nav.navbar-nav.navbar-right ul {
-//     float: right;
-// }
-// .nav.navbar-nav.navbar-right li {
-//     float: left;
-// }
-// .navbar-toggle {
-//     float: right;
-// }
-// @media all and (max-width:767px) {
-//     .navbar-header {
-//         float: left;
-//     }
-//     
-//     .navbar-collapse {
-//         clear: both;
-//         float: none;
-//     }
-// }
-// 
-// div#navbar-collapse {
-//     float: right !important;
-//     text-align: right;
-// }
-// 
-// ul#navbar-buttons {
-//     position: relative;
-//     float: right;
-// }

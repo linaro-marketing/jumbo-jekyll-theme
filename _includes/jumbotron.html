@@ -1,4 +1,4 @@
-<div class="container-fluid content-container"> <!--Fluid Container -->
+<div class="container-fluid" id="homepage-header"> <!--Fluid Container -->
     <div class="row"> <!--Row -->
         <div id="homepage-jumbotron"
             {% if site.data.company.homepage_image %}
@@ -13,7 +13,7 @@
                 class="jumbotron text-center homepage-jumbotron"
             {% endif %} > <!--Jumbotron div -->
             
-          <div class="container"> <!--Container -->
+          <div class="container" id="jumbotron-text"> <!--Container -->
               
               {% if site.data.settings.home.jumbotron.title %}
                   <h1 id="home-page-title" class="fade-in-one" id="homepage-heading">
@@ -29,8 +29,14 @@
                 </p>
               {% endif %}
             
-            <p id="buttons"><a class="btn btn-primary btn-lg fade-in-three bottom-border-five" href="https://github.com/kylekirkby/LinaroJekyllTheme" role="button">Customize this in the _data folder</a>&#32;&#32;
-              <a class="btn btn-primary btn-lg fade-in-three bottom-border-five" href="/setup/" role="button">Setup</a></p>
+            <p id="buttons">
+                {% for button in  site.data.settings.home.jumbotron.buttons %}
+                    <a class="{{button.class}}" href="{{button.url}}" role="button">
+                        {{button.text}}
+                    </a>
+                {% endfor %}
+            </p>
+            
           </div>
           
         </div> <!--End Jumbotron div -->

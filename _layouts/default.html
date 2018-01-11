@@ -6,9 +6,16 @@ css-package: main
 <html lang="en">
     {% include head.html %}
     <body>
-            {% include nav.html %}
-            {{content}}
-            {% include footer.html %}
+            {% if site.data.company.google.tag_manager %}
+              {% include _theme-includes/_script-includes/gtm/gtm-noscript.html %}
+            {% endif %}
+            <div id="wrapper">
+                {% include nav.html %}
+                {{content}}
+                {% include footer.html %}
+            </div>
+            
             {% include javascript.html %}
+        
     </body>
 </html>

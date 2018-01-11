@@ -11,8 +11,15 @@
 #footer .col-md-6.company-footer-bottom a:hover {
     color: $brand-primary;
 }
+// 
+#footer a.footer-element {
+    color: $footer-text-color;
+}
+#footer a.footer-element:hover {
+    color: $brand-primary;
+}
 
-.content-container > div.row.sub-footer{
+#content-container > div.row.sub-footer{
     margin-top: 20px;
 }
 input#mc-embedded-subscribe {

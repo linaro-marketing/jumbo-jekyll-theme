@@ -5,7 +5,7 @@ description: |-
   The Jumbo Jekyll Theme is used across all Linaro static sites.
 # Destination of the Jekyll site upon build of site.  
 destination: _site
-# Permalink for the blog posts
+# Default permalink for blog posts
 permalink: /blog/:title/ 
 # Syntax highlighter
 highlighter: rouge
@@ -57,6 +57,12 @@ pagination:
 # Jekyll pagination v2 autopages configuration.
 autopages:
   enabled: false
+  
+ # Jekyll_get plugin configuration. This will not be needed in all jekyll sites
+ # only those that are displaying news from the news db or listing Linaro members.
+# jekyll_get:
+#   data: members
+#   json: 'https://github.com/Linaro/db'
 
 # Jekyll defaults - used to set default front matter values to collections and posts
 defaults:

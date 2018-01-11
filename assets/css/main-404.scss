@@ -1,24 +1,17 @@
 ---
 ---
-//Bootstrap Overrides
+// App Overrides - Sass variables
 @import "app/overrides";
-
 
 //Boostrap Includes
 @import 'bootstrap';
 @import 'bootstrap/variables';
 
-// Linaro Jekyll Theme Includes
-@import "core/fonts";
-@import "core/font-awesome.min";
-@import "core/nav";
-@import "core/theme";
-@import "core/cookieconsent";
-@import "core/footer";
-@import "core/social-media-icons";
-@import "core/tables";
+// Core Theme
+@import 'core';
 
+//Additional Core includes
+@import "core/404";
 
 // App Includes
 @import "app/custom";
-@import "app/404";

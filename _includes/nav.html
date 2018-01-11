@@ -1,18 +1,4 @@
-{% if site.data.company.google.tag_manager %}
-  {% include _theme-includes/_script-includes/gtm/gtm-noscript.html %}
-{% endif %}
-{% if page.facebook %}
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-{% endif %}
-
-<nav class="{% if page.nav-dark %}nav-dark {% elsif page.nav-light %}nav-light {% endif %}{% if site.data.nav.style %}{{ site.data.nav.style }}{% else %}navbar-inverse navbar-fixed-top{% endif %} no-js" id="main-navigation">
+<nav class="{% if layout.nav-light %}{% if site.data.settings.home.transparent_nav %}nav-light {% else %}nav-dark {% endif %}{% else %}nav-dark {% endif %}navbar-inverse navbar-fixed-top" id="main-navigation">
 
         <!-- NAVBAR HEADER-->
          <div class="navbar-header">
@@ -86,43 +72,47 @@
                     {% endif %}
                 {% endfor %}
                 
-                <li id="search-menu-item">
-                    <a href="#search" class="dropdown-toggle" id="search_icon">
-                         <i class="glyphicon glyphicon-search"></i>
-                    </a>
-                    
-                </li>
+                {% if site.data.nav.search.enabled %}
+                    <li id="search-menu-item">
+                        <a href="#search" class="dropdown-toggle" id="search_icon">
+                             <i class="glyphicon glyphicon-search"></i>
+                        </a>
+                        
+                    </li>
+                {% endif %}
         
             </ul>
             
-            <div id="search_bar">
-                
-                <form class="form-inline" action="/search/" method="GET" target="_self" id="search_form">
-                    <div class="input-group">
-                      <input type="text" name="s" class="form-control" placeholder="Search...">
-                       <span class="input-group-btn">
-                           <!--Reset-->
-                           <button type="reset" class="btn btn-default" id="search_close">
-                               <span class="glyphicon glyphicon-remove">
-                                   <span class="sr-only">Close</span>
-                               </span>
-                           </button>
-                       </span>
-                       <span class="input-group-btn">
-                           <!--Search-->
-                           <button type="submit" class="btn btn-default" id="search_search">
-                               <span class="glyphicon glyphicon-search">
-                                   <span class="sr-only">Close</span>
-                               </span>
-                           </button>
-                       </span>
-                       <input type="hidden" name="fields.label" value="{{ site.data.company.search-label }}">
-                    </div>
-                </form>
-                
-            </div>
+            
+            {% if site.data.nav.search.enabled %}
+                <div id="search_bar">
+                    
+                    <form class="form-inline" action="/search/" method="GET" target="_self" id="search_form">
+                        <div class="input-group">
+                          <input type="text" name="s" class="form-control" placeholder="Search...">
+                           <span class="input-group-btn">
+                               <!--Reset-->
+                               <button type="reset" class="btn btn-default" id="search_close">
+                                   <span class="glyphicon glyphicon-remove">
+                                       <span class="sr-only">Close</span>
+                                   </span>
+                               </button>
+                           </span>
+                           <span class="input-group-btn">
+                               <!--Search-->
+                               <button type="submit" class="btn btn-default" id="search_search">
+                                   <span class="glyphicon glyphicon-search">
+                                       <span class="sr-only">Close</span>
+                                   </span>
+                               </button>
+                           </span>
+                           <input type="hidden" name="fields.label" value="{{ site.data.company.search-label }}">
+                        </div>
+                    </form>
+                    
+                </div>
+            {% endif %}
             
   </div>
 </nav>
-<!--- Page Start Main Container--->
-<div id="main-container" {% if page.home %}class="home-container"{% endif %}>
+

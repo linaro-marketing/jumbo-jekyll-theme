@@ -8,20 +8,10 @@
 @import 'bootstrap/variables';
 
 // Linaro Jekyll Theme Includes
-@import "core/fonts";
-@import "core/nav";
-@import "core/theme";
-@import "core/cookieconsent";
-@import "core/footer";
-@import "core/social-media-icons";
-@import "core/animations";
-@import "core/carousel-styles";
+@import 'core';
 
-@import "core/breadcrumb";
-@import "core/tables";
-@import "core/blog";
-@import "core/lightbox";
-@import "core/syntax";
+// Additional Core Includes
+@import 'blog';
 
 // App Includes
 @import "app/custom";
