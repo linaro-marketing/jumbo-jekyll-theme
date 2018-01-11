@@ -2,10 +2,11 @@
 layout: default
 js-package: home
 css-package: home
+nav-light: true
 ---
-{% include home-hero.html %}
+{% include jumbotron.html %}
 
-<div class="container-fluid content-container">
+<div class="container-fluid" id="content-container">
     <div class="row">
         <div class="container">
             {{ content }}
