@@ -12,6 +12,13 @@ css-package: main
             <div id="wrapper">
                 {% include nav.html %}
                 {{content}}
+
+                {% if site.data.settings.newsletter.enabled == true %}
+                    {% if page.url != "/search/" %}
+                        {% include newsletter.html %}
+                    {% endif %}
+                {% endif %}
+                
                 {% include footer.html %}
             </div>
             
