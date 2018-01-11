@@ -12,6 +12,9 @@ linaro-footer-image: Linaro-Sprinkle.svg
     
 # Settings for the home page
 home:
+    # If this is set then the navigation will be transparent.
+    transparent_nav: true
+    # If this is set to true then the shape divider will be displayed
     shaped-divider: false
     # Jumbotron settings for the home page
     jumbotron:
@@ -26,8 +29,11 @@ home:
         # Buttons to be displayed in the Jumbotron
         buttons:
             - text: Learn More
-              class: btn btn-primary
-              url: /learn-more/
+              class: btn btn-primary btn-lg fade-in-three bottom-border-five
+              url: /about/
+            - text: Get Started
+              url: 
+              class: btn btn-primary btn-lg fade-in-three bottom-border-five
         # Background image for the home page located in assets/images
         background: background-image.png
 
