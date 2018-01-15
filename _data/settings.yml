@@ -37,8 +37,8 @@ home:
               url: 
               class: btn btn-primary btn-lg fade-in-three bottom-border-five
         # Background image for the home page located in assets/images
-        background-image: background-image.png
-        image: Linaro-Logo.svg
+        # background-image: background-image.png
+        # image: Linaro-Logo.svg
         
 
 # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
