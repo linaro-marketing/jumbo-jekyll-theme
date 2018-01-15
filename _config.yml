@@ -38,12 +38,17 @@ jekyll_tidy:
     # JS Path added to exclude to stop errors.
     exclude: ["assets/**/*.js"] 
     
-# Permalink style to be used for paginating pages
-paginate_path: /blog/:num/ 
+# Permalink style to be used for paginating pages in pagination.html
+paginate_path: /blog/:num/
 
 # Jekyll Pagination V2 Configuration
 pagination:
+    # Default pagination path for Jekyll Posts
+    # For other permalinks set in the front matter of the post index page
+    permalink: /blog/:num/
+    # Enabled or not?
     enabled: true
+    # Home many posts to display by default
     per_page: 5
     # Number of pages to show either side of the current page i.e - 1, 2, {3}, 4, 5
     trail:
@@ -93,4 +98,5 @@ jekyll_relative_links:
     
 plugins:
     - jekyll-assets
+    - jekyll-paginate-v2
     - jekyll-seo-tag
