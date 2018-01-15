@@ -2,16 +2,21 @@
 search:
     enabled: true
     label: Linaro
+    
 # Nav Brand Config
 brand:
     text: Jumbo Jekyll Theme
-    image: linaro-logo.png
+    image: 
+        enabled: true
+        name: Linaro-Logo.svg
     url: /
     
 # Navigation pages
 pages:
     - title: Home
       url: /
+    - title: About
+      url: /about/
     - title: CSS
       options:
           - text: Bootstrap
@@ -31,7 +36,29 @@ pages:
             url: /jekyll/includes/
           - text: Layouts
             url: /jekyll/layouts/
-               
+            options:
+                - text: Default
+                  url: /jekyll/layouts/default/
+                - text: Container
+                  url: /jekyll/layouts/container/
+                - text: Container Breadcrumb
+                  url: /jekyll/layouts/container-breadcrumb/
+                - text: Container Breadcrumb Left Sidebar
+                  url: /jekyll/layouts/container-breadcrumb-left-sidebar/
+                - text: Container Breadcrumb Right Sidebar
+                  url: /jekyll/layouts/container-breadcrumb-right-sidebar/
+                - text: Container Left Sidebar
+                  url: /jekyll/layouts/container-left-sidebar/
+                - text: Container Right Sidebar
+                  url: /jekyll/layouts/container-right-sidebar/
+                - text: Post
+                  url: /jekyll/layouts/post/
+                - text: Featured Image Post
+                  url: /jekyll/layouts/featured-image-post/
+                - text: Featured Image Post - No Sidebar
+                  url: /jekyll/layouts/featured-image-post-no-sidebar/
+
+
     - title: JS
       options:
           - text: JQuery
