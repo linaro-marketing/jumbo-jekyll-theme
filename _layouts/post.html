@@ -26,9 +26,18 @@ layout: container
                 {% assign author = site.authors | where: 'username' , page.author %}
                 {% assign author = author[0] %}
                 <em> By
-                    <a href="{{author.url}}">
-                        <b>{{author.name}}</b>
-                    </a>
+                    {% if author %}
+                        <a href="{{author.url}}">
+                            <strong>
+                                {{author.name}}
+                            </strong>
+                        </a>
+                    {% else %}
+                            <strong>
+                                {{page.author}}
+                            </strong>
+                    {% endif %}
+                    
                 </em>
             {% endif %}
             
