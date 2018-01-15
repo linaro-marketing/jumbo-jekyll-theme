@@ -21,7 +21,7 @@ navbar-inverse navbar-fixed-top" id="main-navigation">
               
             {% if site.data.nav.brand %}
                 <a class="navbar-brand " href="{{site.data.nav.brand.url}}">
-                    {% if site.data.nav.brand.image %}
+                    {% if site.data.nav.brand.image.enabled %}
                         {% if site.data.nav.brand.image.name %}
                              <img src="{% asset_path '{{ site.data.nav.brand.image.name }}' %}" alt="{% if site.data.settings.name %}{{ site.data.settings.name }}{% else %}Linaro Site{% endif %} Logo." id="brand-image" />
                         {% else %}
