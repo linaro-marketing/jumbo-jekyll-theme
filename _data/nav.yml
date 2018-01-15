@@ -7,20 +7,13 @@ search:
 brand:
     text: Jumbo Jekyll Theme
     image: 
-        enabled: true
+        enabled: false
         name: Linaro-Logo.svg
     url: /
     
 # Navigation pages
 pages:
-    - title: Home
-      url: /
-    - title: About
-      url: /about/
-    - title: CSS
-      options:
-          - text: Bootstrap
-            url: /css/bootstrap/ 
+    
     - title: Jekyll
       options:
           - text: Plugins
@@ -58,6 +51,19 @@ pages:
                 - text: Featured Image Post - No Sidebar
                   url: /jekyll/layouts/featured-image-post-no-sidebar/
 
+    - title: About
+      options:
+          - text: Overview
+            url: /about/
+          - text: Collaborate
+            url: /collaborate/
+          - text: Jekyll
+    
+    - title: CSS
+      options:
+          - text: Bootstrap
+            url: /css/bootstrap/ 
+
 
     - title: JS
       options:
@@ -68,7 +74,5 @@ pages:
             
     - title: Blog
       url: /blog/
-    - title: Collaborate
-      url: /collaborate/
     - title: Download
       url: /download/
