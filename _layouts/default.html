@@ -1,6 +1,5 @@
 ---
 js-package: main
-css-package: main
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +8,7 @@ css-package: main
             {% if site.data.company.google.tag_manager %}
               {% include _theme-includes/_script-includes/gtm/gtm-noscript.html %}
             {% endif %}
-            <div id="wrapper">
+            <div id="wrapper{% if layout.home == true %}-home{% endif %}">
                 {% include nav.html %}
                 {{content}}
 
