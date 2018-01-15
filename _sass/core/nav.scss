@@ -709,6 +709,19 @@ li#linaro-app-menu-item > ul:before {
     }
 }
 
+/* Tabbed Nav Bar Mobile Style*/
+@media (max-width: $screen-sm) {
+    ul#tabbed_nav > li {
+        width: 100%;
+    }
+    ul#tabbed_nav > li > a {
+        border:0;
+    }
+    ul#tabbed_nav > li > a:after {
+        height: 1px;
+        background-color: #fff;
+    }
+}
 
 // Nav Bar SVG Base Style 
 #navbar_svg .cls-1 {
