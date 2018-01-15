@@ -1,38 +1,30 @@
+
+/* Pagination Style */
 div#pagination_panel > ul > li.active > a{
     color: $navbar-inverse-bg;
 }
-.full-page-image {
-    color: $gray-base;
-    height:500px;
-    width: 100%;
-    object-fit: cover;
-    display: block;
-}
-.blog-row {
-    margin-top: 30px;
-    margin-left: 15px;
-    margin-right: 15px;
-}
 
-//Make sure the comments sections is beneath content.
+/* Make sure the comments sections is beneath content. */
 section#comments-section {
     clear: both;
 }
 
+/* Make sure div extends with content */
 article.post-content {
     overflow: auto;
 }
 
-
-
+/* Blog Author Image */
 img.blog-author-image {
     transition: all 100ms linear;
 }
 
+/* Change the author image border on hover */
 a:hover > img.blog-author-image {
     border-color: #d4d4d4;
 }
 
+/* Blog Author Text */
 #wrapper small.blog-author.text-center > a > em {
     color:white;
     transition: all 500ms linear;
@@ -41,27 +33,19 @@ a:hover > img.blog-author-image {
     color:#a681b8;
 }
 
-img.blog-author-image {
-    transition: all 100ms linear;
-}
 
-a:hover > img.blog-author-image {
-    border-color: #d4d4d4;
-}
-
-
-
-
-//Make post images responsive by default
-.post-content img {
+/* Blog Post Images - Responsive by default */
+article.post-content img {
     width: 100%;
     height: auto;
 }
 
-//Img Thumbnail size
+/* Blog Image thumbnail size */
 img.img-thumbnail {
     width: 100px;
 }
+
+/* Blog Side Panel Styles*/
 .blog-panel{
     margin-top:30px;
 }
@@ -104,7 +88,7 @@ img.img-thumbnail {
 .blog-author-image{
     height: 83px;
     width: 83px;
-    border-radius:83px;
+    border-radius: 83px;
     border: 4px solid white;
     background-size: cover;
 }
@@ -306,7 +290,12 @@ img.large-inline.right {
 }
 
 // Previous and Next Post Style
-@media(min-width:992px){
+@media(min-width:$screen-sm-min){
+    
+    
+    article{
+        padding-right: 20px;
+    }
     
     div.previous_post{
         display:block;
@@ -327,7 +316,7 @@ img.large-inline.right {
 }
 
 //Responsive CSS for Blog
-@media(max-width:767px){
+@media(max-width:$screen-sm-min){
 
     .blog-title{
         width:95%;

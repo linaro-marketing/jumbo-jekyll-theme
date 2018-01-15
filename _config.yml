@@ -97,6 +97,15 @@ jekyll_relative_links:
     verbose: 1
     
 plugins:
-    - jekyll-assets
-    - jekyll-paginate-v2
     - jekyll-seo-tag
+    - jekyll-sitemap
+    - bootstrap-sass
+    - uglifier
+    - jekyll-assets
+    - jekyll-tidy
+    - jekyll-redirect-from
+    - autoprefixer-rails
+    - jekyll-paginate-v2
+
+    
+    

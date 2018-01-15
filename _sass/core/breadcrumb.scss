@@ -3,7 +3,7 @@
 
 //Mobile Style for Breadcrumb
 
-@media(max-width:767px){
+@media(max-width:$screen-sm-min){
     .breadcrumb-container h1, .breadcrumb-container h2, .breadcrumb-container h3 {
         margin-top: 0;
         margin-bottom: 0;

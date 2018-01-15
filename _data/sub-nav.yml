@@ -2,60 +2,20 @@ pages:
   -
     list:
       -
-        title: "96Boards Overview"
-        url: /about/
+        title: "Container Left Sidebar"
+        url: /jekyll/layouts/container-left-sidebar/
       -
-        title: "Specifications"
-        url: "/specifications/"
+        title: "Container Right Sidebar"
+        url: "/jekyll/layouts/container-right-sidebar/"
       -
-        title: "Compliance"
-        url: "/compliance/"
+        title: "Container Breadcrumb Left Sidebar"
+        url: "/jekyll/layouts/container-breadcrumb-left-sidebar/"
       -
-        title: "Membership"
-        url: "/membership/"
-      -
-        title: "News"
-        url: "/news/"
-    urls: [/about/,/specifications/,/compliance/,/membership/,/news/]
-  -
-    list:
-      -
-        title: Latest Boards
-        url: /products/
-      -
-        title: Consumer Edition
-        url: /products/ce/
-      -
-        title: Enterprise Edition
-        url: /products/ee/
-      -
-        title: IoT Edition
-        url: /products/ie/
-      -
-        title: Mezzanine Products
-        url: /products/mezzanine/
-      -
-        title: Accessories
-        url: /products/accessories/
-    urls: [/products/, /products/ce/, /products/ee/, /products/ie/, /products/mezzanine/, /products/accessories/]
-  -
-    list:
-      -
-        title: All Docs
-        url: /products/
-      -
-        title: Consumer Edition
-        url: /products/ce/
-      -
-        title: Enterprise Edition
-        url: /products/ee/
-      -
-        title: IoT Edition
-        url: /products/ie/
-      -
-        title: Mezzanine Products
-        url: /products/mezzanine/
-      -
-        title: Specifications
-        url: /documentation/specifications/
-    urls: [/documentation/, //, /products/ee/, /products/ie/, /products/mezzanine/, /products/accessories/]
+        title: "Container Breadcrumb Right Sidebar"
+        url: "/jekyll/layouts/container-breadcrumb-right-sidebar/"
+        
+    urls: [
+    /jekyll/layouts/container-breadcrumb-left-sidebar/,
+    /jekyll/layouts/container-breadcrumb-right-sidebar/,
+    /jekyll/layouts/container-left-sidebar,
+    /jekyll/layouts/container-right-sidebar/]

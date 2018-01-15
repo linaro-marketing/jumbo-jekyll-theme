@@ -4,12 +4,15 @@
 .dropdown-menu {
   z-index: 25000 !important;
 }
-
-
+.navbar-inverse .navbar-brand{
+    line-height: $navbar-height;
+}
 .mobile-link-inactive{
     pointer-events: none;
     cursor: default;
 }
+
+
 
 @media (min-width: $screen-lg) {
     
@@ -37,16 +40,16 @@
     
 }
 
-@media (max-width: 991px){
+@media (max-width: $screen-sm){
     // Style for Home Page Nav - Transparent
     nav.nav-light >
     div#navbar-collapse {
-        background-color: white;
+        background-color: $navbar-inverse-bg;
     }
-    nav.nav-light  div#navbar-collapse {background-color: white;}
+    nav.nav-light  div#navbar-collapse {background-color: $navbar-inverse-bg;}
 
     nav.nav-light #navbar-buttons>li>a {
-        color: #444444 !important;
+        color: $navbar-text-color;
     }
 }
 
@@ -374,6 +377,11 @@ nav > ul.navbar-right {
     display:none;
     height:100%;
     line-height: 50px;
+}
+
+/* Sub Navigation Side Bar Hover Style */
+.nav-pills>li.side-nav-button>a:hover {
+    color: $navbar-inverse-bg;
 }
 
 .navbar-header {
