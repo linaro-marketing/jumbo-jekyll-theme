@@ -201,16 +201,6 @@ a.btn.btn-social-icon:hover i {
     margin-bottom: 25px;
 }
 
-
-body {
-    font-family: Arial !important;
-    letter-spacing: 0 !important;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-family: Arial !important;
-    letter-spacing: 0 !important;
-}
-
 #main-container a:hover {
     text-decoration: none;
     color: darken($brand-primary, 20%);
@@ -218,8 +208,8 @@ h1, h2, h3, h4, h5, h6 {
 
 blockquote{
     background-color: #f6f6f6;
-
 }
+
 blockquote:before {
     position: relative;
     background-image:url('data:image/svg+xml; utf8, <svg class="mk-svg-icon" xmlns="http://www.w3.org/2000/svg" fill="#ddd" viewBox="0 0 1664 1792"><path d="M768 960v384q0 80-56 136t-136 56h-384q-80 0-136-56t-56-136v-704q0-104 40.5-198.5t109.5-163.5 163.5-109.5 198.5-40.5h64q26 0 45 19t19 45v128q0 26-19 45t-45 19h-64q-106 0-181 75t-75 181v32q0 40 28 68t68 28h224q80 0 136 56t56 136zm896 0v384q0 80-56 136t-136 56h-384q-80 0-136-56t-56-136v-704q0-104 40.5-198.5t109.5-163.5 163.5-109.5 198.5-40.5h64q26 0 45 19t19 45v128q0 26-19 45t-45 19h-64q-106 0-181 75t-75 181v32q0 40 28 68t68 28h224q80 0 136 56t56 136z"></path></svg>');
