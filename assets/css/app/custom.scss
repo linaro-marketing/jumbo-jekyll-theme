@@ -1,18 +1,4 @@
 
-@media (max-width: $screen-sm) {
-    ul#tabbed_nav > li {
-        width: 100%;
-    }
-    ul#tabbed_nav > li > a {
-        border:0;
-    }
-    ul#tabbed_nav > li > a:after {
-        height: 1px;
-        background-color: #fff;
-    }
-
-}
-
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     #home-block-sliders .owl-theme .owl-nav.disabled+.owl-dots {
         margin-top: 10px;
@@ -97,9 +83,6 @@ article.post-content > .col-md-4 {
         margin-right:auto;
     }
     
-    #homepage-jumbotron {
-        padding: 20px;
-    }
     .carousel-caption.right-caption {
         top: 0;
         margin-top: 47px;

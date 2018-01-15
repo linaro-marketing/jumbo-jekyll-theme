@@ -1,10 +1,17 @@
-//Home Page Heading
+
+/* Home Page Styles */
+
+
+/* Home Page Heading */
 #homepage-heading {
     color: $brand-warning;
     font-size: 30pt;
     font-weight: normal;
     line-height: 1.25;
 }
+
+
+/* Home Page Styles - SM  */
 
 @media(max-width:991px){
     #homepage-heading {
@@ -13,30 +20,56 @@
     p.sub-tag {
         width:95%;
     }
+    
+    
+    //Jumbotron Custom Styling
+    #homepage-header{
+        background: $jumbotron-bottom-color; /* Old browsers */
+        background: -moz-linear-gradient(top, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, $jumbotron-top-color 0%,$jumbotron-bottom-color 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$jumbotron-top-color, endColorstr=$jumbotron-bottom-color,GradientType=0 ); /* IE6-9 */
+    }
 }
 
+/* Home Page Shape Divider */
 .homepage-shape {
-    margin-bottom: -8px;
+    margin-bottom: -6px;
 }
 
-.homepage-image-jumbotron {
+/* Home Page Jumbotron Div */
+div#homepage-jumbotron {
+    margin-top: $navbar-height + 5;
+    text-align: center;
+}
+
+/* Home Page Header */
+#homepage-header {
+    background: $jumbotron-bottom-color; /* Old browsers */
+    background: -moz-linear-gradient(top, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $jumbotron-top-color 0%,$jumbotron-bottom-color 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$jumbotron-top-color, endColorstr=$jumbotron-bottom-color,GradientType=0 ); /* IE6-9 */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
+/* Sub Text in Home Page Header */
 #home-page-text{
-    color: $home-page-title-text;
+    color: $home-page-text;
 }
 
+/* Home Page Title in Jumbotron */
 #home-page-title{
     color: $home-page-main-title-color;
 }
 
+/* Home Page Image in Jumbotron */
 #home-hero-image {
   width: auto;
-  height: 200px;
+  height: 150px;
 }
 
 // Style for Homepage 

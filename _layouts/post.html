@@ -1,0 +1,78 @@
+---
+js-package: blog
+css-package: blog
+layout: container
+---
+
+{% if page.previous.url %}
+    <a href="{{page.previous.url}}" class="previous_post_anchor">
+        <div class="previous_post"></div>
+    </a>
+{% endif %}
+{% if page.next.url %}
+    <a href="{{page.next.url}}" class="next_post_anchor">
+        <div class="next_post"></div>
+    </a>
+{% endif %}
+
+<div class="col-md-9 no-padding">
+    <article class="post-content">
+        <div class="post-info">
+            <h1>{{page.title }}</h1>
+            
+            {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
+            {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
+            {% if page.author %}
+                {% assign author = site.authors | where: 'username' , page.author %}
+                {% assign author = author[0] %}
+                <em> By
+                    <a href="{{author.url}}">
+                        <b>{{author.name}}</b>
+                    </a>
+                </em>
+            {% endif %}
+            
+            {% comment %}
+                Check to see if tags are enabled for this page.
+            {% endcomment %}
+            
+            {% if site.data.settings.tags_enabled %}
+            <br />
+            <div class="tag_cloud">
+                {% for tag in page.tags %}
+                    <a class="btn btn-blog btn-xs post_tag" href="/blog/tag/#{{tag | slugify }}">{{tag}}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+        </div>
+        
+        {{ content }}
+        
+    </article>
+    
+    <hr />
+    
+    {% comment %}
+        TAGS - Check to see if the tags_enabled setting in settings.yml data file is toggled.
+    {% endcomment %}
+    
+    {% include post-tags.html %}
+    
+    {% comment %}
+        COMMENTS - Check to see if comments are toggled for this particular post.
+    {% endcomment %}
+    
+    {% include post-comments.html %}
+    
+
+</div>
+
+{% comment %}
+    Display a right side bar.
+{% endcomment %}
+
+<div class="col-md-3 no-padding">
+    {% include post-sidebar.html %}
+</div>
+

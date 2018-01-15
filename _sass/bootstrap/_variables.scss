@@ -32,6 +32,7 @@ $cookie-consent-bg:       #000 !default;
 
 // homepage title text and sub text
 $home-page-title-text:          #FFF !default; // all title text
+$home-page-text:          #fff !default; // all title text
 $home-page-main-title-color: $home-page-title-text !default; // overide for specific main title text
 
 $cookie-consent-btn-bg:   $brand-primary !default;
@@ -63,7 +64,7 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;

@@ -7,6 +7,8 @@ mailchimp:
 newsletter:
     enabled: true
     
+tags_enabled: true
+    
 # Footer Image default is linaro sprinkle
 linaro-footer-image: Linaro-Sprinkle.svg
     
@@ -15,7 +17,7 @@ home:
     # If this is set then the navigation will be transparent.
     transparent_nav: true
     # If this is set to true then the shape divider will be displayed
-    shaped-divider: false
+    shaped-divider: true
     # Jumbotron settings for the home page
     jumbotron:
         # Title for the home page jumbotron
@@ -35,7 +37,9 @@ home:
               url: 
               class: btn btn-primary btn-lg fade-in-three bottom-border-five
         # Background image for the home page located in assets/images
-        background: background-image.png
+        background-image: background-image.png
+        image: Linaro-Logo.svg
+        
 
 # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
 github_username: Linaro
@@ -46,11 +50,42 @@ youtube_username: linaroorg
 twitter_username: linaroorg
 slideshare_username: linaroorg
 
+
+# Blog setup
+blog:
+    # Toggle site wide comments display.
+    comments: true
+    # Post Side Bar Settings
+    sidebar:
+        # Toggle whether or not thumbnails in the sidebar are displayed.
+        thumbnails:
+            display: true
+        # Display other posts contained in _posts
+        other-posts:
+            display: true
+            count: 4
+        # Display Related posts based on tags / categories
+        related-posts:
+            display: true
+            count: 5
+        # Display the most recent posts
+        most-recent-posts:
+            display: true
+            count: 5
+        # Display custom collection e.g projects on 96boards
+        collection:
+            - name: projects
+              count: 5
+              # Fields to use for title and url.
+              display_fields:
+                  title: title
+                  url: url
+                  
 # Google Anayltics Setup
 google:
     tag_manager: GTM-5DLPJQ
 
-# Shema.org Setup -> used in the schema.html include.
+# Shema.org settings used in the schema.html include.
 schema:
     organisation:
         name: Linaro

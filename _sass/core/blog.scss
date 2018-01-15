@@ -14,6 +14,15 @@ div#pagination_panel > ul > li.active > a{
     margin-right: 15px;
 }
 
+//Make sure the comments sections is beneath content.
+section#comments-section {
+    clear: both;
+}
+
+article.post-content {
+    overflow: auto;
+}
+
 
 
 img.blog-author-image {

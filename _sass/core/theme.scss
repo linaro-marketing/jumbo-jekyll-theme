@@ -1,13 +1,22 @@
 // Body Style
 body {
-    background: $navbar-inverse-bg;
+    background-color:#000;
     letter-spacing: 0.5px;
     overflow-x: hidden;
     font-weight: 300;
     height  : 100%;
     overflow: auto;
-    font-family: 'LatoWeb', HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-family: Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
+}
+
+/* ------------ Main Container Style margin accounts for Nav ----------- */
+#wrapper{
+    overflow-x: hidden;
+    margin-top: 67px;
+}
+#wrapper-home{
+    overflow-x: hidden;
 }
 
 // Iphone Bug Fix
@@ -18,15 +27,6 @@ html.ios7 body {height: 100%;position: fixed;width: 100%;}
 html {
  height  : 100%;
 //  overflow: hidden; Will break the sticky navbar - be warned
-}
-
-//Make sure the comments sections is beneath content.
-section#comments-section {
-    clear: both;
-}
-
-article.post-content {
-    overflow: auto;
 }
 
 blockquote {
@@ -63,7 +63,7 @@ label.control-label {
         display:block;
         overflow: auto;
 }
-//Selection for Highlighting Text on Web Page.
+/* --------------- Text Selection -------------------*/
 ::selection {
   background: $brand-primary; /* WebKit/Blink Browsers */
   color: #fff;
@@ -72,13 +72,11 @@ label.control-label {
   background: $brand-primary; /* Gecko Browsers */
   color: #fff;
 }
-//Search Dropdown input focus
-#searchDropdown input:focus {
-    outline: none;
-}
+
+
 //Headings
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'LatoWeb', HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-family: Arial, sans-serif;
     font-weight: bold;
     line-height: 1.1;
     color: inherit;
@@ -89,53 +87,44 @@ hr {
     border-top: 1px solid #eee;
 }
 
-//Paragraphs
-p{
+/*-------------Paragraphs --------------------*/
+p {
     font-size: 20px;
     font-weight:300;
     color: #000000;
     line-height: 1.66em;
     word-wrap: break-word;
+    font-size: 20px;
 }
-//Padded Paragraph
+
+/* Padded Para */
 .padded-para{
     padding:20px;
 }
 
+/* Spaced Paragraph */
 #spaced-para{
     font-size: 18px;
     line-height: 40px;
 }
 
-// Paragraphs that are justified.
+/* Justified Paragraph */
 p .justified{
     text-align: justify;
     text-justify: inter-word;
 }
 
-// Tab Content paragraph
-#content-container p {
-    font-size: 20px;
-    color: black;
-    line-height: 1.66em;
-}
-//Main Container Style margin accounts for Nav
-#wrapper{
-    margin-top: 66px;
-    overflow-x: hidden;
+/* Shape Divider - Home Page */
+.row.shape-divider {
+    background-color: $brand-primary;
 }
 
-.main-cont {
-    background-color:#fff;
-}
 
 // Content Container - container used for actual content
 // Not for breadcrumb / nav / footer
 
 #content-container{
     background-color: $body-bg;
-    padding-right: 0;
-    padding-left:0;
     padding-top: 20px;
 }
 
@@ -236,7 +225,7 @@ p.sub-tag {
     border:0;
 }
 
-//Bootstrap Glyphicon Override.
+// Bootstrap Glyphicon Override.
 .glyphicon {
     width: 14px;
     height: 14px;
@@ -247,17 +236,6 @@ p.sub-tag {
     outline: none;
 }
 
-//Jumbotron Custom Styling
-.jumbotron{
-    margin-bottom: 0;
-    margin-top:0;
-    padding-bottom:0px;
-    background: #FFF; /* Old browsers */
-    background: -moz-linear-gradient(top, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, $jumbotron-top-color 0%,$jumbotron-bottom-color 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$jumbotron-top-color, endColorstr=$jumbotron-bottom-color,GradientType=0 ); /* IE6-9 */
-}
 .container .jumbotron, .container-fluid .jumbotron {
     border-radius: 0px;
 }
@@ -349,7 +327,7 @@ button#c-submit-button {
 }
 
 
-//fifts columns
+/* ----------------- Missing Bootstrap 3 5ths Columns -----------------*/
 
 .col-xs-5ths,
 .col-sm-5ths,
@@ -387,62 +365,52 @@ button#c-submit-button {
     }
 }
 
-// Cognito  Forms
-.cognito input {
-    outline: 0;
-}
-.cognito textarea {
-    outline: 0;
-}
-
-
-//Mailchimp  Style
+/*--------------------- Mailchimp Newsletter --------------------*/
 input#mce-EMAIL {
     border: 0!important;
     border-radius: 0 !important;
     margin-bottom: 10px;
-      outline: none;
-  border: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
+    outline: none;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
 
 }
 
 input#mce-FNAME {
-     border: 0!important;
-    border-radius: 0 !important;
-    margin-bottom: 10px;
-      outline: none;
-  border: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
-}
-
-input#mce-LNAME {
-     border: 0!important;
+    border: 0!important;
     border-radius: 0 !important;
     margin-bottom: 10px;
     outline: none;
-      outline: none;
-  border: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
 
+input#mce-LNAME {
+    border: 0!important;
+    border-radius: 0 !important;
+    margin-bottom: 10px;
+    outline: none;
+    outline: none;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 button#mc-embedded-subscribe {
-  border:0;
-  border-radius:0;
-  background-color: $brand-primary;
-  color: white;
-  transition: all 200ms ease;
+    border:0;
+    border-radius:0;
+    background-color: $brand-primary;
+    color: white;
+    transition: all 200ms ease;
 }
 
 button#mc-embedded-subscribe:hover{
-  background-color: #252525;
-  color: white;
-  transition: all 200ms ease;
+    background-color: #252525;
+    color: white;
+    transition: all 200ms ease;
 }
