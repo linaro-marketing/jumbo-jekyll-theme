@@ -1,8 +1,8 @@
-{% if layout.css-package %}
-    {% capture css-package %}/assets/css/main-{{layout.css-package}}.css{% endcapture %}
-    <link rel="stylesheet" href="{{ css-package | relative_url }}">
-{% elsif page.css-package %}
+{% if page.css-package %}
     {% capture css-package %}/assets/css/main-{{page.css-package}}.css{% endcapture %}
+    <link rel="stylesheet" href="{{ css-package | relative_url }}">
+{% elsif layout.css-package %}
+    {% capture css-package %}/assets/css/main-{{layout.css-package}}.css{% endcapture %}
     <link rel="stylesheet" href="{{ css-package | relative_url }}">
 {% else %}
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
