@@ -100,3 +100,4 @@ plugins:
     - jekyll-assets
     - jekyll-paginate-v2
     - jekyll-seo-tag
+    - jekyll-readme-index
