@@ -12,6 +12,8 @@
     cursor: default;
 }
 
+
+
 @media (min-width: $screen-lg) {
     
     .navbar-collapse {
@@ -375,6 +377,11 @@ nav > ul.navbar-right {
     display:none;
     height:100%;
     line-height: 50px;
+}
+
+/* Sub Navigation Side Bar Hover Style */
+.nav-pills>li.side-nav-button>a:hover {
+    color: $navbar-inverse-bg;
 }
 
 .navbar-header {
