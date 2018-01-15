@@ -8,29 +8,58 @@
     width: auto;
     overflow: auto;
 }
-//Responsive CSS for Homepage
-@media(max-width:767px){
 
 
-}
+/* Responsive CSS for Homepage */
 
-@media only screen and (max-width: 500px) {
-  .hero-banner {
+@media only screen and (max-width: $screen-xs-min) {
+    .hero-banner {
       padding-top: 0px;
       min-height: auto;
-  }
+    }
 
-  .hero-banner h1 {
+    .hero-banner h1 {
     font-size: 20pt;
-  }
+    }
 
-  .hero-banner p.sub-tag {
+    .hero-banner p.sub-tag {
       width: 90%;
       margin-top: 10px;
       margin-bottom: 20px;
-  }
+    }
 
-  .activity-container {
+    .activity-container {
+    margin-top: 0px;
+    padding-top: 0px;
+    }
+
+    .activity-block img {
+    width: auto;
+    }
+
+    .activity-holder .col-md-3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    }
+}  
+    
+.hero-banner {
+    padding-top: 0px;
+    min-height: auto;
+}
+
+.hero-banner h1 {
+    font-size: 20pt;
+}
+
+.hero-banner p.sub-tag {
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.activity-container {
     margin-top: 0px;
     padding-top: 0px;
 }
@@ -44,13 +73,8 @@
     padding-bottom: 10px;
     padding-top: 10px;
 }
-}
 
-a.btn.btn-primary {
-    border-radius: 30px;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
+
 .owl-dots {
     margin-bottom: 20px;
 }
@@ -106,12 +130,12 @@ a.btn.btn-primary {
 .activity-holder p {
     height: 99px;
 }
-@media (min-width: 992px) {
+@media (min-width: $screen-sm-min) {
     .row .activity-holder{
         height:529.44px;
     }
 }
-@media (max-width: 991px) {
+@media (max-width: $screen-sm-min) {
     .row .activity-holder{
         height:auto;
     }
@@ -126,13 +150,13 @@ a.btn.btn-primary {
     }
 }
 
-  .activity-holder a.btn-primary:hover {
-      background-color: rgb(25, 148, 123);
-      color: #fff;
-      font-weight: bold;
-      border-color: rgb(25, 148, 123);
-  }
-  
+.activity-holder a.btn-primary:hover {
+    background-color: rgb(25, 148, 123);
+    color: #fff;
+    font-weight: bold;
+    border-color: rgb(25, 148, 123);
+}
+
 .owl-prev {
     background-color: #cccccc !important;
     transition: all 200ms linear;
