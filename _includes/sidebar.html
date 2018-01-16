@@ -1,4 +1,4 @@
-{% assign sub-nav-tabs = site.data.sub-nav.pages %}
+{% assign sub-nav-tabs = site.data.sidebar-nav.pages %}
 
 {% if sub-nav-tabs %}
 
@@ -7,9 +7,14 @@
     {% for each in sub-nav-tabs %}
         {% for each-url in each.urls %}
             {% if each-url == page.url or each.url == page-base[1] %}
-                {% assign tab-list = each.list %}
+                {% if each.list %}
+                    {% assign tab-list = each.list %}
+                {% endif %}
             {% endif %}
         {% endfor %}
+        {% if each.custom-include %}
+            {% assign custom-include = each.custom-include %}
+        {% endif %}
     {% endfor %}
     
     
@@ -32,13 +37,11 @@
                 </li>
             {% endfor %}
         </ul>
-        
-    {% elsif custom-content %}
-        Custom include to be displayed.
-        {% include {{custom-content}}.html %}
+    {% elsif custom-include %}
+        {% include {{custom-include}}.html %}
     {% else %}
-        No sidebar content found - please add to _data/sidebar.html. More information available <a href="/jekyll/includes/sidebar/">here</a>.
+        No sidebar content found - please add to _data/sidebar-nav.yml. More information available <a href="/jekyll/includes/sidebar/">here</a>.
     {% endif %}
 {% else %}
-    No sidebar settings found - please create a _data/sidebar.yml data file. More information available <a href="/jekyll/includes/sidebar/">here</a>.
+    No sidebar settings found - please create a _data/sidebar-nav.yml data file. More information available <a href="/jekyll/includes/sidebar/">here</a>.
 {% endif %}
