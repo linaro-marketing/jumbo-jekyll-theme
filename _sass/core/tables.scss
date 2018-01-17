@@ -1,6 +1,6 @@
 /*** Table Styles **/
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-min) {
     .responsive-table {
         display: block;
         width: 100%;

@@ -13,7 +13,7 @@
 
 /* Home Page Styles - SM  */
 
-@media(max-width:991px){
+@media(max-width:$screen-sm-min){
     
     #homepage-heading {
         font-size: 26px;

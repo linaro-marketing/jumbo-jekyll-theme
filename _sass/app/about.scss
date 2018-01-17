@@ -35,7 +35,7 @@ dt {
 }
 
 //Smallest mobile view
-@media(max-width:767px){
+@media(max-width:$screen-sm-min){
     .linaro-profile-image {
         float:none !important;
         margin-bottom: 10px !important;
