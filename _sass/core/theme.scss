@@ -1,6 +1,6 @@
 // Body Style
 body {
-    background-color:#000;
+    background-color: $navbar-inverse-bg;
     letter-spacing: 0.5px;
     overflow-x: hidden;
     font-weight: 300;
@@ -13,7 +13,7 @@ body {
 /* ------------ Main Container Style margin accounts for Nav ----------- */
 #wrapper{
     overflow-x: hidden;
-    margin-top: 67px;
+    margin-top: $navbar-height - 1;
 }
 #wrapper-home{
     overflow-x: hidden;
