@@ -10,7 +10,7 @@ newsletter:
 tags_enabled: true
     
 # Footer Image default is linaro sprinkle
-linaro-footer-image: Linaro-Sprinkle.svg
+linaro-footer-image: Linaro-Sprinkle.png
     
 # Settings for the home page
 home:
@@ -20,6 +20,8 @@ home:
     shaped-divider: true
     # Jumbotron settings for the home page
     jumbotron:
+        # Toggle the jumbotron
+        enabled: true
         # Title for the home page jumbotron
         title:
             first-line: Welcome to the
@@ -49,7 +51,6 @@ facebook_username: LinaroOrg
 youtube_username: linaroorg
 twitter_username: linaroorg
 slideshare_username: linaroorg
-
 
 # Blog setup
 blog:

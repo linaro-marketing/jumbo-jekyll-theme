@@ -15,7 +15,7 @@ layout: container
     </a>
 {% endif %}
 
-<div class="col-md-9 no-padding">
+<div class="col-md-9">
     <article class="post-content">
         <div class="post-info">
             <h1>{{page.title }}</h1>
@@ -40,24 +40,8 @@ layout: container
                     
                 </em>
             {% endif %}
-            
-            {% comment %}
-                Check to see if tags are enabled for this page.
-            {% endcomment %}
-            
-            {% if site.data.settings.tags_enabled %}
-            <br />
-            <div class="tag_cloud">
-                {% for tag in page.tags %}
-                    <a class="btn btn-blog btn-xs post_tag" href="/blog/tag/#{{tag | slugify }}">{{tag}}</a>
-                {% endfor %}
-            </div>
-            {% endif %}
-            
         </div>
-        
         {{ content }}
-        
     </article>
     
     <hr />
@@ -81,7 +65,7 @@ layout: container
     Display a right side bar.
 {% endcomment %}
 
-<div class="col-md-3 no-padding">
+<div class="col-md-3">
     {% include post-sidebar.html %}
 </div>
 

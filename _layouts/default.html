@@ -8,7 +8,7 @@ js-package: main
             {% if site.data.company.google.tag_manager %}
               {% include _theme-includes/_script-includes/gtm/gtm-noscript.html %}
             {% endif %}
-            <div id="wrapper{% if layout.home == true %}-home{% endif %}">
+            <div id="wrapper{% if layout.home == true and site.data.settings.home.jumbotron.enabled %}-home{% endif %}">
                 {% include nav.html %}
                 {{content}}
 

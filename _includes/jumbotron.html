@@ -1,11 +1,11 @@
 <div class="container-fluid" id="homepage-header" 
 {% if site.data.settings.home.jumbotron.background-image %}
-    style="background: #000 url({% asset_path '{{site.data.settings.home.jumbotron.background-image}}' %}) no-repeat center center fixed;
+    style="background: #000 url({% asset_path '{{site.data.settings.home.jumbotron.background-image}}'  %}) no-repeat center center fixed;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-position-y: 80px;"
+    background-position-y: 0px"
     class="jumbotron text-center homepage-jumbotron homepage-image-jumbotron"
 {% else %}
     class="jumbotron text-center homepage-jumbotron"
@@ -17,7 +17,7 @@
               
               {% if site.data.settings.home.jumbotron.image %}
                   <div class="col-md-12">
-                      <img src="{% asset_path '{{site.data.settings.home.jumbotron.image}}' %}" id="home-hero-image"
+                      <img src="{% asset_path '{{site.data.settings.home.jumbotron.image}}'  %}" id="home-hero-image"
                        class="img-responsive center-block animated fadeIn" alt="{{site.title}} Home Page Image">
                   </div>
               {% endif %}

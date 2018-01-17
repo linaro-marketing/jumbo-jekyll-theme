@@ -1,5 +1,5 @@
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+@media only screen and (min-width: $screen-xs-min) and (max-width: $screen-sm-min) {
     #home-block-sliders .owl-theme .owl-nav.disabled+.owl-dots {
         margin-top: 10px;
         position: relative;
@@ -7,7 +7,7 @@
     }
 }
 
-@media(min-width:992px){
+@media(min-width:$screen-sm-min){
     .row.activity-holder.center-block {
         height: auto;
     }
@@ -30,7 +30,7 @@ article.post-content > .col-md-4 {
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: $screen-xs-min) {
     
     
     article.post-content > .col-md-4 {
@@ -63,7 +63,7 @@ article.post-content > .col-md-4 {
 }
 
 //Smallest mobile view
-@media(max-width:767px){
+@media(max-width:$screen-xs-min){
     
     article.post-content > .col-md-4 {
         padding: 0px;

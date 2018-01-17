@@ -242,7 +242,7 @@ p.sub-tag {
     border-radius: 0px;
 }
 
-@media(max-width:991px){
+@media(max-width:$screen-sm-min){
     .partners-panel {
         height: auto;
     }
@@ -322,7 +322,7 @@ button#c-submit-button {
 }
 
 
-@media (max-width: 1199px){
+@media (max-width: $screen-md-min){
     h1#home-page-title {
         font-size: 25px;
     }
@@ -346,21 +346,21 @@ button#c-submit-button {
     float: left;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-xs-min) {
     .col-sm-5ths {
         width: 20%;
         float: left;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $screen-sm-min) {
     .col-md-5ths {
         width: 20%;
         float: left;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $screen-md-min) {
     .col-lg-5ths {
         width: 20%;
         float: left;

@@ -1,0 +1,23 @@
+pages:
+  -
+    list:
+      -
+        title: "Container Left Sidebar"
+        url: /jekyll/layouts/container-left-sidebar/
+      -
+        title: "Container Right Sidebar"
+        url: "/jekyll/layouts/container-right-sidebar/"
+      -
+        title: "Container Breadcrumb Left Sidebar"
+        url: "/jekyll/layouts/container-breadcrumb-left-sidebar/"
+      -
+        title: "Container Breadcrumb Right Sidebar"
+        url: "/jekyll/layouts/container-breadcrumb-right-sidebar/"
+    # custom-include: custom
+    # Custom includes can be used using the above setting. Simply add the name of the
+    # jekyll _include file (without .html exetension) to the above setting and that will be used instead.
+    urls: [
+    /jekyll/layouts/container-breadcrumb-left-sidebar/,
+    /jekyll/layouts/container-breadcrumb-right-sidebar/,
+    /jekyll/layouts/container-left-sidebar/,
+    /jekyll/layouts/container-right-sidebar/]

@@ -1,15 +1,16 @@
 <nav class="
-{% if layout.nav-light %}
-    {% if site.data.settings.home.transparent_nav %}
-        nav-light 
-    {% endif %}
-{% elsif layout.nav-dark %}
-    {% if site.data.settings.home.dark-nav %}
-        nav-light 
+{% if site.data.settings.home.jumbotron.enabled %}
+    {% if layout.nav-light %}
+        {% if site.data.settings.home.transparent_nav %}
+            nav-light 
+        {% endif %}
+    {% elsif layout.nav-dark %}
+        {% if site.data.settings.home.dark-nav %}
+            nav-light 
+        {% endif %}
     {% endif %}
 {% endif %}
 navbar-inverse navbar-fixed-top" id="main-navigation">
-
         <!-- NAVBAR HEADER-->
          <div class="navbar-header">
              <button for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
@@ -18,12 +19,11 @@ navbar-inverse navbar-fixed-top" id="main-navigation">
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
            </button>
-              
             {% if site.data.nav.brand %}
                 <a class="navbar-brand " href="{{site.data.nav.brand.url}}">
                     {% if site.data.nav.brand.image.enabled %}
                         {% if site.data.nav.brand.image.name %}
-                             <img src="{% asset_path '{{ site.data.nav.brand.image.name }}' %}" alt="{% if site.data.settings.name %}{{ site.data.settings.name }}{% else %}Linaro Site{% endif %} Logo." id="brand-image" />
+                             <img src="{% asset_path '{{ site.data.nav.brand.image.name }}'  %}" alt="{% if site.data.settings.name %}{{ site.data.settings.name }}{% else %}Linaro Site{% endif %} Logo." id="brand-image" />
                         {% else %}
                             {% include linaro-svg.html %}
                         {% endif %}

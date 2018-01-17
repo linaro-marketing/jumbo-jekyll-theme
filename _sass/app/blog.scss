@@ -40,7 +40,7 @@ h1#featured-image-blog-title {
     background-position: center center;
 }
 
-@media(max-width:767px){
+@media(max-width:$screen-sm-min){
     .blog-author-image {
         height: 50px;
         width: 50px;

@@ -4,7 +4,7 @@ top: 200px;
 position: relative;
 }
 
-@media(max-width:767px){
+@media(max-width:$screen-xs-min){
     div#birds-container {
         top: -80px;
         position: relative;
@@ -37,7 +37,7 @@ padding: 5px;
 }
 
 // Anything below the large container size
-@media(min-width:1459px){
+@media(min-width:$screen-lg-min){
     #linaro-latest-tweets .tweet-user-name {
         padding-left: 35px;
     }
@@ -329,7 +329,7 @@ animation-delay: 22s;
 }
 }
 
-@media(max-width:767px){
+@media(max-width:$screen-xs-min){
 @keyframes movement{
     0% {
       left: 0px;

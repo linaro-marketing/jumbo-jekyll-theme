@@ -1,11 +1,11 @@
 {% if layout.js-package %}
     {% capture js-package %}package-{{layout.js-package}}{% endcapture %}
-    {% js {{js-package}} %}
+    <script type="text/javascript" src="{% asset_path {{js-package}}  %}"></script>
 {% elsif page.js-package %}
     {% capture js-package %}package-{{page.js-package}}{% endcapture %}
-    {% js {{js-package}} %}
+    <script type="text/javascript" src="{% asset_path {{js-package}}  %}"></script>
 {% else %}
-    {% js package %}
+    <script type="text/javascript" src="{% asset_path package  %}"></script>
 {% endif %}
 
 
