@@ -110,6 +110,7 @@ div.row.footer-strip > div > div.pull-right > ul a:hover{
 
 .company-footer-bottom {
     padding-left: 0px;
+    font-size: 13px;
 }
 .company-footer-bottom .container {
     padding-left: 0px;
@@ -137,4 +138,8 @@ a.btn.btn-social-icon:hover i  {
 }
 .company-footer-bottom, .company-footer-bottom a{
     color: $footer-text-color;
+}
+
+.row.footer-strip {
+    border-top-color: $footer-text-color;
 }

@@ -223,8 +223,17 @@ a.featured_blog_post_text:hover{
 
 
 
+/* Article Post Content Style */
+article.post-content {
+    overflow: auto;
+}
 
-
+article.post-content > .col-md-8 {
+    padding: 0;
+}
+article.post-content > .col-md-4 {
+    padding: 15px;
+}
 
 // Tag Cloud Style 
 div.tag_cloud {
@@ -319,7 +328,6 @@ img.large-inline.right {
         border-right: 20px solid #eee;
     }
 }
-
 //Responsive CSS for Blog
 @media(max-width:$screen-sm-min){
 
@@ -346,3 +354,63 @@ img.large-inline.right {
     }
 
 }
+
+
+@media (max-width: $screen-xs-min) {
+    
+    
+    article.post-content > .col-md-4 {
+        padding: 0px;
+    }
+    
+}
+
+
+
+// Blog Side Panel Styles
+.featured_post_post > .row {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+.featured_post_post > .row > div > img{
+    margin-top:10px;
+    margin-left:10px;
+    
+    transition: all 200ms linear;
+}
+
+.featured_blog_post > .row {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    
+    transition: all 200ms linear;
+}
+.featured_blog_post > .row > div > img{
+    margin-top:10px;
+    margin-left:10px;
+}
+
+.blog-row .panel, .blog-post-content .panel  {
+    border: 0 !important;
+}
+
+.blog-row .panel-body,  .panel-body {
+    border:1px solid #eee;
+    padding-bottom:0;
+    padding-top: 0;
+}
+
+.blog-row .col-md-9.col-sm-9.col-xs-9 , .blog-post-content .col-md-9.col-sm-9.col-xs-9 {
+    padding-left:20px;
+    padding-top:10px;
+}
+
+//Hover Style
+.featured_blog_post>.row:hover {
+    background-color: #fdfdfd;
+}
+
+.featured_blog_post  small em {
+    color:black;
+}
+

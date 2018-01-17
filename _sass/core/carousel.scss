@@ -9,6 +9,123 @@
     overflow: auto;
 }
 
+/* Carousel Right Caption */
+.carousel-caption.right-caption {
+    top: 0;
+    margin-top: 47px;
+    right:0;
+    left:0;
+}
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 5px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+
+ p.linaro-home-block-text {
+    color: #fff;
+}
+
+a.carousel-control{
+    border-radius: 50px;
+    border: solid 1px white;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+a.carousel-control span.glyphicon-menu-left {
+    top: 12px;
+    left: -5px;
+}
+a.carousel-control span.glyphicon-menu-right {
+    top: 12px;
+    right: 2px;
+}
+
+
+.row.activity-holder.center-block {
+    height: auto;
+}
+
+.activity-holder .activity-block {
+    border: #fff 3px solid;
+    background: transparent !important;
+}
+.activity-block {
+    margin-top: 0px !important;
+    background: transparent !important;
+}
+
+.activity-holder p  {
+    height:99px;
+}
+
+.activity-holder .activity-block {
+    border:0 !important;
+    background: transparent;
+}
+.activity-block {
+    border: 0 !important;
+    background: transparent;
+    margin-top: 70px;
+}
+
+.activity-holder p {
+    height: auto;
+}
+
+.carousel-inner > .item > div.slider-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+}
+
+//Caption divs for home page content on slider
+.carousel-caption.top-caption {
+    top: 0;
+    margin-top: 47px;
+}
+
+.carousel-caption.right-caption {
+    top: 0;
+    margin-top: 47px;
+    right:-100px;
+}
+
+
+/* Left and Right Carousel Control Styles*/
+a.left.carousel-control {
+    display: none;
+}
+a.right.carousel-control{
+    display: none;
+}
 
 /* Responsive CSS for Homepage */
 
@@ -172,4 +289,23 @@
     background-color: #545454 !important;
 }
 
-/* Icons */
+.carousel-inner > .item > div.slider-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+}
+
+/* Caption divs for home page content on slider */
+.carousel-caption.top-caption {
+    top: 0;
+    margin-top: 47px;
+}
+
+.carousel-caption.right-caption {
+    top: 0;
+    margin-top: 47px;
+    right:-100px;
+}
+
