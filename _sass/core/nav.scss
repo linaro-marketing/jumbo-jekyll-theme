@@ -5,6 +5,7 @@
   z-index: 25000 !important;
 }
 .navbar-inverse .navbar-brand{
+    color: $navbar-text-color;
     line-height: $navbar-height;
 }
 .mobile-link-inactive{
