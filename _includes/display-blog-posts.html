@@ -1,5 +1,6 @@
 {% for post in paginator.posts %}
     <div class="row blog_post">
+        {% if site.data.settings.blog.show_thumbnails %}
         <div class="col-xs-12 post_title no-padding">
             <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
             <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
@@ -12,5 +13,19 @@
                 </a>
             </p>
         </div>
+        {% else %}
+        <div class="col-xs-12 post_title no-padding">
+            <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
+            <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
+            <p class="post_excerpt">
+            {{ post.content | strip_html | truncatewords:30 }}
+            </p>
+            <p>
+                <a href="{{post.url}}">
+                    <button class="btn blog-read-more-btn">Read More</button>
+                </a>
+            </p>
+        </div>
+        {% endif %}
     </div>
 {% endfor %}
