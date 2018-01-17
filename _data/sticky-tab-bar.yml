@@ -1,0 +1,21 @@
+pages:
+  -
+    list:
+      -
+        title: "Home"
+        url: /
+      -
+        title: "About"
+        url: "/about/"
+      -
+        title: "FAQ"
+        url: "/faq/"
+      -
+        title: "Jekyll"
+        url: "/jekyll/"
+        
+    urls: [
+    /,
+    /about/,
+    /faq/,
+    /jekyll/]

@@ -100,6 +100,7 @@ jekyll_relative_links:
     verbose: 1
     
 plugins:
+    # - jekyll-minimagick
     - jekyll-seo-tag
     - jekyll-sitemap
     - bootstrap-sass
@@ -111,5 +112,31 @@ plugins:
     - autoprefixer-rails
     - jekyll-paginate-v2
 
-    
+# Jekyll Mini Magick Settings 
+# All images will have a thumbnail (100x100), medium(300x300) and large(500x500)
+# created upon building the static site.
+
+mini_magick:
+    # Blog Image Presets
+    thumbnails:
+        source: assets/images/
+        destination: assets/images/thumbnails/
+        resize: "100x100"
+        thumbnail: "100x100>"
+        gravity: "Center"
+        extent: "100x100"
+    medium:
+        source: assets/images/
+        destination: assets/images/medium/
+        resize: "300x300"
+        thumbnail: "300x300>"
+        gravity: "Center"
+        extent: "300x300"
+    large:
+        source: assets/images/
+        destination: assets/images/large/
+        resize: "500x500"
+        thumbnail: "500x500>"
+        gravity: "Center"
+        extent: "500x500"
     

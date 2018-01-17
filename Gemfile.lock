@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jumbo-jekyll-theme (1.4.1.11)
+    jumbo-jekyll-theme (1.4.2.0)
       autoprefixer-rails
       bootstrap-sass (~> 3.3)
       hash-joiner
@@ -16,6 +16,7 @@ PATH
       jekyll-sitemap (~> 1.1)
       jekyll-theme-assets
       jekyll-tidy (~> 0.2.2)
+      mini_magick
       uglifier
 
 GEM
@@ -99,6 +100,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
+    mini_magick (4.8.0)
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.1)

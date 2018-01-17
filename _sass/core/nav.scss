@@ -239,6 +239,41 @@ ul#navbar-buttons > li > ul.dropdown-menu {
     color: black;
 }
 
+ul#tabbed_nav > li.active > a:after {
+    height: 1px;
+    background-color: #fff;
+}
+
+ul#tabbed_nav > li.active > a {
+    border-bottom: none;
+}
+
+ul#tabbed_nav > li > a {
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    font-size: 13px;
+}
+
+
+div#tabbed_nav_content {
+    margin-top:0;
+    padding: 10px;
+    border-right: 1px solid  #eee;
+    border-left: 1px solid #eee;
+    border-bottom:1px solid #eee;
+    margin-bottom: 20px;
+}
+
+div#tabbed_nav_content > div.tab-pane {
+    margin-top:0;
+    padding: 10px
+}
+
+ul#tabbed_nav {
+    border: 1px solid #eee;
+    margin-bottom:0 !important;
+}
+
 // Navbar Brand
 .navbar-brand {
     @media (min-width: $screen-md-min){
@@ -501,7 +536,7 @@ button#closeForm {
 
 // Style for stacked nav
 li.side-nav-button {
-    border-top: 1px solid $gray-lighter;
+    border-top: 1px sstackedolid $gray-lighter;
     border-right: 0px;
     border-left: 0px;
     margin-bottom: -3px;
@@ -527,7 +562,26 @@ li.side-nav-button:first-child {
     border-top: 2px solid $brand-primary;
 }
 
+/* Bold the first li in nav-stacked */
+ul.nav.nav-pills.nav-stacked li:first-child {
+    font-weight: bold;
+}
 
+li.side-nav-button:hover > a {
+    color: $brand-primary;
+}
+
+/* Stacked Nav Icon Div */
+.ext-left{
+    float:left;
+}
+.ext-right {
+    height: auto;
+    vertical-align: middle;
+    display: table-cell;
+    padding-right: 10px;
+    padding-left: 10px;
+}
 
 #navbar-buttons .dropdown-menu>li>a {
     color: #444444;

@@ -89,13 +89,26 @@ hr {
 
 /*-------------Paragraphs --------------------*/
 p {
-    font-size: 20px;
+    font-size: 16px;
     font-weight:300;
-    color: #000000;
+    color: #252525;
     line-height: 1.66em;
     word-wrap: break-word;
-    font-size: 20px;
 }
+
+#content-container p.justify {
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.66em;
+}
+
+#content-container h2 {
+    font-size: 30px;
+    color: #3D383E;
+    font-weight: 200;
+    text-transform: none;
+}
+
 
 /* Padded Para */
 .padded-para{
@@ -129,12 +142,6 @@ p .justified{
     padding-bottom: 20px;
 }
 
-//Content Container block elemcents
-#content-container p {
-    font-size: 20px;
-    color: black;
-    line-height: 1.66em;
-}
 
 #content-container ul { font-size:18px; }
 #content-container ol { font-size: 18px;}
@@ -416,3 +423,85 @@ button#mc-embedded-subscribe:hover{
     color: white;
     transition: all 200ms ease;
 }
+
+/* Repsonsive Media Embed */
+.embed-responsive-16by9 {
+    padding-bottom: 56.25%;
+    margin-bottom: 25px;
+}
+
+/* Right Aligned Image*/
+img.img-responsive.right-aligned-image {
+    float: right;
+    width: 30%;
+    margin: 30px;
+}
+
+@media(max-width:$screen-xs-min){
+    
+    /* Mobile Screens - Right Aligned Images */
+    img.img-responsive.right-aligned-image.lazyloaded {
+        float: none;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -9px;
+        margin-bottom: -15px;
+    }
+    
+}
+
+/* Wordpress Styles */
+#content-container blockquote, #content-container code, #content-container dl, #content-container fieldset,
+#content-container p, #content-container pre, #content-container table, #content-container ul {
+    margin-bottom: 25px;
+}
+
+#content-container a:hover {
+    text-decoration: none;
+    color: darken($brand-primary, 20%);
+}
+
+#content-container ul {
+    color: #252525 !important;
+    font-size: 16px !important;
+}
+
+/* Blockquote Styles*/
+blockquote{
+    background-color: #f6f6f6;
+}
+
+blockquote:before {
+    position: relative;
+    background-image:url('data:image/svg+xml; utf8, <svg class="mk-svg-icon" xmlns="http://www.w3.org/2000/svg" fill="#ddd" viewBox="0 0 1664 1792"><path d="M768 960v384q0 80-56 136t-136 56h-384q-80 0-136-56t-56-136v-704q0-104 40.5-198.5t109.5-163.5 163.5-109.5 198.5-40.5h64q26 0 45 19t19 45v128q0 26-19 45t-45 19h-64q-106 0-181 75t-75 181v32q0 40 28 68t68 28h224q80 0 136 56t56 136zm896 0v384q0 80-56 136t-136 56h-384q-80 0-136-56t-56-136v-704q0-104 40.5-198.5t109.5-163.5 163.5-109.5 198.5-40.5h64q26 0 45 19t19 45v128q0 26-19 45t-45 19h-64q-106 0-181 75t-75 181v32q0 40 28 68t68 28h224q80 0 136 56t56 136z"></path></svg>');
+    content: "";
+    display: block;
+    left: 0px;
+    top: 0px;
+    width: 32px;
+    height: 35px;
+}
+
+/* VCenter Img*/
+.vcenter-img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 110px;
+}
+
+
+#content-container h1 {
+    color: #393836 !important;
+    font-size: 36px !important;
+    margin-top: 0;
+}
+
+#content-container h1, #content-container h2, #content-container h3, #content-container h4, #content-container h5 {
+    color: #393836 !important;
+}
+
+ul {
+    font-size: 16px;
+}
+

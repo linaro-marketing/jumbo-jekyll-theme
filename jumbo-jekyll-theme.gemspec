@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = "jumbo-jekyll-theme"
-  spec.version       = "1.4.2.0"
+  spec.version       = "1.4.2.4"
   spec.authors       = ["Kyle Kirkby"]
   spec.email         = ["kyle.kirkby@linaro.org"]
 
@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r{^(assets|_(data|includes|layouts|sass|plugins)/|(LICENSE|README|robots)((\.(txt|md|markdown)|$)))}i)
+    f.match(%r{^(assets|_(data|includes|layouts|sass|plugins)/|(LICENSE|README|robots|_config)((\.(txt|md|markdown|yml)|$)))}i)
   end
 
   # spec.files         = []
@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "autoprefixer-rails"
   spec.add_runtime_dependency "jekyll-paginate-v2"
   spec.add_runtime_dependency "jekyll-feed"
+  spec.add_runtime_dependency "mini_magick"
   spec.add_runtime_dependency "jekyll-theme-assets"
   
   # Gem Dependencies required by the jekyll-get plugin.
