@@ -6,14 +6,14 @@
 
 @function twbs-font-path($path) {
   // do something like following
-  // from "path/to/font.ext#suffix" to "<%- asset_path(path/to/font.ext)) + #suffix %>"
-  // from "path/to/font.ext?#suffix" to "<%- asset_path(path/to/font.ext)) + ?#suffix %>"
-  // or from "path/to/font.ext" just "<%- asset_path(path/to/font.ext)) %>"
-  @return "<%- asset_path("#{$path}".replace(/[#?].*$/, '')) + "#{$path}".replace(/(^[^#?]*)([#?]?.*$)/, '$2') %>";
+  // from "path/to/font.ext#suffix" to "<%- asset(path/to/font.ext)) + #suffix %>"
+  // from "path/to/font.ext?#suffix" to "<%- asset(path/to/font.ext)) + ?#suffix %>"
+  // or from "path/to/font.ext" just "<%- asset(path/to/font.ext)) %>"
+  @return "<%- asset("#{$path}".replace(/[#?].*$/, '')) + "#{$path}".replace(/(^[^#?]*)([#?]?.*$)/, '$2') %>";
 }
 
 @function twbs-image-path($file) {
-  @return "<%- asset_path("#{$file}") %>";
+  @return "<%- asset("#{$file}") %>";
 }
 
 $bootstrap-sass-asset-helper: true;

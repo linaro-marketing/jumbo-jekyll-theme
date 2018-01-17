@@ -79,9 +79,9 @@ defaults:
       
 # Jekyll Assets setup
 assets:
-  # Compress JS Assets - uses the uglifier plugin 
-  compress:
-        js: true
+  # Compress JS Assets - uses the uglifier 
+  compression: true
+  gzip: true
   # Autoprefixer default settings
   autoprefixer:
       browsers: ["last 2 versions","> 5%","IE 9"]
@@ -90,7 +90,8 @@ assets:
     - assets/js/
     - assets/images/
     - assets/css/
-    
+
+
 # Jekyll relative links plugin settings    
 jekyll_relative_links:
     process_all_collections: true

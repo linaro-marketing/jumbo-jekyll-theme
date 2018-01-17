@@ -25,7 +25,7 @@
                     <a href="{{tab.url}}" role="link">
                         {% if tab.icon %}
                         <div class="ext-left">
-                            <img src="{% asset_path '{{tab.icon}}' %}" class="developer-services-icon" alt="{{tab.title}} Icon"/>
+                            <img src="{% asset_path '{{tab.icon}}'  %}" class="developer-services-icon" alt="{{tab.title}} Icon"/>
                         </div>
                         <div class="ext-right">
                             {{ tab.title}} {% if tab.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}

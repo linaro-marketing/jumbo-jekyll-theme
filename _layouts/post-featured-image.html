@@ -9,7 +9,7 @@ css-package: blog
         <div class="img-blog" style="background: linear-gradient(
                      rgba(20,20,20, .5),
                      rgba(20,20,20, .5)),
-                     url('{% asset_path {{page.image.name}} %}') no-repeat center center fixed;
+                     url('{% asset_path {{page.image.name}}   %}') no-repeat center center fixed;
             background-size: cover;
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -21,9 +21,9 @@ css-package: blog
                     <a href="{{author.url}}">
                         <img class="blog-author-image" style="
                     background-image:url({% if author.image.name %}
-                      {% asset_path '{{author.image.name}}' %}
+                      {% asset_path '{{author.image.name}}'  %}
                     {% else %}
-                      {% asset_path 'avatar-placeholder.png' %}
+                      {% asset_path 'avatar-placeholder.png'  %}
                     {% endif %})" />
                     </a>
                 
@@ -32,9 +32,9 @@ css-package: blog
                         <a href="{{co-author.url}}">
                             <img class="blog-author-image" style="
                         background-image:url({% if co-author.image.name %}
-                          {% asset_path '{{co-author.image.name}}' %}
+                          {% asset_path '{{co-author.image.name}}'  %}
                         {% else %}
-                          {% asset_path 'avatar-placeholder.png' %}
+                          {% asset_path 'avatar-placeholder.png'  %}
                         {% endif %})" />
                         </a>
                         <br />

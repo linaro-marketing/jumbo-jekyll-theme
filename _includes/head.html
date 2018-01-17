@@ -11,7 +11,9 @@
     
     {% include css.html %}
     
-    <link rel="icon" href="{% if site.data.company.favicon %}{% if site.using_assets %}{% asset_path '{{site.data.company.favicon}}' %}{% else %}{{site.data.company.favicon}}{% endif %}{% else %}/assets/images/favicon.png?v=2{% endif %}" type="image/png" />
+    <link rel="icon" href="{% if site.data.settings.favicon %}
+    {% asset_path '{{site.data.company.favicon}}'  %}
+    {% endif %}" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     
