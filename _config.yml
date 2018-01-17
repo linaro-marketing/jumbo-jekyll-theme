@@ -7,6 +7,8 @@ description: |-
 destination: _site
 # Default permalink for blog posts
 permalink: /blog/:title/ 
+# Jumbo Jekyll Theme
+theme: jumbo-jekyll-theme
 # Syntax highlighter
 highlighter: rouge
 # Markdown flavour used by Jekyll to parse markdown.

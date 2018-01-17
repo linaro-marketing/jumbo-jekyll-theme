@@ -5,7 +5,9 @@ css-package: home
 nav-light: true
 home: true
 ---
-{% include jumbotron.html %}
+{% if site.data.settings.home.jumbotron.enabled %}
+    {% include jumbotron.html %}
+{% endif %}
 
 <div class="container-fluid" id="content-container">
     <div class="row">

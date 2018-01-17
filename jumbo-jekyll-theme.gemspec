@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = "jumbo-jekyll-theme"
-  spec.version       = "1.4.1.11"
+  spec.version       = "1.4.2.0"
   spec.authors       = ["Kyle Kirkby"]
   spec.email         = ["kyle.kirkby@linaro.org"]
 
@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "autoprefixer-rails"
   spec.add_runtime_dependency "jekyll-paginate-v2"
   spec.add_runtime_dependency "jekyll-feed"
+  spec.add_runtime_dependency "jekyll-theme-assets"
   
   # Gem Dependencies required by the jekyll-get plugin.
   spec.add_runtime_dependency "hash-joiner"

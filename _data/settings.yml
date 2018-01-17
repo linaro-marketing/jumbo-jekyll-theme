@@ -20,6 +20,8 @@ home:
     shaped-divider: true
     # Jumbotron settings for the home page
     jumbotron:
+        # Toggle the jumbotron
+        enabled: true
         # Title for the home page jumbotron
         title:
             first-line: Welcome to the
