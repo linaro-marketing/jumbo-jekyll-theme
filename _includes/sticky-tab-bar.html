@@ -1,4 +1,4 @@
-{% assign sub-nav-tabs = site.data.sub-nav.pages %}
+{% assign sub-nav-tabs = site.data.sticky-tab-bar.pages %}
 
 {% if sub-nav-tabs %}
 
@@ -19,33 +19,33 @@
     
     
     {% if tab-list %}
-        <div class="tabbed-area" id="tabbed-nav-bar"><!-- Nav tabs Wrapper-->
-            <nav class="navbar-default" role="navigation"><!-- Nav -->
-                <div class="container"><!-- Container -->
-                    <div class="navbar-header"><!-- Navbar Header -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tabbed-nav-bar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button><!-- Navbar Icon Bar Toggle -->
-                        <a class="navbar-brand" id="sub-navigation-header" href=""></a><!-- Navbar Brand -->
-                    </div>
-                    <div class="collapse navbar-collapse" id="tabbed-nav-bar-collapse"><!-- Navbar Collapse -->
-                        <ul class="nav nav-tabs tabbed-nav" id="tab-row" role="tablist">
-                            {% for tab in tab-list %}
-                                <li role="presentation" {% if page.url == tab.url %}class="active tabbed-nav-btn"{% else %}class="tabbed-nav-btn"{% endif %}><a href="{{tab.url}}" aria-controls="overview" role="link">{{tab.title}}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+<div class="tabbed-area" id="tabbed-nav-bar"><!-- Nav tabs Wrapper-->
+    <nav class="navbar-default" role="navigation"><!-- Nav -->
+        <div class="container"><!-- Container -->
+            <div class="navbar-header"><!-- Navbar Header -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tabbed-nav-bar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button><!-- Navbar Icon Bar Toggle -->
+                <a class="navbar-brand" id="sub-navigation-header" href=""></a><!-- Navbar Brand -->
+            </div>
+            <div class="collapse navbar-collapse" id="tabbed-nav-bar-collapse"><!-- Navbar Collapse -->
+                <ul class="nav nav-tabs tabbed-nav" id="tab-row" role="tablist">
+                    {% for tab in tab-list %}
+                        <li role="presentation" {% if page.url == tab.url %}class="active tabbed-nav-btn"{% else %}class="tabbed-nav-btn"{% endif %}><a href="{{tab.url}}" aria-controls="overview" role="link">{{tab.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
+    </nav>
+</div>
     {% elsif custom-include %}
         {% include {{custom-include}}.html %}
     {% else %}
-        No sticky-nav.yml content found - please add to _data/sticky-nav.yml. More information available <a href="/jekyll/includes/sticky-nav/">here</a>.
+No sticky-nav.yml content found - please add to _data/sticky-tab-bar.yml. More information available <a href="/jekyll/includes/sticky-tab-bar/">here</a>.
     {% endif %}
 {% else %}
-    No sidebar settings found - please create a _data/sidebar.yml data file. More information available <a href="/jekyll/includes/sidebar/">here</a>.
+No sidebar settings found - please create a _data/sticky-tab-bar.yml data file. More information available <a href="/jekyll/includes/sticky-tab-bar/">here</a>.
 {% endif %}

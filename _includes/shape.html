@@ -1,6 +1,6 @@
 <div class="container-fluid"> <!--Fluid Container -->
     <div class="row"> <!--Row -->
-        <div id="homepage-jumbotron"
+        <div id="featured-jumbotron"
         
             {% if site.data.settings.home.jumbotron.background %}
                 style="background: #000 url({{site.data.settings.home.jumbotron.background}}) no-repeat center center fixed;
@@ -9,9 +9,9 @@
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-position-y: 80px;"
-                class="jumbotron text-center homepage-jumbotron homepage-image-jumbotron"
+                class="jumbotron text-center featured-jumbotron homepage-image-jumbotron"
             {% else %}
-                class="jumbotron text-center homepage-jumbotron"
+                class="jumbotron text-center featured-jumbotron"
             {% endif %} > <!--Jumbotron div -->
             
         <div class="container"> <!--Container -->
