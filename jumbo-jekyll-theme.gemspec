@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = "jumbo-jekyll-theme"
-  spec.version       = "1.4.2.2"
+  spec.version       = "1.4.2.3"
   spec.authors       = ["Kyle Kirkby"]
   spec.email         = ["kyle.kirkby@linaro.org"]
 
@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r{^(assets|_(data|includes|layouts|sass|plugins)/|(LICENSE|README|robots|config)((\.(txt|md|markdown|yml)|$)))}i)
+    f.match(%r{^(assets|_(data|includes|layouts|sass|plugins)/|(LICENSE|README|robots|_config)((\.(txt|md|markdown|yml)|$)))}i)
   end
 
   # spec.files         = []
