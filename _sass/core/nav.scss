@@ -8,6 +8,10 @@
     color: $navbar-text-color;
     line-height: $navbar-height;
 }
+.navbar-inverse .navbar-brand:hover{
+    color: $brand-primary;
+}
+
 .mobile-link-inactive{
     pointer-events: none;
     cursor: default;
