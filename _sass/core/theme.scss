@@ -6,16 +6,16 @@ body {
     font-weight: 300;
     height  : 100%;
     overflow: auto;
-    font-family: Arial, sans-serif;
+    font-family: $font-family-sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
 /* ------------ Main Container Style margin accounts for Nav ----------- */
-#wrapper{
+#wrapper.main{
     overflow-x: hidden;
     margin-top: $navbar-height - 1;
 }
-#wrapper-home{
+#wrapper.home{
     overflow-x: hidden;
 }
 
@@ -76,7 +76,7 @@ label.control-label {
 
 //Headings
 h1, h2, h3, h4, h5, h6 {
-    font-family: Arial, sans-serif;
+    font-family: $font-family-sans-serif;
     font-weight: bold;
     line-height: 1.1;
     color: inherit;
@@ -151,9 +151,9 @@ p .justified{
 //Homepage Sub Tag
 p.sub-tag {
     width: 65%;
-    margin-bottom: 30px;
-    margin-top: 20px;
-    font-size: 21px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 19px;
     color: #FFF;
     font-weight: 200;
 }
@@ -161,12 +161,22 @@ p.sub-tag {
 // Buttons
 #buttons > a
 {
-    -webkit-border-radius: 20px !important;
-    -moz-border-radius: 20px !important;
-    border-radius: 20px !important;
+    background: transparent;
+    color: $navbar-text-color;
+    border-color: $navbar-text-color;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
     padding: 10px 16px;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.3333333;
+    transition: all 500ms ease;
+}
+#buttons > a:hover
+{
+    background: $navbar-text-color;
+    color: $navbar-inverse-bg;
+    border-color: $navbar-text-color;
 }
 
 //Bottom Border Five Pixels.

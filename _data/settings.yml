@@ -20,16 +20,29 @@ home:
     shaped-divider: true
     # Jumbotron settings for the home page
     jumbotron:
+        included_file: hero-banner.html
         # Toggle the jumbotron
         enabled: true
         # Title for the home page jumbotron
         title:
-            first-line: Welcome to the
-            second-line: Jumbo Jekyll Theme
+            first-line: 
+                text: Welcome to the
+                display: true
+                bold: false
+            second-line: 
+                text: Jumbo Jekyll Theme
+                display: true
+                bold: true
         # Text to be displayed in the home page jumbotron
-        text:
-            first-line: A theme for Linaro Static Jekyll sites.
-            second-line: Customize this content in the _data/settings.yml
+        sub-title:
+            first-line:
+                text: A theme for Linaro Static Jekyll sites.
+                display: true
+                bold: false
+            second-line: 
+                text: Customize this content in the _data/settings.yml
+                display: false
+                bold: false
         # Buttons to be displayed in the Jumbotron
         buttons:
             - text: Learn More
@@ -39,9 +52,13 @@ home:
               url: 
               class: btn btn-primary btn-lg fade-in-three bottom-border-five
         # Background image for the home page located in assets/images
-        background-image: background-image.jpg
-        #image: Linaro-Logo.svg
-        
+        background-image:
+            # Darken is set to true by default - if you wish to remove the image overlay
+            # then change this setting to false.
+            darken: true
+            # This is the name of the background-image located in /assets/images/
+            name: background-image.jpg
+        # image: devicetree-icon-white.png
 
 # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
 github_username: Linaro
