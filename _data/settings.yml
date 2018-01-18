@@ -27,7 +27,7 @@ home:
             first-line: Welcome to the
             second-line: Jumbo Jekyll Theme
         # Text to be displayed in the home page jumbotron
-        text:
+        sub-title:
             first-line: A theme for Linaro Static Jekyll sites.
             second-line: Customize this content in the _data/settings.yml
         # Buttons to be displayed in the Jumbotron
