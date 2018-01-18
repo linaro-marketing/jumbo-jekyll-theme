@@ -6,7 +6,7 @@ body {
     font-weight: 300;
     height  : 100%;
     overflow: auto;
-    font-family: Arial, sans-serif;
+    font-family: $font-family-sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -76,7 +76,7 @@ label.control-label {
 
 //Headings
 h1, h2, h3, h4, h5, h6 {
-    font-family: Arial, sans-serif;
+    font-family: $font-family-sans-serif;
     font-weight: bold;
     line-height: 1.1;
     color: inherit;
