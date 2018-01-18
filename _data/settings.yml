@@ -20,6 +20,7 @@ home:
     shaped-divider: true
     # Jumbotron settings for the home page
     jumbotron:
+        included_file: hero-banner.html
         # Toggle the jumbotron
         enabled: true
         # Title for the home page jumbotron

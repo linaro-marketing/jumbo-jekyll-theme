@@ -8,6 +8,11 @@
         <div id="featured-jumbotron"> <!--Jumbotron div -->        
           <div class="container" id="jumbotron-text"> <!--Container -->
               
+              
+              {% if site.data.settings.home.jumbotron.included_file %}
+                {% include {{site.data.settings.home.jumbotron.included_file}} %}
+              {% else %}
+              
               {% if site.data.settings.home.jumbotron.image %}
                   <div class="col-md-12">
                       <img src="{% asset_path '{{site.data.settings.home.jumbotron.image}}'  %}" id="home-hero-image"
@@ -70,7 +75,9 @@
                         {% endfor %}
                     </p>
               {% endif %}
-            
+        
+          {% endif %}
+             
           </div><!-- End Jumbotron Container Div -->  
           {% if site.data.settings.home.shaped-divider %}
             {% include shape-divider.html %}
