@@ -3,6 +3,7 @@ layout: home
 permalink: /
 title: Home
 ---
+{% include sticky-tab-bar.html %}
 # Jumbo Jekyll Theme
 
 This is a test page for Linaro Jekyll Theme.
