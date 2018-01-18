@@ -1,10 +1,10 @@
 <div class="container-fluid" id="homepage-header" 
-{% if site.data.settings.home.jumbotron.background-image %}
-    style="background-image: url('{% asset_path '{{site.data.settings.home.jumbotron.background-image}}' %}');"
+{% if site.data.settings.home.jumbotron.background-image.name %}
+    style="background-image: url('{% asset_path '{{site.data.settings.home.jumbotron.background-image.name}}' %}');"
 {% else %}
     class="jumbotron text-center featured-jumbotron"
 {% endif %}> <!--Fluid Container -->
-    <div class="row overlay"> <!--Row -->
+    <div class="row {% if site.data.settings.home.jumbotron.background-image.darken %}overlay{% endif %}"> <!--Row -->
         <div id="featured-jumbotron"> <!--Jumbotron div -->        
           <div class="container" id="jumbotron-text"> <!--Container -->
               
