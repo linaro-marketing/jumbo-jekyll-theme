@@ -357,12 +357,21 @@ nav > ul.navbar-right {
     min-width: 620px;
 }
 
-#tabbed-nav-bar {
-    background-color:white;
-    padding-bottom:10px;
-    height:80px;
+#tabbed-nav-bar > nav.navbar-inverse {
+    background-color: $navbar-inverse-bg;
+    height:$navbar-height;
 }
 
+#tabbed-nav-bar .navbar-default .navbar-toggle .icon-bar {
+    background-color: $brand-primary;
+}
+
+@media(max-width: $screen-md-min){
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+        border-color: $navbar-inverse-bg;
+        background-color: $navbar-inverse-bg;
+    }
+}
 
 #tabbed-nav-bar .collapse{
     margin-bottom:-1px;
@@ -378,7 +387,7 @@ nav > ul.navbar-right {
     transition: all 1s ease;
 }
 
-@media(max-width:$screen-md-min){
+@media(max-width:$screen-sm-min - 1){
     #tabbed-nav-bar .tabbed-nav-btn{
         width:100%;
     }
@@ -387,7 +396,7 @@ nav > ul.navbar-right {
     }
     #tabbed-nav-bar .nav-tabs{
         background-color: $navbar-inverse-bg;
-        margin-top: -25px;
+        margin-top: 0px;
         margin-bottom: 20px;
     }
     #tabbed-nav-bar .nav-tabs>li>a::after {
@@ -416,9 +425,16 @@ nav > ul.navbar-right {
 #sub-navigation-header{
     display:none;
     height:100%;
-    line-height: 50px;
+    font-size: 19px;
+    line-height: $navbar-height;
 }
 
+#tabbed-nav-bar a#sub-navigation-header {
+    color: #000;
+}
+#tabbed-nav-bar.sticky-nav a#sub-navigation-header{
+    color: $navbar-text-color;
+}
 /* Sub Navigation Side Bar Hover Style */
 .nav-pills>li.side-nav-button>a:hover {
     color: $navbar-inverse-bg;
