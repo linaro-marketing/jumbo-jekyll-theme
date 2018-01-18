@@ -16,16 +16,25 @@
               {% endif %}
               
               {% if site.data.settings.home.jumbotron.title %}
+                    
                   <h1 id="home-page-title" class="fade-in-one" id="homepage-heading">
-                      {{site.data.settings.home.jumbotron.title.first-line}}<br />
-                      <b>{{site.data.settings.home.jumbotron.title.second-line}}</b>
+                      {% if site.data.settings.home.jumbotron.title.first-line %}
+                          {{site.data.settings.home.jumbotron.title.first-line}}
+                      {% endif %}
+                      {% if site.data.settings.home.jumbotron.title.second-line %}
+                          <br /><b>{{site.data.settings.home.jumbotron.title.second-line}}</b>
+                      {% endif %}
                   </h1>
               {% endif %}
               
               {% if site.data.settings.home.jumbotron.text %}
                 <p id="home-page-text" class="sub-tag center-block fade-in-two">
-                  <span>{{site.data.settings.home.jumbotron.text.first-line}}</span><br />
-                  <span>{{site.data.settings.home.jumbotron.text.second-line}}</span>
+                    {% if site.data.settings.home.jumbotron.sub-title.first-line %}
+                        <span>{{site.data.settings.home.jumbotron.text.first-line}}</span>
+                    {% endif %}
+                    {% if site.data.settings.home.jumbotron.sub-title.second-line %}
+                        <br /><span>{{site.data.settings.home.jumbotron.text.second-line}}</span>
+                    {% endif %}
                 </p>
               {% endif %}
                 
