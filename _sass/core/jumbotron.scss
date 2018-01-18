@@ -8,3 +8,39 @@ div#featured-jumbotron {
     margin-top: $navbar-height + 10;
     text-align: center;
 }
+
+#jumbotron-image:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #000, #000);
+    opacity: .5;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+
+
+div.jumbotron-image{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.overlay:before {
+    content: '';
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #000, #000);
+    opacity: .5;
+}
