@@ -24,12 +24,24 @@ home:
         enabled: true
         # Title for the home page jumbotron
         title:
-            first-line: Welcome to the
-            second-line: Jumbo Jekyll Theme
+            first-line: 
+                text: Welcome to the
+                display: true
+                bold: false
+            second-line: 
+                text: Jumbo Jekyll Theme
+                display: true
+                bold: true
         # Text to be displayed in the home page jumbotron
         sub-title:
-            first-line: A theme for Linaro Static Jekyll sites.
-            second-line: Customize this content in the _data/settings.yml
+            first-line:
+                text: A theme for Linaro Static Jekyll sites.
+                display: true
+                bold: false
+            second-line: 
+                text: Customize this content in the _data/settings.yml
+                display: false
+                bold: false
         # Buttons to be displayed in the Jumbotron
         buttons:
             - text: Learn More
