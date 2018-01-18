@@ -1,18 +1,11 @@
 <div class="container-fluid" id="homepage-header" 
 {% if site.data.settings.home.jumbotron.background-image %}
-    style="background: #000 url({% asset_path '{{site.data.settings.home.jumbotron.background-image}}'  %}) no-repeat center center fixed;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-position-y: 0px"
-    class="jumbotron text-center featured-jumbotron homepage-image-jumbotron"
+    style="background-image: url('{% asset_path '{{site.data.settings.home.jumbotron.background-image}}' %}');"
 {% else %}
     class="jumbotron text-center featured-jumbotron"
 {% endif %}> <!--Fluid Container -->
-    <div class="row"> <!--Row -->
-        <div id="featured-jumbotron"> <!--Jumbotron div -->
-            
+    <div class="row overlay"> <!--Row -->
+        <div id="featured-jumbotron"> <!--Jumbotron div -->        
           <div class="container" id="jumbotron-text"> <!--Container -->
               
               {% if site.data.settings.home.jumbotron.image %}
@@ -35,20 +28,21 @@
                   <span>{{site.data.settings.home.jumbotron.text.second-line}}</span>
                 </p>
               {% endif %}
+                
+              {% if site.data.settings.home.jumbotron.buttons %}
+                    <p id="buttons">
+                        {% for button in  site.data.settings.home.jumbotron.buttons %}
+                            <a class="{{button.class}}" href="{{button.url}}" role="button">
+                                {{button.text}}
+                            </a>
+                        {% endfor %}
+                    </p>
+              {% endif %}
             
-            <p id="buttons">
-                {% for button in  site.data.settings.home.jumbotron.buttons %}
-                    <a class="{{button.class}}" href="{{button.url}}" role="button">
-                        {{button.text}}
-                    </a>
-                {% endfor %}
-            </p>
-            
-          </div>          
-          
+          </div><!-- End Jumbotron Container Div -->  
+          {% if site.data.settings.home.shaped-divider %}
+            {% include shape-divider.html %}
+          {% endif %}   
         </div> <!--End Jumbotron div -->        
     </div> <!--row -->
-    {% if site.data.settings.home.shaped-divider %}
-      {% include shape-divider.html %}
-    {% endif %}
 </div> <!--End Container-fluid -->
