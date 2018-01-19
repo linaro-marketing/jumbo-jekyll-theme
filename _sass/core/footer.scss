@@ -76,8 +76,11 @@ footer b a:hover{
 
 .footer-strip{
     background-color: $footer-bg-color;
-    border-top: 1px $brand-primary solid;
+    border-top: 1px $footer-border-color solid;
 }
+
+
+
 div.row.footer-strip > div > div.pull-right > ul {
     background-color: $gray-darker;
 }
@@ -140,6 +143,3 @@ a.btn.btn-social-icon:hover i  {
     color: $footer-text-color;
 }
 
-.row.footer-strip {
-    border-top-color: $footer-text-color;
-}
