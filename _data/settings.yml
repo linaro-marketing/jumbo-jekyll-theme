@@ -15,11 +15,12 @@ linaro-footer-image: Linaro-Sprinkle.png
 # Settings for the home page
 home:
     # If this is set then the navigation will be transparent.
-    transparent_nav: true
+    transparent-nav: true
     # If this is set to true then the shape divider will be displayed
     shaped-divider: true
     # Jumbotron settings for the home page
     jumbotron:
+        # Include file to replace all the contents of the jumbotron with.
         included_file: hero-banner.html
         # Toggle the jumbotron
         enabled: true
@@ -77,6 +78,8 @@ blog:
     comments: true
     # Post Side Bar Settings
     sidebar:
+        display-on-posts: true
+        display-on-index: true
         # Toggle whether or not thumbnails in the sidebar are displayed.
         thumbnails:
             display: true
