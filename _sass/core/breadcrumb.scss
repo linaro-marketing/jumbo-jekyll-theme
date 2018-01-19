@@ -59,7 +59,7 @@ ol.breadcrumb span {
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
-    color: #fff;
+    color: $breadcrumb-span-color;
     opacity: .5;
 }
 
@@ -74,14 +74,17 @@ ol.breadcrumb li span:hover {
 /* Bread Crumb Container */
 
 .breadcrumb-container{
-    background-color: $brand-primary !important;
-    background-image: none !important;
+    background-color: $breadcrumb-background-color;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
 .breadcrumb-container > p {
     color: #fff;
+}
+
+.breadcrumb-inner-container h1, .breadcrumb-inner-container h2, .breadcrumb-inner-container h3{
+    color: $breadcrumb-title-color;
 }
 
 
