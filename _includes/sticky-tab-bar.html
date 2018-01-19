@@ -19,9 +19,9 @@
     
     
     {% if tab-list %}
-<div class="tabbed-area" id="tabbed-nav-bar"><!-- Nav tabs Wrapper-->
+<div class="tabbed-area non-sticky-nav" id="tabbed-nav-bar"><!-- Nav tabs Wrapper-->
+    <div class="container">
     <nav class="navbar-default" role="navigation"><!-- Nav -->
-        <div class="container"><!-- Container -->
             <div class="navbar-header"><!-- Navbar Header -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tabbed-nav-bar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -38,8 +38,8 @@
                     {% endfor %}
                 </ul>
             </div>
-        </div>
     </nav>
+    </div>
 </div>
     {% elsif custom-include %}
         {% include {{custom-include}}.html %}
