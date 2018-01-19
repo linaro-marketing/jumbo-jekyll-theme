@@ -3,22 +3,27 @@
         {% if site.data.settings.blog.show_thumbnails %}
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <a href="{{post.url}}">
-                    <img class="img-responsive blog-img lazyload"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                    {% if site.using_assets == true %}
-                        {% if post.featured_image %}
-                            data-src="{% asset_path '{{post.featured_image}}' %}"
-                        {% else %}
-                            data-src="{% asset_path '{{site.data.company.placeholder}}' %}"
-                        {% endif %}
+                    {% if post.image.name %}                          
+                          <picture>
+                              <source srcset="/{{site.mini_magick.thumbnails.destination}}{{post.image.name}}" 
+                              media="(max-width: 999px)" />
+                              <source srcset="/{{site.mini_magick.medium.destination}}{{post.image.name}}"
+                               media="(min-width: 1000px)" />
+                              <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+                              data-src="/{{site.mini_magick.thumbnail.destination}}{{post.image.name}}" 
+                              class="lazyload img-responsive center-block"/>
+                          </picture>
                     {% else %}
-                        {% if post.featured_image %}
-                            data-src="/assets{{post.featured_image}}"
-                        {% else %}
-                            data-src="{% if site.data.company.placeholder %}{{site.data.company.placeholder}}{% else %}/assets/images/placeholder.png{% endif %}"
-                        {% endif %}
+                        <picture>
+                            <source srcset="/{{site.mini_magick.thumbnails.destination}}{{site.data.settings.placeholder}}"
+                            media="(max-width: 999px)" />
+                            <source srcset="/{{site.mini_magick.medium.destination}}{{site.data.settings.placeholder}}"
+                             media="(min-width: 1000px)" />
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+                            data-src="/{{site.mini_magick.thumbnail.destination}}{{site.data.settings.placeholder}}" 
+                            class="lazyload img-responsive center-block"/>
+                        </picture>
                     {% endif %}
-                     alt="{{post.title}}" />
                 </a>
             </div>
             <div class="col-md-8 col-sm-8 col-xs-8 post_title no-padding">

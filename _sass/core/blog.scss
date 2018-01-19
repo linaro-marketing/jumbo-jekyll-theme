@@ -368,7 +368,14 @@ img.large-inline.right {
     
 }
 
-
+@media(max-width: $screen-md-min - 1){
+    /* Blog Sidebar */
+    .col-md-3.blog-sidebar {
+        margin-top: 15px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
 
 // Blog Side Panel Styles
 .featured_post_post > .row {
@@ -416,4 +423,5 @@ img.large-inline.right {
 .featured_blog_post  small em {
     color:black;
 }
+
 
