@@ -67,17 +67,16 @@ img.img-thumbnail {
     position: relative;
 }
 .blog-full-page-image-info{
-    color: #FFF;
-    height: 500px;
+    color: $featured-image-text-color;
     margin-left: auto;
+    margin-bottom: 82px;
     margin-right: auto;
     z-index: 1;
+    height: 300px;
     text-align: center;
-    margin-top: -21px;
-    line-height:50px;
+    line-height: 50px;
     position: relative;
-    top: 10vh;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 .blog-title {
     width: 50%;
@@ -243,7 +242,9 @@ div.tag_cloud {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
+div#featured-jumbotron.blog {
+    margin-top: 0;
+}
 div.previous_post{
     display:none;
 }
