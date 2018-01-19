@@ -1,31 +1,52 @@
 {% for post in paginator.posts %}
     <div class="row blog_post">
         {% if site.data.settings.blog.show_thumbnails %}
-        <div class="col-xs-12 post_title no-padding">
-            <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
-            <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
-            <p class="post_excerpt">
-            {{ post.content | strip_html | truncatewords:30 }}
-            </p>
-            <p>
+            <div class="col-md-4 col-sm-4 col-xs-4">
                 <a href="{{post.url}}">
-                    <button class="btn blog-read-more-btn">Read More</button>
+                    <img class="img-responsive blog-img lazyload"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                    {% if site.using_assets == true %}
+                        {% if post.featured_image %}
+                            data-src="{% asset_path '{{post.featured_image}}' %}"
+                        {% else %}
+                            data-src="{% asset_path '{{site.data.company.placeholder}}' %}"
+                        {% endif %}
+                    {% else %}
+                        {% if post.featured_image %}
+                            data-src="/assets{{post.featured_image}}"
+                        {% else %}
+                            data-src="{% if site.data.company.placeholder %}{{site.data.company.placeholder}}{% else %}/assets/images/placeholder.png{% endif %}"
+                        {% endif %}
+                    {% endif %}
+                     alt="{{post.title}}" />
                 </a>
-            </p>
-        </div>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8 post_title no-padding">
+                <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
+                <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
+                <p class="post_excerpt">
+                {{ post.content | strip_html | truncatewords:30 }}
+                </p>
+                <p>
+                    <a href="{{post.url}}">
+                        <button class="btn blog-read-more-btn">Read More</button>
+                    </a>
+                </p>
+            </div>
         {% else %}
-        <div class="col-xs-12 post_title no-padding">
-            <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
-            <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
-            <p class="post_excerpt">
-            {{ post.content | strip_html | truncatewords:30 }}
-            </p>
-            <p>
-                <a href="{{post.url}}">
-                    <button class="btn blog-read-more-btn">Read More</button>
-                </a>
-            </p>
-        </div>
+            <div class="col-xs-12 post_title no-padding">
+                <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
+                <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
+                <p class="post_excerpt">
+                {{ post.content | strip_html | truncatewords:30 }}
+                </p>
+                <p>
+                    <a href="{{post.url}}">
+                        <button class="btn blog-read-more-btn">Read More</button>
+                    </a>
+                </p>
+            </div>
         {% endif %}
     </div>
 {% endfor %}
+
