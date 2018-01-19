@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jumbo-jekyll-theme (1.4.2.15)
+    jumbo-jekyll-theme (1.4.2.17)
       autoprefixer-rails
       bootstrap-sass (~> 3.3)
       hash-joiner
