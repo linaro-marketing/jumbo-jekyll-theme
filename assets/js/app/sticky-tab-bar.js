@@ -19,7 +19,6 @@ $(document).ready(function(){
             if ( $(window).scrollTop() > origOffsetY) {
                 $('#tabbed-nav-bar').removeClass('non-sticky-nav');
                 $('#tabbed-nav-bar').addClass('sticky-nav');
-
                 $("nav#main-navigation").hide();
                 $('#wrapper').css('margin-top','70px');
                 if ($(window).width() < 1000) {
