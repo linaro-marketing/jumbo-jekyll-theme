@@ -71,6 +71,8 @@ slideshare_username: linaroorg
 
 # Blog setup
 blog:
+    # Show Thumbnails in the post index
+    show_thumbnails: true
     # Toggle site wide comments display.
     comments: true
     # Post Side Bar Settings
