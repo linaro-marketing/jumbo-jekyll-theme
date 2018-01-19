@@ -17,9 +17,11 @@ $(document).ready(function(){
 
 
             if ( $(window).scrollTop() > origOffsetY) {
+                $('#tabbed-nav-bar').removeClass('non-sticky-nav');
                 $('#tabbed-nav-bar').addClass('sticky-nav');
+
                 $("nav#main-navigation").hide();
-                $('#wrapper').css('margin-top','132px');
+                $('#wrapper').css('margin-top','70px');
                 if ($(window).width() < 1000) {
                     $('#tabbed-nav-bar nav').removeClass('navbar-default');
                     $('#tabbed-nav-bar nav').addClass('navbar-inverse');
@@ -38,6 +40,8 @@ $(document).ready(function(){
             }
             else {
                 $('#tabbed-nav-bar').removeClass('sticky-nav');
+                $('#tabbed-nav-bar').addClass('non-sticky-nav');
+            
                 $('#wrapper').css('margin-top','0px');
                 $("nav#main-navigation").show();
 
