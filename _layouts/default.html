@@ -5,8 +5,8 @@ js-package: main
 <html lang="en">
     {% include head.html %}
     <body>
-            {% if site.data.company.google.tag_manager %}
-              {% include _theme-includes/_script-includes/gtm/gtm-noscript.html %}
+            {% if site.data.settings.google.tag_manager %}
+              {% include gtm-noscript.html %}
             {% endif %}
             <div id="wrapper" class="{% if layout.home == true and site.data.settings.home.jumbotron.enabled %}home{% else %}main{% endif %}">
                 {% include nav.html %}
