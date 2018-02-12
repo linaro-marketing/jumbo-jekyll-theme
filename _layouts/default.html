@@ -11,6 +11,10 @@ js-package: main
             <div id="wrapper" class="{% if layout.home == true and site.data.settings.home.jumbotron.enabled %}home{% else %}main{% endif %}">
                 {% include nav.html %}
                 {{content}}
+            
+                {% if site.data.footer.include %}
+                    {% include {{site.data.footer.include}} %}
+                {% endif %}
 
                 {% if site.data.settings.newsletter.enabled == true %}
                     {% if page.url != "/search/" %}
