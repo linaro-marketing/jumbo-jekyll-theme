@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   end
 
   # spec.files         = []
-  spec.required_ruby_version = '>= 2.4.2'
+  spec.required_ruby_version = '>= 2.4.s2'
   
   spec.add_runtime_dependency 'jekyll', '~> 3.7', '>= 3.7.0'
   spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
