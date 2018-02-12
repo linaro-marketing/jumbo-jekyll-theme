@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   # spec.files         = []
   spec.required_ruby_version = '>= 2.4.2'
   
-  spec.add_runtime_dependency "jekyll", "~> 3.7.0"
+  spec.add_runtime_dependency 'jekyll', '~> 3.7', '>= 3.7.0'
   spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
   spec.add_runtime_dependency "jekyll-sitemap", "~> 1.1"
   spec.add_runtime_dependency "jekyll-readme-index", "~> 0.1"
@@ -24,17 +24,16 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll-redirect-from", "~> 0.12"
   spec.add_runtime_dependency "jekyll-tidy", "~> 0.2.2"
   spec.add_runtime_dependency "jekyll-assets", "2.2.8"
-  spec.add_runtime_dependency "jekyll-data"
-  spec.add_runtime_dependency "uglifier"
-  spec.add_runtime_dependency "autoprefixer-rails"
-  spec.add_runtime_dependency "jekyll-paginate-v2"
-  spec.add_runtime_dependency "jekyll-feed"
-  spec.add_runtime_dependency "mini_magick"
-  spec.add_runtime_dependency "jekyll-theme-assets"
+  spec.add_runtime_dependency 'jekyll-data', '~> 0'
+  spec.add_runtime_dependency 'uglifier', '~> 0'
+  spec.add_runtime_dependency 'autoprefixer-rails', '~> 0'
+  spec.add_runtime_dependency 'jekyll-paginate-v2', '~> 0'
+  spec.add_runtime_dependency 'jekyll-feed', '~> 0'
+  spec.add_runtime_dependency 'mini_magick', '~> 0'
+  spec.add_runtime_dependency 'jekyll-theme-assets', '~> 0'
   
   # Gem Dependencies required by the jekyll-get plugin.
-  spec.add_runtime_dependency "hash-joiner"
-  
+  spec.add_runtime_dependency 'hash-joiner', '~> 0'
   
   # 
   # # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
