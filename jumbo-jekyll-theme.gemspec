@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = "jumbo-jekyll-theme"
-  spec.version       = "1.4.2.23"
+  spec.version       = "1.4.2.26"
   spec.authors       = ["Kyle Kirkby"]
   spec.email         = ["kyle.kirkby@linaro.org"]
 
@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   end
 
   # spec.files         = []
-  spec.required_ruby_version = '>= 2.4.s2'
+  spec.required_ruby_version = '>= 2.4.2'
   
   spec.add_runtime_dependency 'jekyll', '~> 3.7', '>= 3.7.0'
   spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
@@ -24,13 +24,13 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll-redirect-from", "~> 0.12"
   spec.add_runtime_dependency "jekyll-tidy", "~> 0.2.2"
   spec.add_runtime_dependency "jekyll-assets", "2.2.8"
-  spec.add_runtime_dependency 'jekyll-data', '~> 0'
-  spec.add_runtime_dependency 'uglifier', '~> 0'
-  spec.add_runtime_dependency 'autoprefixer-rails', '~> 0'
-  spec.add_runtime_dependency 'jekyll-paginate-v2', '~> 0'
-  spec.add_runtime_dependency 'jekyll-feed', '~> 0'
-  spec.add_runtime_dependency 'mini_magick', '~> 0'
-  spec.add_runtime_dependency 'jekyll-theme-assets', '~> 0'
+  spec.add_runtime_dependency 'jekyll-data', '>0'
+  spec.add_runtime_dependency 'uglifier', '>0'
+  spec.add_runtime_dependency 'autoprefixer-rails', '~> 5.0', '>= 5.0.0.1'
+  spec.add_runtime_dependency 'jekyll-paginate-v2', '>0'
+  spec.add_runtime_dependency 'jekyll-feed', '>0'
+  # spec.add_runtime_dependency 'mini_magick', '~> 0'
+  spec.add_runtime_dependency 'jekyll-theme-assets', '>0'
   
   # Gem Dependencies required by the jekyll-get plugin.
   spec.add_runtime_dependency 'hash-joiner', '~> 0'
