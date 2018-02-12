@@ -19,3 +19,11 @@ pages:
     /about/,
     /faq/,
     /jekyll/]
+  -
+    list:
+      -
+        title: "Container Breadcrumb"
+        url: /jekyll/layouts/container-breadcrumb/
+        
+    urls: [
+    /jekyll/layouts/container-breadcrumb/]
