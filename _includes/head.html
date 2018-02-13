@@ -18,11 +18,11 @@
     <meta charset="UTF-8">
     
     {% if site.data.settings.google.tag_manager %}
-      {% include google-tag-manager.html %}
+      {% include gtm-script.html %}
     {% endif %}
     
     {% if site.data.settings.google.analytics %}
-        {% include google-analytics.html %}
+        {% include google-analytics-script.html %}
     {% endif %}
     
     {% if page.keywords %}
