@@ -14,6 +14,8 @@ linaro-footer-image: Linaro-Sprinkle.png
     
 # Settings for the home page
 home:
+    #Content Background Image E.g. DeviceTree.org
+    # content-image: background-image.png
     # If this is set then the navigation will be transparent.
     transparent-nav: true
     # If this is set to true then the shape divider will be displayed

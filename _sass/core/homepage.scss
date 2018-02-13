@@ -95,3 +95,24 @@ div#wrapper.home-container {
         height: auto;
     }
 }
+
+.content-background-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+}
+
+
+.content-background-image-container{
+    position: relative;
+}
+
+.content-background-image-row{
+    position: relative;
+    overflow: hidden;
+}
