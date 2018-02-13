@@ -21,7 +21,7 @@ $navbar-inverse-bg: #000;
 $navbar-inverse-color: #fff;
 
 // Breadcrumb
-$breadcrumb-background-color: #000 !default;
+$breadcrumb-background-color: $brand-primary !default;
 $breadcrumb-title-color: #fff !default;
 $breadcrumb-span-color: #fff !default;
 
