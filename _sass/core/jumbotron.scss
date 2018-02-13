@@ -20,8 +20,9 @@ div#featured-jumbotron {
     opacity: .5;
 }
 
+/* Featured Image Overlay - 50% opacity */
 .overlay {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     position: relative;
 }
 
