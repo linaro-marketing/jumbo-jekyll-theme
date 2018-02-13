@@ -10,8 +10,12 @@ home: true
 {% endif %}
 
 <div class="container-fluid" id="content-container">
-    <div class="row">
-        <div class="container">
+    <div class="row {% if site.data.settings.home.content-image %}content-background-image-row{% endif %}">
+        {% if site.data.settings.home.content-image %}
+            <div class="content-background-image"     
+            style="background-image: url({% asset_path '{{site.data.settings.home.content-image}}' %});"></div>
+        {% endif %}
+        <div class="container {% if site.data.settings.home.content-image %}content-background-image-container{% endif %}">
             {{ content }}
         </div>
     </div>

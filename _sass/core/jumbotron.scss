@@ -5,8 +5,8 @@
 
 /* Home Page Jumbotron Div */
 div#featured-jumbotron {
-    margin-top: $navbar-height + 10;
     text-align: center;
+    margin-top: $navbar-height + 20;
 }
 
 #jumbotron-image:before {
@@ -20,8 +20,9 @@ div#featured-jumbotron {
     opacity: .5;
 }
 
+/* Featured Image Overlay - 50% opacity */
 .overlay {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     position: relative;
 }
 

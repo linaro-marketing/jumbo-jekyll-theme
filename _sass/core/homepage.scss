@@ -44,6 +44,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-position: center center;
 }
 
 /* Sub Text in Home Page Header */
@@ -93,4 +94,25 @@ div#wrapper.home-container {
     .row.activity-holder.center-block {
         height: auto;
     }
+}
+
+.content-background-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+}
+
+
+.content-background-image-container{
+    position: relative;
+}
+
+.content-background-image-row{
+    position: relative;
+    overflow: hidden;
 }

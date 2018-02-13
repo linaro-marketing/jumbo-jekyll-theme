@@ -14,12 +14,15 @@ linaro-footer-image: Linaro-Sprinkle.png
     
 # Settings for the home page
 home:
+    #Content Background Image E.g. DeviceTree.org
+    # content-image: background-image.png
     # If this is set then the navigation will be transparent.
-    transparent_nav: true
+    transparent-nav: true
     # If this is set to true then the shape divider will be displayed
     shaped-divider: true
     # Jumbotron settings for the home page
     jumbotron:
+        # Include file to replace all the contents of the jumbotron with.
         included_file: hero-banner.html
         # Toggle the jumbotron
         enabled: true
@@ -71,10 +74,14 @@ slideshare_username: linaroorg
 
 # Blog setup
 blog:
+    # Show Thumbnails in the post index
+    show_thumbnails: true
     # Toggle site wide comments display.
     comments: true
     # Post Side Bar Settings
     sidebar:
+        display-on-posts: true
+        display-on-index: true
         # Toggle whether or not thumbnails in the sidebar are displayed.
         thumbnails:
             display: true

@@ -14,6 +14,11 @@ article.post-content {
     overflow: auto;
 }
 
+/* Blog Side Bar Panel Title */
+#wrapper h3.panel-title {
+    color: $navbar-text-color;
+}
+
 /* Post Info - post.html layout */
 .post-info {
     margin-bottom: 20px;
@@ -37,8 +42,6 @@ a:hover > img.blog-author-image {
 #wrapper small.blog-author.text-center > a:hover > em {
     color:#a681b8;
 }
-
-
 /* Blog Post Images - Responsive by default */
 article.post-content img {
     width: 100%;
@@ -64,17 +67,16 @@ img.img-thumbnail {
     position: relative;
 }
 .blog-full-page-image-info{
-    color: #FFF;
-    height: 500px;
+    color: $featured-image-text-color;
     margin-left: auto;
+    margin-bottom: 82px;
     margin-right: auto;
     z-index: 1;
+    height: 300px;
     text-align: center;
-    margin-top: -21px;
-    line-height:50px;
+    line-height: 50px;
     position: relative;
-    top: 10vh;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 .blog-title {
     width: 50%;
@@ -182,7 +184,7 @@ a.featured_blog_post_text:hover{
 
 .featured_blog_post {
   height: auto;
-  margin: 5px;
+  margin: -1px;
   border-bottom: 1px solid $gray-lighter;
   padding: 12px;
 }
@@ -240,7 +242,9 @@ div.tag_cloud {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
+div#featured-jumbotron.blog {
+    margin-top: 0;
+}
 div.previous_post{
     display:none;
 }
@@ -251,17 +255,19 @@ a.previous_post_anchor {
     position: fixed;
     top: 50%;
     right:0;
+    z-index: 99999;
 }
 a.next_post_anchor {
     position: fixed;
     top: 50%;
     left:0;
+    z-index: 99999;
 }
 
 //Small Inline Blog Images
-img.small-inline {
-    width: 100px !important;
-    height: auto !important;
+#wrapper img.small-inline {
+    width: 100px;
+    height: auto;
     display: inline-block;
     float: left;
     margin-right: 30px;
@@ -339,9 +345,6 @@ img.large-inline.right {
     height: 100px;
     width: 100px;
     }
-    .blog_post{
-        padding:20px;
-    }
     em.post_date {
         font-size: 13px;
     }
@@ -365,7 +368,14 @@ img.large-inline.right {
     
 }
 
-
+@media(max-width: $screen-md-min - 1){
+    /* Blog Sidebar */
+    .col-md-3.blog-sidebar {
+        margin-top: 15px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
 
 // Blog Side Panel Styles
 .featured_post_post > .row {
@@ -413,4 +423,5 @@ img.large-inline.right {
 .featured_blog_post  small em {
     color:black;
 }
+
 

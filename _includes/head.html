@@ -17,12 +17,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     
-    {% if site.data.settings.google-analytics.tag-manager %}
-      {% include google-tag-manager.html %}
+    {% if site.data.settings.google.tag_manager %}
+      {% include gtm-script.html %}
     {% endif %}
     
-    {% if site.data.settings.google-analytics.analytics %}
-        {% include google-analytics.html %}
+    {% if site.data.settings.google.analytics %}
+        {% include google-analytics-script.html %}
     {% endif %}
     
     {% if page.keywords %}

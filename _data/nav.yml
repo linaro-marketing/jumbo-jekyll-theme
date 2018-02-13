@@ -1,6 +1,6 @@
 # Search Config
 search:
-    enabled: false
+    enabled: true
     label: Linaro
     
 # Nav Brand Config

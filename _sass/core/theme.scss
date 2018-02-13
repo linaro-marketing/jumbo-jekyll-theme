@@ -508,10 +508,30 @@ blockquote:before {
 }
 
 #content-container h1, #content-container h2, #content-container h3, #content-container h4, #content-container h5 {
-    color: #393836 !important;
+    color: #393836;
+}
+
+/* Bootstrap Panels*/
+#wrapper .panel-body {
+    padding: 0;
+    border-radius: 0;
+}
+
+#wrapper .panel.panel-primary {
+    padding: 0;
+    border-radius: 0px;
+}
+
+#wrapper .panel-heading {
+    border-radius: 0px;
+    border: 1px solid $brand-primary;
+}
+
+#wrapper h3.panel-title {
+    font-weight: normal;
+    color: $navbar-text-color;
 }
 
 ul {
     font-size: 16px;
 }
-

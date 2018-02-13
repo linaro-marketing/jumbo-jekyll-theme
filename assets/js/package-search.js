@@ -4,6 +4,6 @@
 //= require vendor/lazysizes.min
 
 //= require app/main
+//= require app/search
 //= require app/tables
-//= require app/sticky-tab-bar
-//= require vendor/mc-validate
+

@@ -26,6 +26,7 @@ exclude:
   - .asset-cache
   - _static-site
   - .sass-cache
+  - _site
 
 # Sass Configuration for the site styles
 sass:
@@ -91,13 +92,13 @@ assets:
   sources:
     - assets/js/
     - assets/images/
-    - assets/css/
-
-
+    - assets/css/    
+    
 # Jekyll relative links plugin settings    
 jekyll_relative_links:
     process_all_collections: true
     verbose: 1
+    
     
 plugins:
     # - jekyll-minimagick

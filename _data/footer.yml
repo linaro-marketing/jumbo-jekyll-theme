@@ -1,5 +1,9 @@
 # Image to be used in the footer. Default is the Linaro Sprinkle
 # image: Linaro-Logo.svg
+ 
+# Optional Footer include which, when supplied, will prepend the included file 
+# to the footer.html include.
+include: members.html
 
 # Columns to be added to the footer
 columns:

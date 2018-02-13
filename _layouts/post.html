@@ -1,9 +1,8 @@
 ---
+layout: default
 js-package: blog
 css-package: blog
-layout: container
 ---
-
 {% if page.previous.url %}
     <a href="{{page.previous.url}}" class="previous_post_anchor">
         <div class="previous_post"></div>
@@ -14,58 +13,195 @@ layout: container
         <div class="next_post"></div>
     </a>
 {% endif %}
-
-<div class="col-md-9">
-    <article class="post-content">
-        <div class="post-info">
-            <h1>{{page.title }}</h1>
-            
-            {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
-            {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
-            {% if page.author %}
-                {% assign author = site.authors | where: 'username' , page.author %}
-                {% assign author = author[0] %}
-                <em> By
-                    {% if author %}
+{% if page.image.featured %}
+    <div class="container-fluid" {% if page.image.featured %}
+        style="background: #000 url({% asset_path '{{page.image.name}}'  %}) no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-position-y: 0px"
+        class="jumbotron text-center featured-jumbotron homepage-image-jumbotron"
+    {% else %}
+        class="jumbotron text-center featured-jumbotron"
+    {% endif %}> <!--Fluid Container -->
+    {% if assets[page.image.name] %}
+        <div class="row"> <!--Row -->
+            <div id="featured-jumbotron" class="blog blog-full-page-image-info"> <!--Jumbotron div -->
+                    <h1 class="text-center" id="featured-image-blog-title">{{page.title}}</h1>
+                    {% if page.author %}
+                        {% assign author = site.authors | where: "username", page.author | first %}
                         <a href="{{author.url}}">
-                            <strong>
-                                {{author.name}}
-                            </strong>
+                            <img class="blog-author-image" style="
+                        background-image:url({% if author.image.name %}
+                          {% asset_path '{{author.image.name}}'  %}
+                        {% else %}
+                          {% asset_path 'avatar-placeholder.png'  %}
+                        {% endif %})" />
                         </a>
-                    {% else %}
-                            <strong>
-                                {{page.author}}
-                            </strong>
+                    
+                        {% if page.co-author %}
+                            {% assign co-author = site.authors | where: "username", page.co-author | first %}
+                            <a href="{{co-author.url}}">
+                                <img class="blog-author-image" style="
+                            background-image:url({% if co-author.image.name %}
+                              {% asset_path '{{co-author.image.name}}'  %}
+                            {% else %}
+                              {% asset_path 'avatar-placeholder.png'  %}
+                            {% endif %})" />
+                            </a>
+                            <br />
+                            <small class="blog-author text-center">
+                                By 
+                                <a href="{{author.url}}">
+                                    <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
+                                </a>
+                                and
+                                <a href="{{co-author.url}}">
+                                    <em>{% if co-author.name %}{{co-author.name}}{% else %}{{page.co-author}}{% endif %}</em>
+                                </a>
+                            </small>
+                            <br />
+                        {% else %}
+                        <br />
+                        <small class="blog-author text-center">
+                            By 
+                            <a href="{{author.url}}">
+                                <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
+                            </a>
+                        </small>
+                        <br />
+                        {% endif %}
+                    {% endif %}
+                    {% if page.date %}<small class="blog-date text-center"><em>{{page.date |  date: "%A, %B %-d, %Y"}}</em></small>{% endif %}
+                </div>
+        </div>
+        
+        {% if page.shape-divider %}
+            {% include shape-divider.html %}
+        {% endif %}
+        
+    </div>
+    {% endif %}
+{% endif %}
+
+<div class="container-fluid" id="content-container">
+    <div class="row">
+        <div class="container">
+            {% if site.data.settings.blog.sidebar.display-on-posts %}
+            <div class="col-md-9">
+                    <article class="post-content">
+                        {% unless page.image.featured %}
+                        <div class="post-info">
+                            <h1>{{page.title }}</h1>
+                            
+                            {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
+                            {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
+                            {% if page.author %}
+                                {% assign author = site.authors | where: 'username' , page.author %}
+                                {% assign author = author[0] %}
+                                <em> By
+                                    {% if author %}
+                                        <a href="{{author.url}}">
+                                            <strong>
+                                                {{author.name}}
+                                            </strong>
+                                        </a>
+                                    {% else %}
+                                            <strong>
+                                                {{page.author}}
+                                            </strong>
+                                    {% endif %}
+                                    
+                                </em>
+                            {% endif %}
+                        </div>
+                        {% endunless %}
+                        {{ content }}
+                    </article>
+
+              
+                    {% if page.featured-products %}
+                        <h3>Featured Products</h3>
+                        <hr />
+                        <div class="row feautured-products-blog-row">
+                            {% for each in page.featured-products %}
+                            
+                                {% capture product-perma %}/product/{{each}}/{% endcapture %}
+                                
+                                {% assign product = site.data.product_db.products | where: "product_permalink", product-perma | first %}
+                                
+                                <div class="col-sm-6">
+                                    <div class="col-xs-3">
+                                        <div class="featured-product-blog-img">
+                                            <a href="{{product.product_permalink}}">
+                                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="../../product/{{product.product_specification}}/{{each}}/images/{{product.product_images[0]}}" class="lazyload img-responsive" alt="{{product.product_title}}" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <span class="featured-product-blog-title">{{product.product_title}}</h4>
+                                        <a class="btn btn-blog btn-xs btn-featured-product" href="{{product.product_permalink}}">View Product</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        
+                        <hr/>
                     {% endif %}
                     
-                </em>
-            {% endif %}
-        </div>
-        {{ content }}
-    </article>
-    
-    <hr />
-    
-    {% comment %}
-        TAGS - Check to see if the tags_enabled setting in settings.yml data file is toggled.
-    {% endcomment %}
-    
-    {% include post-tags.html %}
-    
-    {% comment %}
-        COMMENTS - Check to see if comments are toggled for this particular post.
-    {% endcomment %}
-    
-    {% include post-comments.html %}
-    
-
+                
+                
+                {% comment %}
+                    TAGS - Check to see if the tags_enabled setting in settings.yml data file is toggled.
+                {% endcomment %}
+                
+                {% include post-tags.html %}
+                
+                {% comment %}
+                    COMMENTS - Check to see if comments are toggled for this particular post.
+                {% endcomment %}
+                
+                {% include post-comments.html %}
+                </div>
+                <div class="col-md-3 blog-sidebar">
+                    {% include post-sidebar.html %}
+                </div>
+                {% else %}
+                <div class="col-xs-12 no-padding">
+                    <article class="post-content">
+                        {% unless page.image.featured %}
+                        <div class="post-info">
+                            <h1>{{page.title }}</h1>
+                            
+                            {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
+                            {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
+                            {% if page.author %}
+                                {% assign author = site.authors | where: 'username' , page.author %}
+                                {% assign author = author[0] %}
+                                <em> By
+                                    {% if author %}
+                                        <a href="{{author.url}}">
+                                            <strong>
+                                                {{author.name}}
+                                            </strong>
+                                        </a>
+                                    {% else %}
+                                            <strong>
+                                                {{page.author}}
+                                            </strong>
+                                    {% endif %}
+                                    
+                                </em>
+                            {% endif %}
+                        </div>
+                        {% endunless %}
+                        {{ content }}
+                    </article>
+                </div>
+                {% endif %}
+                
+                
+        </div>        
+    </div>
 </div>
-
-{% comment %}
-    Display a right side bar.
-{% endcomment %}
-
-<div class="col-md-3">
-    {% include post-sidebar.html %}
-</div>
-

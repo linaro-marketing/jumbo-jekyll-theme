@@ -13,8 +13,6 @@ $(document).mouseup(function(e)
 $(document).ready(function () {
     
     $('.dropdown-toggle').dropdown();
-    
-    
     // $(document).on('touchstart.dropdown.data-api', '.dropdown-submenu > a', function (event) {
     //   event.preventDefault();
     // });
@@ -139,7 +137,5 @@ $(document).ready(function () {
     
     console.log("%c%s", "color:#fff; background:#fff; font-size: 2pt", 'Speak friend and enter. - We are Hiring - visit /careers/ for more info.');
     console.log("%c%s", "color:#fff; background:#a682b8; font-size: 16pt", 'Linaro.org - Leading Collaboration in the Arm Ecosystem\n\nStatic Website built using Jekyll\n\nTo Contribute visit https://github.com/Linaro/website');
-
-    
     
 });

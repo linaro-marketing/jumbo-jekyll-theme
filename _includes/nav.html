@@ -1,7 +1,7 @@
 <nav class="
 {% if site.data.settings.home.jumbotron.enabled %}
     {% if layout.nav-light %}
-        {% if site.data.settings.home.transparent_nav %}
+        {% if site.data.settings.home.transparent-nav %}
             nav-light 
         {% endif %}
     {% elsif layout.nav-dark %}
@@ -40,7 +40,7 @@ navbar-inverse navbar-fixed-top" id="main-navigation">
               <ul class="nav navbar-nav navbar-right" id="navbar-buttons">
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
-                        <li class="dropdown menu
+                        <li class="main dropdown menu
                             {% for menu-item in section.options %}
                                  {% if page.url == menu-item.url %}
                                     active
@@ -81,7 +81,9 @@ navbar-inverse navbar-fixed-top" id="main-navigation">
                         </li>
                     {% else %}
                         <li {% if section.url == page.permalink %}
-                                class="active"
+                                class="main active"
+                            {% else %}
+                                class="main"
                             {% endif %}
                             ><a href="{{section.url}}" title="{{section.title}}">{{section.title}}</a></li>
                     {% endif %}
@@ -92,7 +94,6 @@ navbar-inverse navbar-fixed-top" id="main-navigation">
                         <a href="#search" class="dropdown-toggle" id="search_icon">
                              <i class="glyphicon glyphicon-search"></i>
                         </a>
-                        
                     </li>
                 {% endif %}
         
