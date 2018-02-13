@@ -12,9 +12,9 @@ tags_enabled: true
 # Footer Image default is linaro sprinkle
 linaro-footer-image: Linaro-Sprinkle.png
 
-# Breadcrumb Settings
-breadcrumb:
-    image: breadcrumb-image.jpg
+# # Breadcrumb Settings
+# breadcrumb:
+#     image: breadcrumb-image.jpg
     
     
 # Settings for the home page

@@ -3,7 +3,7 @@
  
 # Optional Footer include which, when supplied, will prepend the included file 
 # to the footer.html include.
-include: members.html
+# include: members.html
 
 # Columns to be added to the footer
 columns:
