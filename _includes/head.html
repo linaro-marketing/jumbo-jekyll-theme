@@ -2,8 +2,8 @@
     <title>
         {% if page.title %}
                  {{page.title}} - {{site.title}}
-        {% elsif site.data.company.slogan %}
-                {{site.title}} - {{site.data.company.slogan}}
+        {% elsif site.data.settings.slogan %}
+                {{site.title}} - {{site.data.settings.slogan}}
         {% else %}
                 {{site.title}}
         {% endif %}
