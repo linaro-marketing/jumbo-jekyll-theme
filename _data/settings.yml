@@ -15,7 +15,14 @@ linaro-footer-image: Linaro-Sprinkle.png
 # # Breadcrumb Settings
 # breadcrumb:
 #     image: breadcrumb-image.jpg
-    
+
+
+#Content Repo for static site.
+# Used for the edit on github include
+
+edit-on-github:
+    enabled: true
+    repo: https://www.github.com/Linaro/website
     
 # Settings for the home page
 home:

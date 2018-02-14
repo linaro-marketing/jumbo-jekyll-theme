@@ -29,6 +29,65 @@ html {
 //  overflow: hidden; Will break the sticky navbar - be warned
 }
 
+// Edit me on github buttons
+
+span.edit-me-on-github-text {
+    font-size: 12px;
+}
+
+.edit-me-on-github.text-center {
+    float: right;
+}
+
+i.edit-on-github-icon.icon-github-circled.center-block {
+    font-size: 40px;
+}
+
+
+div#github_controls {
+    margin: 10px 0;
+}
+div#github_controls a.btn {
+    padding:5px;
+    background-color: #fff;
+    color: #333;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    transition: all 500ms ease;
+}
+
+div#github_controls a.btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+span.top-text {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+span.bottom-text {
+    display: block;
+    font-size: 11px;
+}
+
+i.icon-github-circled.center-block {
+    font-size: 24px;
+}
+div#github_controls a#github_home:hover {
+    color: #19947b;
+}
+div#github_controls a#github_home {
+    height: 47px;
+    background-color: #333;
+    color: #fff;
+
+    transition: all 250ms ease;
+}
+
+
+
+
 blockquote {
     padding: 10.5px 21px;
     margin: 0 0 21px;
