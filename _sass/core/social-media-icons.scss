@@ -3,8 +3,6 @@
   src: url('../fonts/fontello.eot?90791805');
   src: url('../fonts/fontello.eot?90791805#iefix') format('embedded-opentype'),
        url('../fonts/fontello.svg?90791805#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
 @font-face {
   font-family: 'fontello';
@@ -24,8 +22,6 @@
 
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
   speak: none;
 
   display: inline-block;

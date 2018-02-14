@@ -1,10 +1,6 @@
 <div class="container-fluid breadcrumb-container"
-    {% if site.data.company.breadcrumb-image %}
-    style="background-image: url('{{site.data.settings.breadcrumb.image}}');
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    {% if site.data.settings.breadcrumb.image %}
+    style="background-image: url('{% asset_path '{{site.data.settings.breadcrumb.image}}' %}');
     "
     {% endif %}><!--- Main fluid container start ---->
       <div class="row"> <!--- Row Start ---->

@@ -26,7 +26,7 @@
                                      data-src="{{post.image.thumb}}"
                                   {% endif  %}
                              {% else %}
-                                   data-src="/{{site.mini_magick.thumbnails.destination}}/{{post.image.name}}"
+                                   data-src="/{{site.mini_magick.thumbnails.destination}}{{post.image.name}}"
                              {% endif %}
                        {% else %}
                             data-src="{% asset_path 'placeholder.png' %}"

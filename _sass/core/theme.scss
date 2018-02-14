@@ -3,7 +3,6 @@ body {
     background-color: $navbar-inverse-bg;
     letter-spacing: 0.5px;
     overflow-x: hidden;
-    font-weight: 300;
     height  : 100%;
     overflow: auto;
     font-family: $font-family-sans-serif;
@@ -28,6 +27,68 @@ html {
  height  : 100%;
 //  overflow: hidden; Will break the sticky navbar - be warned
 }
+
+// Edit me on github buttons
+
+.github-edit {
+    background-color: #fff;
+}
+
+span.edit-me-on-github-text {
+    font-size: 12px;
+}
+
+.edit-me-on-github.text-center {
+    float: right;
+}
+
+i.edit-on-github-icon.icon-github-circled.center-block {
+    font-size: 40px;
+}
+
+
+div#github_controls {
+    margin: 10px 0;
+}
+div#github_controls a.btn {
+    padding:5px;
+    background-color: #fff;
+    color: #333;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    transition: all 500ms ease;
+}
+
+div#github_controls a.btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+span.top-text {
+    display: block;
+    text-transform: uppercase;
+}
+span.bottom-text {
+    display: block;
+    font-size: 11px;
+}
+
+i.icon-github-circled.center-block {
+    font-size: 24px;
+}
+div#github_controls a#github_home:hover {
+    color: #19947b;
+}
+div#github_controls a#github_home {
+    height: 47px;
+    background-color: #333;
+    color: #fff;
+
+    transition: all 250ms ease;
+}
+
+
+
 
 blockquote {
     padding: 10.5px 21px;
@@ -77,7 +138,6 @@ label.control-label {
 //Headings
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-sans-serif;
-    font-weight: bold;
     line-height: 1.1;
     color: inherit;
 }
@@ -90,7 +150,6 @@ hr {
 /*-------------Paragraphs --------------------*/
 p {
     font-size: 16px;
-    font-weight:300;
     color: #252525;
     line-height: 1.66em;
     word-wrap: break-word;
@@ -105,7 +164,6 @@ p {
 #content-container h2 {
     font-size: 30px;
     color: #3D383E;
-    font-weight: 200;
     text-transform: none;
 }
 
@@ -155,7 +213,6 @@ p.sub-tag {
     margin-top: 10px;
     font-size: 19px;
     color: #FFF;
-    font-weight: 200;
 }
 
 // Buttons
@@ -211,7 +268,6 @@ p.sub-tag {
 }
 .new-panel .panel-primary > .panel-heading {
     color: #000000;
-    font-weight: bold;
     background-color: transparent;
     border:0;
 }
@@ -528,7 +584,6 @@ blockquote:before {
 }
 
 #wrapper h3.panel-title {
-    font-weight: normal;
     color: $navbar-text-color;
 }
 
