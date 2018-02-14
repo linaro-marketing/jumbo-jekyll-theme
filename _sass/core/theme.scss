@@ -3,7 +3,6 @@ body {
     background-color: $navbar-inverse-bg;
     letter-spacing: 0.5px;
     overflow-x: hidden;
-    font-weight: 300;
     height  : 100%;
     overflow: auto;
     font-family: $font-family-sans-serif;
@@ -67,7 +66,6 @@ div#github_controls a.btn:hover {
 }
 span.top-text {
     display: block;
-    font-weight: bold;
     text-transform: uppercase;
 }
 span.bottom-text {
@@ -140,7 +138,6 @@ label.control-label {
 //Headings
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-sans-serif;
-    font-weight: bold;
     line-height: 1.1;
     color: inherit;
 }
