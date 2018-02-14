@@ -120,13 +120,10 @@ nav ul.dropdown-menu {
 }
 nav li a {
     font-size: 16px;
-    font-weight: 300;
 }
 nav .dropdown-menu li a {
     padding: 10px 20px;
     font-size: 14px;
-    font-weight: 300;
-
 }
 nav .dropdown-menu li a:hover{
     transition: color .5s ease;
@@ -553,8 +550,8 @@ nav > ul.navbar-right {
 .nav-tabs {
     border-bottom: 2px solid $gray;
     margin-top: 31px;
-    font-weight: 700;
 }
+
 .nav-tabs > li > a {
     color: $navbar-text-color;
 }
