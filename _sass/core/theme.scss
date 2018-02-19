@@ -147,6 +147,12 @@ hr {
     border-top: 1px solid #eee;
 }
 
+
+//Move the contact-thanks div up
+div#contact-thanks {
+    margin-top: -20px;
+}
+
 /*-------------Paragraphs --------------------*/
 p {
     font-size: 16px;
@@ -401,6 +407,11 @@ button#c-submit-button {
     }
 }
 
+//Remove italics from icons - Google Chrome.
+
+i {
+    font-style: normal;
+}
 
 /* ----------------- Missing Bootstrap 3 5ths Columns -----------------*/
 
