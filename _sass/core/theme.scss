@@ -78,13 +78,13 @@ i.icon-github-circled.center-block {
     font-size: 24px;
 }
 div#github_controls a#github_home:hover {
-    color: #19947b;
+    color: $brand-primary;
 }
 div#github_controls a#github_home {
-
+    
     background-color: #333;
     color: #fff;
-
+    
     transition: all 250ms ease;
 }
 
