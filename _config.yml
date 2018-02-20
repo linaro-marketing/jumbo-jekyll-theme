@@ -101,7 +101,7 @@ jekyll_relative_links:
     
     
 plugins:
-    # - jekyll-minimagick
+    - jekyll-minimagick
     - jekyll-seo-tag
     - jekyll-sitemap
     - bootstrap-sass
@@ -111,7 +111,7 @@ plugins:
     - jekyll-tidy
     - jekyll-redirect-from
     - autoprefixer-rails
-    - jekyll-paginate-v2
+    - jekyll-paginate-v
 
 # Jekyll Mini Magick Settings 
 # All images will have a thumbnail (100x100), medium(300x300) and large(500x500)
