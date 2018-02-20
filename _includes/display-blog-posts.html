@@ -10,7 +10,7 @@
                               <source srcset="/{{site.mini_magick.medium.destination}}{{post.image.name}}"
                                media="(min-width: 1000px)" />
                               <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
-                              data-src="/{{site.mini_magick.thumbnail.destination}}{{post.image.name}}" 
+                              data-src="/{{site.mini_magick.thumbnails.destination}}{{post.image.name}}" 
                               class="lazyload img-responsive center-block"/>
                           </picture>
                     {% else %}
@@ -20,7 +20,7 @@
                             <source srcset="/{{site.mini_magick.medium.destination}}{{site.data.settings.placeholder}}"
                              media="(min-width: 1000px)" />
                             <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
-                            data-src="/{{site.mini_magick.thumbnail.destination}}{{site.data.settings.placeholder}}" 
+                            data-src="/{{site.mini_magick.thumbnails.destination}}{{site.data.settings.placeholder}}" 
                             class="lazyload img-responsive center-block"/>
                         </picture>
                     {% endif %}
