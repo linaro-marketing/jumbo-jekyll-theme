@@ -54,9 +54,9 @@ ol.breadcrumb li a {
 }
 
 ol.breadcrumb span {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-transform: none;
     text-decoration: none;
     color: $breadcrumb-span-color;
     opacity: .5;
