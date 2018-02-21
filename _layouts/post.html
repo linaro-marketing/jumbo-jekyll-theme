@@ -89,16 +89,21 @@ css-package: blog
                                 <a href="{{co-author-url}}">
                                     <em>{% if co-author.name %}{{co-author.name}}{% else %}{{page.co-author}}{% endif %}</em>
                                 </a>
-                                {% endfi %}
+                                {% endif %}
                             </small>
                             <br />
                         {% else %}
                         <br />
                         <small class="blog-author text-center">
-                            By 
+                            {% if using-data-file %}
+                            By
+                                <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
+                            {% else %}
+                            By
                             <a href="{{author.url}}">
                                 <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
                             </a>
+                            {% endif %}
                         </small>
                         <br />
                         {% endif %}
