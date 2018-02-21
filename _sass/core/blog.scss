@@ -97,7 +97,8 @@ img.img-thumbnail {
     width: 83px;
     border-radius: 83px;
     border: 4px solid white;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .full-page-image-text{
