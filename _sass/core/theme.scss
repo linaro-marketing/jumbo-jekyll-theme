@@ -52,6 +52,7 @@ div#github_controls {
 }
 div#github_controls a.btn {
     padding:5px;
+    height: 50px;
     background-color: #fff;
     color: #333;
     padding-left: 15px;
@@ -77,13 +78,13 @@ i.icon-github-circled.center-block {
     font-size: 24px;
 }
 div#github_controls a#github_home:hover {
-    color: #19947b;
+    color: $brand-primary;
 }
 div#github_controls a#github_home {
-    height: 47px;
+    
     background-color: #333;
     color: #fff;
-
+    
     transition: all 250ms ease;
 }
 
@@ -140,11 +141,25 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-sans-serif;
     line-height: 1.1;
     color: inherit;
+    font-weight: bold;
 }
 
 //Horizontal Rule Styling
 hr {
     border-top: 1px solid #eee;
+}
+
+// Anchors
+a.anchor {
+    display: block;
+    position: relative;
+    top: -250px;
+    visibility: hidden;
+}
+
+//Move the contact-thanks div up
+div#contact-thanks {
+    margin-top: -20px;
 }
 
 /*-------------Paragraphs --------------------*/
@@ -401,6 +416,11 @@ button#c-submit-button {
     }
 }
 
+//Remove italics from icons - Google Chrome.
+
+i {
+    font-style: normal;
+}
 
 /* ----------------- Missing Bootstrap 3 5ths Columns -----------------*/
 

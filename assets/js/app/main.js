@@ -12,6 +12,7 @@ $(document).mouseup(function(e)
 
 $(document).ready(function () {
     
+    
     $('.dropdown-toggle').dropdown();
     // $(document).on('touchstart.dropdown.data-api', '.dropdown-submenu > a', function (event) {
     //   event.preventDefault();

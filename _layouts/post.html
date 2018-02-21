@@ -30,8 +30,14 @@ css-package: blog
             <div id="featured-jumbotron" class="blog blog-full-page-image-info"> <!--Jumbotron div -->
                     <h1 class="text-center" id="featured-image-blog-title">{{page.title}}</h1>
                     {% if page.author %}
-                        {% assign author = site.authors | where: "username", page.author | first %}
-                        <a href="{{author.url}}">
+                        {% if site.authors %}
+                            {% assign author = site.authors | where: "username", page.author | first %}
+                            {% assign author-url = author.url %}
+                        {% elsif site.data.authors %}
+                            {% assign author = site.data.authors | where: "username", page.author | first %}
+                            {% assign author-url = "#" %}
+                        {% endif %}
+                        <a href="{{author-url}}">
                             <img class="blog-author-image" style="
                         background-image:url({% if author.image.name %}
                           {% asset_path '{{author.image.name}}'  %}
@@ -41,8 +47,14 @@ css-package: blog
                         </a>
                     
                         {% if page.co-author %}
-                            {% assign co-author = site.authors | where: "username", page.co-author | first %}
-                            <a href="{{co-author.url}}">
+                            {% if site.authors %}
+                                {% assign co-author = site.authors | where: "username", page.author | first %}
+                                {% assign co-author-url = co-author.url %}
+                            {% elsif site.data.authors %}
+                                {% assign co-author = site.data.authors | where: "username", page.author | first %}
+                                {% assign co-author-url = co-author.url %}
+                            {% endif %}
+                            <a href="{{co-author-url}}">
                                 <img class="blog-author-image" style="
                             background-image:url({% if co-author.image.name %}
                               {% asset_path '{{co-author.image.name}}'  %}
@@ -53,11 +65,11 @@ css-package: blog
                             <br />
                             <small class="blog-author text-center">
                                 By 
-                                <a href="{{author.url}}">
+                                <a href="{{author-url}}">
                                     <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
                                 </a>
                                 and
-                                <a href="{{co-author.url}}">
+                                <a href="{{co-author-url}}">
                                     <em>{% if co-author.name %}{{co-author.name}}{% else %}{{page.co-author}}{% endif %}</em>
                                 </a>
                             </small>

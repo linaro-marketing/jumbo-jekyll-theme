@@ -101,7 +101,7 @@ jekyll_relative_links:
     
     
 plugins:
-    # - jekyll-minimagick
+    - jekyll-minimagick
     - jekyll-seo-tag
     - jekyll-sitemap
     - bootstrap-sass
@@ -140,4 +140,7 @@ mini_magick:
         thumbnail: "500x500>"
         gravity: "Center"
         extent: "500x500"
-    
+        
+# Make sure that Liquid errors stop the build
+liquid:
+    error_mode: strict    
