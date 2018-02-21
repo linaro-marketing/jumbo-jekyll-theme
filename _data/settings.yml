@@ -1,3 +1,6 @@
+# Custom Favicon
+favicon: favicon.png
+
 # Mailchimp settings
 mailchimp:
     enabled: true
@@ -124,6 +127,7 @@ google:
 
 # Shema.org settings used in the schema.html include.
 schema:
+    enabled: true
     organisation:
         name: Linaro
         url: https://www.linaro.org
