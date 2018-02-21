@@ -12,6 +12,12 @@ $(document).mouseup(function(e)
 
 $(document).ready(function () {
     
+    // If # anchors are clicked - scroll and offset.
+    $('a[href^="#"]').click(function(e) {
+      e.preventDefault();
+      $(window).stop(true).scrollTo(this.hash {duration:1000,interrupt:true,offset: -50});
+    });
+    
     $('.dropdown-toggle').dropdown();
     // $(document).on('touchstart.dropdown.data-api', '.dropdown-submenu > a', function (event) {
     //   event.preventDefault();
