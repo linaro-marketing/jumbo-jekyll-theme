@@ -8,5 +8,6 @@
 //= require app/sticky-tab-bar
 
 //= require app/main
+//= require app/scroll-to-anchors
 //= require app/tables
 //= require vendor/mc-validate
