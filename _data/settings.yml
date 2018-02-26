@@ -71,12 +71,12 @@ home:
               url: 
               class: btn btn-primary btn-lg fade-in-three bottom-border-five
         # Background image for the home page located in assets/images
-        background-image:
-            # Darken is set to true by default - if you wish to remove the image overlay
-            # then change this setting to false.
-            darken: true
-            # This is the name of the background-image located in /assets/images/
-            name: background-image.jpg
+        # background-image:
+        #     # Darken is set to true by default - if you wish to remove the image overlay
+        #     # then change this setting to false.
+        #     darken: true
+        #     # This is the name of the background-image located in /assets/images/
+        #     name: background-image.jpg
         # image: devicetree-icon-white.png
 
 # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
