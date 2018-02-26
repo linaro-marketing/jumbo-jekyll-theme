@@ -19,7 +19,9 @@
     
     
     {% if tab-list %}
+
 <div class="tabbed-area non-sticky-nav" id="tabbed-nav-bar"><!-- Nav tabs Wrapper-->
+  <div class="container-fluid tabbed-container-fluid">
     <div class="container">
     <nav class="navbar-default" role="navigation"><!-- Nav -->
             <div class="navbar-header"><!-- Navbar Header -->
@@ -40,6 +42,7 @@
             </div>
     </nav>
     </div>
+  </div>
 </div>
     {% elsif custom-include %}
         {% include {{custom-include}}.html %}
