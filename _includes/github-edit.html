@@ -3,8 +3,7 @@
 
 {% if page_base[1] == "blog" %}
 
-{% elsif page_base[1] == "documentation" %}
-
+{% elsif page_base[1] == "documentation" and site.data.settings.edit-on-github.docs %}
 
 {% capture github-home %}{{site.data.settings.edit-on-github.docs}}{% endcapture %}
 {% capture github-docs %}{{site.data.settings.edit-on-github.docs}}/tree/master/{% endcapture %}

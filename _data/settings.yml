@@ -26,6 +26,7 @@ linaro-footer-image: Linaro-Sprinkle.png
 edit-on-github:
     enabled: true
     repo: https://www.github.com/Linaro/website
+    # docs: https://www.github.com/Linaro/website
     
 # Settings for the home page
 home:
