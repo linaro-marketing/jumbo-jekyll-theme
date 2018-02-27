@@ -45,11 +45,11 @@
                 <ul class="nav nav-tabs tabbed-nav" id="tab-row" role="tablist">
                     {% for tab in tab-list %}
                         <li role="presentation" {% if page.url == tab.url %}
-                                                    class="active tabbed-nav-btn"
-                                                {% else %}
-                                                    class="tabbed-nav-btn"
+                                                    class="active tabbed-nav-btn {% if tab.right %}pull-right{% endif %}"
                                                 {% elsif tab.sub-pages and page.url contains tab.url %}
-                                                    class="active tabbed-nav-btn"
+                                                    class="active tabbed-nav-btn {% if tab.right %}pull-right{% endif %}"
+                                                {% else %}
+                                                    class="tabbed-nav-btn {% if tab.right %}pull-right{% endif %}"
                                                 {% endif %}>
                                     <a href="{{tab.url}}" aria-controls="overview" role="link">{{tab.title}}</a></li>
                     {% endfor %}
