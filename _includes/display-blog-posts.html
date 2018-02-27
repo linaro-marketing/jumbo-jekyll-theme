@@ -3,16 +3,26 @@
         {% if site.data.settings.blog.show_thumbnails %}
             <div class="col-md-4 col-sm-4 col-xs-4">
                 <a href="{{post.url}}">
-                    {% if post.image.name %}                          
+                    {% if post.image.thumb %}                          
                           <picture>
-                              <source srcset="/{{site.mini_magick.thumbnails.destination}}{{post.image.name}}" 
+                              <source srcset="{% asset_path '{{post.image.thumb}}' %}" 
                               media="(max-width: 999px)" />
-                              <source srcset="/{{site.mini_magick.medium.destination}}{{post.image.name}}"
+                              <source srcset="{% asset_path '{{post.image.thumb}}' %}"
                                media="(min-width: 1000px)" />
                               <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
-                              data-src="/{{site.mini_magick.thumbnails.destination}}{{post.image.name}}" 
+                              data-src="{% asset_path '{{post.image.thumb}}' %}" 
                               class="lazyload img-responsive center-block"/>
                           </picture>
+                    {% elsif post.image.name %}
+                        <picture>
+                            <source srcset="/{{site.mini_magick.thumbnails.destination}}{{post.image.name}}" 
+                            media="(max-width: 999px)" />
+                            <source srcset="/{{site.mini_magick.medium.destination}}{{post.image.name}}"
+                             media="(min-width: 1000px)" />
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+                            data-src="/{{site.mini_magick.thumbnails.destination}}{{post.image.name}}" 
+                            class="lazyload img-responsive center-block"/>
+                        </picture>
                     {% else %}
                         <picture>
                             <source srcset="/{{site.mini_magick.thumbnails.destination}}{{site.data.settings.placeholder}}"
