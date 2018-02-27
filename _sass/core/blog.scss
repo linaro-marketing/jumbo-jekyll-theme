@@ -341,6 +341,9 @@ img.large-inline.right {
 }
 //Responsive CSS for Blog
 @media(max-width:$screen-sm-min){
+    .blog-full-page-image-info {
+        height: 360px;
+    }
 
     .blog-title{
         width:95%;
