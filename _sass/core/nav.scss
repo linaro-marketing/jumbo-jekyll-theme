@@ -30,7 +30,7 @@ div#tabbed-nav-bar-collapse {
         margin-right: -5px;
     }
 }
-.non-sticky-nav#tabbed-nav-bar {
+#tabbed-nav-bar {
     margin-top: -20px;
 }
 .sticky-nav div#tabbed-nav-bar-collapse {
@@ -78,6 +78,10 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
 }
 
 @media (max-width: $screen-sm){
+    
+    .sticky-nav#tabbed-nav-bar {
+        top: 20px;
+    }
     
     div#tabbed-nav-bar.sticky-nav li.divider {
         border-top: 2px solid #272727;
