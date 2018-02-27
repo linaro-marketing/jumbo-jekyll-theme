@@ -44,7 +44,14 @@
             <div class="collapse navbar-collapse" id="tabbed-nav-bar-collapse"><!-- Navbar Collapse -->
                 <ul class="nav nav-tabs tabbed-nav" id="tab-row" role="tablist">
                     {% for tab in tab-list %}
-                        <li role="presentation" {% if page.url == tab.url %}class="active tabbed-nav-btn"{% else %}class="tabbed-nav-btn"{% endif %}><a href="{{tab.url}}" aria-controls="overview" role="link">{{tab.title}}</a></li>
+                        <li role="presentation" {% if page.url == tab.url %}
+                                                    class="active tabbed-nav-btn"
+                                                {% else %}
+                                                    class="tabbed-nav-btn"
+                                                {% elsif tab.sub-pages and page.url contains tab.url %}
+                                                    class="active tabbed-nav-btn"
+                                                {% endif %}>
+                                    <a href="{{tab.url}}" aria-controls="overview" role="link">{{tab.title}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
