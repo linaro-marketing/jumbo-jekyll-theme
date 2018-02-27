@@ -44,9 +44,6 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     ul.dropdown-menu {
         margin-top: -1px !important;
     }
-    #navbar-buttons {
-        margin-right: 40px;
-    }
     #navbar-collapse {
         width: 80%;
         float: right;
@@ -57,6 +54,13 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
         left: 0;
     }
     
+}
+
+@media (min-width: $screen-sm) {
+    .navbar-right {
+        float: right !important;
+        margin-right: 0px;
+    }
 }
 
 @media (max-width: $screen-sm){
