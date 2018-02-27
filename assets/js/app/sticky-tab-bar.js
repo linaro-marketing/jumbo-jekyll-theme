@@ -21,7 +21,7 @@ $(document).ready(function(){
                 $('#tabbed-nav-bar').removeClass('non-sticky-nav');
                 $('#tabbed-nav-bar').addClass('sticky-nav');
                 $("nav#main-navigation").hide();
-                $('#wrapper').css('margin-top','70px');
+                $('#wrapper').css('margin-top','67px');
                 if ($(window).width() < 1000) {
                     $('#tabbed-nav-bar nav').removeClass('navbar-default');
                     $('#tabbed-nav-bar nav').addClass('navbar-inverse');
