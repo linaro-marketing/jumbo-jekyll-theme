@@ -31,7 +31,10 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     padding-right: 0px;
 }
 
-
+#tabbed-nav-bar .navbar-header {
+    margin-left: 0px;
+    margin-right: 0px;
+}
 
 @media (min-width: $screen-lg) {
     
