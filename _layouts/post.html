@@ -26,7 +26,7 @@ css-package: blog
         class="jumbotron text-center featured-jumbotron"
     {% endif %}> <!--Fluid Container -->
     {% if assets[page.image.name] %}
-        <div class="row"> <!--Row -->
+        <div class="row overlay"> <!--Row -->
             <div id="featured-jumbotron" class="blog blog-full-page-image-info"> <!--Jumbotron div -->
                     <h1 class="text-center" id="featured-image-blog-title">{{page.title}}</h1>
                     {% if page.author %}
