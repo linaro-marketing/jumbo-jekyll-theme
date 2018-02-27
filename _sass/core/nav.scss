@@ -27,7 +27,7 @@ div#tabbed-nav-bar-collapse {
 }
 @media screen and (max-width: $screen-lg) and (min-width: 0px){
     .sticky-nav#tabbed-nav-bar button.navbar-toggle {
-        margin-right: 0px;
+        margin-right: -5px;
     }
 }
 
