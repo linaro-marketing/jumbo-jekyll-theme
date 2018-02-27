@@ -30,10 +30,12 @@ div#tabbed-nav-bar-collapse {
         margin-right: -5px;
     }
 }
-div#tabbed-nav-bar {
+.non-sticky-nav#tabbed-nav-bar {
     margin-top: -20px;
 }
-
+.sticky-nav div#tabbed-nav-bar-collapse {
+    top: 10px;
+}
 
 div#tabbed-nav-bar.non-sticky-nav > .container {
     padding-left: 0px;
