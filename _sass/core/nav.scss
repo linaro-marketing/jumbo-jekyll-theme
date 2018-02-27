@@ -25,6 +25,12 @@
 div#tabbed-nav-bar-collapse {
     padding: 0;
 }
+@media screen and (max-width: $screen-lg) and (min-width: 0px){
+    .sticky-nav#tabbed-nav-bar button.navbar-toggle {
+        margin-right: 0px;
+    }
+}
+
 
 div#tabbed-nav-bar.non-sticky-nav > .container {
     padding-left: 0px;
@@ -80,11 +86,6 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
 
     nav.nav-light #navbar-buttons>li>a {
         color: $navbar-text-color;
-    }
-    
-    div#tabbed-nav-bar>.navbar-default {
-        margin-left: -15px;
-        margin-right: -15px;
     }
     
     div#tabbed-nav-bar.sticky-nav > .container {
