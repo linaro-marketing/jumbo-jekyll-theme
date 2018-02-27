@@ -13,7 +13,7 @@
             {% elsif each.sub-pages-enabled %}
                 {% for individual-page in each.list %}
                     {% if individual-page.sub-pages %}
-                        {% if page.url in individual-page.url %}
+                        {% if page.url contains individual-page.url %}
                             {% assign tab-list = each.list %}
                         {% endif %}
                     {% endif %}
