@@ -11,3 +11,4 @@
 //= require app/scroll-to-anchors
 //= require app/tables
 //= require vendor/mc-validate
+//= require app/custom

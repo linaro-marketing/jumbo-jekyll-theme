@@ -10,6 +10,10 @@
                 {% if each.list %}
                     {% assign tab-list = each.list %}
                 {% endif %}
+            {% elsif each.sub-pages %}
+                {% if page.url contains each-url %}
+                
+                {%%}
             {% endif %}
         {% endfor %}
         {% if each.custom-include %}

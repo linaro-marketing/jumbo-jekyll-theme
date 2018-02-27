@@ -8,3 +8,4 @@
 //= require app/tables
 //= require app/sticky-tab-bar
 //= require vendor/mc-validate
+//= require app/custom

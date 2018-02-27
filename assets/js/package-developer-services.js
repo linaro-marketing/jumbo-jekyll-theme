@@ -8,3 +8,4 @@
 //= require vendor/mc-validate
 //= require vendor/jquery.validate.min
 //= require app/developer-services
+//= require app/custom
