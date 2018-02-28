@@ -6,7 +6,7 @@
     
     {% for each in sub-nav-tabs %}
         {% for each-url in each.urls %}
-            {% if each-url == page.url or each.url == page-base[1] %}
+            {% if each-url == page.url %}
                 {% if each.list %}
                     {% assign tab-list = each.list %}
                 {% endif %}
