@@ -9,3 +9,4 @@
 //= require app/home
 //= require app/tables
 //= require vendor/mc-validate
+//= require app/custom

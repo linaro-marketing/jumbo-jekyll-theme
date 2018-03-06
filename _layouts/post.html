@@ -26,17 +26,28 @@ css-package: blog
         class="jumbotron text-center featured-jumbotron"
     {% endif %}> <!--Fluid Container -->
     {% if assets[page.image.name] %}
-        <div class="row"> <!--Row -->
+        <div class="row overlay"> <!--Row -->
             <div id="featured-jumbotron" class="blog blog-full-page-image-info"> <!--Jumbotron div -->
                     <h1 class="text-center" id="featured-image-blog-title">{{page.title}}</h1>
                     {% if page.author %}
                         {% if site.authors %}
                             {% assign author = site.authors | where: "username", page.author | first %}
                             {% assign author-url = author.url %}
+                            {% assign using-data-file = false %}
                         {% elsif site.data.authors %}
+                            {% assign using-data-file = true %}
                             {% assign author = site.data.authors | where: "username", page.author | first %}
                             {% assign author-url = "#" %}
                         {% endif %}
+                        
+                        {% if site.using-data-file %}
+                            <img class="blog-author-image" style="
+                        background-image:url({% if author.image.name %}
+                          {% asset_path '{{author.image.name}}'  %}
+                        {% else %}
+                          {% asset_path 'avatar-placeholder.png'  %}
+                        {% endif %})" />
+                        {% else %}
                         <a href="{{author-url}}">
                             <img class="blog-author-image" style="
                         background-image:url({% if author.image.name %}
@@ -45,6 +56,7 @@ css-package: blog
                           {% asset_path 'avatar-placeholder.png'  %}
                         {% endif %})" />
                         </a>
+                        {% endif %}
                     
                         {% if page.co-author %}
                             {% if site.authors %}
@@ -52,7 +64,6 @@ css-package: blog
                                 {% assign co-author-url = co-author.url %}
                             {% elsif site.data.authors %}
                                 {% assign co-author = site.data.authors | where: "username", page.author | first %}
-                                {% assign co-author-url = co-author.url %}
                             {% endif %}
                             <a href="{{co-author-url}}">
                                 <img class="blog-author-image" style="
@@ -64,6 +75,12 @@ css-package: blog
                             </a>
                             <br />
                             <small class="blog-author text-center">
+                                {% if using-data-file %}
+                                By 
+                                <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
+                                and
+                                <em>{% if co-author.name %}{{co-author.name}}{% else %}{{page.co-author}}{% endif %}</em>
+                                {% else %}
                                 By 
                                 <a href="{{author-url}}">
                                     <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
@@ -72,15 +89,21 @@ css-package: blog
                                 <a href="{{co-author-url}}">
                                     <em>{% if co-author.name %}{{co-author.name}}{% else %}{{page.co-author}}{% endif %}</em>
                                 </a>
+                                {% endif %}
                             </small>
                             <br />
                         {% else %}
                         <br />
                         <small class="blog-author text-center">
-                            By 
+                            {% if using-data-file %}
+                            By
+                                <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
+                            {% else %}
+                            By
                             <a href="{{author.url}}">
                                 <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
                             </a>
+                            {% endif %}
                         </small>
                         <br />
                         {% endif %}

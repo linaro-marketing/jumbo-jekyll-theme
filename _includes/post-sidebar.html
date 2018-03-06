@@ -66,13 +66,13 @@
                               {% if assets[post.image.thumb] %}
                                  data-src="{% asset_path '{{post.image.thumb}}'%}"
                               {% else %}
-                                 data-src="{{post.image.name}}"
+                                 data-src="{% asset_path '{{post.image.name}}' %}"
                               {% endif  %}
                          {% else %} 
                                data-src="/{{site.mini_magick.thumbnails.destination}}{{post.image.name}}"
                          {% endif %}
                    {% else %}
-                        data-src="{% asset_path 'placeholder.png' %}"
+                        data-src="{% asset_path '{{site.data.settings.placeholder}}' %}"
                    {% endif %}
 
                   alt="{{post.title}}" class="img-responsive lazyload"/>

@@ -8,3 +8,4 @@
 //= require app/main
 //= require app/tables
 //= require vendor/mc-validate
+//= require app/custom

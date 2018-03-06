@@ -18,9 +18,23 @@
     cursor: default;
 }
 
+#tabbed-nav-bar .tabbed-container-fluid {
+    background-color: #fff;
+}
 
 div#tabbed-nav-bar-collapse {
     padding: 0;
+}
+@media screen and (max-width: $screen-lg) and (min-width: 0px){
+    .sticky-nav#tabbed-nav-bar button.navbar-toggle {
+        margin-right: -5px;
+    }
+}
+#tabbed-nav-bar {
+    margin-top: -20px;
+}
+.sticky-nav div#tabbed-nav-bar-collapse {
+    top: 10px;
 }
 
 div#tabbed-nav-bar.non-sticky-nav > .container {
@@ -28,7 +42,10 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     padding-right: 0px;
 }
 
-
+#tabbed-nav-bar .navbar-header {
+    margin-left: 0px;
+    margin-right: 0px;
+}
 
 @media (min-width: $screen-lg) {
     
@@ -40,9 +57,6 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     }
     ul.dropdown-menu {
         margin-top: -1px !important;
-    }
-    #navbar-buttons {
-        margin-right: 40px;
     }
     #navbar-collapse {
         width: 80%;
@@ -56,7 +70,18 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     
 }
 
+@media (min-width: $screen-sm) {
+    .navbar-right {
+        float: right !important;
+        margin-right: 0px;
+    }
+}
+
 @media (max-width: $screen-sm){
+    
+    .sticky-nav#tabbed-nav-bar {
+        top: 20px;
+    }
     
     div#tabbed-nav-bar.sticky-nav li.divider {
         border-top: 2px solid #272727;
@@ -70,11 +95,6 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
 
     nav.nav-light #navbar-buttons>li>a {
         color: $navbar-text-color;
-    }
-    
-    div#tabbed-nav-bar>.navbar-default {
-        margin-left: -15px;
-        margin-right: -15px;
     }
     
     div#tabbed-nav-bar.sticky-nav > .container {
@@ -549,7 +569,6 @@ nav > ul.navbar-right {
 
 .nav-tabs {
     border-bottom: 2px solid $gray;
-    margin-top: 31px;
 }
 
 .nav-tabs > li > a {

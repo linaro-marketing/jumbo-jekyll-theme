@@ -6,10 +6,18 @@
     
     {% for each in sub-nav-tabs %}
         {% for each-url in each.urls %}
-            {% if each-url == page.url or each.url == page-base[1] %}
+            {% if each-url == page.url %}
                 {% if each.list %}
                     {% assign tab-list = each.list %}
                 {% endif %}
+            {% elsif each.sub-pages-enabled %}
+                {% for individual-page in each.list %}
+                    {% if individual-page.sub-pages %}
+                        {% if page.url contains individual-page.url %}
+                            {% assign tab-list = each.list %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
             {% endif %}
         {% endfor %}
         {% if each.custom-include %}
@@ -19,9 +27,10 @@
     
     
     {% if tab-list %}
+
 <div class="tabbed-area non-sticky-nav" id="tabbed-nav-bar"><!-- Nav tabs Wrapper-->
-    <div class="container">
     <nav class="navbar-default" role="navigation"><!-- Nav -->
+        <div class="container">
             <div class="navbar-header"><!-- Navbar Header -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tabbed-nav-bar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -34,12 +43,19 @@
             <div class="collapse navbar-collapse" id="tabbed-nav-bar-collapse"><!-- Navbar Collapse -->
                 <ul class="nav nav-tabs tabbed-nav" id="tab-row" role="tablist">
                     {% for tab in tab-list %}
-                        <li role="presentation" {% if page.url == tab.url %}class="active tabbed-nav-btn"{% else %}class="tabbed-nav-btn"{% endif %}><a href="{{tab.url}}" aria-controls="overview" role="link">{{tab.title}}</a></li>
+                        <li role="presentation" {% if page.url == tab.url %}
+                                                    class="active tabbed-nav-btn {% if tab.right %}pull-right{% endif %}"
+                                                {% elsif tab.sub-pages and page.url contains tab.url %}
+                                                    class="active tabbed-nav-btn {% if tab.right %}pull-right{% endif %}"
+                                                {% else %}
+                                                    class="tabbed-nav-btn {% if tab.right %}pull-right{% endif %}"
+                                                {% endif %}>
+                                    <a href="{{tab.url}}" aria-controls="overview" role="link">{{tab.title}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
+        </div>
     </nav>
-    </div>
 </div>
     {% elsif custom-include %}
         {% include {{custom-include}}.html %}
