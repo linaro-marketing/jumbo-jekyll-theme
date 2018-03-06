@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = "jumbo-jekyll-theme"
-  spec.version       = "1.4.3.45"
+  spec.version       = "1.4.3.46"
   spec.authors       = ["Kyle Kirkby"]
   spec.email         = ["kyle.kirkby@linaro.org"]
 
@@ -45,7 +45,7 @@ Gem::Specification.new do |spec|
  
   # Use 
   #spec.add_runtime_dependency "jekyll-postfiles", "~> 0"
-
+  
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
   
