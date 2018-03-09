@@ -13,6 +13,12 @@
     color: $brand-primary;
 }
 
+nav#main-navigation {
+    height: $navbar-height;
+}
+
+
+
 .mobile-link-inactive{
     pointer-events: none;
     cursor: default;
@@ -118,9 +124,10 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
 
 
 // Nav Bar Toggle
-.navbar-toggle {
-    margin-top: 12px !important;
-    position: static !important;
+#main-navigation .navbar-toggle {
+    margin-top: ($navbar-height - 18px) / 2;
+    position: static;
+    padding:0px;
 }
 
 #tabbed-nav-bar .navbar-toggle{
