@@ -11,13 +11,9 @@
                     {% assign tab-list = each.list %}
                 {% endif %}
             {% elsif each.sub-pages-enabled %}
-                {% for individual-page in each.list %}
-                    {% if individual-page.sub-pages %}
-                        {% if page.url contains individual-page.url %}
-                            {% assign tab-list = each.list %}
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
+                {% if page.url contains each-url %}
+                    {% assign tab-list = each.list %}
+                {% endif %}
             {% endif %}
         {% endfor %}
         {% if each.custom-include %}

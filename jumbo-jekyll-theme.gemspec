@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = "jumbo-jekyll-theme"
-  spec.version       = "1.4.3.46"
+  spec.version       = "1.4.3.55"
   spec.authors       = ["Kyle Kirkby"]
   spec.email         = ["kyle.kirkby@linaro.org"]
 
@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   end
 
   # spec.files         = []
-  spec.required_ruby_version = '>= 2.4.2'
+  spec.required_ruby_version = '>=2.4.2'
   
   spec.add_runtime_dependency 'jekyll', '~> 3.7', '>= 3.7.0'
   spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"

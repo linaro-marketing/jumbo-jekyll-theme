@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jumbo-jekyll-theme (1.4.3.22)
+    jumbo-jekyll-theme (1.4.3.53)
       autoprefixer-rails (~> 5.0, >= 5.0.0.1)
       bootstrap-sass (~> 3.3)
       hash-joiner (~> 0)
@@ -110,9 +110,9 @@ GEM
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.2)
-    rack (1.6.8)
+    rack (1.6.9)
     rake (10.5.0)
-    rb-fsevent (0.10.2)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rouge (3.1.1)
