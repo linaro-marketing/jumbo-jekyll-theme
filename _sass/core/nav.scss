@@ -17,8 +17,6 @@ nav#main-navigation {
     height: $navbar-height;
 }
 
-
-
 .mobile-link-inactive{
     pointer-events: none;
     cursor: default;
@@ -862,6 +860,10 @@ li#linaro-app-menu-item > ul:before {
     }
     div#tabbed-nav-bar.non-sticky-nav li.divider {
         border-right: 2px solid #272727;
+    }
+    
+    #main-navigation a.navbar-brand {
+        padding-left:0px;
     }
 }
 
