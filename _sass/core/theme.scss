@@ -100,7 +100,8 @@ blockquote {
 
 .members-img {
     width: auto;
-    max-height: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 //Form Styles
 label.error.valid {
