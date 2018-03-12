@@ -6,8 +6,12 @@
     
     {% for each in sub-nav-tabs %}
         {% for each-url in each.urls %}
-            {% if each-url == page.url or each.url == page-base[1] %}
+            {% if each-url == page.url %}
                 {% if each.list %}
+                    {% assign tab-list = each.list %}
+                {% endif %}
+            {% elsif each.sub-pages-enabled %}
+                {% if page.url contains each-url %}
                     {% assign tab-list = each.list %}
                 {% endif %}
             {% endif %}
@@ -17,8 +21,8 @@
         {% endif %}
     {% endfor %}
     
-    
     {% if tab-list %}
+
         <ul class="nav nav-pills nav-stacked" id="stacked-nav">
             {% for tab in tab-list %}
                 <li class="{% if page-base[1] == tab.base  %}active {% elsif page.url == tab.url or tab.active %}active {% endif %}side-nav-button">
