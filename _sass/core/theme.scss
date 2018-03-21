@@ -540,7 +540,19 @@ img.img-responsive.right-aligned-image {
 
 /* Wordpress Styles */
 #content-container blockquote, #content-container code, #content-container dl, #content-container fieldset,
-#content-container p, #content-container pre, #content-container table, #content-container ul {
+#content-container p, #content-container pre, #content-container table{
+    margin-bottom: 25px;
+}
+
+#tabbed-nav-bar {
+    margin-bottom: 25px;
+}
+
+div#tabbed-nav-bar-collapse {
+    background-color: white;
+}
+ul#tab-row {
+    margin-bottom: 20px;
 }
 
 #content-container a:hover {
