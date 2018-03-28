@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="row footer-strip">
-                    <div class="container">
+                    <div class="container no-padding">
                         <div class="col-md-6 company-footer-bottom">
                             <a href="{{site.data.linaro.url}}"><img src="{% asset_path '{{site.data.settings.linaro-footer-image}}'  %}" class="linaro-logo" alt="Linaro Icon" /></a>
                             Copyright &copy; {{ 'now' | date: "%Y" }} Linaro Limited <a href="{{site.data.linaro.url}}">{{site.data.linaro.name}}</a>
@@ -31,7 +31,7 @@
                                 <a href="{{link.url}}">{{link.name}}</a> 
                             {% endfor %}
                         </div>
-                        <div class="col-md-6 social-footer-bottom text-right">
+                        <div class="col-md-6 social-footer-bottom text-right no-padding">
                             {% if site.data.settings.social-media %}
                                 <a href="http://facebook.com/{{site.data.settings.facebook_username}}" class="btn btn-social-icon"><i class="icon-facebook"></i></a> {% endif %} {% if site.data.settings.github_username %}
                                 <a href="https://github.com/{{site.data.settings.github_username}}" class="btn btn-social-icon"><i class="icon-github-circled"></i></a> {% endif %} {% if site.data.settings.google_plus_username %}

@@ -1,12 +1,12 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = "jumbo-jekyll-theme"
-  spec.version       = "1.4.3.60"
+  spec.version       = "1.4.5"
   spec.authors       = ["Kyle Kirkby"]
   spec.email         = ["kyle.kirkby@linaro.org"]
 
   spec.summary       = %q{This is the default Linaro Jekyll Theme used on Linaro Static sites.}
-  spec.homepage      = "https://github.com/kylekirkby/JumboJekyllTheme"
+  spec.homepage      = "https://github.com/linaro-website/jumbo-jekyll-theme/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select do |f|
