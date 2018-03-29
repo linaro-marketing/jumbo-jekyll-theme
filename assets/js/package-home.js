@@ -1,5 +1,5 @@
 //= require vendor/jquery.min
-//= require vendor/bootstrap.min
+//= require vendor/bootstrap
 //= require vendor/cookieconsent.min
 //= require vendor/lazysizes.min
 //= require vendor/owl.carousel.min
