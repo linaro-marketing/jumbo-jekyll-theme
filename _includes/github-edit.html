@@ -1,5 +1,7 @@
 {% if site.data.settings.edit-on-github.enabled and site.data.settings.edit-on-github.repo %}
 {% assign page_base = page.permalink | split:"/" %}
+{% assign page-path = page.path | replace: " ", "" %}
+
 
 {% if page_base[1] == "blog" %}
 
@@ -37,8 +39,6 @@
 </div>
 
 {% else %}
-{% assign page-path = page.path | replace: " ", "" %}
-
 
 {% capture github-home %}{{site.data.settings.edit-on-github.repo}}{% endcapture %}
 {% capture github-docs %}{{site.data.settings.edit-on-github.repo}}/tree/master/{% endcapture %}
