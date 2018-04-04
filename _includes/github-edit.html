@@ -2,7 +2,6 @@
 {% assign page_base = page.permalink | split:"/" %}
 {% assign page-path = page.path | replace: " ", "" %}
 
-
 {% if page_base[1] == "blog" %}
 
 {% elsif page_base[1] == "documentation" and site.data.settings.edit-on-github.docs %}
