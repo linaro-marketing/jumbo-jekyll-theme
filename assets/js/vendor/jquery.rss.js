@@ -46,7 +46,7 @@
   ];
 
   RSS.prototype.load = function (callback) {
-    var apiProtocol = 'https';
+    var apiProtocol = 'http' + (this.options.ssl ? 's' : '');
     var apiHost     = apiProtocol + '://' + this.options.host;
     var apiUrl      = apiHost + '?callback=?&q=' + encodeURIComponent(this.url);
 
