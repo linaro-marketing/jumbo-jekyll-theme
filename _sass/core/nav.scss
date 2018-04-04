@@ -37,9 +37,6 @@ div#tabbed-nav-bar-collapse {
 #tabbed-nav-bar {
     margin-top: -20px;
 }
-.sticky-nav div#tabbed-nav-bar-collapse {
-    top: 10px;
-}
 
 div#tabbed-nav-bar.non-sticky-nav > .container {
     padding-left: 0px;
@@ -108,7 +105,7 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     
 
     #tabbed-nav-bar.sticky-nav a#sub-navigation-header {
-        padding-left: 15px;
+        padding-left: 5px;
     }
 }
 
