@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'jekyll-minimagick'
   spec.add_runtime_dependency 'jekyll-theme-assets', '>0'
   spec.add_runtime_dependency 'hash-joiner', '~> 0'
-  spec.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+  #spec.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   
   # Development Dependencies
   spec.add_development_dependency "bundler", "~> 1.12"
