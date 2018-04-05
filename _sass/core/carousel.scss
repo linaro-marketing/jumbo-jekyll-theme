@@ -308,3 +308,11 @@ a.right.carousel-control{
     right:-100px;
 }
 
+
+// Make sure the owl-dots are displayed correctly.
+button.owl-dot {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
