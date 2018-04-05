@@ -8,6 +8,10 @@ div#pagination_panel > ul > li.active > a{
 section#comments-section {
     clear: both;
 }
+#content-container p.post_excerpt {
+    font-size: 15px;
+    margin-top: 10px;
+}
 
 /* Make sure div extends with content */
 article.post-content {
