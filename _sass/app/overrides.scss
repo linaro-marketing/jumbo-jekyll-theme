@@ -15,7 +15,7 @@ $sub-footer-bg-color: #ccc;
 $footer-border-color: #272727; 
 
 // Navbar
-$navbar-text-color: #fff;
+$navbar-text-color: #fff !default;
 $navbar-height: 66px;
 $navbar-inverse-bg: #000;
 $navbar-inverse-color: #fff;
