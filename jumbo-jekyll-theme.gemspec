@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   
   # Spec Files
   s.files         = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r{^(assets|_(data|includes|layouts|sass|plugins)/|(LICENSE|README|robots|_config)((\.(txt|md|markdown|yml)|$)))}i)
+    f.match(%r{^(assets|_(data|includes|layouts|sass)/|(LICENSE|README|robots|_config)((\.(txt|md|markdown|yml)|$)))}i)
   end
   
   # Ruby Version
