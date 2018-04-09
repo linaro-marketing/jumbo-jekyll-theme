@@ -1,11 +1,11 @@
 # Custom Favicon
 favicon: favicon.png
 
-# Mailchimp settings
-mailchimp:
-    enabled: true
-    id: af6cf590b0
-    
+# # Mailchimp settings
+# mailchimp:
+#     enabled: true
+#     id: af6cf590b0
+# 
 # Footer Newsletter toggle.
 newsletter:
     enabled: true
@@ -23,9 +23,9 @@ linaro-footer-image: Linaro-Sprinkle.png
 #Content Repo for static site.
 # Used for the edit on github include
 
-edit-on-github:
-    enabled: true
-    repo: https://www.github.com/Linaro/website
+# edit-on-github:
+#     enabled: true
+#     repo: https://www.github.com/Linaro/website
     # docs: https://www.github.com/Linaro/website
     
 # Settings for the home page
@@ -80,13 +80,13 @@ home:
         # image: devicetree-icon-white.png
 
 # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
-github_username: Linaro
-linkedin_username: 1026961
-google_plus_username: +LinaroOnAir
-facebook_username: LinaroOrg
-youtube_username: linaroorg
-twitter_username: linaroorg
-slideshare_username: linaroorg
+# github_username: Linaro
+# linkedin_username: 1026961
+# google_plus_username: +LinaroOnAir
+# facebook_username: LinaroOrg
+# youtube_username: linaroorg
+# twitter_username: linaroorg
+# slideshare_username: linaroorg
 
 # Blog setup
 blog:
@@ -146,10 +146,10 @@ blog:
 #             post_code: CB22 7GG
 #             country_code: UK
 
-# Disqus Comments
-disqus:
-    enabled: false
-    shortname: Linaro
+# # Disqus Comments
+# disqus:
+#     enabled: false
+#     shortname: Linaro
 
 # Placeholder for Missing Images
 placeholder: placeholder.jpg
