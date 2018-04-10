@@ -14,24 +14,15 @@
                 <div class="row featured_blog_post">
                     <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                       {% if assets[post.thumbnail_image] %}
-                            data-src="{% asset_path '{{post.thumbnail_image}}'%}"
-                       {% elsif assets[post.featured_image] %}
-                            data-src="/assets/thumbnails/blog/{{post.featured_image}}"
-                       {% elsif post.image.featured %}
+                       {% if post.image.featured %}
                             {% if post.image.thumb %}
-                                  {% if assets[post.image.thumb] %}
-                                     data-src="{% asset_path '{{post.image.thumb}}'%}"
-                                  {% else %}
-                                     data-src="{{post.image.thumb}}"
-                                  {% endif  %}
+                                     data-src="{% asset_path '{{post.image.thumb}}' %}"
                              {% else %}
-                                   data-src="/{{site.mini_magick.thumbnails.destination}}{{post.image.name}}"
+                                   data-src="{% asset_path '{{post.image.name}}' %}"
                              {% endif %}
                        {% else %}
-                            data-src="{% asset_path 'placeholder.png' %}"
+                            data-src="{% asset_path '{{site.data.settings.placeholder}}' %}"
                        {% endif %}
-
                       alt="{{post.title}}" class="img-responsive lazyload"/>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-9 ">
@@ -63,20 +54,14 @@
                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                    {% if post.image.featured %}
                         {% if post.image.thumb %}
-                              {% if assets[post.image.thumb] %}
                                  data-src="{% asset_path '{{post.image.thumb}}'%}"
-                              {% else %}
-                                 data-src="{% asset_path '{{post.image.name}}' %}"
-                              {% endif  %}
                          {% else %} 
-                               data-src="/{{site.mini_magick.thumbnails.destination}}{{post.image.name}}"
+                               data-src="{% asset_path '{{post.image.name}}' %}"
                          {% endif %}
                    {% else %}
                         data-src="{% asset_path '{{site.data.settings.placeholder}}' %}"
                    {% endif %}
-
                   alt="{{post.title}}" class="img-responsive lazyload"/>
-                  
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-9 ">
                    {{post.title | truncate: 40}}
