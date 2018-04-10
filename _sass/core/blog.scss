@@ -19,8 +19,12 @@ article.post-content {
 }
 
 .row.blog_post picture {
-    top: 25px;
+    top: -20px;
     position: relative;
+}
+
+.blog_post img.img-responsive.center-block.lazyloaded {
+    padding: 40px;
 }
 
 /* Blog Side Bar Panel Title */
