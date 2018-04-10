@@ -1,9 +1,9 @@
-{% if site.data.settings.blog.comments %}
-    {% if page.comments %}
+{% if site.data.settings.disqus.enabled %}
+    {% unless page.comments_disabled %}
         <section id="comments-section">
             <h3>Comments</h3>
             {% include disqus-comments.html %}
             <br />
         </section>
-    {% endif %}
+    {% endunless %}
 {% endif %}
