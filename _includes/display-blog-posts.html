@@ -25,12 +25,12 @@
                         </picture>
                     {% else %}
                         <picture>
-                            <source srcset="{% asset_path '{{post.image.thumb}}' %}"
+                            <source srcset="{% asset_path '{{site.data.settings.placeholder}}' %}"
                             media="(max-width: 999px)" />
-                            <source srcset="{% asset_path '{{post.image.thumb}}' %}"
+                            <source srcset="{% asset_path '{{site.data.settings.placeholder}}' %}"
                              media="(min-width: 1000px)" />
                             <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
-                            data-src="{% asset_path '{{post.image.thumb}}' %}" 
+                            data-src="{% asset_path '{{site.data.settings.placeholder}}' %}" 
                             class="lazyload img-responsive center-block"/>
                         </picture>
                     {% endif %}
