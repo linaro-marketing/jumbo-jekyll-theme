@@ -43,6 +43,8 @@ jekyll_tidy:
     
 # Permalink style to be used for paginating pages in pagination.html
 paginate_path: /blog/:num/
+paginate_path_news: /news/:num/
+paginate_path_authors: /authors/:num/
 
 # Jekyll Pagination V2 Configuration
 pagination:
