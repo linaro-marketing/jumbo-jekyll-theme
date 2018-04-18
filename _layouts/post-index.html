@@ -8,9 +8,9 @@ js-package: blog
     {{content}}
     {% include display-blog-posts.html %}
     {% if page.news %}
-        {% include pagination.html %}
-    {% else %}
         {% include pagination-news.html %}
+    {% else %}
+        {% include pagination.html %}
     {% endif %}
 </div>
 
