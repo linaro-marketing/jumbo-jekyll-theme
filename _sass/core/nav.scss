@@ -78,6 +78,15 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     }
 }
 
+nav#main-navigation.nav-light.navbar-inverse .navbar-collapse{
+   background-color: transparent;
+}
+
+nav#main-navigation.nav-light #navbar-buttons>li>a {
+   color: #fff;
+}
+
+
 @media (max-width: $screen-sm){
     
     .sticky-nav#tabbed-nav-bar {
@@ -106,6 +115,14 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
 
     #tabbed-nav-bar.sticky-nav a#sub-navigation-header {
         padding-left: 5px;
+    }
+    
+     nav#main-navigation.nav-light.navbar-inverse .navbar-collapse{
+        background-color: $navbar-inverse-bg;
+    }
+    
+    nav#main-navigation.nav-light #navbar-buttons>li>a {
+        color: $navbar-text-color;
     }
 }
 
