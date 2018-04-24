@@ -22,7 +22,9 @@ article.post-content {
     top: -20px;
     position: relative;
 }
-
+#content-container .blog_post h3 {
+    margin-top: 0px;
+}
 #content-container .row.blog_post picture {
     top:0px;
 }
