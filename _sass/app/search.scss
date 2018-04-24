@@ -1,0 +1,26 @@
+.fessWrapper .pagination > .active > a, .fessWrapper .pagination > .active > a:focus, .fessWrapper .pagination > .active > a:hover, .fessWrapper .pagination > .active > span, .fessWrapper .pagination > .active > span:focus, .fessWrapper .pagination > .active > span:hover {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+}
+.fessWrapper .pagination > li > a, .fessWrapper .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.5;
+    color: #808080;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.fessWrapper a {
+    color: $brand-primary;
+    text-decoration: none;
+}
+.fessWrapper #result .body cite {
+    color: #a7a7a7;
+    font-style: normal;
+}
