@@ -23,9 +23,17 @@ article.post-content {
     position: relative;
 }
 
-.blog_post img.img-responsive.center-block.lazyloaded {
-    padding: 40px;
+#content-container .row.blog_post picture {
+    top:0px;
 }
+
+#content-container .blog_post img.img-responsive.center-block {
+    padding:0px;
+}
+
+
+
+
 
 /* Blog Side Bar Panel Title */
 #wrapper h3.panel-title {
