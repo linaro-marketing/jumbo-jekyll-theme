@@ -27,6 +27,12 @@ html {
  height  : 100%;
 //  overflow: hidden; Will break the sticky navbar - be warned
 }
+button.owl-dot {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
 
 // Edit me on github buttons
 
