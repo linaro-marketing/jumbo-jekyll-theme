@@ -36,27 +36,19 @@ button.owl-prev, button.owl-next {
     outline:  none;
     border: 0;
 }
-
-
 // Edit me on github buttons
-
 .github-edit {
     background-color: #fff;
 }
-
 span.edit-me-on-github-text {
     font-size: 12px;
 }
-
 .edit-me-on-github.text-center {
     float: right;
 }
-
 i.edit-on-github-icon.icon-github-circled.center-block {
     font-size: 40px;
 }
-
-
 div#github_controls {
     margin: 10px 0;
 }
@@ -91,23 +83,16 @@ div#github_controls a#github_home:hover {
     color: $brand-primary;
 }
 div#github_controls a#github_home {
-    
     background-color: #333;
-    color: #fff;
-    
+    color: #fff;    
     transition: all 250ms ease;
 }
-
-
-
-
 blockquote {
     padding: 10.5px 21px;
     margin: 0 0 21px;
     font-size: 18.75px;
     border-left: 5px solid $brand-primary;
 }
-
 .members-img {
     width: auto;
     height: 100px;
