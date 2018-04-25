@@ -36,6 +36,14 @@ button.owl-prev, button.owl-next {
     outline:  none;
     border: 0;
 }
+.mc-unsubscribe a {
+    position: relative;
+    bottom: 0;
+    font-size: 12px;
+    top: 30px;
+    float: right;
+    margin-right: 15px;
+}
 // Edit me on github buttons
 .github-edit {
     background-color: #fff;
