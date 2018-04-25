@@ -96,6 +96,7 @@ blog:
     comments: true
     # Post Side Bar Settings
     sidebar:
+        custom-include: blog-sidebar-include.html
         display-on-posts: true
         display-on-index: true
         # Toggle whether or not thumbnails in the sidebar are displayed.
@@ -113,14 +114,6 @@ blog:
         most-recent-posts:
             display: true
             count: 5
-        # Display custom collection e.g projects on 96boards
-        collection:
-            - name: projects
-              count: 5
-              # Fields to use for title and url.
-              display_fields:
-                  title: title
-                  url: url
                   
 # Google Anayltics Setup
 # google:
