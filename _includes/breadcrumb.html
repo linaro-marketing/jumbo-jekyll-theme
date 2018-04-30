@@ -6,10 +6,10 @@
       <div class="row"> <!--- Row Start ---->
         <div class="container breadcrumb-inner-container"><!--- Container Start ---->
           <h1>
-              {% if page.page_title %}
-                {{ page.page_title }}
+              {% if page.title %}
+                {{ page.title }}
               {% else %}
-                {{page.title}}
+                {{page.url | replace: "/", "" | replace: "-","" | capitalize }}
               {% endif %}
           </h1>
           <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">

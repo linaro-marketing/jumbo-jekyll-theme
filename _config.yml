@@ -116,3 +116,7 @@ plugins:
 # Make sure that Liquid errors stop the build
 liquid:
     error_mode: strict    
+    
+readme_index:
+    enabled:          true
+    remove_originals: false
