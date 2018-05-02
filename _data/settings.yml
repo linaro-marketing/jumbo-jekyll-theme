@@ -9,7 +9,7 @@ favicon: favicon.png
 # 
 # Footer Newsletter toggle.
 newsletter:
-    enabled: true
+    enabled: false
     
 tags_enabled: true
     
