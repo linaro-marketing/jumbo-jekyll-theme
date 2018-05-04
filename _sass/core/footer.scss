@@ -105,6 +105,9 @@ div.row.footer-strip > div > div.pull-right > ul a:hover{
     line-height: 50px;
     color: $footer-text-color;
 }
+
+
+
 .coloured-bp{
     color: $brand-primary;
 }
@@ -148,5 +151,18 @@ a.btn.btn-social-icon:hover i  {
 }
 .company-footer-bottom, .company-footer-bottom a{
     color: $footer-text-color;
+}
+
+@media(max-width:$screen-sm-min - 1){
+    .footer-strip .container div, .footer-strip {
+        text-align: center;
+    }
+    a.btn.btn-social-icon {
+        margin-right: 0;
+        padding-right: 0;
+        text-align: center;
+        margin-left: 0;
+        padding: 4px;
+    }
 }
 
