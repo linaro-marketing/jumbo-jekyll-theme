@@ -1,33 +1,15 @@
 $(document).mouseup(function(e) 
 {
-    var search_container = $("div#search_bar");
-    
+    var search_container = $("div#search_bar");    
     // if the target of the click isn't the container nor a descendant of the container
     if (!search_container.is(e.target) && search_container.has(e.target).length === 0) 
     {
         search_container.hide();
     }
-    
 });
 
 $(document).ready(function () {
-    
-    
     $('.dropdown-toggle').dropdown();
-    // $(document).on('touchstart.dropdown.data-api', '.dropdown-submenu > a', function (event) {
-    //   event.preventDefault();
-    // });
-    // 
-    // $("li.dropdown-submenu.sub-menu>a").click(function(event){
-    //     event.preventDefault();
-    //     $("li.dropdown-submenu.sub-menu>a").next("ul.dropdown-menu.sub-menu").show();
-    // });
-    
-    // Search Bar
-    // SHOW SEARCH - show search bar when you click the search icon
-    
-    // Show Search Bar on click
-    // focus the user on search input field
     var search_bar = $("div#search_bar");
     var search_icon = $("a#search_icon");
     var search_close = $("button#search_close");
@@ -41,42 +23,11 @@ $(document).ready(function () {
         search_bar.css('display','block');
     });
     
-    
-    
-    // CLICK AWAY CLOSE - Close Search bar on click away from input
-
-    // RESET BUTTON - Clear and Close search
     $("button#search_close").click(function() {
         search_form.trigger('reset');
         search_bar.css('display','none');
     });
     
-    // // Youtube Video Thumbnails
-    // 
-    // var youtube = document.querySelectorAll( ".youtube" );
-    // 
-    // for (var i = 0; i < youtube.length; i++) {
-    // 
-    //     var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
-    // 
-    //     var image = new Image();
-    //        image.src = source;
-    //        image.addEventListener( "load", function() {
-    //            youtube[ i ].appendChild( image );
-    //        }(i) );
-    // 
-    //        youtube[i].addEventListener( "click", function() {
-    //            var iframe = document.createElement( "iframe" );
-    //            iframe.setAttribute( "frameborder", "0" );
-    //            iframe.setAttribute( "allowfullscreen", "" );
-    //            iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
-    // 
-    //            this.innerHsTML = "";
-    //            this.appendChild( iframe );
-    //        } );
-    // };
-    // 
-
     //Reset form when bootstrap modal closes.
     $('.modal').on('hidden.bs.modal', function(){
         $(this).find('form')[0].reset();
@@ -99,13 +50,6 @@ $(document).ready(function () {
     //Scrolling sticking on IOS7
     if (navigator.userAgent.match(/.*CPU.*OS 7_\d/i)){$('html').addClass('ios7');}
     
-    
-    // //Nav Bar
-    // 
-    // $('nav').removeClass('no-js');
-
-    // Nav Bar Drop Down Animation
-    
     $('nav li.dropdown.main > ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -122,11 +66,8 @@ $(document).ready(function () {
         menu.css({ left:newpos });
     });
     
-    
-    
     // Remove any zoom class added to body 
     $('body').css('zoom', '');
-    
     
     // External Links Opening in new window.
     $('a').each(function() {
@@ -134,6 +75,17 @@ $(document).ready(function () {
        if (!a.test(this.href)) {
           $(this).attr("target","_blank");
        }
+    });
+    
+    // Enabled permalinks to specific Bootstrap tabs
+    var hash = document.location.hash;
+    var prefix = "tab_";
+    if (hash) {
+        $('.nav-tabs a[href="'+hash.replace(prefix,"")+'"]').tab('show');
+    } 
+    // Change hash for page-reload
+    $('.nav-tabs a').on('shown', function (e) {
+        window.location.hash = e.target.hash.replace("#", "#" + prefix);
     });
     
 });
