@@ -1,15 +1,24 @@
 <script type="text/javascript">
-    
-function showMailingPopUp() {
-  require(["mojo/signup-forms/Loader"], function(L) { L.start(
-  {"baseUrl":"mc.us8.list-manage.com","uuid":"a56ce2128001bdcb7974e9ea2","lid":"{{site.data.settings.mailchimp.id}}"}
-  ) })
-  };
 
-$(function() {
-  $("#open-newsletter-popup").on('click', function() { 
-      showMailingPopUp();
+function defer(method) {
+    if (window.jQuery) {
+        method();
+    } else {
+        setTimeout(function() { defer(method) }, 50);
+    }
+}
+
+function showMailingPopUp() {
+    require(["mojo/signup-forms/Loader"], function(L) { L.start(
+    {"baseUrl":"mc.us3.list-manage.com","uuid":"14baaae786342d0d405ee59c2","lid":"{{site.data.settings.mailchimp.id}}"}
+    ) })
+};
+
+  defer(function () {
+      $("#open-newsletter-popup").on('click', function() { 
+          showMailingPopUp();
+      });
   });
-});
+ 
 
 </script>
