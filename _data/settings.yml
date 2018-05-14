@@ -5,8 +5,7 @@ favicon: favicon.png
 # mailchimp:
 #     enabled: true
 #     id: af6cf590b0
-#     unsubscribe-url: https://96boards.us3.list-manage.com/unsubscribe?u=14baaae786342d0d405ee59c2&id=e3d2abc041
-# 
+
 # Footer Newsletter toggle.
 newsletter:
     enabled: false

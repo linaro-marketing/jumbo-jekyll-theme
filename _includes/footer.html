@@ -30,6 +30,8 @@
                                 <span class="coloured-bp">&bull;</span>
                                 <a href="{{link.url}}">{{link.name}}</a> 
                             {% endfor %}
+                            {% if site.data.newsletter.enabled %}
+                            <a href="#" id="open-newsletter-popup">Subscribe to Newsletter</a> 
                         </div>
                         <div class="col-md-6 social-footer-bottom text-right no-padding">
                             {% if site.data.settings.facebook_username %}

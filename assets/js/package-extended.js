@@ -1,5 +1,6 @@
 //= require vendor/jquery
 //= require vendor/bootstrap
+//= require vendor/mc
 //= require vendor/cookieconsent
 //= require vendor/owl.carousel
 //= require vendor/lazysizes
@@ -10,5 +11,4 @@
 //= require app/main
 //= require app/scroll-to-anchors
 //= require app/tables
-//= require vendor/mc-validate
 //= require app/custom

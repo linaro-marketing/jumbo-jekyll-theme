@@ -8,7 +8,9 @@ $(document).mouseup(function(e)
     }
 });
 
+
 $(document).ready(function () {
+    
     $('.dropdown-toggle').dropdown();
     var search_bar = $("div#search_bar");
     var search_icon = $("a#search_icon");
