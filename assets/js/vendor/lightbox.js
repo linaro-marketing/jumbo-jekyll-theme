@@ -522,7 +522,7 @@ $(document).ready(function(){
     }
 
     defer(function () {
-        if (typeof me.onChange === "function") { 
+        if (typeof lightbox.onChange === "function") { 
             lightbox.option({
               'disableScrolling': true,
               'albumLabel': ''
