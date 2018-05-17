@@ -512,8 +512,23 @@
 
 
 $(document).ready(function(){
-        lightbox.option({
-          'disableScrolling': true,
-          'albumLabel': ''
-        })
+    
+    function defer(method) {
+        if (window.jQuery) {
+            method();
+        } else {
+            setTimeout(function() { defer(method) }, 50);
+        }
+    }
+
+    defer(function () {
+        if (typeof me.onChange === "function") { 
+            lightbox.option({
+              'disableScrolling': true,
+              'albumLabel': ''
+          });
+        }
+
+    });
+      
 });
