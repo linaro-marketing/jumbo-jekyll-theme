@@ -512,23 +512,12 @@
 
 
 $(document).ready(function(){
-    
-    function defer(method) {
-        if (window.jQuery) {
-            method();
-        } else {
-            setTimeout(function() { defer(method) }, 50);
-        }
-    }
 
-    defer(function () {
-        if (typeof lightbox.onChange === "function") { 
-            lightbox.option({
-              'disableScrolling': true,
-              'albumLabel': ''
-          });
+        if ($("[data-lightbox]")) { 
+                lightbox.option({
+                  'disableScrolling': true,
+                  'albumLabel': ''
+              });
         }
-
-    });
       
 });
