@@ -30,7 +30,7 @@
                                 <span class="coloured-bp">&bull;</span>
                                 <a href="{{link.url}}">{{link.name}}</a> 
                             {% endfor %}
-                            {% is site.data.settings.newsletter.url %}
+                            {% if site.data.settings.newsletter.url %}
                                 <span class="coloured-bp">&bull;</span>
                                 <a href="{{site.data.settings.newsletter.url}}">Subscribe to Newsletter</a> 
                             {% else %}
