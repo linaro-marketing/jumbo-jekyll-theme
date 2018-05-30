@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
     
   # Main Spec Info
   s.name          = "jumbo-jekyll-theme"
-  s.version       = "1.7.6"
+  s.version       = "1.7.8"
   s.authors       = ["Kyle Kirkby"]
   s.email         = ["kyle.kirkby@linaro.org"]
   s.summary       = %q{The jumbo-jekyll-theme aims to provide an fast static theme for use across Linaro sites and anyone who may find it useful. The theme currently uses Bootstrap/Jekyll Plugins/Javascript/Sass/JQuery Plugins to do this.}
