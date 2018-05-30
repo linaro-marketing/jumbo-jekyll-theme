@@ -96,6 +96,7 @@ a.dropdown-toggle {}
 
 #universal-nav ul.dropdown-menu {
     padding-top: 0px !important;
+    background-color: #000;
 }
 
 #universal-nav button[aria-expanded="false"] span.glyphicon.glyphicon-chevron-up {
@@ -125,13 +126,16 @@ a.dropdown-toggle {}
 
 #universal-nav.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
     text-align: center;
-    color:white;
+    color:black;
 }
 #universal-nav.navbar-default .navbar-nav .open .dropdown-menu>li>a {
     text-align: center;
-    color: black;
+    color: white;
     padding: 5px;
     margin-top: 0px;
+}
+#universal-nav .dropdown-menu .divider {
+    background-color: #cecece;
 }
 
 
