@@ -3,23 +3,22 @@
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="glyphicon glyphicon-chevron-down"></span>
+        <span class="glyphicon glyphicon-chevron-up"></span>
       </button>
     </div>
     <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
       <ul class="nav navbar-nav">
-        <li {% if site.url contains "www.linaro.org" or site.url contains "staging.linaro.org" %}class="active"{% endif %}><a href="https://www.linaro.org">Linaro</a></li>
-        <li {% if site.url contains "connect.linaro.org" %}class="active"{% endif %}><a href="https://connect.linaro.org">Connect</a></li>
-        <li {% if site.url contains "96boards.org" %}class="active"{% endif %}><a href="https://www.96boards.org">96Boards</a></li>
-        <li {% if site.url contains "linaro.cloud" %}class="active"{% endif %}><a href="https://linaro.cloud">Developer Cloud</a></li>
+        <li {% if site.url contains "www.linaro.org" or site.url contains "staging.linaro.org" %}class="active"{% endif %}><a class="linaro" href="https://www.linaro.org">Linaro</a></li>
+        <li {% if site.url contains "connect.linaro.org" %}class="active"{% endif %}><a class="connect" href="https://connect.linaro.org">Connect</a></li>
+        <li {% if site.url contains "96boards.org" %}class="active"{% endif %}><a class="boards" href="https://www.96boards.org">96Boards</a></li>
+        <li {% if site.url contains "linaro.cloud" %}class="active"{% endif %}><a class="dev-cloud" href="https://linaro.cloud">Developer Cloud</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+          <a class="projects" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">OP-TEE.org</a></li>
             <li><a href="#">DeviceTree.org</a></li>
-            <li><a href="#">OpenDataPlane.org</a></li>
+            <li><a href="#">OpenDataPlane.org</a></li> 
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">Linaro Services</li>
             <li><a href="https://snapshots.linaro.org/">Snapshots</a></li>
