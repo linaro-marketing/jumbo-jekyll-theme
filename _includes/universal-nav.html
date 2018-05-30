@@ -9,7 +9,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
       <ul class="nav navbar-nav">
-        <li {% if site.url contains "www.linaro.org" or site.url contains "staging.linaro.org" %}class="active"{% endif %}><a class="linaro" href="https://www.linaro.org">Linaro</a></li>
+        <li {% if site.url == "https://www.linaro.org" %}class="active"{% endif %}><a class="linaro" href="https://www.linaro.org">Linaro</a></li>
         <li {% if site.url contains "connect.linaro.org" %}class="active"{% endif %}><a class="connect" href="https://connect.linaro.org">Connect</a></li>
         <li {% if site.url contains "96boards.org" %}class="active"{% endif %}><a class="boards" href="https://www.96boards.org">96Boards</a></li>
         <li {% if site.url contains "linaro.cloud" %}class="active"{% endif %}><a class="dev-cloud" href="https://linaro.cloud">Developer Cloud</a></li>
