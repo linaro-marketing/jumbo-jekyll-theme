@@ -36,6 +36,15 @@
                         </div>
                         {% else %}
                             {{ tab.title}} {% if tab.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}
+                            {% if tab.sub-tabs %}
+                                {% for sub-tab in tab.sub-tabs %}
+                                    <li class="{% if page-base[1] == sub-tab.base  %}active {% elsif page.url == sub-tab.url or sub-tab.active %}active {% endif %}side-nav-button">
+                                        <a href="{{sub-tab.url}}" role="link">
+                                            {{ tab.title}} {% if tab.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
                         {% endif %}
                     </a>
                 </li>
