@@ -23,14 +23,17 @@ nav#universal-nav {
 
 }
 
-#universal-nav.navbar-default .navbar-nav>li>a:hover{
+#universal-nav.navbar-default .navbar-nav>li.active>a {
     color: white;
-    background-color:#ffffff;
+    background-color: darken($brand-primary, 40%);
+    opacity: 1;
+    
+    transition: all 200ms ease;
 }
-
-#universal-nav.navbar-default .navbar-nav>li.active >a{
-    color: black;
-    opacity:.4;
+#universal-nav.navbar-default .navbar-nav>li.active>a:hover {
+    color: white;
+    background-color: #000;
+    opacity: 1;
 }
 
 #universal-nav li {
@@ -138,7 +141,7 @@ a.dropdown-toggle {}
     background-color: #cecece;
 }
 
-.navbar-right ul.dropdown-menu {
+#universal-nav .navbar-right ul.dropdown-menu {
     left: auto;
     right: 0px;
 }
