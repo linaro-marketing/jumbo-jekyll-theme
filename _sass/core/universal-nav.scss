@@ -20,7 +20,6 @@ nav#universal-nav {
     padding-right:20px;
     text-align:center;
     transition: all 400ms ease;
-
 }
 
 #universal-nav.navbar-default .navbar-nav>li.active>a {
@@ -82,19 +81,6 @@ a.dropdown-toggle {}
 
 #universal-nav ul.nav.navbar-nav {
     margin-top:0px;
-}
-
-#universal-nav a.connect:hover {
-    background-color:#90c25c !important;
-}
-#universal-nav a.boards:hover {
-    background-color:#19937a !important;
-}
-#universal-nav a.dev-cloud:hover {
-    background-color:#348bac !important;
-}
-#universal-nav a.projects:hover {
-    background-color:#3572b0 !important;
 }
 
 #universal-nav ul.dropdown-menu {
