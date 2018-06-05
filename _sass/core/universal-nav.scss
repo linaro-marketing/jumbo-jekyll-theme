@@ -138,6 +138,10 @@ a.dropdown-toggle {}
     background-color: #cecece;
 }
 
+.navbar-right ul.dropdown-menu {
+    left: auto;
+    right: 0px;
+}
 
 // Mobile Styles
 @media(max-width:$screen-sm-min - 1){
