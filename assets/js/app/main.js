@@ -11,6 +11,37 @@ $(document).mouseup(function(e)
 
 $(document).ready(function () {
     
+    // Sticky Nav for the universal/main navigation bars
+    
+    if($("#universal-nav")){
+        var stickyOffset = $('#main-navigation').offset().top;
+        var universalNav = $('#universal-nav');
+        var wrapper = $('#wrapper');
+
+        $(window).scroll(function(){
+            
+            var sticky = $('#main-navigation'),
+            scroll = $(window).scrollTop();
+
+            if (scroll >= stickyOffset) 
+            {
+              sticky.removeClass('navbar-static');
+              wrapper.css('margin-top', $('#main-navigation').height() + universalNav.height());
+              universalNav.hide();
+              sticky.addClass('navbar-fixed-top');
+            }   
+            else 
+            {
+                sticky.removeClass('navbar-fixed-top');
+                wrapper.css('margin-top', '0px');
+                universalNav.slideDown("fast");
+                sticky.addClass('navbar-static');
+            }
+            
+        });
+    }
+
+    
     $('.dropdown-toggle').dropdown();
     var search_bar = $("div#search_bar");
     var search_icon = $("a#search_icon");
