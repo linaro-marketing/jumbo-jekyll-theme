@@ -936,6 +936,10 @@ li#linaro-app-menu-item > ul:before {
     opacity: 0.7;
 }
 
+#main-navigation.navbar-static button.navbar-toggle.collapsed {
+    left: 42px;
+}
+
 // Style for sidebar stacked nav sub pages
 li.side-nav-button.sub-page a {
     padding-left: 40px;
