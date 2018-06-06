@@ -2,7 +2,8 @@ nav#universal-nav {
     color: white;
     height: 0px;
     padding-bottom:0px;
-    border-bottom: none;
+    border-bottom: 0px;
+    border-top:0px;
     margin-bottom: 0px;
     background-color:$brand-primary;
     z-index:9999;
@@ -11,8 +12,8 @@ nav#universal-nav {
 #universal-nav.navbar-default .navbar-nav>li>a{
     color: #fefefe;
     font-size: 14px;
-    padding-top: 5px;
-    padding-bottom:5px;
+    padding-top: 8px;
+    padding-bottom:7px;
     margin: 0px;
     border:none;
     letter-spacing:1px;
@@ -40,7 +41,7 @@ nav#universal-nav {
     margin-bottom: 0px;
 }
 
-.navbar {min-height:31px !important}
+.navbar {min-height:36px !important}
 
 #universal-nav button.navbar-toggle {
     margin-top:0px;
