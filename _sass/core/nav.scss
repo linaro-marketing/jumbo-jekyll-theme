@@ -696,13 +696,13 @@ li.side-nav-button:hover > a {
     letter-spacing: 0;
     font-size:12px;
 }
-.navbar-inverse .navbar-nav>li>a {
+#main-navigation.navbar-inverse .navbar-nav>li>a {
     color: #444444;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: normal;
     padding-right: 20px !important;
     padding-left: 20px !important;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0px;
 }
 .navbar-inverse #navbar-buttons >li>a {
