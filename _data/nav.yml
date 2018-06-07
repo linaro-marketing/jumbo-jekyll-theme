@@ -2,7 +2,6 @@
 search:
     enabled: true
     label: Linaro
-
 # universal-nav: true
 # Nav Brand Config
 brand:
@@ -11,7 +10,6 @@ brand:
         enabled: false
         name: Linaro-Logo.svg
     url: /
-    
 # Navigation pages
 pages:
     
