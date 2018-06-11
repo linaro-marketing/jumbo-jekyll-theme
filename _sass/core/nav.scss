@@ -697,7 +697,7 @@ li.side-nav-button:hover > a {
     font-size:12px;
 }
 #main-navigation.navbar-inverse .navbar-nav>li>a {
-    color: #444444;
+    color: $navbar-text-color;
     font-size: 14px;
     font-weight: normal;
     padding-right: 20px !important;
