@@ -685,7 +685,7 @@ li.side-nav-button:hover > a {
 }
 
 #navbar-buttons .dropdown-menu>li>a {
-    color: #444444;
+    color: $navbar-text-color;
     letter-spacing: 0;
     font-size:12px;
     outline: 0;
