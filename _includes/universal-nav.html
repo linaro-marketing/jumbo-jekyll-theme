@@ -13,7 +13,7 @@
         <li {% if site.title == "Linaro Connect" %}class="active"{% endif %}><a class="connect" target="_blank" href="https://connect.linaro.org">Connect</a></li>
         <li {% if site.title == "96Boards" %}class="active"{% endif %}><a class="boards" target="_self" href="https://www.96boards.org">96Boards</a></li>
         <li {% if site.title == "Developer Cloud" %}class="active"{% endif %}><a class="dev-cloud" target="_blank" href="https://linaro.cloud">Developer Cloud</a></li>
-        <li class="dropdown" {% if site.title == "OP-TEE" or site.title == "96Boards.ai" or site.title == "DeviceTree" or site.title == "The OpenDataPlane Project" %}class="active"{% endif %}>
+        <li class="dropdown" {% if site.title == "OP-TEE" %}class="active"{% elsif site.title == "DeviceTree" %}class="active"{% elsif site.title == "96Boards.ai"%}class="active"{% elsif site.title == "The OpenDataPlane Project" %}class="active"{% endif %}>
           <a class="projects" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a target="_blank" href="https://www.96boards.ai">96Boards.ai</a></li>
