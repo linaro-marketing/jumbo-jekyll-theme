@@ -964,5 +964,25 @@ nav#main-navigation.navbar-fixed-top {
     z-index: 1;
 }
 
+
+// CSS for the left aligned dropdowns
+
+li.dropdown-submenu.sub-menu.pull-left {
+    width: 100%;
+}
+#main-navigation .pull-left ul.dropdown-menu.sub-menu {
+    margin-left: -3px !important;
+    margin-top: 0px !important;
+    text-align:  right;
+}
+#main-navigation ul.dropdown-menu.sub-menu {
+        margin-left: 1px;
+        border-radius: 0px;
+        border: 0px;
+        padding-top: 0;
+        margin-top: 5px;
+        padding-bottom: 0;
+}
+
 // Import the CSS for the iuniversal NavBar
 @import "universal-nav";
