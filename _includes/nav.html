@@ -43,14 +43,14 @@ navbar-inverse navbar-static" id="main-navigation">
                                  {% if page.url == menu-item.url %}
                                     active
                                  {% endif %}
-                            {% endfor %} {% if section.left %} left {% endif %}">
+                            {% endfor %} ">
                           <a href="{% if section.url %}{{section.url}}{% endif %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                               {{section.title}} <span class="caret"></span>
                           </a>
                           <ul class="dropdown-menu menu">
                               {% for menu_option in section.options %}
                                   {% if menu_option.options %}
-                                  <li class="dropdown-submenu sub-menu">
+                                  <li class="dropdown-submenu sub-menu {% if section.left %} pull-left {% endif %}">
                                     <a tabindex="-1" href="{% if menu_option.url %}{{menu_option.url}}{% endif %}" class="m\obile-link-inactive">{{menu_option.text}}</a>
                                     <ul class="dropdown-menu sub-menu">
                                     {% for sub-option in menu_option.options %}
@@ -79,9 +79,9 @@ navbar-inverse navbar-static" id="main-navigation">
                         </li>
                     {% else %}
                         <li {% if section.url == page.permalink %}
-                                class="main active {% if section.left %} left {% endif %}"
+                                class="main active"
                             {% else %}
-                                class="main {% if section.left %} left {% endif %}"
+                                class="main"
                             {% endif %}
                             ><a href="{{section.url}}" title="{{section.title}}">{{section.title}}</a></li>
                     {% endif %}
