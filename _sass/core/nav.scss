@@ -141,16 +141,12 @@ nav#main-navigation.nav-light #navbar-buttons>li>a {
     position: static;
     padding:0px;
 }
-
 #tabbed-nav-bar .navbar-toggle{
     color:$brand-primary !important;
 }
 button.btn.btn-default.dropdown-toggle {
     color: $navbar-text-color;
 }
-
-
-
 nav{
     letter-spacing: 1px;
 }
@@ -174,36 +170,28 @@ nav li a:hover{
    -moz-transition: color .5s ease;
    -webkit-transition: color .5s ease;
 }
-
 // Dark and Light Nav Bar
 nav.nav-light #navbar-buttons > li > a {
     color:#fff;
 }
-
 nav.nav-dark #navbar-buttons > li > a {
     color:#000;
 }
-
 nav.nav-light#main-navigation  #navbar_svg .cls-2 {
     fill: #fff;
 }
-
 nav.nav-light {
     background: transparent;
 }
-
 nav.nav-dark {
     background: transparent;
 }
-
 nav.nav-light button.navbar-toggle .icon-bar {
     background-color:#fff !important;
 }
-
 nav.nav-dark button.navbar-toggle .icon-bar {
     background-color:#fff !important;
 }
-
 // Nav Bar SVG Style
 svg#navbar_svg {
     height: 66px;
@@ -213,15 +201,12 @@ svg#navbar_svg {
 nav.nav-light .cls-2 {
     fill: #666;
 }
-
 nav.nav-light .cls-2 {
     fill: #fff;
 }
-
 nav.nav-dark .cls-2 {
     fill: #000;
 }
-
 // Sub Menu for Boostrap NavBar
 .dropdown-submenu {
     position:relative;

@@ -8,11 +8,20 @@ $(document).mouseup(function(e)
     }
 });
 
+// Hide all navigation sub menus on window click
+$(window).click(function() {
+    $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
+});
 
 $(document).ready(function () {
     
+    // Toggle the sub menu when clicked.
+    $('.dropdown-submenu.sub-menu a').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+    });
+
     // Sticky Nav for the universal/main navigation bars
-    
     if($("#universal-nav")){
         var stickyOffset = $('#main-navigation').offset().top;
         var universalNav = $('#universal-nav');
