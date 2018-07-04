@@ -51,7 +51,7 @@ navbar-inverse navbar-static" id="main-navigation">
                               {% for menu_option in section.options %}
                                   {% if menu_option.options %}
                                   <li class="dropdown-submenu sub-menu {% if section.left %} pull-left {% endif %}">
-                                    <a tabindex="-1" {% if menu_option.url %}href="{{menu_option.url}}"{% endif %} class="m\obile-link-inactive">{{menu_option.text}}</a>
+                                    <a tabindex="-1" {% if menu_option.url %}href="{{menu_option.url}}"{% endif %} class="mobile-link-inactive">{{menu_option.text}}</a>
                                     <ul class="dropdown-menu sub-menu">
                                     {% for sub-option in menu_option.options %}
                                         {% if sub-option.options %}

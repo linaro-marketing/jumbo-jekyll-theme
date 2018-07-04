@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
     
   # Main Spec Info
   s.name          = "jumbo-jekyll-theme"
-  s.version       = "1.8.98"
+  s.version       = "1.9.1"
   s.authors       = ["Kyle Kirkby"]
   s.email         = ["kyle.kirkby@linaro.org"]
   s.summary       = %q{The jumbo-jekyll-theme aims to provide an fast static theme for use across Linaro sites and anyone who may find it useful. The theme currently uses Bootstrap/Jekyll Plugins/Javascript/Sass/JQuery Plugins to do this.}
@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'hash-joiner', '~> 0'
   s.add_runtime_dependency 'sprockets', ' ~> 3.7.2'
   #s.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-    
+  
   # Development Dependencies
   s.add_development_dependency "bundler", "1.16.1"
   s.add_development_dependency "rake", "~> 10.0"
