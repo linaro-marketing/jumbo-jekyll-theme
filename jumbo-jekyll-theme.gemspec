@@ -14,12 +14,12 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files -z`.split("\x0").select do |f|
     f.match(%r{^(assets|_(data|includes|layouts|sass)/|(LICENSE|README|robots|_config)((\.(txt|md|markdown|yml)|$)))}i)
   end
-  
   # Ruby Version
   s.required_ruby_version = '>=2.3'
   
   # Runtime Dependencies
   s.add_runtime_dependency 'jekyll', '3.7.3'
+  s.add_runtime_dependency 'jekyll-cache-buster', '~> 0.1.0'
   s.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
   s.add_runtime_dependency "jekyll-sitemap", "~> 1.1"
   s.add_runtime_dependency "jekyll-readme-index", "0.2"
