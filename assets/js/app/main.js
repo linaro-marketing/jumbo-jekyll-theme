@@ -17,11 +17,19 @@ $(document).ready(function () {
     
     // Toggle the sub menu when clicked.
     $('.dropdown-submenu.sub-menu a').on("click", function(e){
-        $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
-        $(this).next('ul').toggle();
+        if($(this).hasClass("active")){
+            $(this).next('ul').hide();
+            $(this).removeClass("active");
+        }
+        else {
+            $(".dropdown-menu.sub-menu").hide();
+            $(".dropdown-submenu.sub-menu a").removeClass("active");
+            $(this).next('ul').show();
+            $(this).addClass("active");
+        }
         e.stopPropagation();
     });
-
+    
     // Sticky Nav for the universal/main navigation bars
     if($("#universal-nav")){
         var stickyOffset = $('#main-navigation').offset().top;
