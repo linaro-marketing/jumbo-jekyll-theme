@@ -17,6 +17,7 @@ $(document).ready(function () {
     
     // Toggle the sub menu when clicked.
     $('.dropdown-submenu.sub-menu a').on("click", function(e){
+        $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
         $(this).next('ul').toggle();
         e.stopPropagation();
     });
