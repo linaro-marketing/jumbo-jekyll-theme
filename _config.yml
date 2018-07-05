@@ -103,7 +103,6 @@ jekyll_relative_links:
     
 plugins:
     - jekyll-seo-tag
-    - jekyll-cache-buster
     - jekyll-sitemap
     - bootstrap-sass
     - uglifier
