@@ -945,8 +945,6 @@ nav#main-navigation.navbar-fixed-top {
 #main-navigation div#navbar-collapse {
     z-index: 1;
 }
-
-
 // CSS for the left aligned dropdowns
 
 li.dropdown-submenu.sub-menu.pull-left {
@@ -964,6 +962,9 @@ li.dropdown-submenu.sub-menu.pull-left {
         padding-top: 0;
         margin-top: 5px;
         padding-bottom: 0;
+}
+li.dropdown-submenu.sub-menu > a {
+    cursor: pointer;
 }
 
 // Import the CSS for the iuniversal NavBar
