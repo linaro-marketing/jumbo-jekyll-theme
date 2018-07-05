@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
     
   # Main Spec Info
   s.name          = "jumbo-jekyll-theme"
-  s.version       = "1.9.1"
+  s.version       = "1.9.8"
   s.authors       = ["Kyle Kirkby"]
   s.email         = ["kyle.kirkby@linaro.org"]
   s.summary       = %q{The jumbo-jekyll-theme aims to provide an fast static theme for use across Linaro sites and anyone who may find it useful. The theme currently uses Bootstrap/Jekyll Plugins/Javascript/Sass/JQuery Plugins to do this.}
@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   
   # Runtime Dependencies
   s.add_runtime_dependency 'jekyll', '3.7.3'
-  s.add_runtime_dependency 'jekyll-cache-buster', '~> 0.1.0'
   s.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
   s.add_runtime_dependency "jekyll-sitemap", "~> 1.1"
   s.add_runtime_dependency "jekyll-readme-index", "0.2"
