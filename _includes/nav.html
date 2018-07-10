@@ -1,16 +1,13 @@
-<nav class="
-{% if site.data.settings.home.jumbotron.enabled %}
-    {% if layout.nav-light %}
-        {% if site.data.settings.home.transparent-nav %}
-            nav-light 
-        {% endif %}
-    {% elsif layout.nav-dark %}
-        {% if site.data.settings.home.dark-nav %}
-            nav-light 
-        {% endif %}
-    {% endif %}
+{% if site.data.nav.universal-nav %}
+    {% include universal-nav.html %}
 {% endif %}
-navbar-inverse navbar-fixed-top" id="main-navigation">
+<nav class="
+{% if layout.nav-light %}
+        nav-light 
+{% elsif page.nav-light %}
+        nav-light 
+{% endif %}
+navbar-inverse navbar-static" id="main-navigation">
         <!-- NAVBAR HEADER-->
          <div class="navbar-header">
              <button for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
@@ -22,12 +19,13 @@ navbar-inverse navbar-fixed-top" id="main-navigation">
             {% if site.data.nav.brand %}
                 <a class="navbar-brand " href="{{site.data.nav.brand.url}}">
                     {% if site.data.nav.brand.image.enabled %}
-                        {% if site.data.nav.brand.image.name %}
+                        {% if site.data.nav.brand.image.svg %}
+                            {% include {{site.data.nav.brand.image.name}} %}
+                        {% elsif site.data.nav.brand.image.name %}
                              <img src="{% asset_path '{{ site.data.nav.brand.image.name }}'  %}" alt="{% if site.data.settings.name %}{{ site.data.settings.name }}{% else %}Linaro Site{% endif %} Logo." id="brand-image" />
                         {% else %}
                             {% include linaro-svg.html %}
                         {% endif %}
-
                     {% else %}
                         {{site.title}}
                     {% endif %}
@@ -45,20 +43,20 @@ navbar-inverse navbar-fixed-top" id="main-navigation">
                                  {% if page.url == menu-item.url %}
                                     active
                                  {% endif %}
-                            {% endfor %}">
-                          <a href="{% if section.url %}{{section.url}}{% endif %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            {% endfor %} ">
+                          <a {% if section.url %}href="{{section.url}}"{% endif %} class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                               {{section.title}} <span class="caret"></span>
                           </a>
                           <ul class="dropdown-menu menu">
                               {% for menu_option in section.options %}
                                   {% if menu_option.options %}
-                                  <li class="dropdown-submenu sub-menu">
-                                    <a tabindex="-1" href="{% if menu_option.url %}{{menu_option.url}}{% endif %}" class="m\obile-link-inactive">{{menu_option.text}}</a>
+                                  <li class="dropdown-submenu sub-menu {% if section.left %} pull-left {% endif %}">
+                                    <a tabindex="-1" {% if menu_option.url %}href="{{menu_option.url}}"{% endif %} >{{menu_option.text}}</a>
                                     <ul class="dropdown-menu sub-menu">
                                     {% for sub-option in menu_option.options %}
                                         {% if sub-option.options %}
                                         <li class="dropdown-submenu">
-                                          <a href="{% if sub-option.url %}{{sub-option.url}}{% endif %}">{{sub-option.text}}</a>
+                                          <a {% if sub-option.url %}href="{{sub-option.url}}"{% endif %}>{{sub-option.text}}</a>
                                           <ul class="dropdown-menu">
                                           {% for sub-sub-option in sub-option.options %}
                                               <li><a href="{{sub-sub-option.url}}">{{sub-sub-option.text}}</a></li>
@@ -105,7 +103,7 @@ navbar-inverse navbar-fixed-top" id="main-navigation">
                     
                     <form class="form-inline" action="/search/" method="GET" target="_self" id="search_form">
                         <div class="input-group">
-                          <input type="text" name="s" class="form-control" placeholder="Search...">
+                          <input type="text" name="q" class="form-control" placeholder="Search...">
                            <span class="input-group-btn">
                                <!--Reset-->
                                <button type="reset" class="btn btn-default" id="search_close">

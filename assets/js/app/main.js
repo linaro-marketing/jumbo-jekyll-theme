@@ -1,33 +1,66 @@
 $(document).mouseup(function(e) 
 {
-    var search_container = $("div#search_bar");
-    
+    var search_container = $("div#search_bar");    
     // if the target of the click isn't the container nor a descendant of the container
     if (!search_container.is(e.target) && search_container.has(e.target).length === 0) 
     {
         search_container.hide();
     }
-    
+});
+
+// Hide all navigation sub menus on window click
+$(window).click(function() {
+    $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
 });
 
 $(document).ready(function () {
     
+    // Toggle the sub menu when clicked.
+    $('.dropdown-submenu.sub-menu a').on("click", function(e){
+        if($(this).hasClass("active")){
+            $(this).next('ul').hide();
+            $(this).removeClass("active");
+        }
+        else {
+            $(".dropdown-menu.sub-menu").hide();
+            $(".dropdown-submenu.sub-menu a").removeClass("active");
+            $(this).next('ul').show();
+            $(this).addClass("active");
+        }
+        e.stopPropagation();
+    });
+    
+    // Sticky Nav for the universal/main navigation bars
+    if($("#universal-nav")){
+        var stickyOffset = $('#main-navigation').offset().top;
+        var universalNav = $('#universal-nav');
+        var wrapper = $('#wrapper');
+
+        $(window).scroll(function(){
+            
+            var sticky = $('#main-navigation'),
+            scroll = $(window).scrollTop();
+
+            if (scroll >= stickyOffset) 
+            {
+              sticky.removeClass('navbar-static');
+              wrapper.css('margin-top', $('#main-navigation').height() + universalNav.height());
+              universalNav.hide();
+              sticky.addClass('navbar-fixed-top');
+            }   
+            else 
+            {
+                sticky.removeClass('navbar-fixed-top');
+                wrapper.css('margin-top', '0px');
+                universalNav.slideDown("fast");
+                sticky.addClass('navbar-static');
+            }
+            
+        });
+    }
+
     
     $('.dropdown-toggle').dropdown();
-    // $(document).on('touchstart.dropdown.data-api', '.dropdown-submenu > a', function (event) {
-    //   event.preventDefault();
-    // });
-    // 
-    // $("li.dropdown-submenu.sub-menu>a").click(function(event){
-    //     event.preventDefault();
-    //     $("li.dropdown-submenu.sub-menu>a").next("ul.dropdown-menu.sub-menu").show();
-    // });
-    
-    // Search Bar
-    // SHOW SEARCH - show search bar when you click the search icon
-    
-    // Show Search Bar on click
-    // focus the user on search input field
     var search_bar = $("div#search_bar");
     var search_icon = $("a#search_icon");
     var search_close = $("button#search_close");
@@ -41,42 +74,11 @@ $(document).ready(function () {
         search_bar.css('display','block');
     });
     
-    
-    
-    // CLICK AWAY CLOSE - Close Search bar on click away from input
-
-    // RESET BUTTON - Clear and Close search
     $("button#search_close").click(function() {
         search_form.trigger('reset');
         search_bar.css('display','none');
     });
     
-    // // Youtube Video Thumbnails
-    // 
-    // var youtube = document.querySelectorAll( ".youtube" );
-    // 
-    // for (var i = 0; i < youtube.length; i++) {
-    // 
-    //     var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
-    // 
-    //     var image = new Image();
-    //        image.src = source;
-    //        image.addEventListener( "load", function() {
-    //            youtube[ i ].appendChild( image );
-    //        }(i) );
-    // 
-    //        youtube[i].addEventListener( "click", function() {
-    //            var iframe = document.createElement( "iframe" );
-    //            iframe.setAttribute( "frameborder", "0" );
-    //            iframe.setAttribute( "allowfullscreen", "" );
-    //            iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
-    // 
-    //            this.innerHsTML = "";
-    //            this.appendChild( iframe );
-    //        } );
-    // };
-    // 
-
     //Reset form when bootstrap modal closes.
     $('.modal').on('hidden.bs.modal', function(){
         $(this).find('form')[0].reset();
@@ -99,13 +101,6 @@ $(document).ready(function () {
     //Scrolling sticking on IOS7
     if (navigator.userAgent.match(/.*CPU.*OS 7_\d/i)){$('html').addClass('ios7');}
     
-    
-    // //Nav Bar
-    // 
-    // $('nav').removeClass('no-js');
-
-    // Nav Bar Drop Down Animation
-    
     $('nav li.dropdown.main > ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -122,18 +117,27 @@ $(document).ready(function () {
         menu.css({ left:newpos });
     });
     
-    
-    
     // Remove any zoom class added to body 
     $('body').css('zoom', '');
-    
     
     // External Links Opening in new window.
     $('a').each(function() {
        var a = new RegExp('/' + window.location.host + '/');
        if (!a.test(this.href)) {
-          $(this).attr("target","_blank");
+           if($(this).attr("target") != "_self"){
+               $(this).attr("target","_blank");
+           }
        }
+    });
+    
+    // Enabled permalinks to specific Bootstrap tabs
+    var hash = document.location.hash;
+    if (hash) {
+        $('.nav-tabs a[href="'+hash+'"]').tab('show');
+    } 
+    // Change hash for page-reload
+    $('.nav-tabs a').on('shown', function (e) {
+        window.location.hash = e.target.hash.replace("#", "#" + prefix);
     });
     
 });

@@ -3,16 +3,6 @@ layout: default
 js-package: blog
 css-package: blog
 ---
-{% if page.previous.url %}
-    <a href="{{page.previous.url}}" class="previous_post_anchor">
-        <div class="previous_post"></div>
-    </a>
-{% endif %}
-{% if page.next.url %}
-    <a href="{{page.next.url}}" class="next_post_anchor">
-        <div class="next_post"></div>
-    </a>
-{% endif %}
 {% if page.image.featured %}
     <div class="container-fluid" {% if page.image.featured %}
         style="background: #000 url({% asset_path '{{page.image.name}}'  %}) no-repeat center center fixed;
@@ -60,10 +50,11 @@ css-package: blog
                     
                         {% if page.co-author %}
                             {% if site.authors %}
-                                {% assign co-author = site.authors | where: "username", page.author | first %}
+                                {% assign co-author = site.authors | where: "username", page.co-author | first %}
                                 {% assign co-author-url = co-author.url %}
                             {% elsif site.data.authors %}
-                                {% assign co-author = site.data.authors | where: "username", page.author | first %}
+                                {% assign co-author = site.data.authors | where: "username", page.co-author | first %}
+                                {% assign co-author-url = "#" %}
                             {% endif %}
                             <a href="{{co-author-url}}">
                                 <img class="blog-author-image" style="
@@ -100,7 +91,7 @@ css-package: blog
                                 <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
                             {% else %}
                             By
-                            <a href="{{author.url}}">
+                            <a href="{{author-url}}">
                                 <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
                             </a>
                             {% endif %}
@@ -133,11 +124,19 @@ css-package: blog
                             {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
                             {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
                             {% if page.author %}
-                                {% assign author = site.authors | where: 'username' , page.author %}
-                                {% assign author = author[0] %}
+                                {% if site.authors %}
+                                    {% assign author = site.authors | where: "username", page.author | first %}
+                                    {% assign author-url = author.url %}
+                                    {% assign using-data-file = false %}
+                                {% elsif site.data.authors %}
+                                    {% assign using-data-file = true %}
+                                    {% assign author = site.data.authors | where: "username", page.author | first %}
+                                    {% assign author-url = "#" %}
+                                {% endif %}
+                            
                                 <em> By
                                     {% if author %}
-                                        <a href="{{author.url}}">
+                                        <a href="{{author-url}}">
                                             <strong>
                                                 {{author.name}}
                                             </strong>
@@ -184,9 +183,8 @@ css-package: blog
                         
                         <hr/>
                     {% endif %}
-                    
                 
-                
+
                 {% comment %}
                     TAGS - Check to see if the tags_enabled setting in settings.yml data file is toggled.
                 {% endcomment %}
@@ -216,7 +214,7 @@ css-package: blog
                                 {% assign author = author[0] %}
                                 <em> By
                                     {% if author %}
-                                        <a href="{{author.url}}">
+                                        <a href="{{author-url}}">
                                             <strong>
                                                 {{author.name}}
                                             </strong>

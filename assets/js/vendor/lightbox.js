@@ -512,8 +512,12 @@
 
 
 $(document).ready(function(){
-        lightbox.option({
-          'disableScrolling': true,
-          'albumLabel': ''
-        })
+
+        if ($("[data-lightbox]")) { 
+                lightbox.option({
+                  'disableScrolling': true,
+                  'albumLabel': ''
+              });
+        }
+      
 });

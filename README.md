@@ -17,3 +17,10 @@ Some of the features this theme offers:
 * Lazy loading of content.
 * Generated breadcrumb
 * Easy navigation / footer management using YAML Data files.
+
+# The Docs
+The documentation for this theme is currently available through the Collaborate space. I will be adding to readthedocs/github in due course.
+
+# Feature Requests / Bug Fixes
+
+If anyone that uses the theme has any useful bug fixes / feature requests that may be of interest then please feel free to fork/submit a PR with your fixes/features.

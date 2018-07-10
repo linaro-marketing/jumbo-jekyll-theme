@@ -19,9 +19,7 @@ js-package: main
                 {% include github-edit.html %}
 
                 {% if site.data.settings.newsletter.enabled == true %}
-                    {% if page.url != "/search/" %}
-                        {% include newsletter.html %}
-                    {% endif %}
+                    {% include newsletter-script.html %}
                 {% endif %}
 
                 {% include footer.html %}

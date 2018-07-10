@@ -30,15 +30,34 @@
                                 <span class="coloured-bp">&bull;</span>
                                 <a href="{{link.url}}">{{link.name}}</a> 
                             {% endfor %}
+                            {% if site.data.settings.newsletter.url %}
+                                <span class="coloured-bp">&bull;</span>
+                                <a href="{{site.data.settings.newsletter.url}}">Subscribe to Newsletter</a> 
+                            {% else %}
+                                {% if site.data.settings.newsletter.enabled %}
+                                <span class="coloured-bp">&bull;</span>
+                                <a href="#" id="open-newsletter-popup">Subscribe to Newsletter</a> 
+                                {% endif %}
+                            {% endif %}
                         </div>
                         <div class="col-md-6 social-footer-bottom text-right no-padding">
-                            {% if site.data.settings.social-media %}
-                                <a href="http://facebook.com/{{site.data.settings.facebook_username}}" class="btn btn-social-icon"><i class="icon-facebook"></i></a> {% endif %} {% if site.data.settings.github_username %}
-                                <a href="https://github.com/{{site.data.settings.github_username}}" class="btn btn-social-icon"><i class="icon-github-circled"></i></a> {% endif %} {% if site.data.settings.google_plus_username %}
-                                <a href="https://plus.google.com/{{site.data.settings.google_plus_username}}/posts" class="btn btn-social-icon"><i class="icon-gplus"></i></a> {% endif %} {% if site.data.settings.linkedin_username %}
-                                <a href="https://www.linkedin.com/company/{{site.data.settings.linkedin_username}}" class="btn btn-social-icon"><i class="icon-linkedin"></i></a> {% endif %} {% if site.data.settings.twitter_username %}
-                                <a href="https://twitter.com/{{site.data.settings.twitter_username}}" class="btn btn-social-icon"><i class="icon-twitter"></i></a> {% endif %} {% if site.data.settings.youtube_username %}
-                                <a href="https://www.youtube.com/channel/{{site.data.settings.youtube_username}}" class="btn btn-social-icon"><i class="icon-youtube"></i></a>
+                            {% if site.data.settings.facebook_username %}
+                                <a href="http://facebook.com/{{site.data.settings.facebook_username}}" class="btn btn-social-icon"><i class="icon-facebook"></i></a> 
+                            {% endif %}
+                            {% if site.data.settings.github_username %}
+                                <a href="https://github.com/{{site.data.settings.github_username}}" class="btn btn-social-icon"><i class="icon-github-circled"></i></a> 
+                            {% endif %}
+                            {% if site.data.settings.google_plus_username %}
+                                <a href="https://plus.google.com/{{site.data.settings.google_plus_username}}/posts" class="btn btn-social-icon"><i class="icon-gplus"></i></a> 
+                            {% endif %}
+                            {% if site.data.settings.linkedin_username %}
+                                <a href="https://www.linkedin.com/company/{{site.data.settings.linkedin_username}}" class="btn btn-social-icon"><i class="icon-linkedin"></i></a> 
+                            {% endif %}
+                            {% if site.data.settings.twitter_username %}
+                                <a href="https://twitter.com/{{site.data.settings.twitter_username}}" class="btn btn-social-icon"><i class="icon-twitter"></i></a>
+                            {% endif %}
+                            {% if site.data.settings.youtube_username %}
+                                <a href="https://www.youtube.com/{{site.data.settings.youtube_username}}" class="btn btn-social-icon"><i class="icon-youtube"></i></a>
                             {% endif %}
                         </div>
                         <div style="clear:both;"></div>

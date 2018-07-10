@@ -10,8 +10,8 @@
       {% if paginator.page_trail %}
         {% for trail in paginator.page_trail %}
           <li {% if page.url == trail.path %}class="active"{% endif %}>
-              <a href="{% if trail.num == 1 %}/blog/{% else %}
-              {{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', trail.num  }}{% endif %}"
+              <a href="{% if trail.num == 1 %}/news/{% else %}
+              {{ site.paginate_path_news | prepend: site.baseurl | replace: '//', '/' | replace: ':num', trail.num  }}{% endif %}"
               title="{{trail.title}}">{{ trail.num }}</a>
           </li>
         {% endfor %}
@@ -20,9 +20,9 @@
               {% if page == paginator.page %}
                 <li class="active"><a href="">{{ page }}</a></li>
               {% elsif page == 1 %}
-                <li><a href="/blog/">{{ page }}</a></li>
+                <li><a href="/news/">{{ page }}</a></li>
               {% else %}
-                <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+                <li><a href="{{ site.paginate_path_news | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
               {% endif %}
             {% endfor %}
         {% endif %}

@@ -1,0 +1,18 @@
+#buttons >  a.btn.btn-linaro-home {
+    color: black ;
+    font-weight: normal;
+    font-size: 12px;
+    background-color: white;
+}
+
+#buttons >  a.btn.btn-linaro-home:hover {
+    color: white ;
+    font-weight: normal;
+    font-size: 12px;
+    background-color: $brand-primary;
+}
+
+/* Home Page Shape Divider */
+.homepage-shape {
+    margin-bottom: -6px;
+}

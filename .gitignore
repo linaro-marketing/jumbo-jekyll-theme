@@ -13,7 +13,6 @@
 !_config-staging.yml
 !_config-production.yml
 !Gemfile
-!Gemfile.lock
 !index.md
 !package-lock.json
 !LICENSE.txt

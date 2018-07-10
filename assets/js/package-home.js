@@ -1,12 +1,12 @@
-//= require vendor/jquery.min
-//= require vendor/bootstrap.min
-//= require vendor/cookieconsent.min
-//= require vendor/lazysizes.min
-//= require vendor/owl.carousel.min
+//= require vendor/jquery
+//= require vendor/bootstrap
+//= require vendor/mc
+//= require vendor/cookieconsent
+//= require vendor/lazysizes
+//= require vendor/owl.carousel
 
 //= require app/main
 //= require app/sticky-tab-bar
 //= require app/home
 //= require app/tables
-//= require vendor/mc-validate
 //= require app/custom

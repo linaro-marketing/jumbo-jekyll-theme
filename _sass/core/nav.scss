@@ -37,9 +37,6 @@ div#tabbed-nav-bar-collapse {
 #tabbed-nav-bar {
     margin-top: -20px;
 }
-.sticky-nav div#tabbed-nav-bar-collapse {
-    top: 10px;
-}
 
 div#tabbed-nav-bar.non-sticky-nav > .container {
     padding-left: 0px;
@@ -81,6 +78,15 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     }
 }
 
+nav#main-navigation.nav-light.navbar-inverse .navbar-collapse{
+   background-color: transparent;
+}
+
+nav#main-navigation.nav-light #navbar-buttons>li>a {
+   color: #fff;
+}
+
+
 @media (max-width: $screen-sm){
     
     .sticky-nav#tabbed-nav-bar {
@@ -108,7 +114,15 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     
 
     #tabbed-nav-bar.sticky-nav a#sub-navigation-header {
-        padding-left: 15px;
+        padding-left: 5px;
+    }
+    
+     nav#main-navigation.nav-light.navbar-inverse .navbar-collapse{
+        background-color: $navbar-inverse-bg;
+    }
+    
+    nav#main-navigation.nav-light #navbar-buttons>li>a {
+        color: $navbar-text-color;
     }
 }
 
@@ -127,16 +141,12 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     position: static;
     padding:0px;
 }
-
 #tabbed-nav-bar .navbar-toggle{
     color:$brand-primary !important;
 }
 button.btn.btn-default.dropdown-toggle {
     color: $navbar-text-color;
 }
-
-
-
 nav{
     letter-spacing: 1px;
 }
@@ -160,36 +170,28 @@ nav li a:hover{
    -moz-transition: color .5s ease;
    -webkit-transition: color .5s ease;
 }
-
 // Dark and Light Nav Bar
 nav.nav-light #navbar-buttons > li > a {
     color:#fff;
 }
-
 nav.nav-dark #navbar-buttons > li > a {
     color:#000;
 }
-
 nav.nav-light#main-navigation  #navbar_svg .cls-2 {
     fill: #fff;
 }
-
 nav.nav-light {
     background: transparent;
 }
-
 nav.nav-dark {
     background: transparent;
 }
-
 nav.nav-light button.navbar-toggle .icon-bar {
     background-color:#fff !important;
 }
-
 nav.nav-dark button.navbar-toggle .icon-bar {
     background-color:#fff !important;
 }
-
 // Nav Bar SVG Style
 svg#navbar_svg {
     height: 66px;
@@ -199,15 +201,12 @@ svg#navbar_svg {
 nav.nav-light .cls-2 {
     fill: #666;
 }
-
 nav.nav-light .cls-2 {
     fill: #fff;
 }
-
 nav.nav-dark .cls-2 {
     fill: #000;
 }
-
 // Sub Menu for Boostrap NavBar
 .dropdown-submenu {
     position:relative;
@@ -220,9 +219,6 @@ nav.nav-dark .cls-2 {
     -webkit-border-radius:0 6px 6px 6px;
     -moz-border-radius:0 6px 6px 6px;
     border-radius:0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-    display:block;
 }
 .dropdown-submenu>a:after {
     display:block;
@@ -508,7 +504,7 @@ nav > ul.navbar-right {
 
 .navbar-header {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 // Tabbed Nav bar
@@ -671,7 +667,7 @@ li.side-nav-button:hover > a {
 }
 
 #navbar-buttons .dropdown-menu>li>a {
-    color: #444444;
+    color: $navbar-dropdown-text-color;
     letter-spacing: 0;
     font-size:12px;
     outline: 0;
@@ -682,13 +678,13 @@ li.side-nav-button:hover > a {
     letter-spacing: 0;
     font-size:12px;
 }
-.navbar-inverse .navbar-nav>li>a {
-    color: #444444;
-    font-size: 12px;
-    font-weight: bold;
+#main-navigation.navbar-inverse .navbar-nav>li>a {
+    color: $navbar-text-color;
+    font-size: 14px;
+    font-weight: normal;
     padding-right: 20px !important;
     padding-left: 20px !important;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0px;
 }
 .navbar-inverse #navbar-buttons >li>a {
@@ -790,7 +786,7 @@ li.dropdown-submenu.sub-menu > a:after {
 }
 
 li.dropdown.menu.open > a {
-    color: #a682b8 !important;
+    color: $brand-primary !important;
 
 }
 
@@ -863,7 +859,7 @@ li#linaro-app-menu-item > ul:before {
     }
     
     #main-navigation a.navbar-brand {
-        padding-left:0px;
+        padding-left:15px;
     }
 }
 
@@ -922,5 +918,54 @@ li#linaro-app-menu-item > ul:before {
     opacity: 0.7;
 }
 
+#main-navigation.navbar-static button.navbar-toggle {
+    left: 42px;
+    position: relative;
+}
 
+// Style for sidebar stacked nav sub pages
+li.side-nav-button.sub-page a {
+    padding-left: 40px;
+}
+nav#main-navigation {
+    transition: all 300ms ease;
+}
 
+nav#main-navigation.navbar-static {
+    height: $navbar-height + 20;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+nav#main-navigation.navbar-fixed-top {
+    height: $navbar-height;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+#main-navigation div#navbar-collapse {
+    z-index: 3;
+}
+// CSS for the left aligned dropdowns
+
+li.dropdown-submenu.sub-menu.pull-left {
+    width: 100%;
+}
+#main-navigation .pull-left ul.dropdown-menu.sub-menu {
+    margin-left: -3px !important;
+    margin-top: 0px !important;
+    text-align:  right;
+}
+#main-navigation ul.dropdown-menu.sub-menu {
+        margin-left: 1px;
+        border-radius: 0px;
+        border: 0px;
+        padding-top: 0;
+        margin-top: 5px;
+        padding-bottom: 0;
+}
+li.dropdown-submenu.sub-menu > a {
+    cursor: pointer;
+}
+
+// Import the CSS for the iuniversal NavBar
+@import "universal-nav";

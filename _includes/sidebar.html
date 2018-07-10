@@ -1,9 +1,6 @@
 {% assign sub-nav-tabs = site.data.sidebar-nav.pages %}
-
 {% if sub-nav-tabs %}
-
     {% assign page-base =  page.url | split:'/' %}
-    
     {% for each in sub-nav-tabs %}
         {% for each-url in each.urls %}
             {% if each-url == page.url %}
@@ -20,9 +17,7 @@
             {% assign custom-include = each.custom-include %}
         {% endif %}
     {% endfor %}
-    
     {% if tab-list %}
-
         <ul class="nav nav-pills nav-stacked" id="stacked-nav">
             {% for tab in tab-list %}
                 <li class="{% if page-base[1] == tab.base  %}active {% elsif page.url == tab.url or tab.active %}active {% endif %}side-nav-button">
@@ -39,6 +34,15 @@
                         {% endif %}
                     </a>
                 </li>
+                {% if tab.sub-tabs %}
+                    {% for sub-tab in tab.sub-tabs %}
+                        <li class="{% if page-base[2] == sub-tab.base  %}active {% elsif page.url == sub-tab.url or sub-tab.active %}active {% endif %}side-nav-button sub-page">
+                            <a href="{{sub-tab.url}}" role="link">
+                                {{ sub-tab.title}} {% if sub-tab.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                {% endif %}
             {% endfor %}
         </ul>
     {% elsif custom-include %}

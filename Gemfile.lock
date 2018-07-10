@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jumbo-jekyll-theme (1.4.3.53)
+    jumbo-jekyll-theme (1.7.10)
       autoprefixer-rails (~> 5.0, >= 5.0.0.1)
       bootstrap-sass (~> 3.3)
       hash-joiner (~> 0)
@@ -9,15 +9,13 @@ PATH
       jekyll-assets (= 2.2.8)
       jekyll-data (> 0)
       jekyll-feed (> 0)
-      jekyll-minimagick
       jekyll-paginate-v2 (> 0)
-      jekyll-readme-index (~> 0.1)
+      jekyll-readme-index (= 0.2)
       jekyll-redirect-from (~> 0.12)
       jekyll-seo-tag (~> 2.2)
       jekyll-sitemap (~> 1.1)
       jekyll-theme-assets (> 0)
       jekyll-tidy (~> 0.2.2)
-      mini_magick
       uglifier (> 0)
 
 GEM
@@ -36,11 +34,11 @@ GEM
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
-    eventmachine (1.2.5)
+    eventmachine (1.2.7)
     execjs (2.7.0)
     extras (0.3.0)
       forwardable-extended (~> 2.5)
-    fastimage (2.1.1)
+    fastimage (2.1.3)
     ffi (1.9.23)
     forwardable-extended (2.6.0)
     hash-joiner (0.0.7)
@@ -50,7 +48,7 @@ GEM
     http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    jekyll (3.7.3)
+    jekyll (3.8.2)
       addressable (~> 2.4)
       colorator (~> 1.0)
       em-websocket (~> 0.5)
@@ -74,9 +72,6 @@ GEM
       jekyll (~> 3.3)
     jekyll-feed (0.9.3)
       jekyll (~> 3.3)
-    jekyll-minimagick (0.0.4)
-      jekyll (>= 0.10.0)
-      mini_magick (>= 3.3)
     jekyll-paginate-v2 (1.9.4)
       jekyll (~> 3.0)
     jekyll-readme-index (0.2.0)
@@ -85,7 +80,7 @@ GEM
       jekyll (~> 3.3)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
-    jekyll-seo-tag (2.4.0)
+    jekyll-seo-tag (2.5.0)
       jekyll (~> 3.3)
     jekyll-sitemap (1.2.0)
       jekyll (~> 3.3)
@@ -106,11 +101,10 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
-    mini_magick (4.8.0)
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.2)
-    rack (1.6.9)
+    rack (1.6.10)
     rake (10.5.0)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
@@ -118,7 +112,7 @@ GEM
     rouge (3.1.1)
     ruby_dep (1.5.0)
     safe_yaml (1.0.4)
-    sass (3.5.5)
+    sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -126,7 +120,7 @@ GEM
     sprockets (3.6.3)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    uglifier (4.1.6)
+    uglifier (4.1.10)
       execjs (>= 0.3.0, < 3)
 
 PLATFORMS
@@ -138,4 +132,4 @@ DEPENDENCIES
   rake (~> 10.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.1

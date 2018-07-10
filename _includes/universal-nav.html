@@ -1,0 +1,28 @@
+<!-- Universal NavBar-->
+<nav class="navbar navbar-default navbar-static" id="universal-nav">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="glyphicon glyphicon-chevron-down"></span>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+      <ul class="nav navbar-nav navbar-right">
+        <li {% if site.title == "Linaro" %}class="active"{% endif %}><a class="linaro" target="_self" href="https://www.linaro.org">Linaro</a></li>
+        <li {% if site.name == "Linaro Connect" %}class="active"{% endif %}><a class="connect" target="_blank" href="https://connect.linaro.org">Connect</a></li>
+        <li {% if site.title == "96Boards" %}class="active"{% endif %}><a class="boards" target="_self" href="https://www.96boards.org">96Boards</a></li>
+        <li {% if site.title == "Developer Cloud" %}class="active"{% endif %}><a class="dev-cloud" target="_blank" href="https://linaro.cloud">Developer Cloud</a></li>
+        <li {% if site.title == "OP-TEE" %}class="dropdown active"{% elsif site.title == "DeviceTree" %}class="dropdown active"{% elsif site.title == "96Boards.ai"%}class="dropdown active"{% elsif site.title == "The OpenDataPlane Project" %}class="dropdown active"{% else %}class="dropdown"{% endif %}">
+          <a class="projects" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a target="_self" href="https://www.96boards.ai">96Boards.ai</a></li>
+            <li><a target="_self" href="https://www.op-tee.org">OP-TEE.org</a></li>
+            <li><a target="_self" href="https://www.devicetree.org">DeviceTree.org</a></li>
+            <li><a target="_self" href="https://www.opendataplane.org">OpenDataPlane.org</a></li> 
+          </ul>
+        </li>
+      </ul>
+    </div>
+</nav>
+<!-- End Universal NavBar -->

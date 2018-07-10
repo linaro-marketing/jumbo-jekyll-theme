@@ -1,12 +1,11 @@
-/* Home Page Shape Divider */
-.homepage-shape {
-    margin-bottom: -6px;
-}
+
 
 /* Home Page Jumbotron Div */
 div#featured-jumbotron {
     text-align: center;
     margin-top: $navbar-height + 20;
+    margin-bottom: $navbar-height + 20;
+    min-height: 320px;
 }
 
 #jumbotron-image:before {
@@ -44,4 +43,8 @@ div.jumbotron-image{
     left: 0;
     background-image: linear-gradient(to bottom right, #000, #000);
     opacity: .5;
+}
+
+.row.shape-divider svg {
+    margin-bottom: -5px;
 }

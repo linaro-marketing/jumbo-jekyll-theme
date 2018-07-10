@@ -12,7 +12,6 @@ body {
 /* ------------ Main Container Style margin accounts for Nav ----------- */
 #wrapper.main{
     overflow-x: hidden;
-    margin-top: $navbar-height - 1;
 }
 #wrapper.home{
     overflow-x: hidden;
@@ -27,26 +26,36 @@ html {
  height  : 100%;
 //  overflow: hidden; Will break the sticky navbar - be warned
 }
-
+button.owl-dot {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+button.owl-prev, button.owl-next {
+    outline:  none;
+    border: 0;
+}
+.mc-unsubscribe a {
+    position: relative;
+    bottom: 0;
+    font-size: 12px;
+    top: 30px;
+    float: right;
+    margin-right: 15px;
+}
 // Edit me on github buttons
-
 .github-edit {
     background-color: #fff;
 }
-
 span.edit-me-on-github-text {
     font-size: 12px;
 }
-
 .edit-me-on-github.text-center {
     float: right;
 }
-
 i.edit-on-github-icon.icon-github-circled.center-block {
     font-size: 40px;
 }
-
-
 div#github_controls {
     margin: 10px 0;
 }
@@ -57,6 +66,7 @@ div#github_controls a.btn {
     color: #333;
     padding-left: 15px;
     padding-right: 15px;
+    border: 1px solid #f0f0f0;
 
     transition: all 500ms ease;
 }
@@ -78,26 +88,20 @@ i.icon-github-circled.center-block {
     font-size: 24px;
 }
 div#github_controls a#github_home:hover {
-    color: $brand-primary;
+    color: #fff;
+    background-color:#333;
 }
 div#github_controls a#github_home {
-    
-    background-color: #333;
-    color: #fff;
-    
+    background-color: #fff;
+    color: #333;    
     transition: all 250ms ease;
 }
-
-
-
-
 blockquote {
     padding: 10.5px 21px;
     margin: 0 0 21px;
     font-size: 18.75px;
     border-left: 5px solid $brand-primary;
 }
-
 .members-img {
     width: auto;
     height: 100px;
@@ -203,10 +207,8 @@ p .justified{
 
 /* Shape Divider - Home Page */
 .row.shape-divider {
-    background-color: $brand-primary;
+    background-color: $brand-primary;    
 }
-
-
 // Content Container - container used for actual content
 // Not for breadcrumb / nav / footer
 
@@ -415,6 +417,11 @@ button#c-submit-button {
     h1#home-page-title {
         font-size: 25px;
     }
+    //Remove the padding from columns on mobile views
+    #content-container .col-md-3, #content-container .col-md-9 {
+        padding-left:0;
+        padding-right:0;
+    }
 }
 
 //Remove italics from icons - Google Chrome.
@@ -561,8 +568,8 @@ ul#tab-row {
 }
 
 #content-container ul {
-    color: #252525 !important;
-    font-size: 16px !important;
+    color: #252525;
+    font-size: 16px;
 }
 
 /* Blockquote Styles*/
@@ -590,8 +597,7 @@ blockquote:before {
 
 
 #content-container h1 {
-    color: #393836 !important;
-    font-size: 36px !important;
+    font-size: 36px;
     margin-top: 0;
 }
 
