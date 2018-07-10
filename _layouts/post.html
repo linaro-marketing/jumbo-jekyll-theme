@@ -50,10 +50,10 @@ css-package: blog
                     
                         {% if page.co-author %}
                             {% if site.authors %}
-                                {% assign co-author = site.authors | where: "username", page.author | first %}
+                                {% assign co-author = site.authors | where: "username", page.co-author | first %}
                                 {% assign co-author-url = co-author.url %}
                             {% elsif site.data.authors %}
-                                {% assign co-author = site.data.authors | where: "username", page.author | first %}
+                                {% assign co-author = site.data.authors | where: "username", page.co-author | first %}
                                 {% assign co-author-url = "#" %}
                             {% endif %}
                             <a href="{{co-author-url}}">
