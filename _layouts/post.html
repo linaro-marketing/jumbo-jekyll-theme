@@ -5,7 +5,7 @@ css-package: blog
 ---
 {% if page.image.featured %}
     <div class="container-fluid" {% if page.image.featured %}
-        style="background: #000 url({% asset_path '{{page.image.name}}'  %}) no-repeat center center fixed;
+        style="background: #000 url({{page.image.name}}) no-repeat center center fixed;
         background-size: cover;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -33,17 +33,17 @@ css-package: blog
                         {% if site.using-data-file %}
                             <img class="blog-author-image" style="
                         background-image:url({% if author.image.name %}
-                          {% asset_path '{{author.image.name}}'  %}
+                          {{author.image.name}}
                         {% else %}
-                          {% asset_path 'avatar-placeholder.png'  %}
+                          /assets/images/avatar-placeholder.png
                         {% endif %})" />
                         {% else %}
                         <a href="{{author-url}}">
                             <img class="blog-author-image" style="
                         background-image:url({% if author.image.name %}
-                          {% asset_path '{{author.image.name}}'  %}
+                          {{author.image.name}}
                         {% else %}
-                          {% asset_path 'avatar-placeholder.png'  %}
+                          /assets/images/avatar-placeholder.png
                         {% endif %})" />
                         </a>
                         {% endif %}
@@ -59,9 +59,9 @@ css-package: blog
                             <a href="{{co-author-url}}">
                                 <img class="blog-author-image" style="
                             background-image:url({% if co-author.image.name %}
-                              {% asset_path '{{co-author.image.name}}'  %}
+                              {{co-author.image.name}}
                             {% else %}
-                              {% asset_path 'avatar-placeholder.png'  %}
+                              /assets/images/avatar-placeholder.png
                             {% endif %})" />
                             </a>
                             <br />
