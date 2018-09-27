@@ -9,7 +9,7 @@ js-package: main
               {% include gtm-noscript.html %}
             {% endif %}
             <div id="wrapper" class="{% if layout.home == true and site.data.settings.home.jumbotron.enabled %}home{% else %}main{% endif %}">
-                {% include nav.html %}
+                {% include_cached nav.html %}
                 {{content}}
             
                 {% if site.data.footer.include %}
@@ -22,10 +22,8 @@ js-package: main
                     {% include newsletter-script.html %}
                 {% endif %}
 
-                {% include footer.html %}
+                {% include_cached footer.html %}
             </div>
-            
             {% include javascript.html %}
-        
     </body>
 </html>
