@@ -107,7 +107,7 @@ plugins:
     - bootstrap-sass
     - uglifier
     - jekyll-assets
-    - jekyll-theme-assets
+    - jekyll-theme-assets-updated
     - jekyll-tidy
     - jekyll-redirect-from
     - autoprefixer-rails
