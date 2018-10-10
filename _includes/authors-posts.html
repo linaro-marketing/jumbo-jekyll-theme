@@ -1,0 +1,49 @@
+{% for post in site.posts %}
+    {% if post.author == page.username %}
+        <div class="row blog_post">
+            <div class="col-xs-12 post_title">
+                <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
+                <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
+                <p class="post_excerpt">
+                {{ post.content | strip_html | truncatewords:30 }}
+                </p>
+                <p>
+                    <a href="{{post.url}}">
+                        <button class="btn blog-read-more-btn">Read More</button>
+                    </a>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+{% assign co-authored-posts = false %}
+{% for post in site.posts %}
+    {% if post.co-author == page.username %}
+        {% assign co-authored-posts = true %}
+    {% endif %}
+{% endfor %}
+{% if co-authored-posts == true %}
+<div class="row">
+    <div class="col-xs-12">
+        <h3>Featured Posts</h3>
+    </div>
+</div>
+{% endif %}
+{% for post in site.posts %}
+    {% if post.co-author == page.username %}
+        <div class="row blog_post">
+            <div class="col-xs-12 post_title ">
+                <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
+                <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
+                <p class="post_excerpt">
+                {{ post.content | strip_html | truncatewords:30 }}
+                </p>
+                <p>
+                    <a href="{{post.url}}">
+                        <button class="btn blog-read-more-btn">Read More</button>
+                    </a>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
