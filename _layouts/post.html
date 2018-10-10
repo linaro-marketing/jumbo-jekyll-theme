@@ -4,74 +4,46 @@ js-package: blog
 css-package: blog
 ---
 {% if page.image.featured %}
-    <div class="container-fluid" {% if page.image.featured %}
-        style="background: #000 url({% asset_path '{{page.image.name}}'  %}) no-repeat center center fixed;
+    <!--Fluid Container -->
+    <div class="container-fluid"
+        style="background: #000 url({{page.image.name}}) no-repeat center center fixed;
         background-size: cover;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-position-y: 0px"
-        class="jumbotron text-center featured-jumbotron homepage-image-jumbotron"
-    {% else %}
-        class="jumbotron text-center featured-jumbotron"
-    {% endif %}> <!--Fluid Container -->
-    {% if assets[page.image.name] %}
-        <div class="row overlay"> <!--Row -->
+        class="jumbotron text-center featured-jumbotron homepage-image-jumbotron"> 
+        <!--Row -->
+        <div class="row overlay"> 
             <div id="featured-jumbotron" class="blog blog-full-page-image-info"> <!--Jumbotron div -->
                     <h1 class="text-center" id="featured-image-blog-title">{{page.title}}</h1>
                     {% if page.author %}
                         {% if site.authors %}
                             {% assign author = site.authors | where: "username", page.author | first %}
                             {% assign author-url = author.url %}
-                            {% assign using-data-file = false %}
-                        {% elsif site.data.authors %}
-                            {% assign using-data-file = true %}
-                            {% assign author = site.data.authors | where: "username", page.author | first %}
-                            {% assign author-url = "#" %}
                         {% endif %}
-                        
-                        {% if site.using-data-file %}
-                            <img class="blog-author-image" style="
-                        background-image:url({% if author.image.name %}
-                          {% asset_path '{{author.image.name}}'  %}
-                        {% else %}
-                          {% asset_path 'avatar-placeholder.png'  %}
-                        {% endif %})" />
-                        {% else %}
                         <a href="{{author-url}}">
                             <img class="blog-author-image" style="
                         background-image:url({% if author.image.name %}
-                          {% asset_path '{{author.image.name}}'  %}
+                          {{author.image.name}}
                         {% else %}
-                          {% asset_path 'avatar-placeholder.png'  %}
+                          /assets/images/avatar-placeholder.png
                         {% endif %})" />
                         </a>
-                        {% endif %}
-                    
+                        {% comment %}
+                            Co-Author Output.
+                        {% endcomment %}
                         {% if page.co-author %}
                             {% if site.authors %}
                                 {% assign co-author = site.authors | where: "username", page.co-author | first %}
                                 {% assign co-author-url = co-author.url %}
-                            {% elsif site.data.authors %}
-                                {% assign co-author = site.data.authors | where: "username", page.co-author | first %}
-                                {% assign co-author-url = "#" %}
                             {% endif %}
                             <a href="{{co-author-url}}">
                                 <img class="blog-author-image" style="
-                            background-image:url({% if co-author.image.name %}
-                              {% asset_path '{{co-author.image.name}}'  %}
-                            {% else %}
-                              {% asset_path 'avatar-placeholder.png'  %}
-                            {% endif %})" />
+                            background-image:url({% if co-author.image.name %}{{co-author.image.name}}{% else %}/assets/images/avatar-placeholder.png{% endif %})" />
                             </a>
                             <br />
                             <small class="blog-author text-center">
-                                {% if using-data-file %}
-                                By 
-                                <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
-                                and
-                                <em>{% if co-author.name %}{{co-author.name}}{% else %}{{page.co-author}}{% endif %}</em>
-                                {% else %}
                                 By 
                                 <a href="{{author-url}}">
                                     <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
@@ -80,26 +52,20 @@ css-package: blog
                                 <a href="{{co-author-url}}">
                                     <em>{% if co-author.name %}{{co-author.name}}{% else %}{{page.co-author}}{% endif %}</em>
                                 </a>
-                                {% endif %}
                             </small>
                             <br />
                         {% else %}
                         <br />
                         <small class="blog-author text-center">
-                            {% if using-data-file %}
-                            By
-                                <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
-                            {% else %}
                             By
                             <a href="{{author-url}}">
                                 <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
                             </a>
-                            {% endif %}
                         </small>
                         <br />
                         {% endif %}
                     {% endif %}
-                    {% if page.date %}<small class="blog-date text-center"><em>{{page.date |  date: "%A, %B %-d, %Y"}}</em></small>{% endif %}
+                    <small class="blog-date text-center"><em>{{page.date |  date: "%A, %B %-d, %Y"}}</em></small>
                 </div>
         </div>
         
@@ -108,14 +74,12 @@ css-package: blog
         {% endif %}
         
     </div>
-    {% endif %}
 {% endif %}
-
 <div class="container-fluid" id="content-container">
     <div class="row">
         <div class="container">
             {% if site.data.settings.blog.sidebar.display-on-posts %}
-            <div class="col-md-9">
+                <div class="col-md-9">
                     <article class="post-content">
                         {% unless page.image.featured %}
                         <div class="post-info">
@@ -153,18 +117,14 @@ css-package: blog
                         {% endunless %}
                         {{ content }}
                     </article>
-
-              
+                    
                     {% if page.featured-products %}
                         <h3>Featured Products</h3>
                         <hr />
                         <div class="row feautured-products-blog-row">
                             {% for each in page.featured-products %}
-                            
                                 {% capture product-perma %}/product/{{each}}/{% endcapture %}
-                                
                                 {% assign product = site.data.product_db.products | where: "product_permalink", product-perma | first %}
-                                
                                 <div class="col-sm-6">
                                     <div class="col-xs-3">
                                         <div class="featured-product-blog-img">
@@ -180,34 +140,25 @@ css-package: blog
                                 </div>
                             {% endfor %}
                         </div>
-                        
                         <hr/>
                     {% endif %}
-                
-
-                {% comment %}
-                    TAGS - Check to see if the tags_enabled setting in settings.yml data file is toggled.
-                {% endcomment %}
-                
-                {% include post-tags.html %}
-                
-                {% comment %}
-                    COMMENTS - Check to see if comments are toggled for this particular post.
-                {% endcomment %}
             
-                {% include post-comments.html %}
-                </div>
-                <div class="col-md-3 blog-sidebar no-padding">
-                    {% include post-sidebar.html %}
-                </div>
+                    {% include post-tags.html %}            
+                    {% include post-comments.html %}
+
+                    </div>
+                    <div class="col-md-3 blog-sidebar no-padding">
+                        {% include post-sidebar.html %}
+                    </div>
                 {% else %}
                 <div class="col-xs-12 no-padding">
                     <article class="post-content">
                         {% unless page.image.featured %}
                         <div class="post-info">
                             <h1>{{page.title }}</h1>
-                            
-                            {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
+                            <small class="blog-date text-center">
+                                <em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em>
+                            </small>
                             {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
                             {% if page.author %}
                                 {% assign author = site.authors | where: 'username' , page.author %}
@@ -224,7 +175,6 @@ css-package: blog
                                                 {{page.author}}
                                             </strong>
                                     {% endif %}
-                                    
                                 </em>
                             {% endif %}
                         </div>
@@ -232,9 +182,7 @@ css-package: blog
                         {{ content }}
                     </article>
                 </div>
-                {% endif %}
-                
-                
+                {% endif %}   
         </div>        
     </div>
 </div>
