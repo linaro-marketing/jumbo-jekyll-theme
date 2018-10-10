@@ -1,5 +1,4 @@
 {% assign pagination_path = "/authors/:num/" %}
-
 {% if paginator.total_pages > 1 %}
 <div class="text-center" id="pagination_panel">
     <ul class="pagination pagination-sm">
@@ -8,7 +7,6 @@
       {% else %}
        <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
       {% endif %}
-
       {% if paginator.page_trail %}
         {% for trail in paginator.page_trail %}
           <li {% if page.url == trail.path %}class="active"{% endif %}>
@@ -28,9 +26,6 @@
               {% endif %}
             {% endfor %}
         {% endif %}
-
-
-
       {% if paginator.next_page %}
         <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
       {% else %}
