@@ -15,12 +15,12 @@
                           </picture>
                     {% elsif post.image.name %}
                         <picture>
-                            <source srcset="{% asset_path '{{post.image.name}}' %}" 
+                            <source srcset="/{{post.image.name}}" 
                             media="(max-width: 999px)" />
-                            <source srcset="{% asset_path '{{post.image.name}}' %}"
+                            <source srcset="/{{post.image.name}}"
                              media="(min-width: 1000px)" />
                             <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
-                            data-src="{% asset_path '{{post.image.name}}' %}" 
+                            data-src="/{{post.image.name}}" 
                             class="lazyload img-responsive center-block"/>
                         </picture>
                         {% capture image_path %}assets/images/blog/{{post.image.name}}{% endcapture %}
@@ -36,12 +36,12 @@
                         {% endresponsive_image_block %}
                     {% else %}
                         <picture>
-                            <source srcset="{% asset_path '{{site.data.settings.placeholder}}' %}"
+                            <source srcset="/{{site.data.settings.placeholder}}"
                             media="(max-width: 999px)" />
-                            <source srcset="{% asset_path '{{site.data.settings.placeholder}}' %}"
+                            <source srcset="/{{site.data.settings.placeholder}}"
                              media="(min-width: 1000px)" />
                             <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
-                            data-src="{% asset_path '{{site.data.settings.placeholder}}' %}" 
+                            data-src="/{{site.data.settings.placeholder}}" 
                             class="lazyload img-responsive center-block"/>
                         </picture>
                     {% endif %}

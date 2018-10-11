@@ -1,6 +1,6 @@
 <div class="container-fluid" id="homepage-header" 
 {% if site.data.settings.home.jumbotron.background-image.name %}
-    style="background-image: url('{% asset_path '{{site.data.settings.home.jumbotron.background-image.name}}' %}');"
+    style="background-image: url('{{site.data.settings.home.jumbotron.background-image.name}}');"
 {% else %}
     class="jumbotron text-center featured-jumbotron"
 {% endif %}> <!--Fluid Container -->
@@ -15,7 +15,7 @@
               
               {% if site.data.settings.home.jumbotron.image %}
                   <div class="col-md-12">
-                      <img src="{% asset_path '{{site.data.settings.home.jumbotron.image}}'  %}" id="home-hero-image"
+                      <img src="{{site.data.settings.home.jumbotron.image}}" id="home-hero-image"
                        class="img-responsive center-block animated fadeIn" alt="{{site.title}} Home Page Image">
                   </div>
               {% endif %}

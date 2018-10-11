@@ -81,7 +81,6 @@ defaults:
       path: ""
     values:
       image: /assets/images/social-media-image.png
-      
 # Jekyll Assets setup
 assets:
   # Compress JS Assets - uses the uglifier 
@@ -100,23 +99,19 @@ assets:
 jekyll_relative_links:
     process_all_collections: true
     verbose: 1
-    
+# Jekyll Plugins
 plugins:
     - jekyll-seo-tag
     - jekyll-sitemap
     - bootstrap-sass
     - uglifier
-    - jekyll-assets
-    - jekyll-theme-assets-updated
     - jekyll-tidy
     - jekyll-redirect-from
     - autoprefixer-rails
     - jekyll-paginate-v2
-
 # Make sure that Liquid errors stop the build
 liquid:
     error_mode: strict    
-    
 readme_index:
     enabled:          true
     remove_originals: false
