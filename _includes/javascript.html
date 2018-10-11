@@ -1,9 +1,9 @@
 {% if page.js-package %}
     {% capture js-package %}package-{{page.js-package}}{% endcapture %}
-    <script type="text/javascript" src="/assets/{{js-package}}.js?v={% bust_cache %}"></script>
+    <script type="text/javascript" src="{% asset_path {{js-package}}  %}?v={% bust_cache %}"></script>
 {% elsif layout.js-package %}
     {% capture js-package %}package-{{layout.js-package}}{% endcapture %}
-    <script type="text/javascript" src="/assets/{{js-package}}.js?v={% bust_cache %}"></script>
+    <script type="text/javascript" src="{% asset_path {{js-package}}  %}?v={% bust_cache %}"></script>
 {% else %}
-    <script type="text/javascript" src="/assets/package.js?v={% bust_cache %}"></script>
+    <script type="text/javascript" src="{% asset_path package  %}?v={% bust_cache %}"></script>
 {% endif %}

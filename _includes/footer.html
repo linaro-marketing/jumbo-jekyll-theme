@@ -15,7 +15,7 @@
                     {% endfor %} {% if site.data.footer.image %}
                     <div class="col-xs-6 col-md-2">
                         <a href="/">
-                            <img src="{% if site.data.footer.image %}{{site.data.footer.image}}{% endif %}" class="footer-logo pull-right" alt="{{site.data.settings.name}}" />
+                            <img src="{% if site.data.footer.image %}{% asset_path '{{site.data.footer.image}}'  %}{% endif %}" class="footer-logo pull-right" alt="{{site.data.settings.name}}" />
                         </a>
                     </div>
                     {% endif %}
@@ -24,7 +24,7 @@
                 <div class="row footer-strip">
                     <div class="container no-padding">
                         <div class="col-md-6 company-footer-bottom">
-                            <a href="{{site.data.linaro.url}}"><img src="{{site.data.settings.linaro-footer-image}}" class="linaro-logo" alt="Linaro Icon" /></a>
+                            <a href="{{site.data.linaro.url}}"><img src="{% asset_path '{{site.data.settings.linaro-footer-image}}'  %}" class="linaro-logo" alt="Linaro Icon" /></a>
                             Copyright &copy; {{ 'now' | date: "%Y" }} Linaro Limited <a href="{{site.data.linaro.url}}">{{site.data.linaro.name}}</a>
                             {% for link in site.data.footer.company-links %}
                                 <span class="coloured-bp">&bull;</span>

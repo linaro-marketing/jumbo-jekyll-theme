@@ -1,5 +1,5 @@
 # Custom Favicon
-favicon: /assets/images/favicon.png
+favicon: favicon.png
 
 # # Mailchimp settings
 # mailchimp:
@@ -13,7 +13,7 @@ newsletter:
 tags_enabled: true
     
 # Footer Image default is linaro sprinkle
-linaro-footer-image: /assets/images/Linaro-Sprinkle.png
+linaro-footer-image: Linaro-Sprinkle.png
 
 # # Breadcrumb Settings
 # breadcrumb:

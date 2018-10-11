@@ -1,0 +1,103 @@
+<div class="row activity-container">
+  <div class="container text-center">
+    <!--<h3>Activity around 96Boards</h3> -->
+    <!-- Example row of columns -->
+    <div class="row activity-holder">
+
+        <div class="col-md-3">
+            <div class="owl-carousel owl-theme">
+                <div class="activity-block item">
+                  <a href="/product/hikey960/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/price-hikey960.png" />
+                  <p>Hikey 960<br /><br /></p></a>
+                </div>
+                <div class="activity-block item">
+                  <a href="/product/dragonboard410c/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/db410c-price.png" />
+                  <p>DragonBoard™ 410c<br /><br /></p></a>
+                </div>
+                <div class="activity-block item">
+                  <a href="/product/bubblegum-96/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/bubblegum-price.png" />
+                  <p>Bubblegum-96<br /><br /></p></a>
+                </div>
+                <div class="activity-block item">
+                  <a href="/product/mediatek-x20/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/mediatek-x20-price.png" />
+                  <p>Mediatek X20<br /><br /></p></a>
+                </div>
+                <div class="activity-block item">
+                  <a href="/product/carbon/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/carbon-price.png" />
+                  <p class="owl-text">Carbon<br /><br /></p></a>
+                </div>
+            </div>
+            <p><a class="btn btn-primary" href="/products/" role="button">View Products</a></p>
+        </div>
+
+        <div class="col-md-3">
+            <div class="owl-carousel owl-theme">
+                <div class="activity-block item">
+                 <a href="/blog/96boards-96brews-automated-home-brewing/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/img-blog-1.png" />
+                 <p>96Boards for 96Brews – Automated Home Brewing</p></a>
+               </div>
+               <div class="activity-block item">
+                 <a href="/blog/96boards-ce-temp-using-level-shifters-2-line-displays/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/img-blog-2.png" />
+                 <p>96Boards CE what temp is it? Using level shifters and 2-line displays</p></a>
+               </div>
+               <div class="activity-block item">
+                 <a href="/blog/ce-iot-using-sensors/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/img-blog-3.png" />
+                 <p>96Boards Consumer Edition, IoT and using sensors</p></a>
+               </div>
+               <div class="activity-block item">
+                 <a href="/blog/96boards-media-server/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/img-blog-4.png" />
+                 <p>Setting up a home 96Boards media server<br /><br /></p></a>
+               </div>
+               <div class="activity-block item">
+                 <a href="/blog/st-system-level-esd-protection/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/img-blog-5.png" />
+                 <p class="owl-text">ST, System Level ESD Protection and OpenHours</p></a>
+               </div>
+            </div>
+            <p><a class="btn btn-primary" href="/blog/" role="button">View Blogs</a></p>
+        </div>
+
+
+        <div class="col-md-3">
+            <div class="owl-carousel owl-theme">
+                {% assign projects = site.projects | where: "project", "true" | sample:5 %}
+                {% for project in projects %}
+                    {% assign page-uri = project.permalink | split: "/" %}
+                    {% assign page-uri = page-uri[2] %}
+                    <div class="activity-block item">
+                      <a href="{{project.permalink}}"><img class="owl-lazy img-responsive homepage-image-project" data-src="/projects/view/{{page-uri}}/Images/thumb.png">
+                      <p>{{project.title}}<br><br></p></a>
+                    </div>
+                {% endfor %}
+            </div>
+            <p><a class="btn btn-primary" href="/projects/" role="button">View Projects</a></p>
+        </div>
+
+        <div class="col-md-3">
+            <div class="owl-carousel owl-theme">
+                <div class="activity-block item">
+               <a href="/openhours/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/OpenHours-1.png" />
+               <p>Click here for OpenHours Countdown<br /><br /></p></a>
+             </div>
+               <div class="activity-block item">
+                 <a href="https://discuss.96boards.org/"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/img-support.png" />
+                 <p>Ask 96Boards questions on Discussion Forum</p></a>
+               </div>
+               <div class="activity-block item">
+                 <a href="https://discuss.96boards.org/latest"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/img-support.png" />
+                 <p>Latest discussions on the Forum<br /><br /></p></a>
+               </div>
+               <div class="activity-block item">
+                 <a href="https://discuss.96boards.org/top/monthly"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/img-support.png" />
+                 <p>Top forum discussion topics<br /><br /></p></a>
+               </div>
+               <div class="activity-block item">
+                 <a href="https://discuss.96boards.org/login"><img class="owl-lazy img-responsive homepage-image-owl" data-src="/images/img-support.png" />
+                 <p class="owl-text">Login or register to join the discussion<br /><br /></p></a>
+               </div>
+            </div>
+            <p><a class="btn btn-primary" href="https://discuss.96boards.org/" role="button">Support Forums</a></p>
+        </div>
+
+        </div>
+  </div>
+</div><!-- /container -->

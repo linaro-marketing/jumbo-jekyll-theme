@@ -11,7 +11,7 @@ css-package: home
     <div class="row {% if site.data.settings.home.content-image %}content-background-image-row{% endif %}">
         {% if site.data.settings.home.content-image %}
             <div class="content-background-image"     
-            style="background-image: url({{site.data.settings.home.content-image}});"></div>
+            style="background-image: url({% asset_path '{{site.data.settings.home.content-image}}' %});"></div>
         {% endif %}
         <div class="container {% if site.data.settings.home.content-image %}content-background-image-container{% endif %}">
             {{ content }}
