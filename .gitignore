@@ -21,10 +21,4 @@
 !*.gemspec
 #
 # Now whitelist the desired folders
-!_data/
-!_includes/
-!_layouts/
-!_plugins
-!_sass/
-!_layouts/
-!assets/
+!src/
