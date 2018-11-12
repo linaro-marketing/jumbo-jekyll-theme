@@ -1,9 +1,0 @@
-{% if site.data.settings.tags_enabled %}
-    {% if post.tags %}
-        <h3>Tags</h3>
-        {% assign tags = post.tags %}
-        {% for tag in tags %}
-          <a class="btn btn-blog btn-xs post_tag" href="/blog/tag#{{tag | slugify }}">{{tag}}</a>
-        {% endfor %}
-    {% endif %}
-{% endif %}
