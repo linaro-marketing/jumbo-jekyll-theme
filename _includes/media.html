@@ -1,0 +1,11 @@
+{% if include.media_url contains "https://youtu.be/" %}
+    {% assign media_url = include.media_url | replace: 'https://youtu.be/','https://youtube.com/embed/'%}
+{% elsif include.media_url contains "https://www.youtube.com/watch?v=" %}
+    {% assign media_url = include.media_url | replace: 'https://www.youtube.com/watch?v=','https://youtube.com/embed/'%}
+{% else %}
+    {% assign media_url = include.media_url %}
+{% endif %}
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe src='about:blank' allowFullScreen="allowFullScreen" frameBorder="0" class="lazyload embed-responsive-item" data-src="{{media_url}}"></iframe>
+</div>

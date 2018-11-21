@@ -1,0 +1,106 @@
+
+/* Home Page Styles */
+
+
+/* Home Page Heading */
+#homepage-heading {
+    color: $brand-warning;
+    font-size: 30pt;
+    line-height: 1.25;
+}
+
+
+/* Home Page Styles - SM  */
+
+@media(max-width:$screen-sm-min){
+    
+    #homepage-heading {
+        font-size: 26px;
+    }
+    p.sub-tag {
+        width:95%;
+    }
+    
+    #home-hero-image{
+        height: 150px;
+    }
+}
+
+/* Home Page Header */
+#homepage-header {
+    background: $jumbotron-bottom-color; /* Old browsers */
+    background: -moz-linear-gradient(top, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $jumbotron-top-color 0%,$jumbotron-bottom-color 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$jumbotron-top-color, endColorstr=$jumbotron-bottom-color,GradientType=0 ); /* IE6-9 */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+#home-page-text{
+    color: $home-page-text;
+}
+
+/* Home Page Title in Jumbotron */
+#home-page-title{
+    color: $home-page-main-title-color;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Home Page Title in white*/
+h1#home-page-title.white {
+    color: white;
+}
+
+/* Home Page Image in Jumbotron */
+#home-hero-image {
+  width: auto;
+  height: 200px;
+}
+
+/* Home Block Slider Style */
+
+@media only screen and (min-width: $screen-xs-min) and (max-width: $screen-sm-min) {
+    #home-block-sliders .owl-theme .owl-nav.disabled+.owl-dots {
+        margin-top: 10px;
+        position: relative;
+        top: -60px;
+    }
+}
+
+#home-block-sliders .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 10px;
+    position: relative;
+    top: -60px;
+}
+
+@media(min-width:$screen-sm-min){
+    .row.activity-holder.center-block {
+        height: auto;
+    }
+}
+
+.content-background-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+}
+
+
+.content-background-image-container{
+    position: relative;
+}
+
+.content-background-image-row{
+    position: relative;
+    overflow: hidden;
+}

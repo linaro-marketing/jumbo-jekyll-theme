@@ -1,0 +1,441 @@
+
+/* Pagination Style */
+div#pagination_panel > ul > li.active > a{
+    color: $navbar-inverse-bg;
+}
+
+/* Make sure the comments sections is beneath content. */
+section#comments-section {
+    clear: both;
+}
+#content-container p.post_excerpt {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/* Make sure div extends with content */
+article.post-content {
+    overflow: auto;
+}
+
+.row.blog_post picture {
+    top: -20px;
+    position: relative;
+}
+#content-container .blog_post h3 {
+    margin-top: 0px;
+}
+#content-container .row.blog_post picture {
+    top:0px;
+}
+
+#content-container .blog_post img.img-responsive.center-block {
+    padding:0px;
+}
+
+/* Blog Side Bar Panel Title */
+#wrapper h3.panel-title {
+    color: $blog-panel-title-colour;
+}
+
+/* Post Info - post.html layout */
+.post-info {
+    margin-bottom: 20px;
+}
+
+/* Blog Author Image */
+img.blog-author-image {
+    transition: all 100ms linear;
+}
+
+/* Change the author image border on hover */
+a:hover > img.blog-author-image {
+    border-color: #d4d4d4;
+}
+
+/* Blog Author Text */
+#wrapper small.blog-author.text-center > a > em {
+    color:white;
+    transition: all 500ms linear;
+}
+#wrapper small.blog-author.text-center > a:hover > em {
+    color:#a681b8;
+}
+/* Blog Post Images - Responsive by default */
+article.post-content img {
+    width: 100%;
+    height: auto;
+}
+
+/* Blog Image thumbnail size */
+img.img-thumbnail {
+    width: 100px;
+}
+
+/* Blog Side Panel Styles*/
+.blog-panel{
+    margin-top:30px;
+}
+.blog-panel .panel-primary .panel-heading{
+    margin-left: 5px;
+}
+.img-blog{
+    height:600px;
+}
+.blog-featured-img-container{
+    position: relative;
+}
+.blog-full-page-image-info{
+    color: $featured-image-text-color;
+    margin-left: auto;
+    margin-bottom: 82px;
+    margin-right: auto;
+    z-index: 1;
+    height: 300px;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+    vertical-align: middle;
+}
+.blog-title {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 56px;
+}
+.panel-primary {
+    border: 1px solid $brand-primary;
+}
+.panel-heading {
+    background-color: $brand-primary;
+    color: #fff;
+}
+
+.blog-author-image{
+    height: 83px;
+    width: 83px;
+    border-radius: 83px;
+    border: 4px solid white;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.full-page-image-text{
+    top:300px;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    line-height:50px;
+    vertical-align:middle;
+}
+.no-padding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+.blog-icons{
+    border: 1px solid $gray-light;
+    border-radius: 45px;
+    width: 34px;
+    padding: 5px;
+    float: left;
+    display: block;
+    margin: 5px;
+    opacity: .8;
+    color: $gray-light;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.blog-icons:hover{
+    color: $brand-primary;
+    border: 1px solid $brand-primary;
+    background-color: black;
+    opacity: 1;
+    transition: all 1s ease;
+}
+.blog-icons:active, .blog-icons:focus{
+    border: 1px solid $gray-light;
+    border-radius: 45px;
+    width: 45px;
+    margin: 4px;
+    opacity: .8;
+    color: $gray-light;
+}
+.blog-read-more-btn{
+    background-color: white;
+    border: 2px solid $gray-base;
+    border-radius: 0px;
+    color: $gray-base;
+    transition: all 1s ease;
+    padding: 6px;
+}
+.blog-read-more-btn:hover{
+    background-color: $brand-primary;
+    color: white;
+    transition: all 1s ease;
+}
+.blog-read-more-btn:active, .blog-read-more-btn:focus{
+    background-color: $brand-primary;
+    color: white;
+    transition: all 1s ease;
+}
+a.featured_blog_post_text {
+    font-size: 13px;
+    line-height: 18px;
+    color: $gray-base;
+    transition: all 1s ease;
+}
+a.featured_blog_post_text:hover{
+    font-size: 13px;
+    line-height: 18px;
+    color: $brand-primary;
+    transition: all 1s ease;
+}
+.blog_post{
+  border-bottom: 1px solid $gray-lighter;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.featured_blog_post {
+  height: auto;
+  margin: -1px;
+  border-bottom: 1px solid $gray-lighter;
+  padding: 12px;
+}
+.blog-well {
+    background: $gray-darker;
+}
+.btn-blog{
+    border: 2px solid $gray-lighter;
+    color: $gray-base;
+    padding: 6px;
+}
+.btn-blog:hover{
+    color: $brand-primary;
+}
+.blog-img {
+    margin-top:25px;
+}
+#blog-background-image{
+    background-size: cover;
+    height:800px;
+}
+.post-content ol, .post-content ul {
+    line-height: 1.6em;
+    font-size: 16px;
+}
+.post_tag {
+    background-color: $gray-lighter;
+    margin: 2px;
+    color: #464646;
+}
+//Pagination centered style
+.pagination-centered { 
+    text-align: center;
+}
+/* Article Post Content Style */
+article.post-content {
+    overflow: auto;
+}
+article.post-content > .col-md-8 {
+    padding: 0;
+}
+article.post-content > .col-md-4 {
+    padding: 15px;
+}
+// Tag Cloud Style 
+div.tag_cloud {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+div#featured-jumbotron.blog {
+    margin-top: 0;
+}
+div.previous_post{
+    display:none;
+}
+div.next_post{
+    display:none;
+}
+a.previous_post_anchor {
+    position: fixed;
+    top: 50%;
+    right:0;
+    z-index: 99999;
+}
+a.next_post_anchor {
+    position: fixed;
+    top: 50%;
+    left:0;
+    z-index: 99999;
+}
+//Small Inline Blog Images
+#wrapper img.small-inline {
+    width: 100px;
+    height: auto;
+    display: inline-block;
+    float: left;
+    margin-right: 30px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+// Medium Inline Blog Images
+img.medium-inline {
+    width: 200px !important;
+    height: auto !important;
+    display: inline-block;
+    float: left;
+    margin-right: 30px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+//Large Inline Blog Images
+img.large-inline {
+    width: 300px !important;
+    height: auto !important;
+    display: inline-block;
+    float: left;
+    margin-right: 30px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+img.medium-inline.right {
+    float: right;
+}
+img.small-inline.right {
+    float: right;
+}
+
+img.large-inline.right {
+    float: right;
+}
+
+// Previous and Next Post Style
+@media(min-width:$screen-sm-min){
+    
+    
+    article{
+        padding-right: 20px;
+    }
+    
+    div.previous_post{
+        display:block;
+        width: 0; 
+        height: 0; 
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid #eee;
+    }
+    div.next_post{
+        display:block;
+        width: 0; 
+        height: 0; 
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 20px solid #eee;
+    }
+}
+//Responsive CSS for Blog
+@media(max-width:$screen-sm-min){
+    .blog-full-page-image-info {
+        height: 360px;
+    }
+
+    .blog-title{
+        width:95%;
+        font-size: 34px;
+    }
+    .blog-author-image {
+    height: 100px;
+    width: 100px;
+    }
+    em.post_date {
+        font-size: 13px;
+    }
+    p.post_excerpt {
+        font-size: 11px;
+    }
+
+    h3.post_title {
+        font-size: 17px;
+    }
+    
+    h1#featured-image-blog-title {
+        font-size: 26px;
+    }
+
+
+
+}
+
+
+@media (max-width: $screen-xs-min) {
+    
+    
+    article.post-content > .col-md-4 {
+        padding: 0px;
+    }
+    
+}
+
+@media(max-width: $screen-md-min - 1){
+    /* Blog Sidebar */
+    .col-md-3.blog-sidebar {
+        margin-top: 15px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    
+    .featured_blog_post img.img-responsive {
+        padding-right: 10px;
+    }
+}
+
+// Blog Side Panel Styles
+.featured_post_post > .row {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+.featured_post_post > .row > div > img{
+    margin-top:10px;
+    margin-left:10px;
+    
+    transition: all 200ms linear;
+}
+
+.featured_blog_post > .row {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    
+    transition: all 200ms linear;
+}
+.featured_blog_post > .row > div > img{
+    margin-top:10px;
+    margin-left:10px;
+}
+
+.blog-row .panel, .blog-post-content .panel  {
+    border: 0 !important;
+}
+
+.blog-row .panel-body,  .panel-body {
+    border:1px solid #eee;
+    padding-bottom:0;
+    padding-top: 0;
+}
+
+.blog-row .col-md-9.col-sm-9.col-xs-9 , .blog-post-content .col-md-9.col-sm-9.col-xs-9 {
+    padding-left:20px;
+    padding-top:10px;
+}
+
+//Hover Style
+.featured_blog_post>.row:hover {
+    background-color: #fdfdfd;
+}
+
+.featured_blog_post  small em {
+    color:black;
+}
+
+

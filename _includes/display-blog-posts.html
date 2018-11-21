@@ -1,0 +1,67 @@
+{% for post in paginator.posts %}
+    <div class="row blog_post">
+        {% if site.data.settings.blog.show_thumbnails %}
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <a href="{{post.url}}">
+                    {% if post.image.thumb %}                          
+                          <picture>
+                              <source srcset="{% asset_path '{{post.image.thumb}}' %}" 
+                              media="(max-width: 999px)" />
+                              <source srcset="{% asset_path '{{post.image.thumb}}' %}"
+                               media="(min-width: 1000px)" />
+                              <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+                              data-src="{% asset_path '{{post.image.thumb}}' %}" 
+                              class="lazyload img-responsive center-block"/>
+                          </picture>
+                    {% elsif post.image.name %}
+                        <picture>
+                            <source srcset="{% asset_path '{{post.image.name}}' %}" 
+                            media="(max-width: 999px)" />
+                            <source srcset="{% asset_path '{{post.image.name}}' %}"
+                             media="(min-width: 1000px)" />
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+                            data-src="{% asset_path '{{post.image.name}}' %}" 
+                            class="lazyload img-responsive center-block"/>
+                        </picture>
+                    {% else %}
+                        <picture>
+                            <source srcset="{% asset_path '{{site.data.settings.placeholder}}' %}"
+                            media="(max-width: 999px)" />
+                            <source srcset="{% asset_path '{{site.data.settings.placeholder}}' %}"
+                             media="(min-width: 1000px)" />
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+                            data-src="{% asset_path '{{site.data.settings.placeholder}}' %}" 
+                            class="lazyload img-responsive center-block"/>
+                        </picture>
+                    {% endif %}
+                </a>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8 post_title no-padding">
+                <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
+                <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
+                <p class="post_excerpt">
+                {{ post.content | strip_html | truncatewords:30 }}
+                </p>
+                <p>
+                    <a href="{{post.url}}">
+                        <button class="btn blog-read-more-btn">Read More</button>
+                    </a>
+                </p>
+            </div>
+        {% else %}
+            <div class="col-xs-12 post_title no-padding">
+                <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
+                <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
+                <p class="post_excerpt">
+                {{ post.content | strip_html | truncatewords:30 }}
+                </p>
+                <p>
+                    <a href="{{post.url}}">
+                        <button class="btn blog-read-more-btn">Read More</button>
+                    </a>
+                </p>
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
+

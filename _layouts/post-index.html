@@ -1,0 +1,19 @@
+---
+layout: container-breadcrumb
+title: Blog
+css-package: blog
+js-package: blog
+---
+<div class="col-md-9">
+    {{content}}
+    {% include display-blog-posts.html %}
+    {% if page.news %}
+        {% include pagination-news.html %}
+    {% else %}
+        {% include pagination.html %}
+    {% endif %}
+</div>
+
+<div class="col-md-3 blog-sidebar">
+    {% include post-sidebar.html  %}
+</div>

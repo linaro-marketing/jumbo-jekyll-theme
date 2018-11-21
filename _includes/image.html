@@ -1,0 +1,6 @@
+{% if include.lightbox_disabled %}
+![{{include.alt}}](data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==){:class="img-responsive lazyload {% if include.class %}{{include.class}}{% endif %}" data-src="{% asset_path  '{{include.name}}'  %}"}
+{% else %}
+[![{{include.alt}}](data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==){:class="img-responsive lazyload {% if include.class %}{{include.class}}{% endif %}" data-src="{% asset_path '{{include.name}}'  %}"}]({% if include.url %}{{include.url}}{% elsif include.lightbox_disabled %}{% else %}{% asset_path "{{include.name}}"  %}{% endif %}){% if include.lightbox_disabled %}{% else %}{% if include.url %}{% else %}{: data-lightbox="{{include.name}}" data-title="{{include.alt}}"}{% endif %}{% endif %}
+{% endif %}
+

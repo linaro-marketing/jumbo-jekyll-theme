@@ -1,0 +1,148 @@
+# Custom Favicon
+favicon: favicon.png
+
+# # Mailchimp settings
+# mailchimp:
+#     enabled: true
+#     id: af6cf590b0
+
+# Footer Newsletter toggle.
+newsletter:
+    enabled: false
+    
+tags_enabled: true
+    
+# Footer Image default is linaro sprinkle
+linaro-footer-image: Linaro-Sprinkle.png
+
+# # Breadcrumb Settings
+# breadcrumb:
+#     image: breadcrumb-image.jpg
+
+
+#Content Repo for static site.
+# Used for the edit on github include
+
+# edit-on-github:
+#     enabled: true
+#     repo: https://www.github.com/Linaro/website
+    # docs: https://www.github.com/Linaro/website
+    
+# Settings for the home page
+home:
+    #Content Background Image E.g. DeviceTree.org
+    # content-image: background-image.png
+    # If this is set then the navigation will be transparent.
+    transparent-nav: true
+    # If this is set to true then the shape divider will be displayed
+    shaped-divider: true
+    # Jumbotron settings for the home page
+    jumbotron:
+        # Include file to replace all the contents of the jumbotron with.
+        included_file: hero-banner.html
+        # Toggle the jumbotron
+        enabled: true
+        # Title for the home page jumbotron
+        title:
+            first-line: 
+                text: Welcome to the
+                display: true
+                bold: false
+            second-line: 
+                text: Jumbo Jekyll Theme
+                display: true
+                bold: true
+        # Text to be displayed in the home page jumbotron
+        sub-title:
+            first-line:
+                text: A theme for Linaro Static Jekyll sites.
+                display: true
+                bold: false
+            second-line: 
+                text: Customize this content in the _data/settings.yml
+                display: false
+                bold: false
+        # Buttons to be displayed in the Jumbotron
+        buttons:
+            - text: Learn More
+              class: btn btn-primary btn-lg fade-in-three bottom-border-five
+              url: /about/
+            - text: Get Started
+              url: 
+              class: btn btn-primary btn-lg fade-in-three bottom-border-five
+        # Background image for the home page located in assets/images
+        # background-image:
+        #     # Darken is set to true by default - if you wish to remove the image overlay
+        #     # then change this setting to false.
+        #     darken: true
+        #     # This is the name of the background-image located in /assets/images/
+        #     name: background-image.jpg
+        # image: devicetree-icon-white.png
+
+# Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
+# github_username: Linaro
+# linkedin_username: 1026961
+# google_plus_username: +LinaroOnAir
+# facebook_username: LinaroOrg
+# youtube_username: linaroorg
+# twitter_username: linaroorg
+# slideshare_username: linaroorg
+
+# Blog setup
+blog:
+    # Show Thumbnails in the post index
+    show_thumbnails: true
+    # Toggle site wide comments display.
+    comments: true
+    # Post Side Bar Settings
+    sidebar:
+        # custom-include: blog-sidebar-include.html
+        display-on-posts: true
+        display-on-index: true
+        # Toggle whether or not thumbnails in the sidebar are displayed.
+        thumbnails:
+            display: true
+        # Display other posts contained in _posts
+        other-posts:
+            display: true
+            count: 4
+        # Display Related posts based on tags / categories
+        related-posts:
+            display: true
+            count: 5
+        # Display the most recent posts
+        most-recent-posts:
+            display: true
+            count: 5
+                  
+# Google Anayltics Setup
+# google:
+#     tag_manager: GTM-5DLPJQ
+
+# Shema.org settings used in the schema.html include.
+# schema:
+#     enabled: true
+#     organisation:
+#         name: Linaro
+#         url: https://www.linaro.org
+#         sameAs:
+#             - https://twitter.com/linaroorg
+#             - https://www.facebook.com/LinaroOrg
+#             - https://www.linkedin.com/company/1026961/
+#             - https://plus.google.com/+LinaroOnAir
+#             - https://github.com/Linaro
+#             - https://www.slideshare.net/linaroorg
+#         address:
+#             street: Harston Mill, Royston Rd 
+#             town: Harston 
+#             county: Cambridge 
+#             post_code: CB22 7GG
+#             country_code: UK
+
+# # Disqus Comments
+# disqus:
+#     enabled: false
+#     shortname: Linaro
+
+# Placeholder for Missing Images
+placeholder: placeholder.jpg
