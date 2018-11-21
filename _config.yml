@@ -120,6 +120,3 @@ liquid:
 readme_index:
     enabled:          true
     remove_originals: false
-
-# Source folder for the site content
-source: src
