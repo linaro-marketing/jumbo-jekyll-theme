@@ -4,7 +4,8 @@
 //= require vendor/cookieconsent
 //= require vendor/lazysizes
 
-//= require vendor/lightbox
+//= require vendor/featherlight
 //= require app/main
+//= require app/search
 //= require app/tables
 //= require app/custom
