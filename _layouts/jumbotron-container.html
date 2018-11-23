@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{% if page.carousel-header %}
+    {% include carousel-header.html images=page.carousel-header.images %}
+    {% include jumbotron.html %}
+{% elsif page.jumbotron %}
+    {% include jumbotron.html %}
+{% else %}
+    {% include breadcrumb.html %}
+{% endif %}
+<div class="row" id="content-container">
+    {% if page.sticky-tab-bar %}
+        {% include sticky-tab-bar.html %}
+    {% endif %}
+    <div class="container">
+        {{ content }}
+    </div>
+</div>
