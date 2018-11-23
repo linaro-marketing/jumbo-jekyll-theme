@@ -34,9 +34,6 @@ div#tabbed-nav-bar-collapse {
         margin-right: -5px;
     }
 }
-#tabbed-nav-bar {
-    margin-top: -20px;
-}
 
 div#tabbed-nav-bar.non-sticky-nav > .container {
     padding-left: 0px;
@@ -86,13 +83,10 @@ nav#main-navigation.nav-light #navbar-buttons>li>a {
    color: #fff;
 }
 
-
+div#tabbed-nav-bar.sticky-nav {
+    top: 0px;
+}
 @media (max-width: $screen-sm){
-    
-    .sticky-nav#tabbed-nav-bar {
-        top: 20px;
-    }
-    
     div#tabbed-nav-bar.sticky-nav li.divider {
         border-top: 2px solid #272727;
     }
@@ -504,7 +498,8 @@ nav > ul.navbar-right {
 
 .navbar-header {
     position: relative;
-    z-index: 2;
+    z-index: 4;
+    overflow: hidden;
 }
 
 // Tabbed Nav bar
@@ -543,11 +538,23 @@ nav > ul.navbar-right {
     padding-top: 4px;
     padding-bottom: 4px;
 }
-
+#wrapper li.tabbed-nav-btn {
+    border-right: 1px solid #f9f9f9;
+    border-left: 1px solid #f9f9f9;
+    border-bottom: 1px solid #f9f9f9;
+    background-color: black;
+    color: white;
+    text-align:center;
+}
+#wrapper li.tabbed-nav-btn a {
+    color: white;
+}
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus, .nav-tabs>li>a:hover {
     color: $brand-primary !important;
 }
-
+#wrapper .nav-tabs {
+    border-bottom: none;
+}
 .nav-tabs > li > a::after {
     content: "";
     height: 2px;
@@ -588,35 +595,18 @@ nav > ul.navbar-right {
     background: $brand-primary none repeat scroll 0% 0%;
     color: $navbar-text-color;
 }
-
-
-@media (min-width: $screen-md-min) {
-    #tabbed-nav-bar .nav-tabs {
-        margin-top: 18px;
-    }
-
-}
-
-.tab-pane-legal{
-    padding:0px;
-}
-
-
 //Changed the default navbar text colour
 .navbar-inverse .navbar-nav > li > a {
  color: $footer-text-color;
 }
-
 button#closeForm {
     color: $navbar-text-color;
 }
-
 @media (max-width: $screen-md-min){
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a.dropdown-item {
         color: $navbar-text-color;
     }
 }
-
 // Style for stacked nav
 li.side-nav-button {
     border-top: 1px sstackedolid $gray-lighter;
@@ -773,7 +763,7 @@ div#search_bar input:-ms-input-placeholder {
 }
 
 
-//NavBar Subtle Animations
+// NavBar Subtle Animations
 li.dropdown-submenu.sub-menu:hover  > a:after {
     margin-right:-6px;
     margin-top: 8px;
@@ -796,58 +786,6 @@ ul.dropdown-menu.menu {
     padding-bottom: 0;
     border-radius: 0 !important;
 }
-
-// Linaro Sites Navigation
-
-li#linaro-app-menu-item  > a >i.glyphicon.glyphicon-th {
-    font-size: 16px;
-    margin-top: -17px;
-}
-
-li#linaro-app-menu-item {
-    top: -1px;
-}
-
-li#linaro-app-menu-item {
-    margin-right: 15px;
-}
-
-li#linaro-app-menu-item > ul {
-    right: 10px;
-    left: auto;
-}
-
-li#linaro-app-menu-item > ul {
-    background: none repeat scroll 0 0 #a080b7;
-    margin-top: 25px;
-    padding: 0 0 0 10px;
-    position: absolute;
-    width: 125px;
-    z-index: 999;
-    border:solid #a080b7 1px;
-    margin-left:-24px;
-    padding-left: 0;
-}
-
-li#linaro-app-menu-item > ul:before {
-    top:-34px;
-    left: 93%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-}
-
-
-li#linaro-app-menu-item > ul:before {
-    border-color: rgba(204, 204, 204, 0);
-    border-bottom-color: #a080b7;
-    border-width: 16px;
-    margin-left: -16px;
-}
-
 @media(min-width:$screen-sm-min){
     div#tabbed-nav-bar.sticky-nav li.divider {
         border-right: 1px solid $navbar-inverse-bg;
@@ -917,12 +855,6 @@ li#linaro-app-menu-item > ul:before {
 #navbar_svg .cls-8 {
     opacity: 0.7;
 }
-
-#main-navigation.navbar-static button.navbar-toggle {
-    left: 42px;
-    position: relative;
-}
-
 // Style for sidebar stacked nav sub pages
 li.side-nav-button.sub-page a {
     padding-left: 40px;
@@ -943,7 +875,7 @@ nav#main-navigation.navbar-fixed-top {
     padding-bottom:0px;
 }
 #main-navigation div#navbar-collapse {
-    z-index: 3;
+    z-index: 2;
 }
 // CSS for the left aligned dropdowns
 
@@ -1001,4 +933,17 @@ opacity: 1;
 }
 .navbar-toggle.collapsed .bottom-bar {
 transform: rotate(0);
+}
+// Scroll Track
+.navbar-collapse::-webkit-scrollbar {
+    width: 1em;
+}
+.navbar-collapse::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: darken($navbar-inverse-bg, 80%);
+}
+.navbar-collapse::-webkit-scrollbar-thumb {
+  background-color: $brand-primary;
+  outline: 1px solid lighten($navbar-inverse-bg, 90%);
 }

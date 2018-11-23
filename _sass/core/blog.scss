@@ -248,9 +248,6 @@ div.tag_cloud {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-div#featured-jumbotron.blog {
-    margin-top: 0;
-}
 div.previous_post{
     display:none;
 }
@@ -437,5 +434,9 @@ img.large-inline.right {
 .featured_blog_post  small em {
     color:black;
 }
-
-
+#featured-jumbotron a:hover{
+    text-decoration: none;
+}
+#featured-jumbotron a:hover img{
+    border-color:$brand-primary;
+}

@@ -1,13 +1,8 @@
-
-
 /* Home Page Jumbotron Div */
-div#featured-jumbotron {
+div#jumbotron-content {
     text-align: center;
-    margin-top: $navbar-height + 20;
-    margin-bottom: $navbar-height + 20;
-    min-height: 320px;
+    min-height: $jumbotron-height;
 }
-
 #jumbotron-image:before {
     content: '';
     position: absolute;
@@ -18,24 +13,13 @@ div#featured-jumbotron {
     background-image: linear-gradient(to bottom right, #000, #000);
     opacity: .5;
 }
-
-/* Featured Image Overlay - 50% opacity */
-.overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+/* Overlay - 60% opacity default */
+#jumbotron.overlay {
+    background-color: rgba(0, 0, 0, $overlay);
     position: relative;
     z-index: 0;
 }
-
-
-div.jumbotron-image{
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-}
-
-.overlay:before {
+#jumbotron.overlay:before {
     content: '';
     position: relative;
     top: 0;
@@ -45,7 +29,56 @@ div.jumbotron-image{
     background-image: linear-gradient(to bottom right, #000, #000);
     opacity: .5;
 }
-
-.row.shape-divider svg {
-    margin-bottom: -5px;
+div.jumbotron-image{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+/* Jumbotron Sub Title */
+#jumbotron-sub-title {
+    color: $jumbotron-sub-title-color;
+    font-size: $jumbotron-sub-title-font-size;
+}
+/* Jumbotron Heading */
+#jumbotron-heading {
+    color: $jumbotron-heading-color;
+    font-size: $jumbotron-font-size;
+    margin-top: 0px;
+}
+/* Jumbotron Styles - SM  */
+@media(max-width:$screen-sm-min){
+    #jumbotron-heading {
+        font-size: $jumbotron-font-size-xs;
+    }
+    #jumbotron-sub-title {
+        color: $jumbotron-sub-title-color;
+        font-size: $jumbotron-sub-title-font-size-xs;
+    }
+}
+#buttons >  a.btn {
+    color: black ;
+    font-weight: normal;
+    font-size: 12px;
+    background-color: white;
+}
+#buttons >  a.btn:hover {
+    color: white ;
+    font-weight: normal;
+    font-size: 12px;
+    background-color: $brand-primary;
+}
+/* Jumbotron Header */
+#jumbotron {
+    background: $jumbotron-bottom-color; /* Old browsers */
+    background: -moz-linear-gradient(top, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $jumbotron-top-color 0%,$jumbotron-bottom-color 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$jumbotron-top-color, endColorstr=$jumbotron-bottom-color,GradientType=0 ); /* IE6-9 */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
 }

@@ -4,14 +4,12 @@
 @media print{.cc-revoke,.cc-window{display:none}}@media screen and (max-width:900px){.cc-btn{white-space:normal}}@media screen and (max-width:414px) and (orientation:portrait),screen and (max-width:736px) and (orientation:landscape){.cc-window.cc-top{top:0}.cc-window.cc-bottom{bottom:0}.cc-window.cc-banner,.cc-window.cc-left,.cc-window.cc-right{left:0;right:0}.cc-window.cc-banner{-ms-flex-direction:column;flex-direction:column}.cc-window.cc-banner .cc-compliance{-ms-flex:1;flex:1}.cc-window.cc-floating{max-width:none}.cc-window .cc-message{margin-bottom:1em}.cc-window.cc-banner{-ms-flex-align:unset;align-items:unset}}
 .cc-floating.cc-theme-classic{padding:1.2em;border-radius:5px}.cc-floating.cc-type-info.cc-theme-classic .cc-compliance{text-align:center;display:inline;-ms-flex:none;flex:none}.cc-theme-classic .cc-btn{border-radius:5px}.cc-theme-classic .cc-btn:last-child{min-width:140px}.cc-floating.cc-type-info.cc-theme-classic .cc-btn{display:inline-block}
 .cc-theme-edgeless.cc-window{padding:0}.cc-floating.cc-theme-edgeless .cc-message{margin:2em 2em 1.5em}.cc-banner.cc-theme-edgeless .cc-btn{margin:0;padding:.8em 1.8em;height:100%}.cc-banner.cc-theme-edgeless .cc-message{margin-left:1em}.cc-floating.cc-theme-edgeless .cc-btn+.cc-btn{margin-left:0}
-
 //Button
 a.cc-btn.cc-dismiss {
         border: 1px $brand-primary solid;
         background-color: $cookie-consent-bg;
         padding: 2px;
 }
-
 //Message
 .cc-floating .cc-message {
     display: block;
@@ -19,12 +17,10 @@ a.cc-btn.cc-dismiss {
     font-size: 14px;
     text-align: left;
 }
-
 // Learn More link
 a.cc-link {
     color: $brand-primary !important;
 }
-
 // Main Div
 .cc-window.cc-floating.cc-type-info.cc-theme-classic.cc-bottom.cc-right.cc-color-override-3938 {
     background-color: $navbar-inverse-bg !important;
@@ -33,10 +29,11 @@ a.cc-link {
     border-radius: 5px;
     height: auto;
 }
-
 //Got It! Div around button
 .cc-floating.cc-type-info.cc-theme-classic .cc-compliance {
     text-align: right !important;
     display: block !important;
-
+}
+.cc-window.cc-banner {
+    z-index: 999999;
 }

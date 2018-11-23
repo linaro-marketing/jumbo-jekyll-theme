@@ -1,5 +1,8 @@
-svg#Linaro-Sprinkle {background-color: #fff;height: 350px;width: auto;}
-
+svg#Linaro-Sprinkle {
+    background-color: #fff;
+    height: 350px;
+    width: auto;
+}
 svg#Linaro-Sprinkle > path.purple{
   transform: translateY(0);
   animation: popup 10s linear infinite;
@@ -24,9 +27,6 @@ svg#Linaro-Sprinkle > path.pink{
   transform: translateY(0);
   animation: popup-small 11s linear infinite;
 }
-
-
-
 svg#Linaro-Sprinkle > path {
   opacity: .4;
 }
@@ -35,9 +35,7 @@ svg#Linaro-Sprinkle:hover > path {
   transform: translateY(0);
   opacity: .7;
 }
-
 @keyframes to-start {
-
      0% {
       transform: translateY(40px);
       opacity:.4;
@@ -167,7 +165,6 @@ svg#Linaro-Sprinkle:hover > path {
       transform: translateY(0);
     }
 }
-
 svg#Linaro-Sprinkle .cls-1,svg#Linaro-Sprinkle .cls-6
 {
     fill:#9c3 ;
