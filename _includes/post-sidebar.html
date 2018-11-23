@@ -14,12 +14,12 @@
                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                        {% if post.image.featured %}
                             {% if post.image.thumb %}
-                                     data-src="{% asset_path '{{post.image.thumb}}' %}"
+                                     data-src="{{post.image.thumb}}"
                              {% else %}
-                                   data-src="{% asset_path '{{post.image.name}}' %}"
+                                   data-src="{{post.image.path}}"
                              {% endif %}
                        {% else %}
-                            data-src="{% asset_path '{{site.data.settings.placeholder}}' %}"
+                            data-src="{{site.data.settings.placeholder}}"
                        {% endif %}
                       alt="{{post.title}}" class="img-responsive lazyload"/>
                     </div>
@@ -50,12 +50,12 @@
                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                    {% if post.image.featured %}
                         {% if post.image.thumb %}
-                                 data-src="{% asset_path '{{post.image.thumb}}'%}"
+                                 data-src="{{post.image.thumb}}"
                          {% else %} 
-                               data-src="{% asset_path '{{post.image.name}}' %}"
+                               data-src="{{post.image.path}}"
                          {% endif %}
                    {% else %}
-                        data-src="{% asset_path '{{site.data.settings.placeholder}}' %}"
+                        data-src="{{site.data.settings.placeholder}}"
                    {% endif %}
                   alt="{{post.title}}" class="img-responsive lazyload"/>
                 </div>
