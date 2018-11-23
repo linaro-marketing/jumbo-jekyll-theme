@@ -1,6 +1,7 @@
 # Default Title of Site
-title: Jumbo Jekyll Theme
+title: Jumbo Jekyll
 # Description of the site used for default meta description
+url: http://jumbojekyll.co.uk
 description: |-
   The Jumbo Jekyll Theme is used across all Linaro static sites.
 # Destination of the Jekyll site upon build of site.  
@@ -27,25 +28,21 @@ exclude:
   - _static-site
   - .sass-cache
   - _site
-
 # Sass Configuration for the site styles
 sass:
     style: compressed
     load_paths:
         - assets/css
-    
 # Compress HTML using the jekyll-tidy plugin.
 jekyll_tidy: 
     # Toggle compression of HTML
     compress_html: true
     # JS Path added to exclude to stop errors.
     exclude: ["assets/**/*.js"] 
-    
 # Permalink style to be used for paginating pages in pagination.html
 paginate_path: /blog/:num/
 paginate_path_news: /news/:num/
 paginate_path_authors: /authors/:num/
-
 # Jekyll Pagination V2 Configuration
 pagination:
     # Default pagination path for Jekyll Posts
@@ -63,17 +60,14 @@ pagination:
     sort_reverse: true
     # Field to sort posts by when paginating
     sort_field: 'date'
-
 # Jekyll pagination v2 autopages configuration.
 autopages:
   enabled: false
-  
- # Jekyll_get plugin configuration. This will not be needed in all jekyll sites
- # only those that are displaying news from the news db or listing Linaro members.
+# Jekyll_get plugin configuration. This will not be needed in all jekyll sites
+# only those that are displaying news from the news db or listing Linaro members.
 # jekyll_get:
 #   data: members
 #   json: 'https://github.com/Linaro/db'
-
 # Jekyll defaults - used to set default front matter values to collections and posts
 defaults:
   #  Set a default Social Media Image
@@ -81,7 +75,24 @@ defaults:
       path: ""
     values:
       image: /assets/images/social-media-image.png
-      
+  - scope:
+      type: posts 
+      path: "_posts"
+    values:
+      layout: post
+      comments: true
+      author: kyle
+      categories:
+        - blog
+      tags:
+        - Jekyll
+        - Theme
+        - HTML
+        - CSS
+        - JS
+        - Web Design
+        - Web Development
+        - Static Websites
 # Jekyll Assets setup
 assets:
   # Compress JS Assets - uses the uglifier 
@@ -95,12 +106,10 @@ assets:
     - assets/js/
     - assets/images/
     - assets/css/    
-    
 # Jekyll relative links plugin settings    
 jekyll_relative_links:
     process_all_collections: true
     verbose: 1
-    
 plugins:
     - jekyll-seo-tag
     - jekyll-sitemap
@@ -112,11 +121,12 @@ plugins:
     - jekyll-redirect-from
     - autoprefixer-rails
     - jekyll-paginate-v2
-
+collections:
+  authors:
+    output: true
 # Make sure that Liquid errors stop the build
 liquid:
     error_mode: strict    
-    
 readme_index:
     enabled:          true
     remove_originals: false
