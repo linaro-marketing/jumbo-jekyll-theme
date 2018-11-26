@@ -921,3 +921,13 @@ $dl-horizontal-offset:        $component-offset-horizontal !default;
 $dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter !default;
+
+// Custom Jumbotron Settings
+$jumbotron-height: 400px;
+$overlay: 0.5;
+$jumbotron-font-size-xs: 26px;
+$jumbotron-font-size: 32px;
+$jumbotron-heading-color: #fff !default;
+$jumbotron-sub-title-font-size-xs: 16px;
+$jumbotron-sub-title-font-size: 18px;
+$jumbotron-sub-title-color: #fff !default;
