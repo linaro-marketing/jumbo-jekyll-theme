@@ -20,10 +20,10 @@
             {{page.description}}
             </p>
         {% endif %}
-        {% if page.carousel-header.buttons %}
+        {% if page.jumbotron.buttons %}
         <p id="buttons">
-            {% for button in page.carousel-header.buttons %}
-            <a class="btn btn-primary btn-lg {% if page.carousel-header.animation == "fade" %}fade-in-three{% endif %}" href="{{button.url}}" role="button">
+            {% for button in page.jumbotron.buttons %}
+            <a class="btn btn-primary btn-lg {% if page.jumbotron.animation == "fade" %}fade-in-three{% endif %}" href="{{button.url}}" role="button">
                 {{button.title}} {% if button.icon %}<i class="{{button.icon}}"></i>{% endif %}
             </a>
             {% endfor %}

@@ -11,16 +11,17 @@ sticky-tab-bar:
       active: true
     - title: Get Started
       url: /get-started/
-carousel-header:
+jumbotron:
+    carousel-images:
+        - /assets/images/content/background-image1.jpg
+        - /assets/images/content/background-image2.png
+        - /assets/images/content/background-image3.jpg
     animation: fade
     buttons:
         - title: View on GitHub
           url: https://github.com/kylekirkby/jumbo-jekyll-theme
           class: fa fa-github
-    images:
-    - /assets/images/content/background-image1.jpg
-    - /assets/images/content/background-image2.png
-    - /assets/images/content/background-image3.jpg
+
 ---
 # Jumbo Jekyll Theme
 
