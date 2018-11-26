@@ -1,13 +1,14 @@
 ---
 ---
 @charset "UTF-8";
-// Bootstrap Sass Variable Overrides
+// App Overrides - Sass variables
 @import "app/overrides";
-//Boostrap3
+//Boostrap Includes
 @import 'bootstrap';
 @import 'bootstrap/variables';
-// Core Theme Styles
+// Core Theme
 @import 'core';
-@import 'home';
-// app/ Includes
+//Additional Core includes
+@import "core/error";
+// App Includes
 @import "app/custom";
