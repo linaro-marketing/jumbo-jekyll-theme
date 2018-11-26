@@ -1,22 +1,19 @@
 # coding: utf-8
 Gem::Specification.new do |s|
-    
     # Main Spec Info
     s.name          = "jumbo-jekyll-theme"
-    s.version       = "2.2.1.3"
+    s.version       = "3.0.0"
     s.authors       = ["Kyle Kirkby"]
     s.email         = ["kyle.kirkby@linaro.org"]
-    s.summary       = %q{The jumbo-jekyll-theme aims to provide an fast static theme for use across Linaro sites and anyone who may find it useful. The theme currently uses Bootstrap/Jekyll Plugins/Javascript/Sass/JQuery Plugins to do this.}
+    s.summary       = %q{This is a Bootstrap 3 Jekyll theme built for Linaros static websites.}
     s.homepage      = "https://github.com/linaro-website/jumbo-jekyll-theme/"
     s.license       = "MIT"
-    
     # Spec Files
     s.files         = `git ls-files -z`.split("\x0").select do |f|
       f.match(%r{^(assets|_(data|includes|layouts|sass)/|(LICENSE|README|robots|_config)((\.(txt|md|markdown|yml)|$)))}i)
     end
     # Ruby Version
     s.required_ruby_version = '>=2.3'
-    
     # Runtime Dependencies
     s.add_runtime_dependency 'jekyll', '~> 3.7.4'
     s.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
@@ -37,10 +34,8 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency 'jekyll-include-cache'
     s.add_runtime_dependency 'ffi', '~> 1.9.24'
     s.add_runtime_dependency "rack", ">= 1.6.11"
-
     #s.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
     # Development Dependencies
     s.add_development_dependency "bundler", "> 1.16.1"
     s.add_development_dependency "rake", "~> 10.0"
-    
   end
