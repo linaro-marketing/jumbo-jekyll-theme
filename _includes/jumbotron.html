@@ -19,7 +19,7 @@
         <p id="buttons">
             {% for button in page.carousel-header.buttons %}
             <a class="btn btn-primary btn-lg {% if page.carousel-header.animation == "fade" %}fade-in-three{% endif %}" href="{{button.url}}" role="button">
-                {{button.title}} <i class="{{button.class}}"></i>
+                {{button.title}} {% if button.icon %}<i class="{{button.icon}}"></i>{% endif %}
             </a>
             {% endfor %}
         </p>
