@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency "jekyll-assets", "2.4.0"
     s.add_runtime_dependency 'jekyll-data', '>0'
     s.add_runtime_dependency 'uglifier', '>0'
-    s.add_runtime_dependency 'autoprefixer-rails', '~> 5.0', '>= 5.0.0.1'
+    s.add_runtime_dependency 'autoprefixer-rails', '~> 9.0', '>= 9.0.0'
     s.add_runtime_dependency 'jekyll-paginate-v2', '>0'
     s.add_runtime_dependency 'jekyll-feed', '>0'
     s.add_runtime_dependency 'jekyll-theme-assets-updated', '~> 1.1'
