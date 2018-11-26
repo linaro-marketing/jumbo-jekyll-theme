@@ -20,7 +20,7 @@ jumbotron:
     buttons:
         - title: View on GitHub
           url: https://github.com/kylekirkby/jumbo-jekyll-theme
-          class: fa fa-github
+          icon: fa fa-github
 
 ---
 # Jumbo Jekyll Theme
