@@ -1,8 +1,12 @@
 ---
 layout: default
 ---
-{% if page.carousel %}
-    {% include carousel-header.html images=site.page.images %}
+{% if page.carousel-header %}
+    {% include carousel-header.html images=page.carousel-header.images %}
+    {% include jumbotron.html %}
+{% elsif page.jumbotron %}
+    {% include jumbotron.html %}
+{% else %}
+    {% include breadcrumb.html %}
 {% endif %}
-{% include jumbotron.html %}
 {{content}}
