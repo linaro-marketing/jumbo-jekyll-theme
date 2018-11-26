@@ -2,12 +2,13 @@
 title: Jumbo Jekyll
 # Description of the site used for default meta description
 url: http://jumbojekyll.co.uk
+baseurl: ""
 description: |-
   The Jumbo Jekyll Theme is used across all Linaro static sites.
 # Destination of the Jekyll site upon build of site.  
 destination: _site
 # Default permalink for blog posts
-permalink: /blog/:title/ 
+permalink: /:categories/:title/ 
 # Jumbo Jekyll Theme
 theme: jumbo-jekyll-theme
 # Syntax highlighter
@@ -93,6 +94,11 @@ defaults:
         - Web Design
         - Web Development
         - Static Websites
+  - scope:
+        path: ""
+        type: "authors"
+    values:
+        layout: author
 # Jekyll Assets setup
 assets:
   # Compress JS Assets - uses the uglifier 
@@ -124,6 +130,7 @@ plugins:
 collections:
   authors:
     output: true
+    permalink: /author/:name/
 # Make sure that Liquid errors stop the build
 liquid:
     error_mode: strict    
