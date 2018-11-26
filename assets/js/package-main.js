@@ -7,5 +7,6 @@
 //= require app/main
 //= require app/tables
 //= require app/search
+//= require app/fly
 //= require app/sticky-tab-bar
 //= require app/custom
