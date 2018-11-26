@@ -21,13 +21,16 @@ div#jumbotron-content {
 }
 #jumbotron.overlay:before {
     content: '';
-    position: relative;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
+    height: $jumbotron-height;
     left: 0;
     background-image: linear-gradient(to bottom right, #000, #000);
     opacity: .5;
+    width: 100%;
+    z-index: -1;
 }
 div.jumbotron-image{
     background-repeat: no-repeat;

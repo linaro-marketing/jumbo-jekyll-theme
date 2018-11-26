@@ -8,7 +8,7 @@ description: |-
 # Destination of the Jekyll site upon build of site.  
 destination: _site
 # Default permalink for blog posts
-permalink: /:categories/:title/ 
+permalink: /blog/:title/ 
 # Jumbo Jekyll Theme
 theme: jumbo-jekyll-theme
 # Syntax highlighter
@@ -82,16 +82,6 @@ defaults:
     values:
       layout: post
       comments: true
-      author: kyle
-      tags:
-        - Jekyll
-        - Theme
-        - HTML
-        - CSS
-        - JS
-        - Web Design
-        - Web Development
-        - Static Websites
   - scope:
         path: ""
         type: "authors"
