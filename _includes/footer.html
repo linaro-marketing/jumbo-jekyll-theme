@@ -22,8 +22,8 @@
             <div class="row footer-strip">
                 <div class="container no-padding">
                     <div class="col-md-6 company-footer-bottom">
-                        <a href="{{site.data.footer.footer-image-url}}"><img src="{{site.data.footer.footer-image}}" 
-                        class="footer-logo" alt="{{site.title}} Footer Icon" /></a>
+                        {% if site.data.footer.footer-image-url %}<a href="{{site.data.footer.footer-image-url}}"><img src="{{site.data.footer.footer-image}}" 
+                        class="footer-logo" alt="{{site.title}} Footer Icon" /></a>{% endif %}
                         Copyright &copy; {{ 'now' | date: "%Y" }} {{site.data.footer.company-copyright-text}}
                         {% for link in site.data.footer.company-links %}
                             <span class="coloured-bp">&bull;</span>
