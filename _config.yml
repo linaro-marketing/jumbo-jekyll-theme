@@ -83,8 +83,6 @@ defaults:
       layout: post
       comments: true
       author: kyle
-      categories:
-        - blog
       tags:
         - Jekyll
         - Theme
