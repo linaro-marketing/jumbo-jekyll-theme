@@ -32,6 +32,11 @@ div#jumbotron-content {
     width: 100%;
     z-index: -1;
 }
+div#jumbotron.background-image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
 div.jumbotron-image{
     background-repeat: no-repeat;
     background-position: center;
