@@ -6,16 +6,24 @@
 {% endif %}> <!--Row -->
     <div id="jumbotron-content" class=" flex-container"> <!--Jumbotron div -->        
         <div class="container flex-center" id="jumbotron-text"> <!--Container -->
-        {% if page.title %}
+        {% if page.jumbotron.title %}
+        <h1 class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %}" id="jumbotron-heading">
+            {{page.jumbotron.title}}
+        </h1>
+        {% elsif page.title %}
         <h1 class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %}" id="jumbotron-heading">
             {{page.title}}
         </h1>
-        {% elsif site.title %}
+        {% else %}
             <h1 class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %}" id="jumbotron-heading">
                 {{site.title}}
             </h1>
         {% endif %}
-        {% if page.description %}
+        {% if page.jumbotron.description %}
+            <p class="center-block {% if page.jumbotron.animation == "fade" %}fade-in-two{% endif %}" id="jumbotron-sub-title">
+                {{page.jumbotron.description}}
+            </p>
+        {% elsif page.description %}
             <p class="center-block {% if page.jumbotron.animation == "fade" %}fade-in-two{% endif %}" id="jumbotron-sub-title">
             {{page.description}}
             </p>
