@@ -3,6 +3,8 @@
 //= require vendor/mc
 //= require vendor/cookieconsent
 //= require vendor/lazysizes
+//= require vendor/ls.unveilhooks
+//= require vendor/featherlight
 
 //= require app/main
 //= require app/tables
