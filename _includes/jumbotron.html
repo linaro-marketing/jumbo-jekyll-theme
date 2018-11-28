@@ -7,18 +7,17 @@
     <div id="jumbotron-content" class=" flex-container"> <!--Jumbotron div -->        
         <div class="container flex-center" id="jumbotron-text"> <!--Container -->
         {% if page.jumbotron.title %}
-        {% if page.jumbotron.title.lines %}
-            <h1>
-       
-            {% for line in page.jumbotron.title.lines %}
-                
-            {% endfor %}
-            </h1>
-        {% else %}
-            <h1 class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %}" id="jumbotron-heading">
-                {{page.jumbotron.title}}
-            </h1>
-        {% endif %}
+            {% if page.jumbotron.title.lines %}
+                <h1>
+                {% for line in page.jumbotron.title.lines %}
+                    <span class="{{line.class}}">{{line.text}}</span>
+                {% endfor %}
+                </h1>
+            {% else %}
+                <h1 class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %}" id="jumbotron-heading">
+                    {{page.jumbotron.title}}
+                </h1>
+            {% endif %}
         {% elsif page.title %}
         <h1 class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %}" id="jumbotron-heading">
             {{page.title}}
