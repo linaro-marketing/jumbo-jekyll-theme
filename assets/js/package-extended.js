@@ -8,9 +8,7 @@
 //= require vendor/featherlight
 //= require app/sticky-tab-bar
 
-
 //= require app/main
-//= require app/scroll-to-anchors
 //= require app/search
 //= require app/tables
 //= require app/custom
