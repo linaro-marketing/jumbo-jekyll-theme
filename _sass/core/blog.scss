@@ -360,21 +360,12 @@ img.large-inline.right {
     h1#featured-image-blog-title {
         font-size: 26px;
     }
-
-
-
 }
-
-
 @media (max-width: $screen-xs-min) {
-    
-    
     article.post-content > .col-md-4 {
         padding: 0px;
     }
-    
 }
-
 @media(max-width: $screen-md-min - 1){
     /* Blog Sidebar */
     .col-md-3.blog-sidebar {
@@ -382,12 +373,10 @@ img.large-inline.right {
         padding-right: 0px;
         padding-left: 0px;
     }
-    
     .featured_blog_post img.img-responsive {
         padding-right: 10px;
     }
 }
-
 // Blog Side Panel Styles
 .featured_post_post > .row {
     padding: 5px;

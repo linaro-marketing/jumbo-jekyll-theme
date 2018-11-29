@@ -8,7 +8,6 @@ body {
     font-family: $font-family-sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-
 /* ------------ Main Container Style margin accounts for Nav ----------- */
 #wrapper.main{
     overflow-x: hidden;
@@ -16,11 +15,23 @@ body {
 #wrapper.home{
     overflow-x: hidden;
 }
-
 // Iphone Bug Fix
-html.ios7 body {height: 100%;position: fixed;width: 100%;}
+html.ios7 body {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+.ext-left {
+    float: left;
+}
 
-
+.ext-right {
+    height: auto;
+    vertical-align: middle;
+    display: table-cell;
+    padding-right: 10px;
+    padding-left: 10px;
+}
 // HTML Style
 html {
  height  : 100%;
@@ -175,55 +186,49 @@ p {
     word-wrap: break-word;
 }
 
-#content-container p.justify {
+#wrapper p.justify {
     font-size: 16px;
     text-align: justify;
     line-height: 1.66em;
 }
 
-#content-container h2 {
+#wrapper h2 {
     font-size: 30px;
     color: #3D383E;
+    font-weight: 200;
     text-transform: none;
 }
-
-
 /* Padded Para */
 .padded-para{
     padding:20px;
 }
-
 /* Spaced Paragraph */
 #spaced-para{
     font-size: 18px;
     line-height: 40px;
 }
-
 /* Justified Paragraph */
 p .justified{
     text-align: justify;
     text-justify: inter-word;
 }
-
 /* Shape Divider - Home Page */
 .row.shape-divider {
     background-color: $brand-primary;    
 }
 // Content Container - container used for actual content
 // Not for breadcrumb / nav / footer
-
-#content-container {
+#wrapper {
     background-color: $body-bg;
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
-
-#content-container ul { font-size:18px; }
-#content-container ol { font-size: 18px;}
-
-
-
+#wrapper ul { font-size:18px; }
+#wrapper ol { font-size: 18px;}
+// Padded row css
+.padded-row {
+    padding: 100px 0;
+}
 //Homepage Sub Tag
 p.sub-tag {
     width: 65%;
@@ -418,7 +423,7 @@ button#c-submit-button {
         font-size: 25px;
     }
     //Remove the padding from columns on mobile views
-    #content-container .col-md-3, #content-container .col-md-9 {
+    #wrapper .col-md-3, #wrapper .col-md-9 {
         padding-left:0;
         padding-right:0;
     }
@@ -546,8 +551,8 @@ img.img-responsive.right-aligned-image {
 }
 
 /* Wordpress Styles */
-#content-container blockquote, #content-container code, #content-container dl, #content-container fieldset,
-#content-container p, #content-container pre, #content-container table{
+#wrapper blockquote, #wrapper code, #wrapper dl, #wrapper fieldset,
+#wrapper p, #wrapper pre, #wrapper table{
     margin-bottom: 25px;
 }
 
@@ -562,12 +567,12 @@ ul#tab-row {
     margin-bottom: 20px;
 }
 
-#content-container a:hover {
+#wrapper a:hover {
     text-decoration: none;
     color: darken($brand-primary, 20%);
 }
 
-#content-container ul {
+#wrapper ul {
     color: #252525;
     font-size: 16px;
 }
@@ -596,12 +601,12 @@ blockquote:before {
 }
 
 
-#content-container h1 {
+#wrapper h1 {
     font-size: 36px;
     margin-top: 0;
 }
 
-#content-container h1, #content-container h2, #content-container h3, #content-container h4, #content-container h5 {
+#wrapper h1, #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5 {
     color: #393836;
 }
 

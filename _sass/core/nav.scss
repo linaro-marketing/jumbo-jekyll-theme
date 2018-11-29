@@ -422,7 +422,10 @@ nav > ul.navbar-right {
 #tabbed-nav-bar.non-sticky-nav button.navbar-toggle {
     margin-right: -5px;
 }
-
+#main-navigation .pull-left ul.dropdown-menu.sub-menu {
+    position: absolute;
+    width: 100px;
+}
 .sticky-nav {
     position: fixed;
     top: 0;
@@ -431,8 +434,12 @@ nav > ul.navbar-right {
     right: 0;
     transition: all 1s ease;
 }
-
 @media(max-width:$screen-sm-min - 1){
+    #main-navigation ul.dropdown-menu.sub-menu {
+        position: static;
+        width: 100%;
+        margin: 0px !important;
+    }
     #tabbed-nav-bar .tabbed-nav-btn{
         width:100%;
     }
