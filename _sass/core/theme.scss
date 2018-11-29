@@ -216,13 +216,7 @@ p .justified{
 .row.shape-divider {
     background-color: $brand-primary;    
 }
-// Content Container - container used for actual content
 // Not for breadcrumb / nav / footer
-.container-fluid {
-    background-color: $body-bg;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 .container-fluid ul { font-size:18px; }
 .container-fluid ol { font-size: 18px;}
 // Padded row css
