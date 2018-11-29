@@ -4,7 +4,7 @@ js-package: blog
 css-package: blog
 ---
 {% if page.image.featured %}
-        <div class="row overlay" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{page.image.path}}');"> <!--Row -->
+        <div class="row overlay background-image" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{page.image.path}}');"> <!--Row -->
             <div id="featured-jumbotron" class="blog blog-full-page-image-info"> <!--Jumbotron div -->
                     <h1 class="text-center" id="featured-image-blog-title">{{page.title}}</h1>
                     {% if page.author %}
@@ -54,101 +54,97 @@ css-package: blog
                         </small>
                     {% endif %}
                 </div>
-        </div>
-    </div>
+            </div>
 {% endif %}
-
-<div class="container-fluid" id="content-container">
-    <div class="row">
-        <div class="container">
-            {% if site.data.settings.blog.sidebar.display-on-posts %}
-            <div class="col-md-9">
-                    <article class="post-content">
-                        {% unless page.image.featured %}
-                        <div class="post-info">
-                            <h1>{{page.title }}</h1>
-                            {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
-                            {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
-                            {% if page.author %}
-                                {% if site.authors %}
-                                    {% assign author = site.authors | where: "username", page.author | first %}
-                                    {% assign author-url = author.url %}
-                                    {% assign using-data-file = false %}
-                                {% elsif site.data.authors %}
-                                    {% assign using-data-file = true %}
-                                    {% assign author = site.data.authors | where: "username", page.author | first %}
-                                    {% assign author-url = "#" %}
+<div class="row" id="content-container">
+    <div class="container">
+        {% if site.data.settings.blog.sidebar.display-on-posts %}
+        <div class="col-md-9">
+                <article class="post-content">
+                    {% unless page.image.featured %}
+                    <div class="post-info">
+                        <h1>{{page.title }}</h1>
+                        {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
+                        {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
+                        {% if page.author %}
+                            {% if site.authors %}
+                                {% assign author = site.authors | where: "username", page.author | first %}
+                                {% assign author-url = author.url %}
+                                {% assign using-data-file = false %}
+                            {% elsif site.data.authors %}
+                                {% assign using-data-file = true %}
+                                {% assign author = site.data.authors | where: "username", page.author | first %}
+                                {% assign author-url = "#" %}
+                            {% endif %}
+                            <em> By
+                                {% if author %}
+                                    <a href="{{author-url}}">
+                                        <strong>
+                                            {{author.name}}
+                                        </strong>
+                                    </a>
+                                {% else %}
+                                        <strong>
+                                            {{page.author}}
+                                        </strong>
                                 {% endif %}
-                                <em> By
-                                    {% if author %}
-                                        <a href="{{author-url}}">
-                                            <strong>
-                                                {{author.name}}
-                                            </strong>
-                                        </a>
-                                    {% else %}
-                                            <strong>
-                                                {{page.author}}
-                                            </strong>
-                                    {% endif %}
-                                    
-                                </em>
-                            {% endif %}
-                        </div>
-                        {% endunless %}
-                        {{ content }}
-                    </article>
-                    
-                {% comment %}
-                    TAGS - Check to see if the tags_enabled setting in settings.yml data file is toggled.
-                {% endcomment %}
+                                
+                            </em>
+                        {% endif %}
+                    </div>
+                    {% endunless %}
+                    {{ content }}
+                </article>
                 
-                {% include post-tags.html %}
-                
-                {% comment %}
-                    COMMENTS - Check to see if comments are toggled for this particular post.
-                {% endcomment %}
+            {% comment %}
+                TAGS - Check to see if the tags_enabled setting in settings.yml data file is toggled.
+            {% endcomment %}
             
-                {% include disqus-comments.html %}
-                </div>
-                <div class="col-md-3 blog-sidebar no-padding">
-                    {% include post-sidebar.html %}
-                </div>
-                {% else %}
-                <div class="col-xs-12 no-padding">
-                    <article class="post-content">
-                        {% unless page.image.featured %}
-                        <div class="post-info">
-                            <h1>{{page.title }}</h1>
-                            
-                            {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
-                            {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
-                            {% if page.author %}
-                                {% assign author = site.authors | where: 'username' , page.author %}
-                                {% assign author = author[0] %}
-                                <em> By
-                                    {% if author %}
-                                        <a href="{{author-url}}">
-                                            <strong>
-                                                {{author.name}}
-                                            </strong>
-                                        </a>
-                                    {% else %}
-                                            <strong>
-                                                {{page.author}}
-                                            </strong>
-                                    {% endif %}
-                                    
-                                </em>
-                            {% endif %}
-                        </div>
-                        {% endunless %}
-                        {{ content }}
-                    </article>
-                </div>
-                {% endif %}
-                
-                
-        </div>        
-    </div>
+            {% include post-tags.html %}
+            
+            {% comment %}
+                COMMENTS - Check to see if comments are toggled for this particular post.
+            {% endcomment %}
+        
+            {% include disqus-comments.html %}
+            </div>
+            <div class="col-md-3 blog-sidebar no-padding">
+                {% include post-sidebar.html %}
+            </div>
+            {% else %}
+            <div class="col-xs-12 no-padding">
+                <article class="post-content">
+                    {% unless page.image.featured %}
+                    <div class="post-info">
+                        <h1>{{page.title }}</h1>
+                        
+                        {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
+                        {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
+                        {% if page.author %}
+                            {% assign author = site.authors | where: 'username' , page.author %}
+                            {% assign author = author[0] %}
+                            <em> By
+                                {% if author %}
+                                    <a href="{{author-url}}">
+                                        <strong>
+                                            {{author.name}}
+                                        </strong>
+                                    </a>
+                                {% else %}
+                                        <strong>
+                                            {{page.author}}
+                                        </strong>
+                                {% endif %}
+                                
+                            </em>
+                        {% endif %}
+                    </div>
+                    {% endunless %}
+                    {{ content }}
+                </article>
+            </div>
+            {% endif %}
+            
+            
+    </div>        
 </div>
