@@ -435,9 +435,9 @@ nav > ul.navbar-right {
     transition: all 1s ease;
 }
 @media(max-width:$screen-sm-min - 1){
-    #main-navigation ul.dropdown-menu.sub-menu {
-        position: static;
-        width: 100%;
+    #main-navigation .pull-left ul.dropdown-menu.sub-menu {
+        position: static !important;
+        width: 100% !important;
         margin: 0px !important;
     }
     #tabbed-nav-bar .tabbed-nav-btn{
@@ -890,8 +890,8 @@ li.dropdown-submenu.sub-menu.pull-left {
     width: 100%;
 }
 #main-navigation .pull-left ul.dropdown-menu.sub-menu {
-    margin-left: -3px !important;
-    margin-top: 0px !important;
+    margin-left: -3px;
+    margin-top: 0px;
     text-align:  right;
 }
 #main-navigation ul.dropdown-menu.sub-menu {
