@@ -54,6 +54,15 @@ button.owl-prev, button.owl-next {
     float: right;
     margin-right: 15px;
 }
+a.btn.btn-primary {
+    background-color:#3c3b39;
+    color:white;
+    border-radius:0px;
+    border:0;
+}
+a.btn.btn-primary:hover {
+    background-color:$brand-primary;
+}
 // Edit me on github buttons
 .github-edit {
     background-color: #fff;
