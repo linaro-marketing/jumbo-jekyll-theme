@@ -414,7 +414,9 @@ nav > ul.navbar-right {
         background-color: $navbar-inverse-bg;
     }
 }
-
+.navbar-brand svg {
+    height: $navbar-height;
+}
 #tabbed-nav-bar .collapse{
     margin-bottom:-1px;
     z-index: 1;
