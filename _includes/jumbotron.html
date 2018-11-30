@@ -6,6 +6,11 @@
 {% endif %}> <!--Row -->
     <div id="jumbotron-content" class=" flex-container"> <!--Jumbotron div -->        
         <div class="container flex-center" id="jumbotron-text"> <!--Container -->
+        {% if page.jumbotron.image %}
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{page.jumbotron.image}}"
+            class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %} img-responsive center-block lazyload"
+             alt="{{site.title}} homepage header image.">
+        {% endif %}
         {% if page.jumbotron.title %}
             {% if page.jumbotron.title.lines %}
                 <h1>
