@@ -15,8 +15,8 @@ body {
 .container-fluid.home{
     overflow-x: hidden;
 }
-#wrapper .container-fluid {
-    background-color: $body-bg;
+.content-row{
+    background-color:$body-bg;
 }
 // Iphone Bug Fix
 html.ios7 body {
