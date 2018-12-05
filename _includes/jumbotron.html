@@ -55,6 +55,9 @@
             {% endfor %}
         </p>
         {% endif %}
+        {% if page.jumbotron.include %}
+            {% include {{page.jumbotron.include}} %}
+        {% endif %}
         </div><!-- End Jumbotron Container Div -->  
     </div> <!--End Jumbotron div -->        
 </div> <!--row -->
