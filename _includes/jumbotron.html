@@ -7,77 +7,75 @@
     <div class="row {% if site.data.settings.home.jumbotron.background-image.darken %}overlay{% endif %}"> <!--Row -->
         <div id="featured-jumbotron"> <!--Jumbotron div -->        
           <div class="container" id="jumbotron-text"> <!--Container -->
-              
-              
-              {% if site.data.settings.home.jumbotron.included_file %}
-                {% include {{site.data.settings.home.jumbotron.included_file}} %}
-              {% else %}
-              
-              {% if site.data.settings.home.jumbotron.image %}
-                  <div class="col-md-12">
-                      <img src="{% asset_path '{{site.data.settings.home.jumbotron.image}}'  %}" id="home-hero-image"
-                       class="img-responsive center-block animated fadeIn" alt="{{site.title}} Home Page Image">
-                  </div>
-              {% endif %}
-              
-              {% if site.data.settings.home.jumbotron.title %}
+                {% if page.jumbotron.included_file %}
+                    {% include {{page.jumbotron.included_file}} %}
+                {% else %}
+                    {% if site.data.settings.home.jumbotron.image %}
+                        <div class="col-md-12">
+                            <img src="{% asset_path '{{site.data.settings.home.jumbotron.image}}'  %}" id="home-hero-image"
+                            class="img-responsive center-block animated fadeIn" alt="{{site.title}} Home Page Image">
+                        </div>
+                    {% endif %}
                     
-                  <h1 id="home-page-title" class="fade-in-one" id="homepage-heading">
-                      {% if site.data.settings.home.jumbotron.title.first-line.display %}
-                        {% if site.data.settings.home.jumbotron.title.first-line.bold %}
-                            <strong>
-                                {{site.data.settings.home.jumbotron.title.first-line.text}}
-                            </strong>
-                        {% else %}
-                            {{site.data.settings.home.jumbotron.title.first-line.text}}
-                        {% endif %}
-                      {% endif %}
-                      {% if site.data.settings.home.jumbotron.title.second-line.display %}
-                            {% if site.data.settings.home.jumbotron.title.second-line.bold %}
-                                <br /><strong>{{site.data.settings.home.jumbotron.title.second-line.text}}</strong>
-                            {% else %}
-                                <br />{{site.data.settings.home.jumbotron.title.second-line.text}}
+                    {% if site.data.settings.home.jumbotron.title %}
+                            
+                        <h1 id="home-page-title" class="fade-in-one" id="homepage-heading">
+                            {% if site.data.settings.home.jumbotron.title.first-line.display %}
+                                {% if site.data.settings.home.jumbotron.title.first-line.bold %}
+                                    <strong>
+                                        {{site.data.settings.home.jumbotron.title.first-line.text}}
+                                    </strong>
+                                {% else %}
+                                    {{site.data.settings.home.jumbotron.title.first-line.text}}
+                                {% endif %}
                             {% endif %}
-                      {% endif %}
-                  </h1>
-              {% endif %}
-              
-              {% if site.data.settings.home.jumbotron.sub-title %}
-                <p id="home-page-text" class="sub-tag center-block fade-in-two">
-                    {% if site.data.settings.home.jumbotron.sub-title.first-line.display %}
-                        {% if site.data.settings.home.jumbotron.sub-title.first-line.bold %}
-                            <strong>
-                                <span>{{site.data.settings.home.jumbotron.sub-title.first-line.text}}</span>
-                            </strong>
-                        {% else %}
-                            <span>{{site.data.settings.home.jumbotron.sub-title.first-line.text}}</span>
-                        {% endif %}
+                            {% if site.data.settings.home.jumbotron.title.second-line.display %}
+                                    {% if site.data.settings.home.jumbotron.title.second-line.bold %}
+                                        <br /><strong>{{site.data.settings.home.jumbotron.title.second-line.text}}</strong>
+                                    {% else %}
+                                        <br />{{site.data.settings.home.jumbotron.title.second-line.text}}
+                                    {% endif %}
+                            {% endif %}
+                        </h1>
                     {% endif %}
-                    {% if site.data.settings.home.jumbotron.sub-title.second-line.display %}
-                        {% if site.data.settings.home.jumbotron.sub-title.second-line.bold %}
-                            <br />
-                            <strong>
-                                <span>{{site.data.settings.home.jumbotron.sub-title.second-line.text}}</span>
-                            </strong>
-                        {% else %}
-                            <span>{{site.data.settings.home.jumbotron.sub-title.second-line.text}}</span>
-                        {% endif %}
+                    
+                    {% if site.data.settings.home.jumbotron.sub-title %}
+                        <p id="home-page-text" class="sub-tag center-block fade-in-two">
+                            {% if site.data.settings.home.jumbotron.sub-title.first-line.display %}
+                                {% if site.data.settings.home.jumbotron.sub-title.first-line.bold %}
+                                    <strong>
+                                        <span>{{site.data.settings.home.jumbotron.sub-title.first-line.text}}</span>
+                                    </strong>
+                                {% else %}
+                                    <span>{{site.data.settings.home.jumbotron.sub-title.first-line.text}}</span>
+                                {% endif %}
+                            {% endif %}
+                            {% if site.data.settings.home.jumbotron.sub-title.second-line.display %}
+                                {% if site.data.settings.home.jumbotron.sub-title.second-line.bold %}
+                                    <br />
+                                    <strong>
+                                        <span>{{site.data.settings.home.jumbotron.sub-title.second-line.text}}</span>
+                                    </strong>
+                                {% else %}
+                                    <span>{{site.data.settings.home.jumbotron.sub-title.second-line.text}}</span>
+                                {% endif %}
+                            {% endif %}
+                        </p>
                     {% endif %}
-                </p>
-              {% endif %}
-                
-              {% if site.data.settings.home.jumbotron.buttons %}
-                    <p id="buttons">
-                        {% for button in  site.data.settings.home.jumbotron.buttons %}
-                            <a class="{{button.class}}" href="{{button.url}}" role="button">
-                                {{button.text}}
-                            </a>
-                        {% endfor %}
-                    </p>
-              {% endif %}
-        
-          {% endif %}
-             
+                        
+                    {% if site.data.settings.home.jumbotron.buttons %}
+                        <p id="buttons">
+                            {% for button in  site.data.settings.home.jumbotron.buttons %}
+                                <a class="{{button.class}}" href="{{button.url}}" role="button">
+                                    {{button.text}}
+                                </a>
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                    {% if page.jumbotron.include %}
+                        {% include {{page.jumbotron.include}} %}
+                    {% endif %}
+                {% endif %}
           </div><!-- End Jumbotron Container Div -->  
           {% if site.data.settings.home.shaped-divider %}
             {% include shape-divider.html %}
