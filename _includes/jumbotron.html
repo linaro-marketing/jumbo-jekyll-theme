@@ -1,9 +1,14 @@
-<div class="row {% if page.jumbotron.background-image %}background-image {% endif %}{% if site.data.settings.jumbotron.darken %}overlay{% endif %}" id="jumbotron" 
+<div class="{% if page.jumbotron.video %}video {% endif %}row {% if page.jumbotron.background-image %}background-image {% endif %}{% if site.data.settings.jumbotron.darken %}overlay{% endif %}" id="jumbotron" 
 {% if page.jumbotron.background-image %}
     style="background-image: url('{{page.jumbotron.background-image}}');"
 {% else %}
     class="jumbotron text-center featured-jumbotron"
 {% endif %}> <!--Row -->
+    {% if page.jumbotron.video %}
+    <video autoplay muted preload="none" poster="{{page.jumbotron.video.poster}}" loop id="jumbotronVideo">
+        <source src="{{page.jumbotron.video.source}}" type="video/mp4">
+    </video>
+    {% endif %}
     <div id="jumbotron-content" class=" flex-container"> <!--Jumbotron div -->        
         <div class="container flex-center" id="jumbotron-text"> <!--Container -->
         {% if page.jumbotron.image %}
