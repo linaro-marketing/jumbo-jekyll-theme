@@ -32,6 +32,27 @@ div#jumbotron-content {
     width: 100%;
     z-index: -1;
 }
+video#jumbotronVideo {    
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    top:0px;
+    z-index:-2;
+}
+div#jumbotron.video {
+    height: 600px !important;
+}
+div#jumbotron.video:before {
+    height: 600px !important;
+}
+div#jumbotron.video h1#jumbotron-heading {
+    font-size: 50px;
+}
+div#jumbotron.video div#jumbotron-content {
+    height:600px;
+}
 div#jumbotron.background-image {
     background-size: cover !important;
     background-position: center center !important;
