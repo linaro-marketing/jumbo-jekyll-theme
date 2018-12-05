@@ -673,3 +673,37 @@ ul {
     border: 1px solid #000000;
     color:white;
 }
+.padded-row-30 {
+    padding: 30px 0;
+}
+.content-row {
+    background-color: white;
+    position: relative;
+}
+#wrapper p.home-text {
+    font-size: 22px;
+    text-align: center;
+}
+#wrapper .text-white {
+    color:white;
+}
+#wrapper a.btn.btn-block-center {
+    display:block;
+    width:100px;
+    margin: 10px auto;
+    position: relative;
+}
+$spaceamounts: (10, 20, 30, 40, 50, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+  
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
