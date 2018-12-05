@@ -6,7 +6,15 @@
 {% endif %}> <!--Row -->
     {% if page.jumbotron.video %}
     <video autoplay muted preload="none" poster="{{page.jumbotron.video.poster}}" loop id="jumbotronVideo">
-        <source src="{{page.jumbotron.video.source}}" type="video/mp4">
+        {% if page.jumbotron.video.source.mp4 %}
+            <source src="{{page.jumbotron.video.source.mp4}}" type="video/mp4">
+        {% endif %}
+        {% if page.jumbotron.video.source.ogg %}
+            <source src="{{page.jumbotron.video.source.ogg}}" type="video/ogg">
+        {% endif %}
+        {% if page.jumbotron.video.source.webm %}
+            <source src="{{page.jumbotron.video.source.webm}}" type="video/webm">
+        {% endif %}
     </video>
     {% endif %}
     <div id="jumbotron-content" class=" flex-container"> <!--Jumbotron div -->        
