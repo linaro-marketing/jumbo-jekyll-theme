@@ -16,10 +16,13 @@ error-pages:
   svg: linaro-404.html
   not-found-title: 404 page not found!
   not-found-desc: Sorry, but the page you were looking for could not be found.
+
 # Blog setup
 blog:
     # Show Thumbnails in the post index
     show_thumbnails: true
+    # Reading time
+    reading_time: true
     # Toggle site wide comments display.
     comments: true
     # Post Side Bar Settings
