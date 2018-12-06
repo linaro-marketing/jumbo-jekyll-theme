@@ -5,8 +5,9 @@ css-package: blog
 ---
 {% if page.image.featured %}
         <div class="row overlay background-image" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{page.image.path}}');"> <!--Row -->
-            <div id="featured-jumbotron" class="blog blog-full-page-image-info"> <!--Jumbotron div -->
-                    <h1 class="text-center" id="featured-image-blog-title">{{page.title}}</h1>
+                <div id="jumbotron-content" class="flex-container"> <!--Jumbotron div -->        
+                    <div class="container flex-center" id="jumbotron-text"> <!--Container -->
+                    <h1 id="jumbotron-heading">{{page.title}}</h1>
                     {% if page.author %}
                         {% assign author = site.authors | where: "username", page.author | first %}
                         {% assign author-url = author.url %}
@@ -32,29 +33,29 @@ css-package: blog
                             /assets/images/avatar-placeholder.png
                         {% endif %})" />
                         </a>
-                        <br />
                         <small class="blog-author text-center">
                             By 
                             <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
                             and
                             <em>{% if co-author.name %}{{co-author.name}}{% else %}{{page.co-author}}{% endif %}</em>
                         </small>
-                        <br />
                     {% else %}
-                        <br />
                         <small class="blog-author text-center">
                             By
                             <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
                         </small>
-                        <br />
                     {% endif %}
                     {% if page.date %}
                         <small class="blog-date text-center">
                             <em>{{page.date |  date: "%A, %B %-d, %Y"}}</em>
                         </small>
                     {% endif %}
+                    {% if site.data.settings.blog.reading_time %}
+                        {% include read_time.html %}
+                    {% endif %}
                 </div>
             </div>
+        </div>
 {% endif %}
 <div class="row" id="content-container">
     <div class="container">
