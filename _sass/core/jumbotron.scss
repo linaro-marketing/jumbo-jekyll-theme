@@ -1,7 +1,7 @@
 /* Home Page Jumbotron Div */
 div#jumbotron-content {
     text-align: center;
-    min-height: $jumbotron-height;
+    height: $jumbotron-height;
 }
 #jumbotron-image:before {
     content: '';
@@ -110,4 +110,7 @@ div.jumbotron-image{
     -o-background-size: cover;
     background-size: cover;
     background-position: center center;
+}
+#jumbotron small {
+    font-size: 14px;
 }
