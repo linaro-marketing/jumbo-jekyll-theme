@@ -707,3 +707,8 @@ $sides: (top, bottom, left, right); // Leave this variable alone
     }
   }
 }
+@media(max-width: $screen-sm-min - 1){
+    .text-center-mob {
+        text-align:center !important;
+    }
+}
