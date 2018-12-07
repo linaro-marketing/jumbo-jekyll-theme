@@ -12,12 +12,11 @@ css-package: blog
                         {% assign author = site.authors | where: "username", page.author | first %}
                         {% assign author-url = author.url %}
                         <a href="{{author-url}}">
-                            <img class="blog-author-image" style="
-                            background-image:url({% if author.image.path %}
+                            <div class="blog-author-image lazyload" data-bg="{% if author.image.path %}
                             '{{author.image.path}}'
                             {% else %}
                             /assets/images/'avatar-placeholder.png'
-                            {% endif %})" />
+                            {% endif %}"></div>
                         </a>
                     {% endif %}
                     {% if page.co-author %}
@@ -26,12 +25,11 @@ css-package: blog
                             {% assign co-author-url = co-author.url %}
                         {% endif %}
                         <a href="{{co-author-url}}">
-                            <img class="blog-author-image" style="
-                        background-image:url({% if co-author.image.name %}
-                            {{co-author.image.name}}
+                            <div class="blog-author-image lazyload" data-bg="{% if co-author.image.name %}
+                            {{co-author.image.path}}
                         {% else %}
                             /assets/images/avatar-placeholder.png
-                        {% endif %})" />
+                        {% endif %}"></div>
                         </a>
                         <small class="blog-author text-center">
                             By 
