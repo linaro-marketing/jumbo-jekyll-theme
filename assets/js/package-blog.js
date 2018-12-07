@@ -4,6 +4,7 @@
 //= require vendor/cookieconsent
 //= require vendor/lazysizes
 //= require vendor/featherlight
+//= require vendor/disqus-loader
 
 //= require app/main
 //= require app/search
