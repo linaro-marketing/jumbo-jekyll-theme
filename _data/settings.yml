@@ -4,7 +4,8 @@ favicon: favicon.png
 placeholder: /assets/images/placeholder.png
 # Footer Newsletter toggle.
 newsletter:
-    enabled: false
+    enabled: true
+    url: https://96boards.us3.list-manage.com/subscribe/post?u=14baaae786342d0d405ee59c2&amp;id=e3d2abc041
 tags_enabled: true
 # Settings for the home page
 jumbotron:
@@ -16,7 +17,6 @@ error-pages:
   svg: linaro-404.html
   not-found-title: 404 page not found!
   not-found-desc: Sorry, but the page you were looking for could not be found.
-
 # Blog setup
 blog:
     # Show Thumbnails in the post index
@@ -69,12 +69,12 @@ blog:
 #             country_code: UK
 # Disqus Comments
 disqus:
-    enabled: false
+    enabled: true
     shortname: http-www-jumbojekyll-co-uk
 # # Mailchimp settings
-# mailchimp:
-#     enabled: true
-#     id: af6cf590b0
+mailchimp:
+    enabled: true
+    id: af6cf590b0
 # # Breadcrumb Settings
 # breadcrumb:
 #     image: breadcrumb-image.jpg
