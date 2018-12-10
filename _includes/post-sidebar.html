@@ -13,7 +13,7 @@
                     <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
                             {% if post.image.thumb %}
                                     {% capture image_path %}{{site.blog_images_dir}}{{post.image.thumb}}{% endcapture %}
-                                    {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
+                                    {% capture full_path %}/{{site.blog_images_dir}}{{post.image.thumb}}{% endcapture %}
                                     {% responsive_image_block %}
                                     template: _includes/thumb.html
                                     path: {{ image_path }}
@@ -57,7 +57,7 @@
                 <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
                     {% if post.image.thumb %}
                         {% capture image_path %}{{site.blog_images_dir}}{{post.image.thumb}}{% endcapture %}
-                        {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
+                        {% capture full_path %}/{{site.blog_images_dir}}{{post.image.thumb}}{% endcapture %}
                         {% responsive_image_block %}
                         template: _includes/thumb.html
                         path: {{ image_path }}
