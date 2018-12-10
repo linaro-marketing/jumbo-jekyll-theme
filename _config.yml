@@ -14,7 +14,7 @@ theme: jumbo-jekyll-theme
 # Syntax highlighter
 highlighter: rouge
 # Blog images/thumbs dir
-blog_images_dir: assets/images/blog/
+blog_images_dir: assets/images/blog/thumbs/
 # Markdown flavour used by Jekyll to parse markdown.
 markdown: kramdown
 # Default character encoding
