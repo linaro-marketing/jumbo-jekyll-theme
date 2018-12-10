@@ -15,7 +15,7 @@
                                     {% capture image_path %}assets/images/content/{{post.image.thumb}}{% endcapture %}
                                     {% capture full_path %}/assets/images/content/thumbs/{{post.image.thumb}}{% endcapture %}
                                     {% responsive_image_block %}
-                                    template: _includes/images/thumb.html
+                                    template: _includes/thumb.html
                                     path: {{ image_path }}
                                     fullpath: {{ full_path }}
                                     {% if post.title %}
@@ -59,7 +59,7 @@
                         {% capture image_path %}assets/images/content/{{post.image.thumb}}{% endcapture %}
                         {% capture full_path %}/assets/images/content/thumbs/{{post.image.thumb}}{% endcapture %}
                         {% responsive_image_block %}
-                        template: _includes/images/thumb.html
+                        template: _includes/thumb.html
                         path: {{ image_path }}
                         fullpath: {{ full_path }}
                         {% if post.title %}
