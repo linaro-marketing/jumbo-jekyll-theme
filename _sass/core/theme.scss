@@ -601,6 +601,10 @@ blockquote:before {
 #content-container{
     padding-top:20px;
 }
+.row.content {
+    position: relative;
+    background-color: white;
+}
 /* VCenter Img*/
 .vcenter-img {
     display: inline-block;
