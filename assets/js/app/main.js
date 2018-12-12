@@ -138,8 +138,7 @@ $(document).ready(function () {
 
         // prevents the loaded image if it is already loaded
         var src = $nextImage.attr('data-src');
-        console.log(src);
-
+        
         if (typeof src !== "undefined" && src != "") {
         $nextImage.css('background-image', 'url(' + src + ')');
         $nextImage.data('data-src', '');
