@@ -5,7 +5,6 @@
 //= require vendor/lazysizes
 //= require vendor/ls.unveilhooks
 //= require vendor/featherlight
-//= require vendor/disqus-loader
 //= require app/sticky-tab-bar
 
 //= require app/main
