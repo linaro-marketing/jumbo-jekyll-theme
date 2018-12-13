@@ -1,9 +1,8 @@
 ---
-layout: full-width
+layout: default
 ---
-<div class="container">
-    {{content}}
-</div>
-
-
-    
+{% if page.carousel %}
+    {% include carousel-header.html images=site.page.images %}
+{% endif %}
+{% include jumbotron.html %}
+{{content}}

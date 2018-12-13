@@ -1,9 +1,10 @@
+{% if page.sticky-tab-bar %}
+{% assign tab-list = page.sticky-tab-bar %}
+{% else %}
 {% assign sub-nav-tabs = site.data.sticky-tab-bar.pages %}
-
+{% endif %}
 {% if sub-nav-tabs %}
-
     {% assign page-base =  page.url | split:'/' %}
-    
     {% for each in sub-nav-tabs %}
         {% for each-url in each.urls %}
             {% if each-url == page.url %}
@@ -20,19 +21,17 @@
             {% assign custom-include = each.custom-include %}
         {% endif %}
     {% endfor %}
-    
-    
-    {% if tab-list %}
-
+{% endif %}
+{% if tab-list %}
 <div class="tabbed-area non-sticky-nav" id="tabbed-nav-bar"><!-- Nav tabs Wrapper-->
     <nav class="navbar-default" role="navigation"><!-- Nav -->
         <div class="container">
             <div class="navbar-header"><!-- Navbar Header -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tabbed-nav-bar-collapse">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tabbed-nav-bar-collapse">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
                 </button><!-- Navbar Icon Bar Toggle -->
                 <a class="navbar-brand" id="sub-navigation-header" href=""></a><!-- Navbar Brand -->
             </div>
@@ -42,6 +41,8 @@
                         <li role="presentation" {% if page.url == tab.url %}
                                                     class="active tabbed-nav-btn {% if tab.right %}pull-right{% endif %}"
                                                 {% elsif tab.sub-pages and page.url contains tab.url %}
+                                                    class="active tabbed-nav-btn {% if tab.right %}pull-right{% endif %}"
+                                                {% elsif tab.active %}
                                                     class="active tabbed-nav-btn {% if tab.right %}pull-right{% endif %}"
                                                 {% else %}
                                                     class="tabbed-nav-btn {% if tab.right %}pull-right{% endif %}"
@@ -53,11 +54,8 @@
         </div>
     </nav>
 </div>
-    {% elsif custom-include %}
-        {% include {{custom-include}}.html %}
-    {% else %}
-No sticky-nav.yml content found - please add to _data/sticky-tab-bar.yml. More information available <a href="/jekyll/includes/sticky-tab-bar/">here</a>.
-    {% endif %}
+{% elsif custom-include %}
+    {% include {{custom-include}}.html %}
 {% else %}
-No sidebar settings found - please create a _data/sticky-tab-bar.yml data file. More information available <a href="/jekyll/includes/sticky-tab-bar/">here</a>.
+No sticky-nav.yml content found - please add to _data/sticky-tab-bar.yml. More information available <a href="/jekyll/includes/sticky-tab-bar/">here</a>.
 {% endif %}

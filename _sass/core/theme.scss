@@ -8,19 +8,33 @@ body {
     font-family: $font-family-sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-
 /* ------------ Main Container Style margin accounts for Nav ----------- */
-#wrapper.main{
+.container-fluid.main{
     overflow-x: hidden;
 }
-#wrapper.home{
+.container-fluid.home{
     overflow-x: hidden;
 }
-
+.content-row{
+    background-color:$body-bg;
+}
 // Iphone Bug Fix
-html.ios7 body {height: 100%;position: fixed;width: 100%;}
+html.ios7 body {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+.ext-left {
+    float: left;
+}
 
-
+.ext-right {
+    height: auto;
+    vertical-align: middle;
+    display: table-cell;
+    padding-right: 10px;
+    padding-left: 10px;
+}
 // HTML Style
 html {
  height  : 100%;
@@ -42,6 +56,15 @@ button.owl-prev, button.owl-next {
     top: 30px;
     float: right;
     margin-right: 15px;
+}
+a.btn.btn-primary {
+    background-color:#3c3b39;
+    color:white;
+    border-radius:0px;
+    border:0;
+}
+a.btn.btn-primary:hover {
+    background-color:$brand-primary;
 }
 // Edit me on github buttons
 .github-edit {
@@ -175,55 +198,43 @@ p {
     word-wrap: break-word;
 }
 
-#content-container p.justify {
+.container-fluid p.justify {
     font-size: 16px;
     text-align: justify;
     line-height: 1.66em;
 }
 
-#content-container h2 {
+.container-fluid h2 {
     font-size: 30px;
     color: #3D383E;
+    font-weight: 200;
     text-transform: none;
 }
-
-
 /* Padded Para */
 .padded-para{
     padding:20px;
 }
-
 /* Spaced Paragraph */
 #spaced-para{
     font-size: 18px;
     line-height: 40px;
 }
-
 /* Justified Paragraph */
 p .justified{
     text-align: justify;
     text-justify: inter-word;
 }
-
 /* Shape Divider - Home Page */
 .row.shape-divider {
     background-color: $brand-primary;    
 }
-// Content Container - container used for actual content
 // Not for breadcrumb / nav / footer
-
-#content-container {
-    background-color: $body-bg;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.container-fluid ul { font-size:18px; }
+.container-fluid ol { font-size: 18px;}
+// Padded row css
+.padded-row {
+    padding: 100px 0;
 }
-
-
-#content-container ul { font-size:18px; }
-#content-container ol { font-size: 18px;}
-
-
-
 //Homepage Sub Tag
 p.sub-tag {
     width: 65%;
@@ -418,7 +429,7 @@ button#c-submit-button {
         font-size: 25px;
     }
     //Remove the padding from columns on mobile views
-    #content-container .col-md-3, #content-container .col-md-9 {
+    .container-fluid .col-md-3, .container-fluid .col-md-9 {
         padding-left:0;
         padding-right:0;
     }
@@ -546,8 +557,8 @@ img.img-responsive.right-aligned-image {
 }
 
 /* Wordpress Styles */
-#content-container blockquote, #content-container code, #content-container dl, #content-container fieldset,
-#content-container p, #content-container pre, #content-container table{
+.container-fluid blockquote, .container-fluid code, .container-fluid dl, .container-fluid fieldset,
+.container-fluid p, .container-fluid pre, .container-fluid table{
     margin-bottom: 25px;
 }
 
@@ -562,12 +573,12 @@ ul#tab-row {
     margin-bottom: 20px;
 }
 
-#content-container a:hover {
+.container-fluid a:hover {
     text-decoration: none;
     color: darken($brand-primary, 20%);
 }
 
-#content-container ul {
+.container-fluid ul {
     color: #252525;
     font-size: 16px;
 }
@@ -587,7 +598,13 @@ blockquote:before {
     width: 32px;
     height: 35px;
 }
-
+#content-container{
+    padding-top:20px;
+}
+.row.content {
+    position: relative;
+    background-color: white;
+}
 /* VCenter Img*/
 .vcenter-img {
     display: inline-block;
@@ -595,36 +612,107 @@ blockquote:before {
     height: 110px;
 }
 
+#wrapper {
+    overflow-x: hidden;
+}
 
-#content-container h1 {
+.container-fluid h1 {
     font-size: 36px;
     margin-top: 0;
 }
 
-#content-container h1, #content-container h2, #content-container h3, #content-container h4, #content-container h5 {
+.container-fluid h1, .container-fluid h2, .container-fluid h3, .container-fluid h4, .container-fluid h5 {
     color: #393836;
 }
 
 /* Bootstrap Panels*/
-#wrapper .panel-body {
+.container-fluid .panel-body {
     padding: 0;
     border-radius: 0;
 }
 
-#wrapper .panel.panel-primary {
+.container-fluid .panel.panel-primary {
     padding: 0;
     border-radius: 0px;
 }
 
-#wrapper .panel-heading {
+.container-fluid .panel-heading {
     border-radius: 0px;
     border: 1px solid $brand-primary;
 }
 
-#wrapper h3.panel-title {
+.container-fluid h3.panel-title {
     color: $navbar-text-color;
 }
 
 ul {
     font-size: 16px;
+}
+// FlexBox
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.flex-container {
+    display: flex;
+}
+// Email Button
+.container-fluid .email {
+    height: 50px;
+    background-color: $brand-primary;
+    width: 200px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #9e9e9e;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 200ms ease;
+}
+.container-fluid .email:hover {
+    background-color: #3a3a3a;
+    border: 1px solid #000000;
+    color:white;
+}
+.padded-row-30 {
+    padding: 30px 0;
+}
+.content-row {
+    background-color: white;
+    position: relative;
+}
+#wrapper p.home-text {
+    font-size: 22px;
+    text-align: center;
+}
+#wrapper .text-white {
+    color:white;
+}
+#wrapper a.btn.btn-block-center {
+    display:block;
+    width:100px;
+    margin: 10px auto;
+    position: relative;
+}
+$spaceamounts: (10, 20, 30, 40, 50, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+  
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+@media(max-width: $screen-sm-min - 1){
+    .text-center-mob {
+        text-align:center !important;
+    }
 }

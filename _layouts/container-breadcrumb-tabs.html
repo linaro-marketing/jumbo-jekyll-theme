@@ -1,7 +1,10 @@
 ---
-layout: full-width-breadcrumb
+layout: default
 ---
-{% include sticky-tab-bar.html %}
-<div class="container">
-    {{content}}
+{% include breadcrumb.html %}
+<div class="row" id="content-container">
+    {% include sticky-tab-bar.html %}
+    <div class="container">
+        {{ content }}
+    </div>
 </div>

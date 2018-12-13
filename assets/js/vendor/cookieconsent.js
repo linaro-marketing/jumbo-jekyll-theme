@@ -1493,12 +1493,3 @@
   window.cookieconsent = cc;
 
 }(window.cookieconsent || {}));
-
-
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-  },
-  "theme": "classic",
-  "position": "bottom-right"
-})});

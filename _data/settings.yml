@@ -1,97 +1,28 @@
 # Custom Favicon
 favicon: favicon.png
-
-# # Mailchimp settings
-# mailchimp:
-#     enabled: true
-#     id: af6cf590b0
-
+# Placeholder for Missing Images
+placeholder: /assets/images/placeholder.png
 # Footer Newsletter toggle.
 newsletter:
-    enabled: false
-    
+    enabled: true
+    url: https://96boards.us3.list-manage.com/subscribe/post?u=14baaae786342d0d405ee59c2&amp;id=e3d2abc041
 tags_enabled: true
-    
-# Footer Image default is linaro sprinkle
-linaro-footer-image: Linaro-Sprinkle.png
-
-# # Breadcrumb Settings
-# breadcrumb:
-#     image: breadcrumb-image.jpg
-
-
-#Content Repo for static site.
-# Used for the edit on github include
-
-# edit-on-github:
-#     enabled: true
-#     repo: https://www.github.com/Linaro/website
-    # docs: https://www.github.com/Linaro/website
-    
 # Settings for the home page
-home:
-    #Content Background Image E.g. DeviceTree.org
-    # content-image: background-image.png
-    # If this is set then the navigation will be transparent.
-    transparent-nav: true
-    # If this is set to true then the shape divider will be displayed
-    shaped-divider: true
-    # Jumbotron settings for the home page
-    jumbotron:
-        # Include file to replace all the contents of the jumbotron with.
-        included_file: hero-banner.html
-        # Toggle the jumbotron
-        enabled: true
-        # Title for the home page jumbotron
-        title:
-            first-line: 
-                text: Welcome to the
-                display: true
-                bold: false
-            second-line: 
-                text: Jumbo Jekyll Theme
-                display: true
-                bold: true
-        # Text to be displayed in the home page jumbotron
-        sub-title:
-            first-line:
-                text: A theme for Linaro Static Jekyll sites.
-                display: true
-                bold: false
-            second-line: 
-                text: Customize this content in the _data/settings.yml
-                display: false
-                bold: false
-        # Buttons to be displayed in the Jumbotron
-        buttons:
-            - text: Learn More
-              class: btn btn-primary btn-lg fade-in-three bottom-border-five
-              url: /about/
-            - text: Get Started
-              url: 
-              class: btn btn-primary btn-lg fade-in-three bottom-border-five
-        # Background image for the home page located in assets/images
-        # background-image:
-        #     # Darken is set to true by default - if you wish to remove the image overlay
-        #     # then change this setting to false.
-        #     darken: true
-        #     # This is the name of the background-image located in /assets/images/
-        #     name: background-image.jpg
-        # image: devicetree-icon-white.png
-
-# Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
-# github_username: Linaro
-# linkedin_username: 1026961
-# google_plus_username: +LinaroOnAir
-# facebook_username: LinaroOrg
-# youtube_username: linaroorg
-# twitter_username: linaroorg
-# slideshare_username: linaroorg
-
+jumbotron:
+    # Darken is set to true by default - if you wish to remove the image overlay
+    # then change this setting to false.
+    darken: true
+error-pages:
+  # image: /assets/images/content/path-to-image.jpg
+  svg: linaro-404.html
+  not-found-title: 404 page not found!
+  not-found-desc: Sorry, but the page you were looking for could not be found.
 # Blog setup
 blog:
     # Show Thumbnails in the post index
     show_thumbnails: true
+    # Reading time
+    reading_time: true
     # Toggle site wide comments display.
     comments: true
     # Post Side Bar Settings
@@ -113,12 +44,10 @@ blog:
         # Display the most recent posts
         most-recent-posts:
             display: true
-            count: 5
-                  
+            count: 5  
 # Google Anayltics Setup
 # google:
 #     tag_manager: GTM-5DLPJQ
-
 # Shema.org settings used in the schema.html include.
 # schema:
 #     enabled: true
@@ -138,11 +67,27 @@ blog:
 #             county: Cambridge 
 #             post_code: CB22 7GG
 #             country_code: UK
+# Disqus Comments
+disqus:
+    enabled: true
+    shortname: http-www-jumbojekyll-co-uk
+# # Mailchimp settings
+mailchimp:
+    enabled: true
+    id: af6cf590b0
+# # Breadcrumb Settings
+# breadcrumb:
+#     image: breadcrumb-image.jpg
 
-# # Disqus Comments
-# disqus:
-#     enabled: false
-#     shortname: Linaro
-
-# Placeholder for Missing Images
-placeholder: placeholder.jpg
+# edit-on-github:
+#     enabled: true
+#     repo: https://www.github.com/Linaro/website
+#     docs: https://www.github.com/Linaro/website 
+# Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
+# github_username: Linaro
+# linkedin_username: 1026961
+# google_plus_username: +LinaroOnAir
+# facebook_username: LinaroOrg
+# youtube_username: linaroorg
+# twitter_username: linaroorg
+# slideshare_username: linaroorg

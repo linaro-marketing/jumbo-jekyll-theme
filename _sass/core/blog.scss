@@ -85,7 +85,7 @@ img.img-thumbnail {
 .blog-featured-img-container{
     position: relative;
 }
-.blog-full-page-image-info{
+#jumbotron-content{
     color: $featured-image-text-color;
     margin-left: auto;
     margin-bottom: 82px;
@@ -104,7 +104,7 @@ img.img-thumbnail {
     font-size: 56px;
 }
 .panel-primary {
-    border: 1px solid $brand-primary;
+    border: 1px solid #7b7b7b;
 }
 .panel-heading {
     background-color: $brand-primary;
@@ -248,9 +248,6 @@ div.tag_cloud {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-div#featured-jumbotron.blog {
-    margin-top: 0;
-}
 div.previous_post{
     display:none;
 }
@@ -312,7 +309,9 @@ img.large-inline.right {
 
 // Previous and Next Post Style
 @media(min-width:$screen-sm-min){
-    
+    #jumbotron small {
+        font-size:15px;
+    }
     
     article{
         padding-right: 20px;
@@ -337,10 +336,6 @@ img.large-inline.right {
 }
 //Responsive CSS for Blog
 @media(max-width:$screen-sm-min){
-    .blog-full-page-image-info {
-        height: 360px;
-    }
-
     .blog-title{
         width:95%;
         font-size: 34px;
@@ -363,21 +358,12 @@ img.large-inline.right {
     h1#featured-image-blog-title {
         font-size: 26px;
     }
-
-
-
 }
-
-
 @media (max-width: $screen-xs-min) {
-    
-    
     article.post-content > .col-md-4 {
         padding: 0px;
     }
-    
 }
-
 @media(max-width: $screen-md-min - 1){
     /* Blog Sidebar */
     .col-md-3.blog-sidebar {
@@ -385,12 +371,10 @@ img.large-inline.right {
         padding-right: 0px;
         padding-left: 0px;
     }
-    
     .featured_blog_post img.img-responsive {
         padding-right: 10px;
     }
 }
-
 // Blog Side Panel Styles
 .featured_post_post > .row {
     padding: 5px;
@@ -437,5 +421,18 @@ img.large-inline.right {
 .featured_blog_post  small em {
     color:black;
 }
-
-
+#jumbotron a:hover{
+    text-decoration: none;
+}
+#jumbotron a:hover img{
+    border-color:$brand-primary;
+}
+span.reading-time {
+    padding: 5px;
+    background-color: white;
+    color: black;
+    font-size: 10px;
+    opacity: .8;
+    height: 20px;
+    line-height: 10px;
+}
