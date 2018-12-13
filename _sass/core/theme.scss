@@ -654,9 +654,13 @@ ul {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    flex: 1 1 auto;
+    align-self: center;
 }
 .flex-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 // Email Button
 .container-fluid .email {
