@@ -721,50 +721,6 @@ $sides: (top, bottom, left, right); // Leave this variable alone
     }
 }
 
-$viewports: (xs, sm, md, lg, xl); // Leave this variable alone
-
-@each $space in $spaceamounts {
-  @each $side in $sides {
-    @each $screen in $viewports {
-        @include media-breakpoint-up(#{$screen}) {
-            .m-#{str-slice($side, 0, 1)}-#{$space}-#{$screen}-up {
-                margin-#{$side}: #{$space}px !important;
-            }
-        }
-        @include media-breakpoint-down(#{$screen}) {
-            .m-#{str-slice($side, 0, 1)}-#{$space}-#{$screen}-down {
-                margin-#{$side}: #{$space}px !important;
-            }
-        }
-        @include media-breakpoint-only(#{$screen}) {
-            .m-#{str-slice($side, 0, 1)}-#{$space}-#{$screen}-only {
-                margin-#{$side}: #{$space}px !important;
-            }
-        }
-
-        @include media-breakpoint-up(#{$screen}) {
-            .p-#{str-slice($side, 0, 1)}-#{$space}-#{$screen}-up {
-                padding-#{$side}: #{$space}px !important;
-            }
-        }
-        @include media-breakpoint-down(#{$screen}) {
-            .p-#{str-slice($side, 0, 1)}-#{$space}-#{$screen}-down {
-                padding-#{$side}: #{$space}px !important;
-            }
-        }
-        @include media-breakpoint-only(#{$screen}) {
-            .p-#{str-slice($side, 0, 1)}-#{$space}-#{$screen}-only {
-                padding-#{$side}: #{$space}px !important;
-            }
-        }
-    }
-  }
-}
-@media(max-width: $screen-sm-min - 1){
-    .text-center-mob {
-        text-align:center !important;
-    }
-}
 // Responsive Padding/Margin classes
 $margin-none: 0;
 $margin-sm:   5;
