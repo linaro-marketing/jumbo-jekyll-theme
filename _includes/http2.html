@@ -1,13 +1,4 @@
 {% comment %}
-    The following liquid checks the pages frontmatter for http2_resources list.
-    Add all non-theme resources that you'd like to preload here.
-{% endcomment %}
-{% if page.http2_resources %}
-    {% for resource in page.http2_resources %}
-        <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}">
-    {% endfor %}
-{% endif %}
-{% comment %}
     Preload CSS Packages
 {% endcomment %}
 {% if page.css-package %}
@@ -32,4 +23,46 @@
     <link rel="preload" as="script" href="{% asset_path {{js-package}} %}?v={% bust_cache %}">
 {% else %}
     <link rel="preload" as="script" href="{% asset_path package %}?v={% bust_cache %}">
+{% endif %}
+{% comment %}
+    The following liquid checks the pages frontmatter for http2_resources list.
+    Add all non-theme resources that you'd like to preload here.
+{% endcomment %}
+{% if page.http2_resources %}
+    {% for resource in page.http2_resources %}
+        <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}">
+    {% endfor %}
+{% endif %}
+{% comment %}
+    Jumbotron Background Image
+{% endcomment %}
+{% if page.jumbotron.background-image %}
+    {% for resource in page.http2_resources %}
+        <link rel="preload" as="image" href="{{page.jumbotron.background-image}}">
+    {% endfor %}
+{% endif %}
+{% comment %}
+    Jumbotron Carousel Images
+{% endcomment %}
+{% if page.jumbotron.carousel-images %}
+    {% for image in page.jumbotron.carousel-images %}
+        <link rel="preload" as="image" href="{{image}}">
+    {% endfor %}
+{% endif %}
+{% comment %}
+    Jumbotron Carousel Images
+{% endcomment %}
+{% if page.jumbotron.carousel-images %}
+    {% for image in page.jumbotron.carousel-images %}
+        <link rel="preload" as="image" href="{{image}}">
+    {% endfor %}
+{% endif %}
+{% comment %}
+    Jumbotron Video 
+{% endcomment %}
+{% if page.jumbotron.video.poster %}
+    <link rel="preload" as="image" href="{{page.jumbotron.video.poster}}">
+{% endif %}
+{% if page.jumbotron.video.source.mp4 %}
+    <link rel="preload" as="video" href="{{page.jumbotron.video.source.mp4}}">
 {% endif %}
