@@ -32,11 +32,11 @@
     {% for resource in site.data.settings.http2_resources %}
         {% if resource.href_list %}
             {% for href in resource.href_list %}
-                <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{href}}" {% if resource.type %}type="{{resource.type}}"
+                <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{href}}" {% if resource.type %}type="{{resource.type}}"
                     {% endif %} {% if resource.crossorigin %}crossorigin{% endif %}>
             {% endfor %}
         {% else %}
-            <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"{% endif %}
+            <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"{% endif %}
             {% if resource.crossorigin %}crossorigin{% endif %}>
         {% endif %}
     {% endfor %}
@@ -49,11 +49,11 @@
     {% for resource in page.http2_resources %}
         {% if resource.href_list %}
             {% for href in resource.href_list %}
-                <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{href}}" {% if resource.type %}type="{{resource.type}}"
+                <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{href}}" {% if resource.type %}type="{{resource.type}}"
                     {% endif %} {% if resource.crossorigin %}crossorigin{% endif %}>
             {% endfor %}
         {% else %}
-            <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"{% endif %}
+            <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"{% endif %}
             {% if resource.crossorigin %}crossorigin{% endif %}>
         {% endif %}
     {% endfor %}
