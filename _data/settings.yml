@@ -4,6 +4,12 @@ favicon: favicon.png
 placeholder: /assets/images/placeholder.png
 # Support for http2 push features
 http2: false
+# Support for http2 push features
+http2_resources:
+  - rel: preload
+    as: font
+    type: font/woff2
+    href: /assets/fonts/lato-regular/Lato-regular.woff2
 # Footer Newsletter toggle.
 newsletter:
     enabled: true
