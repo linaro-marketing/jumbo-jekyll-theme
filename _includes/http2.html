@@ -25,6 +25,14 @@
     <link rel="preload" as="script" href="{% asset_path package %}?v={% bust_cache %}">
 {% endif %}
 {% comment %}
+    Site Wide Http2 resources
+{% endcomment %}
+{% if site.data.settings.http2_resources %}
+    {% for resource in site.data.settings.http2_resources %}
+        <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}">
+    {% endfor %}
+{% endif %}
+{% comment %}
     The following liquid checks the pages frontmatter for http2_resources list.
     Add all non-theme resources that you'd like to preload here.
 {% endcomment %}
@@ -74,3 +82,4 @@
         <link rel="preload" as="image" href="{{page.image.path}}">
     {% endif %}
 {% endif %}
+
