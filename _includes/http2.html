@@ -66,3 +66,11 @@
 {% if page.jumbotron.video.source.mp4 %}
     <link rel="preload" as="video" href="{{page.jumbotron.video.source.mp4}}">
 {% endif %}
+{% comment %}
+    Blog Images 
+{% endcomment %}
+{% if page.image.featured %}
+    {% if page.image.path %}
+        <link rel="preload" as="image" href="{{page.image.path}}">
+    {% endif %}
+{% endif %}
