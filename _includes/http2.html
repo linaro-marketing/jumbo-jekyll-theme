@@ -1,3 +1,15 @@
+{% comment %}
+    The following liquid checks the pages frontmatter for http2_resources list.
+    Add all non-theme resources that you'd like to preload here.
+{% endcomment %}
+{% if page.http2_resources %}
+    {% for resource in page.http2_resources %}
+        <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}">
+    {% endfor %}
+{% endif %}
+{% comment %}
+    Preload CSS Packages
+{% endcomment %}
 {% if page.css-package %}
     {% capture css-package %}/assets/css/main-{{page.css-package}}.css{% endcapture %}
     <link rel="preload" as="style" href="{{ css-package | relative_url }}?v={% bust_cache %}">
@@ -9,6 +21,9 @@
 {% else %}
     <link rel="preload" as="style" href="{{ "/assets/css/main.css" | relative_url }}?v={% bust_cache %}">
 {% endif %}
+{% comment %}
+    Preload JS Packages
+{% endcomment %}
 {% if page.js-package %}
     {% capture js-package %}package-{{page.js-package}}{% endcapture %}
     <link rel="preload" as="script" href="{% asset_path {{js-package}} %}?v={% bust_cache %}">
