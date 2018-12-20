@@ -654,9 +654,13 @@ ul {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    flex: 1 1 auto;
+    align-self: center;
 }
 .flex-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 // Email Button
 .container-fluid .email {
@@ -715,4 +719,71 @@ $sides: (top, bottom, left, right); // Leave this variable alone
     .text-center-mob {
         text-align:center !important;
     }
+}
+
+// Responsive Padding/Margin classes
+$margin-none: 0;
+$margin-sm:   5;
+$margin-base: 15;
+$margin-lg:   30;
+$margin-xl:   50;
+$margin-xxl:  100;
+
+$padding-xxl:  100;
+$padding-xl:   50;
+$padding-lg:   30;
+$padding-base: 15;
+$padding-sm:   5;
+$padding-none: 0;
+
+@mixin make-paddings($class, $padding){
+  .p-#{$class}-#{$padding} { padding: $padding * 1px !important; }
+  .pl-#{$class}-#{$padding} { padding-left: $padding * 1px !important; }
+  .pr-#{$class}-#{$padding} { padding-right: $padding * 1px !important; }
+  .pt-#{$class}-#{$padding} { padding-top: $padding * 1px !important; }
+  .pb-#{$class}-#{$padding} { padding-bottom: $padding * 1px !important; }
+  .pv-#{$class}-#{$padding} { @extend .pt-#{$class}-#{$padding}; @extend .pb-#{$class}-#{$padding}; }
+  .ph-#{$class}-#{$padding} { @extend .pl-#{$class}-#{$padding}; @extend .pr-#{$class}-#{$padding}; }
+}
+@mixin make-margins($class, $margin){
+  .m-#{$class}-#{$margin} { margin: $margin * 1px !important; }
+  .ml-#{$class}-#{$margin} { margin-left: $margin * 1px !important; }
+  .mr-#{$class}-#{$margin} { margin-right: $margin * 1px !important; }
+  .mt-#{$class}-#{$margin} { margin-top: $margin * 1px !important; }
+  .mb-#{$class}-#{$margin} { margin-bottom: $margin * 1px !important; }
+  .mv-#{$class}-#{$margin} { @extend .mt-#{$class}-#{$margin}; @extend .mb-#{$class}-#{$margin}; }
+  .mh-#{$class}-#{$margin} { @extend .ml-#{$class}-#{$margin}; @extend .mr-#{$class}-#{$margin}; }
+}
+
+@mixin make-all-paddings($class){
+  @include make-paddings($class, $padding-none);
+  @include make-paddings($class, $padding-sm);
+  @include make-paddings($class, $padding-base);
+  @include make-paddings($class, $padding-lg);
+  @include make-paddings($class, $padding-xl);
+  @include make-paddings($class, $padding-xxl);
+}
+@mixin make-all-margins($class){
+  @include make-margins($class, $margin-none);
+  @include make-margins($class, $margin-sm);
+  @include make-margins($class, $margin-base);
+  @include make-margins($class, $margin-lg);
+  @include make-margins($class, $margin-xl);
+  @include make-margins($class, $margin-xxl);
+}
+
+
+@include make-all-paddings(xs);
+@include make-all-margins(xs);
+@media (min-width: $screen-sm-min) {
+  @include make-all-paddings(sm);
+  @include make-all-margins(sm);
+}
+@media (min-width: $screen-md-min) {
+  @include make-all-paddings(md);
+  @include make-all-margins(md);
+}
+@media (min-width: $screen-lg-min) {
+  @include make-all-paddings(lg);
+  @include make-all-margins(lg);
 }
