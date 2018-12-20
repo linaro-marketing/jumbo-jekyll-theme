@@ -2,6 +2,8 @@
 favicon: favicon.png
 # Placeholder for Missing Images
 placeholder: /assets/images/placeholder.png
+# Support for http2 push features
+http2: false
 # Footer Newsletter toggle.
 newsletter:
     enabled: true
