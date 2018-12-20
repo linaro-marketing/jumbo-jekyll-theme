@@ -1,6 +1,19 @@
+{% if page.css-package %}
+    {% capture css-package %}/assets/css/main-{{page.css-package}}.css{% endcapture %}
+    <link rel="preload" as="style" href="{{ css-package | relative_url }}?v={% bust_cache %}">
+{% elsif layout.css-package %}
+    {% capture css-package %}/assets/css/main-{{layout.css-package}}.css{% endcapture %}
+    <link rel="preload" as="style" href="{{ css-package | relative_url }}?v={% bust_cache %}">
+{% elsif layout.css-package == "main" or page.css-package == "main" %}
+    <link rel="preload" as="style" href="{{ "/assets/css/main.css" | relative_url }}?v={% bust_cache %}">
+{% else %}
+    <link rel="preload" as="style" href="{{ "/assets/css/main.css" | relative_url }}?v={% bust_cache %}">
+{% endif %}
 {% if page.js-package %}
+    {% capture js-package %}package-{{page.js-package}}{% endcapture %}
     <link rel="preload" as="script" href="{% asset_path {{js-package}} %}?v={% bust_cache %}">
 {% elsif layout.js-package %}
+    {% capture js-package %}package-{{page.js-package}}{% endcapture %}
     <link rel="preload" as="script" href="{% asset_path {{js-package}} %}?v={% bust_cache %}">
 {% else %}
     <link rel="preload" as="script" href="{% asset_path package %}?v={% bust_cache %}">
