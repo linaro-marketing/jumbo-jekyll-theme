@@ -29,7 +29,8 @@
 {% endcomment %}
 {% if site.data.settings.http2_resources %}
     {% for resource in site.data.settings.http2_resources %}
-        <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}">
+        <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"{% endif %}
+        {% if resource.crossorigin %}crossorigin{% endif %}>
     {% endfor %}
 {% endif %}
 {% comment %}
@@ -38,7 +39,8 @@
 {% endcomment %}
 {% if page.http2_resources %}
     {% for resource in page.http2_resources %}
-        <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}">
+        <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"
+            {% endif %} {% if resource.crossorigin %}crossorigin{% endif %}>
     {% endfor %}
 {% endif %}
 {% comment %}
