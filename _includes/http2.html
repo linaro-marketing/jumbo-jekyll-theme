@@ -1,0 +1,7 @@
+{% if page.js-package %}
+    <link rel="preload" as="script" href="{% asset_path {{js-package}} %}?v={% bust_cache %}">
+{% elsif layout.js-package %}
+    <link rel="preload" as="script" href="{% asset_path {{js-package}} %}?v={% bust_cache %}">
+{% else %}
+    <link rel="preload" as="script" href="{% asset_path package %}?v={% bust_cache %}">
+{% endif %}
