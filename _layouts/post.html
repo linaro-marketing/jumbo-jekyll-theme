@@ -89,6 +89,7 @@ css-package: blog
                     </div>
                     {% endunless %}
                     {{ content }}
+                    {% include post-series.html %}
                 </article>
                 
             {% comment %}
@@ -136,6 +137,7 @@ css-package: blog
                     </div>
                     {% endunless %}
                     {{ content }}
+                    {% include post-series.html %}
                 </article>
             </div>
             {% endif %}
