@@ -57,3 +57,7 @@ h1#featured-image-blog-title {
     color: $blog-panel-title-colour;
 }
 .disqus-placeholder.is-hidden { display: none; }
+
+#content-container .post-content ul li.active a {
+    color: white;
+}
