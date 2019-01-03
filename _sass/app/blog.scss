@@ -58,6 +58,16 @@ h1#featured-image-blog-title {
 }
 .disqus-placeholder.is-hidden { display: none; }
 
-#content-container .post-content ul li.active a {
+// Post Series section
+#content-container .post-series ul li.active a {
     color: white;
+}
+.panel.post-series {
+    background-color: whitesmoke;
+    padding: 5px;
+    border: 1px solid #e2e2e2;
+}
+#content-container .post-series p {
+    margin-bottom: 5px;
+    font-size: 16px;
 }
