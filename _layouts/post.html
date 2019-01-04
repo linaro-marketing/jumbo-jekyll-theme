@@ -3,8 +3,8 @@ layout: default
 js-package: blog
 css-package: blog
 ---
-{% if page.image.featured %}
-        <div class="row overlay background-image" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{page.image.path}}');"> <!--Row -->
+{% if page.image %}
+        <div class="row overlay background-image" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{page.image}}');"> <!--Row -->
                 <div id="jumbotron-content" class="flex-container"> <!--Jumbotron div -->        
                     <div class="container flex-center" id="jumbotron-text"> <!--Container -->
                     <h1 id="jumbotron-heading">{{page.title}}</h1>
