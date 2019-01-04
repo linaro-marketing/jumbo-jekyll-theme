@@ -23,11 +23,11 @@ navbar-inverse navbar-static" id="main-navigation">
                             {% include {{site.data.nav.brand.image.name}} %}
                         {% elsif site.data.nav.brand.image.path %}
                              <img src="{{ site.data.nav.brand.image.path }}" alt="{% if site.data.settings.name %}{{ site.data.settings.name }}{% else %}Linaro Site{% endif %} Logo." id="brand-image" />
-                        {% elsif site.data.nav.brand.text %}
-                            {{site.data.nav.brand.text}}
                         {% else %}
                             {% include linaro-svg.html %}
                         {% endif %}
+                    {% elsif site.data.nav.brand.text %}
+                        {{site.data.nav.brand.text}}
                     {% else %}
                         {{site.title}}
                     {% endif %}
