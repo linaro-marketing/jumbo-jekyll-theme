@@ -1,6 +1,5 @@
 - title: Linaro
   url: https://www.linaro.org/
-  active: true
 - title: Connect
   url: https://connect.linaro.org
 - title: 96Boards
@@ -19,3 +18,4 @@
       url: https://www.opendataplane.org
     - title: TrustedFirmware.org
       url: https://www.trustedfirmware.org
+      active: true
