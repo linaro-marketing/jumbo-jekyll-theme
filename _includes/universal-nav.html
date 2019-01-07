@@ -16,7 +16,7 @@
                         aria-expanded="false">Projects <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         {% for project-site in website.options %}
-                        <li {% if project-site.active %}class="active" {% endif%}><a target="_self" href="{{project-site.url}}">{{projects-site.title}}</a></li>
+                        <li {% if project-site.active %}class="active" {% endif%}><a target="_self" href="{{project-site.url}}">{{project-site.title}}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
