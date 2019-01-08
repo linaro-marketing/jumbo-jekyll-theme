@@ -7,6 +7,9 @@
     </div>
     <div class="panel-body">
         {% for post in site.posts limit: 3 %}
+            {% assign timeframe = 604800 %}
+            {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
+            {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
             <a href="{{post.url}}">
                 <div class="row featured_blog_post">
                     <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
@@ -65,7 +68,13 @@
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-9 ">
                        {{post.title | truncate: 40}}
-                       <br /><small><em>{{post.date | date: "%A, %B %-d, %Y" }}</em></small>
+                       <br />
+                       <small>
+                           <em>{{post.date | date: "%A, %B %-d, %Y" }}</em>
+                            {% if post_in_seconds > recent_posts %}
+                                <span class="new-post" title="Post added in the last week.">New</span>
+                            {% endif %}
+                        </small>
                    </div>
                 </div>
             </a>
@@ -83,7 +92,9 @@
     <div class="panel-body">
         {% assign posts = site.posts | sample:5 %}
         {% for post in posts %}
-        
+            {% assign timeframe = 604800 %}
+            {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
+            {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
         <a href="{{post.url}}">
             <div class="row featured_blog_post">
                 <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
@@ -142,7 +153,13 @@
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-9 ">
                    {{post.title | truncate: 40}}
-                   <br /><small><em>{{post.date | date: "%A, %B %-d, %Y" }}</em></small>
+                   <br />
+                   <small>
+                       <em>{{post.date | date: "%A, %B %-d, %Y" }}</em>
+                        {% if post_in_seconds > recent_posts %}
+                            <span class="new-post" title="Post added in the last week.">New</span>
+                        {% endif %}
+                    </small>
                </div>
             </div>
             </a>
