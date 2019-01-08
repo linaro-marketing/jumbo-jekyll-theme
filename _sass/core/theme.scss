@@ -788,3 +788,10 @@ $padding-none: 0;
   @include make-all-paddings(lg);
   @include make-all-margins(lg);
 }
+
+span.new-post {
+    background-color: $brand-primary;
+    color: white;
+    padding: 4px;
+    border-radius: 3px;
+}
