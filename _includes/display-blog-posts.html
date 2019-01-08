@@ -1,5 +1,8 @@
 {% if paginator.total_posts > 0 %}
     {% for post in paginator.posts %}
+        {% assign timeframe = 604800 %}
+        {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
+        {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
         <div class="row blog_post">
             {% if site.data.settings.blog.show_thumbnails %}
                 <div class="col-md-4 col-sm-4 col-xs-4">
@@ -58,9 +61,14 @@
                     {% endif %}
                     </a>
                 </div>
+
                 <div class="col-md-8 col-sm-8 col-xs-8 post_title no-padding">
                     <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
-                    <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
+                    <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em>
+                    {% if post_in_seconds > recent_posts %}
+                        <span class="new-post" title="Post added in the last week.">New</span>
+                    {% endif %}
+                    <br />
                     <p class="post_excerpt">
                     {{ post.content | strip_html | truncatewords:30 }}
                     </p>
@@ -73,7 +81,11 @@
             {% else %}
                 <div class="col-xs-12 post_title no-padding">
                     <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
-                    <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em><br />
+                    <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em>
+                    {% if post_in_seconds > recent_posts %}
+                        <span class="new-post" title="Post added in the last week.">New</span>
+                    {% endif %}
+                    <br />
                     <p class="post_excerpt">
                     {{ post.content | strip_html | truncatewords:30 }}
                     </p>
