@@ -99,3 +99,6 @@ mailchimp:
 # youtube_username: linaroorg
 # twitter_username: linaroorg
 # slideshare_username: linaroorg
+# 
+# Default Social Media share image location
+social_share_image: /assets/images/social-media-image.png
