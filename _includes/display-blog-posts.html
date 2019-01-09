@@ -67,7 +67,11 @@
 
                 <div class="col-md-8 col-sm-8 col-xs-8 post_title no-padding">
                     <a href="{{post.url}}"><h3>{{ post.title}}</h3></a>
-                    <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em>
+
+                    {% assign author = site.authors | where: "username", post.author | first %}
+
+                    Posted by <a href="{{author.url}}"><strong>{% if author.name %}{{author.name}}{% else %}{{post.author}}{% endif %}</strong></a>
+                    on <em>{{ post.date | date: "%A, %B %-d, %Y"}}</em>
                     {% if post_in_seconds > recent_posts %}
                         <span class="new-post" title="Post added in the last week.">New</span>
                     {% endif %}
