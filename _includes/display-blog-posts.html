@@ -43,6 +43,9 @@
                             alt: {{ post.title | slugify: "ascii"}}
                             {% endif %}
                             {% endresponsive_image_block %}
+                    {% elsif post.image == site.data.settings.social_share_image %}
+                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{site.data.settings.placeholder}}"
+                            alt="{{post.title}}" class="center-block img-responsive lazyload" />
                     {% elsif post.image %}
                             {% capture image_path %}{{post.image | remove_first: "/" }}{% endcapture %}
                             {% capture full_path %}{{post.image}}{% endcapture %}
