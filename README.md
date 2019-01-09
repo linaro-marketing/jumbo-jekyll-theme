@@ -24,3 +24,15 @@ The documentation for this theme is currently available through the Collaborate 
 # Feature Requests / Bug Fixes
 
 If anyone that uses the theme has any useful bug fixes / feature requests that may be of interest then please feel free to fork/submit a PR with your fixes/features.
+
+
+
+# Blog Post Images
+
+To add a featured image to your blog post set the `image:` key in your posts front matter:
+
+```yaml
+image: /assets/images/social-media-image.png
+```
+
+Thumbnails are automatically generated from your high resolution image upon site build using the `jekyll-responsive-image` plugin.
