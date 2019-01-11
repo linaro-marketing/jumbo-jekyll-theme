@@ -15,8 +15,6 @@ $(document).ready(function(){
             $('#sub-navigation-header').hide();
             $('#content-container').css('padding-top','20px');
             $('#wrapper').css('padding-top','0px');
-
-            console.log($(window).scrollTop(),origOffsetY);
             if ( $(window).scrollTop() >= origOffsetY) {
                 $('#tabbed-nav-bar').removeClass('non-sticky-nav');
                 $('#tabbed-nav-bar').addClass('sticky-nav');
