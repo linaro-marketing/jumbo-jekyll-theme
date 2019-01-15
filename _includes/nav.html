@@ -43,7 +43,7 @@ navbar-inverse navbar-static" id="main-navigation">
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
                         <li class="main dropdown menu
-                            {% for menu-item in section.options %}{% if menu-item.url contains page_base[1] %}active{% endif %}{% endfor %} ">
+                            {% for menu-item in section.options %}{{menu-item.url}} vs {{current_page_url}} {% if menu-item.url contains current_page_url %}active{% endif %}{% endfor %} ">
                           <a {% if section.url %}href="{{section.url}}"{% endif %} class="main-anchor dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                               {{section.title}} <span class="caret"></span>
                           </a>
