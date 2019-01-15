@@ -961,15 +961,16 @@ transform: rotate(0);
   outline: 1px solid lighten($navbar-inverse-bg, 90%);
 }
 // Highlight nav menu options
-li.main.dropdown.menu.active {
+li.main.active a.main-anchor {
     background-color: $navbar-hover-background-color;
 }
 li.dropdown.menu.active.open > a {
-    color: $navbar-text-color-hover;
+    color: $navbar-hover-text-color;
 }
-#main-navigation li:hover {
+#main-navigation li.main:hover a.main-anchor {
     background-color: $navbar-hover-background-color;
+    color: $navbar-hover-text-color !important; 
 }
-#main-navigation li {
+#main-navigation li.main:hover a.main-anchor  {
     transition: background-color 300ms linear;
 }
