@@ -960,3 +960,16 @@ transform: rotate(0);
   background-color: $brand-primary;
   outline: 1px solid lighten($navbar-inverse-bg, 90%);
 }
+// Highlight nav menu options
+li.main.dropdown.menu.active {
+    background-color: $navbar-hover-background-color;
+}
+li.dropdown.menu.active.open > a {
+    color: $navbar-text-color-hover;
+}
+#main-navigation li:hover {
+    background-color: $navbar-hover-background-color;
+}
+#main-navigation li {
+    transition: background-color 300ms linear;
+}
