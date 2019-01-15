@@ -3,6 +3,9 @@
 {% endif %}
 {% assign page_base = page.url | split: "/" %}
 {% assign current_page_url = page.permalink | replace: "index.html", "" %}
+{% if current_page_url == "/" %}
+    {% assign current_page_url  = "do-no-set"%}
+{% endif %}
 <nav class="
 {% if layout.nav-light %}
         nav-light 
@@ -43,7 +46,24 @@ navbar-inverse navbar-static" id="main-navigation">
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
                         <li class="main dropdown menu
-                            {% for menu-item in section.options %}{{menu-item.url}} vs {{current_page_url}} {% if menu-item.url contains current_page_url %}active{% endif %}{% endfor %} ">
+                            {{current_page_url}}
+                            {% for menu-item in section.options %}
+                                {% if menu-item.options %}
+                                    {% for sub-item in menu-item.options %}
+                                        {% if sub-item.url contains current_page_url or sub-item.url == current_page_url %}
+                                            {% unless sub-item.url contains "http" %}
+                                                active
+                                                {% break %}
+                                            {% endunless %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% elsif menu-item.url contains current_page_url or menu-item.url == current_page_url %}
+                                    {% unless menu-item.url contains "http" %}
+                                        active
+                                        {% break %}
+                                    {% endunless %}
+                                {% endif %}
+                            {% endfor %} ">
                           <a {% if section.url %}href="{{section.url}}"{% endif %} class="main-anchor dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                               {{section.title}} <span class="caret"></span>
                           </a>
