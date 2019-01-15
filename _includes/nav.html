@@ -2,6 +2,7 @@
     {% include universal-nav.html %}
 {% endif %}
 {% assign page_base = page.url | split: "/" %}
+{% assign current_page_url = page.permalink | replace: "index.html", "" %}
 <nav class="
 {% if layout.nav-light %}
         nav-light 
@@ -42,11 +43,7 @@ navbar-inverse navbar-static" id="main-navigation">
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
                         <li class="main dropdown menu
-                            {% for menu-item in section.options %}
-                                 {% if menu-item.url contains page_base[1] %}
-                                    active
-                                 {% endif %}
-                            {% endfor %} ">
+                            {% for menu-item in section.options %}{% if menu-item.url contains page_base[1] %}active{% endif %}{% endfor %} ">
                           <a {% if section.url %}href="{{section.url}}"{% endif %} class="main-anchor dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                               {{section.title}} <span class="caret"></span>
                           </a>
@@ -81,7 +78,7 @@ navbar-inverse navbar-static" id="main-navigation">
                           </ul>
                         </li>
                     {% else %}
-                        <li class="main {% if section.url contains page_base[1] %}active{% endif %}">
+                        <li class="main {% if section.url == current_page_url %}active{% endif %}">
                             <a class="main-anchor" href="{{section.url}}" title="{{section.title}}">{{section.title}}</a>
                         </li>
                     {% endif %}
