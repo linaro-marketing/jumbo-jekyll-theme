@@ -2,7 +2,7 @@
     {% include universal-nav.html %}
 {% endif %}
 {% assign page_base = page.url | split: "/" %}
-{% assign current_page_url = page.permalink | replace: "index.html", "" %}
+ {% assign current_page_url = page.url | replace: "index.html", "" %}
 {% if current_page_url == "/" %}
     {% assign current_page_url  = "do-no-set"%}
 {% endif %}
@@ -49,14 +49,14 @@ navbar-inverse navbar-static" id="main-navigation">
                             {% for menu-item in section.options %}
                                 {% if menu-item.options %}
                                     {% for sub-item in menu-item.options %}
-                                        {% if sub-item.url contains current_page_url or sub-item.url == current_page_url %}
+                                        {% if current_page_url contains sub-item.url or sub-item.url == current_page_url %}
                                             {% unless sub-item.url contains "http" %}
                                                 active
                                                 {% break %}
                                             {% endunless %}
                                         {% endif %}
                                     {% endfor %}
-                                {% elsif menu-item.url contains current_page_url or menu-item.url == current_page_url %}
+                                {% elsif current_page_url contains menu-item.url or menu-item.url == current_page_url %}
                                     {% unless menu-item.url contains "http" %}
                                         active
                                         {% break %}
@@ -97,12 +97,11 @@ navbar-inverse navbar-static" id="main-navigation">
                           </ul>
                         </li>
                     {% else %}
-                        <li class="main {% if section.url == current_page_url or section.url contains curret_page_url %}active{% endif %}">
+                        <li class="main {% if section.url == current_page_url or section.url contains current_page_url %}active{% endif %}">
                             <a class="main-anchor" href="{{section.url}}" title="{{section.title}}">{{section.title}}</a>
                         </li>
                     {% endif %}
                 {% endfor %}
-                
                 {% if site.data.nav.search.enabled %}
                     <li id="search-menu-item">
                         <a href="#search" class="dropdown-toggle" id="search_icon">
@@ -110,10 +109,7 @@ navbar-inverse navbar-static" id="main-navigation">
                         </a>
                     </li>
                 {% endif %}
-        
             </ul>
-            
-            
             {% if site.data.nav.search.enabled %}
                 <div id="search_bar">
                     
