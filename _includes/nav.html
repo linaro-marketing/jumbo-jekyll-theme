@@ -97,7 +97,7 @@ navbar-inverse navbar-static" id="main-navigation">
                           </ul>
                         </li>
                     {% else %}
-                        <li class="main {% if section.url == current_page_url or section.url contains current_page_url %}active{% endif %}">
+                        <li class="main {% if section.url == current_page_url or current_page_url contains section.url %}active{% endif %}">
                             <a class="main-anchor" href="{{section.url}}" title="{{section.title}}">{{section.title}}</a>
                         </li>
                     {% endif %}
