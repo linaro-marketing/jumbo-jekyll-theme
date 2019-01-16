@@ -46,7 +46,6 @@ navbar-inverse navbar-static" id="main-navigation">
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
                         <li class="main dropdown menu
-                            {{current_page_url}}
                             {% for menu-item in section.options %}
                                 {% if menu-item.options %}
                                     {% for sub-item in menu-item.options %}
@@ -98,7 +97,7 @@ navbar-inverse navbar-static" id="main-navigation">
                           </ul>
                         </li>
                     {% else %}
-                        <li class="main {% if section.url == current_page_url %}active{% endif %}">
+                        <li class="main {% if section.url == current_page_url or section.url contains curret_page_url %}active{% endif %}">
                             <a class="main-anchor" href="{{section.url}}" title="{{section.title}}">{{section.title}}</a>
                         </li>
                     {% endif %}
