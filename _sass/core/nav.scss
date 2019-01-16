@@ -963,6 +963,7 @@ transform: rotate(0);
 // Highlight nav menu options
 li.main.active a.main-anchor {
     background-color: $navbar-hover-background-color;
+    color: $navbar-hover-text-color !important;
 }
 li.dropdown.menu.active.open > a {
     color: $navbar-hover-text-color;
@@ -972,5 +973,8 @@ li.dropdown.menu.active.open > a {
     color: $navbar-hover-text-color !important; 
 }
 #main-navigation li.main:hover a.main-anchor  {
+    transition: background-color 600ms linear;
+}
+#main-navigation li.main a.main-anchor  {
     transition: background-color 300ms linear;
 }
