@@ -39,13 +39,20 @@ navbar-inverse navbar-static" id="main-navigation">
                 </a>
             {% endif %}
           </div>
-
          <!-- NAVBAR COLLAPSE-->
           <div class="collapse navbar-collapse" id="navbar-collapse">
               <ul class="nav navbar-nav navbar-right" id="navbar-buttons">
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
                         <li class="main dropdown menu
+                            {% if section.active_paths %}
+                                {% for active_path in section.active_paths %}
+                                    {% if current_page_url contains active_path %}
+                                        active
+                                        {% break %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                             {% for menu-item in section.options %}
                                 {% if menu-item.options %}
                                     {% for sub-item in menu-item.options %}
@@ -97,7 +104,14 @@ navbar-inverse navbar-static" id="main-navigation">
                           </ul>
                         </li>
                     {% else %}
-                        <li class="main {% if section.url == current_page_url or current_page_url contains section.url %}active{% endif %}">
+                        <li class="main {% if section.url == current_page_url or current_page_url contains section.url %}active{% elsif section.active_paths %}
+                                {% for active_path in section.active_paths %}
+                                    {% if current_page_url contains active_path %}
+                                        active
+                                        {% break %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}">
                             <a class="main-anchor" href="{{section.url}}" title="{{section.title}}">{{section.title}}</a>
                         </li>
                     {% endif %}
