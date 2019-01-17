@@ -551,15 +551,15 @@ nav > ul.navbar-right {
     border-right: 1px solid #f9f9f9;
     border-left: 1px solid #f9f9f9;
     border-bottom: 1px solid #f9f9f9;
-    background-color: black;
-    color: white;
+    background-color: $tabbed-nav-bg-color;
+    color: $tabbed-nav-text-color;
     text-align:center;
 }
 #wrapper li.tabbed-nav-btn a {
-    color: white;
+    color:$tabbed-nav-text-color;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus, .nav-tabs>li>a:hover {
-    color: $brand-primary !important;
+    color: $tabbed-nav-hover-color !important;
 }
 #wrapper .nav-tabs {
     border-bottom: none;
