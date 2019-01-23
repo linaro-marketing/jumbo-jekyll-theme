@@ -4,7 +4,7 @@ js-package: blog
 css-package: blog
 ---
 {% if page.image or page.image.path %}
-        <div class="row overlay background-image" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% if page.image.path %}{{page.image.path}}{% else %}{{page.image}}{% endif %}');"> <!--Row -->
+        <div class="row overlay background-image {% if page.image.background-class %}{{page.image.background-class}}{% endif %}" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% if page.image.path %}{{page.image.path}}{% else %}{{page.image}}{% endif %}');"> <!--Row -->
                 <div id="jumbotron-content" class="flex-container"> <!--Jumbotron div -->        
                     <div class="container flex-center" id="jumbotron-text"> <!--Container -->
                     <h1 id="jumbotron-heading">{{page.title}}</h1>
