@@ -32,6 +32,10 @@ div#jumbotron-content {
     width: 100%;
     z-index: -1;
 }
+div#jumbotron.background-image.bg-up {
+    background-position-y: 0px !important;
+    background-position-x: center !important;
+}
 video#jumbotronVideo {    
     position: absolute;
     right: 0;
