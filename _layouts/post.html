@@ -56,7 +56,7 @@ css-package: blog
         {% if site.data.settings.blog.sidebar.display-on-posts %}
         <div class="col-md-9">
                 <article class="post-content">
-                    {% unless page.image.featured %}
+                    {% unless page.image %}
                     <div class="post-info">
                         <h1>{{page.title }}</h1>
                         {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
@@ -105,15 +105,21 @@ css-package: blog
             {% include disqus-comments.html %}
             </div>
             <div class="col-md-3 blog-sidebar no-padding">
-                {% include post-sidebar.html %}
+                {% if page.tags %}
+                    {% assign post_tags = page.tags %}
+                {% elsif page.keywords %}
+                    {% assign post_tags = page.tags %}
+                {% else %}
+                    {% assign post_tags = "" %}
+                {% endif %}
+                {% include post-sidebar.html tags=post_tags post_cat=page.categories %}
             </div>
             {% else %}
             <div class="col-xs-12 no-padding">
                 <article class="post-content">
-                    {% unless page.image.featured %}
+                    {% unless page.image %}
                     <div class="post-info">
                         <h1>{{page.title }}</h1>
-                        
                         {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
                         {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
                         {% if page.author %}
