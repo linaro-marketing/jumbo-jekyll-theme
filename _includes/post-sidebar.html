@@ -5,7 +5,7 @@
     {% if tags != "" %}
     <div id="post-tags">
         {% for tag in tags %}
-            <a href="{{site.data.settings.blog.tags_page}}?tag={{tag | replace: ",",""}}">
+            <a href="{{site.data.settings.blog.tags_page}}#{{tag | replace: ",","" | downcase }}">
                 <span class="tag">{{tag | replace: "," , ""}}</span>
             </a>
         {% endfor %}
