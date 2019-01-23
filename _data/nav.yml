@@ -14,6 +14,8 @@ brand:
 pages:
     
     - title: Jekyll
+      active_paths:
+        - /new/
       options:
           - text: Plugins
             options:
@@ -71,5 +73,7 @@ pages:
             
     - title: Blog
       url: /blog/
+      active_paths:
+        - /new/
     - title: Download
       url: /download/

@@ -27,6 +27,7 @@ error-pages:
   not-found-desc: Sorry, but the page you were looking for could not be found.
 # Blog setup
 blog:
+    tags_page: /blog/tags/
     # Show Thumbnails in the post index
     show_thumbnails: true
     # Reading time
