@@ -229,6 +229,21 @@ a.featured_blog_post_text:hover{
     margin: 2px;
     color: #464646;
 }
+span.tag {
+    display: inline-block;
+    background-color: $post-tag-bg;
+    color: $post-tag-color;
+    padding: 10px;
+    margin: 2px 0;
+    border: 1px solid $post-tag-border;
+}
+a:hover span.tag {
+    background-color: $post-tag-hover-bg;
+    color: $post-tag-hover-color;
+}
+div#post-tags {
+    margin-bottom: 20px;
+}
 //Pagination centered style
 .pagination-centered { 
     text-align: center;
