@@ -4,8 +4,8 @@ $(window).click(function() {
 });
 $(document).ready(function () {
     // Toggle the sub menu when clicked.
-    $('.dropdown-submenu.-submenu a').on("click", function(e){
-        if($(this).hasClass("active")){
+    $('.dropdown-submenu.sub-menu a').on("click", function (e) {
+        if ($(this).hasClass("active")) {
             $(this).next('ul').hide();
             $(this).removeClass("active");
         }
