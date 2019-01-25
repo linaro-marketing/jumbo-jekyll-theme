@@ -2,7 +2,7 @@
 search:
     enabled: true
     label: Linaro
-universal-nav: true
+universal-nav: false
 # Nav Brand Config
 brand:
     text: Jumbo Jekyll Theme
