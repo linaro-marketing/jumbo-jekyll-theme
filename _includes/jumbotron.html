@@ -68,5 +68,8 @@
             {% include {{page.jumbotron.include}} %}
         {% endif %}
         </div><!-- End Jumbotron Container Div -->  
-    </div> <!--End Jumbotron div -->        
+    </div> <!--End Jumbotron div -->
+    {% if page.jumbotron.triangle-divider %}
+        <div class="big-triangle"></div>
+    {% endif %}
 </div> <!--row -->
