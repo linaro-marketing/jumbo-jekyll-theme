@@ -979,20 +979,22 @@ li.dropdown.menu.active.open > a {
     transition: background-color 300ms linear;
 }
 
-#main-navigation ul{
-    li {
-        a {
-            text-align:center;
-        }
-    }
-    .dropdown-menu.sub-menu {
-        margin-left:0px;
+@media(max-width: $screen-sm-min){
+    #main-navigation  ul{
         li {
-            background-color: $navbar-submenu-bg-color;
-            a{
-                color: $navbar-submenu-color;
+            a {
+                text-align:center;
             }
         }
-    }
+        .dropdown-menu.sub-menu {
+            margin-left:0px;
+            li {
+                background-color: $navbar-submenu-bg-color;
+                a{
+                    color: $navbar-submenu-color;
+                }
+            }
+        }
 
+    }
 }
