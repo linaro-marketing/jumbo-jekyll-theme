@@ -3,6 +3,13 @@ $(window).click(function() {
     $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
 });
 $(document).ready(function () {
+    // Double Scroll Plugin
+    if($(".double-scroll").length > 0){
+        $(this).doubleScroll({
+            resetOnWindowResize: true,
+            onlyIfScroll: true
+        });
+    }
     // Toggle the sub menu when clicked.
     $('.dropdown-submenu.sub-menu a').on("click", function (e) {
         if ($(this).hasClass("active")) {
