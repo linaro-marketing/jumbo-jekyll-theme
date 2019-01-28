@@ -1,3 +1,4 @@
+<!-- Start HTTP/2 Preload of Resources-->
 {% comment %}
     Preload CSS Packages
 {% endcomment %}
@@ -30,13 +31,13 @@
 {% if site.data.settings.http2_resources %}
     {% for resource in site.data.settings.http2_resources %}
         {% if resource.href_list %}
-            {% for resource_href in resource.href_list %}
-                <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource_href}}" {% if resource.type %}type="{{resource.type}}"{% endif %}
-                {% if resource.crossorigin %}crossorigin{% endif %}>
+            {% for href in resource.href_list %}
+                <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{href}}" {% if resource.type %}type="{{resource.type}}"
+                    {% endif %} {% if resource.crossorigin %}crossorigin{% endif %}>
             {% endfor %}
         {% else %}
-        <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"
-            {% endif %} {% if resource.crossorigin %}crossorigin{% endif %}>
+            <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"{% endif %}
+            {% if resource.crossorigin %}crossorigin{% endif %}>
         {% endif %}
     {% endfor %}
 {% endif %}
@@ -47,13 +48,13 @@
 {% if page.http2_resources %}
     {% for resource in page.http2_resources %}
         {% if resource.href_list %}
-            {% for resource_href in resource.href_list %}
-            <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource_href}}" {% if resource.type %}type="{{resource.type}}"
-                {% endif %} {% if resource.crossorigin %}crossorigin{% endif %}>
+            {% for href in resource.href_list %}
+                <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{href}}" {% if resource.type %}type="{{resource.type}}"
+                    {% endif %} {% if resource.crossorigin %}crossorigin{% endif %}>
             {% endfor %}
         {% else %}
-            <link rel="{{resource.rel}}" as="{{resource.as}}" href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"
-                {% endif %} {% if resource.crossorigin %}crossorigin{% endif %}>
+            <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"{% endif %}
+            {% if resource.crossorigin %}crossorigin{% endif %}>
         {% endif %}
     {% endfor %}
 {% endif %}
@@ -98,4 +99,4 @@
         <link rel="preload" as="image" href="{{page.image.path}}">
     {% endif %}
 {% endif %}
-
+<!-- End HTTP/2 Preload of Resources-->
