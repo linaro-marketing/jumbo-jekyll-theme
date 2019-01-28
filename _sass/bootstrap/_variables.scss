@@ -366,7 +366,6 @@ $screen-xs-max:              ($screen-sm-min - 1) !default;
 $screen-sm-max:              ($screen-md-min - 1) !default;
 $screen-md-max:              ($screen-lg-min - 1) !default;
 
-
 //== Grid system
 //
 //## Define your custom responsive grid.
@@ -400,6 +399,7 @@ $container-md:                 $container-desktop !default;
 $container-large-desktop:      (1370px + $grid-gutter-width) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
+
 
 //== Navbar
 //
@@ -920,3 +920,13 @@ $dl-horizontal-offset:        $component-offset-horizontal !default;
 $dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter !default;
+
+// Custom Jumbotron Settings
+$jumbotron-height: 400px;
+$overlay: 0.5;
+$jumbotron-font-size-xs: 26px;
+$jumbotron-font-size: 32px;
+$jumbotron-heading-color: #fff !default;
+$jumbotron-sub-title-font-size-xs: 16px;
+$jumbotron-sub-title-font-size: 18px;
+$jumbotron-sub-title-color: #fff !default;

@@ -1,0 +1,15 @@
+{% assign images = include.images %}
+<!-- Carousel Header -->
+<div class="row">
+    <div class="carousel slide carousel-fade" id="header-carousel" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            {% for image in images %}
+            <div data-src="{{image}}" style="{% if forloop.index == 1%}background: url('{{image}}');{% else %}{% endif %}background-size:cover; background-position:center center; background-repeat: no-repeat;"
+                class=" item {% if forloop.index == 1%}active{% else %}{% endif %}">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- End Carousel Header -->
+

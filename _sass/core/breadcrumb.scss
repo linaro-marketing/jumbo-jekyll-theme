@@ -53,6 +53,7 @@ ol.breadcrumb {
     border-radius: 0;
     display: block;
     padding: 0;
+    margin-bottom: 0;
 }
 ol.breadcrumb li a {
     color: #fff;
@@ -79,8 +80,8 @@ ol.breadcrumb li span:hover {
 
 .breadcrumb-container{
     background-color: $breadcrumb-background-color;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .breadcrumb-container > p {

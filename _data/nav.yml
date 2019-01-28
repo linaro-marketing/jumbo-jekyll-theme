@@ -2,7 +2,7 @@
 search:
     enabled: true
     label: Linaro
-# universal-nav: true
+universal-nav: false
 # Nav Brand Config
 brand:
     text: Jumbo Jekyll Theme
@@ -14,9 +14,10 @@ brand:
 pages:
     
     - title: Jekyll
+      active_paths:
+        - /new/
       options:
           - text: Plugins
-            url: /jekyll/plugins/
             options:
                 - text: Jekyll Assets
                   url: /jekyll/plugins/assets/
@@ -27,7 +28,6 @@ pages:
           - text: Includes
             url: /jekyll/includes/
           - text: Layouts
-            url: /jekyll/layouts/
             options:
                 - text: Default
                   url: /jekyll/layouts/default/
@@ -73,5 +73,7 @@ pages:
             
     - title: Blog
       url: /blog/
+      active_paths:
+        - /new/
     - title: Download
       url: /download/

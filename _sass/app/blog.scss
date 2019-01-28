@@ -27,7 +27,6 @@ h1#featured-image-blog-title {
     margin-bottom: 50px;
     padding-top: 40px;
 }
-
 .row.blog_content_area.main-cont {
     padding-top: 20px;
 } 
@@ -55,4 +54,23 @@ h1#featured-image-blog-title {
 
 #wrapper h3.panel-title {
     color: $blog-panel-title-colour;
+}
+.disqus-placeholder.is-hidden { display: none; }
+
+// Post Series section
+#content-container .post-series ul li.active a {
+    color: white;
+}
+.panel.post-series {
+    background-color: whitesmoke;
+    padding: 5px;
+    border: 1px solid #e2e2e2;
+}
+#content-container .post-series p {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+#wrapper .blog_post img {
+    max-height: 140px;
+    width: auto;
 }

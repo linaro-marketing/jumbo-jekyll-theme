@@ -1,87 +1,75 @@
-<div class="container-fluid" id="homepage-header" 
-{% if site.data.settings.home.jumbotron.background-image.name %}
-    style="background-image: url('{% asset_path '{{site.data.settings.home.jumbotron.background-image.name}}' %}');"
+<div class="{% if page.jumbotron.video %}video {% endif %}row {% if page.jumbotron.background-image %}background-image {% endif %}
+{% if page.image.background-class %}{{page.image.background-class}}{% endif %}{% if site.data.settings.jumbotron.darken %}overlay{% endif %}" id="jumbotron" 
+{% if page.jumbotron.background-image %}
+    style="background-image: url('{{page.jumbotron.background-image}}');"
 {% else %}
     class="jumbotron text-center featured-jumbotron"
-{% endif %}> <!--Fluid Container -->
-    <div class="row {% if site.data.settings.home.jumbotron.background-image.darken %}overlay{% endif %}"> <!--Row -->
-        <div id="featured-jumbotron"> <!--Jumbotron div -->        
-          <div class="container" id="jumbotron-text"> <!--Container -->
-              
-              
-              {% if site.data.settings.home.jumbotron.included_file %}
-                {% include {{site.data.settings.home.jumbotron.included_file}} %}
-              {% else %}
-              
-              {% if site.data.settings.home.jumbotron.image %}
-                  <div class="col-md-12">
-                      <img src="{% asset_path '{{site.data.settings.home.jumbotron.image}}'  %}" id="home-hero-image"
-                       class="img-responsive center-block animated fadeIn" alt="{{site.title}} Home Page Image">
-                  </div>
-              {% endif %}
-              
-              {% if site.data.settings.home.jumbotron.title %}
-                    
-                  <h1 id="home-page-title" class="fade-in-one" id="homepage-heading">
-                      {% if site.data.settings.home.jumbotron.title.first-line.display %}
-                        {% if site.data.settings.home.jumbotron.title.first-line.bold %}
-                            <strong>
-                                {{site.data.settings.home.jumbotron.title.first-line.text}}
-                            </strong>
-                        {% else %}
-                            {{site.data.settings.home.jumbotron.title.first-line.text}}
-                        {% endif %}
-                      {% endif %}
-                      {% if site.data.settings.home.jumbotron.title.second-line.display %}
-                            {% if site.data.settings.home.jumbotron.title.second-line.bold %}
-                                <br /><strong>{{site.data.settings.home.jumbotron.title.second-line.text}}</strong>
-                            {% else %}
-                                <br />{{site.data.settings.home.jumbotron.title.second-line.text}}
-                            {% endif %}
-                      {% endif %}
-                  </h1>
-              {% endif %}
-              
-              {% if site.data.settings.home.jumbotron.sub-title %}
-                <p id="home-page-text" class="sub-tag center-block fade-in-two">
-                    {% if site.data.settings.home.jumbotron.sub-title.first-line.display %}
-                        {% if site.data.settings.home.jumbotron.sub-title.first-line.bold %}
-                            <strong>
-                                <span>{{site.data.settings.home.jumbotron.sub-title.first-line.text}}</span>
-                            </strong>
-                        {% else %}
-                            <span>{{site.data.settings.home.jumbotron.sub-title.first-line.text}}</span>
-                        {% endif %}
-                    {% endif %}
-                    {% if site.data.settings.home.jumbotron.sub-title.second-line.display %}
-                        {% if site.data.settings.home.jumbotron.sub-title.second-line.bold %}
-                            <br />
-                            <strong>
-                                <span>{{site.data.settings.home.jumbotron.sub-title.second-line.text}}</span>
-                            </strong>
-                        {% else %}
-                            <span>{{site.data.settings.home.jumbotron.sub-title.second-line.text}}</span>
-                        {% endif %}
-                    {% endif %}
-                </p>
-              {% endif %}
-                
-              {% if site.data.settings.home.jumbotron.buttons %}
-                    <p id="buttons">
-                        {% for button in  site.data.settings.home.jumbotron.buttons %}
-                            <a class="{{button.class}}" href="{{button.url}}" role="button">
-                                {{button.text}}
-                            </a>
-                        {% endfor %}
-                    </p>
-              {% endif %}
-        
-          {% endif %}
-             
-          </div><!-- End Jumbotron Container Div -->  
-          {% if site.data.settings.home.shaped-divider %}
-            {% include shape-divider.html %}
-          {% endif %}   
-        </div> <!--End Jumbotron div -->        
-    </div> <!--row -->
-</div> <!--End Container-fluid -->
+{% endif %}> <!--Row -->
+    {% if page.jumbotron.video %}
+    <video autoplay muted preload="none" poster="{{page.jumbotron.video.poster}}" loop id="jumbotronVideo">
+        {% if page.jumbotron.video.source.mp4 %}
+            <source src="{{page.jumbotron.video.source.mp4}}" type="video/mp4">
+        {% endif %}
+        {% if page.jumbotron.video.source.ogg %}
+            <source src="{{page.jumbotron.video.source.ogg}}" type="video/ogg">
+        {% endif %}
+        {% if page.jumbotron.video.source.webm %}
+            <source src="{{page.jumbotron.video.source.webm}}" type="video/webm">
+        {% endif %}
+    </video>
+    {% endif %}
+    <div id="jumbotron-content" class=" flex-container"> <!--Jumbotron div -->        
+        <div class="container flex-center" id="jumbotron-text"> <!--Container -->
+        {% if page.jumbotron.image %}
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{page.jumbotron.image}}"
+            class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %} img-responsive center-block lazyload"
+             alt="{{site.title}} homepage header image.">
+        {% endif %}
+        {% if page.jumbotron.title %}
+            {% if page.jumbotron.title.lines %}
+                <h1>
+                {% for line in page.jumbotron.title.lines %}
+                    <span class="{{line.class}}">{{line.text}}</span>
+                {% endfor %}
+                </h1>
+            {% else %}
+                <h1 class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %}" id="jumbotron-heading">
+                    {{page.jumbotron.title}}
+                </h1>
+            {% endif %}
+        {% elsif page.title %}
+        <h1 class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %}" id="jumbotron-heading">
+            {{page.title}}
+        </h1>
+        {% else %}
+            <h1 class="{% if page.jumbotron.animation == "fade" %}fade-in-one{% endif %}" id="jumbotron-heading">
+                {{site.title}}
+            </h1>
+        {% endif %}
+        {% if page.jumbotron.description %}
+            <p class="center-block {% if page.jumbotron.animation == "fade" %}fade-in-two{% endif %}" id="jumbotron-sub-title">
+                {{page.jumbotron.description}}
+            </p>
+        {% elsif page.description %}
+            <p class="center-block {% if page.jumbotron.animation == "fade" %}fade-in-two{% endif %}" id="jumbotron-sub-title">
+            {{page.description}}
+            </p>
+        {% endif %}
+        {% if page.jumbotron.buttons %}
+        <p id="buttons">
+            {% for button in page.jumbotron.buttons %}
+            <a class="{% if button.class %}{{button.class}}{% else %}btn btn-primary btn-lg{% endif %} {% if page.jumbotron.animation == "fade" %}fade-in-three{% endif %}" href="{{button.url}}" role="button">
+                {{button.title}} {% if button.icon %}<i class="{{button.icon}}"></i>{% endif %}
+            </a>
+            {% endfor %}
+        </p>
+        {% endif %}
+        {% if page.jumbotron.include %}
+            {% include {{page.jumbotron.include}} %}
+        {% endif %}
+        </div><!-- End Jumbotron Container Div -->  
+    </div> <!--End Jumbotron div -->
+    {% if page.jumbotron.triangle-divider %}
+        <div class="big-triangle"></div>
+    {% endif %}
+</div> <!--row -->

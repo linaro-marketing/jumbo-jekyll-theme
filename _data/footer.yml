@@ -4,7 +4,9 @@
 # Optional Footer include which, when supplied, will prepend the included file 
 # to the footer.html include.
 # include: members.html
-
+# footer-image: /assets/images/Linaro-Sprinkle.png
+# footer-image-url: /
+company-copyright-text: Jumbo Jekyll Theme
 # Columns to be added to the footer
 columns:
     - title: CSS

@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{% if page.jumbotron.carousel-images %}
+    {% include carousel-header.html images=page.jumbotron.carousel-images %}
+    {% include jumbotron.html %}
+{% elsif page.jumbotron %}
+    {% include jumbotron.html %}
+{% else %}
+    {% include breadcrumb.html %}
+{% endif %}
+{{content}}
