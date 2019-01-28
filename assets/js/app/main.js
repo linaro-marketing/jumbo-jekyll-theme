@@ -5,7 +5,7 @@ $(window).click(function() {
 $(document).ready(function () {
     // Double Scroll Plugin
     if($(".double-scroll").length > 0){
-        $(this).doubleScroll({
+        $(".double-scroll").doubleScroll({
             resetOnWindowResize: true,
             onlyIfScroll: true
         });
