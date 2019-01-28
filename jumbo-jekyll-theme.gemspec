@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
     # Main Spec Info
     s.name          = "jumbo-jekyll-theme"
-    s.version       = "3.0.56"
+    s.version       = "3.8.0"
     s.authors       = ["Kyle Kirkby"]
     s.email         = ["kyle.kirkby@linaro.org"]
     s.summary       = %q{This is a Bootstrap 3 Jekyll theme built for Linaros static websites.}
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency 'jekyll-responsive-image'
     s.add_runtime_dependency 'hash-joiner', '~> 0'
     s.add_runtime_dependency 'sprockets', ' ~> 3.7.2'
+    s.add_runtime_dependency 'jekyll-watch', ' ~> 2.1.1'
     s.add_runtime_dependency 'jekyll-include-cache'
     s.add_runtime_dependency 'ffi', '~> 1.9.24'
     s.add_runtime_dependency "rack", ">= 1.6.11"

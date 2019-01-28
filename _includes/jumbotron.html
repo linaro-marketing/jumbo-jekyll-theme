@@ -1,4 +1,5 @@
-<div class="{% if page.jumbotron.video %}video {% endif %}row {% if page.jumbotron.background-image %}background-image {% endif %}{% if site.data.settings.jumbotron.darken %}overlay{% endif %}" id="jumbotron" 
+<div class="{% if page.jumbotron.video %}video {% endif %}row {% if page.jumbotron.background-image %}background-image {% endif %}
+{% if page.image.background-class %}{{page.image.background-class}}{% endif %}{% if site.data.settings.jumbotron.darken %}overlay{% endif %}" id="jumbotron" 
 {% if page.jumbotron.background-image %}
     style="background-image: url('{{page.jumbotron.background-image}}');"
 {% else %}
@@ -67,5 +68,8 @@
             {% include {{page.jumbotron.include}} %}
         {% endif %}
         </div><!-- End Jumbotron Container Div -->  
-    </div> <!--End Jumbotron div -->        
+    </div> <!--End Jumbotron div -->
+    {% if page.jumbotron.triangle-divider %}
+        <div class="big-triangle"></div>
+    {% endif %}
 </div> <!--row -->

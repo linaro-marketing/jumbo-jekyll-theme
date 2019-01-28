@@ -2,6 +2,7 @@
 layout: jumbotron-container
 permalink: /
 title: Home
+css-package: home
 description: >-
     The jumbo-jekyll-theme is a Bootstrap3 Jekyll theme for building
     superfast static websites.
@@ -12,6 +13,7 @@ sticky-tab-bar:
     - title: Get Started
       url: /get-started/
 jumbotron:
+    triangle-divider: true
     carousel-images:
         - /assets/images/content/background-image1.jpg
         - /assets/images/content/background-image2.png

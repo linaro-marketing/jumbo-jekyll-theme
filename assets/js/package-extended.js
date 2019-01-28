@@ -4,6 +4,7 @@
 //= require vendor/owl.carousel
 //= require vendor/lazysizes
 //= require vendor/ls.unveilhooks
+//= require vendor/jquery.doubleScroll
 //= require vendor/featherlight
 //= require app/sticky-tab-bar
 

@@ -551,15 +551,15 @@ nav > ul.navbar-right {
     border-right: 1px solid #f9f9f9;
     border-left: 1px solid #f9f9f9;
     border-bottom: 1px solid #f9f9f9;
-    background-color: black;
-    color: white;
+    background-color: $tabbed-nav-bg-color;
+    color: $tabbed-nav-text-color;
     text-align:center;
 }
 #wrapper li.tabbed-nav-btn a {
-    color: white;
+    color:$tabbed-nav-text-color;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus, .nav-tabs>li>a:hover {
-    color: $brand-primary !important;
+    color: $tabbed-nav-hover-color !important;
 }
 #wrapper .nav-tabs {
     border-bottom: none;
@@ -651,6 +651,9 @@ ul.nav.nav-pills.nav-stacked li:first-child {
 
 li.side-nav-button:hover > a {
     color: $brand-primary;
+}
+#wrapper li.side-nav-button a:hover {
+    color: black;
 }
 
 /* Stacked Nav Icon Div */
@@ -956,4 +959,42 @@ transform: rotate(0);
 .navbar-collapse::-webkit-scrollbar-thumb {
   background-color: $brand-primary;
   outline: 1px solid lighten($navbar-inverse-bg, 90%);
+}
+// Highlight nav menu options
+li.main.active a.main-anchor {
+    background-color: $navbar-hover-background-color;
+    color: $navbar-hover-text-color !important;
+}
+li.dropdown.menu.active.open > a {
+    color: $navbar-hover-text-color;
+}
+#main-navigation li.main:hover a.main-anchor {
+    background-color: $navbar-hover-background-color;
+    color: $navbar-hover-text-color !important; 
+}
+#main-navigation li.main:hover a.main-anchor  {
+    transition: background-color 600ms linear;
+}
+#main-navigation li.main a.main-anchor  {
+    transition: background-color 300ms linear;
+}
+
+@media(max-width: $screen-sm-min){
+    #main-navigation  ul{
+        li {
+            a {
+                text-align:center;
+            }
+        }
+        .dropdown-menu.sub-menu {
+            margin-left:0px;
+            li {
+                background-color: $navbar-submenu-bg-color;
+                a{
+                    color: $navbar-submenu-color;
+                }
+            }
+        }
+
+    }
 }
