@@ -674,6 +674,7 @@ ul {
     border: 1px solid #9e9e9e;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 0;
     transition: all 200ms ease;
 }
 .container-fluid .email:hover {
@@ -786,4 +787,11 @@ $padding-none: 0;
 @media (min-width: $screen-lg-min) {
   @include make-all-paddings(lg);
   @include make-all-margins(lg);
+}
+
+span.new-post {
+    background-color: $brand-primary;
+    color: white;
+    padding: 4px;
+    border-radius: 3px;
 }

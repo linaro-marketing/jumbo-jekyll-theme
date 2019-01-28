@@ -2,12 +2,18 @@
 Gem::Specification.new do |s|
     # Main Spec Info
     s.name          = "jumbo-jekyll-theme"
-    s.version       = "3.1.2.9"
+    s.version       = "3.8.0"
     s.authors       = ["Kyle Kirkby"]
     s.email         = ["kyle.kirkby@linaro.org"]
     s.summary       = %q{This is a Bootstrap 3 Jekyll theme built for Linaros static websites.}
     s.homepage      = "https://github.com/linaro-website/jumbo-jekyll-theme/"
     s.license       = "MIT"
+    s.metadata    = {
+        "homepage_uri" => "https://github.com/linaro-website/jumbo-jekyll-theme",
+        "changelog_uri" => "https://github.com/linaro-website/jumbo-jekyll-theme/blob/master/CHANGELOG.md",
+        "source_code_uri" => "https://github.com/linaro-website/jumbo-jekyll-theme/",
+        "bug_tracker_uri" => "https://github.com/linaro-website/jumbo-jekyll-theme/issues",
+    }
     # Spec Files
     s.files         = `git ls-files -z`.split("\x0").select do |f|
       f.match(%r{^(assets|_(data|includes|layouts|sass)/|(LICENSE|README|robots|_config)((\.(txt|md|markdown|yml)|$)))}i)

@@ -11,9 +11,13 @@ $sub-footer-bg-color: #ccc;
 $footer-border-color: #272727; 
 // Navbar
 $navbar-text-color: #fff !default;
+$navbar-hover-text-color: #fff !default;
+$navbar-hover-background-color: $brand-primary !default;
 $navbar-height: 66px;
 $navbar-inverse-bg: #000;
 $navbar-inverse-color: #fff;
+$navbar-submenu-bg-color: #3e3e3e !default;
+$navbar-submenu-color: #fff !default;
 // Breadcrumb
 $breadcrumb-background-color: $brand-primary !default;
 $breadcrumb-title-color: #fff !default;
@@ -35,3 +39,15 @@ $jumbotron-heading-color: #fff !default;
 $jumbotron-sub-title-font-size-xs: 16px;
 $jumbotron-sub-title-font-size: 18px;
 $jumbotron-sub-title-color: #fff !default;
+// Tabbed Navbar
+$tabbed-nav-bg-color: #ccc !default;
+$tabbed-nav-text-color: #000 !default;
+$tabbed-nav-hover-color: $brand-primary !default;
+// Post tags
+$post-tag-bg: #d7d7d7 !default;
+$post-tag-color: #000 !default;
+$post-tag-border: #8b8b8b !default;
+$post-tag-hover-bg: #1f1f1f !default;
+$post-tag-hover-color: #fff !default;
+// Triangle Divider
+$triangle-divider-bg-color: #fff !default;

@@ -83,10 +83,12 @@ style="background-image: url('{% asset_path '{{site.data.settings.breadcrumb.ima
                         </li>
                     {% endif %}
             {% else %}
-            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active">
-                <span itemprop="name">{% if page.title %}{{page.title}}{% else %}{{ page.title }}{% endif %}</span>
-                <meta itemprop="position" content="{{iterator}}" />
-            </li>
+                {% if site.data.settings.breadcrumb.page-titles %}
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active">
+                        <span itemprop="name">{% if page.title %}{{page.title}}{% else %}{{ page.title }}{% endif %}</span>
+                        <meta itemprop="position" content="{{iterator}}" />
+                    </li>
+                {% endif %}
             {% endif %}
             {% assign iterator = iterator | plus: 1 %}
         {% endfor %}
