@@ -16,9 +16,6 @@ js-package: main
                     {% include {{site.data.footer.include}} %}
                 {% endif %}
                 {% include github-edit.html %}
-                {% if site.data.settings.newsletter.enabled == true %}
-                    {% include newsletter-script.html %}
-                {% endif %}
                 {% include_cached footer.html %}
             </div>
         </div>
