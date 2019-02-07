@@ -1,6 +1,6 @@
 <head>
     {% if site.data.settings.linaro-ascii-art != "false" %}
-        {% include site.data.settings.ascii-art %}
+        {% include {{site.data.settings.ascii-art}} %}
     {% endif %}
     <meta charset="UTF-8">
     {% if site.data.settings.http2 %}
