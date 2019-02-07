@@ -1,23 +1,27 @@
 ---
-layout: jumbotron-container
+layout: default
 permalink: /404.html
 css-package: error
 title: 404 Page Not Found
 ---
-<div class="text-center">
-    {% if site.data.settings.error-pages.image %}
-        {% include image.html path=site.data.settings.erorr-pages.image %}
-    {% elsif site.data.settings.error-pages.svg %}
-        {% include {{site.data.settings.error-pages.svg}} %}
-    {% endif %}
-    {% if site.data.settings.error-pages.not-found-title %}
-        <h1>
-            {{site.data.settings.error-pages.not-found-title}}
-        </h1>
-    {% endif %}
-    {% if site.data.settings.error-pages.not-found-desc %}
-        <p>
-            {{site.data.settings.error-pages.not-found-desc}}
-        </p>
-    {% endif %}
+<div class="row" id="content-container">
+    <div class="container">
+        <div class="text-center">
+            {% if site.data.settings.error-pages.image %}
+                {% include image.html path=site.data.settings.erorr-pages.image %}
+            {% elsif site.data.settings.error-pages.svg %}
+                {% include {{site.data.settings.error-pages.svg}} %}
+            {% endif %}
+            {% if site.data.settings.error-pages.not-found-title %}
+                <h1>
+                    {{site.data.settings.error-pages.not-found-title}}
+                </h1>
+            {% endif %}
+            {% if site.data.settings.error-pages.not-found-desc %}
+                <p>
+                    {{site.data.settings.error-pages.not-found-desc}}
+                </p>
+            {% endif %}
+        </div>
+    </div>
 </div>
