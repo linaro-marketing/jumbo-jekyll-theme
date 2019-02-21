@@ -32,6 +32,8 @@ blog:
     tags_page: /blog/tags/
     # Show Thumbnails in the post index
     show_thumbnails: true
+    # Avatar Placeholder
+    avatar_placeholder: /assets/images/avatar-placeholder.jpg
     # Reading time
     reading_time: true
     # Toggle site wide comments display.
