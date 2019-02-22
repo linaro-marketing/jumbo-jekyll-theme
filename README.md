@@ -2,21 +2,33 @@
 
 This is an open source Jekyll theme built for use on the Linaro Jekyll static websites. This project aims to unify the styles and components of Linaro static websites and make it easier to replicate and deploy a new static site.
 
+## Contributions
+We happy to consider any contributions that you may have whether bugfixes/features. Please submit a pull request with your changes and we will take a look.
+
 ## Examples of sites using the theme
 
+* [96Boards.org](https://www.96boards.org)
 * [Linaro.org](https://www.linaro.org)
-* [96boards.org](https://www.96boards.org)
-* [Op-tee.org](https://www.op-tee.org)
-* [OpenDataPlane.org](https://www.opendataplane.org)
+* [OP-TEE.org](https://www.op-tee.org)
 * [DeviceTree.org](https://www.devicetree.org)
+* [MLPlatform.org](https://mlplatform.org)
+* [TrustedFirmware.org](https://www.trustedfirmware.org/)
+* [Connect.linaro.org](https://connect.linaro.org)
 
 ## Features
 
-Some of the features this theme offers:
+A few of the main features that this theme offers:
 
-* Lazy loading of content.
-* Generated breadcrumb
-* Easy navigation / footer management using YAML Data files.
+* Lazy loaded content using the lazysizes.js library
+* Jumbotron Header include with options for a video background, lazy loaded background carousel, background image or breadcrumb header.
+* JQuery Double Scroll tables using the doubleScroll css class
+* Sticky Tab bar include
+* Setup the navigation bar using _data/nav.yml with option for active classes to be set
+* Setup the footer using _data/footer.yml
+* Custom universal navbar toggle - useful for sites that share the same parent company.
+* Jekyll Assets - providiing minified Javascript/CSS packages.
+* Jekyll-responsive-image plugin for generating resized images upon site build.
+* Jekyll-data to override the settings added in this theme.
 
 ## Available Layouts
 
