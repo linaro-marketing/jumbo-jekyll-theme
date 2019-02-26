@@ -47,6 +47,7 @@ A few of the main features that this theme offers:
 ## Available Layouts
 
 Below are a table showing the available layouts for you to use:
+
 | Layout | Description | 
 | ------ | ----------- |
 | base | This is the base layout that contains the main HTML to for pages. Other layouts are children of this layout. |
@@ -58,6 +59,7 @@ layout is useful when addng custom pages. |
 ## Available Includes
 
 Below are a table showing the available includes for you to use:
+
 | Layout | Description | 
 | ------ | ----------- |
 | ascii-art | This is an optional include that includes the Linaro Sprinkle as Ascii art |
