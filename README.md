@@ -9,7 +9,7 @@ This is an open source Jekyll theme built for use on the Linaro Jekyll static we
     - [Adding Pages](#adding-pages)
     - [Adding Posts](#adding-posts)
 - [Adding Redirects](#adding-redirects)
-- [Building the static site locally](#building-locally)
+- [Building the static site locally](#building-your-static-site)
 
 ## Contributions
 We happy to consider any contributions that you may have whether bugfixes/features. Please submit a pull request with your changes and we will take a look.
@@ -338,6 +338,49 @@ To add a media element / YouTube video use the following Jekyll include.
 ```
 {% include media.html media_url="https://youtu.be/GFzJd0hXI0c" %}
 ```
+
+# Adding Redirects
+
+__Note__: This section is only applicable to static sites deployed within Linaro. You can however use the same approach for your site using the following method.
+
+We are using [Edge-rewrite](https://github.com/marksteele/edge-rewrite) which is a rewrite engine running in Lambda@Edge. The redirects are to be added to the `_data/routingrules.json` file in the webiste repository following the syntax rules [here](https://github.com/marksteele/edge-rewrite).
+
+```
+^/oldpath/(\\d*)/(.*)$ /newpath/$2/$1 [L]
+!^/oldpath.*$ http://www.example.com [R=302,L,NC]
+^/topsecret.*$ [F,L]
+^/deadlink.*$ [G]
+^/foo$ /bar [H=^baz\.com$]
+```
+
+__Note:__ These redirects are currently not respected by the link checker until built. So if trying to fix broken links by adding redirects then this may not be the best way to go about it currently. 
+
+# Building your static site
+
+We are working towards creating a Dockerfile for building Linaro's static sites (if familiar with Docker you can find many [Jekyll based Docker images])(https://hub.docker.com/r/jekyll/jekyll/) to get started). In the mean time you can still clone the site and install bundler/jekyll gems and ruby to build the site locally.
+
+In order to build the 96Boards.org static site make sure you have Ruby and the bundler/jekyll gems installed. For instructions on how to setup an environment to build Jekyll sites see the official Jekyll documentation [here](https://jekyllrb.com/docs/installation/).
+
+Once you have above installed you can simply clone this repo and the [96Boards Documentation Repo](https://github.com/96boards/documentation). You will then need to modify the [build.sh](https://github.com/96boards/website/blob/master/build.sh) file to pull the documentation into your website repo before building the static site. Amend the top two lines of the build.sh file so that the correct paths are used. Then run the script to move the documentation files over to the _documentation collection in the website repo.
+
+```
+$ ./build.sh
+```
+
+After you have moved the documentation files over you can go ahead and run the following to get the site building:
+
+```
+$ bundle 
+```
+
+This will install the required gems listed in the Gemfile.
+
+```
+$ bundle exec jekyll s 
+```
+
+This will serve (s) the Jekyll static website to the http://localhost:4000 where you can view the generated static website.
+
 
 # Feature Requests / Bug Fixes
 
