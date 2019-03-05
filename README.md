@@ -14,13 +14,12 @@ This is an open source Jekyll theme built for use on the Linaro Jekyll static we
 ## Contributions
 We happy to consider any contributions that you may have whether bugfixes/features. Please submit a pull request with your changes and we will take a look.
 
-## Examples of sites using the theme
+## Examples of websites using the theme
 
 * [96Boards.org](https://www.96boards.org)
 * [Linaro.org](https://www.linaro.org)
 * [OP-TEE.org](https://www.op-tee.org)
 * [DeviceTree.org](https://www.devicetree.org)
-* [MLPlatform.org](https://mlplatform.org)
 * [TrustedFirmware.org](https://www.trustedfirmware.org/)
 * [Connect.linaro.org](https://connect.linaro.org)
 
@@ -181,13 +180,6 @@ Here you can add image to be used an the background image of the jumbotron. Try 
 
 
 
-
-
-
-
-
-
-
 # Adding Content
 ## Adding Pages
 
@@ -203,7 +195,9 @@ Website pages are added as markdown files usually in a folder with a `README.md`
 
 ### Step 2 - Add Jekyll front matter to your new page
 
-The url/permalink for your page should be added to the `front matter` of your posts/pages (the section at the top of the file between the set of 3 dashes `---`) as the `permalink` so that your page url is exactly as you intended it to be. See below for an example of the front matter to add to your page. Each theme layout may have different front matter variables that are required so if in any doubt refer to the [layouts](#available-layouts) section of this documentation.. 
+The url/permalink for your page should be added to the `front matter` of your posts/pages (the section at the top of the file between the set of 3 dashes `---`) as the `permalink` so that your page url is exactly as you intended it to be. See below for an example of the front matter to add to your page. 
+
+Each theme layout may have different front matter variables that are required so if in any doubt refer to the [layouts](#available-layouts) section of this documentation.. 
 
 #### Available front matter options
 
@@ -215,7 +209,7 @@ Below is a table of the most common front matter variable to add to your page.
 | keywords | hikey970, Arm, Linaro, Open Source | Used for the meta keywords tag by jekyll-seo-tag plugin |
 | published | false | Set `published` to false if you want to add the page but not show it on the website. |
 | title | My Awesome Post | The title of your page/post. Used in the `meta` tags and in layouts to display your page correctly. |
-| description | This is an awesome post about MlPlatform.org... | The description of your page used as the `meta` description.|
+| description | This is an awesome post about your site... | The description of your page used as the `meta` description.|
 
 #### Example front matter
 
@@ -251,7 +245,7 @@ Now you can add content to your page using `html` of `markdown`. You can find a 
 
 ## Adding Posts
 
-In order to add a blog post to MlPlatform.org copy an existing post from the [_posts folder](https://github.com/96boards/website/tree/master/_posts). Posts are organised into by year/month so add to the correct folder based on the month you are posting it in and if the folder doesn't exist create one.
+In order to add a blog post to your site copy an existing post from the _posts folder if one exists otherwise create a new _posts folder. Posts are best organised by year/month so add to the correct folder based on the month you are posting it in and if the folder doesn't exist create one.
 
 #### Step 1 - Modify the post file name
 
@@ -268,11 +262,11 @@ Modify the post front matter based on your post. Values to modify are:
 
 ##### Author
 
-Change the author to a unique author shortname. If this is your first time posting then add your author values to the [_data/authors.yml file](https://github.com/96boards/website/blob/master/_data/authors.yml). Make sure to add your profile image to the [/assets/images/authors folder](https://github.com/96boards/website/tree/master/assets/images/authors). Verify that the author name is an exact match to that provided as the author: in your post.
+Change the author to a unique author shortname. If this is your first time posting then add your author values to the _authors Jekyll collection (see this [collection](https://github.com/Linaro/website/tree/master/_authors) for an example). Make sure to add a profile image to the [/assets/images/authors folder](https://github.com/96boards/website/tree/master/assets/images/authors) and then refernce in authors page in the _authors collection. Verify that the author username is an exact match to that provided as the author: in your post.
 
 ##### Date
 
-Modify the date to sometime before you post the blog otherwise Jekyll will see it as a __future__ post and not render it until the time on the server exceeds/equals that provided as the date in the post front matter.
+Modify the date of your post to a valid time before you post the blog otherwise Jekyll will see it as a __future__ post and not render it until the time on the server exceeds/equals that provided as the date in the post front matter.
 
 ##### Image
 
@@ -283,9 +277,8 @@ image:
     featured: true
     path: /assets/images/blog/DragonBoard-UpdatedImages-front.png
     name: DragonBoard-UpdatedImages-front.png
-    thumb: DragonBoard-UpdatedImages-front.png 
-    
 ```
+Thumbnails are generated on site build by the jekyll-responsive-image plugin (so make sure that the image you provide is of a relatively high resolution).
 
 Make sure that the image you add in this section of front matter is placed in the [/assets/images/blog folder](https://github.com/96boards/website/tree/master/assets/images/blog).
 
@@ -293,7 +286,7 @@ __Note:__ There is currently a bug with the version of `jekyll-assets` we are us
 
 
 ##### Tags
-These should be modified based on the content of your post as they are used for Meta keywords so that people can find your post based on the [tags your provide](https://www.MlPlatform.org/blog/tag/).
+These should be modified based on the content of your post as they are used for Meta keywords so that people can find your post based on the [tags your provide](https://www.your site/blog/tag/).
 
 ##### Description
 Change this value to a short description of your blog post as this is used for the meta description of your blog post.
