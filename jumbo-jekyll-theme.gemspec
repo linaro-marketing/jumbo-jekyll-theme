@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
     # Main Spec Info
     s.name          = "jumbo-jekyll-theme"
-    s.version       = "3.8.0"
+    s.version       = "3.9.4"
     s.authors       = ["Kyle Kirkby"]
     s.email         = ["kyle.kirkby@linaro.org"]
     s.summary       = %q{This is a Bootstrap 3 Jekyll theme built for Linaros static websites.}
@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
     s.add_runtime_dependency "jekyll-sitemap", "~> 1.1"
     s.add_runtime_dependency "jekyll-readme-index", "0.2"
-    s.add_runtime_dependency "bootstrap-sass", "~> 3.3.6"
+    s.add_runtime_dependency "bootstrap-sass", "~> 3.4.1"
     s.add_runtime_dependency "jekyll-redirect-from", "~> 0.12"
     s.add_runtime_dependency "jekyll-tidy", "~> 0.2.2"
     s.add_runtime_dependency "jekyll-assets", "2.4.0"

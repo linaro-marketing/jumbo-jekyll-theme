@@ -1,7 +1,16 @@
 ---
 title: Authors
 permalink: /authors/
-layout: author-layout
+layout: layout: container-breadcrumb
 css-package: blog
+js-package: blog
 ---
-{% include authors-posts.html %}
+<div class="row blog-row">
+    <div class="col-md-9">
+        {{content}}
+        {% include authors-posts.html %}
+    </div>
+    <div class="col-md-3">
+        {% include post-sidebar.html %}
+    </div>
+</div>

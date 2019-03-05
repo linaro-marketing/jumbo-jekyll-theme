@@ -27,18 +27,12 @@ html.ios7 body {
 .ext-left {
     float: left;
 }
-
 .ext-right {
     height: auto;
     vertical-align: middle;
     display: table-cell;
     padding-right: 10px;
     padding-left: 10px;
-}
-// HTML Style
-html {
- height  : 100%;
-//  overflow: hidden; Will break the sticky navbar - be warned
 }
 button.owl-dot {
     background-color: transparent;

@@ -143,3 +143,33 @@ td {
 td:last-child {
   border-right: 0px;
 }
+
+// doubleScroll
+.doubleScroll-scroll-wrapper::-webkit-scrollbar {
+    width: 1em;
+}
+.doubleScroll-scroll-wrapper::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: darken($body-bg, 80%);
+}
+.doubleScroll-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: lighten($brand-primary, 20%);
+  outline: 1px solid lighten($body-bg, 90%);
+}
+
+.double-scroll::-webkit-scrollbar {
+    width: 1em;
+}
+.double-scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: darken($body-bg, 80%);
+}
+.double-scroll::-webkit-scrollbar-thumb {
+  background-color: lighten($brand-primary, 20%);
+  outline: 1px solid lighten($body-bg, 90%);
+}
+.double-scroll table.table {
+    margin-bottom: 0px;
+}

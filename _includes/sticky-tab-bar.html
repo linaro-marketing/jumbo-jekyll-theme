@@ -1,7 +1,7 @@
 {% if page.sticky-tab-bar %}
-{% assign tab-list = page.sticky-tab-bar %}
+    {% assign tab-list = page.sticky-tab-bar %}
 {% else %}
-{% assign sub-nav-tabs = site.data.sticky-tab-bar.pages %}
+    {% assign sub-nav-tabs = site.data.sticky-tab-bar.pages %}
 {% endif %}
 {% if sub-nav-tabs %}
     {% assign page-base =  page.url | split:'/' %}
