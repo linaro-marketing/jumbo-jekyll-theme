@@ -14,17 +14,16 @@ This is an open source Jekyll theme built for use on the Linaro Jekyll static we
 ## Contributions
 We happy to consider any contributions that you may have whether bugfixes/features. Please submit a pull request with your changes and we will take a look.
 
-## Examples of sites using the theme
+## Examples of websites using the theme
 
 * [96Boards.org](https://www.96boards.org)
 * [Linaro.org](https://www.linaro.org)
 * [OP-TEE.org](https://www.op-tee.org)
 * [DeviceTree.org](https://www.devicetree.org)
-* [MLPlatform.org](https://mlplatform.org)
 * [TrustedFirmware.org](https://www.trustedfirmware.org/)
 * [Connect.linaro.org](https://connect.linaro.org)
 
-## Overview
+# Overview
 
 The jumbo-jekyll-theme is the open source Jekyll theme that was developed to transform WordPress sites into ultra-fast static Jekyll websites statically hosted with AWS. 
 There are many features within this theme that you may be able to learn from/utilise. 
@@ -44,7 +43,7 @@ A few of the main features that this theme offers:
 * Jekyll-responsive-image plugin for generating resized images upon site build.
 * Jekyll-data to override the settings added in this theme.
 
-## Available Layouts
+### Available Layouts
 
 Below are a table showing the available layouts for you to use:
 
@@ -56,7 +55,7 @@ layout is useful when addng custom pages. |
 | jumbotron-container (Most Common) | This is the exact same as the above but instead provides a Bootstrap 3 content container than can be used to add content to. |
 | default | This is the default layout to use which is the jumbotron-container layout |
 
-## Available Includes
+### Available Includes
 
 Below are a table showing the available includes for you to use:
 
@@ -180,21 +179,166 @@ Here you can add image to be used an the background image of the jumbotron. Try 
 
 
 
-# The Docs
-The documentation for this theme is currently available through the Collaborate space. I will be adding to readthedocs/github in due course.
+
+# Adding Content
+## Adding Pages
+
+### Step 1 - Setup your site if not already setup
+
+__Note: If you're reading these docs for a site that's already using the theme then you can skip this part.__
+
+The first step when using this theme is to create your own Jekyll site based off of this theme.
+
+### Step 2 - Create a new page file
+
+Website pages are added as markdown files usually in a folder with a `README.md` file beneath to keep everything organised and to ensure content renders on GitHub too (e.g `/services/README.md` or `/services.md`). If your page mainly contains HTML then use the `.html` file extension.
+
+### Step 2 - Add Jekyll front matter to your new page
+
+The url/permalink for your page should be added to the `front matter` of your posts/pages (the section at the top of the file between the set of 3 dashes `---`) as the `permalink` so that your page url is exactly as you intended it to be. See below for an example of the front matter to add to your page. 
+
+Each theme layout may have different front matter variables that are required so if in any doubt refer to the [layouts](#available-layouts) section of this documentation.. 
+
+#### Available front matter options
+
+Below is a table of the most common front matter variable to add to your page.
+
+| Front Matter Option | Value | Description  | 
+| ------ | ----------- | ----- |
+| layout | post | Layout to be used for the page (use `default` if you're unsure) |
+| keywords | hikey970, Arm, Linaro, Open Source | Used for the meta keywords tag by jekyll-seo-tag plugin |
+| published | false | Set `published` to false if you want to add the page but not show it on the website. |
+| title | My Awesome Post | The title of your page/post. Used in the `meta` tags and in layouts to display your page correctly. |
+| description | This is an awesome post about your site... | The description of your page used as the `meta` description.|
+
+#### Example front matter
+
+```YAML
+---
+# Layout of your web page - see below for available layouts.
+layout: jumbotron-container
+# URL of your page
+permalink: /about/
+# Title of your page
+title: About Us
+# Description of your web page.
+desc: |-
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+    text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+    survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was 
+    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+# Keywords that describe your page used as meta keywords.
+tags: lorem, ipsum, web, page
+jumbotron:
+    carousel-images:
+        - /assets/images/content/background-image1.jpg
+        - /assets/images/content/background-image2.png
+        - /assets/images/content/background-image3.jpg
+---
+Markdown content goes here.
+```
+
+### Step 2 - Add content to your page
+
+Now you can add content to your page using `html` of `markdown`. You can find a markdown cheatsheet [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). 
+
+## Adding Posts
+
+In order to add a blog post to your site copy an existing post from the _posts folder if one exists otherwise create a new _posts folder. Posts are best organised by year/month so add to the correct folder based on the month you are posting it in and if the folder doesn't exist create one.
+
+#### Step 1 - Modify the post file name
+
+The url for your title is based on the title provided in the filename e.g 2018-06-07-i2s-in-dragonboard410c.md will have a url of /blog/i2s-in-dragonboard410c/. Separate the words in your title by dashes and modify the date at the start of the filename as neccessary. 
+
+#### Step 2 - Modify the post front matter
+
+Modify the post front matter based on your post. Values to modify are:
+- author:
+- date:
+- image:
+- tags:
+- description:
+
+##### Author
+
+Change the author to a unique author shortname. If this is your first time posting then add your author values to the _authors Jekyll collection (see this [collection](https://github.com/Linaro/website/tree/master/_authors) for an example). Make sure to add a profile image to the [/assets/images/authors folder](https://github.com/96boards/website/tree/master/assets/images/authors) and then refernce in authors page in the _authors collection. Verify that the author username is an exact match to that provided as the author: in your post.
+
+##### Date
+
+Modify the date of your post to a valid time before you post the blog otherwise Jekyll will see it as a __future__ post and not render it until the time on the server exceeds/equals that provided as the date in the post front matter.
+
+##### Image
+
+This value is used for the featured image displayed on your blog post and the image that is used when sharing the blog post on social media sites.
+
+```YAML
+image:
+    featured: true
+    path: /assets/images/blog/DragonBoard-UpdatedImages-front.png
+    name: DragonBoard-UpdatedImages-front.png
+```
+Thumbnails are generated on site build by the jekyll-responsive-image plugin (so make sure that the image you provide is of a relatively high resolution).
+
+Make sure that the image you add in this section of front matter is placed in the [/assets/images/blog folder](https://github.com/96boards/website/tree/master/assets/images/blog).
+
+__Note:__ There is currently a bug with the version of `jekyll-assets` we are using which means the only acceptable image extensions are `.jpg` and `.png`. If you use `.jpeg` you image may not display as expected.
+
+
+##### Tags
+These should be modified based on the content of your post as they are used for Meta keywords so that people can find your post based on the [tags your provide](https://www.your site/blog/tag/).
+
+##### Description
+Change this value to a short description of your blog post as this is used for the meta description of your blog post.
+
+#### Step 3 - Add your post content.
+
+Write your post content in Markdown format; specifically the [Kramdown](https://kramdown.gettalong.org/) Markdown flavour.
+
+##### Adding images
+Please use the following code snipppet to add an image to your blog post. Make sure to add the images that you include to [/assets/images/blog folder](https://github.com/96boards/website/tree/master/assets/images/blog).
+
+```
+{% include image.html name="name-of-your-image.png" alt="The Alt text for your image" %}
+```
+
+You also align/scale your image using the following css classes.
+
+|Class|Details|
+|-----|-------|
+|small-inline|Small image aligned to the left|
+|small-inline right| Small image aligned to the right|
+|medium-inline|Medium image aligned to the left|
+|medium-inline right|Medium image aligned to the right|
+|large-inline|Large image aligned to the left|
+|large-inline right|Large image aligned to the right|
+
+```
+{% include image.html name="name-of-your-image.png"  class="medium-inline" alt="The Alt text for your image" %}
+```
+
+Using this Jekyll include will allow your images to be lazy loaded and format the image HTML correctly.
+
+
+##### Adding code
+
+We are using the rouge syntax highlighter to highlight your glorious code. 
+
+```bash
+$ bundle exec jekyll serve --port 1337
+```
+
+See the full list of languages [here](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers).
+
+
+##### Adding Media/YouTube videos
+
+To add a media element / YouTube video use the following Jekyll include.
+
+```
+{% include media.html media_url="https://youtu.be/GFzJd0hXI0c" %}
+```
 
 # Feature Requests / Bug Fixes
 
 If anyone that uses the theme has any useful bug fixes / feature requests that may be of interest then please feel free to fork/submit a PR with your fixes/features.
-
-
-
-# Blog Post Images
-
-To add a featured image to your blog post set the `image:` key in your posts front matter:
-
-```yaml
-image: /assets/images/social-media-image.png
-```
-
-Thumbnails are automatically generated from your high resolution image upon site build using the `jekyll-responsive-image` plugin.
