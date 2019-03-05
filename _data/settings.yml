@@ -2,6 +2,16 @@
 favicon: favicon.png
 # Placeholder for Missing Images
 placeholder: /assets/images/placeholder.png
+# Support for http2 push features
+http2: false
+# Ascii Art
+ascii-art: ascii-art.html
+# Support for http2 push features
+http2_resources:
+  - rel: preload
+    as: font
+    type: font/woff2
+    href: /assets/fonts/lato-regular/Lato-regular.woff2
 # Footer Newsletter toggle.
 newsletter:
     enabled: true
@@ -19,8 +29,11 @@ error-pages:
   not-found-desc: Sorry, but the page you were looking for could not be found.
 # Blog setup
 blog:
+    tags_page: /blog/tags/
     # Show Thumbnails in the post index
     show_thumbnails: true
+    # Avatar Placeholder
+    avatar_placeholder: /assets/images/avatar-placeholder.jpg
     # Reading time
     reading_time: true
     # Toggle site wide comments display.
@@ -91,3 +104,6 @@ mailchimp:
 # youtube_username: linaroorg
 # twitter_username: linaroorg
 # slideshare_username: linaroorg
+# 
+# Default Social Media share image location
+social_share_image: /assets/images/social-media-image.png

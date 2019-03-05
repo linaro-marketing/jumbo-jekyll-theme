@@ -1,0 +1,28 @@
+{% if page.series %}
+    {% assign count = '0' %}
+    {% assign idx = '0' %}
+    {% for post in site.posts reversed %}
+        {% if post.series == page.series %}
+            {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+            {% if post.url == page.url %}
+                {% capture idx %}{{count}}{% endcapture %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    <div class="panel post-series">
+        <p>
+            This article is <strong>Part {{ idx }}</strong> in a <strong>{{ count }}-Part</strong> Series.
+        </p>
+        <ul class="list-group">
+            {% assign count = '0' %}
+            {% for post in site.posts reversed %}
+                {% if post.series == page.series %}
+                    {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+                    <li class="list-group-item {% if page.url == post.url %}active{% endif %}">Part {{ count }} -
+                        <a href="{{post.url}}">{{post.title}}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

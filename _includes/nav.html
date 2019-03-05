@@ -1,6 +1,11 @@
 {% if site.data.nav.universal-nav %}
     {% include universal-nav.html %}
 {% endif %}
+{% assign page_base = page.url | split: "/" %}
+ {% assign current_page_url = page.url | replace: "index.html", "" %}
+{% if current_page_url == "/" %}
+    {% assign current_page_url  = "do-no-set"%}
+{% endif %}
 <nav class="
 {% if layout.nav-light %}
         nav-light 
@@ -26,25 +31,46 @@ navbar-inverse navbar-static" id="main-navigation">
                         {% else %}
                             {% include linaro-svg.html %}
                         {% endif %}
+                    {% elsif site.data.nav.brand.text %}
+                        {{site.data.nav.brand.text}}
                     {% else %}
                         {{site.title}}
                     {% endif %}
                 </a>
             {% endif %}
           </div>
-
          <!-- NAVBAR COLLAPSE-->
           <div class="collapse navbar-collapse" id="navbar-collapse">
               <ul class="nav navbar-nav navbar-right" id="navbar-buttons">
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
                         <li class="main dropdown menu
+                            {% if section.active_paths %}
+                                {% for active_path in section.active_paths %}
+                                    {% if current_page_url contains active_path %}
+                                        active
+                                        {% break %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                             {% for menu-item in section.options %}
-                                 {% if page.url == menu-item.url %}
-                                    active
-                                 {% endif %}
+                                {% if menu-item.options %}
+                                    {% for sub-item in menu-item.options %}
+                                        {% if current_page_url contains sub-item.url or sub-item.url == current_page_url %}
+                                            {% unless sub-item.url contains "http" %}
+                                                active
+                                                {% break %}
+                                            {% endunless %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% elsif current_page_url contains menu-item.url or menu-item.url == current_page_url %}
+                                    {% unless menu-item.url contains "http" %}
+                                        active
+                                        {% break %}
+                                    {% endunless %}
+                                {% endif %}
                             {% endfor %} ">
-                          <a {% if section.url %}href="{{section.url}}"{% endif %} class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                          <a {% if section.url %}href="{{section.url}}"{% endif %} class="main-anchor dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                               {{section.title}} <span class="caret"></span>
                           </a>
                           <ul class="dropdown-menu menu">
@@ -78,15 +104,18 @@ navbar-inverse navbar-static" id="main-navigation">
                           </ul>
                         </li>
                     {% else %}
-                        <li {% if section.url == page.permalink %}
-                                class="main active"
-                            {% else %}
-                                class="main"
-                            {% endif %}
-                            ><a href="{{section.url}}" title="{{section.title}}">{{section.title}}</a></li>
+                        <li class="main {% if section.url == current_page_url or current_page_url contains section.url %}active{% elsif section.active_paths %}
+                                {% for active_path in section.active_paths %}
+                                    {% if current_page_url contains active_path %}
+                                        active
+                                        {% break %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}">
+                            <a class="main-anchor" href="{{section.url}}" title="{{section.title}}">{{section.title}}</a>
+                        </li>
                     {% endif %}
                 {% endfor %}
-                
                 {% if site.data.nav.search.enabled %}
                     <li id="search-menu-item">
                         <a href="#search" class="dropdown-toggle" id="search_icon">
@@ -94,10 +123,7 @@ navbar-inverse navbar-static" id="main-navigation">
                         </a>
                     </li>
                 {% endif %}
-        
             </ul>
-            
-            
             {% if site.data.nav.search.enabled %}
                 <div id="search_bar">
                     

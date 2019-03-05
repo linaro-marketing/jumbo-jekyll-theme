@@ -3,6 +3,7 @@
 //= require vendor/cookieconsent
 //= require vendor/lazysizes
 //= require vendor/ls.unveilhooks
+//= require vendor/jquery.doubleScroll
 //= require vendor/featherlight
 
 //= require app/main

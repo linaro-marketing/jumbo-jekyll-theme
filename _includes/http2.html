@@ -1,0 +1,102 @@
+<!-- Start HTTP/2 Preload of Resources-->
+{% comment %}
+    Preload CSS Packages
+{% endcomment %}
+{% if page.css-package %}
+    {% capture css-package %}/assets/css/main-{{page.css-package}}.css{% endcapture %}
+    <link rel="preload" as="style" href="{{ css-package | relative_url }}?v={% bust_cache %}">
+{% elsif layout.css-package %}
+    {% capture css-package %}/assets/css/main-{{layout.css-package}}.css{% endcapture %}
+    <link rel="preload" as="style" href="{{ css-package | relative_url }}?v={% bust_cache %}">
+{% elsif layout.css-package == "main" or page.css-package == "main" %}
+    <link rel="preload" as="style" href="{{ "/assets/css/main.css" | relative_url }}?v={% bust_cache %}">
+{% else %}
+    <link rel="preload" as="style" href="{{ "/assets/css/main.css" | relative_url }}?v={% bust_cache %}">
+{% endif %}
+{% comment %}
+    Preload JS Packages
+{% endcomment %}
+{% if page.js-package %}
+    {% capture js-package %}package-{{page.js-package}}{% endcapture %}
+    <link rel="preload" as="script" href="{% asset_path {{js-package}} %}?v={% bust_cache %}">
+{% elsif layout.js-package %}
+    {% capture js-package %}package-{{layout.js-package}}{% endcapture %}
+    <link rel="preload" as="script" href="{% asset_path {{js-package}} %}?v={% bust_cache %}">
+{% else %}
+    <link rel="preload" as="script" href="{% asset_path package %}?v={% bust_cache %}">
+{% endif %}
+{% comment %}
+    Site Wide Http2 resources
+{% endcomment %}
+{% if site.data.settings.http2_resources %}
+    {% for resource in site.data.settings.http2_resources %}
+        {% if resource.href_list %}
+            {% for href in resource.href_list %}
+                <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{href}}" {% if resource.type %}type="{{resource.type}}"
+                    {% endif %} {% if resource.crossorigin %}crossorigin{% endif %}>
+            {% endfor %}
+        {% else %}
+            <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"{% endif %}
+            {% if resource.crossorigin %}crossorigin{% endif %}>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% comment %}
+    The following liquid checks the pages frontmatter for http2_resources list.
+    Add all non-theme resources that you'd like to preload here.
+{% endcomment %}
+{% if page.http2_resources %}
+    {% for resource in page.http2_resources %}
+        {% if resource.href_list %}
+            {% for href in resource.href_list %}
+                <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{href}}" {% if resource.type %}type="{{resource.type}}"
+                    {% endif %} {% if resource.crossorigin %}crossorigin{% endif %}>
+            {% endfor %}
+        {% else %}
+            <link rel="{{resource.rel}}" {% if resource.as %}as="{{resource.as}}"{% endif %} href="{{resource.href}}" {% if resource.type %}type="{{resource.type}}"{% endif %}
+            {% if resource.crossorigin %}crossorigin{% endif %}>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% comment %}
+    Jumbotron Background Image
+{% endcomment %}
+{% if page.jumbotron.background-image %}
+    {% for resource in page.http2_resources %}
+        <link rel="preload" as="image" href="{{page.jumbotron.background-image}}">
+    {% endfor %}
+{% endif %}
+{% comment %}
+    Jumbotron Carousel Images
+{% endcomment %}
+{% if page.jumbotron.carousel-images %}
+    {% for image in page.jumbotron.carousel-images %}
+        <link rel="preload" as="image" href="{{image}}">
+    {% endfor %}
+{% endif %}
+{% comment %}
+    Jumbotron Carousel Images
+{% endcomment %}
+{% if page.jumbotron.carousel-images %}
+    {% for image in page.jumbotron.carousel-images %}
+        <link rel="preload" as="image" href="{{image}}">
+    {% endfor %}
+{% endif %}
+{% comment %}
+    Jumbotron Video 
+{% endcomment %}
+{% if page.jumbotron.video.poster %}
+    <link rel="preload" as="image" href="{{page.jumbotron.video.poster}}">
+{% endif %}
+{% if page.jumbotron.video.source.mp4 %}
+    <link rel="preload" as="video" href="{{page.jumbotron.video.source.mp4}}">
+{% endif %}
+{% comment %}
+    Blog Images 
+{% endcomment %}
+{% if page.image.featured %}
+    {% if page.image.path %}
+        <link rel="preload" as="image" href="{{page.image.path}}">
+    {% endif %}
+{% endif %}
+<!-- End HTTP/2 Preload of Resources-->

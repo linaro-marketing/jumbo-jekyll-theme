@@ -1,0 +1,21 @@
+- title: Linaro
+  url: https://www.linaro.org/
+- title: Connect
+  url: https://connect.linaro.org
+- title: 96Boards
+  url: https://www.96boards.org
+- title: Developer Cloud
+  url: https://linaro.cloud
+- title: Projects
+  options:
+    - title: 96Boards.ai
+      url: https://www.96boards.ai
+    - title: OP-TEE
+      url: https://www.op-tee.org
+    - title: DeviceTree.org
+      url: https://www.devicetree.org
+    - title: OpenDataPlane.org
+      url: https://www.opendataplane.org
+    - title: TrustedFirmware.org
+      url: https://www.trustedfirmware.org
+      active: true

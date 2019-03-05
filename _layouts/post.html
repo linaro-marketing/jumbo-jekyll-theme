@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: base
 js-package: blog
 css-package: blog
 ---
-{% if page.image.featured %}
-        <div class="row overlay background-image" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{page.image.path}}');"> <!--Row -->
+{% if page.image or page.image.path %}
+        <div class="row overlay background-image {% if page.image.background-class %}{{page.image.background-class}}{% endif %}" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% if page.image.path %}{{page.image.path}}{% else %}{{page.image}}{% endif %}');"> <!--Row -->
                 <div id="jumbotron-content" class="flex-container"> <!--Jumbotron div -->        
                     <div class="container flex-center" id="jumbotron-text"> <!--Container -->
                     <h1 id="jumbotron-heading">{{page.title}}</h1>
@@ -12,7 +12,7 @@ css-package: blog
                         {% assign author = site.authors | where: "username", page.author | first %}
                         {% assign author-url = author.url %}
                         <a href="{{author-url}}">
-                            <div class="blog-author-image lazyload" data-bg="{% if author.image.path %}{{author.image.path}}{% else %}/assets/images/avatar-placeholder.png{% endif %}"></div>
+                            <div class="blog-author-image lazyload" data-bg="{% if author.image.path %}{{author.image.path}}{% else %}{{site.data.settings.blog.avatar_placeholder}}{% endif %}"></div>
                         </a>
                     {% endif %}
                     {% if page.co-author %}
@@ -24,7 +24,7 @@ css-package: blog
                             <div class="blog-author-image lazyload" data-bg="{% if co-author.image.name %}
                             {{co-author.image.path}}
                         {% else %}
-                            /assets/images/avatar-placeholder.png
+                            {{site.data.settings.blog.avatar_placeholder}}
                         {% endif %}"></div>
                         </a>
                         <small class="blog-author text-center">
@@ -56,7 +56,7 @@ css-package: blog
         {% if site.data.settings.blog.sidebar.display-on-posts %}
         <div class="col-md-9">
                 <article class="post-content">
-                    {% unless page.image.featured %}
+                    {% unless page.image %}
                     <div class="post-info">
                         <h1>{{page.title }}</h1>
                         {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
@@ -89,6 +89,7 @@ css-package: blog
                     </div>
                     {% endunless %}
                     {{ content }}
+                    {% include post-series.html %}
                 </article>
                 
             {% comment %}
@@ -104,15 +105,25 @@ css-package: blog
             {% include disqus-comments.html %}
             </div>
             <div class="col-md-3 blog-sidebar no-padding">
-                {% include post-sidebar.html %}
+                {% if site.data.settings.blog.tags_enabled %}
+                    {% if page.tags %}
+                        {% assign post_tags = page.tags %}
+                    {% elsif page.keywords %}
+                        {% assign post_tags = page.tags %}
+                    {% else %}
+                        {% assign post_tags = "" %}
+                    {% endif %}
+                {% else %}
+                    {% assign post_tags = "" %}
+                {% endif %}
+                {% include post-sidebar.html tags=post_tags post_cat=page.categories %}
             </div>
             {% else %}
             <div class="col-xs-12 no-padding">
                 <article class="post-content">
-                    {% unless page.image.featured %}
+                    {% unless page.image %}
                     <div class="post-info">
                         <h1>{{page.title }}</h1>
-                        
                         {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %}
                         {% if page.categories %}in <a href="/categories/#{{page.categories[0]}}">{{page.categories[0] | capitalize}}</a>{% endif %}
                         {% if page.author %}
@@ -136,6 +147,7 @@ css-package: blog
                     </div>
                     {% endunless %}
                     {{ content }}
+                    {% include post-series.html %}
                 </article>
             </div>
             {% endif %}

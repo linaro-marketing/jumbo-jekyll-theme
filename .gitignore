@@ -19,6 +19,7 @@
 !README.md
 !screenshot.png
 !*.gemspec
+!CHANGELOG.md
 #
 # Now whitelist the desired folders
 !_includes
