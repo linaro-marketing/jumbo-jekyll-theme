@@ -3,6 +3,24 @@ $(window).click(function() {
     $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
 });
 $(document).ready(function () {
+    if ($("#jumbotron-slider").length > 0 ){
+        $("#jumbotron-slider").owlCarousel({
+            navigation: true,
+            slideSpeed: 300,
+            autoplayTimeout: 10000,
+            paginationSpeed: 400,
+            pagination: false,
+            rewindSpeed: 500,
+            rewind: true,
+            autoplay: true,
+            items: 1,
+            lazyLoadEager: 1,
+            loop: false,
+            lazyLoad: true,
+            dots: true
+        });
+    }
+
     // Double Scroll Plugin
     if($(".double-scroll").length > 0){
         $(".double-scroll").doubleScroll({
