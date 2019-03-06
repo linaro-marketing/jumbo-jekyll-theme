@@ -25,3 +25,7 @@
     -ms-transform: rotate(0.000001deg);
     transform: rotate(0.000001deg);
 }
+.big-triangle {
+    z-index: -1;
+    position: relative;
+}
