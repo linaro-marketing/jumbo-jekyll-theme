@@ -12,17 +12,30 @@ sticky-tab-bar:
     - title: Get Started
       url: /get-started/
 jumbotron:
+    slider:
+        slides:
+            - title: Industry leaders to present Open Source on Arm insights at Linaro Connect Bangkok 2019
+              description: Linaro Ltd, the open source collaborative engineering organization developing software for the Arm® ecosystem, announced today the keynote speakers for Linaro Connect Bangkok 2019.
+              darken: true
+              image: https://staging.linaro.org/assets/images/content/bkk19-website-banner.png
+              buttons:
+                - title: Learn more
+                  url: https://www.linaro.org/news/industry-leaders-to-present-open-source-on-arm-insights-at-linaro-connect-bangkok-2019/
+                  class: btn btn-primary
+            - title: Industry leaders to present Open Source on Arm insights at Linaro Connect Bangkok 2019
+              description: Linaro Ltd, the open source collaborative engineering organization developing software for the Arm® ecosystem, announced today the keynote speakers for Linaro Connect Bangkok 2019.
+              darken: true
+              image: https://staging.linaro.org/assets/images/content/bkk19-website-banner.png
+              buttons:
+                - title: Learn more
+                  url: https://www.linaro.org/news/industry-leaders-to-present-open-source-on-arm-insights-at-linaro-connect-bangkok-2019/
     triangle-divider: true
-    carousel-images:
-        - /assets/images/content/background-image1.jpg
-        - /assets/images/content/background-image2.png
-        - /assets/images/content/background-image3.jpg
     animation: fade
     buttons:
         - title: View on GitHub
           url: https://github.com/kylekirkby/jumbo-jekyll-theme
           icon: fa fa-github
-
+js-package: home
 ---
 # Jumbo Jekyll Theme
 
