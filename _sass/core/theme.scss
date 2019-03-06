@@ -789,3 +789,13 @@ span.new-post {
     padding: 4px;
     border-radius: 3px;
 }
+// ScrollBar Style
+body::-webkit-scrollbar {
+  width: 1em;
+}
+body::-webkit-scrollbar-track {
+  background-color: $navbar-inverse-bg;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $brand-primary;
+}
