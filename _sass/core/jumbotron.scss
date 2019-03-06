@@ -32,6 +32,19 @@ div#jumbotron-content {
     width: 100%;
     z-index: -1;
 }
+.overlay:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: $jumbotron-height;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #000, #000);
+    opacity: .5;
+    width: 100%;
+    z-index: 0;
+}
 div#jumbotron.background-image.bg-up {
     background-position-y: 0px !important;
     background-position-x: center !important;
@@ -118,4 +131,93 @@ div.jumbotron-image{
 #jumbotron small {
     font-size: 14px;
 }
+
+
+// Owl Carousel Slider Full Width
+#jumbotron-slider {
+	position: relative;
+	height: 100%;
+	
+	div:not(.owl-controls) {
+		height: 100%;
+	}
+	
+	.owl-slide {
+		background-image: url('https://staging.linaro.org/assets/images/content/bkk19-website-banner.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+    }
+    .slide-title {
+        z-index: 2;
+        color: white;
+        font-size: 39px;
+        position: relative;
+        max-width: 600px;
+        top: 100px;
+        margin-right: auto;
+    }
+	div.owl--text {
+		position: absolute;
+		bottom: 4em;
+		left: 2em;
+		width: 20em;
+		height: 8em;
+		padding: 1em;
+		background: rgba(255, 255, 255, .5);
+		border-radius: 4px;
+	}
+	.owl-dots {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 40px !important;
+    }
+	.owl-controls {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		
+		.owl-buttons {
+			div {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				display: inline-block;
+				zoom: 1;
+				margin: 0;
+				width: 50px;
+				height: 30px;
+				line-height: 25px;
+				text-align: center;
+				font-size: .9em;
+				border-radius: 3px;
+				color: #FFF;
+				background: #000;
+				opacity: .6;
+				text-transform: capitalize;
+			}
+			
+			.owl-prev {
+				left: 5px;
+			}
+			
+			.owl-next {
+				right: 5px;
+			}
+		}
+	}
+}
+
+body,
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: futura, sans-serif;
+}
+
 @import 'triangle-divider';
