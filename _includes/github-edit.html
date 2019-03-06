@@ -1,3 +1,4 @@
+{% unless page.edit-on-github == "false" %}
 {% if site.data.settings.edit-on-github.enabled and site.data.settings.edit-on-github.repo %}
     {% assign page_base = page.permalink | split:"/" %}
     {% assign page-path = page.path | replace: " ", "" %}
@@ -58,3 +59,4 @@
         </div>
     {% endif %}
 {% endif %}
+{% endunless %}
