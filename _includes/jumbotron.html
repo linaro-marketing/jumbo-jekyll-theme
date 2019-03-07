@@ -2,27 +2,29 @@
 <div class="{% if page.jumbotron.video %}video {% endif %}row {% if page.jumbotron.background-image %}background-image {% endif %}
 {% if page.image.background-class %}{{page.image.background-class}}{% endif %}"
     id="jumbotron" {% if page.jumbotron.background-image %}
-    style="background-image: url('{{page.jumbotron.background-image}}');" {% else %}
+    style=" background-image: url('{{page.jumbotron.background-image}}');" {% else %}
     class="jumbotron text-center featured-jumbotron" {% endif %}>
         <div id="jumbotron-slider" class="owl-carousel owl-theme full-width-slider">
             {% for slide in page.jumbotron.slider.slides %}
-            <div class="item owl-slide {% if slide.darken %}overlay{% endif %} {% if forloop.first %}active{% endif %}"
-            {% if slide.image %}style="background-image: url({{slide.image}});"{% endif %}>
+            <div class="item owl-slide flex-center {% if slide.darken %}overlay{% endif %} {% if forloop.first %}active{% endif %}"
+            {% if slide.image %}style="{% if slide.slide-style %}{{slide.slide-style}}{% endif %} background-image: url({{slide.image}});"{% endif %}>
                 {% if slide.title %}
-                    <h2 class="slide-title">{{slide.title}}</h2>
+                    <h2 class="slide-title {% if slide.title-class %}{{slide.title-class}}{% endif %}{% if slide.description %}desc-title{% endif %}">{{slide.title}}</h2>
                 {% endif %}
                 {% if slide.description %}
                 <div class="owl--text slide-desc">
-                    {{slide.description}}
+                    <p>
+                        {{slide.description}}
+                    </p>
+                    {% if slide.buttons %}
+                        {% for button in slide.buttons %}
+                            <a href="{{button.url}}" 
+                            class="btn btn-primary {% if button.class %}{{button.class}}{% endif %}">
+                            {{button.title}} {% if button.icon %}<i class="{{button.icon}}"></i>{% endif %}
+                        </a>
+                        {% endfor %}
+                    {% endif %}
                 </div>
-                {% endif %}
-                {% if slide.buttons %}
-                    {% for button in slide.buttons %}
-                        <a href="{{button.url}}" 
-                        class="btn btn-primary {% if button.class %}{{button.class}}{% endif %}">
-                        {{button.title}} {% if button.icon %}<i class="{{button.icon}}"></i>{% endif %}
-                    </a>
-                    {% endfor %}
                 {% endif %}
             </div>
             {% endfor %}
