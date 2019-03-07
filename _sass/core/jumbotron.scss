@@ -134,6 +134,10 @@ div.jumbotron-image{
 
 
 // Owl Carousel Slider Full Width
+#jumbotron-slider + .big-triangle {
+    position: relative;
+    z-index: 2;
+}
 #jumbotron-slider {
 	position: relative;
 	height: 100%;
@@ -141,7 +145,10 @@ div.jumbotron-image{
 	div:not(.owl-controls) {
 		height: 100%;
 	}
-	
+	h2.slide-title.big-title {
+        font-size: 60px;
+        font-weight: bold;
+    }
 	.owl-slide {
 		background-image: url('https://staging.linaro.org/assets/images/content/bkk19-website-banner.png');
 		background-repeat: no-repeat;
@@ -151,22 +158,45 @@ div.jumbotron-image{
     .slide-title {
         z-index: 2;
         color: white;
-        font-size: 39px;
+        font-size: 32px;
         position: relative;
         max-width: 600px;
-        top: 100px;
+        margin: auto;
+        margin-left: auto;
         margin-right: auto;
     }
+    h2.slide-title.desc-title {
+        margin-bottom: 0px;
+    }
+    
 	div.owl--text {
-		position: absolute;
-		bottom: 4em;
-		left: 2em;
-		width: 20em;
-		height: 8em;
-		padding: 1em;
-		background: rgba(255, 255, 255, .5);
-		border-radius: 4px;
-	}
+        position: relative;
+        width: 700px;
+        height: auto;
+        opacity: .8;
+        font-size: 16px;
+        padding: 10px;
+        color: white;
+        margin: auto;
+        margin-left: auto;
+        border-radius: 4px;
+        margin-right: auto;
+        margin-top: 0px;
+        @media(max-width: $screen-sm-min) {
+            width: 100%;
+        }
+        border-radius: 4px;
+         p {
+            color: white;
+            margin-bottom: 5px;
+        }	
+        a.btn {
+            position: relative;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: atuo;
+        }
+    }
 	.owl-dots {
         position: absolute;
         bottom: 0px;
