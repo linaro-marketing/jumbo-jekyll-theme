@@ -84,11 +84,13 @@ div.jumbotron-image{
 }
 /* Jumbotron Sub Title */
 #jumbotron-sub-title {
+    max-width:700px;
     color: $jumbotron-sub-title-color;
     font-size: $jumbotron-sub-title-font-size;
 }
 /* Jumbotron Heading */
 #jumbotron-heading {
+    max-width: 700px;
     color: $jumbotron-heading-color;
     font-size: $jumbotron-font-size;
     margin-top: 0px;
@@ -102,6 +104,10 @@ div.jumbotron-image{
         color: $jumbotron-sub-title-color;
         font-size: $jumbotron-sub-title-font-size-xs;
     }
+    #jumbotron-sub-title.smaller {
+        font-size: 14px !important;
+    }
+    
 }
 #buttons >  a.btn {
     color: black ;
@@ -249,5 +255,4 @@ body {
 	margin: 0;
 	font-family: futura, sans-serif;
 }
-
 @import 'triangle-divider';
