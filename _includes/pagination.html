@@ -4,9 +4,9 @@
 <div class="text-center" id="pagination_panel">
     <ul class="pagination pagination-sm">
       {% if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
+        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
       {% else %}
-       <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
+       <li class="disabled"><a href="#">&laquo; Prev</a></li>
       {% endif %}
         {% if paginator.page_trail %}
             {% for trail in paginator.page_trail %}
@@ -21,7 +21,7 @@
               {% if page == paginator.page %}
                 <li class="active"><a href="">{{ page }}</a></li>
               {% elsif page == 1 %}
-                <li><a href="{{paginate_base_path}}">{{ page }}</a></li>
+                <li><a href="{{paginate_base_path[0]}}">{{ page }}</a></li>
               {% else %}
                 <li><a href="{{ paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
               {% endif %}
