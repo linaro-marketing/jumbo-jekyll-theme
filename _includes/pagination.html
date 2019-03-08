@@ -4,18 +4,18 @@
 <div class="text-center" id="pagination_panel">
     <ul class="pagination pagination-sm">
       {% if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
+        <li><a href="{{ paginator.previous_page | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
       {% else %}
        <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
       {% endif %}
-      {% if paginator.page_trail %}
-        {% for trail in paginator.page_trail %}
-          <li {% if page.url == trail.path %}class="active"{% endif %}>
-              <a href="{% if trail.num == 1 %}{{paginate_base_path}}{% else %}
-              {{ paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', trail.num  }}{% endif %}"
-              title="{{trail.title}}">{{ trail.num }}</a>
-          </li>
-        {% endfor %}
+        {% if paginator.page_trail %}
+            {% for trail in paginator.page_trail %}
+            <li {% if page.url == trail.path %}class="active"{% endif %}>
+                <a href="{% if trail.num == 1 %}{{paginate_base_path[0]}}{% else %}
+                {{ paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', trail.num  }}{% endif %}"
+                title="{{trail.title}}">{{ trail.num }}</a>
+            </li>
+            {% endfor %}
         {% else %}
             {% for page in (1..paginator.total_pages) %}
               {% if page == paginator.page %}
