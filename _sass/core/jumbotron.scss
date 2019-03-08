@@ -154,6 +154,9 @@ div.jumbotron-image{
 	h2.slide-title.big-title {
         font-size: 60px;
         font-weight: bold;
+        @media(max-width: $screen-sm-min) {
+            font-size: 38px !important;
+        }
     }
 	.owl-slide {
 		background-image: url('https://staging.linaro.org/assets/images/content/bkk19-website-banner.png');
@@ -173,6 +176,9 @@ div.jumbotron-image{
     }
     h2.slide-title.desc-title {
         margin-bottom: 0px;
+        @media(max-width: $screen-sm-min) {
+            font-size: 24px !important;
+        }
     }
     
 	div.owl--text {
@@ -195,6 +201,9 @@ div.jumbotron-image{
          p {
             color: white;
             margin-bottom: 5px;
+            @media(max-width: $screen-sm-min) {
+                font-size: 12px !important;
+            }
         }	
         a.btn {
             position: relative;
@@ -245,7 +254,14 @@ div.jumbotron-image{
 		}
 	}
 }
-
+#wrapper .carousel-header .big-triangle {
+    z-index: -1;
+    position: absolute;
+    bottom: 0px;
+}
+.item.owl-slide.flex-center.overlay {
+    padding: 10px;
+}
 body,
 html {
 	height: 100%;
