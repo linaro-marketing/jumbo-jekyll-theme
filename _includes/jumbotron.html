@@ -13,7 +13,7 @@
                 {% endif %}
                 {% if slide.description %}
                 <div class="owl--text slide-desc">
-                    <p>
+                    <p {% if slide.desciption-class %}class="{{slide.description-class}}"{% endif%}>
                         {{slide.description}}
                     </p>
                     {% if slide.buttons %}
@@ -80,11 +80,13 @@
             </h1>
         {% endif %}
         {% if page.jumbotron.description %}
-            <p class="center-block {% if page.jumbotron.animation == "fade" %}fade-in-two{% endif %}" id="jumbotron-sub-title">
+            <p class="center-block {% if page.jumbotron.animation == "fade" %}fade-in-two{% endif %}
+             {% if page.jumbotron.desciption-class %} {{page.jumbotron.description-class}} {% endif%}" id="jumbotron-sub-title">
                 {{page.jumbotron.description}}
             </p>
         {% elsif page.description %}
-            <p class="center-block {% if page.jumbotron.animation == "fade" %}fade-in-two{% endif %}" id="jumbotron-sub-title">
+            <p class="center-block {% if page.jumbotron.animation == "fade" %}fade-in-two{% endif %} 
+            {% if page.jumbotron.desciption-class %} {{page.jumbotron.description-class}} {% endif%} " id="jumbotron-sub-title">
             {{page.description}}
             </p>
         {% endif %}
