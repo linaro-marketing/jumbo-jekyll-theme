@@ -11,6 +11,7 @@ sticky-tab-bar:
       active: true
     - title: Get Started
       url: /get-started/
+hide_last_modified: true
 jumbotron:
     slider:
         slides:
@@ -68,5 +69,3 @@ It has roots in a piece of classical Latin literature from 45 BC, making it over
 </tbody>
 </table>
 </div>
-
-{% last_modified_at %}
