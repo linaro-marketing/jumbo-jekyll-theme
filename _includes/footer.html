@@ -19,11 +19,13 @@
                 </div>
                 {% endif %}
             </div>
+            {% unless page.hide_last_modifed or site.data.settings.last_modified_at %}
             <div class="row">
                 <div class="col-xs-12 no-padding">
                     <span class="last-modified-at">Page last modified on {{ page.last_modified_at | date: '%A, %B %-d, %Y' }}</span>
                 </div>
             </div>
+            {% endunless %}
             <div class="row footer-strip">
                 <div class="container no-padding">
                     <div class="col-md-6 company-footer-bottom">
