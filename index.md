@@ -1,7 +1,7 @@
 ---
 layout: jumbotron-container
 permalink: /
-title: Home
+title: Home New
 description: >-
     The jumbo-jekyll-theme is a Bootstrap3 Jekyll theme for building
     superfast static websites.
@@ -68,3 +68,5 @@ It has roots in a piece of classical Latin literature from 45 BC, making it over
 </tbody>
 </table>
 </div>
+
+{% last_modified_at %}
