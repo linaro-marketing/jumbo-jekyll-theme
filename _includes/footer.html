@@ -19,7 +19,7 @@
                 </div>
                 {% endif %}
             </div>
-            {% unless page.hide_last_modified %}
+            {% unless page.hide_last_modified or site.date.settings.hide_last_modified %}
             <div class="row">
                 <div class="col-xs-12 no-padding">
                     <span class="last-modified-at">Page last modified on {{ page.last_modified_at | date: '%A, %B %-d, %Y' }}</span>
