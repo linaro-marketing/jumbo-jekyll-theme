@@ -11,7 +11,7 @@ sticky-tab-bar:
       active: true
     - title: Get Started
       url: /get-started/
-hide_last_modified: true
+hide_last_modified: false
 jumbotron:
     slider:
         slides:
