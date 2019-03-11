@@ -1,4 +1,9 @@
-# Changelog
+## Changelog
+
+## 4.1.2 
+- Added the jekyll-last-modified-at plugin
+- Added disqus comments config object
+
 ## 3.9.6
 Added the jumbotron slider functionality so that jumbotron headers can now feature a fullwidth customisable owl carousel
 
