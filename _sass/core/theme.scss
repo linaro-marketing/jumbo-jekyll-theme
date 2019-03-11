@@ -799,3 +799,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: $brand-primary;
 }
+span.last-modified-at {
+    color: $footer-text-color;
+    font-size: 14px;
+}
