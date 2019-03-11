@@ -6,6 +6,8 @@ placeholder: /assets/images/placeholder.png
 http2: false
 # Ascii Art
 ascii-art: ascii-art.html
+# Hide the last modified page date from showing
+hide_last_modified: true
 # Support for http2 push features
 http2_resources:
   - rel: preload
