@@ -9,7 +9,7 @@
             <div class="item owl-slide flex-center {% if slide.darken %}overlay{% endif %} {% if forloop.first %}active{% endif %}"
             {% if slide.image %}style="{% if slide.slide-style %}{{slide.slide-style}}{% endif %} background-image: url({{slide.image}});"{% endif %}>
                 {% if slide.title %}
-                    <h2 class="slide-title {% if slide.title-class %}{{slide.title-class}}{% endif %}{% if slide.description %}desc-title{% endif %}">{{slide.title}}</h2>
+                    <h2 class="slide-title {% if slide.title-class %}{{slide.title-class}}{% endif %} {% if slide.description %}desc-title{% endif %}">{{slide.title}}</h2>
                 {% endif %}
                 {% if slide.description %}
                 <div class="owl--text slide-desc">
