@@ -3,6 +3,22 @@ $(window).click(function() {
     $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
 });
 $(document).ready(function () {
+
+    // Clipboard JS
+    if($("div.highlight").length > 0){
+        $('div.highlight').each(function (index) {
+            var uniqueId = "highlight" + index;
+            $(this).attr("id", uniqueId);
+            var copyBtn = '<button id="copyBtn' + index + '" data-toggle="tooltip" data-placement="left" title="Copied to Clipboard" class="btn copyBtn" data-clipboard-target="#' + uniqueId + '">';
+            copyBtn += '<img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+            $(this).append(copyBtn);
+            (function () {
+                new ClipboardJS('#copyBtn' + index);
+            })();
+
+        });
+    }
+
     if ($("#jumbotron-slider").length > 0 ){
         $("#jumbotron-slider").owlCarousel({
             navigation: true,
