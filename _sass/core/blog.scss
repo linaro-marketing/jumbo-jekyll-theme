@@ -451,3 +451,40 @@ span.reading-time {
     height: 20px;
     line-height: 10px;
 }
+.blog-content {
+    @media(max-width: $screen-sm-min - 1){
+        padding-left:0px;
+        padding-right: 0px;
+    }
+}
+.col-xs-12.col-sm-8.col-sm-offset-2.blog-sidebar {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @media(max-width: $screen-sm-min - 1){
+        padding-left:0px;
+        padding-right: 0px;
+    }
+}
+article.post-content {
+    margin-top: 20px;
+}
+.highlighter-rouge > div {
+    position: relative;
+}
+button.btn.copyBtn {
+    position: absolute;
+    bottom: 0px;
+    z-index: 9999;
+    height: 40px;
+    right: 0px;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    width: 40px;
+}
+button.btn.copyBtn:hover, button.btn.copyBtn:focus  {
+    background-color:$brand-primary;
+}
+pre.highlight {
+    padding: 15px;
+    position: relative;
+}
