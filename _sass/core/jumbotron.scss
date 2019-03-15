@@ -1,5 +1,5 @@
 /* Home Page Jumbotron Div */
-div#jumbotron-content {
+#wrapper div#jumbotron-content {
     text-align: center;
     height: $jumbotron-height;
 }
@@ -45,7 +45,7 @@ div#jumbotron-content {
     width: 100%;
     z-index: 0;
 }
-div#jumbotron.background-image.bg-up {
+#wrapper div#jumbotron.background-image.bg-up {
     background-position-y: 0px !important;
     background-position-x: center !important;
 }
@@ -58,19 +58,19 @@ video#jumbotronVideo {
     top:0px;
     z-index:-2;
 }
-div#jumbotron.video {
+#wrapper div#jumbotron.video {
     height: 600px !important;
 }
-div#jumbotron.video:before {
+#wrapper div#jumbotron.video:before {
     height: 600px !important;
 }
-div#jumbotron.video h1#jumbotron-heading {
+#wrapper div#jumbotron.video h1#jumbotron-heading {
     font-size: 50px;
 }
-div#jumbotron.video div#jumbotron-content {
+#wrapper div#jumbotron.video div#jumbotron-content {
     height:600px;
 }
-div#jumbotron.background-image {
+#wrapper div#jumbotron.background-image {
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
@@ -83,13 +83,13 @@ div.jumbotron-image{
     width: 100%;
 }
 /* Jumbotron Sub Title */
-#jumbotron-sub-title {
+#wrapper #jumbotron-sub-title {
     max-width:700px;
     color: $jumbotron-sub-title-color;
     font-size: $jumbotron-sub-title-font-size;
 }
 /* Jumbotron Heading */
-#jumbotron-heading {
+#wrapper #jumbotron-heading {
     max-width: 700px;
     color: $jumbotron-heading-color;
     font-size: $jumbotron-font-size;
@@ -97,14 +97,14 @@ div.jumbotron-image{
 }
 /* Jumbotron Styles - SM  */
 @media(max-width:$screen-sm-min){
-    #jumbotron-heading {
+   #wrapper #jumbotron-heading {
         font-size: $jumbotron-font-size-xs;
     }
-    #jumbotron-sub-title {
+   #wrapper #jumbotron-sub-title {
         color: $jumbotron-sub-title-color;
         font-size: $jumbotron-sub-title-font-size-xs;
     }
-    #jumbotron-sub-title.smaller {
+   #wrapper #jumbotron-sub-title.smaller {
         font-size: 14px !important;
     }
     
@@ -122,7 +122,7 @@ div.jumbotron-image{
     background-color: $brand-primary;
 }
 /* Jumbotron Header */
-#jumbotron {
+#wrapper #jumbotron {
     background: $jumbotron-bottom-color; /* Old browsers */
     background: -moz-linear-gradient(top, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, $jumbotron-top-color 0%,$jumbotron-bottom-color 100%); /* Chrome10-25,Safari5.1-6 */
@@ -134,17 +134,17 @@ div.jumbotron-image{
     background-size: cover;
     background-position: center center;
 }
-#jumbotron small {
+#wrapper #jumbotron small {
     font-size: 14px;
 }
 
 
 // Owl Carousel Slider Full Width
-#jumbotron-slider + .big-triangle {
+#wrapper #jumbotron-slider + .big-triangle {
     position: relative;
     z-index: 2;
 }
-#jumbotron-slider {
+#wrapper #jumbotron-slider {
 	position: relative;
 	height: 100%;
 	
