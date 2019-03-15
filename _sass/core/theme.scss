@@ -159,10 +159,10 @@ label.control-label {
 
 
 //Headings
-h1, h2, h3, h4, h5, h6 {
+#wrapper h1, #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5,#wrapper h6 {
     font-family: $font-family-sans-serif;
     line-height: 1.1;
-    color: inherit;
+    color: rgba(0,0,0,.84);
     font-weight: bold;
 }
 
@@ -185,13 +185,23 @@ div#contact-thanks {
 }
 
 /*-------------Paragraphs --------------------*/
-p {
-    font-size: 16px;
-    color: #252525;
+#wrapper p {
+    font-family: $font-family-sans-serif;
+    font-size: 20px;
+    color: $text-color;
     line-height: 1.66em;
     word-wrap: break-word;
+    @media(max-width: $screen-sm-min){
+        font-size: 18px;
+    }
 }
-
+#wrapper ul, ol {
+    font-size: 20px;
+    font-family: $font-family-sans-serif;
+    @media(max-width: $screen-sm-min){
+        font-size: 18px;
+    }
+}
 .container-fluid p.justify {
     font-size: 16px;
     text-align: justify;
@@ -573,8 +583,8 @@ ul#tab-row {
 }
 
 .container-fluid ul {
-    color: #252525;
-    font-size: 16px;
+    color: $text-color;
+    font-size: 18px;
 }
 
 /* Blockquote Styles*/
@@ -640,7 +650,7 @@ blockquote:before {
 }
 
 ul {
-    font-size: 16px;
+    font-size: 18px;
 }
 // FlexBox
 .flex-center {
