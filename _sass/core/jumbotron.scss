@@ -122,7 +122,7 @@ div.jumbotron-image{
     background-color: $brand-primary;
 }
 /* Jumbotron Header */
-#wrapper #jumbotron {
+ #jumbotron {
     background: $jumbotron-bottom-color; /* Old browsers */
     background: -moz-linear-gradient(top, $jumbotron-top-color 0%, $jumbotron-bottom-color 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, $jumbotron-top-color 0%,$jumbotron-bottom-color 100%); /* Chrome10-25,Safari5.1-6 */
@@ -144,7 +144,7 @@ div.jumbotron-image{
     position: relative;
     z-index: 2;
 }
-#wrapper #jumbotron-slider {
+#jumbotron-slider {
 	position: relative;
 	height: 100%;
 	
