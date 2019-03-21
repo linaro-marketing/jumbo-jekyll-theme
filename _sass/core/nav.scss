@@ -30,7 +30,7 @@ div#tabbed-nav-bar-collapse {
     padding: 0;
 }
 @media screen and (max-width: $screen-lg) and (min-width: 0px){
-    .sticky-nav#tabbed-nav-bar button.navbar-toggle {
+    .sticky-nav#tabbed-nav-bar a.navbar-toggle {
         margin-right: -5px;
     }
 }
@@ -122,7 +122,7 @@ div#tabbed-nav-bar.sticky-nav {
 
 @media screen and (max-width: $screen-lg) and (min-width: 0px) {
     
-    button.navbar-toggle {
+    a.navbar-toggle {
         margin-right: 10px;
     }
 
@@ -180,10 +180,10 @@ nav.nav-light {
 nav.nav-dark {
     background: transparent;
 }
-nav.nav-light button.navbar-toggle .icon-bar {
+nav.nav-light a.navbar-toggle .icon-bar {
     background-color:#fff !important;
 }
-nav.nav-dark button.navbar-toggle .icon-bar {
+nav.nav-dark a.navbar-toggle .icon-bar {
     background-color:#fff !important;
 }
 // Nav Bar SVG Style
@@ -421,7 +421,7 @@ nav > ul.navbar-right {
     margin-bottom:-1px;
     z-index: 1;
 }
-#tabbed-nav-bar.non-sticky-nav button.navbar-toggle {
+#tabbed-nav-bar.non-sticky-nav a.navbar-toggle {
     margin-right: -5px;
 }
 #main-navigation .pull-left ul.dropdown-menu.sub-menu {
