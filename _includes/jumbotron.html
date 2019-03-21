@@ -33,12 +33,11 @@
 {% else %}
 <div class="{% if page.jumbotron.video %}video {% endif %}row {% if page.jumbotron.background-image %}background-image {% endif %}
 {% if page.jumbotron.carousel-images %}carousel-header{% endif %}
-{% if page.image.background-class %}{{page.image.background-class}}{% endif %}{% if site.data.settings.jumbotron.darken %}overlay{% endif %}" id="jumbotron" 
-{% if page.jumbotron.background-image %}
-    style="background-image: url('{{page.jumbotron.background-image}}');"
+{% if page.image.background-class %}{{page.image.background-class}}{% endif %}{% if site.data.settings.jumbotron.darken %}overlay{% endif %} {% if page.jumbotron.background-image %}
+    " style="background-image: url('{{page.jumbotron.background-image}}');"
 {% else %}
-    class="jumbotron text-center featured-jumbotron"
-{% endif %}> <!--Row -->
+    jumbotron text-center featured-jumbotron"
+{% endif %} id="jumbotron" > <!--Row -->
     {% if page.jumbotron.video %}
     <video autoplay muted preload="none" poster="{{page.jumbotron.video.poster}}" loop id="jumbotronVideo">
         {% if page.jumbotron.video.source.mp4 %}
