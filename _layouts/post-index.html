@@ -4,13 +4,11 @@ title: Blog
 css-package: blog
 js-package: blog
 ---
-<div class="col-xs-12">
-    {{content}}
-    {% include display-blog-posts.html %}
-    
-    {% if page.news %}
-        {% include pagination.html path="/news/:num/"%}
-    {% else %}
-        {% include pagination.html path="/blog/:num/"%}
-    {% endif %}
-</div>
+
+{% include display-blog-posts.html %}
+
+{% if page.news %}
+    {% include pagination.html path="/news/:num/"%}
+{% else %}
+    {% include pagination.html path="/blog/:num/"%}
+{% endif %}
