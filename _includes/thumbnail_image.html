@@ -4,7 +4,7 @@
 {% endcomment %}
 <picture>
     {% for i in resized %}
-        <source media="(min-width: {{ i.width }}px)" data-srcset="/{{ i.path }}">
+        <source media="(max-width: {{ i.width }}px)" data-srcset="/{{ i.path }}">
     {% endfor %}
     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/{{ path }}" class="img-responsive lazyload">
 </picture>
