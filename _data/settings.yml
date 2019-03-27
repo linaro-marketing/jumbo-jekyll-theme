@@ -31,6 +31,8 @@ error-pages:
   not-found-desc: Sorry, but the page you were looking for could not be found.
 # Blog setup
 blog:
+    # Filler element include
+    filler-element: blog-filler-element.html
     tags_page: /blog/tags/
     # Show Thumbnails in the post index
     show_thumbnails: true
