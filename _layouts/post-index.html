@@ -1,14 +1,16 @@
 ---
-layout: container-breadcrumb
+layout: base
 title: Blog
 css-package: blog
 js-package: blog
 ---
-
-{% include display-blog-posts.html %}
-
-{% if page.news %}
-    {% include pagination.html path="/news/:num/"%}
-{% else %}
-    {% include pagination.html path="/blog/:num/"%}
-{% endif %}
+<div class="row" id="content-container">
+    <div class="container">
+        {% include display-blog-posts.html %}
+        {% if page.news %}
+            {% include pagination.html path="/news/:num/"%}
+        {% else %}
+            {% include pagination.html path="/blog/:num/"%}
+        {% endif %}
+    </div>
+</div>
