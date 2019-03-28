@@ -653,3 +653,6 @@ pre.highlight {
 .blog-post-item a {
     width: 100%;
 }
+.blog-featured-image.using-placeholder img {
+    object-fit: contain !important;
+}
