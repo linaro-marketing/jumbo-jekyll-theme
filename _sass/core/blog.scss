@@ -499,6 +499,9 @@ pre.highlight {
     padding-right:0px;
     padding-left:0px;
     height: 100%;
+    @media(max-width: $screen-sm-min){
+        height: auto;
+    }
 }
 
 .col-xs-12.col-sm-5.col-sm-pull-7.latest-featured-post-content {
