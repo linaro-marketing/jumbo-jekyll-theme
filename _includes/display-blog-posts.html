@@ -8,6 +8,14 @@
         {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
         {% if site.data.settings.blog.show_thumbnails %}
                 {% if forloop.first and paginator.page == 1 %}
+                <style>
+                    @media(min-width: 1000px){
+                        .blog-post-item-col:nth-child(3n+2) > .blog-post-item {
+                            margin-right:0px !important;
+                            margin-left:0px !important;
+                        }
+                    }
+                </style>
                 <div class="featured-post-row">
                     <div class="col-xs-12 col-sm-7 col-sm-push-5 latest-featured-post">
                         <a href="{{post.url}}">

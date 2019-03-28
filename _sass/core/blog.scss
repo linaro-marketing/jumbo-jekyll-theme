@@ -533,7 +533,7 @@ pre.highlight {
     border-radius: 10px;
     overflow: hidden;
     background-color: white;
-    margin-right: 30px;
+    margin-right: 15px;
     @media(max-width: $screen-sm-min){
         margin-left: 15px;
         margin-right: 15px;
@@ -633,8 +633,9 @@ pre.highlight {
     text-align: center;
 }
 @media(min-width: $screen-sm-min){
-    .blog-post-item-col:nth-child(3n + 4) > .blog-post-item {
-        margin-right:0px !important;
+    .blog-post-item-col:nth-child(3n+2) > .blog-post-item {
+        margin-right:15px !important;
+        margin-left:0px !important;
     }
 }
 .row.blog-section {
