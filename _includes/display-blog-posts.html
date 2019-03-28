@@ -130,7 +130,7 @@
                         <div class="blog-post-item-content">
                             <div class="post-cat">{{post.categories | first | capitalize }}</div>
                             {% if site.data.settings.blog.reading_time %}
-                                {% include read_time.html %}
+                                {% include read_time.html content=post.content %}
                             {% endif %}
                                 <h3>{{ post.title}}</h3>
                             {% if post_in_seconds > recent_posts %}
