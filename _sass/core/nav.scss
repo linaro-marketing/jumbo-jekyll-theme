@@ -45,7 +45,7 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
     margin-right: -15px;
     @media(max-width: $screen-sm-min){
         padding-left: 15px;
-        padding-right: 15px;
+        padding-right: 0px;
     }
 }
 
@@ -501,7 +501,7 @@ nav > ul.navbar-right {
     padding: 0px;
 }
 #tabbed-nav-bar.sticky-nav a#sub-navigation-header{
-    color: $navbar-text-color;
+    color: #000;
 }
 
 
