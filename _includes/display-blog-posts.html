@@ -64,9 +64,6 @@
                                     {{ post.content | strip_html | truncatewords:30 }}
                                     {% endif %}
                                 </p>
-                                {% if post_in_seconds > recent_posts %}
-                                <span class="new-post" title="Post added in the last week.">New</span>
-                                {% endif %}
                                 <a href="{{post.url}}" class="btn btn-primary">
                                     Read Post
                                 </a>
@@ -133,9 +130,6 @@
                                 {% include read_time.html content=post.content %}
                             {% endif %}
                                 <h3>{{ post.title}}</h3>
-                            {% if post_in_seconds > recent_posts %}
-                                <span class="new-post" title="Post added in the last week.">New</span>
-                            {% endif %}
                             <br />
                             <p class="post_excerpt">
                             {{ post.content | strip_html | truncatewords:30 }}
