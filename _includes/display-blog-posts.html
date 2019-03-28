@@ -85,10 +85,9 @@
                 <div class="col-sm-4 col-xs-12 blog-post-item-col no-padding">
                     <div class="blog-post-item">
                         <a href="{{post.url}}">
-                            <div class="blog-featured-image">
+                            <div class="blog-featured-image {% if post.image == site.data.settings.social_share_image %}using-placeholder{% endif %}">
 
                             {% assign image_path = "" %}
-
                             {% if post.image.thumb %}
                                     {% capture image_path %}{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
                                     {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
@@ -101,6 +100,7 @@
                             {% elsif post.image == site.data.settings.social_share_image %}
                                 {% capture image_path %}{{site.data.settings.placeholder | remove_first: "/" }}{% endcapture %}
                                 {% capture full_path %}{{site.data.settings.placeholder}}{% endcapture %}
+                                {% assign using_placeholder = "true" %}
                             {% elsif post.image %}
                                     {% capture image_path %}{{post.image | remove_first: "/" }}{% endcapture %}
                                     {% capture full_path %}{{post.image}}{% endcapture %}
