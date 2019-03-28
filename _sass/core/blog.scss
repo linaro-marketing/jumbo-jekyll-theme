@@ -493,11 +493,12 @@ pre.highlight {
     height: 100%;
     max-height: none !important;
     width: 100% !important;
-    object-fit: contain !important;
+    object-fit: cover !important;
 }
 #wrapper .latest-featured-post{
     padding-right:0px;
     padding-left:0px;
+    height: 100%;
 }
 
 .col-xs-12.col-sm-5.col-sm-pull-7.latest-featured-post-content {
@@ -524,7 +525,7 @@ pre.highlight {
 .post-cat {
     padding: 5px;
     margin-bottom: 5px;
-    color: #20937b;
+    color: $brand-primary;
     font-weight: bold;
     display: inline-block;
     text-transform: uppercase;
@@ -600,7 +601,7 @@ pre.highlight {
     position: absolute;
     top:0px;
     opacity:.4;
-    background-color:#20937a;
+    background-color:$brand-primary;
 }
 .blog-featured-image{
     position: relative;
