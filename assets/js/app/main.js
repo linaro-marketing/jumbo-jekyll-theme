@@ -30,7 +30,7 @@ $(document).ready(function () {
             rewind: true,
             autoplay: true,
             items: 1,
-            lazyLoadEager: 1,
+            lazyLoadEager: 0,
             loop: false,
             lazyLoad: true,
             dots: true

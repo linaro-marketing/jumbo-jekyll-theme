@@ -6,8 +6,8 @@
     class="jumbotron text-center featured-jumbotron" {% endif %}>
         <div id="jumbotron-slider" class="owl-carousel owl-theme full-width-slider">
             {% for slide in page.jumbotron.slider.slides %}
-            <div class="item owl-slide flex-center {% if slide.darken %}overlay{% endif %} {% if forloop.first %}active{% endif %}"
-            {% if slide.image %}style="{% if slide.slide-style %}{{slide.slide-style}}{% endif %} background-image: url({{slide.image}});"{% endif %}>
+            <div class="item owl-lazy owl-slide flex-center {% if slide.darken %}overlay{% endif %} {% if forloop.first %}active{% endif %}"
+            {% if slide.image %}data-src="{{slide.image}}"{% endif %}{% if slide.slide-style %}style="{{slide.slide-style}}"{% endif %}>
                 {% if slide.title %}
                     <h2 class="slide-title {% if slide.title-class %}{{slide.title-class}}{% endif %} {% if slide.description %}desc-title{% endif %}">{{slide.title}}</h2>
                 {% endif %}
