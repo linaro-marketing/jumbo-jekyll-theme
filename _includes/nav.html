@@ -98,7 +98,7 @@ navbar-inverse navbar-static" id="main-navigation">
                                     </li>
                                   {% else %}
                                       <li>
-                                          <a target="_self" href="{{menu_option.url}}" class="dropdown-item " title="{{menu_option.txt}}">{{menu_option.text}} {% if menu_option.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}</a>
+                                          <a target="{% if menu_option.external %}_blank{% else %}_self{% endif %}" href="{{menu_option.url}}" class="dropdown-item " title="{{menu_option.txt}}">{{menu_option.text}} {% if menu_option.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}</a>
                                       </li>
                                   {% endif %}
                               {% endfor %}
