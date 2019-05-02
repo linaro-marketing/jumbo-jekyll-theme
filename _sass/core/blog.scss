@@ -656,3 +656,10 @@ pre.highlight {
 .blog-featured-image.using-placeholder img {
     object-fit: contain !important;
 }
+section.disqus {
+    padding-right: 20px;
+    margin-top: 40px;
+    @media(max-width: $screen-sm-min){
+        padding-right: 0px;
+    }
+}
