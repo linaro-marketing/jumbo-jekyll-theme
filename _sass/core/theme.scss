@@ -219,7 +219,12 @@ div#contact-thanks {
         font-size: 18px;
     }
 }
-#wrapper ul, ol {
+#wrapper ol {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: rgba(0,0,0,0.84);
+}
+#wrapper ul, #wrapper ol {
     font-size: 20px;
     font-family: $font-family-sans-serif;
     @media(max-width: $screen-sm-min){
