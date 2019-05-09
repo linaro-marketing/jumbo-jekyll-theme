@@ -695,6 +695,17 @@ ul {
     flex-direction: column;
     align-items: center;
 }
+.container.flex-container {
+    height: 100%;
+}
+.bg-row {
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll;
+}
+.bg-row.fixed{
+    background-attachment: fixed;
+}
 // Email Button
 .container-fluid .email {
     height: 50px;
