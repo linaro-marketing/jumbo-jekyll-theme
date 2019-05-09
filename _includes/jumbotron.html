@@ -8,6 +8,10 @@
             {% for slide in page.jumbotron.slider.slides %}
             <div class="item owl-lazy owl-slide flex-center {% if slide.darken %}overlay{% endif %} {% if forloop.first %}active{% endif %}"
             {% if slide.image %}data-src="{{slide.image}}"{% endif %}{% if slide.slide-style %}style="{{slide.slide-style}}"{% endif %}>
+                {% if slide.inner-image %}
+                    <img class="img-responsive lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                     data-src="{{slide.inner-image}}" alt="Slide {{forloop.index}} inner image"/>
+                {% endif %}
                 {% if slide.title %}
                     <h2 class="slide-title {% if slide.title-class %}{{slide.title-class}}{% endif %} {% if slide.description %}desc-title{% endif %}">{{slide.title}}</h2>
                 {% endif %}
