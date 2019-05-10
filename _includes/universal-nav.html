@@ -7,12 +7,12 @@
         <span class="glyphicon glyphicon-chevron-up"></span>
       </button>
     </div>
-    <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+    <div id="navbar" class="navbar-collapse collapse" role="navigation" aria-expanded="false" style="height: 1px;">
       <ul class="nav navbar-nav navbar-right">
         {% for website in site.data.universal-nav %}
             {% if website.options %}
                 <li class="dropdown {% for project-site in website.options %}{% if project-site.active %}active{% break %}{% endif %}{% endfor %}">
-                    <a class="projects" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    <a href="#" class="projects dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                         aria-expanded="false">Projects <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         {% for project-site in website.options %}

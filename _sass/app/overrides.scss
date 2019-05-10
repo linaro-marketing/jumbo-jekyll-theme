@@ -9,6 +9,7 @@ $footer-text-color: #fff;
 // Sub footer
 $sub-footer-bg-color: #ccc;
 $footer-border-color: #272727; 
+$text-color: rgba(0,0,0,.84);
 // Navbar
 $navbar-text-color: #fff !default;
 $navbar-hover-text-color: #fff !default;
@@ -24,10 +25,20 @@ $breadcrumb-title-color: #fff !default;
 $breadcrumb-span-color: #fff !default;
 // Fonts
 // Change the fonts used by Bootstrap here.
-$font-family-sans-serif:  Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+@font-face {
+  font-family: 'Lato';
+  src: url('/assets/fonts/lato-regular/Lato-regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/lato-regular/Lato-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/lato-regular/Lato-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/lato-regular/Lato-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/fonts/lato-regular/Lato-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/lato-regular/Lato-regular.svg') format('svg'); /* Legacy iOS */
+}
+// Fonts 
+$font-family-sans-serif:  'Lato', Arial, sans-serif !default;
 //Contact Page
 $contact-banner-text-color: #fff !default;
 // Jumbotron Settings

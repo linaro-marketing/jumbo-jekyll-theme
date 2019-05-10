@@ -16,6 +16,8 @@
 {% comment %}
     Recent Posts Displayed here.
 {% endcomment %}
+<div class="col-xs-12 col-sm-6">
+
 <div class="panel panel-primary" class="blog-sidebar">
     <div class="panel-heading">
       <h3 class="panel-title">Recent Posts</h3>
@@ -99,9 +101,11 @@
         {% endfor %}
     </div>
 </div>
+</div>
 {% comment %}
     Other Posts
 {% endcomment %}
+<div class="col-xs-12 col-sm-6">
 
 <div class="panel panel-primary" class="blog-sidebar">
     <div class="panel-heading">
@@ -186,6 +190,7 @@
             </a>
         {% endfor %}
     </div>
+</div>
 </div>
 {% if site.data.settings.blog.sidebar.custom-include %}
 {% include {{site.data.settings.blog.sidebar.custom-include}} %}

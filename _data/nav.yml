@@ -27,28 +27,23 @@ pages:
                   url: /jekyll/plugins/assets/
           - text: Includes
             url: /jekyll/includes/
-          - text: Layouts
+    - title: Layouts
+      options:
+          - text: Default
+            url: /layouts/default/
+          - text: Jumbotron
             options:
-                - text: Default
-                  url: /jekyll/layouts/default/
-                - text: Container
-                  url: /jekyll/layouts/container/
-                - text: Container Breadcrumb
-                  url: /jekyll/layouts/container-breadcrumb/
-                - text: Container Breadcrumb Left Sidebar
-                  url: /jekyll/layouts/container-breadcrumb-left-sidebar/
-                - text: Container Breadcrumb Right Sidebar
-                  url: /jekyll/layouts/container-breadcrumb-right-sidebar/
-                - text: Container Left Sidebar
-                  url: /jekyll/layouts/container-left-sidebar/
-                - text: Container Right Sidebar
-                  url: /jekyll/layouts/container-right-sidebar/
-                - text: Post
-                  url: /jekyll/layouts/post/
-                - text: Featured Image Post
-                  url: /jekyll/layouts/featured-image-post/
-                - text: Featured Image Post - No Sidebar
-                  url: /jekyll/layouts/featured-image-post-no-sidebar/
+              - text: Overview
+                url: /layouts/jumbotron/
+              - text: Carousel Header
+                url: /layouts/jumbotron/carousel-header/
+              - text: Video Header
+                url: /layouts/jumbotron/video-header/
+              - text: Background Image Header
+                url: /layouts/jumbotron/background-image-header/
+              - text: Slider Header
+                url: /layouts/jumbotron/slider-header/
+
 
     - title: About
       options:

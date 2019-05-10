@@ -54,7 +54,7 @@ css-package: blog
 <div class="row" id="content-container">
     <div class="container">
         {% if site.data.settings.blog.sidebar.display-on-posts %}
-        <div class="col-md-9">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 blog-content">
                 <article class="post-content">
                     {% unless page.image %}
                     <div class="post-info">
@@ -104,7 +104,7 @@ css-package: blog
         
             {% include disqus-comments.html %}
             </div>
-            <div class="col-md-3 blog-sidebar no-padding">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2  blog-sidebar ">
                 {% if site.data.settings.blog.tags_enabled %}
                     {% if page.tags %}
                         {% assign post_tags = page.tags %}

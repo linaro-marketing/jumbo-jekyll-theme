@@ -50,7 +50,7 @@ paginate_path_authors: /authors/:num/
 pagination:
     # Default pagination path for Jekyll Posts
     # For other permalinks set in the front matter of the post index page
-    permalink: /blog/:num/
+    permalink: /:num/
     # Enabled or not?
     enabled: true
     # Home many posts to display by default
