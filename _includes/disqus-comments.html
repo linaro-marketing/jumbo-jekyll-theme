@@ -2,6 +2,14 @@
     <section class="disqus">
         <div id="disqus_thread"></div>
         <script type="text/javascript">
+          var disqus_config = function () {
+                this.page.url = "{{site.url}}{{page.url}}";  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "{{page.url}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.callbacks.onNewComment = [function (comment) {
+                    console.log(comment.id);
+                    console.log(comment.text);
+                }];
+            };
             var disqus_shortname = '{{ site.data.settings.disqus.shortname }}';
             var disqus_developer = 0; // developer mode is on
             (function() {

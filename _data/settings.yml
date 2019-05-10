@@ -6,6 +6,8 @@ placeholder: /assets/images/placeholder.png
 http2: false
 # Ascii Art
 ascii-art: ascii-art.html
+# Hide the last modified page date from showing
+hide_last_modified: true
 # Support for http2 push features
 http2_resources:
   - rel: preload
@@ -29,6 +31,8 @@ error-pages:
   not-found-desc: Sorry, but the page you were looking for could not be found.
 # Blog setup
 blog:
+    # Filler element include
+    filler-element: blog-filler-element.html
     tags_page: /blog/tags/
     # Show Thumbnails in the post index
     show_thumbnails: true

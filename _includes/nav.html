@@ -15,12 +15,13 @@
 navbar-inverse navbar-static" id="main-navigation">
         <!-- NAVBAR HEADER-->
          <div class="navbar-header">
-             <button for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
+             <button for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
                <span class="sr-only">Toggle navigation</span>
                <span class="icon-bar top-bar"></span>
                <span class="icon-bar middle-bar"></span>
                <span class="icon-bar bottom-bar"></span>
-           </button>
+             </button>
             {% if site.data.nav.brand %}
                 <a class="navbar-brand " href="{{site.data.nav.brand.url}}">
                     {% if site.data.nav.brand.image.enabled %}
@@ -40,7 +41,7 @@ navbar-inverse navbar-static" id="main-navigation">
             {% endif %}
           </div>
          <!-- NAVBAR COLLAPSE-->
-          <div class="collapse navbar-collapse" id="navbar-collapse">
+          <div class="collapse navbar-collapse" id="navbar-collapse" role="navigation">
               <ul class="nav navbar-nav navbar-right" id="navbar-buttons">
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
@@ -97,7 +98,7 @@ navbar-inverse navbar-static" id="main-navigation">
                                     </li>
                                   {% else %}
                                       <li>
-                                          <a target="_self" href="{{menu_option.url}}" class="dropdown-item " title="{{menu_option.txt}}">{{menu_option.text}} {% if menu_option.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}</a>
+                                          <a target="{% if menu_option.external %}_blank{% else %}_self{% endif %}" href="{{menu_option.url}}" class="dropdown-item " title="{{menu_option.txt}}">{{menu_option.text}} {% if menu_option.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}</a>
                                       </li>
                                   {% endif %}
                               {% endfor %}

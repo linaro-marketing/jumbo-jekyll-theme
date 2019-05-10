@@ -88,7 +88,7 @@ ol.breadcrumb li span:hover {
     color: #fff;
 }
 
-.breadcrumb-inner-container h1, .breadcrumb-inner-container h2, .breadcrumb-inner-container h3{
+#wrapper .breadcrumb-inner-container h1,#wrapper .breadcrumb-inner-container h2,#wrapper .breadcrumb-inner-container h3{
     color: $breadcrumb-title-color;
 }
 

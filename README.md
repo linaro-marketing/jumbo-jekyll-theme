@@ -9,7 +9,7 @@ This is an open source Jekyll theme built for use on the Linaro Jekyll static we
     - [Adding Pages](#adding-pages)
     - [Adding Posts](#adding-posts)
 - [Adding Redirects](#adding-redirects)
-- [Building the static site locally](#building-locally)
+- [Building the static site locally](#building-your-static-site)
 
 ## Contributions
 We happy to consider any contributions that you may have whether bugfixes/features. Please submit a pull request with your changes and we will take a look.
@@ -42,6 +42,7 @@ A few of the main features that this theme offers:
 * Jekyll Assets - providiing minified Javascript/CSS packages.
 * Jekyll-responsive-image plugin for generating resized images upon site build.
 * Jekyll-data to override the settings added in this theme.
+* Jekyll-last-modified-at plugin integration - shows the users the date that the current page/post was last updated.
 
 ### Available Layouts
 
@@ -101,7 +102,7 @@ Below are a table showing the available includes for you to use:
 
 If you are using a layout that contains `jumbotron` then you can choose to display an image carousel header, standard background image header or a simple breadcrumb.
 
-**Jumbotron Settings**
+#### Jumbotron Settings
 
 With the jumbotron layouts you can add a title, sub title and buttons to your header through changing your pages' front matter. 
 
@@ -143,7 +144,7 @@ jumbotron:
 The above should hopefully be fairly self explanatory other than the icon value which should be the icon class for a Font Awesome 4.7 Icon. For all available icons [click here](https://fontawesome.com/v4.7.0/icons/). 
 
 
-**Displaying an image carousel**
+#### Background Image Carousel
 
 If you would like to display an image carousel for your page then add the following front matter to your page:
 
@@ -163,7 +164,7 @@ jumbotron:
 Add as many images here as you would like. Even though these images are loaded lazily, try and make sure the images have been optimized as large images will increase the page load time. Also try to ensure the resolution of these images are fairly high.
 
 
-**Displaying an background image based jumbotron**
+#### Background Image
 
 ```yaml
 ---
@@ -178,7 +179,38 @@ jumbotron:
 Here you can add image to be used an the background image of the jumbotron. Try and make sure the image has been compressed/optimized as large images will increase the page load time. Also try to ensure the resolution of these images are fairly high.
 
 
+#### Slider Jumbotron
 
+You can add an owl carousel based jumbotron using the following front matter settings:
+
+```yaml
+---
+jumbotron:
+    slider:
+        slides:
+            # Title of your Slide
+            - title: Accelerating deployment of Arm-based solutions
+            # CSS class for your slide title - not required.
+              title-class: big-title
+            # Slide inline style="" settings - useful for setting background positions
+              slide-style: "background-position-y: bottom;"
+            # Adds the overlay class to slide
+              darken: true
+            # The path to the image you'd like to use for the slide
+              image: https://www.linaro.org/assets/images/content/hkg18-tech-banner.jpg
+            - title: Industry leaders to present Open Source on Arm insights at Linaro Connect Bangkok 2019
+              description: Linaro Ltd, the open source collaborative engineering organization developing software for the Arm® ecosystem, announced today the keynote speakers for Linaro Connect Bangkok 2019.
+              darken: true
+              slide-style: "background-position-y: bottom;"
+              image: https://staging.linaro.org/assets/images/content/bkk19-website-banner.png
+              # Adds buttons as <a href="URL" class="btn btn-primary">TITLE</a> after the description
+              buttons:
+                - title: Learn more
+                  url: https://www.linaro.org/news/industry-leaders-to-present-open-source-on-arm-insights-at-linaro-connect-bangkok-2019/
+---
+```
+
+__Note__: The /assets/js/app/main.js theme file must be included since this instantiates the owl carousel if it exists.
 
 # Adding Content
 ## Adding Pages
@@ -338,6 +370,49 @@ To add a media element / YouTube video use the following Jekyll include.
 ```
 {% include media.html media_url="https://youtu.be/GFzJd0hXI0c" %}
 ```
+
+# Adding Redirects
+
+__Note__: This section is only applicable to static sites deployed within Linaro. You can however use the same approach for your site using the following method.
+
+We are using [Edge-rewrite](https://github.com/marksteele/edge-rewrite) which is a rewrite engine running in Lambda@Edge. The redirects are to be added to the `_data/routingrules.json` file in the webiste repository following the syntax rules [here](https://github.com/marksteele/edge-rewrite).
+
+```
+^/oldpath/(\\d*)/(.*)$ /newpath/$2/$1 [L]
+!^/oldpath.*$ http://www.example.com [R=302,L,NC]
+^/topsecret.*$ [F,L]
+^/deadlink.*$ [G]
+^/foo$ /bar [H=^baz\.com$]
+```
+
+__Note:__ These redirects are currently not respected by the link checker until built. So if trying to fix broken links by adding redirects then this may not be the best way to go about it currently. 
+
+# Building your static site
+
+We are working towards creating a Dockerfile for building Linaro's static sites (if familiar with Docker you can find many [Jekyll based Docker images])(https://hub.docker.com/r/jekyll/jekyll/) to get started). In the mean time you can still clone the site and install bundler/jekyll gems and ruby to build the site locally.
+
+In order to build the 96Boards.org static site make sure you have Ruby and the bundler/jekyll gems installed. For instructions on how to setup an environment to build Jekyll sites see the official Jekyll documentation [here](https://jekyllrb.com/docs/installation/).
+
+Once you have above installed you can simply clone this repo and the [96Boards Documentation Repo](https://github.com/96boards/documentation). You will then need to modify the [build.sh](https://github.com/96boards/website/blob/master/build.sh) file to pull the documentation into your website repo before building the static site. Amend the top two lines of the build.sh file so that the correct paths are used. Then run the script to move the documentation files over to the _documentation collection in the website repo.
+
+```
+$ ./build.sh
+```
+
+After you have moved the documentation files over you can go ahead and run the following to get the site building:
+
+```
+$ bundle 
+```
+
+This will install the required gems listed in the Gemfile.
+
+```
+$ bundle exec jekyll s 
+```
+
+This will serve (s) the Jekyll static website to the http://localhost:4000 where you can view the generated static website.
+
 
 # Feature Requests / Bug Fixes
 
