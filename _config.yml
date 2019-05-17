@@ -17,6 +17,8 @@ highlighter: rouge
 blog_images_dir: assets/images/content/
 # Markdown flavour used by Jekyll to parse markdown.
 markdown: kramdown
+# Email
+email: contact@linaro.org
 # Default character encoding
 encoding: utf-8
 # Jekyll configuration for running the site in "Safe" mode.
