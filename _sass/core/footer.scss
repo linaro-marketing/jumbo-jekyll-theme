@@ -1,146 +1,143 @@
-.sub-footer {
-    background-color: $sub-footer-color;
-    padding-top: 40px;
-    padding-bottom:30px;
-}
-#footer .col-md-6.company-footer-bottom a {
-    color: $footer-text-color;
-}
-#footer .col-md-6.company-footer-bottom a:hover {
-    color: $brand-primary;
-} 
-#footer a.footer-element {
-    color: $footer-text-color;
-}
-#footer a.footer-element:hover {
-    color: $brand-primary;
-}
-#content-container > div.row.sub-footer{
-    margin-top: 20px;
-}
-input#mc-embedded-subscribe {
-    color: #fff;
-    background-color: #717171;
-    border-color: #95989A;
-}
-input#mc-embedded-subscribe:hover{
-    color: #fff;
-}
-div.row.sub-footer > div.container {
-    padding: 0;
-}
-footer {
-    background-color: $footer-bg-color;
-    height:auto;
-    color: $footer-text-color;
-    padding:20px;
-    font-size: 16px;
-}
- a.btn.btn-social-icon {
-    margin-right: 0;
-    padding-right: 0;
-}
-a.btn.btn-social-icon i {
-    margin-right: 0;
-}
-footer a{
-    color: $footer-text-color;
-    font-size: 14px;
-}
-footer h3 {
-    font-size: 14px;
-}
-footer a:hover{
-    color: $brand-primary;
-    text-decoration: none;
-    transition: color .5s ease;
-   -moz-transition: color .5s ease;
-   -webkit-transition: color .5s ease;
-}
-footer b a {
-    color: $brand-primary;
-}
-footer b a:hover{
-    color: $brand-primary;
-}
-.footer-bottom {
-    height:40px;
-    line-height: 29px;
-    background-color: darken($brand-primary, 20%);
-    color: #FFF;
-}
-.footer-strip{
-    background-color: $footer-bg-color;
-    border-top: 1px $footer-border-color solid;
-}
-div.row.footer-strip > div > div.pull-right > ul {
-    background-color: $gray-darker;
-}
-div.row.footer-strip > div > div.pull-right > ul a {
-    color: $footer-text-color;
-}
-div.row.footer-strip > div > div.pull-right > ul a:hover{
-    color: $brand-primary;
-    transition: color .5s ease;
-   -moz-transition: color .5s ease;
-   -webkit-transition: color .5s ease;
-}
-.footer-strip .container div {
-    height:auto;
-    line-height: 50px;
-    color: $footer-text-color;
-}
-.coloured-bp{
-    color: $brand-primary;
-}
-.main-footer-content{
-    margin-bottom: 10px;
-    padding: 40px 0px;
-}
-.footer-logo {
-    display:block;
-    max-width: 100px;
-    height: auto;
-}
-.company-footer-bottom {
-    padding-left: 0px;
-    font-size: 13px;
-}
-.company-footer-bottom .container {
-    padding-left: 0px;
-}
-.social-footer-bottom{
-    padding-left: 0px;
-}
-.social-footer-bottom .container{
-    padding-left: 0px;
-}
-a.btn.btn-social-icon i {
-    color: $footer-text-color;
-    transition: color 1s ease;
-}
-a.btn.btn-social-icon:hover i  {
-    color: $brand-primary;
-    transition: color 1s ease;
-}
-.company-footer-bottom img.footer-logo {
-     width:40px;
-     height:100%;
-     display:inline;
-}
-.company-footer-bottom, .company-footer-bottom a{
-    color: $footer-text-color;
-}
-@media(max-width:$screen-sm-min - 1){
-    .footer-strip .container div, .footer-strip {
-        text-align: center;
-    }
-    a.btn.btn-social-icon {
-        margin-right: 0;
-        padding-right: 0;
-        text-align: center;
-        margin-left: 0;
-        padding: 4px;
-    }
-}
+// Footer List Groups
+$footer-bg-color: #1c1c1c;
+#wrapper {
+    footer {
+        a {
+            color: $footer-text-color;
+            font-size: 14px;
+            &:hover {
+                color: $brand-primary;
+                text-decoration: none;
+                transition: color .5s ease;
+                -moz-transition: color .5s ease;
+                -webkit-transition: color .5s ease;
+            }
+        }
+        b {
+            a {
+                color: $brand-primary;
+            }
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+        h3 {
+            font-size:32px;
+            color: $footer-text-color;
+            @media(max-width: $screen-sm-min - 1){
+                text-align: center;
+            }
+        }
+        .footer-main {
+            
+            background: $footer-bg-color; /* Old browsers */
+            background: -moz-linear-gradient(-45deg,  lighten($footer-bg-color, 30%) 0%, $footer-bg-color 23%, lighten($footer-bg-color, 20%) 46%,  lighten($footer-bg-color, 30%) 73%, footer-bg-color 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg,  lighten($footer-bg-color, 30%)  0%,$footer-bg-color 23%,lighten($footer-bg-color, 20%) 46%, lighten($footer-bg-color, 30%) 73%, $footer-bg-color 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg,  lighten($footer-bg-color, 30%)  0%,$footer-bg-color 23%,lighten($footer-bg-color, 20%) 46%, lighten($footer-bg-color, 30%) 73%, $footer-bg-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($footer-bg-color, 30%)', endColorstr='$footer-bg-color',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
+            ul.list-group {
+                margin-left:0px;
+                li {
+                    background-color:transparent;
+                    border:0;
+                    padding-left:0px;
+                    padding-right:0px;
+                    transition: all 400ms ease;
+                    &:hover {
+                        padding-left: 4px;
+                        a {
+                            color:darken($brand-primary, 10%);
+                        }
+                    }
+                    small.date {
+                        display: block;
+                    }
+                }
+                @media(max-width: $screen-sm-min - 1){
+                    text-align: center;
+                }
+            }
+            // Address and contact details
+            .contact-details {
+                margin-top: 20px;
+                h3 {
+                    font-size: 40px;
+                    color: $footer-text-color;
+                }
+                address {
+                    a.email {
+                        text-align: left;
+                        font-size: 30px;
+                        display:inline-block; 
+                        background-color: transparent;
+                        border: 0px;
+                        margin-top:5px;
+                        color: $footer-text-color;
+                        width:100%;
+                        &:hover{
+                            color:$brand-primary;
+                        }
+                        &:visited, &:hover, &:active, &:link {
+                            text-decoration: none !important;
+                            color: $footer-text-color;
+                        }
+                        @media(max-width: $screen-sm-min - 1){
+                            text-align: center;
+                        }
+                    }
+                    font-size: 20px;
+                    color: $footer-text-color;
+                }
+                @media(max-width: $screen-sm-min - 1){
+                    text-align: center;
+                }
+            }
+            .footer-follow-section {
+                padding-bottom: 40px;
+                a.btn.btn-social-icon {
+                    margin-right: 10px;
+                    padding-right: 0;
+                    margin-top: 5px;
+                    background-color: $footer-bg-color;
+                    border-radius: 50%;
+                    transition: all 300ms ease;
+                    i {
+                        width: 60px;
+                        height: 60px;
+                        left: -8px;
+                        position: relative;
+                        padding-top: 15px;
+                        padding-left: 5px;
+                        border-radius: 50%;
+                        text-align: center;
+                        font-size:24px;
+                        margin-top:25px;
+                        margin-right: 5px;
+                        transition: all 1s linear;
+                        color: $footer-text-color;
+                    }
+                    &:hover {
+                        background-color: lighten($footer-bg-color, 30%);
+                        color: $brand-primary;
+                    }
+                }
+                h3 {
+                    font-size: 32px;
+                    color: $footer-text-color;
+                }
+            }
+        }
+        .footer-bottom {
+            background-color: #1c1c1c;
+            color: #FFF;
+            span.coloured-bp{
+                color: $brand-primary;
+            }
+            img.footer-logo {
+                height: 40px;
+                display: inline-block;
+            }
+        } 
+    }
+}
