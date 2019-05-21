@@ -1,7 +1,7 @@
 <footer>
     <div class="row footer footer-main p-t-40">
         <div class="container">
-            <div class="col-xs-12 col-sm-4 contact-details">
+            <div class="col-xs-12 col-sm-3 contact-details">
                 <address>
                     <a class="email" href="mailto:{{site.email}}?subject={{site.url}} - {{page.url}}">{{site.email}}</a> <br>
                     {% for address-line in site.address %}
@@ -9,7 +9,7 @@
                     {% endfor %}
                 </address>
             </div>
-            <div class="col-xs-12 col-sm-4 footer-column">
+            <div class="col-xs-12 col-sm-3 footer-column">
                 <h3>{{site.data.footer.middle-column.title}}</h3>
                 <ul class="list-group">
                     {% if site.data.footer.middle-column.latest-posts %}
@@ -23,7 +23,7 @@
                     {% endif %}
                 </ul>
             </div>
-            <div class="col-xs-12 col-sm-4 footer-column">
+            <div class="col-xs-12 col-sm-3 footer-column">
                 <h3>{{site.data.footer.last-column.title}}</h3>
                 <ul class="list-group">
                     {% for item in site.data.footer.last-column.items %}
@@ -33,20 +33,18 @@
                     {% endfor %}
                 </ul>
             </div>
-        </div>
-        {% if site.data.footer.social-media-icons %}
-        <div class="footer-follow-section container">
-            <div class="col-xs-12 text-center">
-                <h3>Follow us on</h3>
+            {% if site.data.footer.social-media-icons %}
+            <div class="col-xs-12 col-sm-3 footer-column footer-follow-section">
+                <h3>Follow us</h3>
                 {% include_cached social-media-icons.html %}
             </div>
+            {% endif %}
         </div>
-        {% endif %}
     </div>
     <div class="row footer-bottom p-t-20 p-b-20">
         <div class="container">
             <div class="col-xs-12 text-white text-center">
-                Copyright &copy; {{ 'now' | date: "%Y" }} {{site.data.footer.company-copyright-text}}
+                Copyright &copy; {{ 'now' | date: "%Y" }} {{site.data.footer.copyright-text}}
                 {% for link in site.data.footer.company-links %}
                     <span class="coloured-bp">&bull;</span>
                     <a href="{{link.url}}">{{link.name}}</a> 
