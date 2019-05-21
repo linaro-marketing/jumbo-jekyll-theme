@@ -1,7 +1,9 @@
 # Copyright text to be displayed at the very bottom of the footer
 copyright-text: Jumbo Jekyll Theme
 # Set this to false if you do not want the Linaro logo in the footer.
-linaro-branding: true 
+linaro-branding: true
+# Social Media Icons Row
+social-media-icons: true
 # These links are displayed at the very bottom of the footer.
 company-links:
     - name: Legal
