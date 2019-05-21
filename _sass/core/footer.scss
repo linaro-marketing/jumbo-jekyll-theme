@@ -66,6 +66,8 @@ $footer-bg-color: #1c1c1c;
                     color: $footer-text-color;
                 }
                 address {
+                    font-size: 14px;
+                    color: $footer-text-color;
                     a.email {
                         text-align: left;
                         font-size: 30px;
@@ -86,8 +88,6 @@ $footer-bg-color: #1c1c1c;
                             text-align: center;
                         }
                     }
-                    font-size: 20px;
-                    color: $footer-text-color;
                 }
                 @media(max-width: $screen-sm-min - 1){
                     text-align: center;
