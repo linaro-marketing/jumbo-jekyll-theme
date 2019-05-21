@@ -20,11 +20,11 @@ markdown: kramdown
 # Email
 email: contact@linaro.org
 # Company Address
-address: > 
-  Harston Mill
-  Royston Rd, Harston
-  Cambridge, United Kingdom
-  CB22 7GG
+address:
+  - Harston Mill
+  - Royston Rd, Harston
+  - Cambridge, United Kingdom
+  - CB22 7GG
 # Default character encoding
 encoding: utf-8
 # Jekyll configuration for running the site in "Safe" mode.
