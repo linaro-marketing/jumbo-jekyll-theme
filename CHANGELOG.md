@@ -1,5 +1,9 @@
 ## Changelog
 
+## 4.6.0 
+- Updated the footer design
+- Refactored the footer css into SASS
+
 ## 4.1.2 
 - Added the jekyll-last-modified-at plugin
 - Added disqus comments config object
