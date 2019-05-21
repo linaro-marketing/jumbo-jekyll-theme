@@ -1,75 +1,64 @@
-<div class="row content footer">
-    <footer id="footer">
+<footer>
+    <div class="row footer footer-main p-t-40">
         <div class="container">
-            <div class="row main-footer-content">
-                {% for column in site.data.footer.columns %}
-                <div class="col-xs-6 col-md-2">
-                    <ul class="list-unstyled ">
-                        <li><b><a class="footer-heading" href="{% if column.url %}{{column.url}}{% else %}#{% endif %}">{{column.title}}</a></b></li>
-                        {% if column.items %} {% for item in column.items %}
-                        <li><a class="footer-element" href="{{item.url}}">{{item.text}}</a></li>
-                        {% endfor %} {% endif %}
-                    </ul>
-                </div>
-                {% endfor %} {% if site.data.footer.image %}
-                <div class="col-xs-6 col-md-2">
-                    <a href="/">
-                        <img src="{% if site.data.footer.image %}{% asset_path '{{site.data.footer.image}}'  %}{% endif %}" class="footer-logo pull-right" alt="{{site.data.settings.name}}" />
+            <div class="col-xs-12 col-sm-4 contact-details">
+                <address>
+                    <a class="email" href="mailto:{{site.email}}?subject={{site.url}} - {{page.url}}">{{site.email}}</a> <br>
+                    {% for address-line in site.address %}
+                        {{address-line}}<br>
+                    {% endfor %}
+                </address>
+            </div>
+            <div class="col-xs-12 col-sm-4 footer-column">
+                <h3>{{site.data.footer.middle-column.title}}</h3>
+                <ul class="list-group">
+                    {% if site.data.footer.middle-column.latest-posts %}
+                        {% include_cached latest-posts.html %}
+                    {% else %}
+                        {% for item in site.data.footer.middle-column.items %}
+                        <li class="list-group-item">
+                            <a href="{{item.url}}">{{item.name}}</a>
+                        </li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 footer-column">
+                <h3>{{site.data.footer.last-column.title}}</h3>
+                <ul class="list-group">
+                    {% for item in site.data.footer.last-column.items %}
+                        <li class="list-group-item">
+                            <a href="{{item.url}}">{{item.name}}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% if site.data.footer.social-media-icons %}
+        <div class="footer-follow-section container">
+            <div class="col-xs-12 text-center">
+                <h3>Follow us on</h3>
+                {% include_cached social-media-icons.html %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <div class="row footer-bottom p-t-20 p-b-20">
+        <div class="container">
+            <div class="col-xs-12 text-white text-center">
+                Copyright &copy; {{ 'now' | date: "%Y" }} {{site.data.footer.company-copyright-text}}
+                {% for link in site.data.footer.company-links %}
+                    <span class="coloured-bp">&bull;</span>
+                    <a href="{{link.url}}">{{link.name}}</a> 
+                {% endfor %}
+            </div>
+            <div class="col-xs-12 text-white text-center m-t-10">
+                {% if site.data.footer.linaro-branding %}
+                    <a href="https://www.linaro.org">
+                        <img src="/assets/images/Linaro-logo-white.png" class="footer-logo" alt="Linaro Logo White Footer Icon" />
                     </a>
-                </div>
                 {% endif %}
             </div>
-            {% unless page.hide_last_modified or site.data.settings.hide_last_modified %}
-            <div class="row">
-                <div class="col-xs-12 no-padding">
-                    <span class="last-modified-at">Page last modified on {{ page.last_modified_at | date: '%A, %B %-d, %Y' }}</span>
-                </div>
-            </div>
-            {% endunless %}
-            <div class="row footer-strip">
-                <div class="container no-padding">
-                    <div class="col-md-6 company-footer-bottom">
-                        {% if site.data.footer.footer-image-url %}<a href="{{site.data.footer.footer-image-url}}"><img src="{{site.data.footer.footer-image}}" 
-                        class="footer-logo" alt="{{site.title}} Footer Icon" /></a>{% endif %}
-                        Copyright &copy; {{ 'now' | date: "%Y" }} {{site.data.footer.company-copyright-text}}
-                        {% for link in site.data.footer.company-links %}
-                            <span class="coloured-bp">&bull;</span>
-                            <a href="{{link.url}}">{{link.name}}</a> 
-                        {% endfor %}
-                        {% if site.data.settings.newsletter.enabled %}
-                            <span class="coloured-bp">&bull;</span>
-                            <a href="{{site.data.settings.newsletter.url}}">Subscribe to Newsletter</a> 
-                        {% else %}
-                            {% if site.data.settings.newsletter.enabled %}
-                            <span class="coloured-bp">&bull;</span>
-                            <a href="{{site.data.settings.newsletter.url}}" id="open-newsletter-popup">Subscribe to Newsletter</a> 
-                            {% endif %}
-                        {% endif %}
-                    </div>
-                    <div class="col-md-6 social-footer-bottom text-right no-padding">
-                        {% if site.data.settings.facebook_username %}
-                            <a href="http://facebook.com/{{site.data.settings.facebook_username}}" class="btn btn-social-icon"><i class="icon-facebook"></i></a> 
-                        {% endif %}
-                        {% if site.data.settings.github_username %}
-                            <a href="https://github.com/{{site.data.settings.github_username}}" class="btn btn-social-icon"><i class="icon-github-circled"></i></a> 
-                        {% endif %}
-                        {% if site.data.settings.google_plus_username %}
-                            <a href="https://plus.google.com/{{site.data.settings.google_plus_username}}/posts" class="btn btn-social-icon"><i class="icon-gplus"></i></a> 
-                        {% endif %}
-                        {% if site.data.settings.linkedin_username %}
-                            <a href="https://www.linkedin.com/company/{{site.data.settings.linkedin_username}}" class="btn btn-social-icon"><i class="icon-linkedin"></i></a> 
-                        {% endif %}
-                        {% if site.data.settings.twitter_username %}
-                            <a href="https://twitter.com/{{site.data.settings.twitter_username}}" class="btn btn-social-icon"><i class="icon-twitter"></i></a>
-                        {% endif %}
-                        {% if site.data.settings.youtube_username %}
-                            <a href="https://www.youtube.com/{{site.data.settings.youtube_username}}" class="btn btn-social-icon"><i class="icon-youtube"></i></a>
-                        {% endif %}
-                    </div>
-                    <div style="clear:both;"></div>
-                </div>
-            </div>
-            <!--/.container-->
         </div>
-    </footer>
-</div>
+    </div>
+</footer>
