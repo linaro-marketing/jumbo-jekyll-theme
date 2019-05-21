@@ -22,7 +22,7 @@ $footer-bg-color: #1c1c1c;
             }
         }
         h3 {
-            font-size:32px;
+            font-size:24px;
             color: $footer-text-color;
             @media(max-width: $screen-sm-min - 1){
                 text-align: center;
@@ -61,16 +61,12 @@ $footer-bg-color: #1c1c1c;
             // Address and contact details
             .contact-details {
                 margin-top: 20px;
-                h3 {
-                    font-size: 40px;
-                    color: $footer-text-color;
-                }
                 address {
                     font-size: 14px;
                     color: $footer-text-color;
                     a.email {
                         text-align: left;
-                        font-size: 30px;
+                        font-size: 24px;
                         display:inline-block; 
                         background-color: transparent;
                         border: 0px;
@@ -95,6 +91,7 @@ $footer-bg-color: #1c1c1c;
             }
             .footer-follow-section {
                 padding-bottom: 40px;
+                text-align: center;
                 a.btn.btn-social-icon {
                     margin-right: 10px;
                     padding-right: 0;
@@ -123,7 +120,7 @@ $footer-bg-color: #1c1c1c;
                     }
                 }
                 h3 {
-                    font-size: 32px;
+                    font-size: 24px;
                     color: $footer-text-color;
                 }
             }
