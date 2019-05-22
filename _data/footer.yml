@@ -4,6 +4,8 @@ copyright-text: Jumbo Jekyll Theme
 linaro-branding: true
 # Social Media Icons Row
 social-media-icons: true
+# Display the contact details section
+display-contact-details: true
 # These links are displayed at the very bottom of the footer.
 company-links:
     - name: Legal
@@ -12,7 +14,7 @@ company-links:
       url: /contact/
     - name: Press
       url: /press/
-middle-column:
+second-column:
     title: Latest News & Blogs
     latest-posts: true
     # Optionally display another list of items
@@ -28,7 +30,7 @@ middle-column:
     #   - name: Linaro Developer Cloud
     #     url: https://www.linaro.cloud
 # Custom Col on the right
-last-column:
+third-column:
     title: Other Projects
     items:
       - name: 96Boards
