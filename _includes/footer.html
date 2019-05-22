@@ -1,6 +1,7 @@
 <footer>
     <div class="row footer footer-main p-t-40">
         <div class="container">
+            {% if site.data.footer.display-contact-details %}
             <div class="col-xs-12 col-sm-3 contact-details">
                 <address>
                     <a class="email" href="mailto:{{site.email}}?subject={{site.url}} - {{page.url}}">{{site.email}}</a> <br>
@@ -9,13 +10,15 @@
                     {% endfor %}
                 </address>
             </div>
+            {% endif %}
+            {% if site.data.footer.second-column %}
             <div class="col-xs-12 col-sm-3 footer-column">
-                <h3>{{site.data.footer.middle-column.title}}</h3>
+                <h3>{{site.data.footer.second-column.title}}</h3>
                 <ul class="list-group">
-                    {% if site.data.footer.middle-column.latest-posts %}
+                    {% if site.data.footer.second-column.latest-posts %}
                         {% include_cached latest-posts.html %}
                     {% else %}
-                        {% for item in site.data.footer.middle-column.items %}
+                        {% for item in site.data.footer.second-column.items %}
                         <li class="list-group-item">
                             <a href="{{item.url}}">{{item.name}}</a>
                         </li>
@@ -23,16 +26,19 @@
                     {% endif %}
                 </ul>
             </div>
+            {% endif %}
+            {% if site.data.footer.third-column %}
             <div class="col-xs-12 col-sm-3 footer-column">
-                <h3>{{site.data.footer.last-column.title}}</h3>
+                <h3>{{site.data.footer.third-column.title}}</h3>
                 <ul class="list-group">
-                    {% for item in site.data.footer.last-column.items %}
+                    {% for item in site.data.footer.third-column.items %}
                         <li class="list-group-item">
                             <a href="{{item.url}}">{{item.name}}</a>
                         </li>
                     {% endfor %}
                 </ul>
             </div>
+            {% endif %}
             {% if site.data.footer.social-media-icons %}
             <div class="col-xs-12 col-sm-3 footer-column footer-follow-section">
                 <h3>Follow us</h3>
