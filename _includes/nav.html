@@ -4,9 +4,15 @@
 {% assign page_base = page.url | split: "/" %}
  {% assign current_page_url = page.url | replace: "index.html", "" %}
 {% if current_page_url == "/" %}
-    {% assign current_page_url = "do-no-set"%}
+    {% assign current_page_url  = "do-no-set"%}
 {% endif %}
-<nav class="navbar-inverse navbar-static" id="main-navigation">
+<nav class="
+{% if layout.nav-light %}
+        nav-light 
+{% elsif page.nav-light %}
+        nav-light 
+{% endif %}
+navbar-inverse navbar-static" id="main-navigation">
         <!-- NAVBAR HEADER-->
          <div class="navbar-header">
              <button for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -16,22 +22,30 @@
                <span class="icon-bar middle-bar"></span>
                <span class="icon-bar bottom-bar"></span>
              </button>
-            <a class="navbar-brand " href="{{site.data.nav.brand.url}}">
-                {% if site.data.nav.brand.image.svg %}
-                    {% include {{site.data.nav.brand.image.name}} %}
-                {% elsif site.data.nav.brand.image.path %}
-                        <img src="{{ site.data.nav.brand.image.path }}" alt="{% if site.data.settings.name %}{{ site.data.settings.name }}{% else %}Linaro Site{% endif %} Logo." id="brand-image" />
-                {% else %}
-                    {% include linaro-svg.html %}
-                {% endif %}
-            </a>
+            {% if site.data.nav.brand %}
+                <a class="navbar-brand " href="{{site.data.nav.brand.url}}">
+                    {% if site.data.nav.brand.image.enabled %}
+                        {% if site.data.nav.brand.image.svg %}
+                            {% include {{site.data.nav.brand.image.name}} %}
+                        {% elsif site.data.nav.brand.image.path %}
+                             <img src="{{ site.data.nav.brand.image.path }}" alt="{% if site.data.settings.name %}{{ site.data.settings.name }}{% else %}Linaro Site{% endif %} Logo." id="brand-image" />
+                        {% else %}
+                            {% include linaro-svg.html %}
+                        {% endif %}
+                    {% elsif site.data.nav.brand.text %}
+                        {{site.data.nav.brand.text}}
+                    {% else %}
+                        {{site.title}}
+                    {% endif %}
+                </a>
+            {% endif %}
           </div>
          <!-- NAVBAR COLLAPSE-->
           <div class="collapse navbar-collapse" id="navbar-collapse" role="navigation">
               <ul class="nav navbar-nav navbar-right" id="navbar-buttons">
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
-                        <li class="main dropdown
+                        <li class="main dropdown menu
                             {% if section.active_paths %}
                                 {% for active_path in section.active_paths %}
                                     {% if current_page_url contains active_path %}
@@ -60,14 +74,25 @@
                           <a {% if section.url %}href="{{section.url}}"{% endif %} class="main-anchor dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                               {{section.title}} <span class="caret"></span>
                           </a>
-                          <ul class="dropdown-menu">
+                          <ul class="dropdown-menu menu">
                               {% for menu_option in section.options %}
                                   {% if menu_option.options %}
-                                  <li class="dropdown{% if section.left %} pull-left {% endif %}">
+                                  <li class="dropdown-submenu sub-menu {% if section.left %} pull-left {% endif %}">
                                     <a tabindex="-1" {% if menu_option.url %}href="{{menu_option.url}}"{% endif %} >{{menu_option.text}}</a>
-                                    <ul class="dropdown-submenu">
+                                    <ul class="dropdown-menu sub-menu">
                                     {% for sub-option in menu_option.options %}
+                                        {% if sub-option.options %}
+                                        <li class="dropdown-submenu">
+                                          <a {% if sub-option.url %}href="{{sub-option.url}}"{% endif %}>{{sub-option.text}}</a>
+                                          <ul class="dropdown-menu">
+                                          {% for sub-sub-option in sub-option.options %}
+                                              <li><a href="{{sub-sub-option.url}}">{{sub-sub-option.text}}</a></li>
+                                           {% endfor %}
+                                          </ul>
+                                        </li>
+                                        {% else %}
                                         <li><a href="{{sub-option.url}}">{{sub-option.text}}</a></li>
+                                        {% endif %}
                                     {% endfor %}
                                       </ul>
                                     </li>
@@ -101,30 +126,32 @@
                 {% endif %}
             </ul>
             {% if site.data.nav.search.enabled %}
-            <div id="search_bar">
-                <form class="form-inline" action="/search/" method="GET" target="_self" id="search_form">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <!--Reset-->
-                            <button type="reset" class="btn btn-default" id="search_close">
-                                <span class="glyphicon glyphicon-remove">
-                                    <span class="sr-only">Close</span>
-                                </span>
-                            </button>
-                        </span>
-                        <span class="input-group-btn">
-                            <!--Search-->
-                            <button type="submit" class="btn btn-default" id="search_search">
-                                <span class="glyphicon glyphicon-search">
-                                    <span class="sr-only">Close</span>
-                                </span>
-                            </button>
-                        </span>
-                        <input type="hidden" name="fields.label" value="{{ site.data.settings.search-label }}">
-                    </div>
-                </form>
-            </div>
+                <div id="search_bar">
+                    
+                    <form class="form-inline" action="/search/" method="GET" target="_self" id="search_form">
+                        <div class="input-group">
+                          <input type="text" name="q" class="form-control" placeholder="Search...">
+                           <span class="input-group-btn">
+                               <!--Reset-->
+                               <button type="reset" class="btn btn-default" id="search_close">
+                                   <span class="glyphicon glyphicon-remove">
+                                       <span class="sr-only">Close</span>
+                                   </span>
+                               </button>
+                           </span>
+                           <span class="input-group-btn">
+                               <!--Search-->
+                               <button type="submit" class="btn btn-default" id="search_search">
+                                   <span class="glyphicon glyphicon-search">
+                                       <span class="sr-only">Close</span>
+                                   </span>
+                               </button>
+                           </span>
+                           <input type="hidden" name="fields.label" value="{{ site.data.settings.search-label }}">
+                        </div>
+                    </form>
+                    
+                </div>
             {% endif %}
             
   </div>
