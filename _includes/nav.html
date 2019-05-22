@@ -31,7 +31,7 @@
               <ul class="nav navbar-nav navbar-right" id="navbar-buttons">
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
-                        <li class="main dropdown menu
+                        <li class="main dropdown
                             {% if section.active_paths %}
                                 {% for active_path in section.active_paths %}
                                     {% if current_page_url contains active_path %}
@@ -60,25 +60,14 @@
                           <a {% if section.url %}href="{{section.url}}"{% endif %} class="main-anchor dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                               {{section.title}} <span class="caret"></span>
                           </a>
-                          <ul class="dropdown-menu menu">
+                          <ul class="dropdown-menu">
                               {% for menu_option in section.options %}
                                   {% if menu_option.options %}
-                                  <li class="dropdown-submenu sub-menu {% if section.left %} pull-left {% endif %}">
+                                  <li class="dropdown{% if section.left %} pull-left {% endif %}">
                                     <a tabindex="-1" {% if menu_option.url %}href="{{menu_option.url}}"{% endif %} >{{menu_option.text}}</a>
-                                    <ul class="dropdown-menu sub-menu">
+                                    <ul class="dropdown-submenu">
                                     {% for sub-option in menu_option.options %}
-                                        {% if sub-option.options %}
-                                        <li class="dropdown-submenu">
-                                          <a {% if sub-option.url %}href="{{sub-option.url}}"{% endif %}>{{sub-option.text}}</a>
-                                          <ul class="dropdown-menu">
-                                          {% for sub-sub-option in sub-option.options %}
-                                              <li><a href="{{sub-sub-option.url}}">{{sub-sub-option.text}}</a></li>
-                                           {% endfor %}
-                                          </ul>
-                                        </li>
-                                        {% else %}
                                         <li><a href="{{sub-option.url}}">{{sub-option.text}}</a></li>
-                                        {% endif %}
                                     {% endfor %}
                                       </ul>
                                     </li>
