@@ -17,32 +17,32 @@ pages:
       active_paths:
         - /new/
       options:
-          - text: Plugins
-            options:
-                - text: Jekyll Assets
-                  url: /jekyll/plugins/assets/
-                - text: Jekyll Assets
-                  url: /jekyll/plugins/assets/
-                - text: Jekyll Assets
-                  url: /jekyll/plugins/assets/
+          # - text: Plugins
+          #   options:
+          #       - text: Jekyll Assets
+          #         url: /jekyll/plugins/assets/
+          #       - text: Jekyll Assets
+          #         url: /jekyll/plugins/assets/
+          #       - text: Jekyll Assets
+          #         url: /jekyll/plugins/assets/
           - text: Includes
             url: /jekyll/includes/
     - title: Layouts
       options:
           - text: Default
             url: /layouts/default/
-          - text: Jumbotron
-            options:
-              - text: Overview
-                url: /layouts/jumbotron/
-              - text: Carousel Header
-                url: /layouts/jumbotron/carousel-header/
-              - text: Video Header
-                url: /layouts/jumbotron/video-header/
-              - text: Background Image Header
-                url: /layouts/jumbotron/background-image-header/
-              - text: Slider Header
-                url: /layouts/jumbotron/slider-header/
+          # - text: Jumbotron
+          #   options:
+          #     - text: Overview
+          #       url: /layouts/jumbotron/
+          #     - text: Carousel Header
+          #       url: /layouts/jumbotron/carousel-header/
+          #     - text: Video Header
+          #       url: /layouts/jumbotron/video-header/
+          #     - text: Background Image Header
+          #       url: /layouts/jumbotron/background-image-header/
+          #     - text: Slider Header
+          #       url: /layouts/jumbotron/slider-header/
 
 
     - title: About
@@ -57,8 +57,6 @@ pages:
       options:
           - text: Bootstrap
             url: /css/bootstrap/ 
-
-
     - title: JS
       options:
           - text: JQuery
