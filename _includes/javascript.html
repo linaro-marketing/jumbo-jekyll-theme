@@ -1,10 +1,10 @@
-{% if include.pageJS %}
-    {% capture js-package %}package-{{include.pageJS}}{% endcapture %}
-    <script type="text/javascript" src="{% asset_path {{js-package}}  %}?v={% bust_cache %}"></script>
-{% elsif include.layoutJS %}
-    {% capture js-package %}package-{{include.layoutJS}}{% endcapture %}
-    <script type="text/javascript" src="{% asset_path {{js-package}}  %}?v={% bust_cache %}"></script>
+{% if page.js-package %}
+    {% capture js-package %}package-{{page.js-package}}{% endcapture %}
+    <script type="text/javascript" src="{% asset_path {{js-package}}  %}"></script>
+{% elsif layout.js-package %}
+    {% capture js-package %}package-{{layout.js-package}}{% endcapture %}
+    <script type="text/javascript" src="{% asset_path {{js-package}}  %}"></script>
 {% else %}
-    <script type="text/javascript" src="{% asset_path package %}?v={% bust_cache %}"></script>
+    <script type="text/javascript" src="{% asset_path package-main %}"></script>
 {% endif %}
 
