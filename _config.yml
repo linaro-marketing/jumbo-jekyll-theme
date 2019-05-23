@@ -118,7 +118,6 @@ jekyll_relative_links:
 plugins:
     - jekyll-seo-tag
     - jekyll-sitemap
-    - bootstrap-sass
     - uglifier
     - jekyll-assets
     - jekyll-theme-assets-updated
