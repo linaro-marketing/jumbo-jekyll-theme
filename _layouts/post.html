@@ -36,14 +36,7 @@ css-package: blog
             {% include disqus-comments.html %}
             </div>
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 no-padding blog-sidebar ">
-                {% if page.tags %}
-                    {% assign post_tags = page.tags %}
-                {% elsif page.keywords %}
-                    {% assign post_tags = page.tags %}
-                {% else %}
-                    {% assign post_tags = "" %}
-                {% endif %}
-                {% include_cached post-sidebar.html tags=post_tags post_cat=page.categories %}
+                {% include_cached post-sidebar.html %}
             </div>
     </div>        
 </div>
