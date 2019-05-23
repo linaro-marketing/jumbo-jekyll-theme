@@ -1,8 +1,8 @@
-{% if page.js-package %}
-    {% capture js-package %}package-{{page.js-package}}{% endcapture %}
+{% if include.pageJS %}
+    {% capture js-package %}package-{{include.pageJS}}{% endcapture %}
     <script type="text/javascript" src="{% asset_path {{js-package}}  %}?v={% bust_cache %}"></script>
-{% elsif layout.js-package %}
-    {% capture js-package %}package-{{layout.js-package}}{% endcapture %}
+{% elsif include.layoutJS %}
+    {% capture js-package %}package-{{include.layoutJS}}{% endcapture %}
     <script type="text/javascript" src="{% asset_path {{js-package}}  %}?v={% bust_cache %}"></script>
 {% else %}
     <script type="text/javascript" src="{% asset_path package %}?v={% bust_cache %}"></script>
