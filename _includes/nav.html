@@ -1,18 +1,10 @@
-{% if site.data.nav.universal-nav %}
-    {% include universal-nav.html %}
-{% endif %}
-{% assign page_base = page.url | split: "/" %}
- {% assign current_page_url = page.url | replace: "index.html", "" %}
+{% include_cached universal-nav.html %}
+{% assign page_base = include.pageUrl | split: "/" %}
+ {% assign current_page_url = include.pageUrl | replace: "index.html", "" %}
 {% if current_page_url == "/" %}
     {% assign current_page_url  = "do-no-set"%}
 {% endif %}
-<nav class="
-{% if layout.nav-light %}
-        nav-light 
-{% elsif page.nav-light %}
-        nav-light 
-{% endif %}
-navbar-inverse navbar-static" id="main-navigation">
+<nav class="navbar-inverse navbar-static" id="main-navigation">
         <!-- NAVBAR HEADER-->
          <div class="navbar-header">
              <button for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse"
