@@ -3,7 +3,6 @@ $(window).click(function() {
     $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
 });
 $(document).ready(function () {
-
     // Clipboard JS
     if($("div.highlight").length > 0){
         $('div.highlight').each(function (index) {
@@ -18,7 +17,6 @@ $(document).ready(function () {
 
         });
     }
-
     if ($("#jumbotron-slider").length > 0 ){
         $("#jumbotron-slider").owlCarousel({
             navigation: true,
