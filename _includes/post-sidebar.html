@@ -1,18 +1,3 @@
-
-{% assign tags = include.tags %}
-{% assign post_cat = include.post_cat | downcase %}
-{% unless post_cat contains "news" %}
-    {% if tags != "" %}
-    <div id="post-tags">
-        {% for tag in tags %}
-            <a href="{{site.data.settings.blog.tags_page}}#{{tag | replace: ",","" | downcase }}">
-                <span class="tag">{{tag | replace: "," , ""}}</span>
-            </a>
-        {% endfor %}
-    </div>
-    {% endif %}
-{% endunless %}
-
 {% comment %}
     Recent Posts Displayed here.
 {% endcomment %}
