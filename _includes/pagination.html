@@ -29,9 +29,9 @@
                 {% endfor %}
             {% endif %}
         {% if paginator.next_page %}
-            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next </a></li>
         {% else %}
-            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+            <li class="disabled"><a href="#">Next &raquo;</a></li>
         {% endif %}
         </ul>
     </div>
