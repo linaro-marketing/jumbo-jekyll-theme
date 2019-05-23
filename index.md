@@ -34,7 +34,6 @@ jumbotron:
         - title: View on GitHub
           url: https://github.com/kylekirkby/jumbo-jekyll-theme
           icon: fa fa-github
-js-package: home
 ---
 # Jumbo Jekyll Theme
 
