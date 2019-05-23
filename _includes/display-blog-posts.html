@@ -57,9 +57,9 @@
                             <h3>{{post.title}}</h3>
                             <p class="excerpt">
                                 {% if post.description %}
-                                {{post.description}}
+                                    {{post.description}}
                                 {% else %}
-                                {{ post.content | strip_html | truncatewords:30 }}
+                                    {{ post.content | strip_html | truncatewords:30 }}
                                 {% endif %}
                             </p>
                             <a href="{{post.url}}" class="btn btn-primary">
@@ -124,9 +124,7 @@
                         </div>
                     <div class="blog-post-item-content">
                         <div class="post-cat">{{post.categories | first | capitalize }}</div>
-                        {% if site.data.settings.blog.reading_time %}
                             {% include read_time.html content=post.content %}
-                        {% endif %}
                             <h3>{{ post.title}}</h3>
                             <small>{{ post.date | date: "%A, %B %-d, %Y"}}</small>
                         <br />
@@ -134,30 +132,12 @@
                         {{ post.content | strip_html | truncatewords:30 }}
                         </p>
                         <div class="author-section">
-                            {% if post.author %}
-                                {% assign author = site.authors | where: "username", post.author | first %}
-                                {% assign author-url = author.url %}
-                                    <div class="blog-author-image lazyload" data-bg="{% if author.image.path %}{{author.image.path}}{% else %}{{site.data.settings.blog.avatar_placeholder}}{% endif %}"></div>
-                            {% endif %}
-                            {% if post.co-author %}
-                                {% if site.authors %}
-                                    {% assign co-author = site.authors | where: "username", post.co-author | first %}
-                                    {% assign co-author-url = co-author.url %}
-                                {% endif %}
-                                    <div class="blog-author-image co-author lazyload" data-bg="{% if co-author.image.path %}
-                                    {{co-author.image.path}}
-                                {% else %}
-                                    {{site.data.settings.blog.avatar_placeholder}}
-                                {% endif %}"></div>
-                                <small class="blog-author"> 
-                                    <em>{% if author.first_name %}{{author.first_name}}{% else %}{{post.author}}{% endif %}</em> &
-                                    <em>{% if co-author.first_name %}{{co-author.first_name}}{% else %}{{post.co-author}}{% endif %}</em>
-                                </small>
-                            {% else %}
-                                <small class="blog-author">
-                                    <em>{% if author.name %}{{author.name}}{% else %}{{post.author}}{% endif %}</em>
-                                </small>
-                            {% endif %}
+                            {% assign author = site.authors | where: "username", post.author | first %}
+                            {% assign author-url = author.url %}
+                            <div class="blog-author-image lazyload" data-bg="{% if author.image.path %}{{author.image.path}}{% else %}{{site.data.settings.blog.avatar_placeholder}}{% endif %}"></div>
+                            <small class="blog-author">
+                                <em>{% if author.name %}{{author.name}}{% else %}{{post.author}}{% endif %}</em>
+                            </small>
                         </div>
                     </div>
                     </a>
