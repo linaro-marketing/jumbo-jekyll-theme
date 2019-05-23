@@ -43,7 +43,7 @@ css-package: blog
                 {% else %}
                     {% assign post_tags = "" %}
                 {% endif %}
-                {% include post-sidebar.html tags=post_tags post_cat=page.categories %}
+                {% include_cached post-sidebar.html tags=post_tags post_cat=page.categories %}
             </div>
     </div>        
 </div>
