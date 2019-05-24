@@ -113,12 +113,6 @@ div#github_controls a#github_home {
     color: #333;    
     transition: all 250ms ease;
 }
-blockquote {
-    padding: 10.5px 21px;
-    margin: 0 0 21px;
-    font-size: 18.75px;
-    border-left: 5px solid $brand-primary;
-}
 #wrapper blockquote{
   font-size: 30px !important;
   background: #f9f9f9;
@@ -129,19 +123,17 @@ blockquote {
   line-height: 1.4;
   margin-left: 0px;
   border:1px solid #e1e1e1;
-    border-left: 10px solid #9aca33;
-
-}
-
-#wrapper blockquote:before {
-  content: open-quote;
-  display: inline;
-  line-height: 0;
-  left: -10px;
-  position: relative;
-  top: 30px;
-  color: #9acb33;
-  font-size: 3em;
+  border-left: 10px solid $brand-primary;
+  &:before {
+    content: open-quote;
+    display: inline;
+    line-height: 0;
+    left: -10px;
+    position: relative;
+    top: 30px;
+    color: $brand-primary;
+    font-size: 3em;
+  }
 }
 .members-img {
     width: auto;
