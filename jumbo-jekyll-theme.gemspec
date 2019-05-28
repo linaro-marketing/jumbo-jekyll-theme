@@ -2,17 +2,17 @@
 Gem::Specification.new do |s|
     # Main Spec Info
     s.name          = "jumbo-jekyll-theme"
-    s.version       = "4.7.0"
+    s.version       = "4.7.5"
     s.authors       = ["Kyle Kirkby"]
     s.email         = ["kyle.kirkby@linaro.org"]
-    s.summary       = %q{This is a Bootstrap 3 Jekyll theme built for Linaros static websites.}
-    s.homepage      = "https://github.com/linaro-website/jumbo-jekyll-theme/"
+    s.summary       = %q{This is a Bootstrap 3 Jekyll Theme built for Linaro Static Websites}
+    s.homepage      = "https://github.com/linaro-marketing/jumbo-jekyll-theme/"
     s.license       = "MIT"
     s.metadata    = {
-        "homepage_uri" => "https://github.com/linaro-website/jumbo-jekyll-theme",
-        "changelog_uri" => "https://github.com/linaro-website/jumbo-jekyll-theme/blob/master/CHANGELOG.md",
-        "source_code_uri" => "https://github.com/linaro-website/jumbo-jekyll-theme/",
-        "bug_tracker_uri" => "https://github.com/linaro-website/jumbo-jekyll-theme/issues",
+        "homepage_uri" => "https://github.com/linaro-marketing/jumbo-jekyll-theme",
+        "changelog_uri" => "https://github.com/linaro-marketing/jumbo-jekyll-theme/blob/master/CHANGELOG.md",
+        "source_code_uri" => "https://github.com/linaro-marketing/jumbo-jekyll-theme/",
+        "bug_tracker_uri" => "https://github.com/linaro-marketing/jumbo-jekyll-theme/issues",
     }
     # Spec Files
     s.files         = `git ls-files -z`.split("\x0").select do |f|
@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
     s.add_runtime_dependency "jekyll-sitemap", "~> 1.1"
     s.add_runtime_dependency "jekyll-readme-index", "0.2"
-    s.add_runtime_dependency "bootstrap-sass", "~> 3.4.1"
+    # s.add_runtime_dependency "bootstrap-sass", "~> 3.4.1"
     s.add_runtime_dependency "jekyll-redirect-from", "~> 0.12"
     s.add_runtime_dependency "jekyll-tidy", "~> 0.2.2"
     s.add_runtime_dependency "jekyll-assets", "2.4.0"
@@ -36,7 +36,6 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency 'jekyll-feed', '>0'
     s.add_runtime_dependency 'jekyll-theme-assets-updated', '~> 1.1'
     s.add_runtime_dependency 'jekyll-responsive-image'
-    s.add_runtime_dependency 'jekyll-last-modified-at'
     s.add_runtime_dependency 'hash-joiner', '~> 0'
     s.add_runtime_dependency 'sprockets', ' ~> 3.7.2'
     s.add_runtime_dependency 'jekyll-watch', ' ~> 2.1.1'
