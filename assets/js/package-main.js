@@ -2,6 +2,7 @@
 //= require vendor/bootstrap
 //= require vendor/cookieconsent
 //= require vendor/lazysizes
+//= require vendor/owl.carousel
 //= require vendor/ls.unveilhooks
 //= require vendor/jquery.doubleScroll
 //= require vendor/featherlight
