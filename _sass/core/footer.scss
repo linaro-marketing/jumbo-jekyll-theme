@@ -30,10 +30,10 @@
         .footer-main {
             
             background: $footer-bg-color; /* Old browsers */
-            background: -moz-linear-gradient(-45deg,  lighten($footer-bg-color, 30%) 0%, $footer-bg-color 23%, lighten($footer-bg-color, 20%) 46%,  lighten($footer-bg-color, 30%) 73%, footer-bg-color 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(-45deg,  lighten($footer-bg-color, 30%)  0%,$footer-bg-color 23%,lighten($footer-bg-color, 20%) 46%, lighten($footer-bg-color, 30%) 73%, $footer-bg-color 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(135deg,  lighten($footer-bg-color, 30%)  0%,$footer-bg-color 23%,lighten($footer-bg-color, 20%) 46%, lighten($footer-bg-color, 30%) 73%, $footer-bg-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($footer-bg-color, 30%)', endColorstr='$footer-bg-color',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            background: -moz-linear-gradient(-45deg,  #000 0%, $footer-bg-color 23%, lighten($footer-bg-color, 20%) 46%,  lighten($footer-bg-color, 30%) 73%, footer-bg-color 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg,  #000  0%,$footer-bg-color 23%,lighten($footer-bg-color, 20%) 46%, lighten($footer-bg-color, 30%) 73%, $footer-bg-color 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg,  #000  0%,$footer-bg-color 23%,lighten($footer-bg-color, 20%) 46%, lighten($footer-bg-color, 30%) 73%, $footer-bg-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='$footer-bg-color',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
             ul.list-group {
                 margin-left:0px;
