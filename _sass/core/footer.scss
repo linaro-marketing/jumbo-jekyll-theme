@@ -22,7 +22,7 @@
             }
         }
         h3 {
-            font-size:24px;
+            font-size: $footer-column-heading-font-size;
             color: $footer-text-color;
             @media(max-width: $screen-sm-min - 1){
                 text-align: center;
@@ -66,7 +66,7 @@
                     color: $footer-text-color;
                     a.email {
                         text-align: left;
-                        font-size: 24px;
+                        font-size: $footer-column-heading-font-size;
                         display:inline-block; 
                         background-color: transparent;
                         border: 0px;
@@ -128,8 +128,8 @@
             }
         }
         .footer-bottom {
-            background-color: #1c1c1c;
-            color: #FFF;
+            background-color: $footer-bottom-bg-color;
+            color: $footer-bottom-color;
             span.coloured-bp{
                 color: $brand-primary;
             }
