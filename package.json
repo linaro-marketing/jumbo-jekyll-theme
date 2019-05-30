@@ -1,0 +1,51 @@
+{
+  "name": "jumbojekylltheme",
+  "version": "5.0.0",
+  "description": "A Jekyll Theme based on Bootstrap 3 that aims to build large sites as fast as possible.",
+  "main": "index.html",
+  "scripts": {
+    "test": "bundle exec jekyll build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylekirkby/jumbo-jekyll-theme.git"
+  },
+  "keywords": [
+    "jekyll",
+    "bootstrap3",
+    "javascript",
+    "sass"
+  ],
+  "author": "Kyle Kirkby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kylekirkby/jumbo-jekyll-theme/issues"
+  },
+  "homepage": "https://github.com/kylekirkby/jumbo-jekyll-theme#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "browser-sync": "^2.26.5",
+    "child_process": "^1.0.2",
+    "cssnano": "^4.1.10",
+    "del": "^4.1.1",
+    "delete-empty": "^2.0.0",
+    "globby": "^9.2.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-image-resize": "^0.13.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "imagemin-webp": "^5.1.0",
+    "merge2": "^1.2.3",
+    "webpack": "^4.32.2",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {}
+}
