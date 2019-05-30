@@ -1,10 +1,2 @@
-{% if page.js-package %}
-    {% capture js-package %}package-{{page.js-package}}{% endcapture %}
-    <script type="text/javascript" src="{% asset_path {{js-package}}  %}"></script>
-{% elsif layout.js-package %}
-    {% capture js-package %}package-{{layout.js-package}}{% endcapture %}
-    <script type="text/javascript" src="{% asset_path {{js-package}}  %}"></script>
-{% else %}
-    <script type="text/javascript" src="{% asset_path package-main %}"></script>
-{% endif %}
+<script type="text/javascript" src="/assets/js/package.js"></script>
 
