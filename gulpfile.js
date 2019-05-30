@@ -1,33 +1,62 @@
 "use strict";
 
-// const gulp = require('gulp');
-// const concat = require('gulp-concat');
-// const sass = require('gulp-sass');
-// const autoprefixer = require("autoprefixer");
-// const browsersync = require("browser-sync").create();
-const autoprefixer = require("autoprefixer");
-const browsersync = require("browser-sync").create();
-const child_process = require("child_process");
-const cssnano = require("cssnano");
-const del = require("del");
-// const eslint = require("gulp-eslint");
-const gulp = require("gulp");
-const gulpImagemin = require("gulp-imagemin");
-const newer = require("gulp-newer");
-const plumber = require("gulp-plumber");
+// Styles
+const autoprefixer = require("autoprefixer"); // Live updates for dev
+const cssnano = require("cssnano"); // CSS Minifier
 const postcss = require("gulp-postcss");
-const rename = require("gulp-rename");
 const sass = require("gulp-sass");
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-var execSync = require('child_process').execSync;
-var imageminWebp = require('imagemin-webp');
-var gulpImageresize = require('gulp-image-resize');
-var themePath = execSync('bundle show jumbo-jekyll-theme').toString();
+// Gulp Specific modules
+const gulp = require("gulp"); // CSS Post Processor - caniuse.com
 const gulpNewer = require("gulp-newer");
+const plumber = require("gulp-plumber");
+const rename = require("gulp-rename");
+const concat = require('gulp-concat');
+// Javascript
+const uglify = require('gulp-uglify');
+// Image Tools
+const gulpImagemin = require("gulp-imagemin");
+const imageminWebp = require('imagemin-webp');
+const gulpImageresize = require('gulp-image-resize');
+// Delete modules for clearing up old files
+const del = require("del");
+const deleteEmpty = require("delete-empty");
+// Others
 const merge2 = require("merge2");
 const globby = require("globby");
-const deleteEmpty = require("delete-empty");
+const child_process = require("child_process");
+const browsersync = require("browser-sync").create();
+const execSync = require('child_process').execSync;
+// const eslint = require("gulp-eslint");
+
+console.time("gulp-timer");
+
+// Gets the path to the jumbo-jekyll-theme
+var themePath = execSync('bundle show jumbo-jekyll-theme').toString().replace(/(\r\n|\n|\r)/gm, "");
+
+// Javascript Sources
+var javascript_sources = [
+    "assets/js/**/jquery.js",
+    "assets/js/**/*"
+];
+javascript_sources = jekyllThemeSupport(javascript_sources);
+const javascript_dest = "./_site/assets/js/";
+
+// Sass Sources
+var sass_sources = [
+    "_sass/app.scss",
+];
+sass_sources = jekyllThemeSupport(sass_sources);
+const css_dest = "./_site/assets/css/";
+
+// Add the Jekyll Theme base paths
+function jekyllThemeSupport(sources){
+    sources.forEach(function(source){
+        let newSource = themePath + "/" + source;
+        sources.push(newSource);
+        console.log(newSource);
+    });
+    return sources;
+}
 
 // Image Transformation constants
 const transforms = [
@@ -50,6 +79,33 @@ const transforms = [
         }
     }
 ];
+// Concatenate & Minifiy CSS
+// CSS is compiled from sass_sources and pushed through autoprefixer(add's cross browser support prefixes --web-kit etc)
+// and then minified using cssnano via the PostCSS API
+function css() {
+    return gulp
+    .src(sass_sources)
+    .pipe(plumber())
+    .pipe(sass({ outputStyle: "expanded" }))
+    .pipe(gulp.dest(css_dest))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(gulp.dest(css_dest))
+    .pipe(browsersync.stream());
+}
+// Concatenate & Minify Javascript
+function scripts() {
+    return (
+        gulp
+        .src(javascript_sources)
+        .pipe(concat('concat.js'))
+        .pipe(gulp.dest(javascript_dest))
+        .pipe(rename('package.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(javascript_dest))
+        .pipe(browsersync.stream())
+    );
+}
 // BrowserSync
 function browserSync(done) {
     browsersync.init({
@@ -69,29 +125,6 @@ function browserSyncReload(done) {
 function clean() {
     return del(["./_site/assets/min/"]);
 }
-// // Optimize Images
-// function images() {
-//   return gulp
-//     .src("./assets/images/**/*")
-//     .pipe(newer("./_site/assets/images/"))
-//     .pipe(
-//       imagemin([
-//         imagemin.gifsicle({ interlaced: true }),
-//         imagemin.jpegtran({ progressive: true }),
-//         imagemin.optipng({ optimizationLevel: 5 }),
-//         imagemin.svgo({
-//           plugins: [
-//             {
-//               removeViewBox: false,
-//               collapseGroups: true
-//             }
-//           ]
-//         })
-//       ])    
-//     )
-//     .pipe(gulp.dest("./_site/assets/images/"));
-// }
-
 /**
  * Copy original images
  * - check if images are newer than existing ones
@@ -218,37 +251,17 @@ function imgCleanDirectories(){
             console.log(error);
         });
 }
-// CSS task
-function css() {
-    return gulp
-    .src('_sass/app.scss')
-    .pipe(plumber())
-    .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(gulp.dest("./_site/assets/css/"))
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(gulp.dest("./_site/assets/css/"))
-    .pipe(browsersync.stream());
-}
-// Transpile, concatenate and minify scripts
-function scripts() {
-    return (
-        gulp
-        .src(["./assets/js/**/*"])
-        // .pipe(plumber())
-        .pipe(concat('concat.js'))
-        .pipe(gulp.dest('./_site/assets/js/'))
-        .pipe(rename('package.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./_site/assets/js/'))
-        // .pipe(webpackstream(webpackconfig, webpack))
-        // folder only, filename is specified in webpack config
-        .pipe(browsersync.stream())
-    );
-}
-// Jekyll
+// Build the Jekyll Site
 function jekyll() {
     return child_process.spawn("bundle", ["exec", "jekyll", "build"], { stdio: "inherit" });
+}
+// Build the Jekyll Staging Site
+function jekyll_staging() {
+    return child_process.spawn("bundle", ["exec", "jekyll", "build", "--config", "_config-staging.yml"], { stdio: "inherit" });
+}
+// Build the Jekyll Production Site
+function jekyll_production() {
+    return child_process.spawn("bundle", ["exec", "jekyll", "build", "--config", "_config-production.yml"], { stdio: "inherit" });
 }
 // Watch files
 function watchFiles() {
@@ -269,6 +282,7 @@ function watchFiles() {
 
 const imagesPipeline = gulp.series(imgCleanDirectories, imgClean, imgCopy, imgThumbnails);
 const js = gulp.series(scripts);
+const tasks = gulp.series(clean, gulp.parallel(css, imagesPipeline, js));
 const build = gulp.series(clean, gulp.parallel(css, imagesPipeline, jekyll, js));
 // export tasks
 exports.images = imagesPipeline;
@@ -277,5 +291,8 @@ exports.js = js;
 exports.jekyll = jekyll;
 exports.clean = clean;
 exports.build = build;
-exports.watch = gulp.parallel(watchFiles, browserSync);
-exports.default = build;
+exports.tasks = tasks;
+exports.serve = gulp.series(clean, build, gulp.parallel(watchFiles, browserSync));
+exports.default = gulp.series(clean, build, gulp.parallel(watchFiles, browserSync));;
+
+console.timeEnd("gulp-timer");
