@@ -15,7 +15,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 // Image Tools
 const gulpImagemin = require("gulp-imagemin");
-const imageminWebp = require('imagemin-webp');
+const webp = require('gulp-webp');
 const gulpImageresize = require('gulp-image-resize');
 // Delete modules for clearing up old files
 const del = require("del");
@@ -139,6 +139,12 @@ function imgCopy(){
             svgoPlugins: [{ removeViewBox: false }, { removeUselessStrokeAndFill: false }]
         }))
         .pipe(gulp.dest("./_site/assets/images/"));
+}
+
+function imgWebP(){
+    return gulp.src("./_site/assets/images/**/*.{jpg,jpeg,png}")
+    .pipe(webp())
+    .pipe(gulp.dest("./_site/assets/images/webp"))
 }
 /**
  * Make thumbnails
@@ -280,10 +286,10 @@ function watchFiles() {
     gulp.watch("./assets/images/**/*", imagesPipeline);
 }
 
-const imagesPipeline = gulp.series(imgCleanDirectories, imgClean, imgCopy, imgThumbnails);
+const imagesPipeline = gulp.series(imgCleanDirectories, imgClean, imgCopy, imgThumbnails, imgWebP);
 const js = gulp.series(scripts);
-const tasks = gulp.series(clean, gulp.parallel(css, imagesPipeline, js));
-const build = gulp.series(clean, gulp.parallel(css, imagesPipeline, jekyll, js));
+const tasks = gulp.series(clean, gulp.parallel(css, imagesPipeline, scripts));
+const build = gulp.series(clean, jekyll, css, scripts, imagesPipeline);
 // export tasks
 exports.images = imagesPipeline;
 exports.css = css;
