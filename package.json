@@ -42,7 +42,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
-    "imagemin-webp": "^5.1.0",
+    "gulp-webp": "^4.0.1",
     "merge2": "^1.2.3",
     "webpack": "^4.32.2",
     "webpack-stream": "^5.2.1"
