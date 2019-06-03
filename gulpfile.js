@@ -17,6 +17,8 @@ const uglify = require('gulp-uglify');
 const gulpImagemin = require("gulp-imagemin");
 const webp = require('gulp-webp');
 const gulpImageresize = require('gulp-image-resize');
+var parallelTransform = require("concurrent-transform");
+var os = require("os");
 // Delete modules for clearing up old files
 const del = require("del");
 const deleteEmpty = require("delete-empty");
@@ -26,6 +28,10 @@ const globby = require("globby");
 const child_process = require("child_process");
 const browsersync = require("browser-sync").create();
 const execSync = require('child_process').execSync;
+var sourcemaps = require('gulp-sourcemaps');
+const htmlmin = require('gulp-htmlmin');
+
+
 // const eslint = require("gulp-eslint");
 
 console.time("gulp-timer");
@@ -35,15 +41,21 @@ var themePath = execSync('bundle show jumbo-jekyll-theme').toString().replace(/(
 
 // Javascript Sources
 var javascript_sources = [
-    "assets/js/**/jquery.js",
-    "assets/js/**/*"
+    "assets/js/vendor/jquery.js",
+    "assets/js/vendor/*",
+    "assets/js/app/*"
 ];
+
 javascript_sources = jekyllThemeSupport(javascript_sources);
 const javascript_dest = "./_site/assets/js/";
 
 // Sass Sources
 var sass_sources = [
-    "_sass/app.scss",
+    "_sass/*-package.scss"
+    // "_sass/_bootstrap.scss",
+    // "_sass/bootstrap/**/*",
+    // "_sass/app/**/*",
+    // "_sass/core/**/*",
 ];
 sass_sources = jekyllThemeSupport(sass_sources);
 const css_dest = "./_site/assets/css/";
@@ -61,35 +73,54 @@ function jekyllThemeSupport(sources){
 // Image Transformation constants
 const transforms = [
     {
-        src: "./assets/images/content/**/*",
-        dist: "./_site/assets/images/",
-        params: {
-            width: 800,
-            height: 800,
-            crop: true
-        }
-    },
-    {
-        src: "./assets/images/content/**/*",
+        src: "./assets/images/**/*.{jpg,jpeg,png}",
         dist: "./_site/assets/images/",
         params: {
             width: 400,
-            height: 400,
-            crop: true
+            crop: false
+        }
+    },
+    {
+        src: "./assets/images/**/*.{jpg,jpeg,png}",
+        dist: "./_site/assets/images/",
+        params: {
+            width: 800,
+            crop: false
+        }
+    },
+    {
+        src: "./assets/images/**/*.{jpg,jpeg,png}",
+        dist: "./_site/assets/images/",
+        params: {
+            width: 1400,
+            crop: false
         }
     }
 ];
+// Minify HTML Source
+function minify(){
+    return gulp.src('./_site/**/*.html')
+        .pipe(htmlmin({ 
+            collapseWhitespace: true,
+            continueOnParseError: true,
+            minifyJS: true,
+            minifyCSS: true
+         }))
+        .pipe(gulp.dest('./_site'));
+}
 // Concatenate & Minifiy CSS
 // CSS is compiled from sass_sources and pushed through autoprefixer(add's cross browser support prefixes --web-kit etc)
 // and then minified using cssnano via the PostCSS API
 function css() {
     return gulp
     .src(sass_sources)
+    .pipe(sourcemaps.init())
     .pipe(plumber())
     .pipe(sass({ outputStyle: "expanded" }))
     .pipe(gulp.dest(css_dest))
     .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(css_dest))
     .pipe(browsersync.stream());
 }
@@ -98,10 +129,12 @@ function scripts() {
     return (
         gulp
         .src(javascript_sources)
+        .pipe(sourcemaps.init())
         .pipe(concat('concat.js'))
         .pipe(gulp.dest(javascript_dest))
         .pipe(rename('package.js'))
         .pipe(uglify())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(javascript_dest))
         .pipe(browsersync.stream())
     );
@@ -162,18 +195,17 @@ function imgThumbnails(){
         // create a stream for each transform
         streams.push(
             gulp.src(transform.src)
-                .pipe(gulpNewer(transform.dist + "thumbs_" + transform.params.width + "x" + transform.params.height))
-                .pipe(gulpImageresize({
+                .pipe(gulpNewer(transform.dist + transform.params.width))
+                .pipe(parallelTransform(gulpImageresize({
                     imageMagick: true,
                     width: transform.params.width,
-                    height: transform.params.height,
                     crop: transform.params.crop
-                }))
+                }), os.cpus().length))
                 .pipe(gulpImagemin({
                     progressive: true,
                     svgoPlugins: [{ removeViewBox: false }, { removeUselessStrokeAndFill: false }]
                 }))
-                .pipe(gulp.dest(transform.dist + "thumbs_" + transform.params.width + "x" + transform.params.height))
+                .pipe(gulp.dest(transform.dist + transform.params.width))
         );
     });
     // merge streams
@@ -204,7 +236,7 @@ function imgClean(){
     // diffing
     distFilepaths.map((distFilepath) => {
       // sdistFilepathFiltered: remove dist root folder and thumbs folders names for comparison
-      const distFilepathFiltered = distFilepath.replace(/\/_site/, "").replace(/thumbs_[0-9]+x[0-9]+\//, "");
+      const distFilepathFiltered = distFilepath.replace(/\/_site/, "").replace(/[0-9]+x\//, "");
       // check if simplified dist filepath is in array of src simplified filepaths
       // if not, add the full path to the distFilesToDelete array
       if ( srcFilepaths.indexOf(distFilepathFiltered) === -1 ) {
@@ -232,13 +264,13 @@ function imgClean(){
  * 3. Delete all empty folders in dist images
  */
 function imgCleanDirectories(){
-    return globby("./_site/assets/images/**/thumbs_+([0-9])x+([0-9])/")
+    return globby("./_site/assets/images/**/+([0-9])/")
         .then((paths) => {
             console.log("All thumbs folders: " + paths);
             // existing thumbs directories in dist
             const distThumbsDirs = paths;
             // create array of dirs that should exist by walking transforms map
-            const srcThumbsDirs = transforms.map((transform) => transform.dist + "thumbs_" + transform.params.width + "x" + transform.params.height + "/");
+            const srcThumbsDirs = transforms.map((transform) => transform.dist + transform.params.width + "/");
             // array of dirs to delete
             const todeleteThumbsDirs = distThumbsDirs.filter((el) => srcThumbsDirs.indexOf(el) === -1);
             console.log("To delete thumbs folders: " + todeleteThumbsDirs);
@@ -281,7 +313,7 @@ function watchFiles() {
             "./_posts/**/*",
             "./_data/**/*"
         ],
-        gulp.series(jekyll, browserSyncReload)
+        gulp.series(jekyll, tasks, browserSyncReload)
     );
     gulp.watch("./assets/images/**/*", imagesPipeline);
 }
@@ -290,6 +322,7 @@ const imagesPipeline = gulp.series(imgCleanDirectories, imgClean, imgCopy, imgTh
 const js = gulp.series(scripts);
 const tasks = gulp.series(clean, gulp.parallel(css, imagesPipeline, scripts));
 const build = gulp.series(clean, jekyll, css, scripts, imagesPipeline);
+const postBuild = gulp.series(minify);
 // export tasks
 exports.images = imagesPipeline;
 exports.css = css;
@@ -297,8 +330,9 @@ exports.js = js;
 exports.jekyll = jekyll;
 exports.clean = clean;
 exports.build = build;
+exports.minify = minify;
 exports.tasks = tasks;
 exports.serve = gulp.series(clean, build, gulp.parallel(watchFiles, browserSync));
-exports.default = gulp.series(clean, build, gulp.parallel(watchFiles, browserSync));;
+exports.default = gulp.series(clean, build, postBuild, gulp.parallel(watchFiles, browserSync));;
 
 console.timeEnd("gulp-timer");
