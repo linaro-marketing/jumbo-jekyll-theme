@@ -4,7 +4,6 @@
         {% assign timeframe = 604800 %}
         {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
         {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
-        
         {% if forloop.first and paginator.page == 1 %}
             <style>
                 @media(min-width: 1000px){
@@ -17,28 +16,13 @@
             <div class="featured-post-row">
                 <div class="col-xs-12 col-sm-7 col-sm-push-5 latest-featured-post">
                     <a href="{{post.url}}">
-                    {% assign image_path = "" %}
-                    {% if post.image.thumb %}
-                            {% capture image_path %}{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                            {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                    {% elsif post.image.name %}
-                            {% capture image_path %}{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                            {% capture full_path %}/{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                    {% elsif post.image.path %}
-                            {% capture image_path %}{{post.image.path | remove_first: "/" }}{% endcapture %}
-                            {% capture full_path %}{{post.image.path}}{% endcapture %}
-                    {% elsif post.image == site.data.settings.social_share_image %}
-                            {% capture image_path %}{{site.data.settings.placeholder | remove_first: "/" }}{% endcapture %}
-                            {% capture full_path %}{{site.data.settings.placeholder}}{% endcapture %}
-                    {% elsif post.image %}
-                            {% capture image_path %}{{post.image | remove_first: "/" }}{% endcapture %}
-                            {% capture full_path %}{{post.image}}{% endcapture %}
-                    {% else %}
-                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                        data-src="{{site.data.settings.placeholder}}" alt="{{post.title}}" class="center-block img-responsive lazyload"/>
-                    {% endif %}
-                    {% if image_path != "" %}
-                    {% endif %}
+                        {% if post.image.path %}
+                            {% assign imageType = post.image.path | split: '.' %}
+                            {% include thumb-image.html path=post.image.path alt=post.title type=imageType.last %}
+                        {% else %}
+                            {% assign imageType = site.data.settings.placeholder | split: '.' %}
+                            {% include thumb-image.html path=site.data.settings.placeholder alt=post.title type=imageType.last %}
+                        {% endif %}
                     </a>
                 </div>
                 <div class="col-xs-12 col-sm-5 col-sm-pull-7 latest-featured-post-content">
@@ -75,29 +59,13 @@
                 <div class="blog-post-item">
                     <a href="{{post.url}}">
                         <div class="blog-featured-image {% if post.image == site.data.settings.social_share_image %}using-placeholder{% endif %}">
-
-                        {% assign image_path = "" %}
-                        {% if post.image.thumb %}
-                                {% capture image_path %}{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                                {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                        {% elsif post.image.name %}
-                                {% capture image_path %}{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                                {% capture full_path %}/{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                        {% elsif post.image.path %}
-                                {% capture image_path %}{{post.image.path | remove_first: "/" }}{% endcapture %}
-                                {% capture full_path %}{{post.image.path}}{% endcapture %}
-                        {% elsif post.image == site.data.settings.social_share_image %}
-                            {% capture image_path %}{{site.data.settings.placeholder | remove_first: "/" }}{% endcapture %}
-                            {% capture full_path %}{{site.data.settings.placeholder}}{% endcapture %}
-                            {% assign using_placeholder = "true" %}
-                        {% elsif post.image %}
-                                {% capture image_path %}{{post.image | remove_first: "/" }}{% endcapture %}
-                                {% capture full_path %}{{post.image}}{% endcapture %}
+                        {% if post.image.path %}
+                            {% assign imageType = post.image.path | split: '.' %}
+                            {% include thumb-image.html path=post.image.path alt=post.title type=imageType.last %}
                         {% else %}
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="{{site.data.settings.placeholder}}" alt="{{post.title}}" class="center-block img-responsive lazyload"/>
+                            {% assign imageType = site.data.settings.placeholder | split: '.' %}
+                            {% include thumb-image.html path=site.data.settings.placeholder alt=post.title type=imageType.last %}
                         {% endif %}
-
                         {% if image_path != "" %}
                         {% endif %}
                             <div class="read-article">
