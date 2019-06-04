@@ -105,6 +105,7 @@ plugins:
     - jekyll-sitemap
     - jekyll-redirect-from
     - jekyll-paginate-v2
+    - jekyll-picture-tag
 collections:
   authors:
     output: true
@@ -115,3 +116,7 @@ liquid:
 readme_index:
     enabled:          true
     remove_originals: false
+
+picture:
+  source: "assets/images"
+  output: "assets/images/processed"

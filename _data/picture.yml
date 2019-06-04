@@ -1,0 +1,9 @@
+media_presets:
+  mobile: 'max-width: 600px'
+markup_presets:
+  default:
+    widths: [600, 900, 1200]
+    formats: [webp, original]
+    sizes:
+      mobile: 80vw
+    size: 500px
