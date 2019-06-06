@@ -1,7 +1,7 @@
 {% unless page.edit-on-github == "false" %}
 {% if site.data.settings.edit-on-github.enabled and site.data.settings.edit-on-github.repo %}
-    {% assign page_base = page.permalink | split:"/" %}
-    {% assign page-path = page.path | replace: " ", "" %}
+    {% assign page_base = include.pagePermalink | split:"/" %}
+    {% assign page-path = include.pagePath | replace: " ", "" %}
     {% if page_base[1] == "blog" %}
     {% elsif page_base[1] == "documentation" and site.data.settings.edit-on-github.docs %}
         {% capture github-home %}{{site.data.settings.edit-on-github.docs}}{% endcapture %}

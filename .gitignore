@@ -14,12 +14,13 @@
 !_config-production.yml
 !Gemfile
 !index.md
-!package-lock.json
 !LICENSE.txt
 !README.md
 !screenshot.png
 !*.gemspec
 !CHANGELOG.md
+!package.json
+!gulpfile.js
 #
 # Now whitelist the desired folders
 !_includes

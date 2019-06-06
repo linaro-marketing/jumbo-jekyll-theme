@@ -1,4 +1,12 @@
 ## Changelog
+## 4.7.0
+- Refactored the blog section of the theme
+  - Removed excessive liquid used in the includes/layouts
+- Refactored the _sass/core/blog.scss file - now entirely SASS
+
+## 4.6.0 
+- Updated the footer design
+- Refactored the footer css into SASS
 
 ## 4.1.2 
 - Added the jekyll-last-modified-at plugin
