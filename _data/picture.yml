@@ -78,6 +78,21 @@ markup_presets:
     attributes: 
       img: class="lazyload"
 
+  thumb:
+    markup: data_auto
+    formats: [webp, original]
+    widths: [400, 750, 1000]
+    noscript: true # Default: false
+    attributes: 
+      img: class="lazyload"
+
+  placeholder:
+    markup: data_auto
+    formats: [webp, original]
+    noscript: true # Default: false
+    attributes: 
+      img: class="lazyload"
+
   # This is an example of how you'd get generated image and a URL, and nothing else.
   direct:
     markup: direct_url
