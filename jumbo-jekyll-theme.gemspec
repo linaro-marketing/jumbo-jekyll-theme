@@ -21,11 +21,12 @@ Gem::Specification.new do |s|
     # Ruby Version
     s.required_ruby_version = '>=2.3'
     # Runtime Dependencies
-    s.add_runtime_dependency 'jekyll', '~> 3.8.5'
+    s.add_runtime_dependency 'jekyll', '~> 3.7.3'
     # s.add_runtime_dependency "liquid-c"
     # s.add_runtime_dependency "sassc"
-    s.add_runtime_dependency "jekyll-picture-tag-latest", ">0"
+    # s.add_runtime_dependency "jekyll-picture-tag-latest", ">0"
     s.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
+    s.add_runtime_dependency 'jekyll-picture-tag-latest', '~> 1.3.1'
     s.add_runtime_dependency "jekyll-sitemap", "~> 1.1"
     s.add_runtime_dependency "jekyll-readme-index", "0.2"
     s.add_runtime_dependency "bootstrap-sass", "~> 3.4.1"
