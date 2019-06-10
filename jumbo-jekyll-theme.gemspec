@@ -24,25 +24,30 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency 'jekyll', '~> 3.8.5'
     # s.add_runtime_dependency "liquid-c"
     # s.add_runtime_dependency "sassc"
+    s.add_runtime_dependency "jekyll-picture-tag-latest", ">0"
     s.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
     s.add_runtime_dependency "jekyll-sitemap", "~> 1.1"
     s.add_runtime_dependency "jekyll-readme-index", "0.2"
+    s.add_runtime_dependency "bootstrap-sass", "~> 3.4.1"
     s.add_runtime_dependency "jekyll-redirect-from", "~> 0.12"
-    s.add_runtime_dependency "jekyll-picture-tag", ">0"
-    s.add_runtime_dependency "jekyll-assets", "2.4.0"
     s.add_runtime_dependency "jekyll-tidy", "~> 0.2.2"
+    s.add_runtime_dependency "jekyll-assets", "2.4.0"
     s.add_runtime_dependency 'jekyll-data', '>0'
+    s.add_runtime_dependency 'uglifier', '>0'
     s.add_runtime_dependency 'autoprefixer-rails', '~> 9.0', '>= 9.0.0'
     s.add_runtime_dependency 'jekyll-paginate-v2', '>0'
     s.add_runtime_dependency 'jekyll-feed', '>0'
+    s.add_runtime_dependency 'jekyll-theme-assets-updated', '~> 1.1'
+    s.add_runtime_dependency 'jekyll-last-modified-at'
     s.add_runtime_dependency 'hash-joiner', '~> 0'
     s.add_runtime_dependency 'sprockets', ' ~> 3.7.2'
     s.add_runtime_dependency 'jekyll-watch', ' ~> 2.1.1'
     s.add_runtime_dependency 'jekyll-include-cache'
-    s.add_runtime_dependency 'ffi', '~> 1.9.24'
-    s.add_runtime_dependency "rack", ">= 1.6.11"
+    s.add_runtime_dependency 'ffi', '~> 1.9.6'
+    s.add_runtime_dependency "rack", ">0"
+
     #s.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
     # Development Dependencies
     s.add_development_dependency "bundler", "> 1.16.1"
-    s.add_development_dependency "rake", "~> 10.0"
+    s.add_development_dependency "rake"
   end
