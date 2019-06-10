@@ -17,11 +17,11 @@
                 <div class="col-xs-12 col-sm-7 col-sm-push-5 latest-featured-post">
                     <a href="{{post.url}}">
                         {% if post.image.path %}
-                            {% assign imageType = post.image.path | split: '.' %}
-                            {% include thumb-image.html path=post.image.path alt=post.title type=imageType.last %}
+                            {% assign imagePath = post.image.path | replace: '/assets/images/', '' %}
+                            {% picture thumb {{imagePath}} alt=post.title %}
                         {% else %}
-                            {% assign imageType = site.data.settings.placeholder | split: '.' %}
-                            {% include thumb-image.html path=site.data.settings.placeholder alt=post.title type=imageType.last %}
+                            {% assign imagePath = site.data.settings.placeholder | replace: '/assets/images/', '' %}
+                            {% picture placeholder {{imagePath}} alt=post.title %}
                         {% endif %}
                     </a>
                 </div>
@@ -60,11 +60,11 @@
                     <a href="{{post.url}}">
                         <div class="blog-featured-image {% if post.image == site.data.settings.social_share_image %}using-placeholder{% endif %}">
                         {% if post.image.path %}
-                            {% assign imageType = post.image.path | split: '.' %}
-                            {% include thumb-image.html path=post.image.path alt=post.title type=imageType.last %}
+                            {% assign imagePath = post.image.path | replace: '/assets/images/', '' %}
+                            {% picture thumb {{imagePath}} alt=post.title %}
                         {% else %}
-                            {% assign imageType = site.data.settings.placeholder | split: '.' %}
-                            {% include thumb-image.html path=site.data.settings.placeholder alt=post.title type=imageType.last %}
+                            {% assign imagePath = site.data.settings.placeholder | replace: '/assets/images/', '' %}
+                            {% picture placeholder {{imagePath}} alt=post.title %}
                         {% endif %}
                         {% if image_path != "" %}
                         {% endif %}
