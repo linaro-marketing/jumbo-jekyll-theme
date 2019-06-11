@@ -3,14 +3,18 @@ layout: base
 title: Blog
 css-package: blog
 js-package: blog
+pagination:
+    enabled: true
+    category: blog
 ---
 <div class="row" id="content-container">
     <div class="container">
         {% include display-blog-posts.html %}
-        {% if page.news %}
-            {% include pagination.html path="/news/:num/"%}
+        {% if page.pagination_base_url %}
+            {% assign paginationUrl = page.pagination_base_url | append: ':num/' %}
         {% else %}
-            {% include pagination.html path="/blog/:num/"%}
+            {% assign paginationUrl =  "/blog/:num/" %}
         {% endif %}
+        {% include pagination.html pagination_permalink=paginationUrl %}
     </div>
 </div>
