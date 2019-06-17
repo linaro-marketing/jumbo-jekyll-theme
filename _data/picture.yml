@@ -86,8 +86,24 @@ markup_presets:
     attributes: 
       img: class="lazyload"
 
+  blogThumb:
+    markup: data_auto
+    formats: [webp, original]
+    widths: [50, 100, 150]
+    noscript: true # Default: false
+    attributes: 
+      img: class="lazyload img-responsive"
+
   placeholder:
     markup: data_auto
+    formats: [webp, original]
+    noscript: true # Default: false
+    attributes: 
+      img: class="lazyload"
+
+  backgroundImage:
+    markup: data_auto
+    widths: [400, 800, 1100, 1400]
     formats: [webp, original]
     noscript: true # Default: false
     attributes: 
