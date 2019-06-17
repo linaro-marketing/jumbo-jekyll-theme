@@ -106,5 +106,6 @@ readme_index:
     enabled:          true
     remove_originals: false
 picture:
+  nomarkdown: false
   source: "assets/images"
   output: "assets/images/processed"
