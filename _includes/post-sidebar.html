@@ -16,24 +16,17 @@
                 <div class="row featured_blog_post">
                     <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
                             {% if post.image.thumb %}
-                                    {% capture image_path %}{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                                    {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                             {% elsif post.image.name %}
-                                    {% capture image_path %}{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                                    {% capture full_path %}/{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
+                                    {% capture full_path %}blog/thumbs/{{post.image.thumb}}{% endcapture %}
                             {% elsif post.image.path %}
-                                    {% capture image_path %}{{post.image.path | remove_first: '/'}}{% endcapture %}
-                                    {% capture full_path %}{{post.image.path }}{% endcapture %}
+                                    {% capture full_path %}{{post.image.path | replace: '/assets/images/', ''  }}{% endcapture %}
                             {% elsif post.image == site.data.settings.social_share_image %}
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{site.data.settings.placeholder}}"
-                                    alt="{{post.title}}" class="center-block img-responsive lazyload" />
+                                    {% capture full_path %}{{site.data.settings.social_share_image | replace: '/assets/images/', '' }}{% endcapture %}
                             {% elsif post.image %}
-                                    {% capture image_path %}{{post.image | remove_first: '/'}}{% endcapture %}
-                                    {% capture full_path %}{{post.image }}{% endcapture %}
+                                    {% capture full_path %}{{post.image | replace: '/assets/images/', '' }}{% endcapture %}
                              {% else %}
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                 data-src="{{site.data.settings.placeholder}}" alt="{{post.title}}" class="img-responsive lazyload"/>
+                                    {% capture full_path %}{{site.data.settings.social_share_image | replace: '/assets/images/', '' }}{% endcapture %}
                              {% endif %}
+                             {% picture blogThumb {{full_path}} alt=post.title %}
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-9 ">
                        {{post.title | truncate: 40}}
@@ -70,24 +63,17 @@
             <div class="row featured_blog_post">
                 <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
                     {% if post.image.thumb %}
-                        {% capture image_path %}{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                        {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                 {% elsif post.image.name %}
-                        {% capture image_path %}{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                        {% capture full_path %}/{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                 {% elsif post.image.path %}
-                        {% capture image_path %}{{post.image.path | remove_first: '/' }}{% endcapture %}
-                        {% capture full_path %}{{post.image.path }}{% endcapture %}
-                {% elsif post.image == site.data.settings.social_share_image %}
-                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{site.data.settings.placeholder}}"
-                        alt="{{post.title}}" class="center-block img-responsive lazyload" />
-                 {% elsif post.image %}
-                        {% capture image_path %}{{post.image | remove_first: '/' }}{% endcapture %}
-                        {% capture full_path %}{{post.image }}{% endcapture %}
-                 {% else %}
-                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                    data-src="{{site.data.settings.placeholder}}" alt="{{post.title}}" class="img-responsive lazyload"/>
-                 {% endif %}
+                            {% capture full_path %}blog/thumbs/{{post.image.thumb}}{% endcapture %}
+                    {% elsif post.image.path %}
+                            {% capture full_path %}{{post.image.path | replace: '/assets/images/', ''  }}{% endcapture %}
+                    {% elsif post.image == site.data.settings.social_share_image %}
+                            {% capture full_path %}{{site.data.settings.social_share_image | replace: '/assets/images/', '' }}{% endcapture %}
+                    {% elsif post.image %}
+                            {% capture full_path %}{{post.image | replace: '/assets/images/', '' }}{% endcapture %}
+                        {% else %}
+                            {% capture full_path %}{{site.data.settings.social_share_image | replace: '/assets/images/', '' }}{% endcapture %}
+                        {% endif %}
+                        {% picture blogThumb {{full_path}} alt=post.title %}
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-9 ">
                    {{post.title | truncate: 40}}
