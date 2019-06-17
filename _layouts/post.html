@@ -3,7 +3,13 @@ layout: base
 js-package: blog
 css-package: blog
 ---
-<div class="row overlay background-image {% if page.image.background-class %}{{page.image.background-class}}{% endif %}" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% if page.image.path %}{{page.image.path}}{% else %}{{page.image}}{% endif %}');"> <!--Row -->
+<div class="row overlay background-image {% if page.image.background-class %}{{page.image.background-class}}{% endif %}" id="jumbotron">
+    {% if page.image.path %}
+        {% assign image_path = page.image.path | replace: '/assets/images/','' %}
+    {% elsif page.image %}
+        {% assign image_path = page.image | replace: '/assets/images/','' %}
+    {% endif %}
+    {% picture backgroundImage {{image_path}} alt=page.title %}
     <div id="jumbotron-content" class="flex-container"> <!--Jumbotron div -->        
         <div class="container flex-center" id="jumbotron-text"> <!--Container -->
             <h1 id="jumbotron-heading">{{page.title}}</h1>
