@@ -49,27 +49,6 @@
     background-position-y: 0px !important;
     background-position-x: center !important;
 }
-#jumbotron picture img {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0px;
-    object-fit: cover;
-    height: 100%;
-}
-#jumbotron picture:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  height: $jumbotron-height;
-  left: 0;
-  background-image: linear-gradient(to bottom right, #000, #000);
-  opacity: .6;
-  width: 100%;
-  z-index: 1;
-}
 video#jumbotronVideo {    
     position: absolute;
     right: 0;

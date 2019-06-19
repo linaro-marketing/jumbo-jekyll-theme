@@ -4,8 +4,7 @@
 // App Overrides - Sass variables
 @import "app/overrides";
 //Boostrap Includes
-@import 'bootstrap';
-@import 'bootstrap/variables';
+@import '_bootstrap';
 // Core Theme
 @import 'core';
 //Additional Core includes
