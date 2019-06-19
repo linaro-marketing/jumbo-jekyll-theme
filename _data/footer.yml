@@ -1,53 +1,12 @@
-# Image to be used in the footer. Default is the Linaro Sprinkle
-# image: Linaro-Logo.svg
- 
-# Optional Footer include which, when supplied, will prepend the included file 
-# to the footer.html include.
-# include: members.html
-# footer-image: /assets/images/Linaro-Sprinkle.png
-# footer-image-url: /
-company-copyright-text: Jumbo Jekyll Theme
-# Columns to be added to the footer
-columns:
-    - title: CSS
-      url: /
-      items:
-        - text: Bootstrap
-          url : /docs/css/
-    - title: Jekyll
-      url: /
-      items:
-        - text: Plugins
-          url : /docs/jekyll/plugins/
-        - text: Includes
-          url : /docs/jekyll/includes/
-        - text: Layouts
-          url : /docs/jekyll/layouts/
-    - title: JS
-      url: /
-      items:      
-        - text: JQuery
-          url: /docs/js/jquery/
-        - text: Bootstrap
-          url: /docs/js/bootstrap/
-    - title: Blog
-      url: /
-      items:
-        - text: Using the Jumbo Jekyll Theme
-          url : /blog/getting-started/
-
-    - title: Collaborate
-      url: /
-      items:
-        - text: Fork on GitHub
-          url : https://github.com/linaro-website/jumbo-jekyll-theme
-
-    - title: Column 6
-      url: /
-      items:
-        - text: DragonBoard™ 410c
-          url : /
-
+# Copyright text to be displayed at the very bottom of the footer
+copyright-text: Jumbo Jekyll Theme
+# Set this to false if you do not want the Linaro logo in the footer.
+linaro-branding: true
+# Social Media Icons Row
+social-media-icons: true
+# Display the contact details section
+display-contact-details: true
+# These links are displayed at the very bottom of the footer.
 company-links:
     - name: Legal
       url: /legal/
@@ -55,3 +14,32 @@ company-links:
       url: /contact/
     - name: Press
       url: /press/
+second-column:
+    title: Latest News & Blogs
+    latest-posts: true
+    # Optionally display another list of items
+    # items:
+    #   - name: 96Boards
+    #     url: https://www.96boards.org
+    #   - name: Linaro Connect
+    #     url: https://connect.linaro.org
+    #   - name: DeviceTree
+    #     url: https://www.devicetree.org
+    #   - name: OP-TEE
+    #     url: https://www.op-tee.org
+    #   - name: Linaro Developer Cloud
+    #     url: https://www.linaro.cloud
+# Custom Col on the right
+third-column:
+    title: Other Projects
+    items:
+      - name: 96Boards
+        url: https://www.96boards.org
+      - name: Linaro Connect
+        url: https://connect.linaro.org
+      - name: DeviceTree
+        url: https://www.devicetree.org
+      - name: OP-TEE
+        url: https://www.op-tee.org
+      - name: Linaro Developer Cloud
+        url: https://www.linaro.cloud

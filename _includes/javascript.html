@@ -5,6 +5,5 @@
     {% capture js-package %}package-{{layout.js-package}}{% endcapture %}
     <script type="text/javascript" src="{% asset_path {{js-package}}  %}?v={% bust_cache %}"></script>
 {% else %}
-    <script type="text/javascript" src="{% asset_path package %}?v={% bust_cache %}"></script>
+    <script type="text/javascript" src="{% asset_path package-main %}?v={% bust_cache %}"></script>
 {% endif %}
-

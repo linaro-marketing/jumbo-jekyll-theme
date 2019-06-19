@@ -3,7 +3,12 @@ $(window).click(function() {
     $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
 });
 $(document).ready(function () {
-
+    window.lazySizesConfig = window.lazySizesConfig || {};
+    window.lazySizesConfig.customMedia = {
+        '--small': '(max-width: 480px)',
+        '--medium': '(max-width: 900px)',
+        '--large': '(max-width: 1400px)',
+    };
     // Clipboard JS
     if($("div.highlight").length > 0){
         $('div.highlight').each(function (index) {
@@ -18,7 +23,6 @@ $(document).ready(function () {
 
         });
     }
-
     if ($("#jumbotron-slider").length > 0 ){
         $("#jumbotron-slider").owlCarousel({
             navigation: true,

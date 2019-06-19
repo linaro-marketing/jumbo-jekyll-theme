@@ -1,31 +1,16 @@
 <head>
-    {% if site.data.settings.ascii-art != "false" %}
-        {% include {{site.data.settings.ascii-art}} %}
-    {% endif %}
     <meta charset="UTF-8">
-    {% if site.data.settings.http2 %}
-        {% include http2.html %}
-    {% endif %}
     <title>
         {% if page.title %}
             {{page.title}} - {{site.title}}
-        {% elsif site.data.settings.slogan %}
-            {{site.title}} - {{site.data.settings.slogan}}
         {% else %}
             {{site.title}}
         {% endif %}
     </title>
-    {% include css.html %}
-    <link rel="icon" href="{% if site.data.settings.favicon %}
-    {% asset_path '{{site.data.settings.favicon}}'  %}
-    {% endif %}" type="image/png" />
+    {% include_cached css.html pageCSS=page.css-package layoutCSS=layout.css-package %}
+    <link rel="icon" href="{{site.data.settings.favicon}}" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if site.data.settings.google.tag_manager %}
-      {% include gtm-script.html %}
-    {% endif %}
-    {% if site.data.settings.google.analytics %}
-        {% include google-analytics-script.html %}
-    {% endif %}
+    {% include_cached google-analytics.html %}
     {% if page.keywords %}
         <meta name="keywords" content="{{page.keywords}}">
     {% endif %}
@@ -35,7 +20,5 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    {% if site.data.settings.schema.enabled %}
-        {% include schema.html %}
-    {% endif %}
+    {% include_cached schema.html is_post=page.is_post included_page=page %}
 </head>

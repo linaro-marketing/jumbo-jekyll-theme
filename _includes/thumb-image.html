@@ -5,7 +5,6 @@
         {% assign resized = true %}
     {% endif %}
 {% endfor %}
-
 {% if resized %}
 {% assign webpImage = include.path | replace: "/assets/images", "/assets/images/webp"| split: "." %}
 {% assign webpImage =  webpImage[0] | append: ".webp" %}
@@ -23,8 +22,6 @@
 <source data-srcset="{{mediumImage}}" media="(max-width: 900px)" type="{{imageType}}" />
 <source data-srcset="{{largeImage | replace: '/assets/images', '/assets/images/webp' | replace: include.type, 'webp'}}" media="(max-width: 1400px)" type="image/webp" />
 <source data-srcset="{{largeImage}}" media="(max-width: 1400px)" type="{{imageType}}" />
-<source data-srcset="{{include.path | replace: '/assets/images', '/assets/images/webp' | replace: include.type, 'webp'}}" type="image/webp"/>
-<source data-srcset="{{include.path}}" type="{{imageType}}"/>
 <!--[if IE 9]></video><![endif]-->
 <img data-src="{{largeImage}}" class="lazyload" alt="{{include.alt}}" />
 </picture>
