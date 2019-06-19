@@ -71,7 +71,7 @@ markup_presets:
   # lazyload:
   # https://github.com/verlok/lazyload
   lazy:
-    markup: data_auto
+    markup: data_picture
     formats: [original]
     widths: [400, 750, 1000]
     noscript: true # Default: false
@@ -79,7 +79,7 @@ markup_presets:
       img: class="lazyload"
 
   thumb:
-    markup: data_auto
+    markup: data_picture
     formats: [original]
     widths: [400, 750, 1000]
     noscript: true # Default: false
@@ -87,7 +87,7 @@ markup_presets:
       img: class="lazyload"
 
   blogThumb:
-    markup: data_auto
+    markup: data_picture
     formats: [original]
     widths: [50, 100, 200]
     noscript: true # Default: false
@@ -95,14 +95,14 @@ markup_presets:
       img: class="lazyload img-responsive"
 
   placeholder:
-    markup: data_auto
+    markup: data_picture
     formats: [original]
     noscript: true # Default: false
     attributes: 
       img: class="lazyload"
 
   backgroundImage:
-    markup: data_auto
+    markup: data_picture
     widths: [400, 800, 1100, 1400]
     formats: [original]
     noscript: true # Default: false
