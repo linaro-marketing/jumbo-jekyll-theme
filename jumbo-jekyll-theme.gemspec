@@ -45,6 +45,6 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency "rack", ">= 1.6.11"
     #s.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
     # Development Dependencies
-    s.add_development_dependency "bundler", "> 1.16.1"
+    s.add_development_dependency "bundler", ">= 1.17.2"
     s.add_development_dependency "rake", "~> 10.0"
   end
