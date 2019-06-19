@@ -31,6 +31,7 @@ exclude:
   - _static-site
   - .sass-cache
   - _site
+  - node_modules/*
 # Sass Configuration for the site styles
 sass:
     style: compressed
