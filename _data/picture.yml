@@ -22,7 +22,7 @@ markup_presets:
     markup: auto
 
     # Must be an array, in order of decreasing preference. Defaults to just 'original'.
-    formats: [webp, original]
+    formats: [original]
 
     # Must be an array: which image sizes (width in pixels) to generate (unless directed otherwise
     # below). If not specified, will use sensible default values.
@@ -72,7 +72,7 @@ markup_presets:
   # https://github.com/verlok/lazyload
   lazy:
     markup: data_auto
-    formats: [webp, original]
+    formats: [original]
     widths: [400, 750, 1000]
     noscript: true # Default: false
     attributes: 
@@ -80,7 +80,7 @@ markup_presets:
 
   thumb:
     markup: data_auto
-    formats: [webp, original]
+    formats: [original]
     widths: [400, 750, 1000]
     noscript: true # Default: false
     attributes: 
@@ -88,7 +88,7 @@ markup_presets:
 
   blogThumb:
     markup: data_auto
-    formats: [webp, original]
+    formats: [original]
     widths: [50, 100, 200]
     noscript: true # Default: false
     attributes: 
@@ -96,7 +96,7 @@ markup_presets:
 
   placeholder:
     markup: data_auto
-    formats: [webp, original]
+    formats: [original]
     noscript: true # Default: false
     attributes: 
       img: class="lazyload"
@@ -104,7 +104,7 @@ markup_presets:
   backgroundImage:
     markup: data_auto
     widths: [400, 800, 1100, 1400]
-    formats: [webp, original]
+    formats: [original]
     noscript: true # Default: false
     attributes: 
       img: class="lazyload"
@@ -112,5 +112,5 @@ markup_presets:
   # This is an example of how you'd get generated image and a URL, and nothing else.
   direct:
     markup: direct_url
-    fallback_format: webp # Default original
+    fallback_format:  Default original
     fallback_width: 600 # Default 800
