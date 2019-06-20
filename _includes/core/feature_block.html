@@ -1,0 +1,39 @@
+<div class="col-xs-12 feature_block">
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 block__image {% if include.object.side_content.position == "right" %}col-sm-push-5{% endif %}">
+            {% if include.object.side_content.type == "image" %}
+                {% assign image_path = include.object.side_content.content | remove_first: '/' %}
+                {% assign full_path = include.object.side_content.content %}
+                {% responsive_image_block %}
+                template: _includes/thumbnail_image.html
+                path: {{ image_path }}
+                fullpath: {{ full_path }}
+                {% if member.alt %}
+                title: {{ member.alt | slugify: "ascii"}}
+                alt: {{ member.alt | slugify: "ascii"}}
+                {% endif %}
+                {% endresponsive_image_block %}
+            {% else %}
+                <h2>TODO</h2>
+            {% endif %}
+        </div>
+        <div class="col-xs-12 col-sm-5 block__text {% if include.object.side_content.position == "right" %}col-sm-pull-7{% endif %}">
+            {% if include.object.title %}
+                <h2>{{include.object.title}}</h2>
+            {% endif %}
+            {% if include.object.highlight-text %}
+                <div class="font-weight-bold">
+                    {{include.object.highlight-text | markdownify }}
+                </div>
+            {% endif %}
+            {% if include.object.text == "page_content" %}
+                {{page.content | markdownify }}
+            {% else %}
+                {{include.object.text | markdownify}}
+            {% endif %}
+            {% if include.object.buttons %}
+                {% include core/buttons.html object=include.object.buttons %}
+            {% endif %}
+        </div>
+    </div>
+</div>
