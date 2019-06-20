@@ -1,0 +1,10 @@
+<div class="owl-carousel owl-theme" data-size="{{include.object.items | size }}" 
+{% if include.object.sm_items %}
+data-sm-number="{{include.object.sm_items}}"
+{% endif %}>
+    {% for item in include.object.items %}
+        <div class="item">
+            
+        </div>
+    {% endfor %}
+</div>
