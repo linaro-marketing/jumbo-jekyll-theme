@@ -29,3 +29,5 @@
 !_plugins
 !_sass
 !assets
+# Ignore the following files specifically
+assets/resized
