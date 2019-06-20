@@ -1,0 +1,7 @@
+<div class="row {% if include.object.style %}{{include.object.style}}{% endif %}
+{% if include.object.background_image %}background_image_row{% endif %}" 
+{% if include.object.background_image %}style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{include.object.background_image}});"{% endif %}>
+    <div class="container">
+        {% include flow_inner.html object=include.object.items %}
+    </div>
+</div>
