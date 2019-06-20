@@ -1,0 +1,19 @@
+{% for item in include.object %}
+    {% if item.format == "title" %}
+        {% include core/title.html object=item %}
+    {% elsif item.format == "members" %}
+        {% include core/members-section.html object=item %}
+    {% elsif item.format == "block" %}
+        {% include core/blocks.html object=item %}
+    {% elsif item.format == "buttons" %}
+        {% include core/buttons.html object=item.content centered=item.centered %}
+    {% elsif item.format == "text" %}
+        {% include core/text.html object=item %}
+    {% elsif item.format == "custom" %}
+        {% include {{item.include_name}} object=item %}
+    {% elsif item.format == "slider" %}
+        {% include core/slider.html object=item %}
+    {% elsif item.format == "feature_block" %}
+        {% include core/feature_block.html object=item.content %}
+    {% endif %}
+{% endfor %}
