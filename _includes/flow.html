@@ -1,19 +1,13 @@
-<div class="container-fluid content" id="main_container">
-{% for section in include.flow %}
+{% for section in include.object %}
     {% if section.type == "main-content" %}
         <div class="row" id="main_content">
             <div class="container">
                 {{content}}
             </div>
         </div>
-    {% elsif section.type == "slider" %}
-        {% include slider.html object=section %}
-    {% elsif section.type == "latest-posts" %}
-        {% include latest_posts.html limit=section.number_of_posts %}
-    {% elsif section.type == "feature-block" %}
-        {% include feature-block.html object=section %}
-    {% elsif section.type == "cards" %}
-        {% include cards.html object=section %}
+    {% elsif section.type == "content_row" %}
+        {% include core/content_row.html object=section %}
+    {% elsif section.type == "full_width_row" %}
+        {% include core/full_width_row.html object=section %}
     {% endif %}
 {% endfor %}
-</div>
