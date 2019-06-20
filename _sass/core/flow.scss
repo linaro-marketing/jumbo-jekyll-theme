@@ -5,6 +5,7 @@
         padding-top: $flow_row_padding;
         padding-bottom: $flow_row_padding;
         background-color: $body-bg;
+        position: relative;
         @media (min-width: $screen-sm-min) {
             &.equal {
                 display: flex;
