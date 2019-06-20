@@ -1,0 +1,21 @@
+<div class="col-xs-12">
+    <div class="row equal">
+    {% for block in include.object.content %}
+        <div class="col-xs-12 col-sm-{{include.object.item_width}} block {% if include.object.style %}{{include.object.style}}{% endif %}">
+            {% if block.url %}<a href="{{block.url}}">{% endif%}
+            <div class="block-inner" {% if block.background_image %}style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{block.background_image}});"{% endif %}>
+                {% if block.title %}
+                    {% include core/title.html object=block.title %}
+                {% endif %}
+                {% if block.text %}
+                    {% include core/text.html object=block.text %}
+                {% endif %}
+                {% if block.buttons %}
+                    {% include core/buttons.html object=block.buttons %}
+                {% endif %}
+            </div>
+            {% if block.url %}</a>{% endif%}
+        </div>
+    {% endfor %}
+    </div>
+</div>
