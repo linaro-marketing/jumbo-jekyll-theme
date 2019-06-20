@@ -12,7 +12,8 @@ brand:
     url: /
 # Navigation pages
 pages:
-    
+    - title: Flow
+      url: /flow/
     - title: Jekyll
       active_paths:
         - /new/
