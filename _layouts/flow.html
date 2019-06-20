@@ -1,8 +1,18 @@
 ---
 layout: base
 ---
+{% if page.jumbotron.carousel-images %}
+    {% include carousel-header.html images=page.jumbotron.carousel-images %}
+    {% include jumbotron.html %}
+{% elsif page.jumbotron %}
+    {% include jumbotron.html %}
+{% else %}
+    {% include breadcrumb.html %}
+{% endif %}
 {% if page.flow %}
+<div id="flow_wrapper">
     {% include flow.html object=page.flow %}
+</div>
 {% else %}
     <div class="row" id="content-container">
         <div class="container">
