@@ -1,6 +1,9 @@
-<link rel="stylesheet" href="/assets/css/app-package.min.css">
 {% if include.pageCSS %}
-<link rel="stylesheet" href="/assets/css/{{include.pageCSS}}">
+    {% capture css-package %}/assets/css/main-{{include.pageCSS}}.css{% endcapture %}
+    <link rel="stylesheet" href="{{ css-package | relative_url }}">
 {% elsif include.layoutCSS %}
-<link rel="stylesheet" href="/assets/css/{{include.layoutCSS}}">
+    {% capture css-package %}/assets/css/main-{{include.layoutCSS}}.css{% endcapture %}
+    <link rel="stylesheet" href="{{ css-package | relative_url }}">
+{% else %}
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 {% endif %}

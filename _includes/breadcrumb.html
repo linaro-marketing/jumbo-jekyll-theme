@@ -1,7 +1,8 @@
 <div class="row breadcrumb-container"
 {% if site.data.settings.breadcrumb.image %}
-style="background-image: url({{site.data.settings.breadcrumb.image}});"
-{% endif %}> <!--- Row Start ---->
+style="background-image: url('{% asset_path '{{site.data.settings.breadcrumb.image}}' %}');
+"
+{% endif %}"> <!--- Row Start ---->
 <div class="container breadcrumb-inner-container"><!--- Container Start ---->
     <h1>
         {% if page.title %}
