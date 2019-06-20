@@ -1,0 +1,32 @@
+{% if include.object.data_source %}
+    {% assign members = site.data[include.object.data_source] %}
+{% else %}
+    {% assign members = include.object.content %}
+{% endif %}
+<div class="members_section {% if include.object.style %}{{include.object.style}}{% endif %}">
+{% for member in members %}
+    {% if member.url %}<a href="{{member.url}}">{% endif %}
+    {% if member.image.path contains "http" %}
+    <div class="col-xs-6 col-sm-{{include.object.item_width}}">
+        <img class="lazyload img-responsive" alt="{{member.image.alt}}" 
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+        data-src="{{member.image.path}}"/>
+    </div>
+    {% else %}
+    {% assign image_path = member.image.path | remove_first: '/' %}
+    {% assign full_path = member.image.path %}
+    <div class="col-xs-6 col-sm-{{include.object.item_width}}">
+        {% responsive_image_block %}
+        template: _includes/thumbnail_image.html
+        path: {{ image_path }}
+        fullpath: {{ full_path }}
+        {% if member.alt %}
+        title: {{ member.alt | slugify: "ascii"}}
+        alt: {{ member.alt | slugify: "ascii"}}
+        {% endif %}
+        {% endresponsive_image_block %}
+    </div>
+    {% endif %}
+    {% if member.url %}</a>{% endif %}
+{% endfor %}
+</div>
