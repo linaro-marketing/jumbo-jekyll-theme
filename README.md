@@ -42,7 +42,8 @@ A few of the main features that this theme offers:
 * Jekyll Assets - providiing minified Javascript/CSS packages.
 * Jekyll-responsive-image plugin for generating resized images upon site build.
 * Jekyll-data to override the settings added in this theme.
-* Jekyll-last-modified-at plugin integration - shows the users the date that the current page/post was last updated.
+* Flow Layout - specific sections of a page in front matter based on predefined row styles
+
 
 ### Available Layouts
 
@@ -55,6 +56,7 @@ Below are a table showing the available layouts for you to use:
 layout is useful when addng custom pages. |
 | jumbotron-container (Most Common) | This is the exact same as the above but instead provides a Bootstrap 3 content container than can be used to add content to. |
 | default | This is the default layout to use which is the jumbotron-container layout |
+| flow | This layout utlises the flow.html Jekyll include which takes the `flow` frontmatter section and renders bootstrap 3 styled rows with predefined styles available. Perfect for creating a neat looking page without knowing any HTML. |
 
 ### Available Includes
 
@@ -97,6 +99,8 @@ Below are a table showing the available includes for you to use:
 | thumbnail_image | Adds a responsive thumbnail image using the jekyll-repsonsive-image plugin. |
 | universal-nav | Adds a universal navbar. We used this feature to link between our main static sites. |
 | youtube | Adds a lazy loaded youtube video. |
+| flow | Contains the logic for include content specified in the flow frontmatter section of a page that uses the flow layout. Basically just contains a bunch of `if` statements that include the relevant `jekyll _includes` |
+
 
 ### Jumbotron Layout
 
@@ -211,6 +215,17 @@ jumbotron:
 ```
 
 __Note__: The /assets/js/app/main.js theme file must be included since this instantiates the owl carousel if it exists.
+
+
+### Flow Layout
+
+This is the latest layout to be added to the theme. This allows you to use a predefined list of styled rows on a page in any combination that you like (see below for full list of rows).
+
+| Row Style | Description |
+|-----------|-------------|
+| members-section | Outputs your typical members row featuring row(s) of member logos. Useful for showing sponsors or customers of your project.|
+| members-section | Outputs your typical members row featuring row(s) of member logos. Useful for showing sponsors or customers of your project.|
+
 
 # Adding Content
 ## Adding Pages
