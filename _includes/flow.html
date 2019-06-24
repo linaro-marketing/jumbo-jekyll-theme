@@ -9,5 +9,7 @@
         {% include core/content_row.html object=section %}
     {% elsif section.type == "full_width_row" %}
         {% include core/full_width_row.html object=section %}
+    {% elsif section.type == "custom_include_row" %}
+        {% include {{section.source}} %}
     {% endif %}
 {% endfor %}
