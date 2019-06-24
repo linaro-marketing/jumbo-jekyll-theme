@@ -12,7 +12,7 @@
     {% elsif item.format == "custom" %}
         {% include {{item.include_name}} object=item %}
     {% elsif item.format == "slider" %}
-        {% include core/slider.html object=item %}
+        {% include core/slider_row.html object=item.content %}
     {% elsif item.format == "feature_block" %}
         {% include core/feature_block.html object=item.content %}
     {% endif %}
