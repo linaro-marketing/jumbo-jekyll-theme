@@ -140,7 +140,7 @@
                 }
                 &:hover {
                     transform: translateX(1px);
-                    background-color: #20937a !important;
+                    background-color: $brand-primary !important;
                     @extend .drop_shadow;
                 }
                 span {
