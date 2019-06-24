@@ -100,4 +100,55 @@
     .buttons{
         padding-top: $flow_row_padding;
     }
+
+    .owl-carousel.slider-block {
+        .owl-stage-outer {
+            max-height: 500px;
+            margin-bottom: 0px;
+            height: auto;
+            .owl-stage {
+                height: 100%;
+                display: flex;
+                position: relative;
+                .owl-item {
+                    .item {
+                        height: 100%;
+                        flex: 1;
+                        picture {
+                            height: auto;
+                            position: relative;
+                            overflow: auto;
+                            img {
+                                display: block;
+                                width: 100%;
+                                object-fit: cover;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .owl-nav {
+            button {
+                height: 40px;
+                width: 40px;
+                background-color: #3c3b39 !important;
+                color:  white;
+                &:first-child:hover {
+                    transform: translateX(-1px);
+                }
+                &:hover {
+                    transform: translateX(1px);
+                    background-color: #20937a !important;
+                    @extend .drop_shadow;
+                }
+                span {
+                    font-weight:bold;
+                    font-size: 30px;
+                    line-height:26px;
+                }
+            }
+        }
+    }
 }
