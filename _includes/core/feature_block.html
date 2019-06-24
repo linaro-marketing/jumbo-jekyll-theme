@@ -13,6 +13,8 @@
                 alt: {{ member.alt | slugify: "ascii"}}
                 {% endif %}
                 {% endresponsive_image_block %}
+            {% elsif include.object.side_content.type == "slider" %}
+                {% include core/slider.html object=include.object.side_content.content %}
             {% else %}
                 <h2>TODO</h2>
             {% endif %}
