@@ -28,6 +28,11 @@
                 color: white;
             } 
         }
+        .feature_block {
+            a.btn.btn-primary {
+                margin-top: 5px;
+            }
+        }
         &.block_row {
             .block {
                 @media(max-width: $screen-sm-min) {          
