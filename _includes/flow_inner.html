@@ -1,19 +1,19 @@
-{% for item in include.object %}
-    {% if item.format == "title" %}
-        {% include core/title.html object=item %}
-    {% elsif item.format == "members" %}
-        {% include core/members-section.html object=item %}
-    {% elsif item.format == "block" %}
-        {% include core/blocks.html object=item %}
-    {% elsif item.format == "buttons" %}
-        {% include core/buttons.html object=item.content centered=item.centered %}
-    {% elsif item.format == "text" %}
-        {% include core/text.html object=item %}
-    {% elsif item.format == "custom" %}
-        {% include {{item.include_name}} object=item %}
-    {% elsif item.format == "slider" %}
-        {% include core/slider_row.html object=item.content %}
-    {% elsif item.format == "feature_block" %}
-        {% include core/feature_block.html object=item.content %}
+{% for section in include.sections %}
+    {% if section.format == "title" %}
+        {% include core/title.html object=section %}
+    {% elsif section.format == "members" %}
+        {% include core/members-section.html object=section %}
+    {% elsif section.format == "block" %}
+        {% include core/blocks.html object=section %}
+    {% elsif section.format == "buttons" %}
+        {% include core/buttons.html object=section.content centered=section.centered %}
+    {% elsif section.format == "text" %}
+        {% include core/text.html object=section %}
+    {% elsif section.format == "custom" %}
+        {% include {{section.include_name}} object=section %}
+    {% elsif section.format == "slider" %}
+        {% include core/slider_row.html object=section.content %}
+    {% elsif section.format == "feature_block" %}
+        {% include core/feature_block.html object=section.content %}
     {% endif %}
 {% endfor %}
