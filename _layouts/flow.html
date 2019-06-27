@@ -11,7 +11,21 @@ layout: base
 {% endif %}
 {% if page.flow %}
 <div id="flow_wrapper">
-    {% include flow.html rows=page.flow %}
+    {% for each in page.flow %}
+        {% if each.row == "main_content_row" %}
+            <div class="row" id="main_content">
+                <div class="container">
+                    {{content}}
+                </div>
+            </div>
+        {% elsif each.row == "container_row" %}
+            {% include core/container_row.html object=each %}
+        {% elsif each.row == "full_width_row" %}
+            {% include core/full_width_row.html object=each %}
+        {% elsif each.row == "custom_include_row" %}
+            {% include {{each.source}} %}
+        {% endif %}
+    {% endfor %}
 </div>
 {% else %}
     <div class="row" id="content-container">
