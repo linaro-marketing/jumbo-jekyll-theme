@@ -6,13 +6,13 @@
     {% elsif section.format == "block" %}
         {% include core/blocks.html object=section %}
     {% elsif section.format == "buttons" %}
-        {% include core/buttons.html object=section.content centered=section.centered %}
+        {% include core/buttons.html object=section.content style=section.style %}
     {% elsif section.format == "text" %}
         {% include core/text.html object=section %}
     {% elsif section.format == "custom" %}
         {% include {{section.include_name}} object=section %}
     {% elsif section.format == "slider" %}
-        {% include core/slider_row.html object=section.content %}
+        {% include core/slider_row.html object=section %}
     {% elsif section.format == "feature_block" %}
         {% include core/feature_block.html object=section.content %}
     {% endif %}
