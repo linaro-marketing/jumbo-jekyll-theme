@@ -11,7 +11,7 @@ layout: base
 {% endif %}
 {% if page.flow %}
 <div id="flow_wrapper">
-    {% include flow.html object=page.flow %}
+    {% include flow.html rows=page.flow %}
 </div>
 {% else %}
     <div class="row" id="content-container">
