@@ -5,7 +5,7 @@ css-package: error
 <div class="row" id="content-container">
     <div class="container">
         <div class="text-center">
-            {% if page.image %}
+            {% if page.image.path %}
                 {% include image.html path=page.image.path %}
             {% elsif page.image.svg %}
                 {% include {{page.image.svg}} %}
