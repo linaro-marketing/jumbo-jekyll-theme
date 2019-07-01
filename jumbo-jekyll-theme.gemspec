@@ -2,7 +2,7 @@
 Gem::Specification.new do |spec|
     # Main Spec Info
     spec.name          = "jumbo-jekyll-theme"
-    spec.version       = "5.5.0"
+    spec.version       = "5.5.1"
     spec.authors       = ["Kyle Kirkby"]
     spec.email         = ["kyle.kirkby@linaro.org"]
     spec.summary       = %q{This is a Bootstrap 3 Jekyll Theme built for Linaro Static Websites}
