@@ -147,7 +147,10 @@ div.jumbotron-image{
 #jumbotron-slider {
 	position: relative;
 	height: 100%;
-	
+    
+    .owl-stage-outer {
+        width: 100vw;
+    }
 	div:not(.owl-controls) {
 		height: 100%;
 	}
