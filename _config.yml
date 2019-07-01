@@ -39,6 +39,8 @@ exclude:
   - _static-site
   - .sass-cache
   - _site
+  - jumbo-jekyll-theme*.gem
+  - jumbo-jekyll-theme*.gemspec
 # Sass Configuration for the site styles
 sass:
     style: compressed
@@ -198,3 +200,5 @@ responsive_image:
     - assets/foo/bar.png
     - assets/bgs/*.png
     - assets/avatars/*.{jpeg,jpg}
+
+include: ['_pages']
