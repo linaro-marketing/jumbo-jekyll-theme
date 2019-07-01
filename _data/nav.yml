@@ -18,34 +18,12 @@ pages:
       active_paths:
         - /new/
       options:
-          # - text: Plugins
-          #   options:
-          #       - text: Jekyll Assets
-          #         url: /jekyll/plugins/assets/
-          #       - text: Jekyll Assets
-          #         url: /jekyll/plugins/assets/
-          #       - text: Jekyll Assets
-          #         url: /jekyll/plugins/assets/
           - text: Includes
             url: /jekyll/includes/
     - title: Layouts
       options:
           - text: Default
             url: /layouts/default/
-          # - text: Jumbotron
-          #   options:
-          #     - text: Overview
-          #       url: /layouts/jumbotron/
-          #     - text: Carousel Header
-          #       url: /layouts/jumbotron/carousel-header/
-          #     - text: Video Header
-          #       url: /layouts/jumbotron/video-header/
-          #     - text: Background Image Header
-          #       url: /layouts/jumbotron/background-image-header/
-          #     - text: Slider Header
-          #       url: /layouts/jumbotron/slider-header/
-
-
     - title: About
       options:
           - text: Overview
@@ -53,7 +31,6 @@ pages:
           - text: Collaborate
             url: /collaborate/
           - text: Jekyll
-    
     - title: CSS
       options:
           - text: Bootstrap
@@ -64,7 +41,6 @@ pages:
             url: /js/jquery/
           - text: Bootstrap
             url: /js/bootstrap/
-            
     - title: Blog
       url: /blog/
       active_paths:
