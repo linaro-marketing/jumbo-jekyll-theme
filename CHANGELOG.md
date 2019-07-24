@@ -1,14 +1,20 @@
 ## Changelog
+
+# 5.5.4
+- flow row layout added
+  - allows users to create complex pages using just frontmatter (no longer custom html - works well with Jekyll content management systems)
+- added youtube video embed support to feature blocks.
+
 ## 4.7.0
 - Refactored the blog section of the theme
   - Removed excessive liquid used in the includes/layouts
 - Refactored the _sass/core/blog.scss file - now entirely SASS
 
-## 4.6.0 
+## 4.6.0
 - Updated the footer design
 - Refactored the footer css into SASS
 
-## 4.1.2 
+## 4.1.2
 - Added the jekyll-last-modified-at plugin
 - Added disqus comments config object
 
