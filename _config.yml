@@ -5,10 +5,10 @@ url: http://jumbojekyll.co.uk
 baseurl: ""
 description: |-
   The Jumbo Jekyll Theme is used across all Linaro static sites.
-# Destination of the Jekyll site upon build of site.  
+# Destination of the Jekyll site upon build of site.
 destination: _site
 # Default permalink for blog posts
-permalink: /blog/:title/ 
+permalink: /blog/:title/
 # Jumbo Jekyll Theme
 theme: jumbo-jekyll-theme
 # Syntax highlighter
@@ -17,6 +17,9 @@ highlighter: rouge
 blog_images_dir: assets/images/content/
 # Markdown flavour used by Jekyll to parse markdown.
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge # Syntax highlighter for Kramdown.
 # Email
 email: contact@linaro.org
 # Company Address
@@ -43,36 +46,36 @@ exclude:
   - jumbo-jekyll-theme*.gemspec
 # Sass Configuration for the site styles
 sass:
-    style: compressed
-    load_paths:
-        - assets/css
+  style: compressed
+  load_paths:
+    - assets/css
 # Compress HTML using the jekyll-tidy plugin.
-jekyll_tidy: 
-    # Toggle compression of HTML
-    compress_html: true
-    # JS Path added to exclude to stop errors.
-    exclude: ["assets/**/*.js"] 
+jekyll_tidy:
+  # Toggle compression of HTML
+  compress_html: true
+  # JS Path added to exclude to stop errors.
+  exclude: ["assets/**/*.js", "robots.txt"]
 # Permalink style to be used for paginating pages in pagination.html
 paginate_path: /blog/:num/
 paginate_path_news: /news/:num/
 paginate_path_authors: /authors/:num/
 # Jekyll Pagination V2 Configuration
 pagination:
-    # Default pagination path for Jekyll Posts
-    # For other permalinks set in the front matter of the post index page
-    permalink: /:num/
-    # Enabled or not?
-    enabled: true
-    # Home many posts to display by default
-    per_page: 9
-    # Number of pages to show either side of the current page i.e - 1, 2, {3}, 4, 5
-    trail:
-        before: 2
-        after: 2
-    # Reverse the order of paginated pages
-    sort_reverse: true
-    # Field to sort posts by when paginating
-    sort_field: 'date'
+  # Default pagination path for Jekyll Posts
+  # For other permalinks set in the front matter of the post index page
+  permalink: /:num/
+  # Enabled or not?
+  enabled: true
+  # Home many posts to display by default
+  per_page: 9
+  # Number of pages to show either side of the current page i.e - 1, 2, {3}, 4, 5
+  trail:
+    before: 2
+    after: 2
+  # Reverse the order of paginated pages
+  sort_reverse: true
+  # Field to sort posts by when paginating
+  sort_field: "date"
 # Jekyll pagination v2 autopages configuration.
 autopages:
   enabled: false
@@ -89,56 +92,60 @@ defaults:
     values:
       image: /assets/images/social-media-image.png
   - scope:
-      type: posts 
+      type: posts
       path: "_posts"
     values:
       layout: post
       is_post: true
       comments: true
   - scope:
-        path: ""
-        type: "authors"
+      path: ""
+      type: "authors"
     values:
-        layout: author
+      layout: author
 # Jekyll Assets setup
 assets:
-  # Compress JS Assets - uses the uglifier 
+  # Compress JS Assets - uses the uglifier
   compression: true
+  compress:
+    js: true
   gzip: true
   # Autoprefixer default settings
   autoprefixer:
-      browsers: ["last 2 versions","> 5%","IE 9"]
+    browsers: ["last 2 versions", "> 5%", "IE 9"]
   # These are the paths to look for assets
   sources:
     - assets/js/
     - assets/images/
-    - assets/css/    
-# Jekyll relative links plugin settings    
+    - assets/css/
+# Jekyll relative links plugin settings
 jekyll_relative_links:
-    process_all_collections: true
-    verbose: 1
+  process_all_collections: true
+  verbose: 1
+relative_links:
+  enabled: true
+  collections: false
 plugins:
-    - jekyll-seo-tag
-    - jekyll-sitemap
-    - uglifier
-    - jekyll-assets
-    - jekyll-theme-assets-updated
-    - jekyll-tidy
-    - jekyll-redirect-from
-    - jekyll-responsive-image
-    - autoprefixer-rails
-    - jekyll-paginate-v2
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - uglifier
+  - jekyll-assets
+  - jekyll-theme-assets-updated
+  - jekyll-tidy
+  - jekyll-redirect-from
+  - jekyll-responsive-image
+  - autoprefixer-rails
+  - jekyll-paginate-v2
 collections:
   authors:
     output: true
     permalink: /author/:name/
 # Make sure that Liquid errors stop the build
 liquid:
-    error_mode: strict    
+  error_mode: strict
 readme_index:
-    enabled:          true
-    remove_originals: false
-
+  enabled: true
+  remove_originals: false
 # Jeykyll Responsive Image Configuration
 responsive_image:
   cache: false
@@ -154,7 +161,7 @@ responsive_image:
   # An array of resize configuration objects. Each object must contain at least
   # a `width` value.
   sizes:
-    - width: 400  # [Required] How wide the resized image will be.
+    - width: 400 # [Required] How wide the resized image will be.
       quality: 70 # [Optional] Overrides default_quality for this size.
     - width: 800
       quality: 70
@@ -200,5 +207,4 @@ responsive_image:
     - assets/foo/bar.png
     - assets/bgs/*.png
     - assets/avatars/*.{jpeg,jpg}
-
-include: ['_pages']
+include: ["_pages"]
