@@ -76,6 +76,12 @@ a.btn.btn-primary:hover {
 .github-edit {
     background-color: #fff;
 }
+#wrapper a[type="button"] {
+    -webkit-appearance: none;
+}
+#wrapper div#github_controls a.btn {
+    -webkit-appearance: none;
+}
 span.edit-me-on-github-text {
     font-size: 12px;
 }
@@ -127,7 +133,7 @@ div#github_controls a#github_home:hover {
 }
 div#github_controls a#github_home {
     background-color: #fff;
-    color: #333;    
+    color: #333;
     transition: all 250ms ease;
 }
 #wrapper blockquote{
@@ -269,7 +275,7 @@ p .justified{
 }
 /* Shape Divider - Home Page */
 .row.shape-divider {
-    background-color: $brand-primary;    
+    background-color: $brand-primary;
 }
 // Not for breadcrumb / nav / footer
 .container-fluid ul { font-size:18px; }
@@ -586,7 +592,7 @@ img.img-responsive.right-aligned-image {
 }
 
 @media(max-width:$screen-xs-min){
-    
+
     /* Mobile Screens - Right Aligned Images */
     img.img-responsive.right-aligned-image.lazyloaded {
         float: none;
@@ -596,7 +602,7 @@ img.img-responsive.right-aligned-image {
         margin-top: -9px;
         margin-bottom: -15px;
     }
-    
+
 }
 
 /* Wordpress Styles */
@@ -764,7 +770,7 @@ $sides: (top, bottom, left, right); // Leave this variable alone
     .m-#{str-slice($side, 0, 1)}-#{$space} {
       margin-#{$side}: #{$space}px !important;
     }
-  
+
     .p-#{str-slice($side, 0, 1)}-#{$space} {
       padding-#{$side}: #{$space}px !important;
     }
