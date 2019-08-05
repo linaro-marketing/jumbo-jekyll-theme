@@ -49,11 +49,11 @@
     background-position-y: 0px !important;
     background-position-x: center !important;
 }
-video#jumbotronVideo {    
+video#jumbotronVideo {
     position: absolute;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
+    min-width: 100%;
     min-height: 100%;
     top:0px;
     z-index:-2;
@@ -107,7 +107,7 @@ div.jumbotron-image{
    #wrapper #jumbotron-sub-title.smaller {
         font-size: 14px !important;
     }
-    
+
 }
 #buttons >  a.btn {
     color: black ;
@@ -147,7 +147,7 @@ div.jumbotron-image{
 #jumbotron-slider {
 	position: relative;
 	height: 100%;
-    
+
     .owl-stage-outer {
         width: 100vw;
     }
@@ -182,7 +182,7 @@ div.jumbotron-image{
             font-size: 24px !important;
         }
     }
-    
+
 	div.owl--text {
         position: relative;
         width: 700px;
@@ -206,7 +206,7 @@ div.jumbotron-image{
             @media(max-width: $screen-sm-min) {
                 font-size: 12px !important;
             }
-        }	
+        }
         a.btn {
             position: relative;
             display: inline-block;
@@ -225,7 +225,7 @@ div.jumbotron-image{
 		top: 50%;
 		left: 0;
 		right: 0;
-		
+
 		.owl-buttons {
 			div {
 				position: absolute;
@@ -245,11 +245,11 @@ div.jumbotron-image{
 				opacity: .6;
 				text-transform: capitalize;
 			}
-			
+
 			.owl-prev {
 				left: 5px;
 			}
-			
+
 			.owl-next {
 				right: 5px;
 			}
@@ -272,5 +272,8 @@ html {
 body {
 	margin: 0;
 	font-family: futura, sans-serif;
+}
+#wrapper #jumbotron a.btn {
+    -webkit-appearance: none;
 }
 @import 'triangle-divider';
