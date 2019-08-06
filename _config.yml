@@ -7,6 +7,8 @@ description: |-
   The Jumbo Jekyll Theme is used across all Linaro static sites.
 # Destination of the Jekyll site upon build of site.
 destination: _site
+# Netflify CMS - Default repo branch
+branch: master
 # Default permalink for blog posts
 permalink: /blog/:title/
 # Jumbo Jekyll Theme
@@ -54,7 +56,7 @@ jekyll_tidy:
   # Toggle compression of HTML
   compress_html: true
   # JS Path added to exclude to stop errors.
-  exclude: ["assets/**/*.js", "robots.txt"]
+  exclude: ["assets/**/*.js", "robots.txt", "admin/config.yml"]
 # Permalink style to be used for paginating pages in pagination.html
 paginate_path: /blog/:num/
 paginate_path_news: /news/:num/
