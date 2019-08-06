@@ -1,0 +1,14 @@
+---
+title: Latest Product Updates 2
+date: 2019-05-23 05:00:00
+description: >-
+    This blog post will give you an overview of how to get started with the jumbo-jekyll-theme
+image:
+    path: /assets/images/content/background-image2.png
+    featured: true
+author: kyle
+co-author: john.smith
+categories: [blog, Product Updates]
+keywords: jekyll, note, theme, jumbo-jekyll-theme
+---
+This blog post will give you an overview of how to get started with the jumbo-jekyll-theme
