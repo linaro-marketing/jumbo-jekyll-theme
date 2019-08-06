@@ -25,6 +25,41 @@ collections:
     editor:
       preview: false
     files:
+      - label: "Settings"
+        name: "settings"
+        file: "_data/settings.yml"
+        fields:
+          - {label: "Favicon", name: "favicon", widget: "string", required: true, hint: "Used as the site wide favicon displayed in the web browsers tabs"}
+          - {label: "Placeholder Image", name: "placeholder", widget: "string", required: true, hint: "Placeholder image used for blog posts that have no featured image"}
+          - {label: "HTTP/2 Support", name: "http2", widget: "boolean", required: true, hint: "Toggle the use of HTTP/2 features across the entire site."}
+          - {label: "Ascii-art", name: "ascii-art", widget: "string", required: true, default: false, hint: "Optionally specify a jekyll _include/ to be included in <head> of each built site page."}
+          - {label: "Hide Last Modified", name: "hide_last_modified", widget: "boolean", required: true, hint: "Removes the last modified time of Jekyll posts. Disabled on sites using multiple GitHub repo's since the Jekyll plugin uses the .git/index"}
+          - label: "HTTP/2 Preload Resources"
+            name: "http2_resources"
+            widget: "list"
+            required: true
+            hint: "Specify a list of globally used resources to preload/prefetch"
+            identifier_field: href
+            fields:
+              - {label: Href, name: href, widget: string, required: true }
+              - {label: Format, name: rel, widget: string, required: true }
+              - {label: As, name: as, widget: string, required: true }
+              - {label: Type, name: type, widget: string, required: true }
+          - label: "Newsletter"
+            name: "newsletter"
+            widget: "object"
+            required: true
+            hint: "Toggle the output of a link to a brand newlsetter in the footer of the site. Specify a mailchimp newsletter signup url or equivalent."
+            fields:
+              - {label: Enabled, name: enabled, widget: boolean, required: true }
+              - {label: URL, name: url, widget: string, required: true }
+          - {label: "Tags Toggle", name: "tags_enabled", widget: "boolean", required: true}
+          - label: "Jumbotron Settings"
+            name: "jumbotron"
+            widget: "object"
+            required: true
+            fields:
+              - {label: Darken, name: darken, widget: boolean, required: true, hint: "Darken the background images in the jumbotron headers."}
       - label: "Universal Navbar"
         name: "universal_navbar"
         file: "_data/universal-nav.yml"
