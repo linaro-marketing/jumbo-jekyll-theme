@@ -61,10 +61,13 @@ blog:
         # Display the most recent posts
         most-recent-posts:
             display: true
-            count: 5  
+            count: 5
 # Google Anayltics Setup
 # google:
 #     tag_manager: GTM-5DLPJQ
+#     analytics:
+#       production: UA-XXXXXXX-1
+#       staging: UA-XXXXXXX-1
 # Shema.org settings used in the schema.html include.
 # schema:
 #     enabled: true
@@ -79,9 +82,9 @@ blog:
 #             - https://github.com/Linaro
 #             - https://www.slideshare.net/linaroorg
 #         address:
-#             street: Harston Mill, Royston Rd 
-#             town: Harston 
-#             county: Cambridge 
+#             street: Harston Mill, Royston Rd
+#             town: Harston
+#             county: Cambridge
 #             post_code: CB22 7GG
 #             country_code: UK
 # Disqus Comments
@@ -99,7 +102,7 @@ mailchimp:
 # edit-on-github:
 #     enabled: true
 #     repo: https://www.github.com/Linaro/website
-#     docs: https://www.github.com/Linaro/website 
+#     docs: https://www.github.com/Linaro/website
 # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
 github_username: Linaro
 linkedin_username: 1026961
@@ -108,6 +111,6 @@ facebook_username: LinaroOrg
 youtube_username: linaroorg
 twitter_username: linaroorg
 # slideshare_username: linaroorg
-# 
+#
 # Default Social Media share image location
 social_share_image: /assets/images/social-media-image.png
