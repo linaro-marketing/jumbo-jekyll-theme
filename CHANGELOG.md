@@ -1,5 +1,11 @@
 ## Changelog
 
+# 5.5.7
+- Added support for Staging environment Google analytics codes
+- Modifying Jekyll data files to work with the netlifycms correctly (data must be stored within an object in data files i.e items: )
+
+
+
 # 5.5.4
 - flow row layout added
   - allows users to create complex pages using just frontmatter (no longer custom html - works well with Jekyll content management systems)
