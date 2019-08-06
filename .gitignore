@@ -30,5 +30,6 @@
 !_sass
 !assets
 !admin
+!_pages
 # Ignore the following files specifically
 assets/resized
