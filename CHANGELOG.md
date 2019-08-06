@@ -3,7 +3,9 @@
 # 5.5.7
 - Added support for Staging environment Google analytics codes
 - Modifying Jekyll data files to work with the netlifycms correctly (data must be stored within an object in data files i.e items: )
-
+- Favicon path needs to be specified in the _data/settings.yml file (removing asset_path use slowly)
+- Removed the error-pages section of the _data/settings.yml file
+- Updated the flow_inner.html jekyll include to use the same naming convention as the custom_include_row
 
 
 # 5.5.4
