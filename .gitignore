@@ -31,5 +31,7 @@
 !assets
 !admin
 !_pages
+!_posts
+!_authors
 # Ignore the following files specifically
 assets/resized
