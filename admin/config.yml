@@ -26,20 +26,23 @@ collections:
       preview: false
     files:
       - label: "Universal Navbar"
-        name: "items"
+        name: "universal-nav"
         file: "_data/universal-nav.yml"
-        widget: list
         fields:
-          - {label: Title, name: title, widget: string, required: true}
-          - {label: Url, name: url, widget: string, required: false}
-          - {label: Active, name: active, widget: boolean, required: false}
-          - label: Options
-            name: url
+          - label: Universal Navbar Items
+            name: items
             widget: list
-            required: false
             fields:
-              - {label: "Title", name: title, widget: string, required: true}
-              - {label: "Url", name: url, widget: string, required: true}
+            - {label: Title, name: title, widget: string, required: true}
+            - {label: Url, name: url, widget: string, required: false}
+            - {label: Active, name: active, widget: boolean, required: false}
+            - label: Options
+              name: url
+              widget: list
+              required: false
+              fields:
+                - {label: "Title", name: title, widget: string, required: true}
+                - {label: "Url", name: url, widget: string, required: true}
       - label: "Footer"
         name: "footer"
         file: "_data/footer.yml"
