@@ -30,7 +30,7 @@ collections:
         file: "_data/universal-nav.yml"
         fields:
           - label: Universal Navbar Items
-            name: items
+            name: "items"
             widget: list
             fields:
             - {label: Title, name: title, widget: string, required: true}
