@@ -35,6 +35,7 @@ collections:
             fields:
                 - {label: Title, name: title, widget: string}
                 - {label: Link, name: url, widget: string, required: false}
+                - {label: Active, name: active, widget: boolean, required: false}
                 - label: Sub Options
                   name: options
                   required: false
@@ -42,6 +43,7 @@ collections:
                   fields:
                     - {label: Name, name: title, widget: string}
                     - {label: Link, name: url, widget: string}
+                    - {label: Active, name: active, widget: boolean, required: false}
       - label: "Footer"
         name: "footer"
         file: "_data/footer.yml"
