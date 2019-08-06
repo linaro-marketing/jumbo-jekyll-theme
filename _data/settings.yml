@@ -1,5 +1,5 @@
 # Custom Favicon
-favicon: favicon.png
+favicon: /assets/images/favicon.png
 # Placeholder for Missing Images
 placeholder: /assets/images/placeholder.png
 # Support for http2 push features
@@ -24,11 +24,6 @@ jumbotron:
     # Darken is set to true by default - if you wish to remove the image overlay
     # then change this setting to false.
     darken: true
-error-pages:
-  # image: /assets/images/content/path-to-image.jpg
-  svg: linaro-404.html
-  not-found-title: 404 page not found!
-  not-found-desc: Sorry, but the page you were looking for could not be found.
 # Blog setup
 blog:
     # Filler element include
