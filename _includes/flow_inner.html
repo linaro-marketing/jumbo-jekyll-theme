@@ -9,8 +9,8 @@
         {% include core/buttons.html object=section.content style=section.style %}
     {% elsif section.format == "text" %}
         {% include core/text.html object=section %}
-    {% elsif section.format == "custom" %}
-        {% include {{section.include_name}} object=section %}
+    {% elsif section.format == "custom_include" %}
+        {% include {{section.source}} object=section %}
     {% elsif section.format == "slider" %}
         {% include core/slider_row.html object=section %}
     {% elsif section.format == "feature_block" %}
