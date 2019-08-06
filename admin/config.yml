@@ -26,7 +26,7 @@ collections:
       preview: false
     files:
       - label: "Universal Navbar"
-        name: "universal-nav"
+        name: "pages"
         file: "_data/universal-nav.yml"
         widget: list
         fields:
