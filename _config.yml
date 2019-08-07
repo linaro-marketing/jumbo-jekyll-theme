@@ -13,6 +13,8 @@ branch: master
 permalink: /blog/:title/
 # Jumbo Jekyll Theme
 theme: jumbo-jekyll-theme
+# Main Website Repo
+github_repo: https://github.com/linaro-marketing/jumbo-jekyll-theme
 # Syntax highlighter
 highlighter: rouge
 # Blog images/thumbs dir
