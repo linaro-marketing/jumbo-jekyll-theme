@@ -355,10 +355,12 @@ collections:
         fields:
           - label: "Title"
             name: "title"
+            required: false
             widget: "string"
           - label: "Description"
             name: "description"
             widget: "text"
+            required: false
           - label: "Background Image"
             name: "background-image"
             widget: "image"
@@ -405,6 +407,64 @@ collections:
                 widget: text
                 hint: "The text for a text section"
                 required: false
+              - label: "Blocks Section Content"
+                name: "block_section_content"
+                widget: object
+                hint: "Content for a blocks section"
+                required: false
+                fields:
+                  - label: "Block Width"
+                    name: item_width
+                    widget: select
+                    required: true
+                    options: ["3","4","6","5ths"]
+                  - label: "Blocks"
+                    name: blocks
+                    widget: list
+                    hint: "Add the content for your blocks"
+                    required: true
+                    fields:
+                      - label: "Block title"
+                        name: "title"
+                        widget: object
+                        required: false
+                        fields:
+                          - {label: "Text", name: text, widget: string}
+                          - label: "Title Size"
+                            name: "size"
+                            widget: select
+                            required: true
+                            options:
+                              - { label: "1", value: "h1" }
+                              - { label: "2", value: "h2" }
+                              - { label: "3", value: "h3" }
+                              - { label: "4", value: "h4" }
+                              - { label: "5", value: "h5" }
+                      - label: "Block URL"
+                        name: url
+                        required: false
+                        widget: string
+                        hint: "Provide a url for your block to link to"
+                      - label: "Block Background Image"
+                        name: background_image
+                        widget: image
+                        required: false
+                        hint: "Provide a background image for your block"
+                      - label: "Block Text"
+                        name: text
+                        widget: text
+                        required: false
+                        hint: "Provide text content for your block"
+                      - label: "Block Buttons"
+                        name: buttons
+                        widget: list
+                        required: false
+                        identifier_field: url
+                        fields:
+                        - {label: "Button Title", name: "title", widget: string}
+                        - {label: "Button URL", name: "url", widget: string}
+                        - {label: "Button Icon", name: "icon", required: false, widget: string, hint: "Format is fa fa-icon-name - see fontawesome 4.7 icons"}
+                        - {label: "Button Style", name: "style", widget: string, required: true, hint: "btn-primary, btn-secondary, btn-danger, btn-warning"}
               - label: "Feature Block Section Content"
                 name: "feature_block_content"
                 widget: object
@@ -618,9 +678,11 @@ collections:
       - label: "Image"
         name: "image"
         widget: "object"
+        required: false
         fields:
           - label: "Image Path"
             name: "path"
             widget: "image"
+            required: false
             default: "/assets/images/social-media-image.png"
       - {label: "Body", name: "body", widget: "markdown"}
