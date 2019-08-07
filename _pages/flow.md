@@ -433,42 +433,43 @@ flow:
             size: h2
         - format: slider
           style: customCSS
-          lightbox_enabled: true
-          seconds_per_slide: 5
-          nav: true
-          dots: false
-          xs_items: 1
-          sm_items: 2
-          md_items: 4
-          lg_items: 6
-          items:
-            - image: /assets/images/content/background-image1.jpg
-              alt: Background Image
-              title: Background Image 1
-            - image: /assets/images/content/background-image2.png
-              alt: Background Image
-              title: Background Image 1
-            - image: /assets/images/content/background-image3.jpg
-              alt: Background Image
-              title: Background Image 1
-            - image: /assets/images/content/background-image1.jpg
-              alt: Background Image
-              title: Background Image 1
-            - image: /assets/images/content/background-image2.png
-              alt: Background Image
-              title: Background Image 1
-            - image: /assets/images/content/background-image3.jpg
-              alt: Background Image
-              title: Background Image 1
-            - image: /assets/images/content/background-image1.jpg
-              alt: Background Image
-              title: Background Image 1
-            - image: /assets/images/content/background-image2.png
-              alt: Background Image
-              title: Background Image 1
-            - image: /assets/images/content/background-image3.jpg
-              alt: Background Image
-              title: Background Image 1
+          slider_content:
+            lightbox_enabled: true
+            seconds_per_slide: 5
+            nav: true
+            dots: false
+            xs_items: 1
+            sm_items: 2
+            md_items: 4
+            lg_items: 6
+            items:
+                - image: /assets/images/content/background-image1.jpg
+                  alt: Background Image
+                  title: Background Image 1
+                - image: /assets/images/content/background-image2.png
+                  alt: Background Image
+                  title: Background Image 1
+                - image: /assets/images/content/background-image3.jpg
+                  alt: Background Image
+                  title: Background Image 1
+                - image: /assets/images/content/background-image1.jpg
+                  alt: Background Image
+                  title: Background Image 1
+                - image: /assets/images/content/background-image2.png
+                  alt: Background Image
+                  title: Background Image 1
+                - image: /assets/images/content/background-image3.jpg
+                  alt: Background Image
+                  title: Background Image 1
+                - image: /assets/images/content/background-image1.jpg
+                  alt: Background Image
+                  title: Background Image 1
+                - image: /assets/images/content/background-image2.png
+                  alt: Background Image
+                  title: Background Image 1
+                - image: /assets/images/content/background-image3.jpg
+                  alt: Background Image
+                  title: Background Image 1
     - row: full_width_row
       #style: new
       sections:
@@ -482,15 +483,16 @@ flow:
             Some block of text to describe something about such and such...
         - format: slider
           style: customCSS
-          lightbox_enabled: true
-          seconds_per_slide: 5
-          nav: true
-          dots: false
-          xs_items: 1
-          sm_items: 3
-          md_items: 6
-          lg_items: 9
-          data_source: example-carousel-data-source
+          slider_content:
+            lightbox_enabled: true
+            seconds_per_slide: 5
+            nav: true
+            dots: false
+            xs_items: 1
+            sm_items: 3
+            md_items: 6
+            lg_items: 9
+            source: example-carousel-data-source
     - row: custom_include_row
       source: custom_include_row.html
 ---
