@@ -14,9 +14,11 @@ flow:
       sections:
         - format: title
           size: h2
-          content: Members Section Example
+          content:
+            text: Members Section Example
         - format: text
-          content: >
+          content:
+            text: >
                 Linaro Connect Bangkok 2019 will be the 25th Connect since Linaro started in June 2010. Hundreds of the world’s best Linux on Arm developers come to Linaro Connect each time because they know it is the leading place to meet with the global community and to learn about what is going on in the industry. Sponsorship of the event puts your brand in front of all the event attendees – both the 400+ on-site and all those who participate remotely, as well as the thousands who view the website and social media before, during and after the [event](https://connect.linaro.org).
         - format: members
           #data_source: members-section-example
@@ -56,60 +58,64 @@ flow:
       sections:
         - format: title
           size: h2
-          content: Members Section Example
+          content:
+            text: Members Section Example
         - format: buttons
           style: text-center
           content:
-              - title: More Details
-                url: /about/
-                icon: fa fa-arrow-right
-                style: btn-primary
+              buttons:
+                - title: More Details
+                  url: /about/
+                  icon: fa fa-arrow-right
+                  style: btn-primary
     - row: container_row
       style: block_row
     #   background_image: /assets/images/content/background-image1.jpg
       sections:
         - format: title
           size: h2
-          content: Block Row
+          content:
+            text: Block Row
         - format: block
           style: text-center text-white
           item_width: 4
           content:
-              - title:
-                    size: h3
-                    content: Members Section Example
-                url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text:
+              blocks:
+                - title:
+                        size: h3
+                        content: Members Section Example
+                  url: /about/
+                  background_image: /assets/images/content/background-image1.jpg
+                  text:
                     content: >
                         See our photos from Connect.
-                buttons:
+                  buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-              - title:
+                - title:
                     size: h3
                     content: Members Section Example
-                url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text:
-                    content: >
+                  url: /about/
+                  background_image: /assets/images/content/background-image1.jpg
+                  text:
+                      content: >
                         See our photos from Connect.
-                buttons:
+                  buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-              - title:
+                - title:
                     size: h3
                     content: Members Section Example
-                url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text:
+                  url: /about/
+                  background_image: /assets/images/content/background-image1.jpg
+                  text:
                     content: >
                         See our photos from Connect.
-                buttons:
+                  buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
@@ -126,54 +132,55 @@ flow:
           style: text-center text-white
           item_width: 3
           content:
-              - title:
+              blocks:
+                - title:
                     size: h3
                     content: Members Section Example
-                url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text:
+                  url: /about/
+                  background_image: /assets/images/content/background-image1.jpg
+                  text:
                     content: >
                         See our photos from Connect.
-                buttons:
+                  buttons:
+                    - title: More Details
+                      url: /flow/
+                      style: btn-primary
+                      icon: fa fa-arrow-right
+                - title:
+                    size: h3
+                    content: Members Section Example
+                  url: /about/
+                  background_image: /assets/images/content/background-image1.jpg
+                  text:
+                    content: >
+                        See our photos from Connect.
+                  buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-              - title:
+                - title:
                     size: h3
                     content: Members Section Example
-                url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text:
+                  url: /about/
+                  background_image: /assets/images/content/background-image1.jpg
+                  text:
                     content: >
                         See our photos from Connect.
-                buttons:
+                  buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-              - title:
+                - title:
                     size: h3
                     content: Members Section Example
-                url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text:
-                    content: >
+                  url: /about/
+                  background_image: /assets/images/content/background-image1.jpg
+                  text:
+                      content: >
                         See our photos from Connect.
-                buttons:
-                    - title: More Details
-                      url: /flow/
-                      icon: fa fa-arrow-right
-                      style: btn-primary
-              - title:
-                    size: h3
-                    content: Members Section Example
-                url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text:
-                    content: >
-                        See our photos from Connect.
-                buttons:
+                  buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
@@ -261,7 +268,8 @@ flow:
       #style: new
       sections:
         - format: title
-          content: Feature Block Row (Full Width)
+          content:
+            text: Feature Block Row (Full Width)
           size: h2
         - format: feature_block
         #   style: text-center text-white
