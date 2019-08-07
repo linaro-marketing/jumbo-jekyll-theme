@@ -19,7 +19,7 @@ flow:
         - format: text
           content:
             text: >
-                Linaro Connect Bangkok 2019 will be the 25th Connect since Linaro started in June 2010. Hundreds of the world’s best Linux on Arm developers come to Linaro Connect each time because they know it is the leading place to meet with the global community and to learn about what is going on in the industry. Sponsorship of the event puts your brand in front of all the event attendees – both the 400+ on-site and all those who participate remotely, as well as the thousands who view the website and social media before, during and after the [event](https://connect.linaro.org).
+                Linaro Connect Bangkok 2019 will be the 25th Connect since Linaro started in June 2010. Hundreds of the world’s best Linux on Arm developers come to Linaro Connect each time because they know it is the leading place to meet with the global community and to learn about what is going on in the industry. Sponsorship of the event puts your brand in front of all the event attendees – both the 400+ on-site and all those who participate remotely,as well as the thousands who view the website and social media before, during and after the [event](https://connect.linaro.org).
         - format: members
           #data_source: members-section-example
           style: zoom
@@ -82,13 +82,15 @@ flow:
           content:
               blocks:
                 - title:
-                        size: h3
-                        content: Members Section Example
+                    size: h3
+                    content:
+                        text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
                   text:
-                    content: >
-                        See our photos from Connect.
+                    content:
+                        text: >
+                            See our photos from Connect.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -96,12 +98,14 @@ flow:
                       style: btn-primary
                 - title:
                     size: h3
-                    content: Members Section Example
+                    content:
+                        text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
                   text:
-                      content: >
-                        See our photos from Connect.
+                      content:
+                        text: >
+                            See our photos from Connect.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -109,7 +113,8 @@ flow:
                       style: btn-primary
                 - title:
                     size: h3
-                    content: Members Section Example
+                    content:
+                        text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
                   text:
@@ -214,8 +219,8 @@ flow:
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
                 text:
-                    content: >
-                        See our photos from Connect.
+                    content:
+                        text: See our photos from Connect.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -223,12 +228,13 @@ flow:
                       style: btn-primary
               - title:
                     size: h3
-                    content: Members Section Example
+                    content:
+                        text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
                 text:
-                    content: >
-                        See our photos from Connect.
+                    content:
+                        text: See our photos from Connect.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -236,12 +242,14 @@ flow:
                       style: btn-primary
               - title:
                     size: h3
-                    content: Members Section Example
+                    content:
+                        text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
                 text:
-                    content: >
-                        See our photos from Connect.
+                    content:
+                        text: >
+                            See our photos from Connect.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -249,12 +257,13 @@ flow:
                       style: btn-primary
               - title:
                     size: h3
-                    content: Members Section Example
+                    content:
+                        text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
                 text:
-                    content: >
-                        See our photos from Connect.
+                    content:
+                        text: See our photos from Connect.
                 buttons:
                     - title: More Details
                       url: /flow/
