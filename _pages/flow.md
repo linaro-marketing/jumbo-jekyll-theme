@@ -23,7 +23,7 @@ flow:
           #data_source: members-section-example
           style: zoom
           members_content:
-            item_width: 3 #bootstrap col-sm- value e.g 3, 4, 5ths etc
+            item_width: "3" #bootstrap col-sm- value e.g 3, 4, 5ths etc
             items:
               - name: Arm
                 image:
