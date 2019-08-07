@@ -13,8 +13,8 @@ flow:
     #   style: dark
       sections:
         - format: title
-          size: h2
-          content:
+          title_content:
+            size: h2
             text: Members Section Example
         - format: text
           text_content: >
@@ -56,8 +56,8 @@ flow:
       background_image: /assets/images/content/background-image1.jpg
       sections:
         - format: title
-          size: h2
-          content:
+          title_content:
+            size: h2
             text: Members Section Example
         - format: buttons
           style: text-center
@@ -72,8 +72,8 @@ flow:
     #   background_image: /assets/images/content/background-image1.jpg
       sections:
         - format: title
-          size: h2
-          content:
+          title_content:
+            size: h2
             text: Block Row
         - format: block
           style: text-center text-white
@@ -202,8 +202,8 @@ flow:
       background_image: /assets/images/content/background-image1.jpg
       sections:
         - format: title
-          size: h2
-          content:
+          title_content:
+            size: h2
             text: Custom Include Section
         - format: custom_include
           source: custom_include.html
@@ -211,9 +211,9 @@ flow:
       style: fixed block_row
       sections:
         - format: title
-          content:
+          title_content:
             text: Full Width Block Row
-          size: h2
+            size: h2
         - format: block
           style: text-center text-white
           item_width: 3
@@ -283,9 +283,9 @@ flow:
       #style: new
       sections:
         - format: title
-          content:
+          title_content:
             text: Feature Block Row (Full Width)
-          size: h2
+            size: h2
         - format: feature_block
         #   style: text-center text-white
           side_content:
@@ -326,8 +326,9 @@ flow:
       #style: new
       sections:
         - format: title
-          content: Feature Block Row
-          size: h2
+          title_content:
+            text: Feature Block Row
+            size: h2
         - format: feature_block
         #   style: text-center text-white
           content:
@@ -427,8 +428,9 @@ flow:
       #style: new
       sections:
         - format: title
-          content: Slider Row Example
-          size: h2
+          title_content:
+            text: Slider Row Example
+            size: h2
         - format: slider
           style: customCSS
           lightbox_enabled: true
@@ -471,8 +473,9 @@ flow:
       #style: new
       sections:
         - format: title
-          content: Slider Row Example (Full Width)
-          size: h2
+          title_content:
+            text: Slider Row Example (Full Width)
+            size: h2
         - format: text
           style: text-center
           text_content: >
