@@ -47,7 +47,7 @@ flow:
                 url: https://github.com/linaro-marketing/jumbo-jekyll-theme
         - format: buttons
           style: text-center
-          content:
+          buttons_content:
               - title: More Details
                 url: /about/
                 icon: fa fa-arrow-right
@@ -62,12 +62,11 @@ flow:
             text: Members Section Example
         - format: buttons
           style: text-center
-          content:
-              buttons:
-                - title: More Details
-                  url: /about/
-                  icon: fa fa-arrow-right
-                  style: btn-primary
+          buttons_content:
+            - title: More Details
+              url: /about/
+              icon: fa fa-arrow-right
+              style: btn-primary
     - row: container_row
       style: block_row
     #   background_image: /assets/images/content/background-image1.jpg
