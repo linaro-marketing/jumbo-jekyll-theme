@@ -78,7 +78,7 @@ flow:
         - format: block
           style: text-center text-white
           block_section_content:
-            item_width: 4
+            item_width: "4"
             blocks:
                 - title:
                     size: "h3"
@@ -127,7 +127,7 @@ flow:
         - format: block
           style: text-center text-white
           block_section_content:
-            item_width: 3
+            item_width: "3"
             blocks:
                 - title:
                     size: "h3"
@@ -198,7 +198,7 @@ flow:
         - format: block
           style: text-center text-white
           block_section_content:
-            item_width: 3
+            item_width: "3"
             blocks:
               - title:
                   size: "h3"
