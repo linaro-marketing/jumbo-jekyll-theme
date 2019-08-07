@@ -288,10 +288,10 @@ flow:
             size: h2
         - format: feature_block
         #   style: text-center text-white
-          side_content:
+          feature_block_content:
             position: left
             type: youtube_video
-            content:
+            video_content:
                 url: https://www.youtube.com/watch?v=iNMhpvHCXRU
             title: Featured Block
             text: >
@@ -305,23 +305,21 @@ flow:
                   style: btn-primary
         - format: feature_block
         #   style: text-center text-white
-          side_content:
-              position: right
-              type: image
-              # type: video
-              # type: slider
-              content:
-                  image: /assets/images/content/background-image1.jpg
-          title: Featured Block
-          text: >
-            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-          buttons:
-            - title: Button 1
-              url: /about/
-              style: btn-primary
-            - title: Button 2
-              url: /about/
-              style: btn-primary
+          feature_block_content:
+            position: right
+            type: image
+            image_content:
+                image: /assets/images/content/background-image1.jpg
+            title: Featured Block
+            text: >
+                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+            buttons:
+                - title: Button 1
+                  url: /about/
+                  style: btn-primary
+                - title: Button 2
+                  url: /about/
+                  style: btn-primary
     - row: container_row
       #style: new
       sections:
@@ -331,51 +329,46 @@ flow:
             size: h2
         - format: feature_block
         #   style: text-center text-white
-          content:
-            side_content:
-                position: left
-                # type: image
-                # type: video
-                # type: slider
-                type: slider
-                content:
-                    slider:
-                        lightbox_enabled: true
-                        seconds_per_slide: 5
-                        nav: true
-                        dots: false
-                        xs_items: 1
-                        sm_items: 1
-                        md_items: 1
-                        lg_items: 1
-                        items:
-                            - image: /assets/images/content/background-image1.jpg
-                              alt: Background Image
-                              title: Background Image 1
-                            - image: /assets/images/content/background-image2.png
-                              alt: Background Image
-                              title: Background Image 1
-                            - image: /assets/images/content/background-image3.jpg
-                              alt: Background Image
-                              title: Background Image 1
-                            - image: /assets/images/content/background-image1.jpg
-                              alt: Background Image
-                              title: Background Image 1
-                            - image: /assets/images/content/background-image2.png
-                              alt: Background Image
-                              title: Background Image 1
-                            - image: /assets/images/content/background-image3.jpg
-                              alt: Background Image
-                              title: Background Image 1
-                            - image: /assets/images/content/background-image1.jpg
-                              alt: Background Image
-                              title: Background Image 1
-                            - image: /assets/images/content/background-image2.png
-                              alt: Background Image
-                              title: Background Image 1
-                            - image: /assets/images/content/background-image3.jpg
-                              alt: Background Image
-                              title: Background Image 1
+          feature_block_content:
+            position: left
+            type: slider
+            slider_content:
+                lightbox_enabled: true
+                seconds_per_slide: 5
+                nav: true
+                dots: false
+                xs_items: 1
+                sm_items: 1
+                md_items: 1
+                lg_items: 1
+                items:
+                    - image: /assets/images/content/background-image1.jpg
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/content/background-image2.png
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/content/background-image3.jpg
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/content/background-image1.jpg
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/content/background-image2.png
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/content/background-image3.jpg
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/content/background-image1.jpg
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/content/background-image2.png
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/content/background-image3.jpg
+                      alt: Background Image
+                      title: Background Image 1
             title: Featured Block
             text: >
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
@@ -388,14 +381,11 @@ flow:
                   style: btn-primary
         - format: feature_block
         #   style: text-center text-white
-          content:
-            side_content:
-                position: right
-                type: image
-                # type: video
-                # type: slider
-                content:
-                    image: /assets/images/content/background-image1.jpg
+          feature_block_content:
+            position: right
+            type: image
+            image_content:
+                image: /assets/images/content/background-image1.jpg
             title: Featured Block
             text: >
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
@@ -408,12 +398,11 @@ flow:
                   style: btn-primary
         - format: feature_block
         #   style: text-center text-white
-          content:
-            side_content:
-                position: left
-                type: youtube_video
-                content:
-                    url: https://www.youtube.com/watch?v=iNMhpvHCXRU
+          feature_block_content:
+            position: left
+            type: youtube_video
+            video_content:
+                url: https://www.youtube.com/watch?v=iNMhpvHCXRU
             title: Featured Block (with youtube video)
             text: >
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
