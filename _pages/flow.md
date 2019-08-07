@@ -289,8 +289,8 @@ flow:
         - format: feature_block
         #   style: text-center text-white
           feature_block_content:
-            position: left
-            type: youtube_video
+            position: "left"
+            type: "youtube_video"
             video_content:
                 url: https://www.youtube.com/watch?v=iNMhpvHCXRU
             title: Featured Block
@@ -306,8 +306,8 @@ flow:
         - format: feature_block
         #   style: text-center text-white
           feature_block_content:
-            position: right
-            type: image
+            position: "right"
+            type: "image"
             image_content:
                 image: /assets/images/content/background-image1.jpg
             title: Featured Block
@@ -330,8 +330,8 @@ flow:
         - format: feature_block
         #   style: text-center text-white
           feature_block_content:
-            position: left
-            type: slider
+            position: "left"
+            type: "slider"
             slider_content:
                 lightbox_enabled: true
                 seconds_per_slide: 5
@@ -382,8 +382,8 @@ flow:
         - format: feature_block
         #   style: text-center text-white
           feature_block_content:
-            position: right
-            type: image
+            position: "right"
+            type: "image"
             image_content:
                 image: /assets/images/content/background-image1.jpg
             title: Featured Block
@@ -399,8 +399,8 @@ flow:
         - format: feature_block
         #   style: text-center text-white
           feature_block_content:
-            position: left
-            type: youtube_video
+            position: "left"
+            type: "youtube_video"
             video_content:
                 url: https://www.youtube.com/watch?v=iNMhpvHCXRU
             title: Featured Block (with youtube video)
