@@ -77,19 +77,16 @@ flow:
             text: Block Row
         - format: block
           style: text-center text-white
-          item_width: 4
-          content:
-              blocks:
+          block_section_content:
+            item_width: 4
+            blocks:
                 - title:
                     size: h3
-                    content:
-                        text: Members Section Example
+                    text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text:
-                    content:
-                        text: >
-                            See our photos from Connect.
+                  text: >
+                    See our photos from Connect.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -97,14 +94,11 @@ flow:
                       style: btn-primary
                 - title:
                     size: h3
-                    content:
-                        text: Members Section Example
+                    text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text:
-                      content:
-                        text: >
-                            See our photos from Connect.
+                  text: >
+                    See our photos from Connect.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -112,13 +106,11 @@ flow:
                       style: btn-primary
                 - title:
                     size: h3
-                    content:
-                        text: Members Section Example
+                    text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text:
-                    content: >
-                        See our photos from Connect.
+                  text: >
+                    See our photos from Connect.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -134,18 +126,15 @@ flow:
       sections:
         - format: block
           style: text-center text-white
-          item_width: 3
-          content:
-              blocks:
+          block_section_content:
+            item_width: 3
+            blocks:
                 - title:
                     size: h3
-                    content:
-                        text: Members Section Example
+                    text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text:
-                    content:
-                        text: See our photos from Connect.
+                  text: See our photos from Connect.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -153,13 +142,10 @@ flow:
                       icon: fa fa-arrow-right
                 - title:
                     size: h3
-                    content:
-                        text: Members Section Example
+                    text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text:
-                    content:
-                        text: See our photos from Connect.
+                  text: See our photos from Connect.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -167,13 +153,10 @@ flow:
                       style: btn-primary
                 - title:
                     size: h3
-                    content:
-                        text: Members Section Example
+                    text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text:
-                    content:
-                        text: See our photos from Connect.
+                  text: See our photos from Connect.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -185,9 +168,7 @@ flow:
                         text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text:
-                      content:
-                        text: See our photos from Connect.
+                  text: See our photos from Connect.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -216,17 +197,26 @@ flow:
             size: h2
         - format: block
           style: text-center text-white
-          item_width: 3
-          content:
+          block_section_content:
+            item_width: 3
             blocks:
               - title:
-                    size: h3
-                    content: Members Section Example
+                  size: h3
+                  text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
-                text:
-                    content:
-                        text: See our photos from Connect.
+                text: See our photos from Connect.
+                buttons:
+                    - title: More Details
+                      url: /flow/
+                      icon: fa fa-arrow-right
+                      style: btn-primary
+              - title:
+                  size: h3
+                  text: Members Section Example
+                url: /about/
+                background_image: /assets/images/content/background-image1.jpg
+                text: See our photos from Connect.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -234,13 +224,11 @@ flow:
                       style: btn-primary
               - title:
                     size: h3
-                    content:
-                        text: Members Section Example
+                    text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
-                text:
-                    content:
-                        text: See our photos from Connect.
+                text: >
+                    See our photos from Connect.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -248,28 +236,10 @@ flow:
                       style: btn-primary
               - title:
                     size: h3
-                    content:
-                        text: Members Section Example
+                    text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
-                text:
-                    content:
-                        text: >
-                            See our photos from Connect.
-                buttons:
-                    - title: More Details
-                      url: /flow/
-                      icon: fa fa-arrow-right
-                      style: btn-primary
-              - title:
-                    size: h3
-                    content:
-                        text: Members Section Example
-                url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text:
-                    content:
-                        text: See our photos from Connect.
+                text: See our photos from Connect.
                 buttons:
                     - title: More Details
                       url: /flow/
