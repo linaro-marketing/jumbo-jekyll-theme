@@ -289,12 +289,11 @@ flow:
           size: h2
         - format: feature_block
         #   style: text-center text-white
-          content:
-            side_content:
-                position: left
-                type: youtube_video
-                content:
-                    url: https://www.youtube.com/watch?v=iNMhpvHCXRU
+          side_content:
+            position: left
+            type: youtube_video
+            content:
+                url: https://www.youtube.com/watch?v=iNMhpvHCXRU
             title: Featured Block
             text: >
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
@@ -307,24 +306,23 @@ flow:
                   style: btn-primary
         - format: feature_block
         #   style: text-center text-white
-          content:
-            side_content:
-                position: right
-                type: image
-                # type: video
-                # type: slider
-                content:
-                    image: /assets/images/content/background-image1.jpg
-            title: Featured Block
-            text: >
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-            buttons:
-                - title: Button 1
-                  url: /about/
-                  style: btn-primary
-                - title: Button 2
-                  url: /about/
-                  style: btn-primary
+          side_content:
+              position: right
+              type: image
+              # type: video
+              # type: slider
+              content:
+                  image: /assets/images/content/background-image1.jpg
+          title: Featured Block
+          text: >
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+          buttons:
+            - title: Button 1
+              url: /about/
+              style: btn-primary
+            - title: Button 2
+              url: /about/
+              style: btn-primary
     - row: container_row
       #style: new
       sections:
