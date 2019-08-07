@@ -81,7 +81,7 @@ flow:
             item_width: 4
             blocks:
                 - title:
-                    size: h3
+                    size: "h3"
                     text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
@@ -93,7 +93,7 @@ flow:
                       icon: fa fa-arrow-right
                       style: btn-primary
                 - title:
-                    size: h3
+                    size: "h3"
                     text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
@@ -105,7 +105,7 @@ flow:
                       icon: fa fa-arrow-right
                       style: btn-primary
                 - title:
-                    size: h3
+                    size: "h3"
                     text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
@@ -130,7 +130,7 @@ flow:
             item_width: 3
             blocks:
                 - title:
-                    size: h3
+                    size: "h3"
                     text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
@@ -141,7 +141,7 @@ flow:
                       style: btn-primary
                       icon: fa fa-arrow-right
                 - title:
-                    size: h3
+                    size: "h3"
                     text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
@@ -152,7 +152,7 @@ flow:
                       icon: fa fa-arrow-right
                       style: btn-primary
                 - title:
-                    size: h3
+                    size: "h3"
                     text: Members Section Example
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
@@ -163,7 +163,7 @@ flow:
                       icon: fa fa-arrow-right
                       style: btn-primary
                 - title:
-                    size: h3
+                    size: "h3"
                     content:
                         text: Members Section Example
                   url: /about/
@@ -201,7 +201,7 @@ flow:
             item_width: 3
             blocks:
               - title:
-                  size: h3
+                  size: "h3"
                   text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
@@ -212,7 +212,7 @@ flow:
                       icon: fa fa-arrow-right
                       style: btn-primary
               - title:
-                  size: h3
+                  size: "h3"
                   text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
@@ -223,7 +223,7 @@ flow:
                       icon: fa fa-arrow-right
                       style: btn-primary
               - title:
-                    size: h3
+                    size: "h3"
                     text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
@@ -235,7 +235,7 @@ flow:
                       icon: fa fa-arrow-right
                       style: btn-primary
               - title:
-                    size: h3
+                    size: "h3"
                     text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
