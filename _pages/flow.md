@@ -23,7 +23,7 @@ flow:
           #data_source: members-section-example
           style: zoom
           item_width: 3 #bootstrap col-sm- value e.g 3, 4, 5ths etc
-          content:
+          members_content:
               - name: Arm
                 image:
                     path: https://connect.linaro.org/assets/images/sponsors/arm.jpg
