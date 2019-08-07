@@ -313,7 +313,8 @@ flow:
                 type: image
                 # type: video
                 # type: slider
-                content: /assets/images/content/background-image1.jpg
+                content:
+                    image: /assets/images/content/background-image1.jpg
             title: Featured Block
             text: >
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
@@ -340,42 +341,43 @@ flow:
                 # type: slider
                 type: slider
                 content:
-                    lightbox_enabled: true
-                    seconds_per_slide: 5
-                    nav: true
-                    dots: false
-                    xs_items: 1
-                    sm_items: 1
-                    md_items: 1
-                    lg_items: 1
-                    items:
-                        - image: /assets/images/content/background-image1.jpg
-                          alt: Background Image
-                          title: Background Image 1
-                        - image: /assets/images/content/background-image2.png
-                          alt: Background Image
-                          title: Background Image 1
-                        - image: /assets/images/content/background-image3.jpg
-                          alt: Background Image
-                          title: Background Image 1
-                        - image: /assets/images/content/background-image1.jpg
-                          alt: Background Image
-                          title: Background Image 1
-                        - image: /assets/images/content/background-image2.png
-                          alt: Background Image
-                          title: Background Image 1
-                        - image: /assets/images/content/background-image3.jpg
-                          alt: Background Image
-                          title: Background Image 1
-                        - image: /assets/images/content/background-image1.jpg
-                          alt: Background Image
-                          title: Background Image 1
-                        - image: /assets/images/content/background-image2.png
-                          alt: Background Image
-                          title: Background Image 1
-                        - image: /assets/images/content/background-image3.jpg
-                          alt: Background Image
-                          title: Background Image 1
+                    slider:
+                        lightbox_enabled: true
+                        seconds_per_slide: 5
+                        nav: true
+                        dots: false
+                        xs_items: 1
+                        sm_items: 1
+                        md_items: 1
+                        lg_items: 1
+                        items:
+                            - image: /assets/images/content/background-image1.jpg
+                              alt: Background Image
+                              title: Background Image 1
+                            - image: /assets/images/content/background-image2.png
+                              alt: Background Image
+                              title: Background Image 1
+                            - image: /assets/images/content/background-image3.jpg
+                              alt: Background Image
+                              title: Background Image 1
+                            - image: /assets/images/content/background-image1.jpg
+                              alt: Background Image
+                              title: Background Image 1
+                            - image: /assets/images/content/background-image2.png
+                              alt: Background Image
+                              title: Background Image 1
+                            - image: /assets/images/content/background-image3.jpg
+                              alt: Background Image
+                              title: Background Image 1
+                            - image: /assets/images/content/background-image1.jpg
+                              alt: Background Image
+                              title: Background Image 1
+                            - image: /assets/images/content/background-image2.png
+                              alt: Background Image
+                              title: Background Image 1
+                            - image: /assets/images/content/background-image3.jpg
+                              alt: Background Image
+                              title: Background Image 1
             title: Featured Block
             text: >
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
@@ -394,7 +396,8 @@ flow:
                 type: image
                 # type: video
                 # type: slider
-                content: /assets/images/content/background-image1.jpg
+                content:
+                    image: /assets/images/content/background-image1.jpg
             title: Featured Block
             text: >
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
