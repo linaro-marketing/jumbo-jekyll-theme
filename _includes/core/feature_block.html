@@ -1,9 +1,9 @@
 <div class="col-xs-12 feature_block">
     <div class="row">
         <div class="col-xs-12 col-sm-7 block__image {% if include.object.side_content.position == "right" %}col-sm-push-5{% endif %}">
-            {% if include.object.side_content.type == "image" %}
-                {% assign image_path = include.object.side_content.content | remove_first: '/' %}
-                {% assign full_path = include.object.side_content.content %}
+            {% if include.object.type == "image" %}
+                {% assign image_path = include.object.image_content_path | remove_first: '/' %}
+                {% assign full_path = include.object.image_content_path %}
                 {% responsive_image_block %}
                 template: _includes/thumbnail_image.html
                 path: {{ image_path }}
@@ -13,12 +13,12 @@
                 alt: {{ member.alt | slugify: "ascii"}}
                 {% endif %}
                 {% endresponsive_image_block %}
-            {% elsif include.object.side_content.type == "slider" %}
-                {% include core/slider.html object=include.object.side_content.content %}
-            {% elsif include.object.side_content.type == "youtube_video" %}
-                {% include core/youtube_video_embed.html object=include.object.side_content.content %}
+            {% elsif include.object.type == "slider" %}
+                {% include core/slider.html object=include.object.slider_content %}
+            {% elsif include.object.type == "youtube_video" %}
+                {% include core/youtube_video_embed.html object=include.object.video_content_url %}
             {% else %}
-                <h2>TODO</h2>
+                <p>Please verify the feature_block content "type" is correct</p>
             {% endif %}
         </div>
         <div class="col-xs-12 col-sm-5 block__text {% if include.object.side_content.position == "right" %}col-sm-pull-7{% endif %}">
