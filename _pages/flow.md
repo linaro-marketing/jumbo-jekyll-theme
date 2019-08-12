@@ -262,9 +262,9 @@ flow:
             position: "left"
             type: "youtube_video"
             video_content_url: https://www.youtube.com/watch?v=QH2-TGUlwu4
-            title: Featured Block
+            title: Feature Block
             text: >
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                A feature block with a youtube video.
             buttons:
                 - title: Button 1
                   url: /about/
@@ -278,9 +278,9 @@ flow:
             position: "right"
             type: "image"
             image_content_path: /assets/images/content/background-image1.jpg
-            title: Featured Block
+            title: Feature Block
             text: >
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                A feature block with an image.
             buttons:
                 - title: Button 1
                   url: /about/
@@ -337,9 +337,9 @@ flow:
                     - image: /assets/images/content/background-image3.jpg
                       alt: Background Image
                       title: Background Image 1
-            title: Featured Block
+            title: Feature Block
             text: >
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                A feature block with an owl carousel slider.
             buttons:
                 - title: Button 1
                   url: /about/
@@ -353,9 +353,9 @@ flow:
             position: "right"
             type: "image"
             image_content_path: /assets/images/content/background-image1.jpg
-            title: Featured Block
+            title: Feature Block
             text: >
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                A feature block with an image.
             buttons:
                 - title: Button 1
                   url: /about/
@@ -369,9 +369,9 @@ flow:
             position: "left"
             type: "youtube_video"
             video_content_url: https://www.youtube.com/watch?v=QH2-TGUlwu4
-            title: Featured Block (with youtube video)
+            title: Feature Block (with youtube video)
             text: >
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                This is a feature block using a youtube video for the featured content.
             buttons:
                 - title: Button 1
                   url: /about/
@@ -451,6 +451,3 @@ flow:
     - row: custom_include_row
       source: custom_include_row.html
 ---
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of styleical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in styleical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
