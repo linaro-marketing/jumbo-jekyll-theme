@@ -8,25 +8,20 @@ image:
     featured: true
 author: kyle
 category: Getting Started
-tags: 
- - jekyll
- - note
- - theme
- - jumbo-jekyll-theme
- - Getting Started
+tags: [jekyll, note, theme, jumbo-jekyll-theme, Getting Started]
 ---
 
 # Darknet Overview
 
 "Darknet is an open source neural network framework written in C and CUDA. It is fast, easy to install, and supports CPU and GPU computation." - [pjreddie/darknet](https://pjreddie.com/darknet/)
 
-This blog post will describe the process of retraining Darknet, an object detection software, into a qunatized model using an open source autonomous vehicle dataset. 
+This blog post will describe the process of retraining Darknet, an object detection software, into a qunatized model using an open source autonomous vehicle dataset.
 
-Reasons this is necessary: 
+Reasons this is necessary:
 
 1. A machine with limited resources generally struggles to run object detection, thus creating a qunatized model will increase efficiency on these systems such as a 96Boards platform.
 
-2. Autoware, a fully open source autonomous vehicle software stack, relies mainly on darknet for object detection; however, the detection for cars and signs relies mainly on the kitti dataset. The kitti dataset is not a dataset expressly  designated for Autonomous vehicles. 
+2. Autoware, a fully open source autonomous vehicle software stack, relies mainly on darknet for object detection; however, the detection for cars and signs relies mainly on the kitti dataset. The kitti dataset is not a dataset expressly  designated for Autonomous vehicles.
 
 By using a dataset which is specialised in autonomous vehicles, accuracy for tasks such as driving at night and in adverse conditions will increase tremendously.
 
@@ -34,7 +29,7 @@ By using a dataset which is specialised in autonomous vehicles, accuracy for tas
 This process can be done on any system which [darknet](https://pjreddie.com/darknet/) supports. For this blog the following was used:
 
    - 64 bit computer running Ubuntu 18.04
-   - Intel Core i7-8750H CPU 
+   - Intel Core i7-8750H CPU
 ## References:
    - [Darknet](https://pjreddie.com/darknet/)
    - The [Berkley Deep Drive Dataset](http://bdd-data.berkeley.edu/)
@@ -44,11 +39,11 @@ This process can be done on any system which [darknet](https://pjreddie.com/dark
 # Berkley DeepDrive Dataset Overview
 The Berlkley DeepDrive Dataset (BDD dataset) produced by Fisher Yu is one of the largest and most diverese video datasets for autonomous vehicles. The dataset consists of 100,000 videos, each of which is about 40 seconds long, 720p, 30 fps, and also contains GPS/IMU information recorded from cell-phones.
 
-This dataset contains videos from diverse locations around the United States, in a wide range of weather conditions and settings such as, rainy, overcast, sunny, at night, and during the day. Most importantly for my purpouses this dataset also includes hundreds of thousands of still frames extracted from these videos along with bounding boxes and labels for objects, segmentation, lane lines, etc. 
+This dataset contains videos from diverse locations around the United States, in a wide range of weather conditions and settings such as, rainy, overcast, sunny, at night, and during the day. Most importantly for my purpouses this dataset also includes hundreds of thousands of still frames extracted from these videos along with bounding boxes and labels for objects, segmentation, lane lines, etc.
 
 # Building Darknet
 
-Darknet can be built with several optional settings such as GPU (default off), CUDNN (default off), OPENCV (default off), OpenMP (default off), and Debug (default off). If you wish to change the defaults they are accessible in the Makefile. To download and build darknet do the following 
+Darknet can be built with several optional settings such as GPU (default off), CUDNN (default off), OPENCV (default off), OpenMP (default off), and Debug (default off). If you wish to change the defaults they are accessible in the Makefile. To download and build darknet do the following
 
 ```
 $ git clone https://github.com/pjreddie/darknet
@@ -66,9 +61,9 @@ The BDD dataset has its own nomenclature, and thus is not instantly compatible w
 
 # Reformatting the BDD-dataset
 
-For retraining to take place, darknet requires a .txt file corresponding to each image, and within the txt file there needs to be a line for each object to be detected in the image with the following format: 
+For retraining to take place, darknet requires a .txt file corresponding to each image, and within the txt file there needs to be a line for each object to be detected in the image with the following format:
 ```
-<object class #> <x><y><width><height> 
+<object class #> <x><y><width><height>
 ```
 x,y,width, and height being relative to the size of the image. All bdd-dataset images are 1280/720 pixels. - x and y need to be the center of each bounding box.
 
@@ -191,7 +186,7 @@ mv data ~/darknet/data/obj
 
 
 # Retraining Darknet
-The following section is from a [guide](https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/) on training YoloV2 to detect custom objects, and was used as the basis for retrain the tiny darknet dataset. 
+The following section is from a [guide](https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/) on training YoloV2 to detect custom objects, and was used as the basis for retrain the tiny darknet dataset.
 
 A python script created in that guide (process.py in the guide, we'll call it BddProcess.py) will be used to create two text files, train.txt and test.txt which are the training and validation text files respectively. These contain the relative path to each .jpg and .txt file which will be used to train and test the darknet cfg file.
 
@@ -211,13 +206,13 @@ path_data = 'data/obj/'
 percentage_test = 10;
 
 # Create and/or truncate train.txt and test.txt
-file_train = open('train.txt', 'w')  
+file_train = open('train.txt', 'w')
 file_test = open('test.txt', 'w')
 
 # Populate train.txt and test.txt
-counter = 1  
-index_test = round(100 / percentage_test)  
-for pathAndFilename in glob.iglob(os.path.join(current_dir, "*.jpg")):  
+counter = 1
+index_test = round(100 / percentage_test)
+for pathAndFilename in glob.iglob(os.path.join(current_dir, "*.jpg")):
     title, ext = os.path.splitext(os.path.basename(pathAndFilename))
 
     if counter == index_test:
