@@ -9,7 +9,7 @@
     {% if include.object.items %}
         {% assign carousel_items = include.object.items %}
     {% elsif include.object.data_source %}
-        {% assign carousel_items = site.data[include.object.data_source] %}
+        {% assign carousel_items = site.data[include.object.source] %}
     {% endif %}
     {% for item in carousel_items %}
         {% if include.object.lightbox_enabled %}<a data-featherlight="{{item.image}}">{% endif %}

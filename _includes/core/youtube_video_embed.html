@@ -1,9 +1,9 @@
-{% if include.object.url contains "https://youtu.be/" %}
-    {% assign media_url = include.object.url | replace: 'https://youtu.be/','https://youtube.com/embed/'%}
-{% elsif include.object.url contains "https://www.youtube.com/watch?v=" %}
-    {% assign media_url = include.object.url | replace: 'https://www.youtube.com/watch?v=','https://youtube.com/embed/'%}
+{% if include.object contains "https://youtu.be/" %}
+    {% assign media_url = include.object | replace: 'https://youtu.be/','https://youtube.com/embed/'%}
+{% elsif include.object contains "https://www.youtube.com/watch?v=" %}
+    {% assign media_url = include.object | replace: 'https://www.youtube.com/watch?v=','https://youtube.com/embed/'%}
 {% else %}
-    {% assign media_url = include.object.url %}
+    {% assign media_url = include.object %}
 {% endif %}
 
 <div class="embed-responsive embed-responsive-16by9">
