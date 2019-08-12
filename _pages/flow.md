@@ -18,33 +18,33 @@ flow:
             text: Members Section Example
         - format: text
           text_content: >
-              Linaro Connect Bangkok 2019 will be the 25th Connect since Linaro started in June 2010. Hundreds of the world’s best Linux on Arm developers come to Linaro Connect each time because they know it is the leading place to meet with the global community and to learn about what is going on in the industry. Sponsorship of the event puts your brand in front of all the event attendees – both the 400+ on-site and all those who participate remotely,as well as the thousands who view the website and social media before, during and after the [event](https://connect.linaro.org).
-        - format: members
-          #data_source: members-section-example
-          style: zoom
-          members_content:
-            item_width: "3" #bootstrap col-sm- value e.g 3, 4, 5ths etc
-            items:
-              - name: Arm
-                image:
-                    path: https://connect.linaro.org/assets/images/sponsors/arm.jpg
-                    alt: Arm Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-              - name: Packet
-                image:
-                    path: https://connect.linaro.org/assets/images/sponsors/packet.png
-                    alt: Packet Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-              - name: Qualcomm Logo
-                image:
-                    path: https://connect.linaro.org/assets/images/sponsors/qualcomm.jpg
-                    alt: Qualcomm Logo Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-              - name: Cannonical
-                image:
-                    path: https://connect.linaro.org/assets/images/sponsors/canonical.png
-                    alt: Cannonical Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+              An example members section
+        # - format: members
+        #   #data_source: members-section-example
+        #   style: zoom grayscale
+        #   members_content:
+        #     item_width: "3" #bootstrap col-sm- value e.g 3, 4, 5ths etc
+        #     items:
+        #       - name: Arm
+        #         image:
+        #             path: https://connect.linaro.org/assets/images/sponsors/arm.jpg
+        #             alt: Arm Logo
+        #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+        #       - name: Packet
+        #         image:
+        #             path: https://connect.linaro.org/assets/images/sponsors/packet.png
+        #             alt: Packet Logo
+        #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+        #       - name: Qualcomm Logo
+        #         image:
+        #             path: https://connect.linaro.org/assets/images/sponsors/qualcomm.jpg
+        #             alt: Qualcomm Logo Logo
+        #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+        #       - name: Cannonical
+        #         image:
+        #             path: https://connect.linaro.org/assets/images/sponsors/canonical.png
+        #             alt: Cannonical Logo
+        #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
         - format: buttons
           style: text-center
           buttons_content:
@@ -261,7 +261,7 @@ flow:
           feature_block_content:
             position: "left"
             type: "youtube_video"
-            video_content_url: https://www.youtube.com/watch?v=iNMhpvHCXRU
+            video_content_url: https://www.youtube.com/watch?v=QH2-TGUlwu4
             title: Featured Block
             text: >
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
@@ -368,7 +368,7 @@ flow:
           feature_block_content:
             position: "left"
             type: "youtube_video"
-            video_content_url: https://www.youtube.com/watch?v=iNMhpvHCXRU
+            video_content_url: https://www.youtube.com/watch?v=QH2-TGUlwu4
             title: Featured Block (with youtube video)
             text: >
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
