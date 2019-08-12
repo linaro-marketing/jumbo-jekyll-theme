@@ -1,0 +1,5 @@
+<div class="col-xs-12 buttons no-padding {% if include.style %}{{include.style}}{% endif %}">
+    {% for button in include.object %}
+        {% include core/button.html object=button %}
+    {% endfor %}
+</div>

@@ -1,4 +1,6 @@
-{% include_cached universal-nav.html %}
+{% if site.data.nav.universal-nav %}
+    {% include_cached universal-nav.html %}
+{% endif %}
 {% assign page_base = include.pageUrl | split: "/" %}
  {% assign current_page_url = include.pageUrl | replace: "index.html", "" %}
 {% if current_page_url == "/" %}

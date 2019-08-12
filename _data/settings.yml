@@ -1,5 +1,5 @@
 # Custom Favicon
-favicon: favicon.png
+favicon: /assets/images/favicon.png
 # Placeholder for Missing Images
 placeholder: /assets/images/placeholder.png
 # Support for http2 push features
@@ -19,16 +19,6 @@ newsletter:
     enabled: true
     url: https://96boards.us3.list-manage.com/subscribe/post?u=14baaae786342d0d405ee59c2&amp;id=e3d2abc041
 tags_enabled: true
-# Settings for the home page
-jumbotron:
-    # Darken is set to true by default - if you wish to remove the image overlay
-    # then change this setting to false.
-    darken: true
-error-pages:
-  # image: /assets/images/content/path-to-image.jpg
-  svg: linaro-404.html
-  not-found-title: 404 page not found!
-  not-found-desc: Sorry, but the page you were looking for could not be found.
 # Blog setup
 blog:
     # Filler element include
@@ -48,8 +38,7 @@ blog:
         display-on-posts: true
         display-on-index: true
         # Toggle whether or not thumbnails in the sidebar are displayed.
-        thumbnails:
-            display: true
+        display_thumbnails: true
         # Display other posts contained in _posts
         other-posts:
             display: true
@@ -61,10 +50,11 @@ blog:
         # Display the most recent posts
         most-recent-posts:
             display: true
-            count: 5  
+            count: 5
 # Google Anayltics Setup
-# google:
-#     tag_manager: GTM-5DLPJQ
+#google_analytics:
+  # production: UA-XXXXXXX-1
+  # staging: UA-XXXXXXX-1
 # Shema.org settings used in the schema.html include.
 # schema:
 #     enabled: true
@@ -79,9 +69,9 @@ blog:
 #             - https://github.com/Linaro
 #             - https://www.slideshare.net/linaroorg
 #         address:
-#             street: Harston Mill, Royston Rd 
-#             town: Harston 
-#             county: Cambridge 
+#             street: Harston Mill, Royston Rd
+#             town: Harston
+#             county: Cambridge
 #             post_code: CB22 7GG
 #             country_code: UK
 # Disqus Comments
@@ -99,7 +89,7 @@ mailchimp:
 # edit-on-github:
 #     enabled: true
 #     repo: https://www.github.com/Linaro/website
-#     docs: https://www.github.com/Linaro/website 
+#     docs: https://www.github.com/Linaro/website
 # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
 github_username: Linaro
 linkedin_username: 1026961
@@ -108,6 +98,6 @@ facebook_username: LinaroOrg
 youtube_username: linaroorg
 twitter_username: linaroorg
 # slideshare_username: linaroorg
-# 
+#
 # Default Social Media share image location
 social_share_image: /assets/images/social-media-image.png

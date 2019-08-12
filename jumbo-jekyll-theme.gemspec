@@ -2,7 +2,7 @@
 Gem::Specification.new do |spec|
     # Main Spec Info
     spec.name          = "jumbo-jekyll-theme"
-    spec.version       = "4.9.0"
+    spec.version       = "5.6.0"
     spec.authors       = ["Kyle Kirkby"]
     spec.email         = ["kyle.kirkby@linaro.org"]
     spec.summary       = %q{This is a Bootstrap 3 Jekyll Theme built for Linaro Static Websites}
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
     # Ruby Version
     spec.required_ruby_version = '>=2.3'
     # Runtime Dependencies
-    spec.add_runtime_dependency 'jekyll', '~> 3.7.3'
+    spec.add_runtime_dependency 'jekyll', '~> 3.8'
     # spec.add_runtime_dependency "liquid-c"
     # spec.add_runtime_dependency "sassc"
     # spec.add_runtime_dependency "jekyll-picture-tag-latest", ">0"

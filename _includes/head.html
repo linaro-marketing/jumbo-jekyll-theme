@@ -8,19 +8,12 @@
         {% endif %}
     </title>
     {% include_cached css.html pageCSS=page.css-package layoutCSS=layout.css-package %}
-    <link rel="icon" href="{% if site.data.settings.favicon %}
-    {% asset_path '{{site.data.settings.favicon}}'  %}
-    {% endif %}" type="image/png" />
+    <link rel="icon" href="{{site.data.settings.favicon}}" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include_cached google-analytics.html %}
     {% if page.keywords %}
         <meta name="keywords" content="{{page.keywords}}">
     {% endif %}
     {% seo title=false %}
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
     {% include_cached schema.html is_post=page.is_post included_page=page %}
 </head>

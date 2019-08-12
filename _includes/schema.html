@@ -8,12 +8,9 @@
     "name" : "{{site.data.settings.schema.organisation.name}}",
     "url" : "{{site.data.settings.schema.organisation.url}}",
     "sameAs" : [
-        {% if site.data.settings.twitter_username %}"https://twitter.com/{{site.data.settings.twitter_username}}",{% endif %}
-        {% if site.data.settings.facebook_username %}"https://www.facebook.com/{{site.data.settings.facebook_username}}",{% endif %}
-        {% if site.data.settings.linkedin_username %}"https://www.linkedin.com/company/{{site.data.settings.linkedin_username}}",{% endif %}
-        {% if site.data.settings.google_plus_username %}"https://plus.google.com/{{site.data.settings.google_plus_username}}",{% endif %}
-        {% if site.data.settings.github_username %}"https://github.com/{{site.data.settings.github_username}}",{% endif %}
-        {% if site.data.settings.slideshare_username %}"https://www.slideshare.net/{{site.data.settings.slideshare_username}}"{% endif %}
+            {% for social_media_channel in site.data.settings.social_media_channels %}
+                {{social_media_channel.url}}{% unless forloop.last %},{% endunless%}
+            {% endfor %}
         ],
         "address": {
             "@type": "PostalAddress",
@@ -30,7 +27,7 @@
  "@type": "BlogPosting",
  "headline": "{{include.included_page.title}}",
  "image": "{{site.url}}{{include.included_page.image.path}}",
- "keywords": "{{include.included_page.keywords}}", 
+ "keywords": "{{include.included_page.keywords}}",
  "wordcount": "{{include.included_page.content | number_of_words }}",
  "url": "{{include.included_page.url}}",
  "datePublished": "{{include.included_page.date}}",

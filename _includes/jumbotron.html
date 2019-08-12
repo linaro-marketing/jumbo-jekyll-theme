@@ -22,7 +22,7 @@
                     </p>
                     {% if slide.buttons %}
                         {% for button in slide.buttons %}
-                            <a href="{{button.url}}" 
+                            <a href="{{button.url}}"
                             class="btn btn-primary {% if button.class %}{{button.class}}{% endif %}">
                             {{button.title}} {% if button.icon %}<i class="{{button.icon}}"></i>{% endif %}
                         </a>
@@ -37,13 +37,13 @@
 {% else %}
 <div class="{% if page.jumbotron.video %}video {% endif %}row {% if page.jumbotron.background-image %}background-image {% endif %}
 {% if page.jumbotron.carousel-images %}carousel-header{% endif %}
-{% if page.image.background-class %}{{page.image.background-class}}{% endif %}{% if site.data.settings.jumbotron.darken %}overlay{% endif %} {% if page.jumbotron.background-image %}
+{% if page.image.background-class %}{{page.image.background-class}}{% endif %} overlay {% if page.jumbotron.background-image %}
     " style="background-image: url('{{page.jumbotron.background-image}}');"
 {% else %}
     jumbotron text-center featured-jumbotron"
 {% endif %} id="jumbotron" > <!--Row -->
     {% if page.jumbotron.video %}
-    <video autoplay muted preload="none" poster="{{page.jumbotron.video.poster}}" loop id="jumbotronVideo">
+    <video autoplay muted preload="none" poster="{{page.jumbotron.video.poster}}" playsinline loop id="jumbotronVideo">
         {% if page.jumbotron.video.source.mp4 %}
             <source src="{{page.jumbotron.video.source.mp4}}" type="video/mp4">
         {% endif %}
@@ -55,7 +55,7 @@
         {% endif %}
     </video>
     {% endif %}
-    <div id="jumbotron-content" class=" flex-container"> <!--Jumbotron div -->        
+    <div id="jumbotron-content" class=" flex-container"> <!--Jumbotron div -->
         <div class="container flex-center" id="jumbotron-text"> <!--Container -->
         {% if page.jumbotron.image %}
             <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{page.jumbotron.image}}"
@@ -89,7 +89,7 @@
                 {{page.jumbotron.description}}
             </p>
         {% elsif page.description %}
-            <p class="center-block {% if page.jumbotron.animation == "fade" %}fade-in-two{% endif %} 
+            <p class="center-block {% if page.jumbotron.animation == "fade" %}fade-in-two{% endif %}
             {% if page.jumbotron.description-class %} {{page.jumbotron.description-class}} {% endif%} " id="jumbotron-sub-title">
             {{page.description}}
             </p>
@@ -106,7 +106,7 @@
         {% if page.jumbotron.include %}
             {% include {{page.jumbotron.include}} %}
         {% endif %}
-        </div><!-- End Jumbotron Container Div -->  
+        </div><!-- End Jumbotron Container Div -->
     </div> <!--End Jumbotron div -->
     {% if page.jumbotron.triangle-divider %}
         <div class="big-triangle"></div>
