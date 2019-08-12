@@ -2,7 +2,7 @@
 title: Get your flow on!
 layout: flow
 permalink: /flow/
-description: >
+descrtion: >
     This page showcases the power of the flow.html Jekyll include provided in this theme.
 keywords: flow, jekyll, automation, simple, bootstrap 3
 jumbotron:
@@ -27,22 +27,22 @@ flow:
         #     items:
         #       - name: Arm
         #         image:
-        #             path: https://connect.linaro.org/assets/images/sponsors/arm.jpg
+        #             path: https://event.linaro.org/assets/images/sponsors/arm.jpg
         #             alt: Arm Logo
         #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
         #       - name: Packet
         #         image:
-        #             path: https://connect.linaro.org/assets/images/sponsors/packet.png
+        #             path: https://event.linaro.org/assets/images/sponsors/packet.png
         #             alt: Packet Logo
         #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
         #       - name: Qualcomm Logo
         #         image:
-        #             path: https://connect.linaro.org/assets/images/sponsors/qualcomm.jpg
+        #             path: https://event.linaro.org/assets/images/sponsors/qualcomm.jpg
         #             alt: Qualcomm Logo Logo
         #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
         #       - name: Cannonical
         #         image:
-        #             path: https://connect.linaro.org/assets/images/sponsors/canonical.png
+        #             path: https://event.linaro.org/assets/images/sponsors/canonical.png
         #             alt: Cannonical Logo
         #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
         - format: buttons
@@ -82,11 +82,11 @@ flow:
             blocks:
                 - title:
                     size: "h3"
-                    text: Members Section Example
+                    text: Block 1
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
                   text: >
-                    See our photos from Connect.
+                    See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -94,11 +94,11 @@ flow:
                       style: btn-primary
                 - title:
                     size: "h3"
-                    text: Members Section Example
+                    text: Block 2
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
                   text: >
-                    See our photos from Connect.
+                    See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -106,11 +106,11 @@ flow:
                       style: btn-primary
                 - title:
                     size: "h3"
-                    text: Members Section Example
+                    text: Block 3
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
                   text: >
-                    See our photos from Connect.
+                    See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -131,10 +131,10 @@ flow:
             blocks:
                 - title:
                     size: "h3"
-                    text: Members Section Example
+                    text: Block 1
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text: See our photos from Connect.
+                  text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -142,10 +142,10 @@ flow:
                       icon: fa fa-arrow-right
                 - title:
                     size: "h3"
-                    text: Members Section Example
+                    text: Block 2
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text: See our photos from Connect.
+                  text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -153,10 +153,10 @@ flow:
                       style: btn-primary
                 - title:
                     size: "h3"
-                    text: Members Section Example
+                    text: Block 3
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text: See our photos from Connect.
+                  text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -165,10 +165,10 @@ flow:
                 - title:
                     size: "h3"
                     content:
-                        text: Members Section Example
+                        text: Block 4
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text: See our photos from Connect.
+                  text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -205,7 +205,7 @@ flow:
                   text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
-                text: See our photos from Connect.
+                text: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -216,7 +216,7 @@ flow:
                   text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
-                text: See our photos from Connect.
+                text: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -228,7 +228,7 @@ flow:
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
                 text: >
-                    See our photos from Connect.
+                    See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -239,7 +239,7 @@ flow:
                     text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
-                text: See our photos from Connect.
+                text: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
