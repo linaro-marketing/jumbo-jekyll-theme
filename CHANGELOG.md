@@ -6,7 +6,7 @@
 - Favicon path needs to be specified in the _data/settings.yml file (removing asset_path use slowly)
 - Removed the error-pages section of the _data/settings.yml file
 - Updated the flow_inner.html jekyll include to use the same naming convention as the custom_include_row
-
+- Added a tags.yml data file to be used in a relation widget in conjuction with site posts (netlifycms change)
 
 # 5.5.4
 - flow row layout added

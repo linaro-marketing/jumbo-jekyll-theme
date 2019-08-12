@@ -1,10 +1,10 @@
 # Default Title of Site
-title: Jumbo Jekyll
+title: jumbo-jekyll-theme (the advanced enterprise ready Jekyll theme)
 # Description of the site used for default meta description
 url: http://jumbojekyll.co.uk
 baseurl: ""
 description: |-
-  The Jumbo Jekyll Theme is used across all Linaro static sites.
+  The jumbo-jekyll-theme is an advanced enterprise ready Jekyll theme used across the Linaro static websites.
 # Destination of the Jekyll site upon build of site.
 destination: _site
 # Netflify CMS - Default repo branch
