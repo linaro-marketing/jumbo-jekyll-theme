@@ -17,6 +17,7 @@ flow:
             size: h2
             text: Members Section Example
         - format: text
+          style: text-center
           text_content:
             text: An example members section
         # - format: members
@@ -59,7 +60,11 @@ flow:
         - format: title
           title_content:
             size: h2
-            text: Members Section Example
+            text: Container row with background image
+        - format: text
+          style: text-center text-white
+          text_content:
+            text: A container row featuring a background image
         - format: buttons
           style: text-center
           buttons_content:
@@ -433,8 +438,8 @@ flow:
             text: Slider Row Example (Full Width)
             size: h2
         - format: text
+          style: text-center
           text_content:
-            style: text-center
             text: Some block of text to describe something about such and such...
         - format: slider
           style: customCSS
