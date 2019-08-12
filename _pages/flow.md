@@ -20,32 +20,32 @@ flow:
           style: text-center
           text_content:
             text: An example members section
-        # - format: members
-        #   #data_source: members-section-example
-        #   style: zoom grayscale
-        #   members_content:
-        #     item_width: "3" #bootstrap col-sm- value e.g 3, 4, 5ths etc
-        #     items:
-        #       - name: Arm
-        #         image:
-        #             path: https://event.linaro.org/assets/images/sponsors/arm.jpg
-        #             alt: Arm Logo
-        #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-        #       - name: Packet
-        #         image:
-        #             path: https://event.linaro.org/assets/images/sponsors/packet.png
-        #             alt: Packet Logo
-        #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-        #       - name: Qualcomm Logo
-        #         image:
-        #             path: https://event.linaro.org/assets/images/sponsors/qualcomm.jpg
-        #             alt: Qualcomm Logo Logo
-        #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-        #       - name: Cannonical
-        #         image:
-        #             path: https://event.linaro.org/assets/images/sponsors/canonical.png
-        #             alt: Cannonical Logo
-        #         url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+        - format: members
+          #data_source: members-section-example
+          style: zoom grayscale
+          members_content:
+            item_width: "3" #bootstrap col-sm- value e.g 3, 4, 5ths etc
+            items:
+              - name: JS
+                image:
+                    path: /assets/images/content/js-logo.png
+                    alt: JS Logo
+                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+              - name: Packet
+                image:
+                    path: /assets/images/content/js-logo.png
+                    alt: Packet Logo
+                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+              - name: JS Logo
+                image:
+                    path: /assets/images/content/js-logo.png
+                    alt: JS Logo
+                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+              - name: JS
+                image:
+                    path: /assets/images/content/js-logo.png
+                    alt: JS Logo
+                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
         - format: buttons
           style: text-center
           buttons_content:
