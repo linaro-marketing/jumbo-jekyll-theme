@@ -37,7 +37,7 @@
 {% else %}
 <div class="{% if page.jumbotron.video %}video {% endif %}row {% if page.jumbotron.background-image %}background-image {% endif %}
 {% if page.jumbotron.carousel-images %}carousel-header{% endif %}
-{% if page.image.background-class %}{{page.image.background-class}}{% endif %}{% if site.data.settings.jumbotron.darken %}overlay{% endif %} {% if page.jumbotron.background-image %}
+{% if page.image.background-class %}{{page.image.background-class}}{% endif %} overlay {% if page.jumbotron.background-image %}
     " style="background-image: url('{{page.jumbotron.background-image}}');"
 {% else %}
     jumbotron text-center featured-jumbotron"
