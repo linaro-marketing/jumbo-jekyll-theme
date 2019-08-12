@@ -90,8 +90,8 @@ flow:
                     text: Block 1
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text: >
-                    See our photos from event.
+                  text_content:
+                    text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -102,8 +102,8 @@ flow:
                     text: Block 2
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text: >
-                    See our photos from event.
+                  text_content:
+                    text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -114,8 +114,8 @@ flow:
                     text: Block 3
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text: >
-                    See our photos from event.
+                  text_content:
+                    text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -139,7 +139,8 @@ flow:
                     text: Block 1
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text: See our photos from event.
+                  text_content:
+                    text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -150,7 +151,8 @@ flow:
                     text: Block 2
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text: See our photos from event.
+                  text_content:
+                    text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -160,8 +162,10 @@ flow:
                     size: "h3"
                     text: Block 3
                   url: /about/
+                  style: block_three_style
                   background_image: /assets/images/content/background-image1.jpg
-                  text: See our photos from event.
+                  text_content:
+                    text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -172,7 +176,8 @@ flow:
                     text: Block 4
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
-                  text: See our photos from event.
+                  text_content:
+                    text: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -209,7 +214,8 @@ flow:
                   text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
-                text: See our photos from event.
+                text_content:
+                    text: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -220,7 +226,8 @@ flow:
                   text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
-                text: See our photos from event.
+                text_content:
+                    text: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -231,8 +238,8 @@ flow:
                     text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
-                text: >
-                    See our photos from event.
+                text_content:
+                    text: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -243,7 +250,8 @@ flow:
                     text: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
-                text: See our photos from event.
+                text_content:
+                    text: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
