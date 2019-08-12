@@ -17,8 +17,8 @@ flow:
             size: h2
             text: Members Section Example
         - format: text
-          text_content: >
-              An example members section
+          text_content:
+            text: An example members section
         # - format: members
         #   #data_source: members-section-example
         #   style: zoom grayscale
@@ -433,9 +433,9 @@ flow:
             text: Slider Row Example (Full Width)
             size: h2
         - format: text
-          style: text-center
-          text_content: >
-            Some block of text to describe something about such and such...
+          text_content:
+            style: text-center
+            text: Some block of text to describe something about such and such...
         - format: slider
           style: customCSS
           slider_content:
