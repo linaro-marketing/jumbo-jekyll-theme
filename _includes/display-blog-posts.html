@@ -4,7 +4,7 @@
         {% assign timeframe = 604800 %}
         {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
         {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
-        
+
         {% if forloop.first and paginator.page == 1 %}
             <style>
                 @media(min-width: 1000px){
@@ -68,7 +68,7 @@
                         </div>
                     </a>
                 </div>
-            </div>   
+            </div>
             {% else %}
 
             {% comment %}
@@ -134,7 +134,7 @@
                         <div class="author-section">
                             {% assign author = site.authors | where: "username", post.author | first %}
                             {% assign author-url = author.url %}
-                            <div class="blog-author-image lazyload" data-bg="{% if author.image.path %}{{author.image.path}}{% else %}{{site.data.settings.blog.avatar_placeholder}}{% endif %}"></div>
+                            <div class="blog-author-image lazyload" data-bg="{% if author.image_path %}{{author.image_path}}{% else %}{{site.data.settings.blog.avatar_placeholder}}{% endif %}"></div>
                             <small class="blog-author">
                                 <em>{% if author.name %}{{author.name}}{% else %}{{post.author}}{% endif %}</em>
                             </small>
@@ -142,7 +142,7 @@
                     </div>
                     </a>
                 </div>
-                    
+
             </div>
             {% endif %}
     {% endfor %}
