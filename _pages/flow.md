@@ -169,8 +169,7 @@ flow:
                       style: btn-primary
                 - title:
                     size: "h3"
-                    content:
-                        text: Block 4
+                    text: Block 4
                   url: /about/
                   background_image: /assets/images/content/background-image1.jpg
                   text: See our photos from event.
