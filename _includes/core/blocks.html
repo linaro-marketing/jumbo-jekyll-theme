@@ -7,8 +7,8 @@
                 {% if block.title %}
                     {% include core/title.html object=block.title %}
                 {% endif %}
-                {% if block.text %}
-                    {% include core/text.html object=block.text %}
+                {% if block.text_content %}
+                    {% include core/text.html object=block %}
                 {% endif %}
                 {% if block.buttons %}
                     {% include core/buttons.html object=block.buttons %}
