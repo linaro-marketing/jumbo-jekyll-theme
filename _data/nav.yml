@@ -1,49 +1,17 @@
 # Search Config
 search:
-    enabled: true
-    label: Linaro
+    enabled: false
+    label: JJT
 universal-nav: false
 # Nav Brand Config
 brand:
     text: Jumbo Jekyll Theme
-    image: 
-        enabled: false
-        name: Linaro-Logo.svg
     url: /
 # Navigation pages
 pages:
-    - title: Flow
+    - title: Flow Example
       url: /flow/
-    - title: Jekyll
-      active_paths:
-        - /new/
-      options:
-          - text: Includes
-            url: /jekyll/includes/
-    - title: Layouts
-      options:
-          - text: Default
-            url: /layouts/default/
-    - title: About
-      options:
-          - text: Overview
-            url: /about/
-          - text: Collaborate
-            url: /collaborate/
-          - text: Jekyll
-    - title: CSS
-      options:
-          - text: Bootstrap
-            url: /css/bootstrap/ 
-    - title: JS
-      options:
-          - text: JQuery
-            url: /js/jquery/
-          - text: Bootstrap
-            url: /js/bootstrap/
     - title: Blog
       url: /blog/
       active_paths:
-        - /new/
-    - title: Download
-      url: /download/
+        - /blog/
