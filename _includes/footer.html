@@ -4,7 +4,7 @@
             {% if site.data.footer.display-contact-details %}
             <div class="col-xs-12 col-sm-3 contact-details">
                 <address>
-                    <a class="email" href="mailto:{{site.email}}?subject={{site.url}} - {{page.url}}">{{site.email}}</a> <br>
+                    <a class="email" href="mailto:{{site.email}}?subject={{site.url}}">{{site.email}}</a> <br>
                     {% for address-line in site.address %}
                         {{address-line}}<br>
                     {% endfor %}
@@ -53,7 +53,7 @@
                 Copyright &copy; {{ 'now' | date: "%Y" }} {{site.data.footer.copyright-text}}
                 {% for link in site.data.footer.company-links %}
                     <span class="coloured-bp">&bull;</span>
-                    <a href="{{link.url}}">{{link.name}}</a> 
+                    <a href="{{link.url}}">{{link.name}}</a>
                 {% endfor %}
             </div>
             <div class="col-xs-12 text-white text-center m-t-10">
