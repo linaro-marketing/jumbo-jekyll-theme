@@ -89,7 +89,9 @@ flow:
                     size: "h3"
                     text: Block 1
                   url: /about/
-                  background_image: /assets/images/content/background-image1.jpg
+                  inner_image:
+                    icon: true
+                    icon_name: fa fa-bullhorn
                   text_content:
                     text: See our photos from event.
                   buttons:
@@ -101,6 +103,9 @@ flow:
                     size: "h3"
                     text: Block 2
                   url: /about/
+                  inner_image:
+                    path: /assets/images/content/js-logo.png
+                    alt: JS logo
                   background_image: /assets/images/content/background-image1.jpg
                   text_content:
                     text: See our photos from event.
