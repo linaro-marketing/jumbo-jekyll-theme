@@ -27,11 +27,11 @@
             .title{
                 h1, h2, h3, h4, h5, h6 {
                     color: #fff;
-                }                
-            } 
+                }
+            }
             p {
                 color: white;
-            } 
+            }
         }
         .feature_block {
             a.btn.btn-primary {
@@ -40,7 +40,7 @@
         }
         &.block_row {
             .block {
-                @media(max-width: $screen-sm-min) {          
+                @media(max-width: $screen-sm-min) {
                     &:not(:first-child) {
                         margin-top: $flow_row_padding;
                     }
@@ -54,17 +54,33 @@
                     background-repeat: no-repeat !important;
                     background-position: center center !important;
                     border-radius: 5px;
-                    -webkit-box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.75);
-                    -moz-box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.75);
-                    box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.75);
+                    border: 1px solid #ccc;
+                    -webkit-box-shadow: 0px 0px 10px -4px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px 0px 10px -4px rgba(0,0,0,0.75);
+                    box-shadow: 0px 0px 10px -4px rgba(0,0,0,0.75);
                     transition: all 200ms ease-in-out;
-                    .title {
+                    &.background_image_block .title {
                         h1, h2, h3, h4, h5, h6 {
                             color: #fff;
-                        }  
+                        }
+                    }
+                    .title {
+                        h1, h2, h3, h4, h5, h6 {
+                            color: #3c3b39;
+                        }
+                    }
+                    &.background_image_block  p {
+                        color: #fff;
                     }
                     p {
-                        color: #fff;
+                        color: #3c3b39;
+                    }
+                    .block-inner img {
+                        margin: auto auto;
+                        margin-top: 20px;
+                    }
+                    i.block_image_icon {
+                        font-size: 150px;
                     }
                     .buttons {
                         padding-top: 10px;
@@ -75,10 +91,13 @@
                         -webkit-box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
                         -moz-box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
                         box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
+                        i.block_image_icon {
+                            color: $brand-primary;
+                        }
                     }
                 }
             }
-            
+
         }
     }
     .members_section {

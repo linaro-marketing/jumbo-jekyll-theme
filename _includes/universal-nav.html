@@ -9,19 +9,19 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse" role="navigation" aria-expanded="false" style="height: 1px;">
       <ul class="nav navbar-nav navbar-right">
-        {% for website in site.data.universal-nav %}
-            {% if website.options %}
-                <li class="dropdown {% for project-site in website.options %}{% if project-site.active %}active{% break %}{% endif %}{% endfor %}">
+        {% for item in site.data.universal-nav.items %}
+            {% if item.options %}
+                <li class="dropdown {% for project-site in item.options %}{% if project-site.active %}active{% break %}{% endif %}{% endfor %}">
                     <a href="#" class="projects dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                        aria-expanded="false">Projects <span class="caret"></span></a>
+                        aria-expanded="false">{{item.title}} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        {% for project-site in website.options %}
+                        {% for project-site in item.options %}
                         <li {% if project-site.active %}class="active" {% endif%}><a target="_self" href="{{project-site.url}}">{{project-site.title}}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
             {% else %}
-                <li {% if website.active %}class="active" {% endif %}><a class="linaro" target="_self" href="{{website.url}}">{{website.title}}</a></li>
+                <li {% if item.active %}class="active" {% endif %}><a class="linaro" target="_self" href="{{item.url}}">{{item.title}}</a></li>
             {% endif %}
         {% endfor %}
       </ul>
