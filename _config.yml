@@ -131,7 +131,6 @@ relative_links:
   collections: false
 plugins:
   - jekyll-seo-tag
-  - jekyll-sitemap
   - uglifier
   - jekyll-assets
   - jekyll-theme-assets-updated
