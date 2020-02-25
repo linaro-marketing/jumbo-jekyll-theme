@@ -7,11 +7,11 @@
         background-color: $body-bg;
         position: relative;
         &:first-child {
-            @media(max-width: $screen-sm-min){
+            @include media-breakpoint-down(sm) {
                 padding-top:0px;
             }
         }
-        @media (min-width: $screen-sm-min) {
+        @include media-breakpoint-up(sm) {
             &.equal {
                 display: flex;
                 flex-wrap: wrap;
@@ -40,7 +40,7 @@
         }
         &.block_row {
             .block {
-                @media(max-width: $screen-sm-min) {
+                @include media-breakpoint-down(sm) {
                     &:not(:first-child) {
                         margin-top: $flow_row_padding;
                     }
@@ -92,7 +92,7 @@
                         -moz-box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
                         box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
                         i.block_image_icon {
-                            color: $brand-primary;
+                            color: $primary;
                         }
                     }
                 }
@@ -172,7 +172,7 @@
                 }
                 &:hover {
                     transform: translateX(1px);
-                    background-color: $brand-primary !important;
+                    background-color: $primary !important;
                     @extend .drop_shadow;
                 }
                 span {

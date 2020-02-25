@@ -3,7 +3,7 @@
 
 //Mobile Style for Breadcrumb
 
-@media(max-width:$screen-sm-min){
+@include media-breakpoint-down(sm) {
     .breadcrumb-container h1, .breadcrumb-container h2, .breadcrumb-container h3 {
         margin-top: 0;
         margin-bottom: 0;
@@ -12,7 +12,7 @@
     .breadcrumb{
         margin-bottom: 0;
     }
-    
+
     .breadcrumb-container{
         padding-top: 5px;
         padding-bottom: 5px;
@@ -37,7 +37,7 @@
 // Active Colour
 ol.breadcrumb > li.active {
     color: $navbar-text-color;
-     
+
 }
 ol.breadcrumb li {
   font-size: 14px;
@@ -91,8 +91,3 @@ ol.breadcrumb li span:hover {
 #wrapper .breadcrumb-inner-container h1,#wrapper .breadcrumb-inner-container h2,#wrapper .breadcrumb-inner-container h3{
     color: $breadcrumb-title-color;
 }
-
-
-
-
-

@@ -10,7 +10,7 @@
     padding-left:15px;
 }
 .navbar-inverse .navbar-brand:hover{
-    color: $brand-primary;
+    color: $primary;
 }
 
 nav#main-navigation {
@@ -29,7 +29,7 @@ nav#main-navigation {
 div#tabbed-nav-bar-collapse {
     padding: 0;
 }
-@media screen and (max-width: $screen-lg) and (min-width: 0px){
+@include media-breakpoint-down(lg) {
     .sticky-nav#tabbed-nav-bar a.navbar-toggle {
         margin-right: -5px;
     }
@@ -43,14 +43,14 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
 #tabbed-nav-bar .navbar-header {
     margin-left: -15px;
     margin-right: -15px;
-    @media(max-width: $screen-sm-min){
+    @include media-breakpoint-down(sm) {
         padding-left: 15px;
         padding-right: 0px;
     }
 }
 
-@media (min-width: $screen-lg) {
-    
+@include media-breakpoint-up(lg) {
+
     #navbar-collapse {
         padding-top: 0px;
         padding-right: 38px;
@@ -64,15 +64,15 @@ div#tabbed-nav-bar.non-sticky-nav > .container {
         width: 80%;
         float: right;
     }
-    
+
     .navbar-right .dropdown-menu {
         right: auto;
         left: 0;
     }
-    
+
 }
 
-@media (min-width: $screen-sm) {
+@include media-breakpoint-up(sm) {
     .navbar-right {
         float: right !important;
         margin-right: 0px;
@@ -90,7 +90,7 @@ nav#main-navigation.nav-light #navbar-buttons>li>a {
 div#tabbed-nav-bar.sticky-nav {
     top: 0px;
 }
-@media (max-width: $screen-sm){
+@include media-breakpoint-down(sm) {
     div#tabbed-nav-bar.sticky-nav li.divider {
         border-top: 2px solid #272727;
     }
@@ -104,28 +104,28 @@ div#tabbed-nav-bar.sticky-nav {
     nav.nav-light #navbar-buttons>li>a {
         color: $navbar-text-color;
     }
-    
+
     div#tabbed-nav-bar.sticky-nav > .container {
         padding-left: 0px;
         padding-right: 0px;
     }
-    
+
 
     #tabbed-nav-bar.sticky-nav a#sub-navigation-header {
         padding-left: 5px;
     }
-    
+
      nav#main-navigation.nav-light.navbar-inverse .navbar-collapse{
         background-color: $navbar-inverse-bg;
     }
-    
+
     nav#main-navigation.nav-light #navbar-buttons>li>a {
         color: $navbar-text-color;
     }
 }
 
-@media screen and (max-width: $screen-lg) and (min-width: 0px) {
-    
+@include media-breakpoint-down(lg) {
+
     a.navbar-toggle {
         margin-right: 10px;
     }
@@ -140,7 +140,7 @@ div#tabbed-nav-bar.sticky-nav {
     padding:0px;
 }
 #tabbed-nav-bar .navbar-toggle{
-    color:$brand-primary !important;
+    color:$primary !important;
     margin-right: 0px;
 }
 button.btn.btn-default.dropdown-toggle {
@@ -255,7 +255,7 @@ nav.nav-dark .cls-2 {
     color: $navbar-text-color;
 }
 .dropdown-submenu > ul.dropdown-menu > li > a:hover {
-    color: $brand-primary;
+    color: $primary;
     text-decoration: none;
     transition: 500ms all ease;
 }
@@ -272,7 +272,7 @@ nav.nav-dark .cls-2 {
     color: $navbar-text-color;
 }
 .dropdown-submenu > ul.dropdown-menu > li > a:hover {
-    color: $brand-primary;
+    color: $primary;
     text-decoration: none;
     transition: 500ms all ease;
 }
@@ -328,12 +328,12 @@ ul#tabbed_nav {
 
 // Navbar Brand
 .navbar-brand {
-    @media (min-width: $screen-md-min){
+    @include media-breakpoint-up(md) {
         padding-top: 0px;
         padding-bottom: 0px;
         padding-left: 15px;
     }
-    @media (max-width: $screen-md-min){
+    @include media-breakpoint-down(md) {
         padding-top: 0px;
         padding-bottom: 0px;
         padding-left: 5px;
@@ -347,7 +347,7 @@ ul#tabbed_nav {
     padding-bottom: 5px;
 }
 #brand-image {
-    @media (max-width: $screen-md-min){
+    @include media-breakpoint-down(md) {
         height:70px;
         width:auto;
     }
@@ -410,10 +410,10 @@ nav > ul.navbar-right {
 }
 
 #tabbed-nav-bar .navbar-default .navbar-toggle .icon-bar {
-    background-color: $brand-primary;
+    background-color: $primary;
 }
 
-@media(max-width: $screen-md-min){
+@include media-breakpoint-down(md) {
     .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
         border-color: $navbar-inverse-bg;
         background-color: $navbar-inverse-bg;
@@ -441,7 +441,7 @@ nav > ul.navbar-right {
     right: 0;
     transition: all 1s ease;
 }
-@media(max-width:$screen-sm-min - 1){
+@include media-breakpoint-down(sm) {
     #main-navigation .pull-left ul.dropdown-menu.sub-menu {
         position: static !important;
         width: 100% !important;
@@ -470,16 +470,16 @@ nav > ul.navbar-right {
         text-transform: uppercase;
         letter-spacing: 0px;
         line-height: 21px;
-    
+
     }
     #tabbed-nav-bar .nav-tabs>li>a:hover {
-        color: $brand-primary;
+        color: $primary;
     }
 
     #tabbed-nav-bar .nav-tabs>li.active>a,
      #tabbed-nav-bar .nav-tabs>li.active>a:hover,
       #tabbed-nav-bar .nav-tabs>li.active>a:focus {
-        color: $brand-primary;
+        color: $primary;
         background-color: transparent;
         cursor: default;
     }
@@ -590,7 +590,7 @@ nav > ul.navbar-right {
 }
 
 .nav-tabs {
-    border-bottom: 2px solid $gray;
+    border-bottom: 2px solid $gray-600;
 }
 
 .nav-tabs > li > a {
@@ -603,10 +603,10 @@ nav > ul.navbar-right {
     background: transparent;
 }
 .nav-tabs > li > a::after {
-    background: $brand-primary;
+    background: $primary;
 }
 .tab-nav > li > a::after {
-    background: $brand-primary none repeat scroll 0% 0%;
+    background: $primary none repeat scroll 0% 0%;
     color: $navbar-text-color;
 }
 //Changed the default navbar text colour
@@ -616,14 +616,14 @@ nav > ul.navbar-right {
 button#closeForm {
     color: $navbar-text-color;
 }
-@media (max-width: $screen-md-min){
+@include media-breakpoint-down(md) {
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a.dropdown-item {
         color: $navbar-text-color;
     }
 }
 // Style for stacked nav
 li.side-nav-button {
-    border-top: 1px sstackedolid $gray-lighter;
+    border-top: 1px sstackedolid $gray-200;
     border-right: 0px;
     border-left: 0px;
     margin-bottom: -3px;
@@ -646,7 +646,7 @@ li.side-nav-button:first-child {
 
 #navbar-buttons .dropdown-menu {
     background-color: #fff;
-    border-top: 2px solid $brand-primary;
+    border-top: 2px solid $primary;
 }
 
 /* Bold the first li in nav-stacked */
@@ -655,7 +655,7 @@ ul.nav.nav-pills.nav-stacked li:first-child {
 }
 
 li.side-nav-button:hover > a {
-    color: $brand-primary;
+    color: $primary;
 }
 #wrapper li.side-nav-button a:hover {
     color: black;
@@ -681,7 +681,7 @@ li.side-nav-button:hover > a {
 }
 
 #navbar-buttons .dropdown-menu>li>a:hover {
-    color: $brand-primary;
+    color: $primary;
     letter-spacing: 0;
     font-size:12px;
 }
@@ -699,7 +699,7 @@ li.side-nav-button:hover > a {
 }
 
 .navbar-inverse #navbar-buttons>li>a:hover{
-    color: $brand-primary;
+    color: $primary;
 }
 
 // Search Bar
@@ -766,17 +766,17 @@ div#search_bar button:hover {
 div#search_bar input::-webkit-input-placeholder {
     color: $navbar-text-color !important;
 }
- 
+
 div#search_bar input:-moz-placeholder { /* Firefox 18- */
-    color: $navbar-text-color !important;  
+    color: $navbar-text-color !important;
 }
- 
+
 div#search_bar input::-moz-placeholder {  /* Firefox 19+ */
-    color: $navbar-text-color !important;  
+    color: $navbar-text-color !important;
 }
- 
-div#search_bar input:-ms-input-placeholder {  
-    color: $navbar-text-color !important;  
+
+div#search_bar input:-ms-input-placeholder {
+    color: $navbar-text-color !important;
 }
 
 
@@ -793,7 +793,7 @@ li.dropdown-submenu.sub-menu > a:after {
 }
 
 li.dropdown.menu.open > a {
-    color: $brand-primary !important;
+    color: $primary !important;
 
 }
 
@@ -803,7 +803,7 @@ ul.dropdown-menu.menu {
     padding-bottom: 0;
     border-radius: 0 !important;
 }
-@media(min-width:$screen-sm-min){
+@include media-breakpoint-up(sm) {
     div#tabbed-nav-bar.sticky-nav li.divider {
         border-right: 1px solid $navbar-inverse-bg;
         height: 48px;
@@ -812,20 +812,19 @@ ul.dropdown-menu.menu {
     div#tabbed-nav-bar.non-sticky-nav li.divider {
         border-right: 2px solid #272727;
     }
-    
+
     #main-navigation a.navbar-brand {
         padding-left:15px;
     }
 }
 
-@media only screen and (max-width: $screen-lg-min) and (min-width: $screen-sm-min)  {
+@include media-breakpoint-between(sm, lg) {
     div#search_bar {
         right: 0px;
     }
 }
 
-/* Tabbed Nav Bar Mobile Style*/
-@media (max-width: $screen-sm) {
+@include media-breakpoint-down(sm) {
     ul#tabbed_nav > li {
         width: 100%;
     }
@@ -838,7 +837,7 @@ ul.dropdown-menu.menu {
     }
 }
 
-// Nav Bar SVG Base Style 
+// Nav Bar SVG Base Style
 #navbar_svg .cls-1 {
     fill: none;
 }
@@ -962,7 +961,7 @@ transform: rotate(0);
     background-color: darken($navbar-inverse-bg, 80%);
 }
 .navbar-collapse::-webkit-scrollbar-thumb {
-  background-color: $brand-primary;
+  background-color: $primary;
   outline: 1px solid lighten($navbar-inverse-bg, 90%);
 }
 // Highlight nav menu options
@@ -975,7 +974,7 @@ li.dropdown.menu.active.open > a {
 }
 #main-navigation li.main:hover a.main-anchor {
     background-color: $navbar-hover-background-color;
-    color: $navbar-hover-text-color !important; 
+    color: $navbar-hover-text-color !important;
 }
 #main-navigation li.main:hover a.main-anchor  {
     transition: background-color 600ms linear;
@@ -984,7 +983,7 @@ li.dropdown.menu.active.open > a {
     transition: background-color 300ms linear;
 }
 
-@media(max-width: $screen-sm-min){
+@include media-breakpoint-down(sm) {
     #main-navigation  ul{
         li {
             a {
@@ -1003,7 +1002,7 @@ li.dropdown.menu.active.open > a {
 
     }
 }
-// Bug fix for the White box flash 
+// Bug fix for the White box flash
 #navbar-collapse {
     height: auto !important;
 }

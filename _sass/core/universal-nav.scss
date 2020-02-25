@@ -5,7 +5,7 @@ nav#universal-nav {
     border-bottom: 0px;
     border-top:0px;
     margin-bottom: 0px;
-    background-color:$brand-primary;
+    background-color:$primary;
     z-index:9999;
 }
 
@@ -19,7 +19,7 @@ nav#universal-nav {
     border:none;
     letter-spacing:1px;
     text-transform: uppercase;
-    padding-left:20px;  
+    padding-left:20px;
     padding-right:20px;
     text-align:center;
     transition: all 400ms ease;
@@ -27,9 +27,9 @@ nav#universal-nav {
 
 #universal-nav.navbar-default .navbar-nav>li.active>a {
     color: white;
-    background-color: darken($brand-primary, 40%);
+    background-color: darken($primary, 40%);
     opacity: 1;
-    
+
     transition: all 200ms ease;
 }
 #universal-nav.navbar-default .navbar-nav>li.active>a:hover {
@@ -58,8 +58,8 @@ nav#universal-nav {
 }
 
 
-#universal-nav div#navbar::-webkit-scrollbar { 
-    display: none; 
+#universal-nav div#navbar::-webkit-scrollbar {
+    display: none;
 }
 
 #universal-nav.navbar-default .navbar-nav .open .dropdown-menu>li>a {
@@ -137,7 +137,7 @@ a.dropdown-toggle {}
 }
 
 // Mobile Styles
-@media(max-width:$screen-sm-min - 1){
+@include media-breakpoint-down(sm) {
     #universal-nav .navbar-collapse {
         margin-top:0px;
         top:0px;

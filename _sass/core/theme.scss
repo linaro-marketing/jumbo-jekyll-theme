@@ -58,7 +58,7 @@ a.btn.btn-primary {
     border:0;
 }
 a.btn.btn-primary:hover {
-    background-color:$brand-primary;
+    background-color:$primary;
 }
 #wrapper {
     a.btn {
@@ -145,7 +145,7 @@ div#github_controls a#github_home {
   line-height: 1.4;
   margin-left: 0px;
   border:1px solid #e1e1e1;
-  border-left: 10px solid $brand-primary;
+  border-left: 10px solid $primary;
   &:before {
     content: open-quote;
     display: inline;
@@ -153,7 +153,7 @@ div#github_controls a#github_home {
     left: -10px;
     position: relative;
     top: 30px;
-    color: $brand-primary;
+    color: $primary;
     font-size: 3em;
   }
 }
@@ -187,11 +187,11 @@ label.control-label {
 }
 /* --------------- Text Selection -------------------*/
 ::selection {
-  background: $brand-primary; /* WebKit/Blink Browsers */
+  background: $primary; /* WebKit/Blink Browsers */
   color: #fff;
 }
 ::-moz-selection {
-  background: $brand-primary; /* Gecko Browsers */
+  background: $primary; /* Gecko Browsers */
   color: #fff;
 }
 
@@ -229,7 +229,7 @@ div#contact-thanks {
     color: $text-color;
     line-height: 1.66em;
     word-wrap: break-word;
-    @media(max-width: $screen-sm-min){
+    @include media-breakpoint-down(sm) {
         font-size: 18px;
     }
 }
@@ -243,7 +243,7 @@ div#contact-thanks {
 #wrapper ul, #wrapper ol {
     font-size: 20px;
     font-family: $font-family-sans-serif;
-    @media(max-width: $screen-sm-min){
+    @include media-breakpoint-down(sm) {
         font-size: 18px;
     }
 }
@@ -275,7 +275,7 @@ p .justified{
 }
 /* Shape Divider - Home Page */
 .row.shape-divider {
-    background-color: $brand-primary;
+    background-color: $primary;
 }
 // Not for breadcrumb / nav / footer
 .container-fluid ul { font-size:18px; }
@@ -328,7 +328,7 @@ p.sub-tag {
     width:auto;
 }
 
-@media (min-width: $screen-md) {
+@include media-breakpoint-up(md) {
     .partners-panel {
         margin-top:80px;
     }
@@ -393,7 +393,7 @@ p.sub-tag {
     border-radius: 0px;
 }
 
-@media(max-width:$screen-sm-min){
+@include media-breakpoint-down(sm) {
     .partners-panel {
         height: auto;
     }
@@ -419,7 +419,7 @@ button#mc-embedded-subscribe:hover {
 }
 
 .coloured-bp{
-    color: $brand-primary;
+    color: $primary;
     font-size:12px;
 }
 
@@ -456,7 +456,7 @@ button#mc-embedded-subscribe:hover {
 //Cognito Forms
 //Submit Button
 button#c-submit-button {
-    background-color: $brand-primary;
+    background-color: $primary;
     border: 1px solid black;
 }
 
@@ -473,7 +473,7 @@ button#c-submit-button {
 }
 
 
-@media (max-width: $screen-md-min){
+@include media-breakpoint-down(md) {
     h1#home-page-title {
         font-size: 25px;
     }
@@ -507,21 +507,21 @@ i {
     float: left;
 }
 
-@media (min-width: $screen-xs-min) {
+@include media-breakpoint-up(xs) {
     .col-sm-5ths {
         width: 20%;
         float: left;
     }
 }
 
-@media (min-width: $screen-sm-min) {
+@include media-breakpoint-up(sm) {
     .col-md-5ths {
         width: 20%;
         float: left;
     }
 }
 
-@media (min-width: $screen-md-min) {
+@include media-breakpoint-up(md) {
     .col-lg-5ths {
         width: 20%;
         float: left;
@@ -567,7 +567,7 @@ input#mce-LNAME {
 button#mc-embedded-subscribe {
     border:0;
     border-radius:0;
-    background-color: $brand-primary;
+    background-color: $primary;
     color: white;
     transition: all 200ms ease;
 }
@@ -591,7 +591,7 @@ img.img-responsive.right-aligned-image {
     margin: 30px;
 }
 
-@media(max-width:$screen-xs-min){
+@include media-breakpoint-only(xs) {
 
     /* Mobile Screens - Right Aligned Images */
     img.img-responsive.right-aligned-image.lazyloaded {
@@ -624,7 +624,7 @@ ul#tab-row {
 
 .container-fluid a:hover {
     text-decoration: none;
-    color: darken($brand-primary, 20%);
+    color: darken($primary, 20%);
 }
 
 .container-fluid ul {
@@ -687,7 +687,7 @@ blockquote:before {
 
 .container-fluid .panel-heading {
     border-radius: 0px;
-    border: 1px solid $brand-primary;
+    border: 1px solid $primary;
 }
 
 .container-fluid h3.panel-title {
@@ -725,7 +725,7 @@ ul {
 // Email Button
 .container-fluid .email {
     height: 50px;
-    background-color: $brand-primary;
+    background-color: $primary;
     width: 200px;
     line-height: 30px;
     text-align: center;
@@ -776,7 +776,7 @@ $sides: (top, bottom, left, right); // Leave this variable alone
     }
   }
 }
-@media(max-width: $screen-sm-min - 1){
+@include media-breakpoint-down(sm) {
     .text-center-mob {
         text-align:center !important;
     }
@@ -836,21 +836,21 @@ $padding-none: 0;
 
 @include make-all-paddings(xs);
 @include make-all-margins(xs);
-@media (min-width: $screen-sm-min) {
+@include media-breakpoint-up(sm) {
   @include make-all-paddings(sm);
   @include make-all-margins(sm);
 }
-@media (min-width: $screen-md-min) {
+@include media-breakpoint-up(md) {
   @include make-all-paddings(md);
   @include make-all-margins(md);
 }
-@media (min-width: $screen-lg-min) {
+@include media-breakpoint-up(lg) {
   @include make-all-paddings(lg);
   @include make-all-margins(lg);
 }
 
 span.new-post {
-    background-color: $brand-primary;
+    background-color: $primary;
     color: white;
     padding: 4px;
     border-radius: 3px;
@@ -863,7 +863,7 @@ body::-webkit-scrollbar-track {
   background-color: $navbar-inverse-bg;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: $brand-primary;
+  background-color: $primary;
 }
 span.last-modified-at {
     color: $footer-text-color;

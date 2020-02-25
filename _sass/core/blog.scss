@@ -21,7 +21,7 @@ p {
     &.post_excerpt {
         font-size: 15px;
         margin-top: 10px;
-        @media(max-width:$screen-sm-min){
+        @include media-breakpoint-down(sm) {
             font-size: 11px;
         }
     }
@@ -29,7 +29,7 @@ p {
 .blog-author-image {
     background-position: center center;
     transition: all 100ms linear;
-    @media(max-width:$screen-sm-min){
+    @include media-breakpoint-down(sm) {
         height: 50px;
         width: 50px;
     }
@@ -40,7 +40,7 @@ p {
         &:hover{
             text-decoration: none;
             & img {
-                border-color:$brand-primary;
+                border-color:$primary;
             }
         }
     }
@@ -57,7 +57,7 @@ p {
         vertical-align: middle;
         #jumbotron-text {
             small {
-                @media(min-width:$screen-sm-min){
+                @include media-breakpoint-up(sm) {
                     font-size:15px;
                 }
             }
@@ -87,7 +87,7 @@ p {
 }
 .blog-content {
     padding: 0;
-    @media(max-width: $screen-sm-min - 1){
+    @include media-breakpoint-down(sm) {
         padding-left:0px;
         padding-right: 0px;
     }
@@ -175,7 +175,7 @@ article {
                     width: 40px;
                 }
                 &:hover, &:focus  {
-                    background-color:$brand-primary;
+                    background-color:$primary;
                 }
             }
         }
@@ -189,14 +189,14 @@ article {
     .featured_blog_post {
         height: auto;
         margin: -1px;
-        border-bottom: 1px solid $gray-lighter;
+        border-bottom: 1px solid $gray-200;
         padding: 12px;
         img{
             margin-top:5px;
-            @media(max-width: $screen-md-min - 1){
+            @include media-breakpoint-down(md) {
                 padding-right: 10px;
             }
-            
+
         }
         small {
             em {
@@ -206,7 +206,7 @@ article {
     }
     .panel-primary {
         .panel-heading{
-            background-color: $brand-primary;
+            background-color: $primary;
             color: #fff;
             h3.panel-title {
                 color: $blog-panel-title-colour;
@@ -231,17 +231,17 @@ article {
         }
 
     }
-    @media(max-width: $screen-sm-min - 1){
+    @include media-breakpoint-down(sm) {
         padding-left:0px;
         padding-right: 0px;
     }
-    @media (max-width: $screen-xs-min) {
+    @include media-breakpoint-only(xs) {
         padding: 0px;
     }
-    @media(max-width: $screen-md-min - 1){
+    @include media-breakpoint-down(md) {
         margin-top: 15px;
         padding-right: 0px;
-        padding-left: 0px; 
+        padding-left: 0px;
     }
 }
 // BLOG INDEX PAGE
@@ -255,7 +255,7 @@ article {
     .post-cat {
         padding: 5px;
         margin-bottom: 5px;
-        color: $brand-primary;
+        color: $primary;
         font-weight: bold;
         display: inline-block;
         text-transform: uppercase;
@@ -276,7 +276,7 @@ article {
                 width: 100% !important;
                 object-fit: cover !important;
             }
-            @media(max-width: $screen-sm-min){
+            @include media-breakpoint-down(sm) {
                 height: auto;
             }
         }
@@ -286,7 +286,7 @@ article {
                 margin-bottom: 20px;
             }
         }
-        @media(max-width: $screen-sm-min){
+        @include media-breakpoint-down(sm) {
             margin-left: 15px;
             margin-right: 15px;
         }
@@ -312,7 +312,7 @@ article {
             display: flex;
             flex-wrap: wrap;
             height: 100%;
-            @media(max-width: $screen-sm-min){
+            @include media-breakpoint-down(sm) {
                 margin-left: 15px;
                 margin-right: 15px;
             }
@@ -321,7 +321,7 @@ article {
             }
             &:nth-child(3n+2) {
                 .blog-post-item {
-                    @media(min-width: $screen-sm-min){
+                    @include media-breakpoint-up(sm) {
                         margin-right:15px !important;
                         margin-left:0px !important;
                     }
@@ -357,7 +357,7 @@ article {
                     position: absolute;
                     top:0px;
                     opacity:.4;
-                    background-color:$brand-primary;
+                    background-color:$primary;
                 }
             }
             .blog-post-item-content {
@@ -402,14 +402,14 @@ article {
                 }
             }
         }
-       
+
     }
 }
 // Disqus Comments
 section.disqus {
     padding-right: 20px;
     margin-top: 40px;
-    @media(max-width: $screen-sm-min){
+    @include media-breakpoint-down(sm) {
         padding-right: 0px;
     }
 }

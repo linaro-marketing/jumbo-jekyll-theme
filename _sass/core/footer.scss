@@ -6,7 +6,7 @@
             color: $footer-text-color;
             font-size: 14px;
             &:hover {
-                color: $brand-primary;
+                color: $primary;
                 text-decoration: none;
                 transition: color .5s ease;
                 -moz-transition: color .5s ease;
@@ -15,21 +15,21 @@
         }
         b {
             a {
-                color: $brand-primary;
+                color: $primary;
             }
             &:hover {
-                color: $brand-primary;
+                color: $primary;
             }
         }
         h3 {
             font-size:24px;
             color: $footer-text-color;
-            @media(max-width: $screen-sm-min - 1){
+            @include media-breakpoint-down(sm) {
                 text-align: center;
             }
         }
         .footer-main {
-            
+
             background: $footer-bg-color; /* Old browsers */
             background: -moz-linear-gradient(-45deg,  darken($footer-bg-color, 5%) 0%,  $footer-bg-color 23%, lighten($footer-bg-color, 20%) 46%,  lighten($footer-bg-color, 30%) 73%, footer-bg-color 100%); /* FF3.6-15 */
             background: -webkit-linear-gradient(-45deg,  darken($footer-bg-color, 5%)  0%, $footer-bg-color 23%,lighten($footer-bg-color, 20%) 46%, lighten($footer-bg-color, 30%) 73%, $footer-bg-color 100%); /* Chrome10-25,Safari5.1-6 */
@@ -47,14 +47,14 @@
                     &:hover {
                         padding-left: 4px;
                         a {
-                            color:darken($brand-primary, 10%);
+                            color:darken($primary, 10%);
                         }
                     }
                     small.date {
                         display: block;
                     }
                 }
-                @media(max-width: $screen-sm-min - 1){
+                @include media-breakpoint-down(sm) {
                     text-align: center;
                 }
             }
@@ -67,25 +67,25 @@
                     a.email {
                         text-align: left;
                         font-size: 24px;
-                        display:inline-block; 
+                        display:inline-block;
                         background-color: transparent;
                         border: 0px;
                         margin-top:5px;
                         color: $footer-text-color;
                         width:100%;
                         &:hover{
-                            color:$brand-primary;
+                            color:$primary;
                         }
                         &:visited, &:hover, &:active, &:link {
                             text-decoration: none !important;
                             color: $footer-text-color;
                         }
-                        @media(max-width: $screen-sm-min - 1){
+                        @include media-breakpoint-down(sm) {
                             text-align: center;
                         }
                     }
                 }
-                @media(max-width: $screen-sm-min - 1){
+                @include media-breakpoint-down(sm) {
                     text-align: center;
                 }
             }
@@ -118,7 +118,7 @@
                     }
                     &:hover {
                         background-color: lighten($footer-bg-color, 30%);
-                        color: $brand-primary;
+                        color: $primary;
                     }
                 }
                 h3 {
@@ -131,12 +131,12 @@
             background-color: #1c1c1c;
             color: #FFF;
             span.coloured-bp{
-                color: $brand-primary;
+                color: $primary;
             }
             img.footer-logo {
                 height: 40px;
                 display: inline-block;
             }
-        } 
+        }
     }
 }

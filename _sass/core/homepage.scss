@@ -1,5 +1,5 @@
 /* Home Block Slider Style */
-@media only screen and (min-width: $screen-xs-min) and (max-width: $screen-sm-min) {
+@include media-breakpoint-between(xs, sm) {
     #home-block-sliders .owl-theme .owl-nav.disabled+.owl-dots {
         margin-top: 10px;
         position: relative;
@@ -11,7 +11,7 @@
     position: relative;
     top: -60px;
 }
-@media(min-width:$screen-sm-min){
+@include media-breakpoint-up(sm) {
     .row.activity-holder.center-block {
         height: auto;
     }
