@@ -60,9 +60,27 @@ a.btn.btn-primary {
 a.btn.btn-primary:hover {
     background-color:$brand-primary;
 }
+#wrapper {
+    a.btn {
+        transition: all 300ms ease;
+        border-radius: 2px;
+        &:hover {
+            transform: translateY(-2px);
+            color:#fff;
+            @extend .drop_shadow;
+        }
+    }
+}
+
 // Edit me on github buttons
 .github-edit {
     background-color: #fff;
+}
+#wrapper a[type="button"] {
+    -webkit-appearance: none;
+}
+#wrapper div#github_controls a.btn {
+    -webkit-appearance: none;
 }
 span.edit-me-on-github-text {
     font-size: 12px;
@@ -100,6 +118,11 @@ span.bottom-text {
     display: block;
     font-size: 11px;
 }
+.drop_shadow {
+    -webkit-box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
+    -moz-box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
+    box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
+}
 
 i.icon-github-circled.center-block {
     font-size: 24px;
@@ -110,7 +133,7 @@ div#github_controls a#github_home:hover {
 }
 div#github_controls a#github_home {
     background-color: #fff;
-    color: #333;    
+    color: #333;
     transition: all 250ms ease;
 }
 #wrapper blockquote{
@@ -252,7 +275,7 @@ p .justified{
 }
 /* Shape Divider - Home Page */
 .row.shape-divider {
-    background-color: $brand-primary;    
+    background-color: $brand-primary;
 }
 // Not for breadcrumb / nav / footer
 .container-fluid ul { font-size:18px; }
@@ -569,7 +592,7 @@ img.img-responsive.right-aligned-image {
 }
 
 @media(max-width:$screen-xs-min){
-    
+
     /* Mobile Screens - Right Aligned Images */
     img.img-responsive.right-aligned-image.lazyloaded {
         float: none;
@@ -579,7 +602,7 @@ img.img-responsive.right-aligned-image {
         margin-top: -9px;
         margin-bottom: -15px;
     }
-    
+
 }
 
 /* Wordpress Styles */
@@ -747,7 +770,7 @@ $sides: (top, bottom, left, right); // Leave this variable alone
     .m-#{str-slice($side, 0, 1)}-#{$space} {
       margin-#{$side}: #{$space}px !important;
     }
-  
+
     .p-#{str-slice($side, 0, 1)}-#{$space} {
       padding-#{$side}: #{$space}px !important;
     }

@@ -1,0 +1,658 @@
+backend:
+  name: github
+  repo: kylekirkby/jumbo-jekyll-theme
+  branch: master
+  accept_roles:
+    - admin
+    - editor
+publish_mode: editorial_workflow
+logo_url: https://www.linaro.org/assets/images/content/Linaro-Logo.svg
+site_url: /
+display_url: /
+show_preview_links: false
+# slug:
+#   encoding: "ascii"
+#   clean_accents: true
+#   sanitize_replacement: "_"
+media_folder: "assets/images/content"
+collections:
+  # - label: Tags
+  #   name: tags
+  #   files:
+  #     - label: Post Tags
+  #       name: post_tags
+  #       file: "_data/tags.yml"
+  #       fields:
+  #         - label: "Items"
+  #           name: "items"
+  #           widget: list
+  #           fields:
+  #             - label: "Tag Name"
+  #               name: name
+  #               widget: string
+  #             - label: "Tag SLug"
+  #               name: slug
+  #               widget: string
+  # Website Settings
+  # This section allows you to make changes to the nav, footer and other misc website settings.
+  - name: "config"
+    label: "Website Settings"
+    editor:
+      preview: false
+    files:
+      - label: "Settings"
+        name: "settings"
+        file: "_data/settings.yml"
+        fields:
+          - {label: "Favicon", name: "favicon", widget: "string", required: false, hint: "Used as the site wide favicon displayed in the web browsers tabs"}
+          - {label: "Placeholder Image", name: "placeholder", widget: "string", required: false, hint: "Placeholder image used for blog posts that have no featured image"}
+          - {label: "HTTP/2 Support", name: "http2", widget: "boolean", required: false, hint: "Toggle the use of HTTP/2 features across the entire site."}
+          - {label: "Ascii-art", name: "ascii-art", widget: "string", required: false, default: false, hint: "Optionally specify a jekyll _include/ to be included in <head> of each built site page."}
+          - {label: "Hide Last Modified", name: "hide_last_modified", widget: "boolean", required: false, hint: "Removes the last modified time of Jekyll posts. Disabled on sites using multiple GitHub repo's since the Jekyll plugin uses the .git/index"}
+          - label: "HTTP/2 Preload Resources"
+            name: "http2_resources"
+            widget: "list"
+            required: false
+            hint: "Specify a list of globally used resources to preload/prefetch"
+            identifier_field: href
+            fields:
+              - {label: Href, name: href, widget: string, required: false }
+              - {label: Format, name: rel, widget: string, required: false }
+              - {label: As, name: as, widget: string, required: false }
+              - {label: Type, name: type, widget: string, required: false }
+          - label: "Newsletter"
+            name: "newsletter"
+            widget: "object"
+            required: false
+            hint: "Toggle the output of a link to a brand newlsetter in the footer of the site. Specify a mailchimp newsletter signup url or equivalent."
+            fields:
+              - {label: Enabled, name: enabled, widget: boolean, required: false }
+              - {label: URL, name: url, widget: string, required: false }
+          - {label: "Tags Toggle", name: "tags_enabled", widget: "boolean", required: false}
+          - label: "Blog Settings"
+            name: "blog"
+            widget: "object"
+            required: false
+            fields:
+              - {label: Blog Index Filler Element, name: filler-element, widget: string, required: false, hint: "Adds a filler element to the first blog page visible (due to number issues). This is a Jekyll include."}
+              - {label: Tags Page Permalink, name: tags_page, widget: string, required: false, hint: "Specify the permalink of your tags page. "}
+              - {label: Toggle Thumbnails, name: show_thumbnails, widget: boolean, required: false, hint: "Specify the permalink of your tags page. "}
+              - {label: Avatar Placeholder, name: avatar_placeholder, widget: string, required: false, hint: "Optionally supply an alternative avatar placeholder image for authors with no profile image. "}
+              - {label: Toggle Post Read Time, name: reading_time, widget: boolean, required: false, hint: "Toggle the post read time."}
+              - {label: Toggle Comments, name: reading_time, widget: boolean, required: false, hint: "Site wide toggle for displaying Disqus comments."}
+              - label: Blog Sidebar
+                name: sidebar
+                widget: object
+                required: false
+                fields:
+                  - {label: Toggle Sidebar, name: display-on-posts, widget: boolean, required: false}
+                  - {label: Toggle Sidebar on Blog Index Pages, name: display-on-index, widget: boolean, required: false}
+                  - label: Thumbnails
+                    name: display_thumbnails
+                    widget: boolean
+                    required: false
+                  - label: Other Posts
+                    name: other-posts
+                    widget: object
+                    fields:
+                        - label: Display Other Posts
+                          name: display
+                          widget: boolean
+                          required: false
+                        - label: Other Post Count
+                          name: count
+                          widget: number
+                          required: false
+                          default: 4
+                          valueType: 'int'
+                  - label: Related Posts
+                    name: related-posts
+                    widget: object
+                    fields:
+                        - label: Display Related Posts
+                          name: display
+                          widget: boolean
+                          required: false
+                        - label: Related Post Count
+                          name: count
+                          widget: number
+                          required: false
+                          default: 4
+                          valueType: 'int'
+                  - label: Most Recent Posts
+                    name: most-recent-posts
+                    widget: object
+                    fields:
+                        - label: Display Most Recent Posts
+                          name: display
+                          widget: boolean
+                          required: false
+                        - label: Most Recent Post Count
+                          name: count
+                          widget: number
+                          required: false
+                          default: 4
+                          valueType: 'int'
+          - label: Google Analytics
+            name: google_analytics
+            widget: object
+            required: false
+            fields:
+              - label: Production Site Analytics Code
+                name: production
+                widget: string
+                required: false
+              - label: Staging Site Analytics Code
+                name: staging
+                widget: string
+                required: false
+          - label: Disqus Comments
+            name: disqus
+            widget: object
+            required: false
+            fields:
+              - label: Toggle Disqus Comments
+                name: enabled
+                widget: boolean
+                required: false
+              - label: Disqus Comments Shortname
+                name: shortname
+                widget: string
+                required: false
+          - label: GitHub Username
+            name: github_username
+            widget: string
+            required: false
+          - label: LinkedIn Username
+            name: linkedin_username
+            widget: string
+            required: false
+          - label: Facebook Username
+            name: facebook_username
+            widget: string
+            required: false
+          - label: YouTube Username
+            name: youtube_username
+            widget: string
+            required: false
+          - label: Twitter Username
+            name: twitter_username
+            widget: string
+            required: false
+          - label: Social Share Image
+            name: social_share_image
+            widget: string
+            required: false
+            hidden: true
+            default: /assets/images/social-media-image.png
+      - label: "Universal Navbar"
+        name: "universal_navbar"
+        file: "_data/universal-nav.yml"
+        fields:
+          - label: "Test field"
+            name: "test_field"
+            widget: "string"
+          - label: "Navigation Items"
+            name: "items"
+            widget: "list"
+            fields:
+                - {label: Title, name: title, widget: string}
+                - {label: Link, name: url, widget: string, required: false}
+                - {label: Active, name: active, widget: boolean, required: false}
+                - label: Sub Options
+                  name: options
+                  required: false
+                  widget: 'list'
+                  fields:
+                    - {label: Name, name: title, widget: string}
+                    - {label: Link, name: url, widget: string}
+                    - {label: Active, name: active, widget: boolean, required: false}
+      - label: "Footer"
+        name: "footer"
+        file: "_data/footer.yml"
+        fields:
+          - label: "Copyright Text"
+            name: copyright-text
+            widget: string
+            required: false
+            default: "Linaro Limited"
+          - label: "Linaro Branding"
+            name: "linaro-branding"
+            widget: boolean
+            required: false
+            default: true
+          - label: "Social Media Icons"
+            name: "social-media-icons"
+            widget: boolean
+            required: false
+            default: true
+          - label: "Company Links"
+            name: "company-links"
+            widget: list
+            required: false
+            fields:
+              - {label: Text, name: "name", widget: string, required: false}
+              - {label: Url, name: url, widget: string, required: false}
+          - label: "Middle Column"
+            name: "middle-column"
+            widget: object
+            required: false
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Latest Posts Enabled, name: latest-posts, widget: boolean, required: false, default: true}
+              - label: Items
+                name: items
+                widget: list
+                required: false
+                fields:
+                  - {label: Title, name: "name", widget: string, required: false}
+                  - {label: Url, name: "url", widget: string, required: false}
+          - label: "Last Column"
+            name: "last-column"
+            widget: object
+            required: false
+            fields:
+              - {label: Title, name: title, widget: string}
+              - label: Items
+                name: items
+                widget: list
+                required: false
+                fields:
+                  - {label: Title, name: "name", widget: string, required: false}
+                  - {label: Url, name: "url", widget: string, required: false}
+      - label: "Navigation"
+        name: "navigation"
+        file: "_data/nav.yml"
+        fields:
+          - label: "Universal Navbar"
+            name: universal-nav
+            widget: boolean
+            required: false
+            default: true
+          - label: "Navigation Search"
+            name: "search"
+            widget: object
+            fields:
+                - {label: Enabled, name: enabled, widget: boolean, required: false, default: true}
+                - {label: Label, name: label, widget: string, required: false, default: "Connect"}
+          - label: "Navigation Brand"
+            name: "brand"
+            widget: object
+            fields:
+                - {label: Text, name: text, widget: string}
+                - label: Image
+                  name: image
+                  widget: object
+                  fields:
+                    - {label: Enabled, name: enabled, widget: boolean, default: true}
+                    - {label: Name, name: name, widget: string, default: true, required: false}
+                    - {label: SVG, name: svg, widget: boolean, default: true, required: false}
+                    - {label: Path, name: path, widget: image, default: true, required: false}
+                - {label: Url, name: url, widget: string, required: false, default: /}
+          - label: "Navigation Items"
+            name: "pages"
+            widget: "list"
+            fields:
+                - {label: Name, name: title, widget: string}
+                - {label: Link, name: url, widget: string, required: false}
+                - {label: Active Paths, name: active_paths, widget: string, required: false}
+                - label: Sub Options
+                  name: options
+                  required: false
+                  widget: 'list'
+                  fields:
+                    - {label: Name, name: text, widget: string}
+                    - {label: Link, name: url, widget: string}
+  # Posts Config
+  - name: 'blog'
+    label: 'Posts'
+    folder: '_posts'
+    create: true
+    sort: "date:desc" # Default is title:asc
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: "YYYY-MM-DD hh:mm:ss"}
+      - label: "Image"
+        name: image
+        widget: object
+        required: true
+        fields:
+          - label: "Image Path"
+            name: "path"
+            widget: image
+            required: true
+          - label: "Image Alt"
+            name: "alt"
+            widget: string
+            required: false
+      - label: "Tags"
+        name: tags
+        widget: list
+        allow_add: true
+        hint: "List your tags"
+      - label: "Category"
+        name: category
+        widget: string
+        hint: "Your post category - limited to one category - multiple tags can be added however"
+      - {
+          label: 'Author',
+          name: 'author',
+          widget: 'relation',
+          collection: 'authors',
+          displayFields: [name],
+          searchFields: [name],
+          valueField: 'username'
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'authors'
+    label: 'Authors'
+    folder: '_authors/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'author' }
+      - { label: 'Name', name: 'name', widget: 'string'}
+      - { label: 'First Name', name: 'first_name', widget: 'string' }
+      - { label: 'Last Name', name: 'last_name', widget: 'string' }
+      - { label: 'Username', name: 'username', widget: 'string' }
+      - label: 'Image'
+        name: 'image_path'
+        widget: 'image'
+        required: false
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  # Pages Config
+  - label: "Pages"
+    name: "pages"
+    folder: "_pages"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      # - {label: "Layout", name: "layout", widget: "select", options: ["jumbotron-container", "flow", "default", "jumbotron"], required: false}
+      - label: "Jumbotron"
+        name: "jumbotron"
+        widget: "object"
+        fields:
+          - label: "Title"
+            name: "title"
+            required: false
+            widget: "string"
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            required: false
+          - label: "Background Image"
+            name: "background-image"
+            widget: "image"
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: "Carousel Images"
+            name: "carousel-images"
+            widget: "image"
+            required: false
+            media_library:
+              config:
+                multiple: true
+      # ***********************
+      # Flow Row Configuration
+      # ***********************
+      - label: "Flow"
+        name: "flow"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Row Type"
+            name: "row"
+            widget: "string"
+            hint: "Enter a row type to get started using the flow layout(e.g container_row, full_width_row) "
+            required: false
+          - label: "Row Style"
+            name: "style"
+            widget: "string"
+            hint: "Enter an optional style to be applied to your row."
+            required: false
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            required: false
+            hint: "Add sections to your flow row (e.g title, feature_block, buttons, block, slider)"
+            fields:
+              - {label: "Section Format", name: "format", widget: "select", multiple: false, required: false,
+              options: ['title','members', 'block','buttons','text','custom_include','slider','feature_block']}
+              - {label: "Section Style", name: "style", widget: "select", options: ['zoom', 'grayscale', 'fixed', 'block_row', 'text-center', 'text-white', ], multiple: true, hint: "Add a style to your section.", required: false}
+              - label: "Text Section Content"
+                name: "text_content"
+                widget: text
+                hint: "The text for a text section"
+                required: false
+              - label: "Blocks Section Content"
+                name: "block_section_content"
+                widget: object
+                hint: "Content for a blocks section"
+                required: false
+                fields:
+                  - label: "Block Width"
+                    name: item_width
+                    widget: select
+                    required: false
+                    options: ["3","4","6","5ths"]
+                  - label: "Blocks"
+                    name: blocks
+                    widget: list
+                    hint: "Add the content for your blocks"
+                    required: false
+                    fields:
+                      - label: "Block title"
+                        name: "title"
+                        widget: object
+                        required: false
+                        fields:
+                          - {label: "Text", name: text, widget: string, required: false}
+                          - label: "Title Size"
+                            name: "size"
+                            widget: select
+                            required: false
+                            options:
+                              - { label: "1", value: "h1" }
+                              - { label: "2", value: "h2" }
+                              - { label: "3", value: "h3" }
+                              - { label: "4", value: "h4" }
+                              - { label: "5", value: "h5" }
+                      - label: "Block URL"
+                        name: url
+                        required: false
+                        widget: string
+                        hint: "Provide a url for your block to link to"
+                      - label: "Block Background Image"
+                        name: background_image
+                        widget: image
+                        required: false
+                        hint: "Provide a background image for your block"
+                      - label: "Block Text"
+                        name: text
+                        widget: text
+                        required: false
+                        hint: "Provide text content for your block"
+                      - label: "Block Buttons"
+                        name: buttons
+                        widget: list
+                        required: false
+                        identifier_field: url
+                        fields:
+                        - {label: "Button Title", name: "title", widget: string, required: false}
+                        - {label: "Button URL", name: "url", widget: string, required: false}
+                        - {label: "Button Icon", name: "icon", required: false, widget: string, hint: "Format is fa fa-icon-name - see fontawesome 4.7 icons"}
+                        - {label: "Button Style", name: "style", widget: string, required: false, hint: "btn-primary, btn-secondary, btn-danger, btn-warning"}
+              - label: "Feature Block Section Content"
+                name: "feature_block_content"
+                widget: object
+                hint: "Feature Block Section Content"
+                required: false
+                fields:
+                  - label: Position
+                    name: "position"
+                    widget: select
+                    options: ['left','right']
+                    required: false
+                    hint: "Align your feature block media content to the left or the right."
+                  - label: Type
+                    name: "type"
+                    widget: select
+                    options: ['youtube_video','image', 'slider']
+                    hint: "Select the media type for your feature block"
+                    required: false
+                  - label: "Image Content"
+                    name: "image_content_path"
+                    widget: image
+                    hint: "Select an image for your image type feature block"
+                    required: false
+                  - label: "Video Content"
+                    name: "video_content_url"
+                    widget: string
+                    hint: "Select the youtube video url for your video feature block"
+                    required: false
+                  - label: "Slider Content"
+                    name: "slider_content"
+                    widget: object
+                    hint: "The content details of a slider section"
+                    required: false
+                    fields:
+                      - {label: "Enable Lightbox", name: lightbox_enabled, widget: boolean, required: false, hint: "Allow slider images to show in a lightbox (popup)"}
+                      - {label: "Slide Delay", name: seconds_per_slide, widget: "number", default: 4, required: false}
+                      - {label: "Enable Arrow Navigation", name: nav, widget: boolean, required: false, hint: "Toggle the arrow navigation on the slider"}
+                      - {label: "Enable Slider Dots", name: dots, widget: boolean, required: false, hint: "Toggle the slider dots"}
+                      - {label: "Mobile Items (XS)", name: "xs_items", widget: "number", default: 1, required: false}
+                      - {label: "Tablet Items (SM)", name: "sm_items", widget: "number", default: 2, required: false}
+                      - {label: "Small Desktop Items (MD)", name: "md_items", widget: "number", default: 4, required: false}
+                      - {label: "Desktop Items (LG)", name: "lg_items", widget: "number", default: 6, required: false}
+                      - label: "Slider Items"
+                        name: items
+                        widget: list
+                        required: false
+                        hint: "A list of items to display in the slider section"
+                        fields:
+                          - {label: "Image", name: image, widget: image, required: false}
+                          - {label: "Alt", name: alt, widget: string, required: false}
+                          - {label: "Title", name: title, widget: string, required: false}
+                  - label: "Slider Items Data Source"
+                    name: source
+                    widget: string
+                    required: false
+                    hint: "A name of a Jekyll data file to use for the source of items"
+              - label: "Slider Section Content"
+                name: "slider_content"
+                widget: object
+                hint: "The content details of a slider section"
+                required: false
+                fields:
+                  - {label: "Enable Lightbox", name: lightbox_enabled, widget: boolean, required: false, hint: "Allow slider images to show in a lightbox (popup)"}
+                  - {label: "Slide Delay", name: seconds_per_slide, widget: "number", default: 4, required: false}
+                  - {label: "Enable Arrow Navigation", name: nav, widget: boolean, required: false, hint: "Toggle the arrow navigation on the slider"}
+                  - {label: "Enable Slider Dots", name: dots, widget: boolean, required: false, hint: "Toggle the slider dots"}
+                  - {label: "Mobile Items (XS)", name: "xs_items", widget: "number", default: 1, required: false}
+                  - {label: "Tablet Items (SM)", name: "sm_items", widget: "number", default: 2, required: false}
+                  - {label: "Small Desktop Items (MD)", name: "md_items", widget: "number", default: 4, required: false}
+                  - {label: "Desktop Items (LG)", name: "lg_items", widget: "number", default: 6, required: false}
+                  - label: "Slider Items"
+                    name: items
+                    widget: list
+                    required: false
+                    hint: "A list of items to display in the slider section"
+                    fields:
+                      - {label: "Image", name: image, widget: image, required: false}
+                      - {label: "Alt", name: alt, widget: string, required: false}
+                      - {label: "Title", name: title, widget: string, required: false}
+                  - label: "Slider Items Data Source"
+                    name: source
+                    widget: string
+                    required: false
+                    hint: "A name of a Jekyll data file to use for the source of items"
+              - label: "Buttons Section Content"
+                name: "buttons_content"
+                widget: list
+                hint: "Content for the buttons section"
+                required: false
+                fields:
+                  - {label: "Button Title", name: "title", widget: string, required: false}
+                  - {label: "Button URL", name: "url", widget: string, required: false}
+                  - {label: "Button Icon", name: "icon", required: false, widget: string, hint: "Format is fa fa-icon-name - see fontawesome 4.7 icons"}
+                  - {label: "Button Style", name: "style", widget: string, required: false, hint: "btn-primary, btn-secondary, btn-danger, btn-warning"}
+              - label: "Members Section Content"
+                name: "members_content"
+                widget: object
+                hint: "A list of members logos to display"
+                required: false
+                fields:
+                  - label: "Member Item Width"
+                    name: item_width
+                    widget: select
+                    required: false
+                    options: ["3","4","6","5ths"]
+                  - label: "Members Jekyll Data File Source"
+                    name: item_width
+                    widget: string
+                    required: false
+                    hint: "Advanced: Use a Jekyll Data file for the source of the members"
+                  - label: "Members"
+                    widget: list
+                    name: "items"
+                    hint: "List of members"
+                    required: false
+                    fields:
+                      - {label: "Member Name", name: "name", widget: string, required: false}
+                      - label: "Member Image"
+                        name: "image"
+                        widget: object
+                        required: false
+                        fields:
+                          - {label: "Image", name: "path", widget: image, required: false, hint: "Full path to your image"}
+                          - {label: "Image Alt", name: "alt", widget: string, required: false, hint: "Alt tag for your image"}
+                      - label: "Member URL"
+                        name: "url"
+                        widget: string
+                        required: false
+                        hint: "URL for the member/company website"
+              - label: "Title Section Content"
+                name: "title_content"
+                widget: object
+                hint: "The title for a title section"
+                required: false
+                fields:
+                  - {label: "Text", name: text, required: false, widget: string, hint: "Text for your title"}
+                  - label: "Title Size"
+                    name: "size"
+                    widget: select
+                    required: false
+                    options:
+                      - { label: "1", value: "h1" }
+                      - { label: "2", value: "h2" }
+                      - { label: "3", value: "h3" }
+                      - { label: "4", value: "h4" }
+                      - { label: "5", value: "h5" }
+              - label: "Source"
+                name: "source"
+                widget: "string"
+                required: false
+                hint: "The name of the jekyll include to use for custom include sections."
+      - label: "Image"
+        name: "image"
+        widget: "object"
+        required: false
+        fields:
+          - label: "Image Path"
+            name: "path"
+            widget: "image"
+            required: false
+            default: "/assets/images/social-media-image.png"
+          - label: "Image Alt"
+            name: "alt"
+            widget: "string"
+            required: false
+      - {label: "Body", name: "body", widget: "markdown"}

@@ -1,0 +1,7 @@
+<div class="row {% if include.object.style %}{{include.object.style}}{% endif %}
+{% if include.object.background_image %}background_image_row overlay{% endif %}" 
+{% if include.object.background_image %}style="background-image: url({{include.object.background_image}})"{% endif %}>
+    <div class="container">
+        {% include flow_inner.html sections=include.object.sections %}
+    </div>
+</div>

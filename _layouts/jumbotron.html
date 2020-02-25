@@ -9,8 +9,4 @@ layout: base
 {% else %}
     {% include breadcrumb.html %}
 {% endif %}
-{% if page.flow %}
-    {% include flow.html flow=page.flow %}
-{% else %}
-    {{content}}
-{% endif %}
+{{content}}

@@ -1,19 +1,15 @@
 # Copyright text to be displayed at the very bottom of the footer
 copyright-text: Jumbo Jekyll Theme
 # Set this to false if you do not want the Linaro logo in the footer.
-linaro-branding: true
+linaro-branding: false
 # Social Media Icons Row
-social-media-icons: true
+social-media-icons: false
 # Display the contact details section
-display-contact-details: true
+display-contact-details: false
 # These links are displayed at the very bottom of the footer.
 company-links:
-    - name: Legal
-      url: /legal/
-    - name: Contact
-      url: /contact/
-    - name: Press
-      url: /press/
+    - name: GitHub
+      url: https://github.com/linaro-marketing/jumbo-jekyll-theme
 second-column:
     title: Latest News & Blogs
     latest-posts: true
@@ -33,13 +29,5 @@ second-column:
 third-column:
     title: Other Projects
     items:
-      - name: 96Boards
-        url: https://www.96boards.org
-      - name: Linaro Connect
-        url: https://connect.linaro.org
-      - name: DeviceTree
-        url: https://www.devicetree.org
-      - name: OP-TEE
-        url: https://www.op-tee.org
-      - name: Linaro Developer Cloud
-        url: https://www.linaro.cloud
+        - name: Another project
+          url: https://github.com

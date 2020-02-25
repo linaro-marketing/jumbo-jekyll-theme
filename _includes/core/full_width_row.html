@@ -1,0 +1,5 @@
+<div class="row {% if include.object.style %}{{include.object.style}}{% endif %}
+{% if include.object.background_image %}background_image_row overlay{% endif %}" 
+{% if include.object.background_image %}style="background-image: url({{include.object.background_image}}), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));"{% endif %}>
+    {% include flow_inner.html sections=include.object.sections %}
+</div>

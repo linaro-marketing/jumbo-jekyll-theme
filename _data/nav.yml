@@ -1,72 +1,17 @@
 # Search Config
 search:
-    enabled: true
-    label: Linaro
-universal-nav: false
+    enabled: false
+    label: JJT
+universal-nav: true
 # Nav Brand Config
 brand:
     text: Jumbo Jekyll Theme
-    image: 
-        enabled: false
-        name: Linaro-Logo.svg
     url: /
 # Navigation pages
 pages:
-    
-    - title: Jekyll
-      active_paths:
-        - /new/
-      options:
-          # - text: Plugins
-          #   options:
-          #       - text: Jekyll Assets
-          #         url: /jekyll/plugins/assets/
-          #       - text: Jekyll Assets
-          #         url: /jekyll/plugins/assets/
-          #       - text: Jekyll Assets
-          #         url: /jekyll/plugins/assets/
-          - text: Includes
-            url: /jekyll/includes/
-    - title: Layouts
-      options:
-          - text: Default
-            url: /layouts/default/
-          # - text: Jumbotron
-          #   options:
-          #     - text: Overview
-          #       url: /layouts/jumbotron/
-          #     - text: Carousel Header
-          #       url: /layouts/jumbotron/carousel-header/
-          #     - text: Video Header
-          #       url: /layouts/jumbotron/video-header/
-          #     - text: Background Image Header
-          #       url: /layouts/jumbotron/background-image-header/
-          #     - text: Slider Header
-          #       url: /layouts/jumbotron/slider-header/
-
-
-    - title: About
-      options:
-          - text: Overview
-            url: /about/
-          - text: Collaborate
-            url: /collaborate/
-          - text: Jekyll
-    
-    - title: CSS
-      options:
-          - text: Bootstrap
-            url: /css/bootstrap/ 
-    - title: JS
-      options:
-          - text: JQuery
-            url: /js/jquery/
-          - text: Bootstrap
-            url: /js/bootstrap/
-            
+    - title: Flow Example
+      url: /flow/
     - title: Blog
       url: /blog/
       active_paths:
-        - /new/
-    - title: Download
-      url: /download/
+        - /blog/

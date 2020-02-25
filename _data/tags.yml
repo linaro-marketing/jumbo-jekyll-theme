@@ -1,0 +1,11 @@
+items:
+  - name: Productivity
+    slug: productivity
+  - name: News
+    slug: news
+  - name: Blog
+    slug: blog
+  - name: Case Study
+    slug: case-study
+  - name: Update
+    slug: update
