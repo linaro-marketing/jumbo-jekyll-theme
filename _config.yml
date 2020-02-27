@@ -16,6 +16,7 @@ safe: false
 exclude:
   - Gemfile
   - Gemfile.lock
+  - .asset_pipeline
   - .gitignore
   - .git
   - .asset-cache
