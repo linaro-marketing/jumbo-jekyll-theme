@@ -15,75 +15,82 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="navbar-nav ml-auto">
-
-
-<li class="main dropdown menu
-                            {% if section.active_paths %}
-                                {% for active_path in section.active_paths %}
-                                    {% if current_page_url contains active_path %}
-                                        active
-                                        {% break %}
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
-                            {% for menu-item in section.options %}
-                                {% if menu-item.options %}
-                                    {% for sub-item in menu-item.options %}
-                                        {% if current_page_url contains sub-item.url or sub-item.url == current_page_url %}
-                                            {% unless sub-item.url contains "http" %}
-                                                active
-                                                {% break %}
-                                            {% endunless %}
-                                        {% endif %}
-                                    {% endfor %}
-                                {% elsif current_page_url contains menu-item.url or menu-item.url == current_page_url %}
-                                    {% unless menu-item.url contains "http" %}
-                                        active
-                                        {% break %}
-                                    {% endunless %}
-                                {% endif %}
-                            {% endfor %} ">
-                          <a {% if section.url %}href="{{section.url}}"{% endif %} class="main-anchor dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                              {{section.title}} <span class="caret"></span>
-                          </a>
-                          <ul class="dropdown-menu menu">
-                              {% for menu_option in section.options %}
-                                  {% if menu_option.options %}
-                                  <li class="dropdown-submenu sub-menu {% if section.left %} pull-left {% endif %}">
-                                    <a tabindex="-1" {% if menu_option.url %}href="{{menu_option.url}}"{% endif %} >{{menu_option.text}}</a>
-                                    <ul class="dropdown-menu sub-menu">
-                                    {% for sub-option in menu_option.options %}
-                                        {% if sub-option.options %}
-                                        <li class="dropdown-submenu">
-                                          <a {% if sub-option.url %}href="{{sub-option.url}}"{% endif %}>{{sub-option.text}}</a>
-                                          <ul class="dropdown-menu">
-                                          {% for sub-sub-option in sub-option.options %}
-                                              <li><a href="{{sub-sub-option.url}}">{{sub-sub-option.text}}</a></li>
-                                           {% endfor %}
-                                          </ul>
-                                        </li>
-                                        {% else %}
-                                        <li><a href="{{sub-option.url}}">{{sub-option.text}}</a></li>
-                                        {% endif %}
-                                    {% endfor %}
-                                      </ul>
-                                    </li>
-                                  {% else %}
-                                      <li>
-                                          <a target="{% if menu_option.external %}_blank{% else %}_self{% endif %}" href="{{menu_option.url}}" class="dropdown-item " title="{{menu_option.txt}}">{{menu_option.text}} {% if menu_option.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}</a>
-                                      </li>
-                                  {% endif %}
-                              {% endfor %}
-                          </ul>
-                        </li>
-
-
-
-
-
                 {% for section in site.data.nav.pages %}
                     {% if section.options %}
+                        {% assign active = "" %}
+                        {% if section.active_paths %}
+                            {% for active_path in section.active_paths %}
+                                {% if current_page_url contains active_path %}
+                                        {% assign active = "active" %}
+                                    {% break %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        {% for menu-item in section.options %}
+                            {% if menu-item.options %}
+                                {% for sub-item in menu-item.options %}
+                                    {% if current_page_url contains sub-item.url or sub-item.url == current_page_url %}
+                                        {% unless sub-item.url contains "http" %}
+                                            {% assign active = "active" %}
+                                            {% break %}
+                                        {% endunless %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% elsif current_page_url contains menu-item.url or menu-item.url == current_page_url %}
+                                {% unless menu-item.url contains "http" %}
+                                    {% assign active = "active" %}
+                                    {% break %}
+                                {% endunless %}
+                            {% endif %}
+                        {% endfor %}
 
+                        <li class="nav-item dropdown {{active}}">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-{{forloop.index}}" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                {{section.title}}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-{{forloop.index}}">
+
+                                {% for menu_option in section.options %}
+                                    {% if menu_option.options %}
+                                    <li class="dropdown-submenu sub-menu {% if section.left %} pull-left {% endif %}">
+                                        <a tabindex="-1" {% if menu_option.url %}href="{{menu_option.url}}"{% endif %} >{{menu_option.text}}</a>
+                                        <ul class="dropdown-menu sub-menu">
+                                        {% for sub-option in menu_option.options %}
+                                            {% if sub-option.options %}
+                                            <li class="dropdown-submenu">
+                                            <a {% if sub-option.url %}href="{{sub-option.url}}"{% endif %}>{{sub-option.text}}</a>
+                                            <ul class="dropdown-menu">
+                                            {% for sub-sub-option in sub-option.options %}
+                                                <li><a href="{{sub-sub-option.url}}">{{sub-sub-option.text}}</a></li>
+                                            {% endfor %}
+                                            </ul>
+                                            </li>
+                                            {% else %}
+                                            <li><a href="{{sub-option.url}}">{{sub-option.text}}</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+                                        </ul>
+                                        </li>
+                                    {% else %}
+                                        <li class="dropdown-item">
+                                            <a href="{{menu_option.url}}">
+                                            {{menu_option.text}}
+                                            {% if menu_option.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+
+
+
+
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </ul>
+                        </li>
                     {% else %}
                             {% assign active = "" %}
                             {% if section.url == current_page_url or current_page_url contains section.url %}
@@ -101,18 +108,6 @@
                         </li>
                     {% endif %}
                 {% endfor %}
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
                 {% if site.data.nav.search.enabled %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -133,8 +128,7 @@
         </div>
     </div>
 </nav>
-<nav class="navbar-inverse navbar-static" >
-        <!-- NAVBAR HEADER-->
+<!-- <nav class="navbar-inverse navbar-static" >
          <div class="navbar-header">
              <button for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse"
               data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
@@ -144,58 +138,8 @@
                <span class="icon-bar bottom-bar"></span>
              </button>
           </div>
-         <!-- NAVBAR COLLAPSE-->
           <div class="collapse navbar-collapse" id="navbar-collapse" role="navigation">
               <ul class="nav navbar-nav navbar-right" id="navbar-buttons">
-                {% for section in site.data.nav.pages %}
-                    {% if section.options %}
-
-                    {% else %}
-                        <li class="main {% if section.url == current_page_url or current_page_url contains section.url %}active{% elsif section.active_paths %}
-                                {% for active_path in section.active_paths %}
-                                    {% if current_page_url contains active_path %}
-                                        active
-                                        {% break %}
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}">
-                            <a class="main-anchor" href="{{section.url}}" title="{{section.title}}">{{section.title}}</a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-                {% if site.data.nav.search.enabled %}
-                    <li id="search-menu-item">
-                        <a href="#search" class="dropdown-toggle" id="search_icon">
-                             <i class="glyphicon glyphicon-search"></i>
-                        </a>
-                    </li>
-                {% endif %}
             </ul>
-    {% if site.data.nav.search.enabled %}
-        <div id="search_bar">
-            <form class="form-inline" action="/search/" method="GET" target="_self" id="search_form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                        <!--Reset-->
-                        <button type="reset" class="btn btn-default" id="search_close">
-                            <span class="glyphicon glyphicon-remove">
-                                <span class="sr-only">Close</span>
-                            </span>
-                        </button>
-                    </span>
-                    <span class="input-group-btn">
-                        <!--Search-->
-                        <button type="submit" class="btn btn-default" id="search_search">
-                            <span class="glyphicon glyphicon-search">
-                                <span class="sr-only">Close</span>
-                            </span>
-                        </button>
-                    </span>
-                    <input type="hidden" name="fields.label" value="{{ site.data.settings.search-label }}">
-                </div>
-            </form>
-        </div>
-    {% endif %}
   </div>
-</nav>
+</nav> -->
