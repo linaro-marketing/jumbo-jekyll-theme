@@ -1,7 +1,6 @@
 ---
 layout: base
-js-package: blog
-css-package: blog
+css_package: blog
 ---
 <div class="row overlay background-image {% if page.image.background-class %}{{page.image.background-class}}{% endif %}" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% if page.image.path %}{{page.image.path}}{% else %}{{page.image}}{% endif %}');"> <!--Row -->
     <div id="jumbotron-content" class="flex-container">
@@ -19,7 +18,7 @@ css-package: blog
             <small class="blog-date text-center">
                 <em>{{page.date |  date: "%A, %B %-d, %Y"}}</em>
             </small>
-            {% include read_time.html %}
+            {% include blog/read_time.html %}
         </div>
     </div>
 </div>
@@ -28,12 +27,12 @@ css-package: blog
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 blog-content">
             <article class="post-content">
                 {{ content }}
-                {% include post-series.html %}
+                {% include blog/post_series.html %}
             </article>
-            {% include disqus-comments.html %}
+            {% include blog/disqus_comments.html %}
         </div>
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 no-padding blog-sidebar ">
-            {% include_cached post-sidebar.html %}
+            {% include_cached blog/post_sidebar.html %}
         </div>
     </div>
 </div>

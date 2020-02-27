@@ -2,12 +2,12 @@
 layout: base
 ---
 {% if page.jumbotron.carousel-images %}
-    {% include carousel-header.html images=page.jumbotron.carousel-images %}
-    {% include jumbotron.html %}
+    {% include components/carousel_header.html images=page.jumbotron.carousel-images %}
+    {% include components/jumbotron.html %}
 {% elsif page.jumbotron %}
-    {% include jumbotron.html %}
+    {% include components/jumbotron.html %}
 {% else %}
-    {% include breadcrumb.html %}
+    {% include components/breadcrumb.html %}
 {% endif %}
 <div class="container-fluid" id="flow_wrapper">
     {% if page.flow %}
@@ -19,9 +19,9 @@ layout: base
                     </div>
                 </div>
             {% elsif each.row == "container_row" %}
-                {% include core/container_row.html object=each %}
+                {% include flow/container_row.html object=each %}
             {% elsif each.row == "full_width_row" %}
-                {% include core/full_width_row.html object=each %}
+                {% include flow/full_width_row.html object=each %}
             {% elsif each.row == "custom_include_row" %}
                 {% include {{each.source}} %}
             {% endif %}
