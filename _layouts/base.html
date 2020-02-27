@@ -6,11 +6,9 @@
     <body>
         <div id="wrapper" class="main">
             {% include_cached nav.html pageUrl=page.url %}
-            <div class="container-fluid">
-                {{content}}
-                {% include_cached github-edit.html pagePath=page.path pagePermalink=page.permalink %}
-                {% include_cached footer.html %}
-            </div>
+            {{content}}
+            {% include_cached github-edit.html pagePath=page.path pagePermalink=page.permalink %}
+            {% include_cached footer.html %}
         </div>
         {% include javascript.html %}
     </body>
