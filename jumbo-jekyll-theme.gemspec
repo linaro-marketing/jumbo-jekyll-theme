@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
     # Generate a sitemap at sitemap.xml
     spec.add_runtime_dependency "jekyll-sitemap"
     # JS Bundler / Compression
-    spec.add_runtime_dependency 'japr'
+    spec.add_runtime_dependency 'japr', '0.4.2'
     # Jekyll Tidy - HTML minfier
     spec.add_runtime_dependency 'jekyll-tidy'
     # Blog/Collection pagination
