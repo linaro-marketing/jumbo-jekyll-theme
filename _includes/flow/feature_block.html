@@ -4,19 +4,11 @@
             {% if include.object.type == "image" %}
                 {% assign image_path = include.object.image_content_path | remove_first: '/' %}
                 {% assign full_path = include.object.image_content_path %}
-                {% responsive_image_block %}
-                template: _includes/thumbnail_image.html
-                path: {{ image_path }}
-                fullpath: {{ full_path }}
-                {% if member.alt %}
-                title: {{ member.alt | slugify: "ascii"}}
-                alt: {{ member.alt | slugify: "ascii"}}
-                {% endif %}
-                {% endresponsive_image_block %}
+                <!--TODO picture-->
             {% elsif include.object.type == "slider" %}
-                {% include core/slider.html object=include.object.slider_content %}
+                {% include flow/slider.html object=include.object.slider_content %}
             {% elsif include.object.type == "youtube_video" %}
-                {% include core/youtube_video_embed.html object=include.object.video_content_url %}
+                {% include flow/youtube_video_embed.html object=include.object.video_content_url %}
             {% else %}
                 <p>Please verify the feature_block content "type" is correct</p>
             {% endif %}
@@ -36,7 +28,7 @@
                 {{include.object.text | markdownify}}
             {% endif %}
             {% if include.object.buttons %}
-                {% include core/buttons.html object=include.object.buttons %}
+                {% include flow/buttons.html object=include.object.buttons %}
             {% endif %}
         </div>
     </div>

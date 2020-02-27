@@ -16,15 +16,7 @@
     {% assign image_path = member.image.path | remove_first: '/' %}
     {% assign full_path = member.image.path %}
     <div class="col-xs-6 col-sm-{{include.object.members_content.item_width}}">
-        {% responsive_image_block %}
-        template: _includes/thumbnail_image.html
-        path: {{ image_path }}
-        fullpath: {{ full_path }}
-        {% if member.alt %}
-        title: {{ member.alt | slugify: "ascii"}}
-        alt: {{ member.alt | slugify: "ascii"}}
-        {% endif %}
-        {% endresponsive_image_block %}
+        <!--TODO picture-->
     </div>
     {% endif %}
     {% if member.url %}</a>{% endif %}

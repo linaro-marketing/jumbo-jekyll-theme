@@ -1,19 +1,19 @@
 {% for section in include.sections %}
     {% if section.format == "title" %}
-        {% include core/title.html object=section.title_content %}
+        {% include flow/title.html object=section.title_content %}
     {% elsif section.format == "members" %}
-        {% include core/members-section.html object=section %}
+        {% include flow/members-section.html object=section %}
     {% elsif section.format == "block" %}
-        {% include core/blocks.html object=section %}
+        {% include flow/blocks.html object=section %}
     {% elsif section.format == "buttons" %}
-        {% include core/buttons.html object=section.buttons_content style=section.style %}
+        {% include flow/buttons.html object=section.buttons_content style=section.style %}
     {% elsif section.format == "text" %}
-        {% include core/text.html object=section %}
+        {% include flow/text.html object=section %}
     {% elsif section.format == "custom_include" %}
         {% include {{section.source}} object=section %}
     {% elsif section.format == "slider" %}
-        {% include core/slider_row.html object=section.slider_content %}
+        {% include flow/slider_row.html object=section.slider_content %}
     {% elsif section.format == "feature_block" %}
-        {% include core/feature_block.html object=section.feature_block_content %}
+        {% include flow/feature_block.html object=section.feature_block_content %}
     {% endif %}
 {% endfor %}

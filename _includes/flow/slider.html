@@ -17,15 +17,7 @@
             {% if item.image %}
                 {% capture image_path %}{{item.image | remove_first: "/" }}{% endcapture %}
                 {% capture full_path %}{{item.image}}{% endcapture %}
-                {% responsive_image_block %}
-                template: _includes/thumbnail_image.html
-                path: {{ image_path }}
-                fullpath: {{ full_path }}
-                {% if item.title %}
-                title: {{ item.title | slugify: "ascii"}}
-                alt: {{ item.title | slugify: "ascii"}}
-                {% endif %}
-                {% endresponsive_image_block %}
+                <!--TODO picture-->
             {% endif %}
         </div>
         {% if include.object.lightbox_enabled %}</a>{% endif %}

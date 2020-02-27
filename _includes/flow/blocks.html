@@ -14,13 +14,13 @@
                     {% endif %}
                 {% endif %}
                 {% if block.title %}
-                    {% include core/title.html object=block.title %}
+                    {% include flow/title.html object=block.title %}
                 {% endif %}
                 {% if block.text_content %}
-                    {% include core/text.html object=block %}
+                    {% include flow/text.html object=block %}
                 {% endif %}
                 {% if block.buttons %}
-                    {% include core/buttons.html object=block.buttons %}
+                    {% include flow/buttons.html object=block.buttons %}
                 {% endif %}
             </div>
             {% if block.url %}</a>{% endif%}

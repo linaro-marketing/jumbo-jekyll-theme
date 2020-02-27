@@ -201,7 +201,7 @@ flow:
             size: h2
             text: Custom Include Section
         - format: custom_include
-          source: custom_include.html
+          source: examples/custom_include.html
     - row: full_width_row
       style: fixed block_row
       sections:
@@ -464,7 +464,6 @@ flow:
             sm_items: 3
             md_items: 6
             lg_items: 9
-            source: example-carousel-data-source
     - row: custom_include_row
-      source: custom_include_row.html
+      source: examples/custom_include_row.html
 ---

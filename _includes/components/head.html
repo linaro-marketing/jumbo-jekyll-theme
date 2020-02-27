@@ -7,13 +7,13 @@
             {{site.title}}
         {% endif %}
     </title>
-    {% include css.html %}
+    {% include components/css.html %}
     <link rel="icon" href="{{site.data.settings.favicon}}" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% include_cached google-analytics.html %}
+    {% include_cached components/google_analytics.html %}
     {% if page.keywords %}
         <meta name="keywords" content="{{page.keywords}}">
     {% endif %}
     {% seo title=false %}
-    {% include_cached schema.html is_post=page.is_post included_page=page %}
+    {% include_cached components/schema.html is_post=page.is_post included_page=page %}
 </head>
