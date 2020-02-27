@@ -7,7 +7,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                {% for item in site.data.universal-nav.items %}
+                {% for item in site.data.universal_nav.items %}
                     {% if item.options %}
                         <li class="nav-item dropdown {% for project-site in item.options %}{% if project-site.active %}active{% break %}{% endif %}{% endfor %}">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
