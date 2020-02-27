@@ -2,7 +2,7 @@
 search:
     enabled: true
     label: JJT
-universal-nav: true
+universal_nav: true
 # Nav Brand Config
 brand:
     text: Jumbo Jekyll Theme
