@@ -1,16 +1,15 @@
 ---
 layout: base
 title: Blog
-css-package: blog
-js-package: blog
+css_package: blog
 ---
 <div class="row" id="content-container">
     <div class="container">
-        {% include display-blog-posts.html %}
+        {% include blog/display_blog_posts.html %}
         {% if page.news %}
-            {% include pagination.html path="/news/:num/"%}
+            {% include blog/pagination.html path="/news/:num/"%}
         {% else %}
-            {% include pagination.html path="/blog/:num/"%}
+            {% include blog/pagination.html path="/blog/:num/"%}
         {% endif %}
     </div>
 </div>

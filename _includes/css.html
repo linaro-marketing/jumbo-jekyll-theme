@@ -1,9 +1,0 @@
-{% if include.pageCSS %}
-    {% capture css-package %}/assets/css/main-{{include.pageCSS}}.css{% endcapture %}
-    <link rel="stylesheet" href="{{ css-package | relative_url }}">
-{% elsif include.layoutCSS %}
-    {% capture css-package %}/assets/css/main-{{include.layoutCSS}}.css{% endcapture %}
-    <link rel="stylesheet" href="{{ css-package | relative_url }}">
-{% else %}
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-{% endif %}

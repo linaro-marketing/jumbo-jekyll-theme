@@ -1,6 +1,5 @@
-{% if include.lightbox_disabled %}
-![{{include.alt}}](data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==){:class="img-responsive lazyload {% if include.class %}{{include.class}}{% endif %}" data-src="{% asset_path  '{{include.name}}'  %}"}
+{% if include.path %}
+{% picture blog_image {{include.path | remove_first: "/assets/images/" }} %}
 {% else %}
-[![{{include.alt}}](data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==){:class="img-responsive lazyload {% if include.class %}{{include.class}}{% endif %}" data-src="{% asset_path '{{include.name}}' %}"}]({% if include.url %}{{include.url}}{% elsif include.lightbox_disabled %}{% else %}{% asset_path "{{include.name}}"  %}{% endif %}){% if include.lightbox_disabled %}{% else %}{% if include.url %}{% else %}{: data-featherlight="{% asset_path '{{include.name}}' %}" data-title="{{include.alt}}"}{% endif %}{% endif %}
+Image path not specified...
 {% endif %}
-

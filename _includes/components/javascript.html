@@ -1,0 +1,10 @@
+{% include js_bundles/vendor.html %}
+{% if page.js-package %}
+    {% capture js-package %}js_bundles/{{page.js-package}}.html{% endcapture %}
+    {% include {{js-package}} %}
+{% elsif layout.js-package %}
+    {% capture js-package %}js_bundles/{{layout.js-package}}.html{% endcapture %}
+    {% include {{js-package}} %}
+{% else %}
+    {% include js_bundles/app.html %}
+{% endif %}

@@ -2,35 +2,35 @@
 layout: base
 ---
 {% if page.jumbotron.carousel-images %}
-    {% include carousel-header.html images=page.jumbotron.carousel-images %}
-    {% include jumbotron.html %}
+    {% include components/carousel_header.html images=page.jumbotron.carousel-images %}
+    {% include components/jumbotron.html %}
 {% elsif page.jumbotron %}
-    {% include jumbotron.html %}
+    {% include components/jumbotron.html %}
 {% else %}
-    {% include breadcrumb.html %}
+    {% include components/breadcrumb.html %}
 {% endif %}
-{% if page.flow %}
-<div id="flow_wrapper">
-    {% for each in page.flow %}
-        {% if each.row == "main_content_row" %}
-            <div class="row" id="main_content">
-                <div class="container">
-                    {{content}}
+<div class="container-fluid" id="flow_wrapper">
+    {% if page.flow %}
+        {% for each in page.flow %}
+            {% if each.row == "main_content_row" %}
+                <div class="row" id="main_content">
+                    <div class="container">
+                        {{content}}
+                    </div>
                 </div>
-            </div>
-        {% elsif each.row == "container_row" %}
-            {% include core/container_row.html object=each %}
-        {% elsif each.row == "full_width_row" %}
-            {% include core/full_width_row.html object=each %}
-        {% elsif each.row == "custom_include_row" %}
-            {% include {{each.source}} %}
-        {% endif %}
-    {% endfor %}
-</div>
-{% else %}
+            {% elsif each.row == "container_row" %}
+                {% include flow/container_row.html object=each %}
+            {% elsif each.row == "full_width_row" %}
+                {% include flow/full_width_row.html object=each %}
+            {% elsif each.row == "custom_include_row" %}
+                {% include {{each.source}} %}
+            {% endif %}
+        {% endfor %}
+    {% else %}
     <div class="row" id="content-container">
         <div class="container">
             {{content}}
         </div>
     </div>
-{% endif %}
+    {% endif %}
+</div>

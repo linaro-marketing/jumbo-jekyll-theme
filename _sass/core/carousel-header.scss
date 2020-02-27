@@ -84,7 +84,7 @@ div#jumbotron {
     position: relative;
     background: none;
 }
-@media (max-width: $screen-sm-min){
+@include media-breakpoint-down(sm) {
     #jumbotron {
         font-size: 32px;
     }

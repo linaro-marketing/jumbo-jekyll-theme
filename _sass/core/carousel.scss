@@ -123,7 +123,7 @@ a.right.carousel-control{
 
 /* Responsive CSS for Homepage */
 
-@media only screen and (max-width: $screen-xs-min) {
+@include media-breakpoint-only(xs) {
     .hero-banner {
       padding-top: 0px;
       min-height: auto;
@@ -153,8 +153,8 @@ a.right.carousel-control{
     padding-bottom: 10px;
     padding-top: 10px;
     }
-}  
-    
+}
+
 .hero-banner {
     padding-top: 0px;
     min-height: auto;
@@ -190,7 +190,7 @@ a.right.carousel-control{
     margin-bottom: 20px;
 }
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
-    background-color: $brand-primary !important;
+    background-color: $primary !important;
     transition: all 1s ease;
 }
 
@@ -227,7 +227,7 @@ a.right.carousel-control{
 }
 .activity-block a:hover{
     text-decoration: none;
-    color: $brand-primary;
+    color: $primary;
     transition: all 1s ease;
 }
 
@@ -241,12 +241,12 @@ a.right.carousel-control{
 .activity-holder p {
     height: 99px;
 }
-@media (min-width: $screen-sm-min) {
+@include media-breakpoint-up(sm) {
     .row .activity-holder{
         height:529.44px;
     }
 }
-@media (max-width: $screen-sm-min) {
+@include media-breakpoint-down(sm) {
     .row .activity-holder{
         height:auto;
     }
@@ -309,4 +309,3 @@ button.owl-dot {
     border: none;
     outline: none;
 }
-

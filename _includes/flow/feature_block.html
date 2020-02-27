@@ -1,0 +1,35 @@
+<div class="col-xs-12 feature_block">
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 block__image {% if include.object.position == "right" %}col-sm-push-5{% endif %}">
+            {% if include.object.type == "image" %}
+                {% assign image_path = include.object.image_content_path | remove_first: '/' %}
+                {% assign full_path = include.object.image_content_path %}
+                <!--TODO picture-->
+            {% elsif include.object.type == "slider" %}
+                {% include flow/slider.html object=include.object.slider_content %}
+            {% elsif include.object.type == "youtube_video" %}
+                {% include flow/youtube_video_embed.html object=include.object.video_content_url %}
+            {% else %}
+                <p>Please verify the feature_block content "type" is correct</p>
+            {% endif %}
+        </div>
+        <div class="col-xs-12 col-sm-5 block__text {% if include.object.position == "right" %}col-sm-pull-7{% endif %}">
+            {% if include.object.title %}
+                <h2>{{include.object.title}}</h2>
+            {% endif %}
+            {% if include.object.highlight-text %}
+                <div class="font-weight-bold">
+                    {{include.object.highlight-text | markdownify }}
+                </div>
+            {% endif %}
+            {% if include.object.text == "page_content" %}
+                {{page.content | markdownify }}
+            {% else %}
+                {{include.object.text | markdownify}}
+            {% endif %}
+            {% if include.object.buttons %}
+                {% include flow/buttons.html object=include.object.buttons %}
+            {% endif %}
+        </div>
+    </div>
+</div>
