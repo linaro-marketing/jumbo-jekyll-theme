@@ -166,8 +166,44 @@ $(document).ready(function() {
     navbar();
   });
 
-  // Initialise dropdowns
-  $(".dropdown-toggle").dropdown();
+  // Multi-level dropdowns
+  $(".navbar .dropdown-item").on("click", function(e) {
+    var $el = $(this).children(".dropdown-toggle");
+    var $parent = $el.offsetParent(".dropdown-menu");
+    $(this)
+      .parent("li")
+      .toggleClass("open");
+
+    if (!$parent.parent().hasClass("navbar-nav")) {
+      if ($parent.hasClass("show")) {
+        $parent.removeClass("show");
+        $el.next().removeClass("show");
+        $el.next().css({ top: -999, left: -999 });
+      } else {
+        $parent
+          .parent()
+          .find(".show")
+          .removeClass("show");
+        $parent.addClass("show");
+        $el.next().addClass("show");
+        $el
+          .next()
+          .css({ top: $el[0].offsetTop, left: $parent.outerWidth() - 4 });
+      }
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  });
+
+  $(".navbar .dropdown").on("hidden.bs.dropdown", function() {
+    $(this)
+      .find("li.dropdown")
+      .removeClass("show open");
+    $(this)
+      .find("ul.dropdown-menu")
+      .removeClass("show open");
+  });
+
   // Reset forms when bootstrap modal closes.
   $(".modal").on("hidden.bs.modal", function() {
     $(this)
@@ -182,29 +218,6 @@ $(document).ready(function() {
   if (navigator.userAgent.match(/.*CPU.*OS 7_\d/i)) {
     $("html").addClass("ios7");
   }
-  // Dropdown menu JS
-  $("nav li.dropdown.main > ul.dropdown-menu [data-toggle=dropdown]").on(
-    "click",
-    function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      $(this)
-        .parent()
-        .addClass("open");
-      var menu = $(this)
-        .parent()
-        .find("ul");
-      var menupos = menu.offset();
-      if (menupos.left + menu.width() + 30 > $(window).width()) {
-        var newpos = -menu.width();
-      } else {
-        var newpos = $(this)
-          .parent()
-          .width();
-      }
-      menu.css({ left: newpos });
-    }
-  );
   // Remove any zoom class added to body
   $("body").css("zoom", "");
   // Open External links in a new tab
