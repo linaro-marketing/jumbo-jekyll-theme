@@ -1,33 +1,65 @@
+# # Copyright text to be displayed at the very bottom of the footer
+# copyright_text: Jumbo Jekyll Theme
+# # Set this to false if you do not want the Linaro logo in the footer.
+# linaro_branding: false
+# # Social Media Icons Row
+# social_media_icons: false
+# # Display the contact details section
+# display_contact_details: false
+# # These links are displayed at the very bottom of the footer.
+# company_links:
+#     - name: GitHub
+#       url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+# second_column:
+#     title: Latest News & Blogs
+#     latest_posts: true
+#     # Optionally display another list of items
+#     # items:
+#     #   - name: 96Boards
+#     #     url: https://www.96boards.org
+#     #   - name: Linaro Connect
+#     #     url: https://connect.linaro.org
+#     #   - name: DeviceTree
+#     #     url: https://www.devicetree.org
+#     #   - name: OP-TEE
+#     #     url: https://www.op-tee.org
+#     #   - name: Linaro Developer Cloud
+#     #     url: https://www.linaro.cloud
+# # Custom Col on the right
+# third_column:
+#     title: Other Projects
+#     items:
+#         - name: Another project
+#           url: https://github.com
+
+
 # Copyright text to be displayed at the very bottom of the footer
-copyright_text: Jumbo Jekyll Theme
+copyright_text: Linaro Limited
 # Set this to false if you do not want the Linaro logo in the footer.
-linaro_branding: false
+linaro_branding: true
 # Social Media Icons Row
-social_media_icons: false
-# Display the contact details section
-display_contact_details: false
+social_media_icons: true
+# Contact Info
+display_contact_details: true
 # These links are displayed at the very bottom of the footer.
 company_links:
-    - name: GitHub
-      url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-second_column:
+    - name: Legal
+      url: /legal/
+    - name: Contact
+      url: /contact/
+middle_column:
     title: Latest News & Blogs
     latest_posts: true
-    # Optionally display another list of items
-    # items:
-    #   - name: 96Boards
-    #     url: https://www.96boards.org
-    #   - name: Linaro Connect
-    #     url: https://connect.linaro.org
-    #   - name: DeviceTree
-    #     url: https://www.devicetree.org
-    #   - name: OP-TEE
-    #     url: https://www.op-tee.org
-    #   - name: Linaro Developer Cloud
-    #     url: https://www.linaro.cloud
-# Custom Col on the right
 third_column:
     title: Other Projects
     items:
-        - name: Another project
-          url: https://github.com
+      - name: 96Boards
+        url: https://www.96boards.org
+      - name: Linaro Connect
+        url: https://connect.linaro.org
+      - name: DeviceTree
+        url: https://www.devicetree.org
+      - name: OP-TEE
+        url: https://www.op-tee.org
+      - name: Linaro Developer Cloud
+        url: https://www.linaro.cloud
