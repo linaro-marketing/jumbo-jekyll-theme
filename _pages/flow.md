@@ -28,32 +28,6 @@ flow:
           style: text-center
           text_content:
             text: An example members section
-        - format: members
-          #data_source: members-section-example
-          style: zoom grayscale
-          members_content:
-            item_width: "3" #bootstrap col-sm- value e.g 3, 4, 5ths etc
-            items:
-              - name: JS
-                image:
-                    path: /assets/images/content/js-logo.png
-                    alt: JS Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-              - name: Packet
-                image:
-                    path: /assets/images/content/js-logo.png
-                    alt: Packet Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-              - name: JS Logo
-                image:
-                    path: /assets/images/content/js-logo.png
-                    alt: JS Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-              - name: JS
-                image:
-                    path: /assets/images/content/js-logo.png
-                    alt: JS Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
         - format: buttons
           style: text-center
           buttons_content:
@@ -89,54 +63,50 @@ flow:
             size: h2
             text: Block Row
         - format: block
-          style: text-center text-white
+          style: #
           block_section_content:
-            item_width: "4"
+            # item_width: "4"
             blocks:
-                - title:
-                    size: "h3"
-                    text: Block 1
+                - title: Block 1
                   url: /about/
-                  inner_image:
-                    icon: true
-                    icon_name: fa fa-bullhorn
-                  text_content:
-                    text: See our photos from event.
+                  image: /assets/images/content/background-image1.jpg
+                  background_image: true
+                  description: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-                - title:
-                    size: "h3"
-                    text: Block 2
+                    - title: More
+                      url: /flow/
+                      icon: fa fa-arrow-right
+                      style: btn-secondary
+                - title: Block 2
                   url: /about/
-                  inner_image:
-                    path: /assets/images/content/js-logo.png
-                    alt: JS logo
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
+                  image: /assets/images/content/js-logo.png
+                  description: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-                - title:
-                    size: "h3"
-                    text: Block 3
+                - title: Block 3
                   url: /about/
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
+                  image: /assets/images/content/js-logo.png
+                  description: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-                    - title: Read
+                - title: Block 4
+                  url: /about/
+                  image: /assets/images/content/js-logo.png
+                  description: See our photos from event.
+                  buttons:
+                    - title: More Details
                       url: /flow/
-                      icon: fa fa-book
+                      icon: fa fa-arrow-right
                       style: btn-primary
     - row: container_row
       style: block_row fixed
@@ -147,50 +117,42 @@ flow:
           block_section_content:
             item_width: "3"
             blocks:
-                - title:
-                    size: "h3"
-                    text: Block 1
+                - title: Block 1
                   url: /about/
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
+                  image: /assets/images/content/background-image1.jpg
+                  background_image: true
+                  description: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
                       style: btn-primary
                       icon: fa fa-arrow-right
-                - title:
-                    size: "h3"
-                    text: Block 2
+                - title: Block 2
                   url: /about/
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
+                  image: /assets/images/content/background-image1.jpg
+                  background_image: true
+                  description: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-                - title:
-                    size: "h3"
-                    text: Block 3
+                - title: Block 3
                   url: /about/
                   style: block_three_style
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
+                  image: /assets/images/content/background-image1.jpg
+                  background_image: true
+                  description: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-                - title:
-                    size: "h3"
-                    text: Block 4
+                - title: Block 4
                   url: /about/
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
+                  image: /assets/images/content/background-image1.jpg
+                  background_image: true
+                  description: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -246,9 +208,7 @@ flow:
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-              - title:
-                    size: "h3"
-                    text: Members Section Example
+              - title: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
                 text_content:
@@ -258,9 +218,7 @@ flow:
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-              - title:
-                    size: "h3"
-                    text: Members Section Example
+              - title: Members Section Example
                 url: /about/
                 background_image: /assets/images/content/background-image1.jpg
                 text_content:
