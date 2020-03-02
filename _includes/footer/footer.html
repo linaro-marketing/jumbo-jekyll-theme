@@ -1,68 +1,72 @@
 <footer>
-    <div class="row main p-t-40">
-        <div class="container">
-            <div class="row justify-content-md-center">
-            {% if site.data.footer.display_contact_details %}
-            <div class="col col-12 col-lg-4 contact-details">
-                <a class="email" href="mailto:{{site.email}}?subject={{site.url}}">
-                    <h3>{{site.email}}</h3>
-                </a>
-                <address>
-                    {% for address-line in site.address %}
-                    {{address-line}}<br>
-                    {% endfor %}
-                </address>
-                <h3>Follow us</h3>
-                {% include_cached social_media_icons.html %}
-            </div>
-            {% endif %}
-            {% if site.data.footer.middle_column %}
-            <div class="col col-12 col-lg-4 footer-column">
-                <h3>{{site.data.footer.middle_column.title}}</h3>
-                <ul class="list-group">
-                    {% if site.data.footer.middle_column.latest-posts %}
-                    {% include_cached latest-posts.html %}
-                    {% else %}
-                    {% for item in site.data.footer.middle_column.items %}
-                    <li class="list-group-item">
-                        <a href="{{item.url}}">{{item.name}}</a>
-                    </li>
-                    {% endfor %}
+    <div class="container-fluid">
+        <div class="row main">
+            <div class="container">
+                <div class="row">
+                    {% if site.data.footer.display_contact_details %}
+                    <div class="col col-12 col-lg-4 contact-details">
+                        <a class="email" href="mailto:{{site.email}}?subject={{site.url}}">
+                            <h3>{{site.email}}</h3>
+                        </a>
+                        <address>
+                            {% for address-line in site.address %}
+                            {{address-line}}<br>
+                            {% endfor %}
+                        </address>
+                        <h3>Follow us</h3>
+                        {% include_cached social_media_icons.html %}
+                    </div>
                     {% endif %}
-                </ul>
+                    {% if site.data.footer.middle_column %}
+                    <div class="col col-12 col-lg-4 footer-column">
+                        <h3>{{site.data.footer.middle_column.title}}</h3>
+                        <ul class="list-group">
+                            {% if site.data.footer.middle_column.latest_posts %}
+                            {% include_cached blog/latest_posts.html %}
+                            {% else %}
+                            {% for item in site.data.footer.middle_column.items %}
+                            <li class="list-group-item">
+                                <a href="{{item.url}}">{{item.name}}</a>
+                            </li>
+                            {% endfor %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    {% if site.data.footer.third_column %}
+                    <div class="col col-12 col-lg-4 footer-column">
+                        <h3>{{site.data.footer.third_column.title}}</h3>
+                        <ul class="list-group">
+                            {% for item in site.data.footer.third_column.items %}
+                            <li class="list-group-item">
+                                <a href="{{item.url}}">{{item.name}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
-            {% endif %}
-            {% if site.data.footer.third_column %}
-            <div class="col col-12 col-lg-4 footer-column">
-                <h3>{{site.data.footer.third_column.title}}</h3>
-                <ul class="list-group">
-                    {% for item in site.data.footer.third_column.items %}
-                    <li class="list-group-item">
-                        <a href="{{item.url}}">{{item.name}}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
         </div>
-    </div>
-    </div>
-    <div class="row strip p-t-20 p-b-20">
-        <div class="container">
-            <div class="col col-12 text-whimd text-center">
-                Copyright &copy; {{ 'now' | date: "%Y" }} {{site.data.footer.copyright_text}}
-                {% for link in site.data.footer.company_links %}
-                <span class="coloured-bp">&bull;</span>
-                <a href="{{link.url}}">{{link.name}}</a>
-                {% endfor %}
-            </div>
-            <div class="col-xs-12 text-white text-center m-t-10">
-                {% if site.data.footer.linaro_branding %}
-                <a href="https://www.linaro.org">
-                    <img src="/assets/images/Linaro-logo-white.png" class="footer-logo"
-                        alt="Linaro Logo White Footer Icon" />
-                </a>
-                {% endif %}
+        <div class="row strip p-t-20 p-b-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-12 text-white text-center">
+                        <span class="copyright">Copyright &copy; {{ 'now' | date: "%Y" }} {{site.data.footer.copyright_text}}</span>
+                        {% for link in site.data.footer.company_links %}
+                        <span class="coloured-bp">&bull;</span>
+                        <a href="{{link.url}}">{{link.name}}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="col col-12  text-white text-center m-t-10">
+                        {% if site.data.footer.linaro_branding %}
+                        <a href="https://www.linaro.org">
+                            <img src="/assets/images/Linaro-logo-white.png" class="footer-logo mx-auto"
+                                alt="Linaro Logo White Footer Icon" />
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
