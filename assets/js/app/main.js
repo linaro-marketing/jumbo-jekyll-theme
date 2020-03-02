@@ -265,19 +265,17 @@ $(document).ready(function() {
     }
   });
   // Cookie Consent Setup
-  window.addEventListener("load", function() {
-    window.cookieconsent.initialise({
-      palette: {
-        popup: {
-          background: "#000000",
-          text: "#fff"
-        },
-        button: {
-          background: "transparent",
-          text: "#ffffff",
-          border: "#25cfb0"
-        }
+  window.cookieconsent.initialise({
+    palette: {
+      popup: {
+        background: "#000000",
+        text: "#fff"
+      },
+      button: {
+        background: "transparent",
+        text: "#ffffff",
+        border: "#25cfb0"
       }
-    });
+    }
   });
 });
