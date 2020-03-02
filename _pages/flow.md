@@ -6,8 +6,16 @@ descrtion: >
     This page showcases the power of the flow.html Jekyll include provided in this theme.
 keywords: flow, jekyll, automation, simple, bootstrap 3
 jumbotron:
+    class: dotted
     title: Get your flow on!
-    background-image: /assets/images/content/background-image1.jpg
+    description: >
+        The flow layout enables you to create custom pages using only Jekyll front matter.
+    image: /assets/images/content/background-image1.jpg
+    buttons:
+        - title: View on Github
+          icon: icon-github
+          class: test
+          url: https://github.com
 flow:
     - row: container_row
     #   style: dark
