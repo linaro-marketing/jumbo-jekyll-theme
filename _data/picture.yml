@@ -96,9 +96,16 @@ markup_presets:
     formats: [webp, original]
     widths: [400,800,1200]
   blog_header_image:
-    markup: img
+    markup: data_auto
     attributes:
-      img: 'class="header_background_image"'
+      img: 'class="lazyload header_background_image"'
+    formats: [webp, original]
+    widths: [400,800,1200,1920]
+  carousel_header_image:
+    markup: data_picture
+    attributes:
+      source: 'class="owl-lazy"'
+      img: 'class="owl-lazy header_background_image"'
     formats: [webp, original]
     widths: [400,800,1200,1920]
   header_carousel_image:
