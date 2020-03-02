@@ -5,7 +5,7 @@
         <div class="item owl-slide {% if forloop.first %}active{% endif %}">
              {% if slide.image %}
                 {% assign image_path = slide.image | remove_first: "/assets/images/" %}
-                {% picture carousel_header_image {{image_path}} %}
+                {% picture blog_header_image {{image_path}} %}
             {% endif %}
             <div class="container">
                 <div class="inner_content_wrapper">
