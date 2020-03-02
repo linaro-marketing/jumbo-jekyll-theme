@@ -3,6 +3,7 @@
     background-color: $jumbotron_bg_color;
     position: relative;
     height: $jumbotron_height;
+    margin-bottom: 0px;
     &.dotted {
       .inner_content_wrapper {
         border: 4px dotted #9c3;
