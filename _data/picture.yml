@@ -57,34 +57,6 @@ markup_presets:
     attributes:
       img: 'class="icon"'
   # Presets
-  blog:
-    markup: data_auto
-    formats: [webp, original]
-    widths: [400, 750, 1000]
-    noscript: true # Default: false
-    attributes:
-      img: class="img-fluid lazyload"
-  feature_block_image:
-    markup: data_auto
-    formats: [webp, original]
-    widths: [400, 750, 1000]
-    noscript: true # Default: false
-    attributes:
-      img: class="img-fluid lazyload"
-  card:
-    markup: data_auto
-    formats: [webp, original]
-    widths: [400]
-    noscript: true # Default: false
-    attributes:
-      img: class="card-img-top lazyload"
-  header_image:
-    markup: auto
-    formats: [webp, original]
-    widths: [400, 750, 1000, 1400]
-    noscript: true # Default: false
-    attributes:
-      img: class="header__image"
   # This is an example of how you'd get generated image and a URL, and nothing else.
   direct:
     markup: direct_url
@@ -101,22 +73,9 @@ markup_presets:
       img: 'class="lazyload header_background_image"'
     formats: [webp, original]
     widths: [400,800,1200,1920]
-  carousel_header_image:
-    markup: data_picture
+  card_block_image:
+    markup: data_img
     attributes:
-      source: 'class="owl-lazy"'
-      img: 'class="owl-lazy header_background_image"'
+      img: 'class="lazyload card-img-top"'
     formats: [webp, original]
-    widths: [400,800,1200,1920]
-  header_carousel_image:
-    markup: data_auto
-    attributes:
-      img: 'class="lazyload header_background_image"'
-    formats: [webp, original]
-    widths: [400,800,1200,1920]
-  orbit_slider_image:
-    markup: img
-    attributes:
-      img: 'class="orbit-image orbit_slider_image"'
-    formats: [webp, original]
-    widths: [400,800,1200]
+    widths: [400,600]
