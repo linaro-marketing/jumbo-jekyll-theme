@@ -2,9 +2,68 @@
     footer {
         .main {
             background-color: $footer_bg_color;
+            .contact-details {
+                margin: 30px 0;
+                 address {
+                    text-align: left;
+                    font-size: 18px;
+                    color: #fff;
+                }
+                h3 {
+                    text-align: left;
+                    color :$primary;
+                    margin-top: 0px;
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+                i {
+                    color: white;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+            .footer-column {
+                margin: 30px 0;
+                h3 {
+                    color: #ffffff;
+                    font-weight: 700;
+                    font-size: 26px;
+                    border-left: 5px solid $primary;
+                    padding-left: 15px;
+                }
+                ul.list-group {
+                    li {
+                        background-color: transparent;
+                        border: 0;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        transition: all 400ms ease;
+                        &:hover {
+                            padding-left: 4px;
+                        }
+                         a {
+                             color: #fff;
+                            font-size: 24px;
+                            font-weight: normal;
+                            &:hover {
+                                color: $primary;
+                                text-decoration: none;
+                                transition: color .5s ease;
+                                -moz-transition: color .5s ease;
+                                -webkit-transition: color .5s ease;
+                            }
+                        }
+                    }
+                }
+            }
         }
         .strip {
             background-color: $footer_strip_bg_color;
+            .footer-logo {
+                height: 40px;
+                margin: 10px 0;
+            }
         }
     }
 }

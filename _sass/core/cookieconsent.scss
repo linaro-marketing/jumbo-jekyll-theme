@@ -7,7 +7,7 @@
 //Button
 a.cc-btn.cc-dismiss {
         border: 1px $primary solid;
-        background-color: $cookie-consent-bg;
+        background-color: $cookie_consent_bg;
         padding: 2px;
 }
 //Message
@@ -23,8 +23,8 @@ a.cc-link {
 }
 // Main Div
 .cc-window.cc-floating.cc-type-info.cc-theme-classic.cc-bottom.cc-right.cc-color-override-3938 {
-    background-color: $navbar-inverse-bg !important;
-    color: $navbar-text-color !important;
+    background-color: $cookie_consent_bg !important;
+    color: $cookie_consent_text_color !important;
     padding: 10px;
     border-radius: 5px;
     height: auto;
