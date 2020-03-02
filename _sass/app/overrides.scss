@@ -1,5 +1,38 @@
 // Theses are the Overrides of Bootstrap Sass Variables locatted in boostrap/_variables
-$primary: #20937b;
+$primary: #9c3;
+$secondary: #575757;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "danger": #ff4136
+);
+// Universal Navbar
+$universal_navbar_height_padding: 0px;
+$universal_navbar_text_color: #fff;
+$universal_navbar_bg_color: $primary;
+// Main Navbar
+$navbar_height_padding: 5px;
+$navbar_text_color: #575757;
+$navbar_bg_color: #fff;
+// Jumbotron
+$jumbotron_bg_color: #575757;
+$jumbotron_height: 500px;
+// Typography
+@font-face {
+  font-family: 'Lato';
+  src: url('/assets/fonts/lato-regular/Lato-regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/lato-regular/Lato-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/lato-regular/Lato-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/lato-regular/Lato-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/fonts/lato-regular/Lato-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/lato-regular/Lato-regular.svg') format('svg'); /* Legacy iOS */
+}
+// Fonts
+$font-family-base: "Lato";
+// Footer
+$footer_bg_color: #00000b;
+$footer_strip_bg_color: $secondary;
+
 //Home
 $home-page-title-text: #000;
 $home-page-main-title-color: $primary;
@@ -20,12 +53,9 @@ $navbar-inverse-color: #fff;
 $navbar-submenu-bg-color: #3e3e3e !default;
 $navbar-submenu-color: #fff !default;
 $navbar-dropdown-text-color: $navbar-text-color;
-
 // Custom Variables
 $cookie-consent-text:     #FFF !default;
 $cookie-consent-bg:       #000 !default;
-
-
 // homepage title text and sub text
 $home-page-title-text:          #FFF !default; // all title text
 $home-page-text:          #fff !default; // all title text
@@ -63,28 +93,10 @@ $blog-panel-title-colour: #fff !default;
 // Custom Jumbotron colours
 $jumbotron-top-color:     $navbar-inverse-bg !default;
 $jumbotron-bottom-color:  $primary !default;
-
-
 // Breadcrumb
 $breadcrumb-background-color: $primary !default;
 $breadcrumb-title-color: #fff !default;
 $breadcrumb-span-color: #fff !default;
-// Fonts
-// Change the fonts used by Bootstrap here.
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
-//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
-@font-face {
-  font-family: 'Lato';
-  src: url('/assets/fonts/lato-regular/Lato-regular.eot'); /* IE9 Compat Modes */
-  src: url('/assets/fonts/lato-regular/Lato-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/lato-regular/Lato-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/lato-regular/Lato-regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/assets/fonts/lato-regular/Lato-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/lato-regular/Lato-regular.svg') format('svg'); /* Legacy iOS */
-}
-// Fonts
-$font-family-sans-serif:  'Lato', Arial, sans-serif !default;
 //Contact Page
 $contact-banner-text-color: #fff !default;
 // Jumbotron Settings
