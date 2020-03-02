@@ -1,8 +1,12 @@
 // Core Jumbo Jekyll Theme Sass includes.
 @import "core/normalize";
+@import "core/navbar";
 @import "core/theme";
+@import "core/jumbotron";
+@import "core/footer";
+@import "core/error";
 @import "core/cookieconsent";
 @import "core/social-media-icons";
-@import "core/fa";
+@import "core/fontello";
 @import "core/featherlight";
 @import "core/carousel-styles";
