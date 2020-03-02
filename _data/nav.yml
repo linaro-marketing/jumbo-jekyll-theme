@@ -1,17 +1,121 @@
-# Search Config
-search:
-    enabled: true
-    label: JJT
+# # Search Config
+# search:
+#     enabled: true
+#     label: JJT
+# universal_nav: true
+# # Nav Brand Config
+# brand:
+#     text: Jumbo Jekyll Theme
+#     url: /
+# # Navigation pages
+# pages:
+#     - title: Flow Example
+#       url: /flow/
+#     - title: Blog
+#       url: /blog/
+#       active_paths:
+#         - /blog/
+
 universal_nav: true
-# Nav Brand Config
-brand:
-    text: Jumbo Jekyll Theme
-    url: /
-# Navigation pages
+search:
+  enabled: true
+  label: Linaro
 pages:
-    - title: Flow Example
-      url: /flow/
-    - title: Blog
-      url: /blog/
-      active_paths:
-        - /blog/
+  - options:
+      - text: Overview
+        url: /about/
+      - options:
+          - text: The Team
+            url: /about/team/
+          - text: Awards
+            url: /awards/
+        text: Team
+      - options:
+          - text: News
+            url: /news/
+          - text: Blog
+            url: /blog/
+          - text: Events
+            url: /events/
+          - text: Planet Linaro
+            url: /planet/
+        text: News & Events
+      - text: Careers
+        url: /careers/
+      - text: Contact Us
+        url: /contact/
+    title: About
+  - options:
+      - text: Overview
+        url: /engineering/
+      - text: Artificial Intelligence
+        url: /engineering/artificial-intelligence/
+      - text: Autonomous Vehicles
+        url: /engineering/autonomous-vehicles/
+      - text: Consumer
+        url: /engineering/consumer/
+      - text: Core Engineering on Arm
+        options:
+          - text: Overview
+            url: /engineering/core/
+          - text: Core Technologies & Tools
+            url: /engineering/core/ctt/
+          - text: Kernel Validation
+            url: /engineering/core/kernel-validation-and-testing/
+          - text: Toolchain
+            url: /engineering/core/toolchain/
+          - text: Kernel
+            url: /engineering/core/kernel/
+          - text: Power Management
+            url: /engineering/core/arm-power-management/
+          - text: Power Management EAS
+            url: /engineering/core/arm-power-management/eas/
+          - text: Power Management Farm
+            url: /engineering/core/arm-power-management/pmwg-farm/
+          - text: Security
+            url: /engineering/core/security/
+          - text: Devicetree Evolution
+            url: /engineering/core/devicetree-evolution/
+      - text: Datacenter & Cloud
+        url: /engineering/datacenter-and-cloud/
+      - text: Edge & Fog Computing
+        url: /engineering/edge-and-fog-computing/
+      - text: High Performance Computing
+        url: /engineering/high-performance-computing/
+      - text: IoT & Embedded
+        url: /engineering/iot-and-embedded/
+      - text: Multimedia
+        url: /engineering/multimedia/
+    title: Engineering
+  - title: Membership
+    url: /membership/
+  - options:
+      - text: Overview
+        url: /services/
+      - text: Bootloaders
+        url: /services/bootloaders/
+      - text: "BSP’s, Builds and Support"
+        url: /services/bsp-builds-support/
+      - text: Hands on Training
+        url: /services/hands-on-training/
+      - text: Kernels and Long Term Support
+        url: /services/kernel-lts/
+      - text: Open Source Consultancy
+        url: /services/open-source-consultancy/
+      - text: Power Management Tuning
+        url: /services/power-management/
+      - text: Security
+        url: /services/security/
+      - text: Testing and Validation
+        url: /services/testing-validation-services/
+      - text: Toolchain Optimization
+        url: /services/toolchain-optimization-services/
+      - text: 96Boards
+        url: /services/96boards/
+    title: Services
+  - options:
+      - text: Technical Support
+        url: /support/
+      - text: Downloads
+        url: /downloads/
+    title: Support
