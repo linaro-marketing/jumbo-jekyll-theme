@@ -1,11 +1,11 @@
 #wrapper {
-    #main-navigation {
-        padding-top: $navbar_height_padding;
-        padding-bottom: $navbar_height_padding;
-    }
-    #universal_nav {
-        padding-top: $universal_height_padding;
-        padding-bottom: $universal_height_padding;
-        background-color: $primary;
+    overflow-x:hidden;
+    .btn{
+        &.btn-primary {
+            color: #fff;
+        }
+        &.btn-secondary {
+            color: #fff;
+        }
     }
 }
