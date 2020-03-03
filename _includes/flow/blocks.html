@@ -1,31 +1,44 @@
-<div class="row blocks">
-    <div class="card-deck">
-        {% for block in include.object.block_section_content.blocks %}
-            <div class="card {% if block.background_image %}background_image text-white{% endif %}">
-                {% if block.image %}
-                    {% assign block_image = block.image | remove_first: "/assets/images/" %}
-                    {% capture block_image_alt %}{{block.title}} image {% endcapture %}
-                    {% picture card_block_image {{block_image}} --alt {{block_image_alt}} %}
-                {% endif %}
-                <div class="card-body {% if block.background_image %}card-img-overlay{% else %}card-body{% endif %}">
-                    {% if block.title %}
-                    <h5 class="card-title">{{block.title}}</h5>
-                    {% endif %}
-                    {% if block.sub_title %}
-                    <h6 class="card-subtitle mb-2 text-muted">{{block.sub_title}}</h6>
-                    {% endif %}
-                    {% if block.description %}
-                    <p class="card-text">
-                        {{block.description | markdownify }}
-                    </p>
-                    {% endif %}
-                    {% if block.buttons %}
-                        {% for button in block.buttons %}
-                            {% include flow/button.html object=button %}
-                        {% endfor %}
-                    {% endif %}
+<div class="col col-12 blocks {% if include.object.style %}{{include.object.style}}{% endif %}">
+    <!-- <div class="row blocks"> -->
+        <div class="row justify-content-lg-center">
+            {% assign block_width = 3 %}
+            {% if include.object.item_width %}
+                {% assign block_width = include.object.item_width %}
+            {% endif %}
+            {% for block in include.object.block_section_content.blocks %}
+                <div class="col col-12 col-sm-6 col-lg-{{block_width}} block_column">
+                    <div class="card h-100 {% if block.background_image %}background_image text-white{% endif %}">
+                        {% if block.image %}
+                            {% assign block_image = block.image | remove_first: "/assets/images/" %}
+                            {% capture block_image_alt %}{{block.title}} image {% endcapture %}
+                            {% picture card_block_image {{block_image}} --alt {{block_image_alt}} %}
+                        {% endif %}
+                        <div class="card-body {% if block.background_image %}card-img-overlay{% else %}card-body{% endif %}">
+                            {% if block.title %}
+                            <h5 class="card-title">{{block.title}}</h5>
+                            {% endif %}
+                            {% if block.sub_title %}
+                            <h6 class="card-subtitle mb-2 text-muted">{{block.sub_title}}</h6>
+                            {% endif %}
+                            {% if block.description %}
+                            <p class="card-text">
+                                {{block.description | markdownify }}
+                            </p>
+                            {% endif %}
+                            {% if block.buttons %}
+                                {% for button in block.buttons %}
+                                    {% include flow/button.html object=button %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        {% if block.footer_text %}
+                            <div class="card-footer">
+                                <small class="text-muted">{{block.footer_text}}</small>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
-    </div>
+            {% endfor %}
+        </div>
+    <!-- </div> -->
 </div>
