@@ -10,7 +10,7 @@ jumbotron:
     title: Get your flow on!
     description: >
         The flow layout enables you to create custom pages using only Jekyll front matter.
-    image: /assets/images/content/background-image1.jpg
+    image: /assets/images/test/background-image1.jpg
     buttons:
         - title: View on Github
           icon: icon-github
@@ -37,7 +37,7 @@ flow:
                 style: btn-primary
     - row: container_row
       style: fixed
-      background_image: /assets/images/content/background-image1.jpg
+      background_image: /assets/images/test/background-image1.jpg
       sections:
         - format: title
           title_content:
@@ -56,20 +56,20 @@ flow:
               style: btn-primary
     - row: container_row
       style: block_row
-    #   background_image: /assets/images/content/background-image1.jpg
+    #   background_image: /assets/images/test/background-image1.jpg
       sections:
         - format: title
           title_content:
             size: h2
             text: Block Row
         - format: block
-          style: #
+          style: text-center
           block_section_content:
-            # item_width: "4"
+            item_width: "4"
             blocks:
                 - title: Block 1
                   url: /about/
-                  image: /assets/images/content/background-image1.jpg
+                  image: /assets/images/test/background-image1.jpg
                   background_image: true
                   description: See our photos from event.
                   buttons:
@@ -83,7 +83,7 @@ flow:
                       style: btn-secondary
                 - title: Block 2
                   url: /about/
-                  image: /assets/images/content/js-logo.png
+                  image: /assets/images/test/js-logo.png
                   description: See our photos from event.
                   buttons:
                     - title: More Details
@@ -92,16 +92,7 @@ flow:
                       style: btn-primary
                 - title: Block 3
                   url: /about/
-                  image: /assets/images/content/js-logo.png
-                  description: See our photos from event.
-                  buttons:
-                    - title: More Details
-                      url: /flow/
-                      icon: fa fa-arrow-right
-                      style: btn-primary
-                - title: Block 4
-                  url: /about/
-                  image: /assets/images/content/js-logo.png
+                  image: /assets/images/test/js-logo.png
                   description: See our photos from event.
                   buttons:
                     - title: More Details
@@ -110,7 +101,7 @@ flow:
                       style: btn-primary
     - row: container_row
       style: block_row fixed
-    #   background_image: /assets/images/content/background-image1.jpg
+      background_image: /assets/images/test/background-image1.jpg
       sections:
         - format: block
           style: text-center text-white
@@ -119,7 +110,7 @@ flow:
             blocks:
                 - title: Block 1
                   url: /about/
-                  image: /assets/images/content/background-image1.jpg
+                  image: /assets/images/test/background-image1.jpg
                   background_image: true
                   description: See our photos from event.
                   buttons:
@@ -129,7 +120,7 @@ flow:
                       icon: fa fa-arrow-right
                 - title: Block 2
                   url: /about/
-                  image: /assets/images/content/background-image1.jpg
+                  image: /assets/images/test/background-image1.jpg
                   background_image: true
                   description: See our photos from event.
                   buttons:
@@ -140,7 +131,7 @@ flow:
                 - title: Block 3
                   url: /about/
                   style: block_three_style
-                  image: /assets/images/content/background-image1.jpg
+                  image: /assets/images/test/background-image1.jpg
                   background_image: true
                   description: See our photos from event.
                   buttons:
@@ -150,7 +141,7 @@ flow:
                       style: btn-primary
                 - title: Block 4
                   url: /about/
-                  image: /assets/images/content/background-image1.jpg
+                  image: /assets/images/test/background-image1.jpg
                   background_image: true
                   description: See our photos from event.
                   buttons:
@@ -164,7 +155,7 @@ flow:
                       style: btn-primary
     - row: container_row
       #style: fixed
-      background_image: /assets/images/content/background-image1.jpg
+      background_image: /assets/images/test/background-image1.jpg
       sections:
         - format: title
           title_content:
@@ -180,29 +171,14 @@ flow:
             text: Full Width Block Row
             size: h2
         - format: block
-          style: text-center text-white
+          style: text-center
+          item_width: 3
           block_section_content:
-            item_width: "3"
             blocks:
-              - title:
-                  size: "h3"
-                  text: Members Section Example
+              - title: Members Section Example
                 url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text_content:
-                    text: See our photos from event.
-                buttons:
-                    - title: More Details
-                      url: /flow/
-                      icon: fa fa-arrow-right
-                      style: btn-primary
-              - title:
-                  size: "h3"
-                  text: Members Section Example
-                url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text_content:
-                    text: See our photos from event.
+                image: /assets/images/test/background-image1.jpg
+                description: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -210,9 +186,8 @@ flow:
                       style: btn-primary
               - title: Members Section Example
                 url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text_content:
-                    text: See our photos from event.
+                image: /assets/images/test/background-image1.jpg
+                description: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -220,9 +195,17 @@ flow:
                       style: btn-primary
               - title: Members Section Example
                 url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text_content:
-                    text: See our photos from event.
+                image: /assets/images/test/background-image1.jpg
+                description: See our photos from event.
+                buttons:
+                    - title: More Details
+                      url: /flow/
+                      icon: fa fa-arrow-right
+                      style: btn-primary
+              - title: Members Section Example
+                url: /about/
+                image: /assets/images/test/background-image1.jpg
+                description: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -260,7 +243,7 @@ flow:
           feature_block_content:
             position: "right"
             type: "image"
-            image_content_path: /assets/images/content/background-image1.jpg
+            image_content_path: /assets/images/test/background-image1.jpg
             title: Feature Block
             text: >
                 A feature block with an image.
@@ -293,31 +276,31 @@ flow:
                 md_items: 1
                 lg_items: 1
                 items:
-                    - image: /assets/images/content/background-image1.jpg
+                    - image: /assets/images/test/background-image1.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image2.png
+                    - image: /assets/images/test/background-image2.png
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image3.jpg
+                    - image: /assets/images/test/background-image3.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image1.jpg
+                    - image: /assets/images/test/background-image1.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image2.png
+                    - image: /assets/images/test/background-image2.png
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image3.jpg
+                    - image: /assets/images/test/background-image3.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image1.jpg
+                    - image: /assets/images/test/background-image1.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image2.png
+                    - image: /assets/images/test/background-image2.png
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image3.jpg
+                    - image: /assets/images/test/background-image3.jpg
                       alt: Background Image
                       title: Background Image 1
             title: Feature Block
@@ -335,7 +318,7 @@ flow:
           feature_block_content:
             position: "right"
             type: "image"
-            image_content_path: /assets/images/content/background-image1.jpg
+            image_content_path: /assets/images/test/background-image1.jpg
             title: Feature Block
             text: >
                 A feature block with an image.
@@ -381,31 +364,31 @@ flow:
             md_items: 4
             lg_items: 6
             items:
-                - image: /assets/images/content/background-image1.jpg
+                - image: /assets/images/test/background-image1.jpg
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image2.png
+                - image: /assets/images/test/background-image2.png
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image3.jpg
+                - image: /assets/images/test/background-image3.jpg
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image1.jpg
+                - image: /assets/images/test/background-image1.jpg
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image2.png
+                - image: /assets/images/test/background-image2.png
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image3.jpg
+                - image: /assets/images/test/background-image3.jpg
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image1.jpg
+                - image: /assets/images/test/background-image1.jpg
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image2.png
+                - image: /assets/images/test/background-image2.png
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image3.jpg
+                - image: /assets/images/test/background-image3.jpg
                   alt: Background Image
                   title: Background Image 1
     - row: full_width_row
