@@ -39,8 +39,8 @@ $(document).ready(function() {
       dots: true
     });
   }
-  if ($(".owl-carousel.slider-block").length > 0) {
-    $(".owl-carousel.slider-block").each(function(index) {
+  if ($(".owl-carousel.slider_block").length > 0) {
+    $(".owl-carousel.slider_block").each(function(index) {
       // Set Default values for the responsive items
       var xs_items = 1;
       var sm_items = 2;
