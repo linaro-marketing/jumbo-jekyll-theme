@@ -1,10 +1,7 @@
 ---
 layout: base
 ---
-{% if page.jumbotron.carousel-images %}
-    {% include components/carousel_header.html images=page.jumbotron.carousel-images %}
-    {% include components/jumbotron.html %}
-{% elsif page.jumbotron %}
+{% if page.jumbotron %}
     {% include components/jumbotron.html %}
 {% else %}
     {% include components/breadcrumb.html %}
