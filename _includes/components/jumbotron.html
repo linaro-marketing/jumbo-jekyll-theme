@@ -5,7 +5,7 @@
         <div class="item owl-slide {% if forloop.first %}active{% endif %}">
              {% if slide.image %}
                 {% assign image_path = slide.image | remove_first: "/assets/images/" %}
-                {% picture blog_header_image {{image_path}} %}
+                {% picture header_slider_image {{image_path}} %}
             {% endif %}
             <div class="container">
                 <div class="inner_content_wrapper">
@@ -42,7 +42,7 @@
 <div class="jumbotron jumbotron-fluid {% if page.jumbotron.image %}background_image{% endif%} {% if page.jumbotron.class %}{{page.jumbotron.class}}{% endif %}">
     {% if page.jumbotron.image %}
         {% assign image_path = page.jumbotron.image | remove_first: "/assets/images/" %}
-        {% picture blog_header_image {{image_path}} %}
+        {% picture header_image {{image_path}} %}
     {% endif %}
     <div class="container {% if page.jumbotron.class %}{{page.jumbotron.class}}{% endif %}">
             <div class="inner_content_wrapper">
