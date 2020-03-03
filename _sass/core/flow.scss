@@ -10,10 +10,27 @@
                 height: 100%;
                 width: 100%;
                 filter: brightness(0.6);
+                z-index:-1;
+                top:0px;
             }
+        }
+        .slider_block {
+            .item {
+                height: 400px;
+                overflow: hidden;
+                img {
+                    height: 100%;
+                    width: auto;
+                    object-fit: cover;
+                }
+            }
+
         }
     }
     .blocks {
+        .block_column {
+            margin-top: 30px;
+        }
         .card {
             &.background_image {
                 img {
