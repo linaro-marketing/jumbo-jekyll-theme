@@ -112,15 +112,15 @@
                     {% endif %}
                 {% endfor %}
                 {% if site.data.nav.search.enabled %}
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown search">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <i class="icon-search"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <form class="form-inline my-2 my-lg-0" action="/search/" method="GET" target="_self" id="search_form">
-                            <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search..." aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <form class="form-inline flex-nowrap" action="/search/" method="GET" target="_self" id="search_form">
+                            <input class="form-control border-0" name="q" type="search" placeholder="Search..." aria-label="Search">
+                            <button class="btn btn-outline-primary border-0" type="submit">Search</button>
                             <input type="hidden" name="fields.label" value="{{ site.data.settings.search-label }}">
                         </form>
                     </div>
