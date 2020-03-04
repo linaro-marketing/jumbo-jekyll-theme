@@ -23,18 +23,21 @@ search:
 pages:
   - options:
       - text: Overview
-        url: /about/
       - options:
-          - text: The Team
-            url: /about/team/
-          - text: Awards
-            url: /awards/
-        text: Team
+          - text: Flow
+            url: /flow/
+          - text: Video Header
+            url: /features/video-header/
+          - text: Sub Menu
+            options:
+              - text: Test Option
+                url: /test-option/
+              - text: Test Option 2
+                url: /test-option/
+              - text: Test Option 3
+                url: /test-option/
+        text: Features
       - options:
-          - text: News
-            url: /news/
-          - text: Blog
-            url: /blog/
           - text: Events
             url: /events/
           - text: Planet Linaro
