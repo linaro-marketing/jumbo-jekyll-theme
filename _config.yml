@@ -75,6 +75,12 @@ address:
   - Royston Rd, Harston
   - Cambridge, United Kingdom
   - CB22 7GG
+# Support for http2 preload features
+http2_resources:
+  - rel: preload
+    as: font
+    type: font/woff2
+    href: /assets/fonts/lato/Lato-regular.woff2
 # ----------- JEKYLL PLUGINS ---------------------
 # -------- jekyll-tidy --------
 jekyll_tidy:
