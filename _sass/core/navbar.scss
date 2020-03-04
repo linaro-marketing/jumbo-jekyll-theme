@@ -47,6 +47,13 @@
         background-color: $navbar_text_color;
       }
     }
+    .search {
+        .dropdown-menu.show {
+            right: 0 !important;
+            min-width: 300px;
+            left: auto;
+        }
+    }
   }
   // Multi-level dropdowns
   .navbar {
