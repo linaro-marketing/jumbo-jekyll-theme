@@ -4,6 +4,22 @@
     position: relative;
     height: $jumbotron_height;
     margin-bottom: 0px;
+    &.video {
+        background-color: transparent;
+    }
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      overflow: hidden;
+    }
     &.dotted {
       .inner_content_wrapper {
         border: 4px dotted #9c3;
@@ -51,8 +67,6 @@
 
       .item.owl-slide {
         overflow: hidden;
-        display: flex;
-        align-items: center;
         height: 100%;
       }
       .owl-dots {
