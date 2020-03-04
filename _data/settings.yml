@@ -8,12 +8,6 @@ http2: false
 ascii-art: ascii-art.html
 # Hide the last modified page date from showing
 hide_last_modified: true
-# Support for http2 push features
-http2_resources:
-  - rel: preload
-    as: font
-    type: font/woff2
-    href: /assets/fonts/lato-regular/Lato-regular.woff2
 # Footer Newsletter toggle.
 newsletter:
     enabled: true
