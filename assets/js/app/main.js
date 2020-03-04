@@ -1,7 +1,3 @@
-// Hide all navigation sub menus on window click
-$(window).click(function() {
-  $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
-});
 $(document).ready(function() {
   // Clipboard JS
   if ($("div.highlight").length > 0) {
@@ -112,23 +108,6 @@ $(document).ready(function() {
       onlyIfScroll: true
     });
   }
-  // Toggle the sub menu when clicked.
-  $(".dropdown-submenu.sub-menu a").on("click", function(e) {
-    if ($(this).hasClass("active")) {
-      $(this)
-        .next("ul")
-        .hide();
-      $(this).removeClass("active");
-    } else {
-      $(".dropdown-menu.sub-menu").hide();
-      $(".dropdown-submenu.sub-menu a").removeClass("active");
-      $(this)
-        .next("ul")
-        .show();
-      $(this).addClass("active");
-    }
-    e.stopPropagation();
-  });
   // Theme navbar setup
   var wrapper = $("#wrapper");
   var universalNav = false;
@@ -166,14 +145,13 @@ $(document).ready(function() {
     navbar();
   });
 
-  // Multi-level dropdowns
+  //   Multi-level dropdowns
+  $(".navbar .dropdown-menu > li:not(.dropdown-item)").on("click", function(e) {
+    e.stopPropagation();
+  });
   $(".navbar .dropdown-item").on("click", function(e) {
     var $el = $(this).children(".dropdown-toggle");
     var $parent = $el.offsetParent(".dropdown-menu");
-    $(this)
-      .parent("li")
-      .toggleClass("open");
-
     if (!$parent.parent().hasClass("navbar-nav")) {
       if ($parent.hasClass("show")) {
         $parent.removeClass("show");
@@ -195,15 +173,6 @@ $(document).ready(function() {
     }
   });
 
-  $(".navbar .dropdown").on("hidden.bs.dropdown", function() {
-    $(this)
-      .find("li.dropdown")
-      .removeClass("show open");
-    $(this)
-      .find("ul.dropdown-menu")
-      .removeClass("show open");
-  });
-
   // Reset forms when bootstrap modal closes.
   $(".modal").on("hidden.bs.modal", function() {
     $(this)
@@ -218,8 +187,6 @@ $(document).ready(function() {
   if (navigator.userAgent.match(/.*CPU.*OS 7_\d/i)) {
     $("html").addClass("ios7");
   }
-  // Remove any zoom class added to body
-  $("body").css("zoom", "");
   // Open External links in a new tab
   $("a").each(function() {
     var a = new RegExp("/" + window.location.host + "/");
@@ -237,32 +204,6 @@ $(document).ready(function() {
   // Change hash for page-reload
   $(".nav-tabs a").on("shown", function(e) {
     window.location.hash = e.target.hash.replace("#", "#" + prefix);
-  });
-  // Carousel image header - Lazy loading the carousel images
-  var cHeight = 0;
-  $("#header-carousel").on("slide.bs.carousel", function(e) {
-    var $nextImage = null;
-    $activeItem = $(".item.active", this);
-    if (e.direction == "left") {
-      $nextImage = $activeItem.next(".item");
-    } else {
-      if ($activeItem.index() == 0) {
-        $nextImage = $("div:last", $activeItem.parent());
-      } else {
-        $nextImage = $activeItem.prev(".item");
-      }
-    }
-    // prevents the slide decrease in height
-    if (cHeight == 0) {
-      cHeight = $(this).height();
-      $activeItem.next(".item").height(cHeight);
-    }
-    // prevents the loaded image if it is already loaded
-    var src = $nextImage.attr("data-src");
-    if (typeof src !== "undefined" && src != "") {
-      $nextImage.css("background-image", "url(" + src + ")");
-      $nextImage.data("data-src", "");
-    }
   });
   // Cookie Consent Setup
   window.cookieconsent.initialise({
