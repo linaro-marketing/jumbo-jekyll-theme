@@ -123,7 +123,7 @@ picture:
   nomarkdown: false
   source: "assets/images"
   output: "assets/images"
-  relative_url: false
+  relative_url: true
 # -------- japr --------
 asset_pipeline:
   bundle: true
