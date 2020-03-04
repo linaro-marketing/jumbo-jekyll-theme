@@ -71,20 +71,20 @@
                                                     </a>
                                                     <ul class="dropdown-menu" aria-labelledby="dropdown1-1-{{forloop.index}}">
                                                         {% for sub-sub-option in sub-option.options %}
-                                                            <li class="dropdown-item" >
+                                                            <li >
                                                                 <a href="{{sub-sub-option.url}}">{{sub-sub-option.text}}</a>
                                                             </li>
                                                         {% endfor %}
                                                     </ul>
                                                 </li>
                                             {% else %}
-                                                <li class="dropdown-item" ><a href="{{sub-option.url}}">{{sub-option.text}}</a></li>
+                                                <li><a href="{{sub-option.url}}">{{sub-option.text}}</a></li>
                                             {% endif %}
                                         {% endfor %}
                                         </ul>
                                         </li>
                                     {% else %}
-                                        <li class="dropdown-item">
+                                        <li>
                                             <a href="{{menu_option.url}}">
                                             {{menu_option.text}}
                                             {% if menu_option.external %}<i class="glyphicon glyphicon-new-window pull-right"></i>{% endif %}
