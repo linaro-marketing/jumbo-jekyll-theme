@@ -2,7 +2,7 @@
 <div class="jumbotron jumbotron-fluid background_image slider {% if page.jumbotron.class %}{{page.jumbotron.class}}{% endif %}">
     <div id="jumbotron-slider" class="owl-carousel owl-theme full-width-slider">
         {% for slide in page.jumbotron.slider %}
-        <div class="item owl-slide {% if forloop.first %}active{% endif %}">
+        <div class="item d-flex align-items-center owl-slide {% if forloop.first %}active{% endif %}">
              {% if slide.image %}
                 {% assign image_path = slide.image | remove_first: "/assets/images/" %}
                 {% picture header_slider_image {{image_path}} %}
@@ -39,10 +39,25 @@
     </div>
 </div>
 {% else %}
-<div class="jumbotron jumbotron-fluid {% if page.jumbotron.image %}background_image{% endif%} {% if page.jumbotron.class %}{{page.jumbotron.class}}{% endif %}">
+<div class="jumbotron d-flex align-items-center jumbotron-fluid {% if page.jumbotron.video %}video{% endif %}
+{% if page.jumbotron.image %}background_image{% endif%} {% if page.jumbotron.class %}{{page.jumbotron.class}}{% endif %}">
     {% if page.jumbotron.image %}
         {% assign image_path = page.jumbotron.image | remove_first: "/assets/images/" %}
         {% picture header_image {{image_path}} %}
+
+    {% endif %}
+    {% if page.jumbotron.video %}
+        <video autoplay muted preload="none" poster="{{page.jumbotron.video.poster}}" playsinline loop id="jumbotronVideo">
+            {% if page.jumbotron.video.source.mp4 %}
+            <source src="{{page.jumbotron.video.source.mp4}}" type="video/mp4">
+            {% endif %}
+            {% if page.jumbotron.video.source.ogg %}
+            <source src="{{page.jumbotron.video.source.ogg}}" type="video/ogg">
+            {% endif %}
+            {% if page.jumbotron.video.source.webm %}
+            <source src="{{page.jumbotron.video.source.webm}}" type="video/webm">
+            {% endif %}
+        </video>
     {% endif %}
     <div class="container {% if page.jumbotron.class %}{{page.jumbotron.class}}{% endif %}">
             <div class="inner_content_wrapper">
