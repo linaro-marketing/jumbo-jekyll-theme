@@ -81,7 +81,7 @@ markup_presets:
     formats: [webp, original]
     widths: [400,800,1200,1920]
   card_block_image:
-    markup: data_img
+    markup: data_picture
     attributes:
       img: 'class="lazyload card-img-top"'
     formats: [webp, original]
