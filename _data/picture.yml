@@ -98,3 +98,9 @@ markup_presets:
       img: 'class="lazyload img-fluid"'
     formats: [webp, original]
     widths: [400,600,900, 1400]
+  youtube_poster_image:
+    markup: direct_url
+    attributes:
+      img: 'class="lazyload img-fluid"'
+    formats: [webp, original]
+    widths: [400,600,900,1400]
