@@ -1,5 +1,5 @@
 // Theses are the Overrides of Bootstrap Sass Variables locatted in boostrap/_variables
-$primary: #9c3;
+$primary: rgb(110, 53, 148);
 $secondary: #575757;
 $theme-colors: (
   "primary": $primary,
@@ -19,13 +19,14 @@ $jumbotron_bg_color: #575757;
 $jumbotron_height: 500px;
 // Typography
 @font-face {
+  font-display: fallback;
   font-family: 'Lato';
-  src: url('/assets/fonts/lato-regular/Lato-regular.eot'); /* IE9 Compat Modes */
-  src: url('/assets/fonts/lato-regular/Lato-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/lato-regular/Lato-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/lato-regular/Lato-regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/assets/fonts/lato-regular/Lato-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/lato-regular/Lato-regular.svg') format('svg'); /* Legacy iOS */
+  src: url('/assets/fonts/lato/Lato-regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/lato/Lato-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/lato/Lato-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/lato/Lato-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/fonts/lato/Lato-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/lato/Lato-regular.svg') format('svg'); /* Legacy iOS */
 }
 // Fonts
 $font-family-base: "Lato";
@@ -34,12 +35,12 @@ $footer_bg_color: #00000b;
 $footer_strip_bg_color: $secondary;
 // Flow
 $flow_row_padding: 40px;
+$flow_component_padding: 15px;
 // Cookie Consent
 $cookie_consent_bg: #000;
 $cookie_consent_text_color: #fff;
 // Breadcrumb
 $breadcrumb_bg_color: #e9ecef;
-
 
 
 //Home
