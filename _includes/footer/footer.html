@@ -59,11 +59,11 @@
                         {% endfor %}
                     </div>
                     <div class="col col-12  text-white text-center m-t-10">
-                        {% if site.data.footer.linaro_branding %}
-                        <a href="https://www.linaro.org">
-                            <img src="/assets/images/Linaro-logo-white.png" class="footer-logo mx-auto"
-                                alt="Linaro Logo White Footer Icon" />
-                        </a>
+                        {% if site.data.footer.footer_brand %}
+                            <a href="{{site.url}}/">
+                                <img src="{{site.data.footer.footer_brand.logo}}" class="footer-logo mx-auto"
+                                    alt="{{site.name}} Logo" />
+                            </a>
                         {% endif %}
                     </div>
                 </div>
