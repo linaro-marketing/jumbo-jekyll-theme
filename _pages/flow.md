@@ -6,7 +6,7 @@ descrtion: >
     This page showcases the power of the flow.html Jekyll include provided in this theme.
 keywords: flow, jekyll, automation, simple, bootstrap 3
 jumbotron:
-    class: dotted
+    inner_class: dotted
     title: Get your flow on!
     description: >
         The flow layout enables you to create custom pages using only Jekyll front matter.
@@ -21,22 +21,27 @@ flow:
     #   style: dark
       sections:
         - format: title
+          style: #
           title_content:
             size: h2
-            text: Members Section Example
+            text: What is the flow layout?
+            style: display-4
         - format: text
-          style: text-center
+          style: #
           text_content:
-            text: An example members section
+            text: |
+                The flow layout enables content editors to create custom pages _without_ the need to add a new layout.
+
+                The layout let's content editors a combination of row and section types to create a custom static page.
         - format: buttons
-          style: text-center
+          style: #
           buttons_content:
               - title: More Details
                 url: /about/
                 icon: fa fa-arrow-right
                 style: btn-primary
     - row: container_row
-      style: fixed
+      style: fixed text-center
       background_image: /assets/images/test/background-image1.jpg
       sections:
         - format: title
@@ -55,10 +60,24 @@ flow:
               icon: fa fa-arrow-right
               style: btn-primary
     - row: container_row
+      style: bg-primary
+      sections:
+        - format: title
+          style: text-center text-white
+          title_content:
+            size: h2
+            text: Lazy YouTube embed row
+        - format: youtube
+          style: #
+          url: https://www.youtube.com/watch?v=mWpK-cNQmL8
+        #   poster_image: /assets/images/test/background-image1.jpg
+          title: Interview with Shuah Khan on Kernel Self Test
+    - row: container_row
       style: block_row
     #   background_image: /assets/images/test/background-image1.jpg
       sections:
         - format: title
+          style: text-center
           title_content:
             size: h2
             text: Block Row
@@ -154,6 +173,45 @@ flow:
                       icon: fa fa-book
                       style: btn-primary
     - row: container_row
+      style: block_row fixed
+      sections:
+        - format: tabs
+          style: #
+          tabs:
+            - title: Test
+              content: |
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis > nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore > eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                - Test
+                - Test
+                - Test
+
+                This is some more [content](/).
+            - title: Test 2
+              content: |
+                This is some test tab content. 2
+
+                - Test
+
+                - Test
+
+                - Test
+
+                This is some more [content](/).
+            - title: Test 3
+              content: |
+                This is some test tab content. 3
+
+                - Test
+                - Test
+                - Test
+
+                This is some more [content](/). 3
+    - row: container_row
       #style: fixed
       background_image: /assets/images/test/background-image1.jpg
       sections:
@@ -167,6 +225,7 @@ flow:
       style: fixed block_row
       sections:
         - format: title
+          style: text-center
           title_content:
             text: Full Width Block Row
             size: h2
@@ -223,11 +282,13 @@ flow:
             text: Feature Block Row (Full Width)
             size: h2
         - format: feature_block
-        #   style: text-center text-white
+          style: dotted
           feature_block_content:
             position: "left"
             type: "youtube_video"
-            video_content_url: https://www.youtube.com/watch?v=QH2-TGUlwu4
+            youtube:
+                url: https://www.youtube.com/watch?v=QH2-TGUlwu4
+                poster_image: /assets/images/test/background-image1.jpg
             title: Feature Block
             text: >
                 A feature block with a youtube video.
@@ -262,7 +323,7 @@ flow:
             text: Feature Block Row
             size: h2
         - format: feature_block
-        #   style: text-center text-white
+          style: dotted
           feature_block_content:
             position: "left"
             type: "slider"
