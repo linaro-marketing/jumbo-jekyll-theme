@@ -61,6 +61,7 @@
         @include media-breakpoint-down(sm) {
             text-align: center;
         }
+
     }
     .nav-item {
       @include media-breakpoint-down(sm) {
@@ -125,6 +126,16 @@
         padding: .5rem 1.5rem;
         width:100%;
         display: inline-block;
+      }
+      li {
+        &:hover {
+            background-color: $primary;
+            color: #fff;
+            &> a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
       }
     }
 
