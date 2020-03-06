@@ -3,13 +3,15 @@ layout: base
 title: Blog
 css_package: blog
 ---
-<div class="row" id="content-container">
-    <div class="container">
-        {% include blog/display_blog_posts.html %}
-        {% if page.news %}
-            {% include blog/pagination.html path="/news/:num/"%}
-        {% else %}
-            {% include blog/pagination.html path="/blog/:num/"%}
-        {% endif %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="container">
+            {% include blog/display_blog_posts.html %}
+            {% if page.news %}
+                {% include blog/pagination.html path="/news/:num/"%}
+            {% else %}
+                {% include blog/pagination.html path="/blog/:num/"%}
+            {% endif %}
+        </div>
     </div>
 </div>
