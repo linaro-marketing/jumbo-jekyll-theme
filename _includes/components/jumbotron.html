@@ -7,7 +7,7 @@
                 {% assign image_path = slide.image | remove_first: "/assets/images/" %}
                 {% picture header_slider_image {{image_path}} %}
             {% endif %}
-            <div class="container">
+            <div class="container {% if page.jumbotron.inner_class %}{{page.jumbotron.inner_class}}{% endif %}">
                 <div class="inner_content_wrapper">
                 {% if slide.inner-image %}
                     <img class="img-responsive lazyload"
@@ -59,7 +59,7 @@
             {% endif %}
         </video>
     {% endif %}
-    <div class="container {% if page.jumbotron.class %}{{page.jumbotron.class}}{% endif %}">
+    <div class="container {% if page.jumbotron.inner_class %}{{page.jumbotron.inner_class}}{% endif %}">
             <div class="inner_content_wrapper">
             <h1 class="display-4">{{page.jumbotron.title}}</h1>
             {% if page.jumbotron.description %}
