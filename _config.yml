@@ -81,6 +81,9 @@ http2_resources:
     as: font
     type: font/woff2
     href: /assets/fonts/lato/Lato-regular.woff2
+google_analytics:
+  enabled: true
+  code: UAXXXXXX
 # ----------- JEKYLL PLUGINS ---------------------
 # -------- jekyll-tidy --------
 jekyll_tidy:
