@@ -1,40 +1,40 @@
 <div class="col col-12 feature_block">
-    <div class="row">
-        <div class="col col-12 col-sm-7 block__image {% if include.object.position == "right" %}order-sm-2{% endif %}">
-            {% if include.object.type == "image" %}
-                {% assign image_path = include.object.image_content_path | remove_first: '/assets/images/' %}
+    <div class="row {% if include.object.style %}{{include.object.style}}{% endif %}">
+        <div class="col col-12 col-md-7 block__image {% if include.object.feature_block_content.position == "right" %}order-sm-2{% endif %}">
+            {% if include.object.feature_block_content.type == "image" %}
+                {% assign image_path = include.object.feature_block_content.image_content_path | remove_first: '/assets/images/' %}
                 {% capture image_alt %}
-                    {% if include.object.title %}
-                        {{include.object.title}} featured image
+                    {% if include.object.feature_block_content.title %}
+                        {{include.object.feature_block_content.title}} featured image
                     {% else %}
                         {{page.title}} feature block image
                     {% endif %}
                 {% endcapture %}
                 {% picture feature_block_image {{image_path}} --alt {{image_alt}} %}
-            {% elsif include.object.type == "slider" %}
-                {% include flow/slider.html object=include.object.slider_content %}
-            {% elsif include.object.type == "youtube_video" %}
-                {% include flow/youtube_video_embed.html object=include.object.video_content_url %}
+            {% elsif include.object.feature_block_content.type == "slider" %}
+                {% include flow/slider.html object=include.object.feature_block_content.slider_content %}
+            {% elsif include.object.feature_block_content.type == "youtube_video" %}
+                {% include youtube.html url=include.object.feature_block_content.youtube.url title=include.object.feature_block_content.title poster_image=include.object.feature_block_content.youtube.poster_image %}
             {% else %}
                 <p>Please verify the feature_block content "type" is correct</p>
             {% endif %}
         </div>
-        <div class="col col-12 col-sm-5 block__text {% if include.object.position == "right" %}order-sm-1{% endif %}">
-            {% if include.object.title %}
-                <h2>{{include.object.title}}</h2>
+        <div class="col col-12 col-md-5 block__text {% if include.object.feature_block_content.position == "right" %}order-sm-1{% endif %}">
+            {% if include.object.feature_block_content.title %}
+                <h2>{{include.object.feature_block_content.title}}</h2>
             {% endif %}
-            {% if include.object.highlight-text %}
+            {% if include.object.feature_block_content.highlight-text %}
                 <div class="font-weight-bold">
-                    {{include.object.highlight-text | markdownify }}
+                    {{include.object.feature_block_content.highlight-text | markdownify }}
                 </div>
             {% endif %}
-            {% if include.object.text == "page_content" %}
+            {% if include.object.feature_block_content.text == "page_content" %}
                 {{page.content | markdownify }}
             {% else %}
-                {{include.object.text | markdownify}}
+                {{include.object.feature_block_content.text | markdownify}}
             {% endif %}
-            {% if include.object.buttons %}
-                {% include flow/buttons.html object=include.object.buttons %}
+            {% if include.object.feature_block_content.buttons %}
+                {% include flow/buttons.html object=include.object.feature_block_content.buttons %}
             {% endif %}
         </div>
     </div>
