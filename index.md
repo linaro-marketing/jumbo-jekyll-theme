@@ -69,7 +69,8 @@ flow:
                   url: https://github.com/linaro-marketing/jumbo-jekyll-theme/wiki
                   style: btn-primary
 jumbotron:
-    class: dotted
+    class: home
+    inner_class: dotted
     slider:
         - title: A feature-packed Jekyll theme
           title-class: big-title
