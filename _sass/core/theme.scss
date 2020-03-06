@@ -8,4 +8,8 @@
             color: #fff;
         }
     }
+    .dotted {
+        border: 6px dotted $primary;
+        border-radius: 10px;
+    }
 }
