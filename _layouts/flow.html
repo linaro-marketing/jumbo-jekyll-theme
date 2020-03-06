@@ -3,7 +3,7 @@ layout: base
 ---
 {% if page.jumbotron %}
     {% include components/jumbotron.html %}
-{% else %}
+{% elsif page.breadcrumb %}
     {% include components/breadcrumb.html %}
 {% endif %}
 <div class="container-fluid" id="flow_wrapper">
