@@ -11,7 +11,9 @@
     {% include components/css.html %}
     <link rel="icon" href="{{site.data.settings.favicon}}" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% include_cached components/google_analytics.html %}
+    {% if site.google_analytics.enabled %}
+        <meta name="analytics_code" content="{{site.google_analytics.code}}">
+    {% endif %}
     {% if page.keywords %}
         <meta name="keywords" content="{{page.keywords}}">
     {% endif %}
