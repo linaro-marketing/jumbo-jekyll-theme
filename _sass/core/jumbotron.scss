@@ -20,13 +20,8 @@
       z-index: -1;
       overflow: hidden;
     }
-    &.dotted {
+    .dotted {
       .inner_content_wrapper {
-        border: 4px dotted #9c3;
-        border-radius: 20px;
-        padding: 17px;
-        border: 6px dotted #98cc33;
-        border-radius: 10px;
         padding: 20px;
         text-align: center;
         @include media-breakpoint-only(xs){
