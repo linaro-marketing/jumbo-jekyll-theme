@@ -1,0 +1,194 @@
+/* Cookie Dialog */
+#gdpr-cookie-message {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    max-width: 375px;
+    background-color: #eeeded;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 15px 15px rgba(0,0,0,0.25);
+    margin-left: 30px;
+    font-family: 'Lato';
+    z-index: 999999;
+    button#ihavecookiesBtn {
+        margin-left: 0px !important;
+    }
+    h4 {
+        color: #333;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    h5 {
+        color: #a2a2a2;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+     p,  ul {
+        color: #333;
+        font-size: 15px;
+        line-height: 1.5em;
+    }
+    p:last-child {
+        margin-bottom: 0;
+        text-align: right;
+    }
+    li {
+        width: 49%;
+        display: inline-block;
+    }
+    a {
+        color: $primary;
+        text-decoration: none;
+        font-size: 15px;
+        padding-bottom: 2px;
+        border-bottom: 1px dotted rgba(255,255,255,0.75);
+        transition: all 0.3s ease-in;
+        &:hover {
+            color:#333;
+            border-bottom-color: $primary;
+            transition: all 0.3s ease-in;
+        }
+    }
+    button, button#ihavecookiesBtn {
+        border: none;
+        background: $primary;
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 15px;
+        padding: 7px;
+        border-radius: 3px;
+        margin-left: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+    button {
+        &:hover {
+            background: white;
+            color: $primary;
+            transition: all 0.3s ease-in;
+        }
+        &#gdpr-cookie-advanced {
+            background: white;
+            color: $primary;
+        }
+        &:disabled {
+            opacity: 0.3;
+        }
+    }
+    input[type="checkbox"] {
+        float: none;
+        margin-top: 0;
+        margin-right: 5px;
+    }
+}
+
+.df-switch {
+  margin-top: 20px;
+  padding: 2rem;
+  text-align: center;
+}
+.btn-toggle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.btn-toggle {
+  margin: 0 4rem;
+  padding: 0;
+  position: relative;
+  border: none;
+  height: 1.5rem;
+  width: 5rem;
+  border-radius: 1.5rem;
+  color: #6b7381;
+  background: lightgrey;
+}
+.btn-toggle:focus,
+.btn-toggle.focus,
+.btn-toggle:focus.active,
+.btn-toggle.focus.active {
+  outline: none;
+}
+.btn-toggle:before,
+.btn-toggle:after {
+  line-height: 1.5rem;
+  width: 4rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 0;
+  transition: opacity 0.25s;
+}
+.btn-toggle:before {
+  content: 'off';
+  left: -5rem;
+  color: lightgrey;
+}
+.btn-toggle:after {
+  content: 'on';
+  right: -5rem;
+  opacity: 0.5;
+  color: $primary;
+}
+.btn-toggle > .inner-handle {
+  border-radius: 13px;
+  width: 65px;
+  height: 13px;
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  background-color: lightgrey;
+  box-shadow: inset 1px 1px 2px -1px black;
+}
+.btn-toggle.active > .inner-handle {
+  background-color:$primary;
+}
+.btn-toggle > .handle:before {
+  content: "";
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  top: 35%;
+  left: 11px;
+  background-image: radial-gradient(circle at center, $primary 5px, transparent 5px);
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+}
+.btn-toggle.active > .handle:before {
+  background-image: radial-gradient(circle at center, $primary 5px, transparent 5px);
+}
+.btn-toggle > .handle {
+  position: absolute;
+  top: -0.2875rem;
+  left: 0.3875rem;
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 1.125rem;
+  background: #fff;
+  transition: left 0.25s;
+  border: 1px solid #ccc;
+}
+.btn-toggle.active {
+  transition: background-color 0.25s;
+}
+.btn-toggle.active > .handle {
+  left: 2.4175rem;
+  transition: left 0.25s;
+}
+.btn-toggle.active:before {
+  opacity: 0.5;
+}
+.btn-toggle.active:after {
+  opacity: 1;
+  color: $primary;
+}
+.btn-toggle.active {
+  background-color: $primary;
+}
