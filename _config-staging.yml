@@ -8,3 +8,6 @@ url: "https://site-test.linaro.org"
 destination: staging.site-test.linaro.org
 # Production boolean used in layouts / includes
 production: false
+google_analytics:
+  enabled: false
+  # code: UAXXXXXX
