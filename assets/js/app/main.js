@@ -86,14 +86,14 @@ $(document).ready(function() {
             items: xs_items
           },
           // breakpoint from 480 up
-          1000: {
+          768: {
             items: sm_items
           },
           // breakpoint from 768 up
-          1200: {
+          992: {
             items: md_items
           },
-          1400: {
+          1200: {
             items: lg_items
           }
         }
@@ -205,18 +205,83 @@ $(document).ready(function() {
   $(".nav-tabs a").on("shown", function(e) {
     window.location.hash = e.target.hash.replace("#", "#" + prefix);
   });
+
   // Cookie Consent Setup
-  window.cookieconsent.initialise({
-    palette: {
-      popup: {
-        background: "#000000",
-        text: "#fff"
-      },
-      button: {
-        background: "transparent",
-        text: "#ffffff",
-        border: "#25cfb0"
+  if ($("meta[name=analytics_code]")) {
+    // Options for the Cookie Dialog
+    var options = {
+      title: "Cookies & Privacy Policy",
+      link: "https://www.linaro.org/legal/#privacy",
+      moreInfoLabel: "View our Privacy Policy",
+      delay: 1000,
+      acceptBtnLabel: "Accept all cookies",
+      uncheckBoxes: false,
+      message:
+        "Cookies enable you to use this website to the full extent and to personalize your experience on our sites. They tell us which parts of our websites people have visited, help us measure the effectiveness of ads and web searches and give us insights into user behavior so we can improve our communications with you.",
+      cookieTypes: [
+        {
+          type: "Analytics",
+          value: "analytics",
+          description: "Cookies related to site visits, browser types, etc."
+        }
+      ],
+      onAccept: function() {
+        init_ga();
+      }
+    };
+    // Enabled Google Analytics if cookie to allow us to collect is set.
+    function init_ga() {
+      if ($.fn.ihavecookies.preference("analytics")) {
+        (function(i, s, o, g, r, a, m) {
+          i["GoogleAnalyticsObject"] = r;
+          (i[r] =
+            i[r] ||
+            function() {
+              (i[r].q = i[r].q || []).push(arguments);
+            }),
+            (i[r].l = 1 * new Date());
+          (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m);
+        })(
+          window,
+          document,
+          "script",
+          "https://www.google-analytics.com/analytics.js",
+          "ga"
+        );
+        ga("create", "UA-XXXXX-Y", "auto");
+        ga("send", "pageview");
+        console.log("Google Analytics started");
+      } else {
+        console.log("Google analytics not started... :(");
       }
     }
-  });
+    // Initialize
+    init_ga();
+
+    if ($(".cookie_manager").length > 0) {
+      var analytics_toggle = $("#analytics_toggle");
+      if ($.fn.ihavecookies.preference("analytics")) {
+        analytics_toggle.addClass("active");
+      }
+      analytics_toggle.on("click", function() {
+        $.removeCookie("_ga");
+        $.removeCookie("_ga", { path: "/" });
+        $.removeCookie("_gid");
+        $.removeCookie("_gid", { path: "/" });
+        $.removeCookie("_gat");
+        $.removeCookie("_gat", { path: "/" });
+        $.removeCookie("cookieControlPrefs");
+        $.removeCookie("cookieControlPrefs", { path: "/" });
+        $.removeCookie("cookieControl");
+        $.removeCookie("cookieControl", { path: "/" });
+        options["analyticsChecked"] = false;
+        options["acceptBtnLabel"] = "Updated Cookies";
+        $("body").ihavecookies(options);
+      });
+    }
+    $("body").ihavecookies(options);
+  }
 });
