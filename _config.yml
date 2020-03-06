@@ -84,6 +84,14 @@ http2_resources:
 google_analytics:
   enabled: true
   code: UAXXXXXX
+# Set the site-wide default social media share image.
+social_media_share_image: /assets/images/social-media-image.png
+# Set the default favicon
+favicon: /assets/images/favicon.png
+# Site Name - your brand name
+name: Jumbo Jekyll Theme
+# The blog filler element
+blog_filler_element: blog/blog_filler_element.html
 # ----------- JEKYLL PLUGINS ---------------------
 # -------- jekyll-tidy --------
 jekyll_tidy:
