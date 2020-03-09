@@ -21,8 +21,11 @@
                             {% if post.image %}
                                 {% assign block_image = post.image | remove_first: "/assets/images/" %}
                                 {% capture block_image_alt %}{{post.title}} image {% endcapture %}
-                                {% picture featured_blog_image {{block_image}} --alt {{block_image_alt}} %}
+                            {% else %}
+                                {% assign block_image = site.post_placeholder | remove_first: "/assets/images/" %}
+                                {% capture block_image_alt %}Blog post placeholder image {% endcapture %}
                             {% endif %}
+                            {% picture featured_blog_image {{block_image}} --alt {{block_image_alt}} %}
                         </a>
                     </div>
                     <div class="col col-12 col-lg-5 order-lg-1 px-0 px-sm-0 latest-featured-post-content">
@@ -74,8 +77,11 @@
                         {% if post.image %}
                             {% assign block_image = post.image | remove_first: "/assets/images/" %}
                             {% capture block_image_alt %}{{post.title}} image {% endcapture %}
-                            {% picture featured_blog_image {{block_image}} --alt {{block_image_alt}} %}
+                        {% else %}
+                            {% assign block_image = site.post_placeholder | remove_first: "/assets/images/" %}
+                            {% capture block_image_alt %}Blog post placeholder image {% endcapture %}
                         {% endif %}
+                        {% picture featured_blog_image {{block_image}} --alt {{block_image_alt}} %}
                     </div>
                     <div class="card-body">
 
