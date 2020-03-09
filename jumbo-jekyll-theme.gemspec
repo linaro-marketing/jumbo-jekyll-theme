@@ -24,8 +24,6 @@ Gem::Specification.new do |spec|
     spec.add_runtime_dependency "jekyll", "~> 4.0.0"
     # Jekyll cached include plugin
     spec.add_runtime_dependency 'jekyll-include-cache', '0.2.0'
-
-    spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
     # Responsive images
     spec.add_runtime_dependency "jekyll_picture_tag", '1.9.0'
     # Generate a sitemap at sitemap.xml
