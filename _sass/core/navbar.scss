@@ -24,7 +24,7 @@
   #main-navigation {
     padding-top: $navbar_height_padding;
     padding-bottom: $navbar_height_padding;
-    background-color: $navbar_bg_color;
+    background-color: $navbar_bg_color !important;
     color: $navbar_text_color;
     .navbar-brand {
       img {
