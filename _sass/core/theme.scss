@@ -12,4 +12,31 @@
         border: 6px dotted $primary;
         border-radius: 10px;
     }
+    p {
+        @include media-breakpoint-up(xl){
+            font-size: 1.5rem;
+        }
+    }
+
+
+    blockquote {
+        width:100%;
+        font-family:Open Sans;
+        font-style:italic;
+        color: #555555;
+        padding:1.2em 30px 1.2em 75px;
+        border-left:8px solid $primary ;
+        line-height:1.6;
+        position: relative;
+        background:#EDEDED;
+        &::before{
+            font-family:Arial;
+            content: "\201C";
+            color:$primary;
+            font-size:6em;
+            position: absolute;
+            left: 10px;
+            top:-10px;
+        }
+    }
 }
