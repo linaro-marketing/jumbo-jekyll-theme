@@ -8,25 +8,25 @@
     {% else %}
     <li class="page-item disabled"><a class="page-link" href="#">&laquo; Prev</a></li>
     {% endif %}
-        {% if paginator.page_trail %}
-            {% for trail in paginator.page_trail %}
-            <li {% if page.url == trail.path %}class="active"{% endif %}>
-                <a class="page-link" href="{% if trail.num == 1 %}{{paginate_base_path[0]}}{% else %}
-                {{ paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', trail.num  }}{% endif %}"
-                title="{{trail.title}}">{{ trail.num }}</a>
-            </li>
-            {% endfor %}
+    {% if paginator.page_trail %}
+        {% for trail in paginator.page_trail %}
+        <li {% if page.url == trail.path %}class="page-item active"{% endif %}>
+            <a class="page-link" href="{% if trail.num == 1 %}{{paginate_base_path[0]}}{% else %}
+            {{ paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', trail.num  }}{% endif %}"
+            title="{{trail.title}}">{{ trail.num }}</a>
+        </li>
+        {% endfor %}
+    {% else %}
+        {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+            <li class="page-item active"><a class="page-link" href="">{{ page }}</a></li>
+        {% elsif page == 1 %}
+            <li class="page-item"><a class="page-link" href="{{paginate_base_path[0]}}">{{ page }}</a></li>
         {% else %}
-            {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-                <li class="active"><a class="page-link" href="">{{ page }}</a></li>
-            {% elsif page == 1 %}
-                <li class="page-item"><a class="page-link" href="{{paginate_base_path[0]}}">{{ page }}</a></li>
-            {% else %}
-                <li class="page-item"><a class="page-link" href="{{ paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-            {% endif %}
-            {% endfor %}
+            <li class="page-item"><a class="page-link" href="{{ paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
         {% endif %}
+        {% endfor %}
+    {% endif %}
     {% if paginator.next_page %}
         <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next </a></li>
     {% else %}
