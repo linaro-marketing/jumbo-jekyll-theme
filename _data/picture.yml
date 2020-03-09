@@ -117,8 +117,14 @@ markup_presets:
     formats: [webp, original]
     widths: [400,600,900,1400]
   author_thumbnail:
-    markup: data_img
+    markup: data_picture
     attributes:
       img: 'class="lazyload rounded-circle"'
     formats: [webp, original]
     widths: [50,100]
+  author_thumbnail_small:
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload rounded-circle small"'
+    formats: [webp, original]
+    widths: [50]
