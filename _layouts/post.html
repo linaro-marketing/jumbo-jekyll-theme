@@ -12,16 +12,21 @@ css_package: blog
         <div class="inner_content_wrapper">
             <h1 class="">{{page.title}}</h1>
 
-            {% assign author-url = author.url %}
             {% assign author = site.authors | where: "username", page.author | first %}
+            {% assign author-url = author.url %}
             {% assign author_name = author.name %}
             {% capture author_image_alt %}{{author_name}} image{% endcapture %}
+            {% if author.image %}
+                {% assign author_image = author.image | remove_first: "/assets/images/" %}
+            {% else %}
+                {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
+            {% endif %}
             <a href="{{author-url}}">
-                {% picture author_thumbnail {{author.image_path | remove_first: "/assets/images/" }} --alt {{author_image_alt}} %}
+                {% picture author_thumbnail {{author_image}} --alt {{author_image_alt}} %}
+                <p class="lead">
+                    <em>{{author_name}}</em>
+                </p>
             </a>
-            <p class="lead">
-                <em>{{author_name}}</em>
-            </p>
             <hr class="my-4">
             <p>
                 <em>{{page.date |  date: "%A, %B %-d, %Y"}}</em>
@@ -30,7 +35,7 @@ css_package: blog
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid main_content">
     <div class="row">
         <div class="container">
             <div class="row justify-content-sm-center">
