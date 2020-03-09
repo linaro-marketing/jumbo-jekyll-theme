@@ -24,24 +24,26 @@
             }
         }
     }
-    .suggested_posts {
-        .suggested_post_thumb {
-            width: 100px;
-            border:1px solid lightgray;
-            padding:0;
-            @include media-breakpoint-down(xs) {
-                width:100%;
-            }
+    .suggested_post_thumb {
+        width: 100px;
+        border:1px solid lightgray;
+        padding:0;
+        @include media-breakpoint-down(xs) {
+            width:100%;
         }
-        .suggested_post_date {
-            display:block;
+    }
+    .media-body {
+        h5{
+            font-size: 1.7rem;
         }
-        a {
-            color: #333;
-            transition: all 500ms ease-in-out;
-            &:hover {
-                color: $primary;
-            }
+    }
+    .suggested_post_date {
+        display:block;
+    }
+    a {
+        transition: all 500ms ease-in-out;
+        &:hover {
+            color: $primary;
         }
     }
     .rounded-circle {
