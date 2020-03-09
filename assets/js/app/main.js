@@ -7,15 +7,23 @@ $(document).ready(function() {
       var copyBtn =
         '<button id="copyBtn' +
         index +
-        '" data-toggle="tooltip" data-placement="left" title="Copied to Clipboard" class="btn copyBtn" data-clipboard-target="#' +
+        '" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard" class="btn copyBtn" data-clipboard-target="#' +
         uniqueId +
         '">';
       copyBtn +=
-        '<img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+        '<img src="/assets/images/clipboard.svg" width="13" alt="Copy to clipboard"></button>';
       $(this).append(copyBtn);
       (function() {
         new ClipboardJS("#copyBtn" + index);
       })();
+      $("#copyBtn" + index).on("click", function() {
+        $(this)
+          .attr("title", "Copied!")
+          .tooltip("_fixTitle")
+          .tooltip("show")
+          .attr("title", "Copy to clipboard")
+          .tooltip("_fixTitle");
+      });
     });
   }
   if ($("#jumbotron-slider").length > 0) {
@@ -284,4 +292,7 @@ $(document).ready(function() {
     }
     $("body").ihavecookies(options);
   }
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
 });
