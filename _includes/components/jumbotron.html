@@ -15,7 +15,7 @@
                         data-src="{{slide.inner-image}}" alt="Slide {{forloop.index}} inner image" />
                 {% endif %}
                 {% if slide.title %}
-                    <h1 class="display-4 {% if slide.title-class %}{{slide.title-class}}{% endif %}">
+                    <h1 class=" {% if slide.title-class %}{{slide.title-class}}{% endif %}">
                         {{slide.title}}</h1>
                 {% endif %}
                 {% if slide.description %}
@@ -61,7 +61,7 @@
     {% endif %}
     <div class="container {% if page.jumbotron.inner_class %}{{page.jumbotron.inner_class}}{% endif %}">
             <div class="inner_content_wrapper">
-            <h1 class="display-4">{{page.jumbotron.title}}</h1>
+            <h1 class="">{{page.jumbotron.title}}</h1>
             {% if page.jumbotron.description %}
             <p class="lead">
                 {{page.jumbotron.description }}
