@@ -16,7 +16,7 @@
             </style>
             <div class="col col-12 featured_post">
                 <div class="row">
-                    <div class="col col-12 col-sm-7 order-sm-2 px-sm-0 latest-featured-post">
+                    <div class="col col-12 col-lg-7 order-lg-2 px-0 px-sm-0 latest-featured-post">
                         <a href="{{post.url}}">
                             {% if post.image %}
                                 {% assign block_image = post.image | remove_first: "/assets/images/" %}
@@ -25,9 +25,23 @@
                             {% endif %}
                         </a>
                     </div>
-                    <div class="col col-12 col-sm-5 order-sm-1 px-sm-0 latest-featured-post-content">
+                    <div class="col col-12 col-lg-5 order-lg-1 px-0 px-sm-0 latest-featured-post-content">
                         <div class="card h-100">
                             <div class="card-body">
+                                {% assign author = site.authors | where: "username", post.author | first %}
+                                {% assign author-url = author.url %}
+                                {% if author.image_path %}
+                                    {% assign author_image = author.image_path | remove_first: "/assets/images/" %}
+                                {% else %}
+                                    {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
+                                {% endif %}
+                                {% capture image_alt %}{{author.name}} profile image{% endcapture %}
+                                <div class="media align-items-center mb-3">
+                                    <div class="media-body">
+                                        <em class="mt-0">{{author.name}}</em>
+                                    </div>
+                                    {% picture author_thumbnail_small {{author_image}} --alt {{image_alt}} %}
+                                </div>
                                 <h5 class="card-title">{{post.title}}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%A, %B %-d, %Y"}}</h6>
                                 <p class="card-text">
@@ -54,14 +68,31 @@
                 {% include {{site.blog_filler_element}} %}
             {% endif %}
 
-            <div class="col col-12 col-sm-4 blog-post-item-col px-sm-0 ">
-                <div class="card h-100">
-                    {% if post.image %}
-                        {% assign block_image = post.image | remove_first: "/assets/images/" %}
-                        {% capture block_image_alt %}{{post.title}} image {% endcapture %}
-                        {% picture featured_blog_image {{block_image}} --alt {{block_image_alt}} %}
-                    {% endif %}
+            <div class="col col-12 col-sm-6 col-lg-4 blog-post-item-col p-3">
+                <div class="card h-100 ">
+                    <div class="blog_image_header">
+                        {% if post.image %}
+                            {% assign block_image = post.image | remove_first: "/assets/images/" %}
+                            {% capture block_image_alt %}{{post.title}} image {% endcapture %}
+                            {% picture featured_blog_image {{block_image}} --alt {{block_image_alt}} %}
+                        {% endif %}
+                    </div>
                     <div class="card-body">
+
+                        {% assign author = site.authors | where: "username", post.author | first %}
+                        {% assign author-url = author.url %}
+                        {% if author.image_path %}
+                            {% assign author_image = author.image_path | remove_first: "/assets/images/" %}
+                        {% else %}
+                            {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
+                        {% endif %}
+                        {% capture image_alt %}{{author.name}} profile image{% endcapture %}
+                        <div class="media align-items-center mb-3">
+                            <div class="media-body">
+                                <em class="mt-0">{{author.name}}</em>
+                            </div>
+                            {% picture author_thumbnail_small {{author_image}} --alt {{image_alt}} %}
+                        </div>
                         <h5 class="card-title">{{post.title}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%A, %B %-d, %Y"}}</h6>
                         <p class="card-text">
@@ -71,23 +102,6 @@
                                 {{ post.content | strip_html | truncatewords:30 }}
                             {% endif %}
                             Read time: {% include blog/read_time.html content=post.content %}
-                        </p>
-                        {% assign author = site.authors | where: "username", post.author | first %}
-                        {% assign author-url = author.url %}
-                        <div class="blog-author-image lazyload"
-                            data-bg="">
-                        </div>
-                        {% if author.image_path %}
-                            {% assign author_image = author.image_path | remove_first: "/assets/images/" %}
-                        {% else %}
-                            {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
-                        {% endif %}
-                        {% capture image_alt %}{{author.name}} profile image{% endcapture%}
-                        {% picture author_thumbnail {{author_image}} --alt {{image_alt}} %}
-                        <p class="card-text">
-                            <small class="blog-author">
-                                <em>{{author.name}}</em>
-                            </small>
                         </p>
                         <p class="card-text">
                             <a href="{{post.url}}" class="btn btn-primary">Read</a>
