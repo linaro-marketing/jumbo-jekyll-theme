@@ -1,4 +1,49 @@
 #wrapper {
+    .highlighter-rouge {
+        div.highlight {
+            position: relative;
+            pre.highlight {
+                padding: 15px;
+                position: relative;
+            }
+            .copyBtn {
+                position: absolute;
+                bottom: 0px;
+                z-index: 9999;
+                height: 40px;
+                right: 0px;
+                border-left: 1px solid white;
+                border-top: 1px solid white;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 0px;
+                width: 40px;
+                &:hover, &:focus  {
+                    background-color:$primary;
+                }
+            }
+        }
+    }
+    .suggested_posts {
+        .suggested_post_thumb {
+            width: 100px;
+            border:1px solid lightgray;
+            padding:0;
+            @include media-breakpoint-down(xs) {
+                width:100%;
+            }
+        }
+        .suggested_post_date {
+            display:block;
+        }
+        a {
+            color: #333;
+            transition: all 500ms ease-in-out;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
     .rounded-circle {
         width: 100px;
         height: 100px;
