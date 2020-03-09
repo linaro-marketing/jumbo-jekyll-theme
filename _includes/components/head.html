@@ -56,5 +56,6 @@
     {% if page.keywords %}
         <meta name="keywords" content="{{page.keywords}}">
     {% endif %}
-    {% include_cached components/schema.html is_post=page.is_post included_page=page %}
+    {% include_cached components/schema.html %}
+    {% if page.schema %}<script type="application/ld+json">{{page.schema | jsonify }}</script>{% endif %}
 </head>
