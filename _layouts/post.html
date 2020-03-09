@@ -34,14 +34,14 @@ css_package: blog
     <div class="row">
         <div class="container">
             <div class="row justify-content-sm-center">
-                <div class="col col-12 col-lg-8  blog-content">
+                <div class="col col-12 col-lg-10 py-4  blog-content">
                     <article>
                         {{ content }}
                         {% include blog/post_series.html %}
                     </article>
                     {% include blog/disqus_comments.html %}
                 </div>
-                <div class="col col-12 col-lg-8 no-padding blog-sidebar ">
+                <div class="col col-12 col-lg-10 py-4 blog-sidebar ">
                     {% include_cached blog/post_sidebar.html %}
                 </div>
             </div>
