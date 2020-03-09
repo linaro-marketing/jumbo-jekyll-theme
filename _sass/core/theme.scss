@@ -12,13 +12,11 @@
         border: 6px dotted $primary;
         border-radius: 10px;
     }
-    p {
+    .blog-content {
         @include media-breakpoint-up(xl){
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
     }
-
-
     blockquote {
         width:100%;
         font-family:Open Sans;
