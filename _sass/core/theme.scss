@@ -1,11 +1,40 @@
 #wrapper {
-    #main-navigation {
-        padding-top: $navbar_height_padding;
-        padding-bottom: $navbar_height_padding;
+    overflow-x:hidden;
+    .btn{
+        &.btn-primary {
+            color: #fff;
+        }
+        &.btn-secondary {
+            color: #fff;
+        }
     }
-    #universal_nav {
-        padding-top: $universal_height_padding;
-        padding-bottom: $universal_height_padding;
-        background-color: $primary;
+    .dotted {
+        border: 6px dotted $primary;
+        border-radius: 10px;
+    }
+    .blog-content {
+        @include media-breakpoint-up(xl){
+            font-size: 1.4rem;
+        }
+    }
+    blockquote {
+        width:100%;
+        font-family:Open Sans;
+        font-style:italic;
+        color: #555555;
+        padding:1.2em 30px 1.2em 75px;
+        border-left:8px solid $primary ;
+        line-height:1.6;
+        position: relative;
+        background:#EDEDED;
+        &::before{
+            font-family:Arial;
+            content: "\201C";
+            color:$primary;
+            font-size:6em;
+            position: absolute;
+            left: 10px;
+            top:-10px;
+        }
     }
 }

@@ -1,0 +1,90 @@
+#wrapper {
+  .jumbotron {
+    background-color: $jumbotron_bg_color;
+    position: relative;
+    height: $jumbotron_height;
+    margin-bottom: 0px;
+    h1 {
+        @include media-breakpoint-up(sm){
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+
+        }
+    }
+    &.video {
+        background-color: transparent;
+    }
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .dotted {
+      .inner_content_wrapper {
+        padding: 20px;
+        text-align: center;
+        @include media-breakpoint-only(xs){
+            padding:0px;
+            h1 {
+                margin:0.5rem;
+            }
+        }
+      }
+    }
+
+    &.background_image {
+      background-color: transparent;
+      .container {
+        h1 {
+          color: #fff;
+        }
+        p {
+          color: #fff;
+        }
+      }
+    }
+    &.slider {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      .owl-carousel {
+          height: 100%;
+        .owl-stage-outer {
+            height: 100%;
+            .owl-stage {
+                height: 100%;
+                .owl-item {
+                    height: 100%;
+                }
+            }
+        }
+      }
+
+      .item.owl-slide {
+        overflow: hidden;
+        height: 100%;
+      }
+      .owl-dots {
+            top: -40px;
+            position: relative;
+        }
+    }
+    .header_background_image {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+  }
+}

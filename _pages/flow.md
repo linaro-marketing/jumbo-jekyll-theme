@@ -6,56 +6,43 @@ descrtion: >
     This page showcases the power of the flow.html Jekyll include provided in this theme.
 keywords: flow, jekyll, automation, simple, bootstrap 3
 jumbotron:
+    inner_class: dotted
     title: Get your flow on!
-    background-image: /assets/images/content/background-image1.jpg
+    description: >
+        The flow layout enables you to create custom pages using only Jekyll front matter.
+    image: /assets/images/test/background-image1.jpg
+    buttons:
+        - title: View on Github
+          icon: icon-github
+          class: test
+          url: https://github.com
 flow:
     - row: container_row
     #   style: dark
       sections:
         - format: title
+          style: #
           title_content:
             size: h2
-            text: Members Section Example
+            text: What is the flow layout?
+            style: display-4
         - format: text
-          style: text-center
+          style: #
           text_content:
-            text: An example members section
-        - format: members
-          #data_source: members-section-example
-          style: zoom grayscale
-          members_content:
-            item_width: "3" #bootstrap col-sm- value e.g 3, 4, 5ths etc
-            items:
-              - name: JS
-                image:
-                    path: /assets/images/content/js-logo.png
-                    alt: JS Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-              - name: Packet
-                image:
-                    path: /assets/images/content/js-logo.png
-                    alt: Packet Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-              - name: JS Logo
-                image:
-                    path: /assets/images/content/js-logo.png
-                    alt: JS Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-              - name: JS
-                image:
-                    path: /assets/images/content/js-logo.png
-                    alt: JS Logo
-                url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+            text: |
+                The flow layout enables content editors to create custom pages _without_ the need to add a new layout.
+
+                The layout let's content editors a combination of row and section types to create a custom static page.
         - format: buttons
-          style: text-center
+          style: #
           buttons_content:
               - title: More Details
                 url: /about/
                 icon: fa fa-arrow-right
                 style: btn-primary
     - row: container_row
-      style: fixed
-      background_image: /assets/images/content/background-image1.jpg
+      style: fixed text-center
+      background_image: /assets/images/test/background-image1.jpg
       sections:
         - format: title
           title_content:
@@ -73,54 +60,109 @@ flow:
               icon: fa fa-arrow-right
               style: btn-primary
     - row: container_row
-      style: block_row
-    #   background_image: /assets/images/content/background-image1.jpg
+      style: bg-primary
       sections:
         - format: title
+          style: text-center text-white
+          title_content:
+            size: h2
+            text: Lazy YouTube embed row
+        - format: youtube
+          style: #
+          url: https://www.youtube.com/watch?v=mWpK-cNQmL8
+        #   poster_image: /assets/images/test/background-image1.jpg
+          title: Interview with Shuah Khan on Kernel Self Test
+    - row: container_row
+      style: block_row
+    #   background_image: /assets/images/test/background-image1.jpg
+      sections:
+        - format: title
+          style: text-center
           title_content:
             size: h2
             text: Block Row
         - format: block
-          style: text-center text-white
+          style: text-center
           block_section_content:
             item_width: "4"
             blocks:
-                - title:
-                    size: "h3"
-                    text: Block 1
+                - title: Block 1
                   url: /about/
-                  inner_image:
-                    icon: true
-                    icon_name: fa fa-bullhorn
-                  text_content:
-                    text: See our photos from event.
+                  image: /assets/images/test/background-image1.jpg
+                  background_image: true
+                  description: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-                - title:
-                    size: "h3"
-                    text: Block 2
+                    - title: More
+                      url: /flow/
+                      icon: fa fa-arrow-right
+                      style: btn-secondary
+                - title: Block 2
                   url: /about/
-                  inner_image:
-                    path: /assets/images/content/js-logo.png
-                    alt: JS logo
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
+                  image: /assets/images/test/js-logo.png
+                  description: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-                - title:
-                    size: "h3"
-                    text: Block 3
+                - title: Block 3
                   url: /about/
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
+                  image: /assets/images/test/js-logo.png
+                  description: See our photos from event.
+                  buttons:
+                    - title: More Details
+                      url: /flow/
+                      icon: fa fa-arrow-right
+                      style: btn-primary
+    - row: container_row
+      style: block_row fixed
+      background_image: /assets/images/test/background-image1.jpg
+      sections:
+        - format: block
+          style: text-center text-white
+          block_section_content:
+            item_width: "3"
+            blocks:
+                - title: Block 1
+                  url: /about/
+                  image: /assets/images/test/background-image1.jpg
+                  background_image: true
+                  description: See our photos from event.
+                  buttons:
+                    - title: More Details
+                      url: /flow/
+                      style: btn-primary
+                      icon: fa fa-arrow-right
+                - title: Block 2
+                  url: /about/
+                  image: /assets/images/test/background-image1.jpg
+                  background_image: true
+                  description: See our photos from event.
+                  buttons:
+                    - title: More Details
+                      url: /flow/
+                      icon: fa fa-arrow-right
+                      style: btn-primary
+                - title: Block 3
+                  url: /about/
+                  style: block_three_style
+                  image: /assets/images/test/background-image1.jpg
+                  background_image: true
+                  description: See our photos from event.
+                  buttons:
+                    - title: More Details
+                      url: /flow/
+                      icon: fa fa-arrow-right
+                      style: btn-primary
+                - title: Block 4
+                  url: /about/
+                  image: /assets/images/test/background-image1.jpg
+                  background_image: true
+                  description: See our photos from event.
                   buttons:
                     - title: More Details
                       url: /flow/
@@ -132,69 +174,46 @@ flow:
                       style: btn-primary
     - row: container_row
       style: block_row fixed
-    #   background_image: /assets/images/content/background-image1.jpg
       sections:
-        - format: block
-          style: text-center text-white
-          block_section_content:
-            item_width: "3"
-            blocks:
-                - title:
-                    size: "h3"
-                    text: Block 1
-                  url: /about/
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
-                  buttons:
-                    - title: More Details
-                      url: /flow/
-                      style: btn-primary
-                      icon: fa fa-arrow-right
-                - title:
-                    size: "h3"
-                    text: Block 2
-                  url: /about/
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
-                  buttons:
-                    - title: More Details
-                      url: /flow/
-                      icon: fa fa-arrow-right
-                      style: btn-primary
-                - title:
-                    size: "h3"
-                    text: Block 3
-                  url: /about/
-                  style: block_three_style
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
-                  buttons:
-                    - title: More Details
-                      url: /flow/
-                      icon: fa fa-arrow-right
-                      style: btn-primary
-                - title:
-                    size: "h3"
-                    text: Block 4
-                  url: /about/
-                  background_image: /assets/images/content/background-image1.jpg
-                  text_content:
-                    text: See our photos from event.
-                  buttons:
-                    - title: More Details
-                      url: /flow/
-                      icon: fa fa-arrow-right
-                      style: btn-primary
-                    - title: Read
-                      url: /flow/
-                      icon: fa fa-book
-                      style: btn-primary
+        - format: tabs
+          style: #
+          tabs:
+            - title: Test
+              content: |
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis > nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore > eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                - Test
+                - Test
+                - Test
+
+                This is some more [content](/).
+            - title: Test 2
+              content: |
+                This is some test tab content. 2
+
+                - Test
+
+                - Test
+
+                - Test
+
+                This is some more [content](/).
+            - title: Test 3
+              content: |
+                This is some test tab content. 3
+
+                - Test
+                - Test
+                - Test
+
+                This is some more [content](/). 3
     - row: container_row
       #style: fixed
-      background_image: /assets/images/content/background-image1.jpg
+      background_image: /assets/images/test/background-image1.jpg
       sections:
         - format: title
           title_content:
@@ -206,57 +225,46 @@ flow:
       style: fixed block_row
       sections:
         - format: title
+          style: text-center
           title_content:
             text: Full Width Block Row
             size: h2
         - format: block
-          style: text-center text-white
+          style: text-center
+          item_width: 3
           block_section_content:
-            item_width: "3"
             blocks:
-              - title:
-                  size: "h3"
-                  text: Members Section Example
+              - title: Members Section Example
                 url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text_content:
-                    text: See our photos from event.
+                image: /assets/images/test/background-image1.jpg
+                description: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-              - title:
-                  size: "h3"
-                  text: Members Section Example
+              - title: Members Section Example
                 url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text_content:
-                    text: See our photos from event.
+                image: /assets/images/test/background-image1.jpg
+                description: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-              - title:
-                    size: "h3"
-                    text: Members Section Example
+              - title: Members Section Example
                 url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text_content:
-                    text: See our photos from event.
+                image: /assets/images/test/background-image1.jpg
+                description: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
                       icon: fa fa-arrow-right
                       style: btn-primary
-              - title:
-                    size: "h3"
-                    text: Members Section Example
+              - title: Members Section Example
                 url: /about/
-                background_image: /assets/images/content/background-image1.jpg
-                text_content:
-                    text: See our photos from event.
+                image: /assets/images/test/background-image1.jpg
+                description: See our photos from event.
                 buttons:
                     - title: More Details
                       url: /flow/
@@ -274,11 +282,13 @@ flow:
             text: Feature Block Row (Full Width)
             size: h2
         - format: feature_block
-        #   style: text-center text-white
+          style: dotted
           feature_block_content:
             position: "left"
             type: "youtube_video"
-            video_content_url: https://www.youtube.com/watch?v=QH2-TGUlwu4
+            youtube:
+                url: https://www.youtube.com/watch?v=QH2-TGUlwu4
+                poster_image: /assets/images/test/background-image1.jpg
             title: Feature Block
             text: >
                 A feature block with a youtube video.
@@ -294,7 +304,7 @@ flow:
           feature_block_content:
             position: "right"
             type: "image"
-            image_content_path: /assets/images/content/background-image1.jpg
+            image_content_path: /assets/images/test/background-image1.jpg
             title: Feature Block
             text: >
                 A feature block with an image.
@@ -313,7 +323,7 @@ flow:
             text: Feature Block Row
             size: h2
         - format: feature_block
-        #   style: text-center text-white
+          style: dotted
           feature_block_content:
             position: "left"
             type: "slider"
@@ -327,31 +337,31 @@ flow:
                 md_items: 1
                 lg_items: 1
                 items:
-                    - image: /assets/images/content/background-image1.jpg
+                    - image: /assets/images/test/background-image1.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image2.png
+                    - image: /assets/images/test/background-image2.png
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image3.jpg
+                    - image: /assets/images/test/background-image3.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image1.jpg
+                    - image: /assets/images/test/background-image1.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image2.png
+                    - image: /assets/images/test/background-image2.png
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image3.jpg
+                    - image: /assets/images/test/background-image3.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image1.jpg
+                    - image: /assets/images/test/background-image1.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image2.png
+                    - image: /assets/images/test/background-image2.png
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image3.jpg
+                    - image: /assets/images/test/background-image3.jpg
                       alt: Background Image
                       title: Background Image 1
             title: Feature Block
@@ -369,7 +379,7 @@ flow:
           feature_block_content:
             position: "right"
             type: "image"
-            image_content_path: /assets/images/content/background-image1.jpg
+            image_content_path: /assets/images/test/background-image1.jpg
             title: Feature Block
             text: >
                 A feature block with an image.
@@ -415,31 +425,31 @@ flow:
             md_items: 4
             lg_items: 6
             items:
-                - image: /assets/images/content/background-image1.jpg
+                - image: /assets/images/test/background-image1.jpg
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image2.png
+                - image: /assets/images/test/background-image2.png
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image3.jpg
+                - image: /assets/images/test/background-image3.jpg
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image1.jpg
+                - image: /assets/images/test/background-image1.jpg
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image2.png
+                - image: /assets/images/test/background-image2.png
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image3.jpg
+                - image: /assets/images/test/background-image3.jpg
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image1.jpg
+                - image: /assets/images/test/background-image1.jpg
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image2.png
+                - image: /assets/images/test/background-image2.png
                   alt: Background Image
                   title: Background Image 1
-                - image: /assets/images/content/background-image3.jpg
+                - image: /assets/images/test/background-image3.jpg
                   alt: Background Image
                   title: Background Image 1
     - row: full_width_row

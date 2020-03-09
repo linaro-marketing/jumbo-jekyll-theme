@@ -1,4 +1,4 @@
-<div class="col-xs-12 buttons no-padding {% if include.style %}{{include.style}}{% endif %}">
+<div class="col col-12 buttons no-padding {% if include.style %}{{include.style}}{% endif %}">
     {% for button in include.object %}
         {% include flow/button.html object=button %}
     {% endfor %}

@@ -1,0 +1,21 @@
+<div class="col col-12 tabbed_content {% if include.object.style %}{{include.object.style}}{% endif %}">
+    <nav>
+        <div class="nav nav-tabs" id="{{tab.title | slugify}}{{forloop.index}}" role="tablist">
+            {% for tab in include.object.tabs %}
+             <a class="nav-item nav-link {% if forloop.first %}active{% endif %}" href="#{{tab.title | slugify}}{{forloop.index}}" id="{{tab.title | slugify}}{{forloop.index}}-tab"
+                data-toggle="tab" href="#{{tab.title | slugify}}{{forloop.index}}" role="tab"
+                aria-controls="{{tab.title | slugify}}{{forloop.index}}" aria-selected="true">
+                {{tab.title}}
+            </a>
+            {% endfor %}
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        {% for tab in include.object.tabs %}
+            <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="{{tab.title | slugify}}{{forloop.index}}"
+            role="tabpanel" aria-labelledby="{{tab.title | slugify}}{{forloop.index}}-tab">
+                {{tab.content | markdownify }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

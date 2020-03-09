@@ -1,118 +1,74 @@
 {% comment %}
     Recent Posts Displayed here.
 {% endcomment %}
-<div class="col-xs-12 col-sm-6 no-padding">
-
-<div class="panel panel-primary" class="blog-sidebar">
-    <div class="panel-heading">
-      <h3 class="panel-title text-center">Recent Posts</h3>
-    </div>
-    <div class="panel-body">
+<div class="col col-12 my-5 suggested_posts">
+    <h3>Recent Posts</h3>
+    <ul class="list-unstyled">
         {% for post in site.posts limit: 3 %}
             {% assign timeframe = 604800 %}
             {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
             {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
-            <a href="{{post.url}}">
-                <div class="row featured_blog_post">
-                    <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
-                            {% if post.image.thumb %}
-                                    {% capture image_path %}{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                                    {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
 
-                             {% elsif post.image.name %}
-                                    {% capture image_path %}{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                                    {% capture full_path %}/{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-
-                            {% elsif post.image.path %}
-                                    {% capture image_path %}{{post.image.path | remove_first: '/'}}{% endcapture %}
-                                    {% capture full_path %}{{post.image.path }}{% endcapture %}
-
-                            {% elsif post.image == site.data.settings.social_share_image %}
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{site.data.settings.placeholder}}"
-                                    alt="{{post.title}}" class="center-block img-responsive lazyload" />
-                            {% elsif post.image %}
-                                    {% capture image_path %}{{post.image | remove_first: '/'}}{% endcapture %}
-                                    {% capture full_path %}{{post.image }}{% endcapture %}
-
-                             {% else %}
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                 data-src="{{site.data.settings.placeholder}}" alt="{{post.title}}" class="img-responsive lazyload"/>
-                             {% endif %}
-                    </div>
-                    <div class="col-md-9 col-sm-9 col-xs-9 ">
-                       {{post.title | truncate: 40}}
-                       <br />
-                       <small>
-                           <em>{{post.date | date: "%A, %B %-d, %Y" }}</em>
-                            {% if post_in_seconds > recent_posts %}
-                                <span class="new-post" title="Post added in the last week.">New</span>
-                            {% endif %}
-                        </small>
-                   </div>
-                </div>
-            </a>
-        {% endfor %}
-    </div>
-</div>
-</div>
-{% comment %}
-    Other Posts
-{% endcomment %}
-<div class="col-xs-12 col-sm-6 no-padding">
-
-<div class="panel panel-primary" class="blog-sidebar">
-    <div class="panel-heading">
-      <h3 class="panel-title text-center">Other Posts</h3>
-    </div>
-    <div class="panel-body">
-        {% assign posts = site.posts | sample:5 %}
-        {% for post in posts %}
-            {% assign timeframe = 604800 %}
-            {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
-            {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
-        <a href="{{post.url}}">
-            <div class="row featured_blog_post">
-                <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
-                    {% if post.image.thumb %}
-                        {% capture image_path %}{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                        {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-
-                 {% elsif post.image.name %}
-                        {% capture image_path %}{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                        {% capture full_path %}/{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-
-                 {% elsif post.image.path %}
-                        {% capture image_path %}{{post.image.path | remove_first: '/' }}{% endcapture %}
-                        {% capture full_path %}{{post.image.path }}{% endcapture %}
-
-                {% elsif post.image == site.data.settings.social_share_image %}
-                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{site.data.settings.placeholder}}"
-                        alt="{{post.title}}" class="center-block img-responsive lazyload" />
-                 {% elsif post.image %}
-                        {% capture image_path %}{{post.image | remove_first: '/' }}{% endcapture %}
-                        {% capture full_path %}{{post.image }}{% endcapture %}
-
-                 {% else %}
-                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                    data-src="{{site.data.settings.placeholder}}" alt="{{post.title}}" class="img-responsive lazyload"/>
-                 {% endif %}
-                </div>
-                <div class="col-md-9 col-sm-9 col-xs-9 ">
-                   {{post.title | truncate: 40}}
-                   <br />
-                   <small>
-                       <em>{{post.date | date: "%A, %B %-d, %Y" }}</em>
+             {% if post.image %}
+                {% assign image_path = post.image | remove_first: "/assets/images/" %}
+                {% capture image_alt %}{{post.title}} image {% endcapture %}
+            {% else %}
+                {% assign image_path = site.post_placeholder | remove_first: "/assets/images/" %}
+                {% capture image_alt %}Blog post placeholder image {% endcapture %}
+            {% endif %}
+            <li class="media flex-column flex-sm-row">
+                {% picture post_thumb {{image_path}} --alt {{image_alt}} %}
+                <div class="media-body">
+                    <a href="{{post.url}}">
+                        <h5 class="mt-0 mb-1">{{post.title}}</h5>
+                        <em class="suggested_post_date">{{post.date | date: "%A, %B %-d, %Y" }}</em>
+                        <p>
+                        {% if post.description %}
+                            {{post.description}}
+                        {% else %}
+                            {{ post.content | strip_html | truncatewords:30 }}
+                        {% endif %}
+                        </p>
                         {% if post_in_seconds > recent_posts %}
                             <span class="new-post" title="Post added in the last week.">New</span>
                         {% endif %}
-                    </small>
-               </div>
-            </div>
-            </a>
+                    </a>
+                </div>
+            </li>
         {% endfor %}
-    </div>
+        </ul>
 </div>
+{% comment %}
+Other Posts
+{% endcomment %}
+<div class="col col-12 my-5 suggested_posts">
+    <h3>Other Posts</h3>
+    <ul class="list-unstyled">
+        {% assign posts = site.posts | sample:5 %}
+        {% for post in posts %}
+             {% if post.image %}
+                {% assign image_path = post.image | remove_first: "/assets/images/" %}
+                {% capture image_alt %}{{post.title}} image {% endcapture %}
+            {% else %}
+                {% assign image_path = site.post_placeholder | remove_first: "/assets/images/" %}
+                {% capture image_alt %}Blog post placeholder image {% endcapture %}
+            {% endif %}
+            <li class="media flex-column flex-sm-row">
+                {% picture post_thumb {{image_path}} --alt {{image_alt}} %}
+                <div class="media-body">
+                    <a href="{{post.url}}">
+                        <h5 class="mt-0 mb-1">{{post.title}}</h5>
+                        <em class="suggested_post_date">{{post.date | date: "%A, %B %-d, %Y" }}</em>
+                        <p>
+                        {% if post.description %}
+                            {{post.description}}
+                        {% else %}
+                            {{ post.content | strip_html | truncatewords:30 }}
+                        {% endif %}
+                        </p>
+                    </a>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
 </div>
-{% if site.data.settings.blog.sidebar.custom-include %}
-{% include {{site.data.settings.blog.sidebar.custom-include}} %}
-{% endif %}

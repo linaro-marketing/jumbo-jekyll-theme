@@ -1,0 +1,71 @@
+#flow_wrapper {
+    background-color: white;
+    .row {
+        padding: $flow_row_padding 0;
+        &.background_image_row {
+            overflow: hidden;
+            position: relative;
+            .header_background_image {
+                position: absolute;
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                filter: brightness(0.6);
+                z-index:0;
+                top:0px;
+            }
+        }
+        & > .container > .col.col-12 {
+            padding: $flow_component_padding 0px;
+        }
+        .tabbed_content {
+            .tab-content {
+                margin-top: 15px;
+            }
+        }
+
+        .slider_block {
+            .item {
+                height: 400px;
+                overflow: hidden;
+                img {
+                    height: 100%;
+                    width: auto;
+                    object-fit: cover;
+                }
+            }
+        }
+        .slider_row {
+            .item {
+                height: 200px;
+                overflow: hidden;
+                img {
+                    height: 100%;
+                    width: auto;
+                    object-fit: cover;
+                    @include media-breakpoint-down(sm){
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+    .blocks {
+        .block_column {
+            margin-top: 15px;
+        }
+        .card {
+            &.background_image {
+                img {
+                    filter: brightness(0.6);
+                    height: 100%;
+                }
+            }
+            .card-img-top {
+                height: 150px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

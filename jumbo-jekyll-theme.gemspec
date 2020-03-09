@@ -23,23 +23,21 @@ Gem::Specification.new do |spec|
     # Jekyll 4 !
     spec.add_runtime_dependency "jekyll", "~> 4.0.0"
     # Jekyll cached include plugin
-    spec.add_runtime_dependency 'jekyll-include-cache'
-
-    spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
+    spec.add_runtime_dependency 'jekyll-include-cache', '0.2.0'
     # Responsive images
-    spec.add_runtime_dependency "jekyll_picture_tag"
+    spec.add_runtime_dependency "jekyll_picture_tag", '1.9.0'
     # Generate a sitemap at sitemap.xml
-    spec.add_runtime_dependency "jekyll-sitemap"
+    spec.add_runtime_dependency "jekyll-sitemap", "1.4.0"
     # JS Bundler / Compression
     spec.add_runtime_dependency 'japr', '0.4.2'
     # Jekyll Tidy - HTML minfier
-    spec.add_runtime_dependency 'jekyll-tidy'
+    spec.add_runtime_dependency 'jekyll-tidy', '0.2.2'
     # Blog/Collection pagination
-    spec.add_runtime_dependency 'jekyll-paginate-v2', '>0'
+    spec.add_runtime_dependency 'jekyll-paginate-v2', '3.0.0'
     # Add's an RSS feed for your posts
-    spec.add_runtime_dependency "jekyll-feed"
+    spec.add_runtime_dependency "jekyll-feed", "0.13.0"
     #spec.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
     # Development Dependencies
-    spec.add_development_dependency "bundler", "> 1.16.1"
-    spec.add_development_dependency "rake"
+    spec.add_development_dependency "bundler", "1.17.3"
+    spec.add_development_dependency "rake", "13.0.1"
   end

@@ -45,7 +45,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/social-media-image.png
+      layout: flow
   - scope:
       type: posts
       path: "_posts"
@@ -74,6 +74,69 @@ address:
   - Royston Rd, Harston
   - Cambridge, United Kingdom
   - CB22 7GG
+# Support for http2 preload features
+http2_resources:
+  - rel: preload
+    as: font
+    type: font/woff2
+    href: /assets/fonts/lato/Lato-regular.woff2
+google_analytics:
+  enabled: true
+  code: UAXXXXXX
+# Set the site-wide default social media share image.
+social_media_share_image: /assets/images/social-media-image.png
+# Set the default favicon
+favicon: /assets/images/favicon.png
+# Site Name - your brand name
+name: Jumbo Jekyll Theme
+# The blog filler element
+blog_filler_element: blog/blog_filler_element.html
+# Placeholder avatar
+avatar_placeholder: /assets/images/avatar-placeholder.jpg
+# Blog Post Image Placholder
+post_placeholder: /assets/images/test/background-image1.jpg
+# Social Media Links
+social_media_channels:
+  github:
+    url: https://github.com/Linaro
+  linkedin:
+    url: https://www.linkedin.com/company/1026961
+  facebook:
+    url: http://facebook.com/LinaroOrg
+  youtube:
+    url: https://www.youtube.com/linaroorg
+  twitter:
+    url: https://twitter.com/linaroorg
+# Disqus Comments Setup
+disqus:
+    enabled: true
+    shortname: http-www-jumbojekyll-co-uk
+# Edit on GitHub Settings
+edit-on-github:
+    enabled: true
+    repo: https://www.github.com/linaro-marketing/jumbo-jekyll-theme
+    # docs: https://www.github.com/Linaro/website
+# Shema.org settings used in the schema.html include.
+schema:
+    enabled: true
+    organisation:
+        name: Linaro
+        url: https://www.linaro.org
+        sameAs:
+            - https://twitter.com/linaroorg
+            - https://www.facebook.com/LinaroOrg
+            - https://www.linkedin.com/company/1026961/
+            - https://plus.google.com/+LinaroOnAir
+            - https://github.com/Linaro
+            - https://www.slideshare.net/linaroorg
+        address:
+            street: Harston Mill, Royston Rd
+            town: Harston
+            county: Cambridge
+            post_code: CB22 7GG
+            country_code: UK
+# FESS search label
+search_label: Linaro
 # ----------- JEKYLL PLUGINS ---------------------
 # -------- jekyll-tidy --------
 jekyll_tidy:
@@ -116,7 +179,7 @@ picture:
   nomarkdown: false
   source: "assets/images"
   output: "assets/images"
-  relative_url: false
+  relative_url: true
 # -------- japr --------
 asset_pipeline:
   bundle: true

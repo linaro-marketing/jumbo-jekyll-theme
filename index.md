@@ -31,31 +31,31 @@ flow:
                 md_items: 1
                 lg_items: 1
                 items:
-                    - image: /assets/images/content/background-image1.jpg
+                    - image: /assets/images/test/background-image1.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image2.png
+                    - image: /assets/images/test/background-image2.png
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image3.jpg
+                    - image: /assets/images/test/background-image3.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image1.jpg
+                    - image: /assets/images/test/background-image1.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image2.png
+                    - image: /assets/images/test/background-image2.png
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image3.jpg
+                    - image: /assets/images/test/background-image3.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image1.jpg
+                    - image: /assets/images/test/background-image1.jpg
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image2.png
+                    - image: /assets/images/test/background-image2.png
                       alt: Background Image
                       title: Background Image 1
-                    - image: /assets/images/content/background-image3.jpg
+                    - image: /assets/images/test/background-image3.jpg
                       alt: Background Image
                       title: Background Image 1
             title: Lightweight & fully optimised
@@ -69,26 +69,31 @@ flow:
                   url: https://github.com/linaro-marketing/jumbo-jekyll-theme/wiki
                   style: btn-primary
 jumbotron:
+    class: home
+    inner_class: dotted
     slider:
-        slides:
-            - title: A feature-packed Jekyll theme
-              title-class: big-title
-              slide-style: "background-position-y: bottom;"
-              darken: true
-              image: /assets/images/content/background-image1.jpg#
-              buttons:
-                - title: View on GitHub
-                  url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-                  icon: fa fa-github
-            - title: Find the theme on GitHub
-              description: ""
-              darken: true
-              slide-style: "background-position-y: bottom;"
-              image: /assets/images/content/background-image2.png
-              buttons:
-                - title: View on GitHub
-                  url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-                  icon: fa fa-github
+        - title: A feature-packed Jekyll theme
+          title-class: big-title
+          slide-style: "background-position-y: bottom;"
+          darken: true
+          image: /assets/images/test/background-image1.jpg
+          buttons:
+          - title: View on GitHub
+            url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+            icon: fa fa-github
+        - title: Find the theme on GitHub
+          description: ""
+          darken: true
+          slide-style: "background-position-y: bottom;"
+          image: /assets/images/test/background-image2.png
+          buttons:
+          - title: View on GitHub
+            url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+            icon: fa fa-github
+          - title: View on GitHub
+            url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+            icon: fa fa-github
+            class: btn-secondary
 ---
 Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur. Has ut wisi vivendum dissentias. Vel nemore copiosae praesent no, blandit instructior nec ut. Dolore libris insolens pro an, no est laudem populo. Te nostro commune officiis qui.
 

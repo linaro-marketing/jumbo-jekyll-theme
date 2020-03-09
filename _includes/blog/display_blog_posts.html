@@ -1,5 +1,5 @@
 {% if paginator.total_posts > 0 %}
-    <div class="row blog-section">
+    <div class="row my-2 my-sm-3">
     {% for post in paginator.posts %}
         {% assign timeframe = 604800 %}
         {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
@@ -14,51 +14,52 @@
                     }
                 }
             </style>
-            <div class="featured-post-row">
-                <div class="col-xs-12 col-sm-7 col-sm-push-5 latest-featured-post">
-                    <a href="{{post.url}}">
-                    {% assign image_path = "" %}
-                    {% if post.image.thumb %}
-                            {% capture image_path %}{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                            {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                    {% elsif post.image.name %}
-                            {% capture image_path %}{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                            {% capture full_path %}/{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                    {% elsif post.image.path %}
-                            {% capture image_path %}{{post.image.path | remove_first: "/" }}{% endcapture %}
-                            {% capture full_path %}{{post.image.path}}{% endcapture %}
-                    {% elsif post.image == site.data.settings.social_share_image %}
-                            {% capture image_path %}{{site.data.settings.placeholder | remove_first: "/" }}{% endcapture %}
-                            {% capture full_path %}{{site.data.settings.placeholder}}{% endcapture %}
-                    {% elsif post.image %}
-                            {% capture image_path %}{{post.image | remove_first: "/" }}{% endcapture %}
-                            {% capture full_path %}{{post.image}}{% endcapture %}
-                    {% else %}
-                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                        data-src="{{site.data.settings.placeholder}}" alt="{{post.title}}" class="center-block img-responsive lazyload"/>
-                    {% endif %}
-                    {% if image_path != "" %}
-                        <!--TODO picture-->
-                    {% endif %}
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-5 col-sm-pull-7 latest-featured-post-content">
-                    <a href="{{post.url}}">
-                        <div class="post-info">
-                            <span class="post-cat">{{post.categories | first | capitalize }}</span>
-                            <h3>{{post.title}}</h3>
-                            <p class="excerpt">
-                                {% if post.description %}
-                                    {{post.description}}
+            <div class="col col-12 featured_post">
+                <div class="row">
+                    <div class="col col-12 col-lg-7 order-lg-2 px-0 px-sm-0 latest-featured-post">
+                        <a href="{{post.url}}">
+                            {% if post.image %}
+                                {% assign block_image = post.image | remove_first: "/assets/images/" %}
+                                {% capture block_image_alt %}{{post.title}} image {% endcapture %}
+                            {% else %}
+                                {% assign block_image = site.post_placeholder | remove_first: "/assets/images/" %}
+                                {% capture block_image_alt %}Blog post placeholder image {% endcapture %}
+                            {% endif %}
+                            {% picture featured_blog_image {{block_image}} --alt {{block_image_alt}} %}
+                        </a>
+                    </div>
+                    <div class="col col-12 col-lg-5 order-lg-1 px-0 px-sm-0 latest-featured-post-content">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                {% assign author = site.authors | where: "username", post.author | first %}
+                                {% assign author-url = author.url %}
+                                {% if author.image %}
+                                    {% assign author_image = author.image | remove_first: "/assets/images/" %}
                                 {% else %}
-                                    {{ post.content | strip_html | truncatewords:30 }}
+                                    {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
                                 {% endif %}
-                            </p>
-                            <a href="{{post.url}}" class="btn btn-primary">
-                                Read Post
-                            </a>
+                                {% capture image_alt %}{{author.name}} profile image{% endcapture %}
+                                <div class="media align-items-center mb-3">
+                                    <div class="media-body">
+                                        <em class="mt-0">{{author.name}}</em>
+                                    </div>
+                                    {% picture author_thumbnail_small {{author_image}} --alt {{image_alt}} %}
+                                </div>
+                                <h5 class="card-title">{{post.title}}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%A, %B %-d, %Y"}}</h6>
+                                <p class="card-text">
+                                    {% if post.description %}
+                                        {{post.description}}
+                                    {% else %}
+                                        {{ post.content | strip_html | truncatewords:30 }}
+                                    {% endif %}
+                                </p>
+                                <p class="card-text">
+                                    <a href="{{post.url}}" class="btn btn-primary">Read</a>
+                                </p>
+                            </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
             {% else %}
@@ -66,65 +67,52 @@
             {% comment %}
                 Blog Filler Element - This is needed due to the layout of the blog. If not included then there will be an empty col on the first blog page.
             {% endcomment %}
-            {% if forloop.index == 4 and paginator.page == 1 %}
-                {% if site.data.settings.blog.filler-element %}
-                        {% include {{site.data.settings.blog.filler-element}} %}
-                {% endif %}
+            {% if forloop.index == 6 and paginator.page == 1 %}
+                {% include {{site.blog_filler_element}} %}
             {% endif %}
 
-            <div class="col-sm-4 col-xs-12 blog-post-item-col no-padding">
-                <div class="blog-post-item">
-                    <a href="{{post.url}}">
-                        <div class="blog-featured-image {% if post.image == site.data.settings.social_share_image %}using-placeholder{% endif %}">
-
-                        {% assign image_path = "" %}
-                        {% if post.image.thumb %}
-                                {% capture image_path %}{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                                {% capture full_path %}/{{site.blog_images_dir}}thumbs/{{post.image.thumb}}{% endcapture %}
-                        {% elsif post.image.name %}
-                                {% capture image_path %}{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                                {% capture full_path %}/{{site.blog_images_dir}}{{post.image.name}}{% endcapture %}
-                        {% elsif post.image.path %}
-                                {% capture image_path %}{{post.image.path | remove_first: "/" }}{% endcapture %}
-                                {% capture full_path %}{{post.image.path}}{% endcapture %}
-                        {% elsif post.image == site.data.settings.social_share_image %}
-                            {% capture image_path %}{{site.data.settings.placeholder | remove_first: "/" }}{% endcapture %}
-                            {% capture full_path %}{{site.data.settings.placeholder}}{% endcapture %}
-                            {% assign using_placeholder = "true" %}
-                        {% elsif post.image %}
-                                {% capture image_path %}{{post.image | remove_first: "/" }}{% endcapture %}
-                                {% capture full_path %}{{post.image}}{% endcapture %}
+            <div class="col col-12 col-sm-6 col-lg-4 blog-post-item-col p-3">
+                <div class="card h-100 ">
+                    <div class="blog_image_header">
+                        {% if post.image %}
+                            {% assign block_image = post.image | remove_first: "/assets/images/" %}
+                            {% capture block_image_alt %}{{post.title}} image {% endcapture %}
                         {% else %}
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="{{site.data.settings.placeholder}}" alt="{{post.title}}" class="center-block img-responsive lazyload"/>
+                            {% assign block_image = site.post_placeholder | remove_first: "/assets/images/" %}
+                            {% capture block_image_alt %}Blog post placeholder image {% endcapture %}
                         {% endif %}
-
-                        {% if image_path != "" %}
-                            <!--TODO picture-->
-                        {% endif %}
-                            <div class="read-article">
-                                <i class="fa fa-eye"></i> Read Article
-                            </div>
-                        </div>
-                    <div class="blog-post-item-content">
-                        <div class="post-cat">{{post.categories | first | capitalize }}</div>
-                            {% include read_time.html content=post.content %}
-                            <h3>{{ post.title}}</h3>
-                            <small>{{ post.date | date: "%A, %B %-d, %Y"}}</small>
-                        <br />
-                        <p class="post_excerpt">
-                        {{ post.content | strip_html | truncatewords:30 }}
-                        </p>
-                        <div class="author-section">
-                            {% assign author = site.authors | where: "username", post.author | first %}
-                            {% assign author-url = author.url %}
-                            <div class="blog-author-image lazyload" data-bg="{% if author.image_path %}{{author.image_path}}{% else %}{{site.data.settings.blog.avatar_placeholder}}{% endif %}"></div>
-                            <small class="blog-author">
-                                <em>{% if author.name %}{{author.name}}{% else %}{{post.author}}{% endif %}</em>
-                            </small>
-                        </div>
+                        {% picture featured_blog_image {{block_image}} --alt {{block_image_alt}} %}
                     </div>
-                    </a>
+                    <div class="card-body">
+
+                        {% assign author = site.authors | where: "username", post.author | first %}
+                        {% assign author-url = author.url %}
+                        {% if author.image %}
+                            {% assign author_image = author.image | remove_first: "/assets/images/" %}
+                        {% else %}
+                            {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
+                        {% endif %}
+                        {% capture image_alt %}{{author.name}} profile image{% endcapture %}
+                        <div class="media align-items-center mb-3">
+                            <div class="media-body">
+                                <em class="mt-0">{{author.name}}</em>
+                            </div>
+                            {% picture author_thumbnail_small {{author_image}} --alt {{image_alt}} %}
+                        </div>
+                        <h5 class="card-title">{{post.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%A, %B %-d, %Y"}}</h6>
+                        <p class="card-text">
+                            {% if post.description %}
+                                {{post.description}}
+                            {% else %}
+                                {{ post.content | strip_html | truncatewords:30 }}
+                            {% endif %}
+                            Read time: {% include blog/read_time.html content=post.content %}
+                        </p>
+                        <p class="card-text">
+                            <a href="{{post.url}}" class="btn btn-primary">Read</a>
+                        </p>
+                    </div>
                 </div>
 
             </div>

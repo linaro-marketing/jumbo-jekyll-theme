@@ -1,7 +1,3 @@
-// Hide all navigation sub menus on window click
-$(window).click(function() {
-  $(".dropdown-submenu.sub-menu > .dropdown-menu.sub-menu").hide();
-});
 $(document).ready(function() {
   // Clipboard JS
   if ($("div.highlight").length > 0) {
@@ -11,15 +7,23 @@ $(document).ready(function() {
       var copyBtn =
         '<button id="copyBtn' +
         index +
-        '" data-toggle="tooltip" data-placement="left" title="Copied to Clipboard" class="btn copyBtn" data-clipboard-target="#' +
+        '" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard" class="btn copyBtn" data-clipboard-target="#' +
         uniqueId +
         '">';
       copyBtn +=
-        '<img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+        '<img src="/assets/images/clipboard.svg" width="13" alt="Copy to clipboard"></button>';
       $(this).append(copyBtn);
       (function() {
         new ClipboardJS("#copyBtn" + index);
       })();
+      $("#copyBtn" + index).on("click", function() {
+        $(this)
+          .attr("title", "Copied!")
+          .tooltip("_fixTitle")
+          .tooltip("show")
+          .attr("title", "Copy to clipboard")
+          .tooltip("_fixTitle");
+      });
     });
   }
   if ($("#jumbotron-slider").length > 0) {
@@ -39,8 +43,8 @@ $(document).ready(function() {
       dots: true
     });
   }
-  if ($(".owl-carousel.slider-block").length > 0) {
-    $(".owl-carousel.slider-block").each(function(index) {
+  if ($(".owl-carousel.slider_block").length > 0) {
+    $(".owl-carousel.slider_block").each(function(index) {
       // Set Default values for the responsive items
       var xs_items = 1;
       var sm_items = 2;
@@ -90,14 +94,14 @@ $(document).ready(function() {
             items: xs_items
           },
           // breakpoint from 480 up
-          1000: {
+          768: {
             items: sm_items
           },
           // breakpoint from 768 up
-          1200: {
+          992: {
             items: md_items
           },
-          1400: {
+          1200: {
             items: lg_items
           }
         }
@@ -112,23 +116,6 @@ $(document).ready(function() {
       onlyIfScroll: true
     });
   }
-  // Toggle the sub menu when clicked.
-  $(".dropdown-submenu.sub-menu a").on("click", function(e) {
-    if ($(this).hasClass("active")) {
-      $(this)
-        .next("ul")
-        .hide();
-      $(this).removeClass("active");
-    } else {
-      $(".dropdown-menu.sub-menu").hide();
-      $(".dropdown-submenu.sub-menu a").removeClass("active");
-      $(this)
-        .next("ul")
-        .show();
-      $(this).addClass("active");
-    }
-    e.stopPropagation();
-  });
   // Theme navbar setup
   var wrapper = $("#wrapper");
   var universalNav = false;
@@ -166,8 +153,34 @@ $(document).ready(function() {
     navbar();
   });
 
-  // Initialise dropdowns
-  $(".dropdown-toggle").dropdown();
+  //   Multi-level dropdowns
+  $(".navbar .dropdown-menu > li:not(.dropdown-item)").on("click", function(e) {
+    e.stopPropagation();
+  });
+  $(".navbar .dropdown-item").on("click", function(e) {
+    var $el = $(this).children(".dropdown-toggle");
+    var $parent = $el.offsetParent(".dropdown-menu");
+    if (!$parent.parent().hasClass("navbar-nav")) {
+      if ($parent.hasClass("show")) {
+        $parent.removeClass("show");
+        $el.next().removeClass("show");
+        $el.next().css({ top: -999, left: -999 });
+      } else {
+        $parent
+          .parent()
+          .find(".show")
+          .removeClass("show");
+        $parent.addClass("show");
+        $el.next().addClass("show");
+        $el
+          .next()
+          .css({ top: $el[0].offsetTop, left: $parent.outerWidth() - 4 });
+      }
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  });
+
   // Reset forms when bootstrap modal closes.
   $(".modal").on("hidden.bs.modal", function() {
     $(this)
@@ -182,31 +195,6 @@ $(document).ready(function() {
   if (navigator.userAgent.match(/.*CPU.*OS 7_\d/i)) {
     $("html").addClass("ios7");
   }
-  // Dropdown menu JS
-  $("nav li.dropdown.main > ul.dropdown-menu [data-toggle=dropdown]").on(
-    "click",
-    function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      $(this)
-        .parent()
-        .addClass("open");
-      var menu = $(this)
-        .parent()
-        .find("ul");
-      var menupos = menu.offset();
-      if (menupos.left + menu.width() + 30 > $(window).width()) {
-        var newpos = -menu.width();
-      } else {
-        var newpos = $(this)
-          .parent()
-          .width();
-      }
-      menu.css({ left: newpos });
-    }
-  );
-  // Remove any zoom class added to body
-  $("body").css("zoom", "");
   // Open External links in a new tab
   $("a").each(function() {
     var a = new RegExp("/" + window.location.host + "/");
@@ -225,46 +213,86 @@ $(document).ready(function() {
   $(".nav-tabs a").on("shown", function(e) {
     window.location.hash = e.target.hash.replace("#", "#" + prefix);
   });
-  // Carousel image header - Lazy loading the carousel images
-  var cHeight = 0;
-  $("#header-carousel").on("slide.bs.carousel", function(e) {
-    var $nextImage = null;
-    $activeItem = $(".item.active", this);
-    if (e.direction == "left") {
-      $nextImage = $activeItem.next(".item");
-    } else {
-      if ($activeItem.index() == 0) {
-        $nextImage = $("div:last", $activeItem.parent());
-      } else {
-        $nextImage = $activeItem.prev(".item");
-      }
-    }
-    // prevents the slide decrease in height
-    if (cHeight == 0) {
-      cHeight = $(this).height();
-      $activeItem.next(".item").height(cHeight);
-    }
-    // prevents the loaded image if it is already loaded
-    var src = $nextImage.attr("data-src");
-    if (typeof src !== "undefined" && src != "") {
-      $nextImage.css("background-image", "url(" + src + ")");
-      $nextImage.data("data-src", "");
-    }
-  });
+
   // Cookie Consent Setup
-  window.addEventListener("load", function() {
-    window.cookieconsent.initialise({
-      palette: {
-        popup: {
-          background: "#000000",
-          text: "#fff"
-        },
-        button: {
-          background: "transparent",
-          text: "#ffffff",
-          border: "#25cfb0"
+  if ($("meta[name=analytics_code]")) {
+    // Options for the Cookie Dialog
+    var options = {
+      title: "Cookies & Privacy Policy",
+      link: "https://www.linaro.org/legal/#privacy",
+      moreInfoLabel: "View our Privacy Policy",
+      delay: 1000,
+      acceptBtnLabel: "Accept all cookies",
+      uncheckBoxes: false,
+      message:
+        "Cookies enable you to use this website to the full extent and to personalize your experience on our sites. They tell us which parts of our websites people have visited, help us measure the effectiveness of ads and web searches and give us insights into user behavior so we can improve our communications with you.",
+      cookieTypes: [
+        {
+          type: "Analytics",
+          value: "analytics",
+          description: "Cookies related to site visits, browser types, etc."
         }
+      ],
+      onAccept: function() {
+        init_ga();
       }
-    });
+    };
+    // Enabled Google Analytics if cookie to allow us to collect is set.
+    function init_ga() {
+      if ($.fn.ihavecookies.preference("analytics")) {
+        (function(i, s, o, g, r, a, m) {
+          i["GoogleAnalyticsObject"] = r;
+          (i[r] =
+            i[r] ||
+            function() {
+              (i[r].q = i[r].q || []).push(arguments);
+            }),
+            (i[r].l = 1 * new Date());
+          (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m);
+        })(
+          window,
+          document,
+          "script",
+          "https://www.google-analytics.com/analytics.js",
+          "ga"
+        );
+        ga("create", "UA-XXXXX-Y", "auto");
+        ga("send", "pageview");
+        console.log("Google Analytics started");
+      } else {
+        console.log("Google analytics not started... :(");
+      }
+    }
+    // Initialize
+    init_ga();
+
+    if ($(".cookie_manager").length > 0) {
+      var analytics_toggle = $("#analytics_toggle");
+      if ($.fn.ihavecookies.preference("analytics")) {
+        analytics_toggle.addClass("active");
+      }
+      analytics_toggle.on("click", function() {
+        $.removeCookie("_ga");
+        $.removeCookie("_ga", { path: "/" });
+        $.removeCookie("_gid");
+        $.removeCookie("_gid", { path: "/" });
+        $.removeCookie("_gat");
+        $.removeCookie("_gat", { path: "/" });
+        $.removeCookie("cookieControlPrefs");
+        $.removeCookie("cookieControlPrefs", { path: "/" });
+        $.removeCookie("cookieControl");
+        $.removeCookie("cookieControl", { path: "/" });
+        options["analyticsChecked"] = false;
+        options["acceptBtnLabel"] = "Updated Cookies";
+        $("body").ihavecookies(options);
+      });
+    }
+    $("body").ihavecookies(options);
+  }
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
   });
 });

@@ -1,12 +1,18 @@
 {% for section in include.sections %}
     {% if section.format == "title" %}
-        {% include flow/title.html object=section.title_content %}
+        {% include flow/title.html object=section %}
     {% elsif section.format == "members" %}
         {% include flow/members-section.html object=section %}
+    {% elsif section.format == "youtube" %}
+        <div class="col col-12 youtube_embed">
+            {% include youtube.html url=section.url title=section.title poster_image=section.poster_image %}
+        </div>
+    {% elsif section.format == "tabs" %}
+        {% include flow/tabbed_content.html object=section %}
     {% elsif section.format == "block" %}
         {% include flow/blocks.html object=section %}
     {% elsif section.format == "buttons" %}
-        {% include flow/buttons.html object=section.buttons_content style=section.style %}
+        {% include flow/buttons.html object=section.buttons_content style=section.style  %}
     {% elsif section.format == "text" %}
         {% include flow/text.html object=section %}
     {% elsif section.format == "custom_include" %}
@@ -14,6 +20,6 @@
     {% elsif section.format == "slider" %}
         {% include flow/slider_row.html object=section.slider_content %}
     {% elsif section.format == "feature_block" %}
-        {% include flow/feature_block.html object=section.feature_block_content %}
+        {% include flow/feature_block.html object=section %}
     {% endif %}
 {% endfor %}

@@ -1,15 +1,12 @@
 ---
 layout: base
 ---
-{% if page.jumbotron.carousel-images %}
-    {% include components/carousel_header.html images=page.jumbotron.carousel-images %}
+{% if page.jumbotron %}
     {% include components/jumbotron.html %}
-{% elsif page.jumbotron %}
-    {% include components/jumbotron.html %}
-{% else %}
+{% elsif page.breadcrumb %}
     {% include components/breadcrumb.html %}
 {% endif %}
-<div class="container-fluid" id="flow_wrapper">
+<div class="container-fluid main_content" id="flow_wrapper">
     {% if page.flow %}
         {% for each in page.flow %}
             {% if each.row == "main_content_row" %}
