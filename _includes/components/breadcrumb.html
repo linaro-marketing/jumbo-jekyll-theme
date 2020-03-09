@@ -2,9 +2,6 @@
 {% assign iterator = 2 %}
 {% assign breadcrumb-path = "/" %}
 <nav aria-label="breadcrumb" id="breadcrumb">
-    {% if site.data.settings.breadcrumb.image %}
-        {{site.data.settings.breadcrumb.image}}
-    {% endif %}
     <div class="container">
         <h1>{{page.title}}</h1>
         <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">

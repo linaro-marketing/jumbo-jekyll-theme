@@ -38,7 +38,9 @@
         {% endfor %}
         </ul>
 </div>
-
+{% comment %}
+Other Posts
+{% endcomment %}
 <div class="col col-12 my-5 suggested_posts">
     <h3>Other Posts</h3>
     <ul class="list-unstyled">
@@ -70,12 +72,3 @@
         {% endfor %}
         </ul>
 </div>
-
-{% comment %}
-    Other Posts
-{% endcomment %}
-
-
-{% if site.data.settings.blog.sidebar.custom-include %}
-{% include {{site.data.settings.blog.sidebar.custom-include}} %}
-{% endif %}

@@ -1,24 +1,20 @@
-{% if site.data.settings.twitter_username %}
-<a href="https://twitter.com/{{site.data.settings.twitter_username}}" class="btn btn-social-icon"><i
+{% if site.social_media_channels.twitter %}
+<a href="https://twitter.com/{{site.social_media_channels.twitter.url}}" class="btn btn-social-icon"><i
         class="icon-twitter"></i></a>
 {% endif %}
-{% if site.data.settings.facebook_username %}
-<a href="http://facebook.com/{{site.data.settings.facebook_username}}" class="btn btn-social-icon"><i
+{% if site.social_media_channels.facebook %}
+<a href="http://facebook.com/{{site.social_media_channels.facebook.url}}" class="btn btn-social-icon"><i
         class="icon-facebook"></i></a>
 {% endif %}
-{% if site.data.settings.linkedin_username %}
-    <a href="https://www.linkedin.com/company/{{site.data.settings.linkedin_username}}" class="btn btn-social-icon"><i
+{% if site.social_media_channels.linkedin %}
+    <a href="https://www.linkedin.com/company/{{site.social_media_channels.linkedin.url}}" class="btn btn-social-icon"><i
             class="icon-linkedin"></i></a>
 {% endif %}
-{% if site.data.settings.youtube_username %}
-    <a href="https://www.youtube.com/{{site.data.settings.youtube_username}}" class="btn btn-social-icon"><i
+{% if site.social_media_channels.youtube %}
+    <a href="https://www.youtube.com/{{site.social_media_channels.youtube.url}}" class="btn btn-social-icon"><i
             class="icon-youtube"></i></a>
 {% endif %}
-{% if site.data.settings.github_username %}
-<a href="https://github.com/{{site.data.settings.github_username}}" class="btn btn-social-icon"><i
+{% if site.social_media_channels.github %}
+<a href="https://github.com/{{site.social_media_channels.github.url}}" class="btn btn-social-icon"><i
         class="icon-github-circled"></i></a>
-{% endif %}
-{% if site.data.settings.google_plus_username %}
-<a href="https://plus.google.com/{{site.data.settings.google_plus_username}}/posts" class="btn btn-social-icon"><i
-        class="icon-gplus"></i></a>
 {% endif %}

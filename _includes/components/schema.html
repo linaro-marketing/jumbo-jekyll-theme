@@ -5,20 +5,22 @@
      {
     "@context" : "http://schema.org",
     "@type" : "Organization",
-    "name" : "{{site.data.settings.schema.organisation.name}}",
-    "url" : "{{site.data.settings.schema.organisation.url}}",
+    "name" : "{{site.schema.organisation.name}}",
+    "url" : "{{site.schema.organisation.url}}",
     "sameAs" : [
-            {% for social_media_channel in site.data.settings.social_media_channels %}
-                {{social_media_channel.url}}{% unless forloop.last %},{% endunless%}
-            {% endfor %}
+                {% if site.social_media_channels.facebook %}{{site.social_media_channels.facebook.url}},{% endif %}
+                {% if site.social_media_channels.twitter %}{{site.social_media_channels.twitter.url}},{% endif %}
+                {% if site.social_media_channels.linkedin %}{{site.social_media_channels.linkedin.url}},{% endif %}
+                {% if site.social_media_channels.youtube %}{{site.social_media_channels.youtube.url}},{% endif %}
+                {% if site.social_media_channels.github %}{{site.social_media_channels.github.url}},{% endif %}
         ],
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "{{site.data.settings.schema.organisation.address.street}}",
-            "addressLocality": "{{site.data.settings.schema.organisation.address.town}}",
-            "addressRegion": "{{site.data.settings.schema.organisation.address.county}}",
-            "postalCode": "{{site.data.settings.schema.organisation.address.post_code}}",
-            "addressCountry": "{{site.data.settings.schema.organisation.address.country_code}}"
+            "streetAddress": "{{site.schema.organisation.address.street}}",
+            "addressLocality": "{{site.schema.organisation.address.town}}",
+            "addressRegion": "{{site.schema.organisation.address.county}}",
+            "postalCode": "{{site.schema.organisation.address.post_code}}",
+            "addressCountry": "{{site.schema.organisation.address.country_code}}"
         }
     }
 {% if include.is_post %}
@@ -26,7 +28,7 @@
 ,{
  "@type": "BlogPosting",
  "headline": "{{include.included_page.title}}",
- "image": "{{site.url}}{{include.included_page.image.path}}",
+ "image": "{{site.url}}{{include.included_page.image}}",
  "keywords": "{{include.included_page.keywords}}",
  "wordcount": "{{include.included_page.content | number_of_words }}",
  "url": "{{include.included_page.url}}",
