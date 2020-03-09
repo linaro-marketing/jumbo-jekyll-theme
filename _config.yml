@@ -45,7 +45,6 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/social-media-image.png
       layout: flow
   - scope:
       type: posts
