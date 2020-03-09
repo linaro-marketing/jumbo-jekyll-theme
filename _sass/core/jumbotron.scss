@@ -4,6 +4,14 @@
     position: relative;
     height: $jumbotron_height;
     margin-bottom: 0px;
+    h1 {
+        @include media-breakpoint-up(sm){
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+
+        }
+    }
     &.video {
         background-color: transparent;
     }
