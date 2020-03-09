@@ -33,8 +33,8 @@
                             <div class="card-body">
                                 {% assign author = site.authors | where: "username", post.author | first %}
                                 {% assign author-url = author.url %}
-                                {% if author.image_path %}
-                                    {% assign author_image = author.image_path | remove_first: "/assets/images/" %}
+                                {% if author.image %}
+                                    {% assign author_image = author.image | remove_first: "/assets/images/" %}
                                 {% else %}
                                     {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
                                 {% endif %}
@@ -87,8 +87,8 @@
 
                         {% assign author = site.authors | where: "username", post.author | first %}
                         {% assign author-url = author.url %}
-                        {% if author.image_path %}
-                            {% assign author_image = author.image_path | remove_first: "/assets/images/" %}
+                        {% if author.image %}
+                            {% assign author_image = author.image | remove_first: "/assets/images/" %}
                         {% else %}
                             {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
                         {% endif %}
