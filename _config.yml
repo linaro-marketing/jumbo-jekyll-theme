@@ -94,6 +94,8 @@ name: Jumbo Jekyll Theme
 blog_filler_element: blog/blog_filler_element.html
 # Placeholder avatar
 avatar_placeholder: /assets/images/avatar-placeholder.jpg
+# Blog Post Image Placholder
+post_placeholder: /assets/images/test/background-image1.jpg
 # ----------- JEKYLL PLUGINS ---------------------
 # -------- jekyll-tidy --------
 jekyll_tidy:
