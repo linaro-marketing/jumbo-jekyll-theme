@@ -17,7 +17,7 @@ css_package: blog
             {% assign author_name = author.name %}
             {% capture author_image_alt %}{{author_name}} image{% endcapture %}
             <a href="{{author-url}}">
-                {% picture author_thumbnail {{author.image | remove_first: "/assets/images/" }} --alt {{author_image_alt}} %}
+                {% picture author_thumbnail {{author.image_path | remove_first: "/assets/images/" }} --alt {{author_image_alt}} %}
             </a>
             <p class="lead">
                 <em>{{author_name}}</em>
