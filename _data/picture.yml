@@ -128,3 +128,9 @@ markup_presets:
       img: 'class="lazyload rounded-circle small"'
     formats: [webp, original]
     widths: [50]
+  post_thumb:
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload mr-3 img-thumbnail suggested_post_thumb"'
+    formats: [webp, original]
+    widths: [50, 100, 400]
