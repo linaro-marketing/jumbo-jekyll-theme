@@ -7,7 +7,6 @@
         <div id="wrapper" class="main">
             {% include_cached nav/nav.html pageUrl=page.url %}
             {{content}}
-            {% include components/github_edit.html pagePath=page.path pagePermalink=page.permalink %}
             {% include_cached footer/footer.html %}
         </div>
         {% include components/javascript.html %}
