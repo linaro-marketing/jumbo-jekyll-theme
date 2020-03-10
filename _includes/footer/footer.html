@@ -51,6 +51,9 @@
         <div class="row strip p-t-20 p-b-20">
             <div class="container">
                 <div class="row">
+                    <div class="col col-12 text-center">
+                        {% include components/github_edit.html pagePath=page.path pagePermalink=page.permalink %}
+                    </div>
                     <div class="col col-12 text-white text-center">
                         <span class="copyright">Copyright &copy; {{ 'now' | date: "%Y" }} {{site.data.footer.copyright_text}}</span>
                         {% for link in site.data.footer.company_links %}
