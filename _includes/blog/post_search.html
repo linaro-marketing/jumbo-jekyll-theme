@@ -1,0 +1,14 @@
+{% if include.object.category %}
+    {% assign posts = site.categories[include.object.category] | sort: 'date' | reverse %}
+{% else %}
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+{% endif %}
+<div class="col col-12 ">
+    <div id="post_search" data-file-path="/assets/json/posts.json">
+        <input class="form-control form-control-lg"  id="search-input" type="text" placeholder="Search posts..."/>
+        <a class="close_search" href="#">
+            X <span class="sr-only">Clear Search</span>
+        </a>
+        <ul class="list-unstyled p-3" id="results-container"></ul>
+    </div>
+</div>
