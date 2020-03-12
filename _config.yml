@@ -33,7 +33,6 @@ plugins:
   - japr
   - jekyll_picture_tag
   - jekyll-tidy
-  - jekyll-paginate-v2
 collections:
   authors:
     output: true
@@ -59,10 +58,6 @@ defaults:
       layout: author
 include: ["_pages"]
 # ----------- THEME / WEBSITE CONFIG ---------------------
-# Permalink style used for paginating pages
-paginate_path: /blog/:num/
-paginate_path_news: /news/:num/
-paginate_path_authors: /authors/:num/
 # Blog images/thumbs dir
 blog_images_dir: assets/images/content/
 # Email
@@ -143,23 +138,6 @@ jekyll_tidy:
   compress_html: true
   # JS Path added to exclude to stop errors.
   exclude: ["assets/**/*.js", "robots.txt", "admin/config.yml"]
-# -------- jekyll-paginate-v2 --------
-pagination:
-  # Default pagination path for Jekyll Posts
-  # For other permalinks set in the front matter of the post index page
-  permalink: /:num/
-  # Enabled or not?
-  enabled: true
-  # Home many posts to display by default
-  per_page: 9
-  # Number of pages to show either side of the current page i.e - 1, 2, {3}, 4, 5
-  trail:
-    before: 2
-    after: 2
-  # Reverse the order of paginated pages
-  sort_reverse: true
-  # Field to sort posts by when paginating
-  sort_field: "date"
 autopages:
   enabled: false
 # -------- jekyll_relative_links --------
