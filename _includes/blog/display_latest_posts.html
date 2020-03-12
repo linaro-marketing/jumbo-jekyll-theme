@@ -10,14 +10,6 @@
         {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
 
         {% if forloop.first %}
-            <style>
-                @media(min-width: 1000px){
-                    .blog-post-item-col:nth-child(3n+2) > .blog-post-item {
-                        margin-right:0px !important;
-                        margin-left:0px !important;
-                    }
-                }
-            </style>
             <div class="col col-12 featured_post">
                 <div class="row">
                     <div class="col col-12 col-lg-7 order-lg-2 px-0 px-sm-0 latest-featured-post">
