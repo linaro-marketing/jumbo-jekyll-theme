@@ -1,10 +1,6 @@
-{% if include.object.category %}
-    {% assign posts = site.categories[include.object.category] | sort: 'date' | reverse %}
-{% else %}
-    {% assign posts = site.posts | sort: 'date' | reverse %}
-{% endif %}
+{% assign url = include.object.payload | where: 'name', 'url' | first  %}
 <div class="col col-12 ">
-    <div id="post_search" data-file-path="/assets/json/posts.json">
+    <div id="post_search" data-file-path="{{url.data}}">
         <input class="form-control form-control-lg"  id="search-input" type="text" placeholder="Search {{posts.size}} posts..."/>
         <a class="close_search" href="#">
             X <span class="sr-only">Clear Search</span>
