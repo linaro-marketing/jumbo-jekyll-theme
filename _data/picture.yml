@@ -134,3 +134,8 @@ markup_presets:
       img: 'class="lazyload mr-3 img-thumbnail suggested_post_thumb"'
     formats: [webp, original]
     widths: [50, 100, 400]
+  post_thumb_src_only:
+    markup: direct_url
+    fallback_format: webp
+    fallback_width: 400
+    widths: [400]
