@@ -1,11 +1,16 @@
-{% if paginator.total_posts > 0 %}
-    <div class="row my-2 my-sm-3">
-    {% for post in paginator.posts %}
+{% if include.object.category %}
+    {% assign posts = site.categories[include.object.category] | sort: 'date' | reverse %}
+{% else %}
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+{% endif %}
+
+<div class="row my-1">
+    {% for post in posts limit: 9 %}
         {% assign timeframe = 604800 %}
         {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
         {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
 
-        {% if forloop.first and paginator.page == 1 %}
+        {% if forloop.first %}
             <style>
                 @media(min-width: 1000px){
                     .blog-post-item-col:nth-child(3n+2) > .blog-post-item {
@@ -67,7 +72,7 @@
             {% comment %}
                 Blog Filler Element - This is needed due to the layout of the blog. If not included then there will be an empty col on the first blog page.
             {% endcomment %}
-            {% if forloop.index == 6 and paginator.page == 1 %}
+            {% if forloop.index == 6 %}
                 {% include {{site.blog_filler_element}} %}
             {% endif %}
 
@@ -118,9 +123,4 @@
             </div>
             {% endif %}
     {% endfor %}
-    </div>
-{% else %}
-    <p>
-        No posts of this category were found!
-    </p>
-{% endif %}
+</div>
