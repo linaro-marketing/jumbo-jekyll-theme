@@ -20,7 +20,7 @@ layout: base
             {% elsif each.row == "full_width_row" %}
                 {% include flow/full_width_row.html object=each %}
             {% elsif each.row == "custom_include_row" %}
-                {% include {{each.source}} %}
+                {% include {{each.source}} object=each %}
             {% endif %}
         {% endfor %}
     {% else %}
