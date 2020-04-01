@@ -10,7 +10,7 @@
             <div class="container {% if page.jumbotron.inner_class %}{{page.jumbotron.inner_class}}{% endif %}">
                 <div class="inner_content_wrapper">
                 {% if slide.inner-image %}
-                    <img class="img-responsive lazyload"
+                    <img class="d-inline-block lazyload"
                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                         data-src="{{slide.inner-image}}" alt="Slide {{forloop.index}} inner image" />
                 {% endif %}
