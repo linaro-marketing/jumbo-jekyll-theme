@@ -76,7 +76,12 @@ http2_resources:
     href: /assets/fonts/lato/Lato-regular.woff2
 google_analytics:
   enabled: true
-  code: UAXXXXXX
+  cookies_popup_title: Cookies & Privacy Policy
+  cookies_popup_description: >
+    Cookies enable you to use this website to the full extent and to personalize your experience on our sites. They tell us which parts of our websites people have visited, help us measure the effectiveness of ads and web searches and give us insights into user behavior so we can improve our communications with you.
+  privacy_url: /privacy/
+  enabled: true
+  code: UAXXXXXXB
 # Set the site-wide default social media share image.
 social_media_share_image: /assets/images/social-media-image.png
 # Set the default favicon
@@ -101,6 +106,8 @@ social_media_channels:
     url: https://www.youtube.com/linaroorg
   twitter:
     url: https://twitter.com/linaroorg
+  instagram:
+    url: https://instagram.com/linaroorg
 # Disqus Comments Setup
 disqus:
     enabled: true
