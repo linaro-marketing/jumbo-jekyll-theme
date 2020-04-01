@@ -4,6 +4,12 @@
     position: relative;
     height: $jumbotron_height;
     margin-bottom: 0px;
+    .inner_content_wrapper {
+        img {
+            height: 150px;
+            width: auto;
+        }
+    }
     h1 {
         @include media-breakpoint-up(sm){
             font-size: 3.5rem;
