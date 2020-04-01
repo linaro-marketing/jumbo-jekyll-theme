@@ -52,6 +52,9 @@
     {% endif %}
     {% if site.google_analytics.enabled %}
         <meta name="analytics_code" content="{{site.google_analytics.code}}">
+        <meta name="cookies_popup_title" content="{{site.google_analytics.cookies_popup_title}}">
+        <meta name="cookies_popup_description" content="{{site.google_analytics.cookies_popup_description}}">
+        <meta name="privacy_url" content="{{site.google_analytics.privacy_url}}">
     {% endif %}
     {% if page.keywords %}
         <meta name="keywords" content="{{page.keywords}}">
