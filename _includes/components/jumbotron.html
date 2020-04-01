@@ -19,7 +19,7 @@
                         {{slide.title}}</h1>
                 {% endif %}
                 {% if slide.description %}
-                    <p class="lead {% if slide.desciption-class %}class="{{slide.description-class}}" {% endif %}>
+                    <p class="lead {% if slide.desciption-class %} {{slide.description-class}}{% endif %}">
                         {{slide.description}}
                     </p>
                 {% endif %}
