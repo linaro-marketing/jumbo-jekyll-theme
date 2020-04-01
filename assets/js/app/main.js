@@ -216,16 +216,24 @@ $(document).ready(function() {
 
   // Cookie Consent Setup
   if ($("meta[name=analytics_code]")) {
+    var privacy_url = $("meta[name=privacy_url]").attr("content");
+    var cookies_popup_title = $("meta[name=cookies_popup_title]").attr(
+      "content"
+    );
+    var cookies_popup_description = $(
+      "meta[name=cookies_popup_description]"
+    ).attr("content");
+    var ga_code = $("meta[name=analytics_code]").attr("content");
+
     // Options for the Cookie Dialog
     var options = {
-      title: "Cookies & Privacy Policy",
-      link: "https://www.linaro.org/legal/#privacy",
+      title: cookies_popup_title,
+      link: privacy_url,
       moreInfoLabel: "View our Privacy Policy",
       delay: 1000,
       acceptBtnLabel: "Accept all cookies",
       uncheckBoxes: false,
-      message:
-        "Cookies enable you to use this website to the full extent and to personalize your experience on our sites. They tell us which parts of our websites people have visited, help us measure the effectiveness of ads and web searches and give us insights into user behavior so we can improve our communications with you.",
+      message: cookies_popup_description,
       cookieTypes: [
         {
           type: "Analytics",
@@ -259,7 +267,7 @@ $(document).ready(function() {
           "https://www.google-analytics.com/analytics.js",
           "ga"
         );
-        ga("create", "UA-XXXXX-Y", "auto");
+        ga("create", ga_code, "auto");
         ga("send", "pageview");
         console.log("Google Analytics started");
       } else {
