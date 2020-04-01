@@ -74,6 +74,8 @@ jumbotron:
     slider:
         - title: A feature-packed Jekyll theme
           title-class: big-title
+          description: >
+            Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur.
           slide-style: "background-position-y: bottom;"
           darken: true
           image: /assets/images/test/background-image1.jpg
@@ -81,11 +83,12 @@ jumbotron:
           - title: View on GitHub
             url: https://github.com/linaro-marketing/jumbo-jekyll-theme
             icon: fa fa-github
-        - title: Find the theme on GitHub
-          description: ""
+        - description: >
+            Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur.
           darken: true
           slide-style: "background-position-y: bottom;"
           image: /assets/images/test/background-image2.png
+          inner-image: /assets/images/test/js-logo.png
           buttons:
           - title: View on GitHub
             url: https://github.com/linaro-marketing/jumbo-jekyll-theme
