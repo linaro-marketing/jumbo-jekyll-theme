@@ -2,6 +2,7 @@
 layout: base
 css_package: blog
 ---
+<div itemscope="" itemtype="http://schema.org/BlogPosting">
 <div
     class="jumbotron d-flex align-items-center jumbotron-fluid {% if page.image %}background_image{% endif%}">
     {% if page.image %}
@@ -10,7 +11,7 @@ css_package: blog
     {% endif %}
     <div class="container text-center">
         <div class="inner_content_wrapper">
-            <h1 class="">{{page.title}}</h1>
+            <h1 class="" itemprop="name headline">{{page.title}}</h1>
 
             {% assign author = site.authors | where: "username", page.author | first %}
             {% assign author-url = author.url %}
@@ -21,15 +22,17 @@ css_package: blog
             {% else %}
                 {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
             {% endif %}
-            <a href="{{author-url}}">
-                {% picture author_thumbnail {{author_image}} --alt {{author_image_alt}} %}
-                <p class="lead">
-                    <em>{{author_name}}</em>
-                </p>
-            </a>
-            <hr class="my-4">
+            <div itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                <a href="{{author-url}}" itemprop="url" rel="author">
+                    {% picture author_thumbnail {{author_image}} --alt {{author_image_alt}} %}
+                    <p class="lead">
+                        <em itemprop="name">{{author_name}}</em>
+                    </p>
+                </a>
+            </div>
+
             <p>
-                <em>{{page.date |  date: "%A, %B %-d, %Y"}}</em>
+                <time datetime="{{page.date}}" itemprop="datePublished">{{page.date |  date: "%A, %B %-d, %Y"}}</time>
             </p>
             {% include blog/read_time.html %}
         </div>
@@ -52,4 +55,5 @@ css_package: blog
             </div>
         </div>
     </div>
+</div>
 </div>
