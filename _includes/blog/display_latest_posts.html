@@ -90,13 +90,13 @@
                         </div>
                         <h5 class="card-title">{{post.title}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%A, %B %-d, %Y"}}</h6>
+                        {% include blog/read_time.html content=post.content %}
                         <p class="card-text">
                             {% if post.description %}
-                                {{post.description}}
+                                {{post.description | strip_html | truncatewords:30 }}
                             {% else %}
                                 {{ post.content | strip_html | truncatewords:30 }}
                             {% endif %}
-                            Read time: {% include blog/read_time.html content=post.content %}
                         </p>
                         <p class="card-text">
                             <a href="{{post.url}}" class="btn btn-primary">Read</a>
