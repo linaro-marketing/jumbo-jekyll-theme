@@ -131,6 +131,8 @@ flow:
                   url: /about/
                   image: /assets/images/test/background-image1.jpg
                   background_image: true
+                  style: d-flex
+                  content_style: d-flex flex-column align-items-center justify-content-center
                   description: See our photos from event.
                   buttons:
                     - title: More Details
