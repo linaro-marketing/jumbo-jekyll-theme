@@ -4,7 +4,7 @@
     {% assign posts = site.posts | sort: 'date' | reverse %}
 {% endif %}
 <div class="row py-0">
-    {% for post in posts limit: 9 %}
+    {% for post in posts limit: 10 %}
         {% assign timeframe = 604800 %}
         {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
         {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
@@ -59,14 +59,6 @@
                 </div>
             </div>
         {% else %}
-
-            {% comment %}
-                Blog Filler Element - This is needed due to the layout of the blog. If not included then there will be an empty col on the first blog page.
-            {% endcomment %}
-
-            {% if forloop.index == 6 %}
-                {% include {{site.blog_filler_element}} %}
-            {% endif %}
 
             <div class="col col-12 col-sm-6 col-lg-4 blog-post-item-col p-3">
                 <div class="card h-100 ">
