@@ -7,13 +7,13 @@
             {% endif %}
             {% for block in include.object.block_section_content.blocks %}
                 <div class="col col-12 col-sm-6 col-lg-{{block_width}} block_column">
-                    <div class="card h-100 {% if block.background_image %}background_image text-white{% endif %}">
+                    <div class="card h-100 {% if block.background_image %}background_image text-white{% endif %} {% if block.style %}{{block.style}}{% endif %}">
                         {% if block.image %}
                             {% assign block_image = block.image | remove_first: "/assets/images/" %}
                             {% capture block_image_alt %}{{block.title}} image {% endcapture %}
                             {% picture card_block_image {{block_image}} --alt {{block_image_alt}} %}
                         {% endif %}
-                        <div class="card-body {% if block.background_image %}card-img-overlay{% else %}card-body{% endif %}">
+                        <div class="card-body {% if block.background_image %}card-img-overlay{% else %}card-body{% endif %} d-flex flex-column align-items-center   justify-content-center {% if block.content_style %}{{block.content_style}}{% endif %}">
                             {% if block.title %}
                             <h5 class="card-title">{{block.title}}</h5>
                             {% endif %}
