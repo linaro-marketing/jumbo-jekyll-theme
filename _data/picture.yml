@@ -127,7 +127,7 @@ markup_presets:
     attributes:
       img: 'class="lazyload rounded-circle small"'
     formats: [webp, original]
-    widths: [50]
+    widths: [50, 100]
   post_thumb:
     markup: data_picture
     attributes:
