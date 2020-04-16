@@ -1,6 +1,8 @@
 ---
 ---
 @charset "UTF-8";
+// Custom sass and css rules
+@import "app/custom";
 //Bootstrap Overrides
 @import "app/overrides";
 @import "bootstrap/functions";
