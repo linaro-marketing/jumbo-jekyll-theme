@@ -9,7 +9,7 @@ flow:
         - format: custom_include
           source: blog/post_search.html
           payload:
-            - name: url
+              name: url
               data: /assets/json/posts.json
           # category: News
         - format: custom_include
