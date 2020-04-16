@@ -8,6 +8,10 @@
         img {
             height: 150px;
             width: auto;
+            &.rounded-circle {
+                height: 75px;
+                width: 75px;
+            }
         }
     }
     h1 {
