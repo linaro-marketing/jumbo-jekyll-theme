@@ -68,7 +68,9 @@ markup_presets:
     fallback_width: 600 # Default 800
   # Images for blog posts
   blog_image:
-    markup: img
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload img-fluid blog_content_image "'
     formats: [webp, original]
     widths: [400,800,1200]
   header_image:
