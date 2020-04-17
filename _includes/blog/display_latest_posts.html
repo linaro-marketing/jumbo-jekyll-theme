@@ -4,7 +4,7 @@
     {% assign posts = site.posts | sort: 'date' | reverse %}
 {% endif %}
 <div class="row py-0">
-    {% for post in posts limit: 10 %}
+    {% for post in posts limit: 20 %}
         {% assign timeframe = 604800 %}
         {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
         {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
