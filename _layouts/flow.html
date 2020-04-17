@@ -10,7 +10,7 @@ layout: base
     {% if page.flow %}
         {% for each in page.flow %}
             {% if each.row == "main_content_row" %}
-                <div class="row" id="main_content">
+                <div class="row {% if each.style %}{{style}}{% endif %}" id="main_content">
                     <div class="container">
                         {{content}}
                     </div>
