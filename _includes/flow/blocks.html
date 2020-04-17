@@ -13,7 +13,7 @@
                             {% capture block_image_alt %}{{block.title}} image {% endcapture %}
                             {% picture card_block_image {{block_image}} --alt {{block_image_alt}} %}
                         {% endif %}
-                        <div class="card-body {% if block.background_image %}card-img-overlay{% else %}card-body{% endif %} d-flex flex-column align-items-center   justify-content-center {% if block.content_style %}{{block.content_style}}{% endif %}">
+                        <div class="card-body {% if block.background_image %}card-img-overlay{% else %}card-body{% endif %}  {% if block.content_style %}{{block.content_style}}{% endif %}">
                             {% if block.title %}
                             <h5 class="card-title">{{block.title}}</h5>
                             {% endif %}
