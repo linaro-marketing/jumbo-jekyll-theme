@@ -1,0 +1,25 @@
+<div class="owl-carousel slider_block owl-theme" data-size="{{include.object.items | size }}"
+{% if include.object.xs_items %}data-xs-number="{{include.object.xs_items}}"{% endif %}
+{% if include.object.sm_items %}data-sm-number="{{include.object.sm_items}}"{% endif %}
+{% if include.object.md_items %}data-md-number="{{include.object.md_items}}"{% endif %}
+{% if include.object.lg_items %}data-lg-number="{{include.object.lg_items}}"{% endif %}
+{% if include.object.dots %}data-dots="true"{% endif %}
+{% if include.object.nav %}data-nav="true"{% endif %}
+{% if include.object.seconds_per_slide %}data-seconds-per-slide="{{include.object.seconds_per_slide}}"{% endif %}>
+    {% if include.object.items %}
+        {% assign carousel_items = include.object.items %}
+    {% elsif include.object.data_source %}
+        {% assign carousel_items = site.data[include.object.source] %}
+    {% endif %}
+    {% for item in carousel_items %}
+        {% if include.object.lightbox_enabled %}<a data-featherlight="{{item.image}}">{% endif %}
+        <div class="item">
+            {% if item.image %}
+                {% capture image_path %}{{item.image | remove_first: "/assets/images/" }}{% endcapture %}
+                {% capture image_alt %}Slider block image {{forloop.index}}{% endcapture %}
+                {% picture slider_block_image {{image_path}} --alt {{image_alt}} %}
+            {% endif %}
+        </div>
+        {% if include.object.lightbox_enabled %}</a>{% endif %}
+    {% endfor %}
+</div>

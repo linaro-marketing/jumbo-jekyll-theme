@@ -1,0 +1,37 @@
+{% assign page-url = page.url | split: "/" %}
+{% assign iterator = 2 %}
+{% assign breadcrumb-path = "/" %}
+<nav aria-label="breadcrumb" id="breadcrumb">
+    <div class="container">
+        <h1>{{page.title}}</h1>
+        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"
+            class="breadcrumb-item">
+                <a itemprop="item" href="/">
+                    <span itemprop="name">Home</span>
+                    <meta itemprop="position" content="1" />
+                </a>
+            </li>
+            {% for section in page-url %}
+                {% if forloop.last == false %}
+                        {% if section == "" or section == "index.html" %}
+                            {% continue %}
+                        {% capture breadcrumb-path %}{{breadcrumb-path}}{{section}}/{% endcapture%}
+                            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a itemprop="item" href="{{breadcrumb-path}}">
+                                    <span itemprop="name">{{section | truncate: 20 | capitalize }}</span>
+                                </a>
+                                <meta itemprop="position" content="{{iterator}}" />
+                            </li>
+                        {% endif %}
+                {% else %}
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active">
+                        <span itemprop="name">{{page.title}}</span>
+                        <meta itemprop="position" content="{{iterator}}" />
+                    </li>
+                {% endif %}
+                {% assign iterator = iterator | plus: 1 %}
+            {% endfor %}
+        </ol>
+    </div>
+</nav>

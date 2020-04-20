@@ -1,1 +1,51 @@
-// Search style goes here.
+.fessWrapper .pagination > .active > a, .fessWrapper .pagination > .active > a:focus, .fessWrapper .pagination > .active > a:hover, .fessWrapper .pagination > .active > span, .fessWrapper .pagination > .active > span:focus, .fessWrapper .pagination > .active > span:hover {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: $primary;
+    border-color: $primary;
+}
+.fessWrapper .pagination > li > a, .fessWrapper .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.5;
+    color: #939393;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+#content-container .fessWrapper .pagination > li > a, #content-container .fessWrapper .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.5;
+    color: #808080;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+#content-container .fessWrapper a {
+    color: $primary;
+    text-decoration: none;
+}
+#content-container .fessWrapper #result .body cite {
+    color: #a7a7a7;
+    font-style: normal;
+}
+.fessWrapper tbody > tr> td {
+    height: 100%;
+    padding: 0px;
+}
+
+.fessWrapper table{
+    border-bottom:none;
+}
+
+.fessWrapper .searchButton {
+    background-color: $primary;
+    height: 38px;
+    width: 100%;
+}

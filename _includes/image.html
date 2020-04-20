@@ -1,6 +1,11 @@
-{% if include.lightbox_disabled %}
-![{{include.alt}}](data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==){:class="img-responsive lazyload {% if include.class %}{{include.class}}{% endif %}" data-src="{% asset_path  '{{include.name}}'  %}"}
+{% if include.alt %}
+    {% capture image_alt %}{{include.alt}}{% endcapture %}
 {% else %}
-[![{{include.alt}}](data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==){:class="img-responsive lazyload {% if include.class %}{{include.class}}{% endif %}" data-src="{% asset_path '{{include.name}}' %}"}]({% if include.url %}{{include.url}}{% elsif include.lightbox_disabled %}{% else %}{% asset_path "{{include.name}}"  %}{% endif %}){% if include.lightbox_disabled %}{% else %}{% if include.url %}{% else %}{: data-featherlight="{% asset_path '{{include.name}}' %}" data-title="{{include.alt}}"}{% endif %}{% endif %}
+    {% capture image_alt %}{{page.title}} content image{% endcapture %}
 {% endif %}
-
+{% if include.class %}
+    {% capture image_class %}{{include.class}}{% endcapture %}
+{% else %}
+    {% capture image_class %}{% endcapture %}
+{% endif %}
+{% picture blog_image {{include.path | remove_first: "/assets/images/" }} class="{{image_class}}"  --alt {{image_alt}} --class {{image_class}} %}

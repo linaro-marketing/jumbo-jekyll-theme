@@ -1,10 +1,9 @@
 ---
-layout: jumbotron-container
+layout: flow
 permalink: /
-title: Home New
+title: Jumbo-jekyll-theme
 description: >-
-    The jumbo-jekyll-theme is a Bootstrap3 Jekyll theme for building
-    superfast static websites.
+    The jumbo-jekyll-theme is a feature packed Boostrap v3 Jekyll theme for building static websites.
 sticky-tab-bar:
     - title: Home
       url: /
@@ -12,60 +11,99 @@ sticky-tab-bar:
     - title: Get Started
       url: /get-started/
 hide_last_modified: false
+flow:
+    - row: main_content_row
+    - row: container_row
+      #style: new
+      sections:
+        - format: feature_block
+        #   style: text-center text-white
+          feature_block_content:
+            position: "left"
+            type: "slider"
+            slider_content:
+                lightbox_enabled: true
+                seconds_per_slide: 2
+                nav: true
+                dots: false
+                xs_items: 1
+                sm_items: 1
+                md_items: 1
+                lg_items: 1
+                items:
+                    - image: /assets/images/test/background-image1.jpg
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/test/background-image2.png
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/test/background-image3.jpg
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/test/background-image1.jpg
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/test/background-image2.png
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/test/background-image3.jpg
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/test/background-image1.jpg
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/test/background-image2.png
+                      alt: Background Image
+                      title: Background Image 1
+                    - image: /assets/images/test/background-image3.jpg
+                      alt: Background Image
+                      title: Background Image 1
+            title: Lightweight & fully optimised
+            text: >
+                The jumbo-jekyll-theme was built to work in an enterpise environment with a focus on speed.
+            buttons:
+                - title: Get Started
+                  url: https://github.com/linaro-marketing/jumbo-jekyll-theme/wiki
+                  style: btn-primary
+                - title: View Theme Wiki
+                  url: https://github.com/linaro-marketing/jumbo-jekyll-theme/wiki
+                  style: btn-primary
 jumbotron:
+    class: home
+    inner_class: dotted
     slider:
-        slides:
-            - title: Accelerating deployment of Arm-based solutions
-              title-class: big-title
-              slide-style: "background-position-y: bottom;"
-              darken: true
-              image: https://www.linaro.org/assets/images/content/hkg18-tech-banner.jpg
-            - title: Industry leaders to present Open Source on Arm insights at Linaro Connect Bangkok 2019
-              description: Linaro Ltd, the open source collaborative engineering organization developing software for the Arm® ecosystem, announced today the keynote speakers for Linaro Connect Bangkok 2019.
-              darken: true
-              slide-style: "background-position-y: bottom;"
-              image: https://staging.linaro.org/assets/images/content/bkk19-website-banner.png
-              buttons:
-                - title: Learn more
-                  url: https://www.linaro.org/news/industry-leaders-to-present-open-source-on-arm-insights-at-linaro-connect-bangkok-2019/
-    triangle-divider: true
-    animation: fade
-    buttons:
-        - title: View on GitHub
-          url: https://github.com/kylekirkby/jumbo-jekyll-theme
-          icon: fa fa-github
-js-package: home
+        - title: A feature-packed Jekyll theme
+          title-class: big-title
+          description: >
+            Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur.
+          slide-style: "background-position-y: bottom;"
+          darken: true
+          image: /assets/images/test/background-image1.jpg
+          buttons:
+          - title: View on GitHub
+            url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+            icon: fa fa-github
+        - description: >
+            Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur.
+          darken: true
+          slide-style: "background-position-y: bottom;"
+          image: /assets/images/test/background-image2.png
+          inner-image: /assets/images/test/js-logo.png
+          buttons:
+          - title: View on GitHub
+            url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+            icon: fa fa-github
+          - title: View on GitHub
+            url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+            icon: fa fa-github
+            class: btn-secondary
 ---
-# Jumbo Jekyll Theme
+Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur. Has ut wisi vivendum dissentias. Vel nemore copiosae praesent no, blandit instructior nec ut. Dolore libris insolens pro an, no est laudem populo. Te nostro commune officiis qui.
 
-This is a test page for Linaro Jekyll Theme.
+Tacimates pertinax interesset et nam, ne sed agam esse modus. Oratio contentiones disputationi usu ad, vix quodsi consetetur ut, cu wisi consequat cum. Eirmod intellegat duo ea, vero labores omittantur vel et. Zril accusata ea est, aperiam accusam pri ea. Tation fierent eos ad, hinc ornatus prodesset ad vis, nam labore argumentum te.
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+Illum graeci torquatos pri ea, ei noluisse vulputate pro. Appareat assentior mea ex, in definitionem mediocritatem est. Has at tantas deserunt lobortis, te summo latine pri. An vel oportere percipitur definitiones, no usu causae nominati. Cum ei diam posse. Eu errem diceret qualisque est, has ex habemus delectus.
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.
+Nec autem instructior an, laudem voluptaria usu an. Ad liber habemus qui. Possim elaboraret ex sit. Nec mundi alienum ei. Elit utamur explicari vel ex.
 
-<div class="double-scroll">
-<table class="table">
-<thead>
-<th>Project</th>
-<th>Description</th>
-</thead>
-<tbody>
-<tr>
-<td>Test</td>
-<td>
-It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.
-</td>
-</tr>
-<tr>
-<td>Test 2</td>
-<td>
-It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.
-</td>
-</tr>
-</tbody>
-</table>
-</div>
+Liber atomorum liberavisse mel eu, his porro feugiat tacimates no, odio labore ut vis. Ad vel falli fabellas, eum ut hinc causae timeam. Suas nibh tollit cum at. Nonumy habemus sed at, nusquam reprimique sed in, quo an iusto definitionem. Nibh eros tritani mei ea, qui dolor hendrerit ne, in sit tamquam laboramus reformidans. Pro putent sanctus atomorum at, ex eum quas natum voluptatibus. Eam labores dissentiunt id.

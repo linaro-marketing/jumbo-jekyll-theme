@@ -1,18 +1,15 @@
 // Core Jumbo Jekyll Theme Sass includes.
-@import "core/fonts";
-@import "core/nav";
+@import "core/normalize";
+@import "core/navbar";
 @import "core/theme";
-@import "core/cookieconsent";
-@import "core/footer";
-@import "core/social-media-icons";
 @import "core/breadcrumb";
-@import "core/tables";
-@import "core/forms";
-@import "core/fa";
-@import "core/fly";
 @import "core/jumbotron";
+@import "core/syntax";
+@import "core/footer";
+@import "core/flow";
+@import "core/blog";
+@import "core/error";
+@import "core/cookies";
+@import "core/fontello";
 @import "core/featherlight";
-@import "core/animations";
 @import "core/carousel-styles";
-@import "core/owl.carousel.min";
-@import "core/owl.theme.default.min";

@@ -1,6 +1,28 @@
 ## Changelog
 
-## 4.1.2 
+# 5.5.7
+- Added support for Staging environment Google analytics codes
+- Modifying Jekyll data files to work with the netlifycms correctly (data must be stored within an object in data files i.e items: )
+- Favicon path needs to be specified in the _data/settings.yml file (removing asset_path use slowly)
+- Removed the error-pages section of the _data/settings.yml file
+- Updated the flow_inner.html jekyll include to use the same naming convention as the custom_include_row
+- Added a tags.yml data file to be used in a relation widget in conjuction with site posts (netlifycms change)
+
+# 5.5.4
+- flow row layout added
+  - allows users to create complex pages using just frontmatter (no longer custom html - works well with Jekyll content management systems)
+- added youtube video embed support to feature blocks.
+
+## 4.7.0
+- Refactored the blog section of the theme
+  - Removed excessive liquid used in the includes/layouts
+- Refactored the _sass/core/blog.scss file - now entirely SASS
+
+## 4.6.0
+- Updated the footer design
+- Refactored the footer css into SASS
+
+## 4.1.2
 - Added the jekyll-last-modified-at plugin
 - Added disqus comments config object
 

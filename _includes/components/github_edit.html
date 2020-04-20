@@ -1,0 +1,35 @@
+{% unless page.edit-on-github == "false" %}
+{% if site.edit-on-github.enabled and site.edit-on-github.repo %}
+    {% assign page_base = include.pagePermalink | split:"/" %}
+    {% assign page-path = include.pagePath | replace: " ", "" %}
+    {% if page_base[1] == "blog" %}
+    {% elsif page_base[1] == "documentation" and site.edit-on-github.docs %}
+        {% capture github-home %}{{site.edit-on-github.docs}}{% endcapture %}
+        {% capture github-docs %}{{site.edit-on-github.docs}}/tree/master/{% endcapture %}
+        {% capture report-issue-link %}
+        {{github-home}}/issues/new?title=Problem+with+{{page-path}}&body=Please+enter+some+details+about+the+bug/issue+so+we+can+promptly+resolve+it.+%0D%0AURL%3A++{{site.url}}{{page.url}}
+        {% endcapture %}
+        {% capture edit-me-link %}{{github-docs}}{{page-path}}{% endcapture %}
+            <div class="btn-group my-4" role="group" aria-label="Basic example" id="github_controls">
+                <button type="button" class="btn btn-secondary"  href="{{github-home}}" id="github_home"><i class="icon-github-circled center-block"></i></button>
+                <button type="button" class="btn btn-secondary" href="{{report-issue-link}}" id="submit_issue">Report an Issue</button>
+                <button href="{{edit-me-link | replace: " ", "" }}" type="button" class="btn btn-secondary" id="edit_on_github">Edit on GitHub</button>
+            </div>
+    {% else %}
+        {% capture github-home %}{{site.edit-on-github.repo}}{% endcapture %}
+        {% capture github-docs %}{{site.edit-on-github.repo}}/tree/master/{% endcapture %}
+        {% capture report-issue-link %}
+        {{site.edit-on-github.repo}}/issues/new?title=Problem+with+{{page-path}}&body=Please+enter+some+details+about+the+bug/issue+so+we+can+promptly+resolve+it.+%0D%0AURL%3A++{{site.url}}{{page.url}}
+        {% endcapture %}
+        {% capture edit-me-link %}{{github-docs}}{{page-path}}{% endcapture %}
+            <div class="btn-group my-4" role="group" aria-label="Basic example" id="github_controls">
+                <button type="button" class="btn btn-secondary" href="{{github-home}}" id="github_home"><i
+                        class="icon-github-circled center-block"></i></button>
+                <button type="button" class="btn btn-secondary" href="{{report-issue-link}}" id="submit_issue">Report an
+                    Issue</button>
+                <button  href="{{edit-me-link | replace: " ", "" }}"  type="button" class="btn btn-secondary"
+                    id="edit_on_github">Edit on GitHub</button>
+            </div>
+    {% endif %}
+{% endif %}
+{% endunless %}

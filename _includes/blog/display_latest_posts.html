@@ -1,0 +1,110 @@
+{% if include.object.category %}
+    {% assign posts = site.categories[include.object.category] | sort: 'date' | reverse %}
+{% else %}
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+{% endif %}
+<div class="row py-0">
+    {% for post in posts limit: 20 %}
+        {% assign timeframe = 604800 %}
+        {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
+        {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
+
+        {% if forloop.first %}
+            <div class="col col-12 featured_post">
+                <div class="row">
+                    <div class="col col-12 col-lg-7 order-lg-2 px-0 px-sm-0 latest-featured-post">
+                        <a href="{{post.url}}">
+                            {% if post.image %}
+                                {% assign block_image = post.image | remove_first: "/assets/images/" %}
+                                {% capture block_image_alt %}{{post.title}} image {% endcapture %}
+                            {% else %}
+                                {% assign block_image = site.post_placeholder | remove_first: "/assets/images/" %}
+                                {% capture block_image_alt %}Blog post placeholder image {% endcapture %}
+                            {% endif %}
+                            {% picture featured_blog_image {{block_image}} --alt {{block_image_alt}} %}
+                        </a>
+                    </div>
+                    <div class="col col-12 col-lg-5 order-lg-1 px-0 px-sm-0 latest-featured-post-content">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                {% assign author = site.authors | where: "username", post.author | first %}
+                                {% assign author-url = author.url %}
+                                {% if author.image %}
+                                    {% assign author_image = author.image | remove_first: "/assets/images/" %}
+                                {% else %}
+                                    {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
+                                {% endif %}
+                                {% capture image_alt %}{{author.name}} profile image{% endcapture %}
+                                <div class="media align-items-center mb-3">
+                                    <div class="media-body">
+                                        <em class="mt-0">{{author.name}}</em>
+                                    </div>
+                                    {% picture author_thumbnail_small {{author_image}} --alt {{image_alt}} %}
+                                </div>
+                                <h5 class="card-title">{{post.title}}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%A, %B %-d, %Y"}}</h6>
+                                <p class="card-text">
+                                    {% if post.description %}
+                                        {{post.description}}
+                                    {% else %}
+                                        {{ post.content | strip_html | truncatewords:30 }}
+                                    {% endif %}
+                                </p>
+                                <p class="card-text">
+                                    <a href="{{post.url}}" class="btn btn-primary">Read</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+
+            <div class="col col-12 col-sm-6 col-lg-4 blog-post-item-col p-3">
+                <div class="card h-100 ">
+                    <div class="blog_image_header">
+                        {% if post.image %}
+                            {% assign block_image = post.image | remove_first: "/assets/images/" %}
+                            {% capture block_image_alt %}{{post.title}} image {% endcapture %}
+                        {% else %}
+                            {% assign block_image = site.post_placeholder | remove_first: "/assets/images/" %}
+                            {% capture block_image_alt %}Blog post placeholder image {% endcapture %}
+                        {% endif %}
+                        {% picture featured_blog_image {{block_image}} --alt {{block_image_alt}} %}
+                    </div>
+                    <div class="card-body">
+
+                        {% assign author = site.authors | where: "username", post.author | first %}
+                        {% assign author-url = author.url %}
+                        {% if author.image %}
+                            {% assign author_image = author.image | remove_first: "/assets/images/" %}
+                        {% else %}
+                            {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
+                        {% endif %}
+                        {% capture image_alt %}{{author.name}} profile image{% endcapture %}
+                        <div class="media align-items-center mb-3">
+                            <div class="media-body">
+                                <em class="mt-0">{{author.name}}</em>
+                            </div>
+                            {% picture author_thumbnail_small {{author_image}} --alt {{image_alt}} %}
+                        </div>
+                        <h5 class="card-title">{{post.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%A, %B %-d, %Y"}}</h6>
+                        {% include blog/read_time.html content=post.content %}
+                        <p class="card-text">
+                            {% if post.description %}
+                                {{post.description | strip_html | truncatewords:30 }}
+                            {% else %}
+                                {{ post.content | strip_html | truncatewords:30 }}
+                            {% endif %}
+                        </p>
+                        <p class="card-text">
+                            <a href="{{post.url}}" class="btn btn-primary">Read</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            {% endif %}
+    {% endfor %}
+</div>

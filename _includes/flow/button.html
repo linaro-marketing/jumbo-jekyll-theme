@@ -1,0 +1,6 @@
+<a href="{{include.object.url}}" class="btn {% if include.object.style %}{{include.object.style}}{% else %}btn-primary{% endif %}">
+    {{include.object.title}}
+    {% if include.object.icon %}
+        <i class="{{include.object.icon}}" aria-hidden="true"></i>
+    {% endif %}
+</a> 

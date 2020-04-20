@@ -1,0 +1,33 @@
+---
+layout: base
+---
+{% if page.jumbotron %}
+    {% include components/jumbotron.html %}
+{% elsif page.breadcrumb %}
+    {% include components/breadcrumb.html %}
+{% endif %}
+<div class="container-fluid main_content" id="flow_wrapper">
+    {% if page.flow %}
+        {% for each in page.flow %}
+            {% if each.row == "main_content_row" %}
+                <div class="row {% if each.style %}{{style}}{% endif %}" id="main_content">
+                    <div class="container">
+                        {{content}}
+                    </div>
+                </div>
+            {% elsif each.row == "container_row" %}
+                {% include flow/container_row.html object=each %}
+            {% elsif each.row == "full_width_row" %}
+                {% include flow/full_width_row.html object=each %}
+            {% elsif each.row == "custom_include_row" %}
+                {% include {{each.source}} object=each %}
+            {% endif %}
+        {% endfor %}
+    {% else %}
+    <div class="row" id="content-container">
+        <div class="container">
+            {{content}}
+        </div>
+    </div>
+    {% endif %}
+</div>

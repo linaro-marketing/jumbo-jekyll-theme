@@ -1,74 +1,73 @@
-# Search Config
+universal_nav: true
 search:
-    enabled: true
-    label: Linaro
-universal-nav: false
-# Nav Brand Config
-brand:
-    text: Jumbo Jekyll Theme
-    image: 
-        enabled: false
-        name: Linaro-Logo.svg
-    url: /
-# Navigation pages
+  enabled: true
+  label: Linaro
 pages:
-    
-    - title: Jekyll
-      active_paths:
-        - /new/
-      options:
-          - text: Plugins
-            options:
-                - text: Jekyll Assets
-                  url: /jekyll/plugins/assets/
-                - text: Jekyll Assets
-                  url: /jekyll/plugins/assets/
-                - text: Jekyll Assets
-                  url: /jekyll/plugins/assets/
-          - text: Includes
-            url: /jekyll/includes/
-    - title: Layouts
-      options:
-          - text: Default
-            url: /layouts/default/
-          - text: Jumbotron
-            options:
-              - text: Overview
-                url: /layouts/jumbotron/
-              - text: Carousel Header
-                url: /layouts/jumbotron/carousel-header/
-              - text: Video Header
-                url: /layouts/jumbotron/video-header/
-              - text: Background Image Header
-                url: /layouts/jumbotron/background-image-header/
-              - text: Slider Header
-                url: /layouts/jumbotron/slider-header/
-
-
-    - title: About
-      options:
+  - title: Features
+    options:
+      - text: Page Headers
+        options:
+          - text: Video Header
+            url: /features/video-header/
+          - text: Slider Header
+            url: /features/slider-header/
+          - text: Background Image Header
+            url: /features/background-image-header/
+          - text: Header
+            url: /features/header/
+          - text: Breadcrumb
+            url: /features/breadcrumb/
+          - text: No Header
+            url: /features/no-header/
+      - text: Layouts
+        options:
+          - text: Flow
+            url: /flow/
+          - text: Post
+            url: /post/
+  - options:
+      - text: Overview
+        url: /engineering/
+      - text: Artificial Intelligence
+        url: /engineering/artificial-intelligence/
+      - text: Autonomous Vehicles
+        url: /engineering/autonomous-vehicles/
+      - text: Consumer
+        url: /engineering/consumer/
+      - text: Core Engineering on Arm
+        options:
           - text: Overview
-            url: /about/
-          - text: Collaborate
-            url: /collaborate/
-          - text: Jekyll
-    
-    - title: CSS
-      options:
-          - text: Bootstrap
-            url: /css/bootstrap/ 
-
-
-    - title: JS
-      options:
-          - text: JQuery
-            url: /js/jquery/
-          - text: Bootstrap
-            url: /js/bootstrap/
-            
-    - title: Blog
-      url: /blog/
-      active_paths:
-        - /new/
-    - title: Download
-      url: /download/
+            url: /engineering/core/
+          - text: Core Technologies & Tools
+            url: /engineering/core/ctt/
+          - text: Kernel Validation
+            url: /engineering/core/kernel-validation-and-testing/
+          - text: Toolchain
+            url: /engineering/core/toolchain/
+          - text: Kernel
+            url: /engineering/core/kernel/
+          - text: Power Management
+            url: /engineering/core/arm-power-management/
+          - text: Power Management EAS
+            url: /engineering/core/arm-power-management/eas/
+          - text: Power Management Farm
+            url: /engineering/core/arm-power-management/pmwg-farm/
+          - text: Security
+            url: /engineering/core/security/
+          - text: Devicetree Evolution
+            url: /engineering/core/devicetree-evolution/
+      - text: Datacenter & Cloud
+        url: /engineering/datacenter-and-cloud/
+      - text: Edge & Fog Computing
+        url: /engineering/edge-and-fog-computing/
+      - text: High Performance Computing
+        url: /engineering/high-performance-computing/
+      - text: IoT & Embedded
+        url: /engineering/iot-and-embedded/
+      - text: Multimedia
+        url: /engineering/multimedia/
+    title: Engineering
+  - title: Membership
+    url: /membership/
+  - url: /blog/
+    title: Blog

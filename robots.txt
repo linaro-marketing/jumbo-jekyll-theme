@@ -1,6 +1,6 @@
 ---
 ---
-{% if site.production == true %}
+{% if site.production %}
 User-agent: *
 Sitemap: {{site.url}}/sitemap.xml
 {% else %}

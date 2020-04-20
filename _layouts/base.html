@@ -1,24 +1,14 @@
 ---
-js-package: main
 ---
 <!DOCTYPE html>
 <html lang="en">
-    {% include head.html %}
+    {% include components/head.html %}
     <body>
-        {% if site.data.settings.google.tag_manager %}
-            {% include gtm-noscript.html %}
-        {% endif %}
-        <div id="wrapper" class="{% if layout.home == true and site.data.settings.home.jumbotron.enabled %}home{% else %}main{% endif %}">
-            {% include nav.html %}
-            <div class="container-fluid">
-                {{content}}
-                {% if site.data.footer.include %}
-                    {% include {{site.data.footer.include}} %}
-                {% endif %}
-                {% include github-edit.html %}
-                {% include footer.html %}
-            </div>
+        <div id="wrapper" class="main">
+            {% include_cached nav/nav.html pageUrl=page.url %}
+            {{content}}
+            {% include_cached footer/footer.html %}
         </div>
-        {% include javascript.html %}
+        {% include components/javascript.html %}
     </body>
 </html>

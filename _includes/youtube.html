@@ -1,7 +1,75 @@
-{% if include.vid_id %}
-    <div class="videoWrapper">
-        <div class="youtube" data-embed="{{include.vid_id}}">
-            <div class="play-button"></div>
-        </div>
-    </div>
+{% if include.url contains "https://youtu.be/" %}
+    {% assign youtube_id = include.url | replace: 'https://youtu.be/','' %}
+{% elsif include.url contains "https://www.youtube.com/watch?v=" %}
+    {% assign youtube_id = include.url | replace: 'https://www.youtube.com/watch?v=','' %}
+{% else %}
+    {% assign youtube_id = include.url %}
 {% endif %}
+
+{% assign youtube_id =  youtube_id | split: "&" | first %}
+
+{% assign title = "" %}
+{% if include.title %}
+    {% assign title = include.title %}
+{% endif %}
+
+
+{% if include.poster_image %}
+    {% assign youtube_poster_image_url = include.poster_image | remove_first: "/assets/images/" %}
+    {% capture poster_img %}{% picture youtube_poster_image {{youtube_poster_image_url}} --alt {{title}} %}{% endcapture %}
+{% else %}
+    {% capture poster_img %}https://img.youtube.com/vi/{{youtube_id}}/maxresdefault.jpg{% endcapture %}
+{% endif %}
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{youtube_id}}" srcdoc="<style>
+    * {
+        padding: 0;
+        margin: 0;
+        overflow: hidden
+    }
+    img {
+        filter: brightness(0.3);
+    }
+    html,
+    body {
+        height: 100%
+    }
+    img,
+    span {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto
+    }
+
+    span.triangle {
+        height: 1.5em;
+        text-align: center;
+        font: 48px/1.5 sans-serif;
+        background-color: #98cc33;
+        color: #f9f9f9;
+        width: 100px;
+        margin: auto auto;
+        left: 0;
+        line-height: 1.3em;
+        right: 0;
+        margin-left: auto;
+        border-radius: 10px;
+        margin-right: auto;
+    }
+    span.triangle::before {
+        width: 0;
+        content: '';
+        height: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid white;
+        display: inline-block;
+    }
+</style><a href=https://www.youtube.com/embed/{{youtube_id}}?autoplay=1>
+    <img src='{{poster_img}}' alt='{{title}}'>
+<span class='triangle'></span></a>" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+        title="{{title}}"></iframe>
+    </div>
