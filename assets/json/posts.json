@@ -1,0 +1,28 @@
+---
+layout: null
+---
+[
+    {% for post in site.posts %}
+    {
+        "title": "{{ post.title | escape }}",
+        "category": "{{ post.category }}",
+        "content": "{{ post.content | strip_html | strip_newlines | remove_chars | escape }}",
+        "image": "{% if post.image %}
+            {% assign image_path = post.image | remove_first: '/assets/images/' %}
+            {% capture image_alt %}{{post.title}} image {% endcapture %}
+        {% else %}
+            {% assign image_path = site.post_placeholder | remove_first: '/assets/images/' %}
+            {% capture image_alt %}{{post.title}} placeholder image {% endcapture %}
+        {% endif %}{% picture post_thumb_src_only {{image_path}} --alt {{image_alt}} %}",
+        "tags": "{{ post.tags | join: ', ' }}",
+        "url": "{{ site.baseurl }}{{ post.url }}",
+        "description": "{% if post.description %}
+                            {{post.description}}
+                        {% else %}
+                            {{ post.content | strip_html | truncatewords:30 }}
+                        {% endif %}",
+        "date": "{{ post.date | date: '%A, %B %-d, %Y' }}"
+    } {% unless forloop.last %},
+    {% endunless %}
+  {% endfor %}
+]

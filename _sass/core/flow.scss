@@ -1,185 +1,70 @@
-// Styles for flow sections
-// Members section
 #flow_wrapper {
+    background-color: white;
     .row {
-        padding-top: $flow_row_padding;
-        padding-bottom: $flow_row_padding;
-        background-color: $body-bg;
-        position: relative;
-        &:first-child {
-            @media(max-width: $screen-sm-min){
-                padding-top:0px;
-            }
-        }
-        @media (min-width: $screen-sm-min) {
-            &.equal {
-                display: flex;
-                flex-wrap: wrap;
-            }
-        }
+        padding: $flow_row_padding 0;
         &.background_image_row {
-            background-size: cover !important;
-            background-repeat: no-repeat !important;
-            background-position: center center !important;
-            &.fixed {
-                background-attachment: fixed !important;
-            }
-            .title{
-                h1, h2, h3, h4, h5, h6 {
-                    color: #fff;
-                }
-            }
-            p {
-                color: white;
-            }
-        }
-        .feature_block {
-            a.btn.btn-primary {
-                margin-top: 5px;
-            }
-        }
-        &.block_row {
-            .block {
-                @media(max-width: $screen-sm-min) {
-                    &:not(:first-child) {
-                        margin-top: $flow_row_padding;
-                    }
-                }
-                .block-inner {
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    overflow:auto;
-                    background-size: cover !important;
-                    background-repeat: no-repeat !important;
-                    background-position: center center !important;
-                    border-radius: 5px;
-                    border: 1px solid #ccc;
-                    -webkit-box-shadow: 0px 0px 10px -4px rgba(0,0,0,0.75);
-                    -moz-box-shadow: 0px 0px 10px -4px rgba(0,0,0,0.75);
-                    box-shadow: 0px 0px 10px -4px rgba(0,0,0,0.75);
-                    transition: all 200ms ease-in-out;
-                    &.background_image_block .title {
-                        h1, h2, h3, h4, h5, h6 {
-                            color: #fff;
-                        }
-                    }
-                    .title {
-                        h1, h2, h3, h4, h5, h6 {
-                            color: #3c3b39;
-                        }
-                    }
-                    &.background_image_block  p {
-                        color: #fff;
-                    }
-                    p {
-                        color: #3c3b39;
-                    }
-                    .block-inner img {
-                        margin: auto auto;
-                        margin-top: 20px;
-                    }
-                    i.block_image_icon {
-                        font-size: 150px;
-                    }
-                    .buttons {
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                    }
-                    &:hover {
-                        transform: translateY(-5px);
-                        -webkit-box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
-                        -moz-box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
-                        box-shadow: 0px 0px 35px -4px rgba(0,0,0,0.85);
-                        i.block_image_icon {
-                            color: $brand-primary;
-                        }
-                    }
-                }
-            }
-
-        }
-    }
-    .members_section {
-        &.grayscale {
-            img {
-                filter: grayscale(1);
-                &:hover {
-                    filter: grayscale(0);
-                }
-            }
-        }
-        &.zoom {
-            img {
-                &:hover {
-                    transform: scale(1.1);
-                }
-            }
-        }
-        img {
-            height: 100px;
-            margin-bottom: 20px;
-            margin-top: 20px;
-            object-fit: contain;
-            padding:10px;
-            margin: auto;
-            transition: all 200ms ease;
-        }
-    }
-    .title {
-        margin-bottom: 20px;
-    }
-    .buttons{
-        padding-top: $flow_row_padding;
-    }
-
-    .owl-carousel.slider-block {
-        .owl-stage-outer {
-            max-height: 500px;
-            margin-bottom: 0px;
-            height: auto;
-            .owl-stage {
+            overflow: hidden;
+            position: relative;
+            .header_background_image {
+                position: absolute;
+                object-fit: cover;
                 height: 100%;
-                display: flex;
-                position: relative;
-                .owl-item {
-                    .item {
-                        height: 100%;
-                        flex: 1;
-                        picture {
-                            height: auto;
-                            position: relative;
-                            overflow: auto;
-                            img {
-                                display: block;
-                                width: 100%;
-                                object-fit: cover;
-                                height: 100%;
-                            }
-                        }
+                width: 100%;
+                filter: brightness(0.6);
+                z-index:0;
+                top:0px;
+            }
+        }
+        & > .container > .col.col-12 {
+            padding: $flow_component_padding 0px;
+        }
+        .tabbed_content {
+            .tab-content {
+                margin-top: 15px;
+            }
+        }
+
+        .slider_block {
+            .item {
+                height: 400px;
+                overflow: hidden;
+                img {
+                    height: 100%;
+                    width: auto;
+                    object-fit: cover;
+                }
+            }
+        }
+        .slider_row {
+            .item {
+                height: 200px;
+                overflow: hidden;
+                img {
+                    height: 100%;
+                    width: auto;
+                    object-fit: cover;
+                    @include media-breakpoint-down(sm){
+                        margin: auto;
                     }
                 }
             }
         }
-        .owl-nav {
-            button {
-                height: 40px;
-                width: 40px;
-                background-color: #3c3b39 !important;
-                color:  white;
-                &:first-child:hover {
-                    transform: translateX(-1px);
+    }
+    .blocks {
+        .block_column {
+            margin-top: 15px;
+        }
+        .card {
+            &.background_image {
+                img {
+                    filter: brightness(0.6);
+                    height: 100%;
                 }
-                &:hover {
-                    transform: translateX(1px);
-                    background-color: $brand-primary !important;
-                    @extend .drop_shadow;
-                }
-                span {
-                    font-weight:bold;
-                    font-size: 30px;
-                    line-height:26px;
-                }
+            }
+            .card-img-top {
+                height: 150px;
+                width: 100%;
+                object-fit: cover;
             }
         }
     }

@@ -1,66 +1,121 @@
 // Theses are the Overrides of Bootstrap Sass Variables locatted in boostrap/_variables
-$brand-primary: #20937b;
-//Home 
-$home-page-title-text: #000;
-$home-page-main-title-color: $brand-primary;
-// Footer
-$footer-bg-color: #131313;
-$footer-text-color: #fff;
-// Sub footer
-$sub-footer-bg-color: #ccc;
-$footer-border-color: #272727; 
-$text-color: rgba(0,0,0,.84);
-// Navbar
-$navbar-text-color: #fff !default;
-$navbar-hover-text-color: #fff !default;
-$navbar-hover-background-color: $brand-primary !default;
-$navbar-height: 66px;
-$navbar-inverse-bg: #000;
-$navbar-inverse-color: #fff;
-$navbar-submenu-bg-color: #3e3e3e !default;
-$navbar-submenu-color: #fff !default;
-// Breadcrumb
-$breadcrumb-background-color: $brand-primary !default;
-$breadcrumb-title-color: #fff !default;
-$breadcrumb-span-color: #fff !default;
-// Fonts
-// Change the fonts used by Bootstrap here.
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
-//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$primary: rgb(110, 53, 148);
+$secondary: #575757;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "danger": #ff4136
+);
+// Universal Navbar
+$universal_navbar_height_padding: 0px;
+$universal_navbar_text_color: #fff;
+$universal_navbar_bg_color: $primary;
+// Main Navbar
+$navbar_height_padding: 5px;
+$navbar_text_color: #575757;
+$navbar_bg_color: #fff;
+// Jumbotron
+$jumbotron_bg_color: lightgray;
+$jumbotron_height: 500px;
+// Typography
 @font-face {
+  font-display: fallback;
   font-family: 'Lato';
-  src: url('/assets/fonts/lato-regular/Lato-regular.eot'); /* IE9 Compat Modes */
-  src: url('/assets/fonts/lato-regular/Lato-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/lato-regular/Lato-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/lato-regular/Lato-regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/assets/fonts/lato-regular/Lato-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/lato-regular/Lato-regular.svg') format('svg'); /* Legacy iOS */
+  src: url('/assets/fonts/lato/Lato-regular.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/lato/Lato-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/fonts/lato/Lato-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/lato/Lato-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/fonts/lato/Lato-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/lato/Lato-regular.svg') format('svg'); /* Legacy iOS */
 }
-// Fonts 
-$font-family-sans-serif:  'Lato', Arial, sans-serif !default;
+// Fonts
+$font-family-base: "Lato";
+// Footer
+$footer_bg_color: #00000b;
+$footer_strip_bg_color: $secondary;
+// Flow
+$flow_row_padding: 40px;
+$flow_component_padding: 15px;
+// Cookie Consent
+$cookie_consent_bg: #000;
+$cookie_consent_text_color: #fff;
+// Breadcrumb
+$breadcrumb_bg_color: #e9ecef;
+
+
+//Home
+// $home-page-title-text: #000;
+// $home-page-main-title-color: $primary;
+// Footer
+// $footer-bg-color: #131313;
+// $footer-text-color: #fff;
+// Sub footer
+// $sub-footer-bg-color: #ccc;
+// $footer-border-color: #272727;
+// $text-color: rgba(0,0,0,.84);
+// Navbar
+// $navbar-text-color: #fff !default;
+// $navbar-hover-text-color: #fff !default;
+// $navbar-hover-background-color: $primary !default;
+// $navbar-height: 66px;
+// $navbar-inverse-bg: #000;
+// $navbar-inverse-color: #fff;
+// $navbar-submenu-bg-color: #3e3e3e !default;
+// $navbar-submenu-color: #fff !default;
+// $navbar-dropdown-text-color: $navbar-text-color;
+// Custom Variables
+// $cookie-consent-text:     #FFF !default;
+// $cookie-consent-bg:       #000 !default;
+// $cookie-consent-btn-bg:   $primary !default;
+// homepage title text and sub text
+// $home-page-title-text:          #FFF !default; // all title text
+// $home-page-text:          #fff !default; // all title text
+// $home-page-main-title-color: $home-page-title-text !default; // overide for specific main title text
+
+
+// Footer Colour
+// $footer-border-color: #eee !default;
+// $footer-bg-color:      #131313 !default;
+// $footer-text-color:       #fff !default;
+// $sub-footer-color:        #E5E5E5 !default;
+// Breadcrumb
+// $breadcrumb-background-color: $primary !default;
+// $breadcrumb-title-color: #fff !default;
+// $breadcrumb-span-color: #fff !default;
 //Contact Page
-$contact-banner-text-color: #fff !default;
+// $contact-banner-text-color: #fff !default;
+// Featured Image Jumbotron
+// $featured-image-text-color: #fff !default;
+
+// Nav Bar Overrides
+// $navbar-text-color:  #ffffff !default;
+// $navbar-dropdown-text-color:  #000 !default;
+// $blog-panel-title-colour: #fff !default;
+// Custom Jumbotron colours
+// $jumbotron-top-color:     $navbar-inverse-bg !default;
+// $jumbotron-bottom-color:  $primary !default;
+// Breadcrumb
+// $breadcrumb-background-color: $primary !default;
+// $breadcrumb-title-color: #fff !default;
+// $breadcrumb-span-color: #fff !default;
+//Contact Page
+// $contact-banner-text-color: #fff !default;
 // Jumbotron Settings
-$jumbotron-height: 400px;
-$overlay: 0.5;
-$jumbotron-font-size-xs: 26px;
-$jumbotron-font-size: 32px;
-$jumbotron-heading-color: #fff !default;
-$jumbotron-sub-title-font-size-xs: 16px;
-$jumbotron-sub-title-font-size: 18px;
-$jumbotron-sub-title-color: #fff !default;
+// $jumbotron-height: 400px;
+// $overlay: 0.5;
+// $jumbotron-font-size-xs: 26px;
+// $jumbotron-font-size: 32px;
+// $jumbotron-heading-color: #fff !default;
+// $jumbotron-sub-title-font-size-xs: 16px;
+// $jumbotron-sub-title-font-size: 18px;
+// $jumbotron-sub-title-color: #fff !default;
 // Tabbed Navbar
-$tabbed-nav-bg-color: #ccc !default;
-$tabbed-nav-text-color: #000 !default;
-$tabbed-nav-hover-color: $brand-primary !default;
-// Post tags
-$post-tag-bg: #d7d7d7 !default;
-$post-tag-color: #000 !default;
-$post-tag-border: #8b8b8b !default;
-$post-tag-hover-bg: #1f1f1f !default;
-$post-tag-hover-color: #fff !default;
-// Triangle Divider
-$triangle-divider-bg-color: #fff !default;
-// Flow sections
-$flow_row_padding: 40px !default;
+// $tabbed-nav-bg-color: #ccc !default;
+// $tabbed-nav-text-color: #000 !default;
+// $tabbed-nav-hover-color: $primary !default;
+// // Post tags
+// $post-tag-bg: #d7d7d7 !default;
+// $post-tag-color: #000 !default;
+// $post-tag-border: #8b8b8b !default;
+// $post-tag-hover-bg: #1f1f1f !default;
+// $post-tag-hover-color: #fff !default;

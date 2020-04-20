@@ -1,142 +1,69 @@
-// Footer List Groups
 #wrapper {
     footer {
-        position: relative;
-        a {
-            color: $footer-text-color;
-            font-size: 14px;
-            &:hover {
-                color: $brand-primary;
-                text-decoration: none;
-                transition: color .5s ease;
-                -moz-transition: color .5s ease;
-                -webkit-transition: color .5s ease;
-            }
-        }
-        b {
-            a {
-                color: $brand-primary;
-            }
-            &:hover {
-                color: $brand-primary;
-            }
-        }
-        h3 {
-            font-size:24px;
-            color: $footer-text-color;
-            @media(max-width: $screen-sm-min - 1){
-                text-align: center;
-            }
-        }
-        .footer-main {
-            
-            background: $footer-bg-color; /* Old browsers */
-            background: -moz-linear-gradient(-45deg,  darken($footer-bg-color, 5%) 0%,  $footer-bg-color 23%, lighten($footer-bg-color, 20%) 46%,  lighten($footer-bg-color, 30%) 73%, footer-bg-color 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(-45deg,  darken($footer-bg-color, 5%)  0%, $footer-bg-color 23%,lighten($footer-bg-color, 20%) 46%, lighten($footer-bg-color, 30%) 73%, $footer-bg-color 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(135deg,  darken($footer-bg-color, 5%)  0% ,  $footer-bg-color 23%, lighten($footer-bg-color, 20%) 46%, lighten($footer-bg-color, 30%) 73%, $footer-bg-color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='$footer-bg-color',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-            ul.list-group {
-                margin-left:0px;
-                li {
-                    background-color:transparent;
-                    border:0;
-                    padding-left:0px;
-                    padding-right:0px;
-                    transition: all 400ms ease;
-                    &:hover {
-                        padding-left: 4px;
-                        a {
-                            color:darken($brand-primary, 10%);
-                        }
-                    }
-                    small.date {
-                        display: block;
-                    }
-                }
-                @media(max-width: $screen-sm-min - 1){
-                    text-align: center;
-                }
-            }
-            // Address and contact details
+        .main {
+            background-color: $footer_bg_color;
             .contact-details {
-                margin-top: 20px;
-                address {
-                    font-size: 14px;
-                    color: $footer-text-color;
-                    a.email {
-                        text-align: left;
-                        font-size: 24px;
-                        display:inline-block; 
-                        background-color: transparent;
-                        border: 0px;
-                        margin-top:5px;
-                        color: $footer-text-color;
-                        width:100%;
-                        &:hover{
-                            color:$brand-primary;
-                        }
-                        &:visited, &:hover, &:active, &:link {
-                            text-decoration: none !important;
-                            color: $footer-text-color;
-                        }
-                        @media(max-width: $screen-sm-min - 1){
-                            text-align: center;
-                        }
-                    }
-                }
-                @media(max-width: $screen-sm-min - 1){
-                    text-align: center;
-                }
-            }
-            .footer-follow-section {
-                padding-bottom: 40px;
-                text-align: center;
-                padding-left: 30px;
-                padding-right: 30px;
-                a.btn.btn-social-icon {
-                    margin-right: 10px;
-                    padding-right: 0;
-                    margin-top: 5px;
-                    background-color: $footer-bg-color;
-                    border-radius: 50%;
-                    transition: all 300ms ease;
-                    i {
-                        width: 60px;
-                        height: 60px;
-                        left: -8px;
-                        position: relative;
-                        padding-top: 15px;
-                        padding-left: 5px;
-                        border-radius: 50%;
-                        text-align: center;
-                        font-size:24px;
-                        margin-top:25px;
-                        margin-right: 5px;
-                        transition: all 1s linear;
-                        color: $footer-text-color;
-                    }
-                    &:hover {
-                        background-color: lighten($footer-bg-color, 30%);
-                        color: $brand-primary;
-                    }
+                margin: 30px 0;
+                 address {
+                    text-align: left;
+                    font-size: 18px;
+                    color: #fff;
                 }
                 h3 {
+                    text-align: left;
+                    color :$primary;
+                    margin-top: 0px;
                     font-size: 24px;
-                    color: $footer-text-color;
+                    font-weight: bold;
+                }
+                i {
+                    color: white;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+            .footer-column {
+                margin: 30px 0;
+                h3 {
+                    color: #ffffff;
+                    font-weight: 700;
+                    font-size: 26px;
+                    border-left: 5px solid $primary;
+                    padding-left: 15px;
+                }
+                ul.list-group {
+                    li {
+                        background-color: transparent;
+                        border: 0;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        transition: all 400ms ease;
+                        &:hover {
+                            padding-left: 4px;
+                        }
+                         a {
+                             color: #fff;
+                            font-size: 24px;
+                            font-weight: normal;
+                            &:hover {
+                                color: $primary;
+                                text-decoration: none;
+                                transition: color .5s ease;
+                                -moz-transition: color .5s ease;
+                                -webkit-transition: color .5s ease;
+                            }
+                        }
+                    }
                 }
             }
         }
-        .footer-bottom {
-            background-color: #1c1c1c;
-            color: #FFF;
-            span.coloured-bp{
-                color: $brand-primary;
-            }
-            img.footer-logo {
+        .strip {
+            background-color: $footer_strip_bg_color;
+            .footer-logo {
                 height: 40px;
-                display: inline-block;
+                margin: 10px 0;
             }
-        } 
+        }
     }
 }

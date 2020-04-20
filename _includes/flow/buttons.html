@@ -1,0 +1,5 @@
+<div class="col col-12 buttons px-0 {% if include.style %}{{include.style}}{% endif %}">
+    {% for button in include.object %}
+        {% include flow/button.html object=button %}
+    {% endfor %}
+</div>

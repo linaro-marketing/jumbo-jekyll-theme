@@ -1,0 +1,37 @@
+{% assign paginate_path = include.path %}
+{% assign paginate_base_path = paginate_path | split: ":" %}
+{% if paginator.total_pages > 1 %}
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center my-4 my-sm-4">
+    {% if paginator.previous_page %}
+        <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link" href="#">&laquo; Prev</a></li>
+    {% endif %}
+    {% if paginator.page_trail %}
+        {% for trail in paginator.page_trail %}
+        <li {% if page.url == trail.path %}class="page-item active"{% endif %}>
+            <a class="page-link" href="{% if trail.num == 1 %}{{paginate_base_path[0]}}{% else %}
+            {{ paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', trail.num  }}{% endif %}"
+            title="{{trail.title}}">{{ trail.num }}</a>
+        </li>
+        {% endfor %}
+    {% else %}
+        {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+            <li class="page-item active"><a class="page-link" href="">{{ page }}</a></li>
+        {% elsif page == 1 %}
+            <li class="page-item"><a class="page-link" href="{{paginate_base_path[0]}}">{{ page }}</a></li>
+        {% else %}
+            <li class="page-item"><a class="page-link" href="{{ paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+        {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if paginator.next_page %}
+        <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next </a></li>
+    {% else %}
+        <li class="page-item disabled"><a class="page-link" href="#">Next &raquo;</a></li>
+    {% endif %}
+    </ul>
+</nav>
+{% endif %}

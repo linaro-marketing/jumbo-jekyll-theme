@@ -1,0 +1,64 @@
+<head>
+    {% include components/http2.html %}
+    <meta charset="UTF-8">
+    <title>
+        {% if page.title %}
+            {{page.title}} - {{site.title}}
+        {% else %}
+            {{site.title}}
+        {% endif %}
+    </title>
+    {% include components/css.html %}
+
+    {% if page.description %}
+        {% assign description = page.description %}
+    {% else %}
+        {% assign description = site.description %}
+    {% endif %}
+
+
+    {% if page.title %}
+        {% assign title = page.title %}
+    {% else %}
+        {% assign title = site.title %}
+    {% endif %}
+
+
+    {% if page.image %}
+        {% assign image = page.image | absolute_url %}
+    {% else %}
+        {% assign image = site.social_media_share_image | absolute_url %}
+    {% endif %}
+
+    <link rel="icon" href="{{site.favicon}}" type="image/png" />
+    <link rel="canonical" href="{{site.url}}/" />
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Jekyll v4" />
+    <meta name="description" content="{{description}}" />
+    <!--Open Graph-->
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:url" content="{{site.url}}/" />
+    <meta property="og:site_name" content="Linaro" />
+    <meta property="og:image" content="{{image}}" />
+    <!--Twitter Cards-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content="{{image}}" />
+    <meta property="twitter:title" content="{{title}}" />
+    {% if site.twitter_username %}
+    <meta name="twitter:site" content="@{{site.twitter_username}}" />
+    {% endif %}
+    {% if site.google_analytics.enabled %}
+        <meta name="analytics_code" content="{{site.google_analytics.code}}">
+        <meta name="cookies_popup_title" content="{{site.google_analytics.cookies_popup_title}}">
+        <meta name="cookies_popup_description" content="{{site.google_analytics.cookies_popup_description}}">
+        <meta name="privacy_url" content="{{site.google_analytics.privacy_url}}">
+    {% endif %}
+    {% if page.keywords %}
+        <meta name="keywords" content="{{page.keywords}}">
+    {% endif %}
+    {% include_cached components/schema.html %}
+    {% if page.schema %}<script type="application/ld+json">{{page.schema | jsonify }}</script>{% endif %}
+</head>

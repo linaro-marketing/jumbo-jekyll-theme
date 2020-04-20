@@ -1,7 +1,0 @@
-
-{% if include.content %}
-    {% assign words = include.content | number_of_words %}
-{% else %}
-    {% assign words = content | number_of_words %}
-{% endif %}
-<span class="reading-time" title="Estimated read time">{% if words < 360 %}1 min read{% else %}{{ words | divided_by:180 }} mins read{% endif %} <i class="fa fa-clock-o" aria-hidden="true"></i></span>

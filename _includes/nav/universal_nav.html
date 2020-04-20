@@ -1,0 +1,36 @@
+<!-- Universal NavBar-->
+<nav class="navbar navbar-expand-md navbar-dark" id="universal_nav">
+    <div class="container">
+        <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="sr-only">Toggle navigation</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                {% for item in site.data.universal_nav.items %}
+                    {% if item.options %}
+                        <li class="nav-item dropdown {% for project-site in item.options %}{% if project-site.active %}active{% break %}{% endif %}{% endfor %}">
+                            <a class="nav-link dropdown-toggle" target="_self" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                {{item.title}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {% for project-site in item.options %}
+                                    <a class="dropdown-item {% if project-site.active %}active{% endif%}" href="{{project-site.url}}">{{project-site.title}}</a>
+                                {% endfor %}
+                            </div>
+                        </li>
+                    {% else %}
+                        <li class="nav-item {% if item.active %}active{% endif %}">
+                            <a target="_self" class="nav-link" href="{{item.url}}">{{item.title}} <span class="sr-only">(current)</span></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

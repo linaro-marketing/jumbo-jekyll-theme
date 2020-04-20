@@ -1,39 +1,59 @@
 ---
 layout: base
-js-package: blog
-css-package: blog
+css_package: blog
 ---
-<div class="row overlay background-image {% if page.image.background-class %}{{page.image.background-class}}{% endif %}" id="jumbotron" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% if page.image.path %}{{page.image.path}}{% else %}{{page.image}}{% endif %}');"> <!--Row -->
-    <div id="jumbotron-content" class="flex-container">
-        <div class="container flex-center" id="jumbotron-text">
-            <h1 id="jumbotron-heading">{{page.title}}</h1>
+<div itemscope="" itemtype="http://schema.org/BlogPosting">
+<div
+    class="jumbotron d-flex align-items-center jumbotron-fluid {% if page.image %}background_image{% endif%}">
+    {% if page.image %}
+        {% assign image_path = page.image | remove_first: "/assets/images/" %}
+        {% picture header_image {{image_path}} %}
+    {% endif %}
+    <div class="container text-center">
+        <div class="inner_content_wrapper">
+            <h1 class="" itemprop="name headline">{{page.title}}</h1>
+
             {% assign author = site.authors | where: "username", page.author | first %}
             {% assign author-url = author.url %}
-                <a href="{{author-url}}">
-                    <div class="blog-author-image lazyload" data-bg="{% if author.image_path %}{{author.image_path}}{% else %}{{site.data.settings.blog.avatar_placeholder}}{% endif %}"></div>
+            {% assign author_name = author.name %}
+            {% capture author_image_alt %}{{author_name}} image{% endcapture %}
+            {% if author.image %}
+                {% assign author_image = author.image | remove_first: "/assets/images/" %}
+            {% else %}
+                {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
+            {% endif %}
+            <div itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                <a href="{{author-url}}" itemprop="url" rel="author">
+                    {% picture author_thumbnail {{author_image}} --alt {{author_image_alt}} %}
+                    <p class="lead">
+                        <em itemprop="name">{{author_name}}</em>
+                    </p>
                 </a>
-            <small class="blog-author text-center">
-                By
-                <em>{% if author.name %}{{author.name}}{% else %}{{page.author}}{% endif %}</em>
-            </small>
-            <small class="blog-date text-center">
-                <em>{{page.date |  date: "%A, %B %-d, %Y"}}</em>
-            </small>
-            {% include read_time.html %}
+            </div>
+
+            <p>
+                <time datetime="{{page.date}}" itemprop="datePublished">{{page.date |  date: "%A, %B %-d, %Y"}}</time>
+            </p>
+            {% include blog/read_time.html %}
         </div>
     </div>
 </div>
-<div class="row" id="content-container">
-    <div class="container">
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2 blog-content">
-            <article class="post-content">
-                {{ content }}
-                {% include post-series.html %}
-            </article>
-            {% include disqus-comments.html %}
-        </div>
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2 no-padding blog-sidebar ">
-            {% include_cached post-sidebar.html %}
+<div class="container-fluid main_content">
+    <div class="row">
+        <div class="container">
+            <div class="row justify-content-sm-center">
+                <div class="col col-12 col-lg-10 py-4  blog-content">
+                    <article>
+                        {{ content }}
+                        {% include blog/post_series.html %}
+                    </article>
+                    {% include blog/disqus_comments.html %}
+                </div>
+                <div class="col col-12 col-lg-10 py-4 blog-sidebar ">
+                    {% include_cached blog/post_sidebar.html %}
+                </div>
+            </div>
         </div>
     </div>
+</div>
 </div>

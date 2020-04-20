@@ -1,11 +1,14 @@
 ---
 ---
 @charset "UTF-8";
+// Custom sass and css rules
+@import "app/custom";
 //Bootstrap Overrides
 @import "app/overrides";
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
 //Boostrap Includes
-@import '_bootstrap';
+@import 'bootstrap/bootstrap';
 // Linaro Jekyll Theme Includes
 @import "core";
-// App Includes
-@import "app/custom";

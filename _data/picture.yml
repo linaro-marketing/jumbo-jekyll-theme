@@ -1,0 +1,143 @@
+# Example picture presets:
+# TODO: change to EMs, because safari sucks.
+
+# Media presets are used in several places:
+# - To specify alternate source images (for art direction)
+# - To build the 'sizes' attribute
+# - When given alternate source images, specify which sizes to generate.
+media_presets:
+  xl: 'min-width: 1200px'
+  lg: 'max-width: 1199.98px'
+  md: 'max-width: 991.98px'
+  sm: 'max-width: 767.98px'
+  xs: 'max-width: 575.98px'
+# Markup presets allow you to group settings together, and select one of them by name in your jekyll
+# tag. All settings are optional.
+markup_presets:
+  default:
+    # Optionally specify a markup type. Your current options are 'picture', 'img', or 'auto'
+    # (default).
+    markup: auto
+    # Must be an array, in order of decreasing preference. Defaults to just 'original'.
+    formats: [webp, original]
+    # Must be an array: which image sizes (width in pixels) to generate (unless directed otherwise
+    # below). If not specified, will use sensible default values.
+    widths: [576, 768, 992, 1600]
+    # Alternate source images (for art direction) are associated with media query presets. Here, you
+    # can optionally specify a different set of sizes to generate for those alternate source images.
+    # This is how you avoid generating a 1800 pixel wide image that's only shown on narrow screens.
+    # Must be arrays.
+    media_widths:
+      lg: [1200]
+      md: [990]
+      sm: [767]
+      xs: [575]
+    # Specifies an optional, unconditional size attribute. Can be given alone, or if specified in
+    # combination with 'sizes' below, will be given last (when no media queries apply).
+    size: 800px
+    # For building the 'sizes' attribute on img and source tags. specifies how wide the image will
+    # be when a given media query is true. Note that every source in a given <picture> tag will have
+    # the same associated sizes attribute.
+    sizes:
+      sm: 60vw
+      md: 60vw
+      lg: 60vw
+      xl: 60vw
+    # Specify the properties of the fallback image. If not specified, will return a 900 pixel
+    # wide image in the original format.
+    fallback_width: 800
+    fallback_format: original
+    # Attributes can be added to each HTML element, by type:
+    attributes:
+      picture: 'class="awesome" data-volume="11"'
+      img: 'class="some-other-class"'
+  # This is an example of how you would create a 'multiplier' based srcset; useful when an image
+  # will always be the same size on all screens, but you'd like to supply higher resolution images
+  # to devices with higher pixel ratios.
+  icon:
+    base_width: 20
+    pixel_ratios: [1, 1.5, 2]
+    fallback_width: 20
+    attributes:
+      img: 'class="icon"'
+  # Presets
+  # This is an example of how you'd get generated image and a URL, and nothing else.
+  direct:
+    markup: direct_url
+    fallback_format: webp # Default original
+    fallback_width: 600 # Default 800
+  # Images for blog posts
+  blog_image:
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload img-fluid blog_content_image "'
+    formats: [webp, original]
+    widths: [400,800,1200]
+  header_image:
+    markup: data_auto
+    attributes:
+      img: 'class="lazyload header_background_image"'
+    formats: [webp, original]
+    widths: [576, 768, 992, 1200]
+    fallback_format: webp
+    fallback_width: 1920
+  header_slider_image:
+    markup: data_picture
+    attributes:
+      source: 'class="owl-lazy"'
+      img: 'class="owl-lazy header_background_image"'
+    formats: [webp, original]
+    widths: [400,800,1200,1920]
+  card_block_image:
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload card-img-top"'
+    formats: [webp, original]
+    widths: [400,600]
+  feature_block_image:
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload img-fluid"'
+    formats: [webp, original]
+    widths: [400,600,900, 1400]
+  featured_blog_image:
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload img-fluid"'
+    formats: [webp, original]
+    widths: [400,600,900,1400]
+  slider_block_image:
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload img-fluid"'
+    formats: [webp, original]
+    widths: [400,600,900, 1400]
+  youtube_poster_image:
+    markup: direct_url
+    attributes:
+      img: 'class="lazyload img-fluid"'
+    formats: [webp, original]
+    widths: [400,600,900,1400]
+  author_thumbnail:
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload rounded-circle"'
+    formats: [webp, original]
+    widths: [50,100]
+  author_thumbnail_small:
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload rounded-circle small"'
+    formats: [webp, original]
+    widths: [50, 100]
+  post_thumb:
+    markup: data_picture
+    attributes:
+      img: 'class="lazyload mr-3 img-thumbnail suggested_post_thumb"'
+    formats: [webp, original]
+    widths: [50, 100, 400]
+  post_thumb_src_only:
+    markup: direct_url
+    fallback_format: webp
+    fallback_width: 400
+    widths: [400]

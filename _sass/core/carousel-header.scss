@@ -57,8 +57,8 @@
     position: fixed;
     z-index: 99999;
     width: 100%;
-    height: $jumbotron-height + 100px;
-    margin-top: $navbar-height;
+    height: $jumbotron_height + 100px;
+    // margin-top: $navbar-height;
 }
 .carousel.slide.carousel-fade {
     position: absolute;
@@ -79,12 +79,12 @@ nav#main-navigation {
 }
 div#jumbotron {
     text-align: center;
-    height: $jumbotron-height;
+    height: $jumbotron_height;
     z-index: 0;
     position: relative;
     background: none;
 }
-@media (max-width: $screen-sm-min){
+@include media-breakpoint-down(sm) {
     #jumbotron {
         font-size: 32px;
     }

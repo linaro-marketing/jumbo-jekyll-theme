@@ -2,7 +2,7 @@
 Gem::Specification.new do |spec|
     # Main Spec Info
     spec.name          = "jumbo-jekyll-theme"
-    spec.version       = "5.6.9.2"
+    spec.version       = "5.7.0.5"
     spec.authors       = ["Kyle Kirkby"]
     spec.email         = ["kyle.kirkby@linaro.org"]
     spec.summary       = %q{This is a Bootstrap 3 Jekyll Theme built for Linaro Static Websites}
@@ -20,35 +20,22 @@ Gem::Specification.new do |spec|
     end
     # Ruby Version
     spec.required_ruby_version = '>=2.3'
-    # Runtime Dependencies
-    spec.add_runtime_dependency 'jekyll', '~> 3.8'
-    # spec.add_runtime_dependency "liquid-c"
-    # spec.add_runtime_dependency "sassc"
-    # spec.add_runtime_dependency "jekyll-picture-tag-latest", ">0"
-    spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.2"
-    spec.add_runtime_dependency "jekyll-responsive-image", "~> 1.0.1"
+    # Jekyll 4 !
+    spec.add_runtime_dependency "jekyll", "~> 4.0.0"
+    # Jekyll cached include plugin
+    spec.add_runtime_dependency 'jekyll-include-cache', '0.2.0'
+    # Responsive images
+    spec.add_runtime_dependency "jekyll_picture_tag", '1.9.0'
+    # Generate a sitemap at sitemap.xml
     spec.add_runtime_dependency "jekyll-sitemap", "1.4.0"
-    spec.add_runtime_dependency "jekyll-readme-index", "0.2"
-    spec.add_runtime_dependency "bootstrap-sass", "~> 3.4.1"
-    spec.add_runtime_dependency "jekyll-redirect-from", "~> 0.12"
-    spec.add_runtime_dependency "jekyll-tidy", "~> 0.2.2"
-    spec.add_runtime_dependency "jekyll-assets", "2.4.0"
-    spec.add_runtime_dependency 'jekyll-data', '>0'
-    spec.add_runtime_dependency 'uglifier', '>0'
-    spec.add_runtime_dependency 'autoprefixer-rails', '~> 9.0', '>= 9.0.0'
-    spec.add_runtime_dependency 'jekyll-paginate-v2', '>0'
-    spec.add_runtime_dependency 'jekyll-feed', '>0'
-    spec.add_runtime_dependency 'jekyll-theme-assets-updated', '~> 1.1'
-    spec.add_runtime_dependency 'jekyll-last-modified-at'
-    spec.add_runtime_dependency 'hash-joiner', '~> 0'
-    spec.add_runtime_dependency 'sprockets', ' ~> 3.7.2'
-    spec.add_runtime_dependency 'jekyll-watch', ' ~> 2.1.1'
-    spec.add_runtime_dependency 'jekyll-include-cache'
-    spec.add_runtime_dependency 'ffi', '~> 1.9.6'
-    spec.add_runtime_dependency "rack", ">0"
-
+    # Jekyll Tidy - HTML minfier
+    spec.add_runtime_dependency 'jekyll-tidy', '0.2.2'
+    # Add's an RSS feed for your posts
+    spec.add_runtime_dependency "jekyll-feed", "0.13.0"
+    # JS Bundler / Compression
+    spec.add_runtime_dependency 'japr', '0.4.2'
     #spec.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
     # Development Dependencies
-    spec.add_development_dependency "bundler", "> 1.16.1"
-    spec.add_development_dependency "rake"
+    spec.add_development_dependency "bundler", "1.17.3"
+    spec.add_development_dependency "rake", "13.0.1"
   end
