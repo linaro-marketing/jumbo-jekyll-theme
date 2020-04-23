@@ -33,6 +33,14 @@
       }
     }
     .nav-item {
+        &.active {
+            a::before {
+                display: block;
+                opacity: 1;
+                width: 100% !important;
+                left: 0 !important;
+            }
+        }
         a.nav-link {
             color: $navbar_text_color;
         }
