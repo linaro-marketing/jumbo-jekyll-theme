@@ -11,9 +11,9 @@
         {% endcapture %}
         {% capture edit-me-link %}{{github-docs}}{{page-path}}{% endcapture %}
             <div class="btn-group my-4" role="group" aria-label="Basic example" id="github_controls">
-                <button type="button" class="btn btn-secondary"  href="{{github-home}}" id="github_home"><i class="icon-github-circled center-block"></i></button>
-                <button type="button" class="btn btn-secondary" href="{{report-issue-link}}" id="submit_issue">Report an Issue</button>
-                <button href="{{edit-me-link | replace: " ", "" }}" type="button" class="btn btn-secondary" id="edit_on_github">Edit on GitHub</button>
+                <a type="button" class="btn btn-secondary"  href="{{github-home}}" id="github_home"><i class="icon-github-circled center-block"></i></a>
+                <a type="button" class="btn btn-secondary" href="{{report-issue-link}}" id="submit_issue">Report an Issue</a>
+                <a href="{{edit-me-link | replace: " ", "" }}" type="button" class="btn btn-secondary" id="edit_on_github">Edit on GitHub</a>
             </div>
     {% else %}
         {% capture github-home %}{{site.edit-on-github.repo}}{% endcapture %}
@@ -23,12 +23,12 @@
         {% endcapture %}
         {% capture edit-me-link %}{{github-docs}}{{page-path}}{% endcapture %}
             <div class="btn-group my-4" role="group" aria-label="Basic example" id="github_controls">
-                <button type="button" class="btn btn-secondary" href="{{github-home}}" id="github_home"><i
-                        class="icon-github-circled center-block"></i></button>
-                <button type="button" class="btn btn-secondary" href="{{report-issue-link}}" id="submit_issue">Report an
-                    Issue</button>
-                <button  href="{{edit-me-link | replace: " ", "" }}"  type="button" class="btn btn-secondary"
-                    id="edit_on_github">Edit on GitHub</button>
+                <a type="button" class="btn btn-secondary" href="{{github-home}}" id="github_home"><i
+                        class="icon-github-circled center-block"></i></a>
+                <a type="button" class="btn btn-secondary" href="{{report-issue-link}}" id="submit_issue">Report an
+                    Issue</a>
+                <a  href="{{edit-me-link | replace: " ", "" }}"  type="button" class="btn btn-secondary"
+                    id="edit_on_github">Edit on GitHub</a>
             </div>
     {% endif %}
 {% endif %}
