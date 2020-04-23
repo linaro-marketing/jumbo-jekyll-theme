@@ -37,4 +37,17 @@
             top:-10px;
         }
     }
+    .card {
+        &.background_image {
+            img {
+                filter: brightness(0.6);
+                height: 100%;
+            }
+        }
+        .card-img-top {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
 }
