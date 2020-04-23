@@ -1,7 +1,7 @@
 {% assign url = include.object.payload %}
 <div class="col col-12 ">
     <div id="post_search" data-file-path="{{url.data}}">
-        <input class="form-control form-control-lg"  id="search-input" type="text" placeholder="Search {{posts.size}} posts..."/>
+        <input class="form-control form-control-lg"  id="search-input" type="text" placeholder="Search {{site.categories[url.category].size}} posts..."/>
         <a class="close_search" href="#">
             X <span class="sr-only">Clear Search</span>
         </a>
