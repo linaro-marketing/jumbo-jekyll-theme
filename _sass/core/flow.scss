@@ -10,7 +10,7 @@
                 object-fit: cover;
                 height: 100%;
                 width: 100%;
-                filter: brightness(0.6);
+                filter: brightness(0.4);
                 z-index:0;
                 top:0px;
             }
@@ -57,7 +57,7 @@
         .card {
             &.background_image {
                 img {
-                    filter: brightness(0.6);
+                    filter: brightness(0.5);
                     height: 100%;
                 }
             }

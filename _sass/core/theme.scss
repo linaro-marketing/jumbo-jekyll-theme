@@ -50,4 +50,7 @@
             object-fit: cover;
         }
     }
+    .darken {
+        filter: brightness(0.5);
+    }
 }
