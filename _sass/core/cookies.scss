@@ -63,6 +63,7 @@
         padding: 7px;
         border-radius: 3px;
         margin-left: 15px;
+        margin-bottom: 5px;
         cursor: pointer;
         transition: all 0.3s ease-in;
     }
@@ -191,4 +192,6 @@
 }
 .btn-toggle.active {
   background-color: $primary;
+}
+#gdpr-cookie-message button, #gdpr-cookie-message button#ihavecookiesBtn {
 }
