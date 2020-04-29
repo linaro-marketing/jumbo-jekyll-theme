@@ -2,16 +2,12 @@
 title: Privacy
 permalink: /privacy/
 description: >
-    An example privacy policy page that makes use of the cookie_manager.html include
+    An example privacy policy page.
 jumbotron:
     title: Privacy
     description: >
-        Manage your cookies...
+        View our privacy policies.
 flow:
-    - row: container_row
-      sections:
-        - format: custom_include
-          source: components/cookie_manager.html
     - row: main_content_row
 ---
-This page allows you to manage your cookies.
+This page contains your companies privacy policies.
