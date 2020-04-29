@@ -86,12 +86,19 @@
           if (field.description !== false) {
             cookieTypeDescription = ' title="' + field.description + '"';
           }
+          var cookieChecked = "";
+          if (field.checked === true) {
+            cookieChecked = "checked";
+          }
           cookieTypes +=
-            '<li><input type="checkbox" id="gdpr-cookietype-' +
+            '<li><input  type="checkbox" id="gdpr-cookietype-' +
             field.value +
             '" name="gdpr[]" value="' +
             field.value +
-            '" data-auto="off"> <label for="gdpr-cookietype-' +
+            '" data-auto="off" ' +
+            cookieTypeDescription +
+            cookieChecked +
+            '> <label class="cookieCheckboxLabel" for="gdpr-cookietype-' +
             field.value +
             '"' +
             cookieTypeDescription +
@@ -107,15 +114,21 @@
         settings.title +
         "</h4><p>" +
         settings.message +
-        ' <a href="' +
-        settings.link +
-        '">' +
-        settings.moreInfoLabel +
-        '</a> <a href="' +
-        settings.cookieLink +
-        '">' +
-        settings.cookieLabel +
-        '</a><div id="gdpr-cookie-types" style="display:none;"><h5>' +
+        "<br/>";
+
+      for (i = 0; i < settings.links.length; i++) {
+        cookieMessage +=
+          '<a href="' +
+          settings.links[i].url +
+          '">' +
+          settings.links[i].text +
+          "</a> ";
+        if (settings.links.length > 1 && i < settings.links.length - 1) {
+          cookieMessage += " - ";
+        }
+      }
+      cookieMessage +=
+        '<div id="gdpr-cookie-types" style="display:none;"><h5>' +
         settings.cookieTypesTitle +
         "</h5><ul>" +
         cookieTypes +
@@ -139,7 +152,7 @@
             }
           });
       }, settings.delay);
-
+      // Make sure the analytics checkbox is toggled on init based on settings provided.
       // When accept button is clicked drop cookie
       $("body").on("click", "#gdpr-cookie-accept", function () {
         // Set cookie
@@ -148,10 +161,6 @@
         // If 'data-auto' is set to ON, tick all checkboxes because
         // the user hasn't clicked the customise cookies button
         $('input[name="gdpr[]"][data-auto="on"]').prop("checked", true);
-        $('input[name="gdpr[]"]:not(:disabled)')
-          .attr("data-auto", "off")
-          .prop("checked", settings.analyticsChecked);
-
         // Save users cookie preferences (in a cookie!)
         var prefs = [];
         $.each($('input[name="gdpr[]"]').serializeArray(), function (i, field) {
@@ -169,12 +178,7 @@
 
       // Toggle advanced cookie options
       $("body").on("click", "#gdpr-cookie-advanced", function () {
-        // Uncheck all checkboxes except for the disabled 'necessary'
-        // one and set 'data-auto' to OFF for all. The user can now
-        // select the cookies they want to accept.
-        $('input[name="gdpr[]"]:not(:disabled)')
-          .attr("data-auto", "off")
-          .prop("checked", settings.analyticsChecked);
+        $("#gdpr-cookie-accept").html("Accept Selected Cookies");
         $("#gdpr-cookie-types").slideDown("fast", function () {
           $("#gdpr-cookie-advanced").prop("disabled", true);
         });
