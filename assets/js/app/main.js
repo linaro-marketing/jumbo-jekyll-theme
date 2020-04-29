@@ -229,15 +229,19 @@ $(document).ready(function () {
       moreInfoLabel: "View our Privacy Policy",
       cookieLink: "/cookies/",
       cookieLabel: "Manage your cookies",
+      links: [
+        { url: "/cookies/", text: "Cookies Policy" },
+        { url: "/privacy", text: "Privacy Policy" },
+      ],
       delay: 1000,
-      acceptBtnLabel: "Accept all cookies",
-      uncheckBoxes: false,
+      acceptBtnLabel: "Accept All Cookies",
       analyticsChecked: true,
       message: cookies_popup_description,
       cookieTypes: [
         {
           type: "Analytics",
           value: "analytics",
+          checked: true,
           description: "Cookies related to site visits, browser types, etc.",
         },
       ],
@@ -281,6 +285,14 @@ $(document).ready(function () {
       var analytics_toggle = $("#analytics_toggle");
       if ($.fn.ihavecookies.preference("analytics")) {
         analytics_toggle.addClass("active");
+        options.cookieTypes = [
+          {
+            type: "Analytics",
+            value: "analytics",
+            checked: false,
+            description: "Cookies related to site visits, browser types, etc.",
+          },
+        ];
       }
       analytics_toggle.on("click", function () {
         $.removeCookie("_ga");
@@ -293,9 +305,8 @@ $(document).ready(function () {
         $.removeCookie("cookieControlPrefs", { path: "/" });
         $.removeCookie("cookieControl");
         $.removeCookie("cookieControl", { path: "/" });
-        options["analyticsChecked"] = false;
-        options["acceptBtnLabel"] = "Updated Cookies";
-        $("body").ihavecookies(options);
+        options["acceptBtnLabel"] = "Update Cookies";
+        $("body").ihavecookies(options, "reinit");
       });
     }
     $("body").ihavecookies(options);
