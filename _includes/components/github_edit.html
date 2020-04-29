@@ -9,7 +9,7 @@
         {{github-home}}/issues/new?title=Problem+with+{{page-path}}&body=Please+enter+some+details+about+the+bug/issue+so+we+can+promptly+resolve+it.+%0D%0AURL%3A++{{site.url}}{{page.url}}
         {% endcapture %}
         {% capture edit-me-link %}{{github-docs}}{{page-path}}{% endcapture %}
-            <div class="btn-group my-4" role="group" aria-label="Basic example" id="github_controls">
+            <div class="btn-group my-2 mt-1" role="group" aria-label="Basic example" id="github_controls">
                 <a type="button" class="btn btn-secondary"  href="{{github-home}}" id="github_home"><i class="icon-github-circled center-block"></i></a>
                 <a type="button" class="btn btn-secondary" href="{{report-issue-link}}" id="submit_issue">Report an Issue</a>
                 <a href="{{edit-me-link | replace: " ", "" }}" type="button" class="btn btn-secondary" id="edit_on_github">Edit on GitHub</a>
@@ -21,7 +21,7 @@
         {{site.edit-on-github.repo}}/issues/new?title=Problem+with+{{page-path}}&body=Please+enter+some+details+about+the+bug/issue+so+we+can+promptly+resolve+it.+%0D%0AURL%3A++{{site.url}}{{page.url}}
         {% endcapture %}
         {% capture edit-me-link %}{{github-docs}}{{page-path}}{% endcapture %}
-            <div class="btn-group my-4" role="group" aria-label="Basic example" id="github_controls">
+            <div class="btn-group my-2 mt-1" role="group" aria-label="Basic example" id="github_controls">
                 <a type="button" class="btn btn-secondary" href="{{github-home}}" id="github_home"><i
                         class="icon-github-circled center-block"></i></a>
                 <a type="button" class="btn btn-secondary" href="{{report-issue-link}}" id="submit_issue">Report an
