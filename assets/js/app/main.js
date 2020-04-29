@@ -211,6 +211,7 @@ $(document).ready(function () {
     window.location.hash = e.target.hash.replace("#", "#" + prefix);
   });
 
+  // COOKIES CONFIG
   // Cookie Consent Setup
   if ($("meta[name=analytics_code]")) {
     var privacy_url = $("meta[name=privacy_url]").attr("content");
