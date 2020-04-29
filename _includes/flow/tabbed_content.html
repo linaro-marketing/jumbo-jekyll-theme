@@ -2,7 +2,7 @@
     <nav>
         <div class="nav nav-tabs" id="{{page.title | slugify}}{{forloop.index}}" role="tablist">
             {% for tab in include.object.tabs %}
-             <a class="nav-item nav-link {% if forloop.first %}active{% endif %}" href="#{{tab.title | slugify}}{{forloop.index}}" id="{{tab.title | slugify}}{{forloop.index}}-tab"
+             <a class="nav-item nav-link {% if forloop.first %}active{% endif %}" href="#{{tab.title | slugify}}" id="{{tab.title | slugify}}{{forloop.index}}-tab"
                 data-toggle="tab" href="#{{tab.title | slugify}}{{forloop.index}}" role="tab"
                 aria-controls="{{tab.title | slugify}}{{forloop.index}}" aria-selected="true">
                 {{tab.title}}

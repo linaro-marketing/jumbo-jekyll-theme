@@ -201,15 +201,27 @@ $(document).ready(function () {
       }
     }
   });
-  // Enabled permalinks to specific Bootstrap tabs
-  var hash = document.location.hash;
-  if (hash) {
-    $('.nav-tabs a[href="' + hash + '"]').tab("show");
+
+  if ($(".nav-tabs").length > 0) {
+    let url = location.href.replace(/\/$/, "");
+
+    if (location.hash) {
+      const hash = url.split("#");
+      $('.nav-tabs a[href="#' + hash[1] + '"]').tab("show");
+      url = location.href.replace(/\/#/, "#");
+      history.replaceState(null, null, url);
+      setTimeout(() => {
+        $(window).scrollTop(0);
+      }, 400);
+    }
+
+    $('a[data-toggle="tab"]').on("click", function () {
+      let newUrl;
+      const hash = $(this).attr("href");
+      newUrl = url.split("#")[0] + hash;
+      history.replaceState(null, null, newUrl);
+    });
   }
-  // Change hash for page-reload
-  $(".nav-tabs a").on("shown", function (e) {
-    window.location.hash = e.target.hash.replace("#", "#" + prefix);
-  });
 
   // COOKIES CONFIG
   // Cookie Consent Setup
