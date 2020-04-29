@@ -79,7 +79,11 @@ google_analytics:
   cookies_popup_title: Test Cookies & Privacy Policy
   cookies_popup_description: >
     Cookies enable test you to use this website to the full extent and to personalize your experience on our sites. They tell us which parts of our websites people have visited, help us measure the effectiveness of ads and web searches and give us insights into user behavior so we can improve our communications with you.
-  privacy_url: /privacy-test/
+  cookies_links:
+    - url: /privacy/
+      text: "Privacy Policy"
+    - url: /cookies/
+      text: "Cookie Policy"
   code: UAXXXXXXB
 # Set the site-wide default social media share image.
 social_media_share_image: /assets/images/social-media-image.png
