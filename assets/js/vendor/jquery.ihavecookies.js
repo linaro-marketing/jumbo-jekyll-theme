@@ -146,9 +146,6 @@
             // and re-check all previously selected options.
             if (event == "reinit") {
               $("#gdpr-cookie-advanced").trigger("click");
-              //   $.each(preferences, function(index, field) {
-              //     $("input#gdpr-cookietype-" + field).prop("checked", true);
-              //   });
             }
           });
       }, settings.delay);
