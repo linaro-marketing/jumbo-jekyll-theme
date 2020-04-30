@@ -70,7 +70,7 @@ flow:
                   style: btn-primary
 jumbotron:
     class: home
-    inner_class: dotted
+    inner_class: example_class
     slider:
         - title: A feature-packed Jekyll theme
           title-class: big-title
