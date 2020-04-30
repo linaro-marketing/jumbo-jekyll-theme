@@ -6,6 +6,6 @@
     {% assign media_url = include.media_url %}
 {% endif %}
 
-<div class="embed-responsive embed-responsive-16by9">
+<div class="embed-responsive embed-responsive-16by9" {% if include.class %}{{include.class}}{% endif %}>
   <iframe src='about:blank' allowFullScreen="allowFullScreen" frameBorder="0" class="lazyload embed-responsive-item" data-src="{{media_url}}"></iframe>
 </div>

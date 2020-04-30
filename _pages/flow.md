@@ -88,6 +88,8 @@ flow:
             blocks:
                 - title: Block 1
                   url: /about/
+                  modal_content: |
+                    This is some modal _content_.
                   image: /assets/images/test/background-image1.jpg
                   background_image: true
                   description: See our photos from event.
