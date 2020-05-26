@@ -44,7 +44,6 @@
     {% if page.jumbotron.image %}
         {% assign image_path = page.jumbotron.image | remove_first: "/assets/images/" %}
         {% picture header_image {{image_path}} %}
-
     {% endif %}
     {% if page.jumbotron.video %}
         <video autoplay muted preload="none" poster="{{page.jumbotron.video.poster}}" playsinline loop id="jumbotronVideo">
