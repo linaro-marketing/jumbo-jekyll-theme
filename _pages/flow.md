@@ -399,7 +399,9 @@ flow:
           feature_block_content:
             position: "left"
             type: "youtube_video"
-            video_content_url: https://www.youtube.com/watch?v=QH2-TGUlwu4
+            youtube:
+                url: https://www.youtube.com/watch?v=QH2-TGUlwu4
+                poster_image: /assets/images/test/background-image1.jpg
             title: Feature Block (with youtube video)
             text: >
                 This is a feature block using a youtube video for the featured content.
