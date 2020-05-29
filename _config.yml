@@ -76,7 +76,7 @@ http2_resources:
     href: /assets/fonts/lato/Lato-regular.woff2
 google_analytics:
   enabled: true
-  code: UAXXXXXXB
+  code: GTM-XXXX
 # Set the site-wide default social media share image.
 social_media_share_image: /assets/images/social-media-image.png
 # Set the default favicon
