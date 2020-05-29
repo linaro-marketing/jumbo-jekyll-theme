@@ -77,6 +77,24 @@ http2_resources:
 google_analytics:
   enabled: true
   code: GTM-XXXX
+  cookies:
+    necessary:
+      - name: cookieControl
+        description: >
+          This is used to control the display of the preferences pop up. Without this, we wouldn't know if you've clicked Accept!
+      - name: cookieControlPrefs
+        description: >
+          This is used to store your cookie preferences. Without this we wouldn't know which cookies you want!
+    marketing:
+      - name: _ga
+        description: >
+          2 years - Used to distinguish users.
+      - name: _gid
+        description: >
+          24 hours - Used to distinguish users.
+      - name: _gat
+        description: >
+          1 minute - Used to throttle request rate.
 # Set the site-wide default social media share image.
 social_media_share_image: /assets/images/social-media-image.png
 # Set the default favicon
