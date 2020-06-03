@@ -110,7 +110,7 @@
 
       // Display cookie message on page
       var cookieMessage =
-        '<div id="gdpr-cookie-message"><h4>' +
+        '<div id="gdpr-cookie-message"><div class="container"><h4>' +
         settings.title +
         "</h4><p>" +
         settings.message +
@@ -136,7 +136,7 @@
         settings.acceptBtnLabel +
         '</button><button id="gdpr-cookie-advanced" type="button">' +
         settings.advancedBtnLabel +
-        "</button></p></div>";
+        "</button></p></div></div>";
       setTimeout(function () {
         $($element).append(cookieMessage);
         $("#gdpr-cookie-message")
