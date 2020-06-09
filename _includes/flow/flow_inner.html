@@ -9,6 +9,8 @@
         </div>
     {% elsif section.format == "tabs" %}
         {% include flow/tabbed_content.html object=section %}
+    {% elsif section.format == "collapse" %}
+        {% include flow/collapse.html object=section %}
     {% elsif section.format == "block" %}
         {% include flow/blocks.html object=section %}
     {% elsif section.format == "buttons" %}
