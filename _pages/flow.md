@@ -81,7 +81,7 @@ flow:
             size: h2
             text: Collapse Section
         - format: collapse
-          style: text-center
+          style: #
           panels:
             - title: Test Panel Title
               content: |
