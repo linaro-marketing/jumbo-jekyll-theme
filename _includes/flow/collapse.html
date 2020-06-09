@@ -1,0 +1,20 @@
+<div class="col col-12 blocks {% if include.object.style %}{{include.object.style}}{% endif %}">
+    <div id="collapseSection" role="tablist" aria-multiselectable="true">
+        {% for panel in include.object.panels %}
+            <div class="card">
+                <div class="card-header" role="tab" id="section{{forloop.index}}Header">
+                    <h5 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordianId" href="#section{{forloop.index}}Content" aria-expanded="true" aria-controls="section{{forloop.index}}Content">
+                    {{panel.title}}
+                </a>
+                    </h5>
+                </div>
+                <div id="section{{forloop.index}}Content" class="collapse {% if forloop.first %}in{% endif %}" role="tabpanel" aria-labelledby="section{{forloop.index}}Header">
+                    <div class="card-body">
+                        {{panel.content | markdownify}}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
