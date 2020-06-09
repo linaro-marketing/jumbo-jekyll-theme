@@ -8,4 +8,10 @@
 {% else %}
     {% capture image_class %}{% endcapture %}
 {% endif %}
+{% if include.url %}
+<a href="{{include.url}}" target="_blank">
+{% endif %}
 {% picture blog_image {{include.path | remove_first: "/assets/images/" }} class="{{image_class}}"  --alt {{image_alt}} --class {{image_class}} %}
+{% if include.url %}
+</a>
+{% endif %}

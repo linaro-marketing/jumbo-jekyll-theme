@@ -1,6 +1,6 @@
 <div class="col col-12 tabbed_content {% if include.object.style %}{{include.object.style}}{% endif %}">
     <nav>
-        <div class="nav nav-tabs" id="{{tab.title | slugify}}{{forloop.index}}" role="tablist">
+        <div class="nav nav-tabs" id="{{page.title | slugify}}{{forloop.index}}" role="tablist">
             {% for tab in include.object.tabs %}
              <a class="nav-item nav-link {% if forloop.first %}active{% endif %}" href="#{{tab.title | slugify}}{{forloop.index}}" id="{{tab.title | slugify}}{{forloop.index}}-tab"
                 data-toggle="tab" href="#{{tab.title | slugify}}{{forloop.index}}" role="tab"

@@ -1,53 +1,5 @@
 <footer>
     <div class="container-fluid">
-        <div class="row main">
-            <div class="container">
-                <div class="row">
-                    {% if site.data.footer.display_contact_details %}
-                    <div class="col col-12 col-lg-4 contact-details">
-                        <a class="email" href="mailto:{{site.email}}?subject={{site.url}}">
-                            <h3>{{site.email}}</h3>
-                        </a>
-                        <address>
-                            {% for address-line in site.address %}
-                            {{address-line}}<br>
-                            {% endfor %}
-                        </address>
-                        <h3>Follow us</h3>
-                        {% include_cached social_media_icons.html %}
-                    </div>
-                    {% endif %}
-                    {% if site.data.footer.middle_column %}
-                    <div class="col col-12 col-lg-4 footer-column">
-                        <h3>{{site.data.footer.middle_column.title}}</h3>
-                        <ul class="list-group">
-                            {% if site.data.footer.middle_column.latest_posts %}
-                            {% include_cached blog/latest_posts.html %}
-                            {% else %}
-                            {% for item in site.data.footer.middle_column.items %}
-                            <li class="list-group-item">
-                                <a href="{{item.url}}">{{item.name}}</a>
-                            </li>
-                            {% endfor %}
-                            {% endif %}
-                        </ul>
-                    </div>
-                    {% endif %}
-                    {% if site.data.footer.third_column %}
-                    <div class="col col-12 col-lg-4 footer-column">
-                        <h3>{{site.data.footer.third_column.title}}</h3>
-                        <ul class="list-group">
-                            {% for item in site.data.footer.third_column.items %}
-                            <li class="list-group-item">
-                                <a href="{{item.url}}">{{item.name}}</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
         <div class="row strip p-t-20 p-b-20">
             <div class="container">
                 <div class="row">
@@ -57,18 +9,19 @@
                     <div class="col col-12 text-white text-center">
                         <span class="copyright">Copyright &copy; {{ 'now' | date: "%Y" }} {{site.data.footer.copyright_text}}</span>
                         {% for link in site.data.footer.company_links %}
-                        <span class="coloured-bp">&bull;</span>
-                        <a href="{{link.url}}">{{link.name}}</a>
+                            <span class="coloured-bp">&bull;</span>
+                            <a href="{{link.url}}">{{link.name}}</a>
                         {% endfor %}
+                        {% include_cached social_media_icons.html %}
                     </div>
+                    {% if site.data.footer.footer_brand %}
                     <div class="col col-12  text-white text-center m-t-10">
-                        {% if site.data.footer.footer_brand %}
-                            <a href="{{site.url}}/">
-                                <img src="{{site.data.footer.footer_brand.logo}}" class="footer-logo mx-auto"
-                                    alt="{{site.name}} Logo" />
-                            </a>
-                        {% endif %}
+                        <a href="{{site.url}}/">
+                            <img src="{{site.data.footer.footer_brand.logo}}" class="footer-logo mx-auto"
+                                alt="{{site.name}} Logo" />
+                        </a>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

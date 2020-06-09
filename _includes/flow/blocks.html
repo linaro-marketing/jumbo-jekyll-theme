@@ -6,6 +6,28 @@
                 {% assign block_width = include.object.item_width %}
             {% endif %}
             {% for block in include.object.block_section_content.blocks %}
+                {% if block.modal_content %}
+                <!-- Modal -->
+                <div class="modal fade" id="blockModal-{{forloop.index}}-{{block.title | slugify}}" tabindex="-1" role="dialog" aria-labelledby="blockModalLabel-{{forloop.index}}-{{block.title | slugify}}"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="blockModalLabel-{{forloop.index}}-{{block.title | slugify}}">{{block.title}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-left">
+                                {{block.modal_content | markdownify}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
                 <div class="col col-12 col-sm-6 col-lg-{{block_width}} block_column">
                     <div class="card h-100 {% if block.background_image %}background_image text-white{% endif %} {% if block.style %}{{block.style}}{% endif %}">
                         {% if block.image %}
@@ -25,10 +47,17 @@
                                 {{block.description | markdownify }}
                             </p>
                             {% endif %}
-                            {% if block.buttons %}
-                                {% for button in block.buttons %}
-                                    {% include flow/button.html object=button %}
-                                {% endfor %}
+                            {% if block.modal_content %}
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#blockModal-{{forloop.index}}-{{block.title | slugify}}">
+                                    More Info
+                                </button>
+                            {% else %}
+                                {% if block.buttons %}
+                                    {% for button in block.buttons %}
+                                        {% include flow/button.html object=button %}
+                                    {% endfor %}
+                                {% endif %}
                             {% endif %}
                         </div>
                         {% if block.footer_text %}

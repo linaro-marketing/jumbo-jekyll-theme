@@ -7,7 +7,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  *
  */
-(function($) {
+(function ($) {
   /*
     |--------------------------------------------------------------------------
     | Cookie Message
@@ -19,7 +19,7 @@
     | @param event - 'reinit' to reopen the cookie message
     |
     */
-  $.fn.ihavecookies = function(options, event) {
+  $.fn.ihavecookies = function (options, event) {
     var $element = $(this);
 
     // Set defaults
@@ -30,19 +30,19 @@
             type: "Site Preferences",
             value: "preferences",
             description:
-              "These are cookies that are related to your site preferences, e.g. remembering your username, site colours, etc."
+              "These are cookies that are related to your site preferences, e.g. remembering your username, site colours, etc.",
           },
           {
             type: "Analytics",
             value: "analytics",
-            description: "Cookies related to site visits, browser types, etc."
+            description: "Cookies related to site visits, browser types, etc.",
           },
           {
             type: "Marketing",
             value: "marketing",
             description:
-              "Cookies related to marketing, e.g. newsletters, social media, etc"
-          }
+              "Cookies related to marketing, e.g. newsletters, social media, etc",
+          },
         ],
         title: "Cookies & Privacy",
         message:
@@ -58,8 +58,8 @@
         fixedCookieTypeLabel: "Necessary",
         fixedCookieTypeDesc:
           "These are cookies that are essential for the website to work correctly.",
-        onAccept: function() {},
-        uncheckBoxes: false
+        onAccept: function () {},
+        uncheckBoxes: false,
       },
       options
     );
@@ -80,18 +80,25 @@
 
       // Generate list of cookie type checkboxes
       preferences = JSON.parse(myCookiePrefs);
-      $.each(settings.cookieTypes, function(index, field) {
+      $.each(settings.cookieTypes, function (index, field) {
         if (field.type !== "" && field.value !== "") {
           var cookieTypeDescription = "";
           if (field.description !== false) {
             cookieTypeDescription = ' title="' + field.description + '"';
           }
+          var cookieChecked = "";
+          if (field.checked === true) {
+            cookieChecked = "checked";
+          }
           cookieTypes +=
-            '<li><input type="checkbox" id="gdpr-cookietype-' +
+            '<li><input  type="checkbox" id="gdpr-cookietype-' +
             field.value +
             '" name="gdpr[]" value="' +
             field.value +
-            '" data-auto="off"> <label for="gdpr-cookietype-' +
+            '" data-auto="off" ' +
+            cookieTypeDescription +
+            cookieChecked +
+            '> <label class="cookieCheckboxLabel" for="gdpr-cookietype-' +
             field.value +
             '"' +
             cookieTypeDescription +
@@ -103,15 +110,25 @@
 
       // Display cookie message on page
       var cookieMessage =
-        '<div id="gdpr-cookie-message"><h4>' +
+        '<div id="gdpr-cookie-message"><div class="container"><h4>' +
         settings.title +
         "</h4><p>" +
         settings.message +
-        ' <a href="' +
-        settings.link +
-        '">' +
-        settings.moreInfoLabel +
-        '</a><div id="gdpr-cookie-types" style="display:none;"><h5>' +
+        "<br/>";
+
+      for (i = 0; i < settings.links.length; i++) {
+        cookieMessage +=
+          '<a href="' +
+          settings.links[i].url +
+          '">' +
+          settings.links[i].text +
+          "</a> ";
+        if (settings.links.length > 1 && i < settings.links.length - 1) {
+          cookieMessage += " - ";
+        }
+      }
+      cookieMessage +=
+        '<div id="gdpr-cookie-types" style="display:none;"><h5>' +
         settings.cookieTypesTitle +
         "</h5><ul>" +
         cookieTypes +
@@ -119,35 +136,31 @@
         settings.acceptBtnLabel +
         '</button><button id="gdpr-cookie-advanced" type="button">' +
         settings.advancedBtnLabel +
-        "</button></p></div>";
-      setTimeout(function() {
+        "</button></p></div></div>";
+      setTimeout(function () {
         $($element).append(cookieMessage);
         $("#gdpr-cookie-message")
           .hide()
-          .fadeIn("slow", function() {
+          .fadeIn("slow", function () {
             // If reinit'ing, open the advanced section of message
             // and re-check all previously selected options.
             if (event == "reinit") {
               $("#gdpr-cookie-advanced").trigger("click");
-              //   $.each(preferences, function(index, field) {
-              //     $("input#gdpr-cookietype-" + field).prop("checked", true);
-              //   });
             }
           });
       }, settings.delay);
-
+      // Make sure the analytics checkbox is toggled on init based on settings provided.
       // When accept button is clicked drop cookie
-      $("body").on("click", "#gdpr-cookie-accept", function() {
+      $("body").on("click", "#gdpr-cookie-accept", function () {
         // Set cookie
         dropCookie(true, settings.expires);
 
         // If 'data-auto' is set to ON, tick all checkboxes because
         // the user hasn't clicked the customise cookies button
         $('input[name="gdpr[]"][data-auto="on"]').prop("checked", true);
-
         // Save users cookie preferences (in a cookie!)
         var prefs = [];
-        $.each($('input[name="gdpr[]"]').serializeArray(), function(i, field) {
+        $.each($('input[name="gdpr[]"]').serializeArray(), function (i, field) {
           prefs.push(field.value);
         });
         setCookie(
@@ -161,14 +174,9 @@
       });
 
       // Toggle advanced cookie options
-      $("body").on("click", "#gdpr-cookie-advanced", function() {
-        // Uncheck all checkboxes except for the disabled 'necessary'
-        // one and set 'data-auto' to OFF for all. The user can now
-        // select the cookies they want to accept.
-        $('input[name="gdpr[]"]:not(:disabled)')
-          .attr("data-auto", "off")
-          .prop("checked", settings.analyticsChecked);
-        $("#gdpr-cookie-types").slideDown("fast", function() {
+      $("body").on("click", "#gdpr-cookie-advanced", function () {
+        $("#gdpr-cookie-accept").html("Accept Selected Cookies");
+        $("#gdpr-cookie-types").slideDown("fast", function () {
           $("#gdpr-cookie-advanced").prop("disabled", true);
         });
       });
@@ -187,13 +195,13 @@
   };
 
   // Method to get cookie value
-  $.fn.ihavecookies.cookie = function() {
+  $.fn.ihavecookies.cookie = function () {
     var preferences = getCookie("cookieControlPrefs");
     return JSON.parse(preferences);
   };
 
   // Method to check if user cookie preference exists
-  $.fn.ihavecookies.preference = function(cookieTypeValue) {
+  $.fn.ihavecookies.preference = function (cookieTypeValue) {
     var control = getCookie("cookieControl");
     var preferences = getCookie("cookieControlPrefs");
     preferences = JSON.parse(preferences);
@@ -214,9 +222,9 @@
     | Function to drop the cookie with a boolean value of true.
     |
     */
-  var dropCookie = function(value, expiryDays) {
+  var dropCookie = function (value, expiryDays) {
     setCookie("cookieControl", value, expiryDays);
-    $("#gdpr-cookie-message").fadeOut("fast", function() {
+    $("#gdpr-cookie-message").fadeOut("fast", function () {
       $(this).remove();
     });
   };
@@ -229,7 +237,7 @@
     | Sets cookie with 'name' and value of 'value' for 'expiry_days'.
     |
     */
-  var setCookie = function(name, value, expiry_days) {
+  var setCookie = function (name, value, expiry_days) {
     var d = new Date();
     d.setTime(d.getTime() + expiry_days * 24 * 60 * 60 * 1000);
     var expires = "expires=" + d.toUTCString();
@@ -245,7 +253,7 @@
     | Gets cookie called 'name'.
     |
     */
-  var getCookie = function(name) {
+  var getCookie = function (name) {
     var cookie_name = name + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(";");

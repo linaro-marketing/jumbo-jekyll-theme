@@ -15,14 +15,12 @@
                     <th>Usage</th>
                 </thead>
                 <tbody>
+                    {% for cookie in site.google_analytics.cookies.necessary %}
                     <tr>
-                        <td>cookieControl</td>
-                        <td>This is used to control the display of the preferences pop up. Without this, we wouldn't know if you've clicked Accept!</td>
+                        <td>{{cookie.name}}</td>
+                        <td>{{cookie.description | markdownify}}</td>
                     </tr>
-                    <tr>
-                        <td>cookieControlPrefs</td>
-                        <td>This is used to store your cookie preferences. Without this we wouldn't know which cookies you want!</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -52,18 +50,12 @@
                     <th>Usage</th>
                 </thead>
                 <tbody>
+                    {% for cookie in site.google_analytics.cookies.marketing %}
                     <tr>
-                        <td>_ga</td>
-                        <td>2 years Used to distinguish users.</td>
+                        <td>{{cookie.name}}</td>
+                        <td>{{cookie.description | markdownify}}</td>
                     </tr>
-                    <tr>
-                        <td>_gid</td>
-                        <td>24 hours Used to distinguish users.</td>
-                    </tr>
-                    <tr>
-                        <td>_gat</td>
-                        <td>1 minute Used to throttle request rate.</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
