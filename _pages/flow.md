@@ -74,6 +74,35 @@ flow:
           title: Interview with Shuah Khan on Kernel Self Test
     - row: container_row
       style: block_row
+      sections:
+        - format: title
+          style: text-center
+          title_content:
+            size: h2
+            text: Collapse Section
+        - format: collapse
+          style: #
+          panels:
+            - title: Test Panel Title
+              content: |
+                ## Test Panel Content
+
+                Some other text
+
+                - Bullet 1
+                - Bullet 2
+                - Bullet 3
+            - title: Test Panel Title 2
+              content: |
+                ## Test Panel Content 2
+
+                Some other text
+
+                - Bullet 1
+                - Bullet 2
+                - Bullet 3
+    - row: container_row
+      style: block_row
     #   background_image: /assets/images/test/background-image1.jpg
       sections:
         - format: title
@@ -399,7 +428,9 @@ flow:
           feature_block_content:
             position: "left"
             type: "youtube_video"
-            video_content_url: https://www.youtube.com/watch?v=QH2-TGUlwu4
+            youtube:
+                url: https://www.youtube.com/watch?v=QH2-TGUlwu4
+                poster_image: /assets/images/test/background-image1.jpg
             title: Feature Block (with youtube video)
             text: >
                 This is a feature block using a youtube video for the featured content.
