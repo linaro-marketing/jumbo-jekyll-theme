@@ -1,5 +1,24 @@
 #flow_wrapper {
     background-color: white;
+    #collapseSection {
+        .btn.btn-link {
+            &:after {
+                color: #666;
+                top: 10px;
+                right: 0px;
+                position: absolute;
+                margin-right: 30px;
+                font-family: "fontello";
+                font-size: 22px;
+                content: "\e80f";
+            }
+            &.collapsed {
+                &:after {
+                    content: "\e80e";
+                }
+            }
+        }
+    }
     .row {
         padding: $flow_row_padding 0;
         &.background_image_row {
