@@ -1,7 +1,7 @@
 <div class="row {% if include.object.style %}{{include.object.style}}{% endif %}
 {% if include.object.background_image %}background_image_row text-white{% endif %}">
 {% if include.object.background_image %}
-    {% assign row_background_image = include.object.background_image | remove_first: "/assets/images/" %}
+    {% assign row_background_image = include.object.background_image %}
     {% capture row_background_image_alt %}background image{% endcapture %}
     {% picture header_image {{row_background_image}} --alt {{block_image_alt}} %}
 {% endif %}

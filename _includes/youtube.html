@@ -15,7 +15,7 @@
 
 
 {% if include.poster_image %}
-    {% assign youtube_poster_image_url = include.poster_image | remove_first: "/assets/images/" %}
+    {% assign youtube_poster_image_url = include.poster_image %}
     {% capture poster_img %}{% picture youtube_poster_image {{youtube_poster_image_url}} --alt {{title}} %}{% endcapture %}
 {% else %}
     {% capture poster_img %}https://img.youtube.com/vi/{{youtube_id}}/maxresdefault.jpg{% endcapture %}

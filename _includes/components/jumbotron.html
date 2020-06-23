@@ -4,7 +4,7 @@
         {% for slide in page.jumbotron.slider %}
         <div class="item d-flex align-items-center owl-slide {% if forloop.first %}active{% endif %}">
              {% if slide.image %}
-                {% assign image_path = slide.image | remove_first: "/assets/images/" %}
+                {% assign image_path = slide.image %}
                 {% picture header_slider_image {{image_path}} %}
             {% endif %}
             <div class="container {% if page.jumbotron.inner_class %}{{page.jumbotron.inner_class}}{% endif %}">
@@ -42,7 +42,7 @@
 <div class="jumbotron d-flex align-items-center jumbotron-fluid {% if page.jumbotron.video %}video{% endif %}
 {% if page.jumbotron.image %}background_image{% endif%} {% if page.jumbotron.class %}{{page.jumbotron.class}}{% endif %}">
     {% if page.jumbotron.image %}
-        {% assign image_path = page.jumbotron.image | remove_first: "/assets/images/" %}
+        {% assign image_path = page.jumbotron.image %}
         {% picture header_image {{image_path}} %}
     {% endif %}
     {% if page.jumbotron.video %}

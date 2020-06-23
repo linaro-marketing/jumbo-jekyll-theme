@@ -6,10 +6,10 @@
         {% assign post_in_seconds = post.date | date: "%s" | plus: 0 %}
         {% assign recent_posts = "now" | date: "%s" | minus: timeframe %}
         {% if post.image %}
-            {% assign image_path = post.image | remove_first: "/assets/images/" %}
+            {% assign image_path = post.image %}
             {% capture image_alt %}{{post.title}} image {% endcapture %}
         {% else %}
-            {% assign image_path = site.post_placeholder | remove_first: "/assets/images/" %}
+            {% assign image_path = site.post_placeholder %}
             {% capture image_alt %}Blog post placeholder image {% endcapture %}
         {% endif %}
         <li class="media flex-column flex-sm-row">

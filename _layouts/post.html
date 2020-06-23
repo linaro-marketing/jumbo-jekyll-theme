@@ -6,7 +6,7 @@ css_package: blog
 <div
     class="jumbotron d-flex align-items-center jumbotron-fluid {% if page.image %}background_image{% endif%}">
     {% if page.image %}
-        {% assign image_path = page.image | remove_first: "/assets/images/" %}
+        {% assign image_path = page.image %}
         {% picture header_image {{image_path}} %}
     {% endif %}
     <div class="container text-center">
@@ -18,9 +18,9 @@ css_package: blog
             {% assign author_name = author.name %}
             {% capture author_image_alt %}{{author_name}} image{% endcapture %}
             {% if author.image %}
-                {% assign author_image = author.image | remove_first: "/assets/images/" %}
+                {% assign author_image = author.image %}
             {% else %}
-                {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
+                {% assign author_image = site.avatar_placeholder %}
             {% endif %}
             <div itemprop="author" itemscope="" itemtype="http://schema.org/Person">
                 <a href="{{author-url}}" itemprop="url" rel="author">

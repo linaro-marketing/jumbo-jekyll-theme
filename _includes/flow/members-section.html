@@ -13,7 +13,7 @@
         data-src="{{member.image.path}}"/>
     </div>
     {% else %}
-    {% assign image_path = member.image.path | remove_first: '/' %}
+    {% assign image_path = member.image.path %}
     {% assign full_path = member.image.path %}
     <div class="col-xs-6 col-sm-{{include.object.members_content.item_width}}">
         <!--TODO picture-->
