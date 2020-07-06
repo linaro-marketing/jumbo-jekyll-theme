@@ -174,7 +174,6 @@ readme_index:
 # -------- jekyll_picture_tag --------
 picture:
   nomarkdown: false
-  source: "assets/images"
   output: "assets/images"
   relative_url: true
 # -------- japr --------

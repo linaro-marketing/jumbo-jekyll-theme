@@ -9,9 +9,9 @@ css_package: blog
             {% assign author_name = page.name %}
             {% capture author_image_alt %}{{author_name}} image{% endcapture %}
             {% if author.image %}
-                {% assign author_image = author.image | remove_first: "/assets/images/" %}
+                {% assign author_image = author.image %}
             {% else %}
-                {% assign author_image = site.avatar_placeholder | remove_first: "/assets/images/" %}
+                {% assign author_image = site.avatar_placeholder %}
             {% endif %}
             <a href="{{author-url}}">
                 {% picture author_thumbnail {{author_image}} --alt {{author_image_alt}} %}

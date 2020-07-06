@@ -14,11 +14,11 @@
                 {% for item in site.data.universal_nav.items %}
                     {% if item.options %}
                         <li class="nav-item dropdown {% for project-site in item.options %}{% if project-site.active %}active{% break %}{% endif %}{% endfor %}">
-                            <a class="nav-link dropdown-toggle" target="_self" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" target="_self" href="#" id="universalNavbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 {{item.title}}
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu" aria-labelledby="universalNavbarDropdown">
                                 {% for project-site in item.options %}
                                     <a class="dropdown-item {% if project-site.active %}active{% endif%}" href="{{project-site.url}}">{{project-site.title}}</a>
                                 {% endfor %}

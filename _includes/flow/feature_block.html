@@ -2,7 +2,7 @@
     <div class="row {% if include.object.style %}{{include.object.style}}{% endif %}">
         <div class="col col-12 col-md-7 block__image {% if include.object.feature_block_content.position == "right" %}order-sm-2{% endif %}">
             {% if include.object.feature_block_content.type == "image" %}
-                {% assign image_path = include.object.feature_block_content.image_content_path | remove_first: '/assets/images/' %}
+                {% assign image_path = include.object.feature_block_content.image_content_path %}
                 {% capture image_alt %}
                     {% if include.object.feature_block_content.title %}
                         {{include.object.feature_block_content.title}} featured image
