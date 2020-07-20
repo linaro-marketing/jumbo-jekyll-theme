@@ -9,6 +9,7 @@
             height: 150px;
             width: auto;
             &.rounded-circle {
+                object-fit: cover;
                 height: 75px;
                 width: 75px;
             }

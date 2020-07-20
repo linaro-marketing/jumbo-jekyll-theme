@@ -1,4 +1,30 @@
 #wrapper {
+    .latest-featured-post {
+        picture {
+            height: 100% !important;
+            display: block;
+            overflow: hidden;
+            .post_index_header_image {
+                max-width: 100%;
+                height: auto;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    #image_header {
+        height: 200px;
+        overflow: hidden;
+        object-fit: cover;
+        .header_background_image.lazyloaded {
+            object-fit: cover;
+            object-position: 50% 50% !important;
+            height: 200px;
+            width: 100vw;
+            display: block;
+            position: relative;
+        }
+    }
   .blog-content {
     .blog_content_image {
       margin: 20px 0px;
@@ -119,6 +145,14 @@
   .rounded-circle {
     width: 100px;
     height: 100px;
+    transition: all 100ms ease-out;
+    object-fit: cover;
+    &:hover {
+        transform: rotate(-5deg);
+        -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+    }
     &.small {
       height: 50px;
       width: 50px;

@@ -3,17 +3,21 @@ layout: base
 css_package: blog
 ---
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
-<div
-    class="jumbotron d-flex align-items-center jumbotron-fluid {% if page.image %}background_image{% endif%}">
+<div class="container-fluid" >
     {% if page.image %}
+    <div class="row" id="image_header">
         {% assign image_path = page.image %}
         {% capture image_alt %}{{page.title}} background image{% endcapture %}
         {% picture header_image {{image_path}} --alt {{image_alt}} %}
+    </div>
     {% endif %}
-    <div class="container text-center">
-        <div class="inner_content_wrapper">
+    <div class="row">
+        <div class="container">
             <h1 class="" itemprop="name headline">{{page.title}}</h1>
-
+        </div>
+    </div>
+    <div class="row bg-light">
+        <div class="container">
             {% assign author = site.authors | where: "username", page.author | first %}
             {% assign author-url = author.url %}
             {% assign author_name = author.name %}
@@ -23,19 +27,24 @@ css_package: blog
             {% else %}
                 {% assign author_image = site.avatar_placeholder %}
             {% endif %}
-            <div itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            <div itemprop="author" itemscope="" itemtype="http://schema.org/Person" class="d-block d-md-inline-block mx-auto my-2 m-md-2 text-md-left text-center">
                 <a href="{{author-url}}" itemprop="url" rel="author">
                     {% picture author_thumbnail {{author_image}} --alt {{author_image_alt}} %}
-                    <p class="lead">
-                        <em itemprop="name">{{author_name}}</em>
-                    </p>
                 </a>
             </div>
-
-            <p>
-                <time datetime="{{page.date}}" itemprop="datePublished">{{page.date |  date: "%A, %B %-d, %Y"}}</time>
-            </p>
-            {% include blog/read_time.html %}
+            <div class="blockquote d-block d-md-inline-block mx-2 text-md-left text-center">
+                <strong itemprop="name">{{author_name}}</strong>
+            </div>
+            <span class="divider d-none d-md-inline-block">|</span>
+            <div class="post_info text-center text-md-left d-block d-md-inline-block">
+                <div class="author_name d-inline-block mx-2">
+                    <time datetime="{{page.date}}" itemprop="datePublished">{{page.date |  date: "%A, %B %-d, %Y"}}</time>
+                </div>
+                <span class="divider">|</span>
+                <div class="read_time d-inline-block mx-2">
+                    {% include blog/read_time.html %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
