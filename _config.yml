@@ -51,6 +51,7 @@ defaults:
       layout: post
       is_post: true
       comments: true
+      strap_image: /assets/images/test/background-image2.png
   - scope:
       path: ""
       type: "authors"

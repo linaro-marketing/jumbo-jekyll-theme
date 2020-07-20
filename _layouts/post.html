@@ -4,9 +4,9 @@ css_package: blog
 ---
 <div itemscope="" itemtype="http://schema.org/BlogPosting">
 <div class="container-fluid" >
-    {% if page.image %}
+    {% if page.strap_image %}
     <div class="row" id="image_header">
-        {% assign image_path = page.image %}
+        {% assign image_path = page.strap_image %}
         {% capture image_alt %}{{page.title}} background image{% endcapture %}
         {% picture header_image {{image_path}} --alt {{image_alt}} %}
     </div>
