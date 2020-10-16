@@ -1,4 +1,8 @@
 #flow_wrapper {
+    font-size: 1.2rem !important;
+    @include media-breakpoint-only(xs){
+        font-size: 1.1rem !important;
+    }
     background-color: white;
     #collapseSection {
         .btn.btn-link {
