@@ -51,7 +51,7 @@ defaults:
       layout: post
       is_post: true
       comments: true
-      strap_image: /assets/images/test/background-image2.png
+      strap_image: /assets/images/breadcrumb-image.jpg
   - scope:
       path: ""
       type: "authors"
@@ -124,13 +124,13 @@ social_media_channels:
     url: https://instagram.com/linaroorg
 # Disqus Comments Setup
 disqus:
-    enabled: true
-    shortname: http-www-jumbojekyll-co-uk
+  enabled: true
+  shortname: http-www-jumbojekyll-co-uk
 # Edit on GitHub Settings
 edit-on-github:
-    enabled: true
-    repo: https://www.github.com/linaro-marketing/jumbo-jekyll-theme
-    # docs: https://www.github.com/Linaro/website
+  enabled: true
+  repo: https://www.github.com/linaro-marketing/jumbo-jekyll-theme
+  # docs: https://www.github.com/Linaro/website
 # Shema.org settings used in the schema.html include.
 schema:
   "@type": "Corporation"
@@ -175,6 +175,7 @@ readme_index:
 # -------- jekyll_picture_tag --------
 picture:
   nomarkdown: false
+  source: ""
   output: "assets/images"
   relative_url: true
 # -------- japr --------
