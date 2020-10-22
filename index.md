@@ -3,101 +3,102 @@ layout: flow
 permalink: /
 title: Jumbo-jekyll-theme
 description: >-
-    The jumbo-jekyll-theme is a feature packed Boostrap v3 Jekyll theme for building static websites.
+  The jumbo-jekyll-theme is a feature packed Boostrap v3 Jekyll theme for building static websites.
 sticky-tab-bar:
-    - title: Home
-      url: /
-      active: true
-    - title: Get Started
-      url: /get-started/
+  - title: Home
+    url: /
+    active: true
+  - title: Get Started
+    url: /get-started/
 hide_last_modified: false
 flow:
-    - row: main_content_row
-    - row: container_row
-      #style: new
-      sections:
-        - format: feature_block
+  - row: main_content_row
+  - row: container_row
+    #style: new
+    sections:
+      - format: feature_block
         #   style: text-center text-white
-          feature_block_content:
-            position: "left"
-            type: "slider"
-            slider_content:
-                lightbox_enabled: true
-                seconds_per_slide: 2
-                nav: true
-                dots: false
-                xs_items: 1
-                sm_items: 1
-                md_items: 1
-                lg_items: 1
-                items:
-                    - image: /assets/images/test/background-image1.jpg
-                      alt: Background Image
-                      title: Background Image 1
-                    - image: /assets/images/test/background-image2.png
-                      alt: Background Image
-                      title: Background Image 1
-                    - image: /assets/images/test/background-image3.jpg
-                      alt: Background Image
-                      title: Background Image 1
-                    - image: /assets/images/test/background-image1.jpg
-                      alt: Background Image
-                      title: Background Image 1
-                    - image: /assets/images/test/background-image2.png
-                      alt: Background Image
-                      title: Background Image 1
-                    - image: /assets/images/test/background-image3.jpg
-                      alt: Background Image
-                      title: Background Image 1
-                    - image: /assets/images/test/background-image1.jpg
-                      alt: Background Image
-                      title: Background Image 1
-                    - image: /assets/images/test/background-image2.png
-                      alt: Background Image
-                      title: Background Image 1
-                    - image: /assets/images/test/background-image3.jpg
-                      alt: Background Image
-                      title: Background Image 1
-            title: Lightweight & fully optimised
-            text: >
-                The jumbo-jekyll-theme was built to work in an enterpise environment with a focus on speed.
-            buttons:
-                - title: Get Started
-                  url: https://github.com/linaro-marketing/jumbo-jekyll-theme/wiki
-                  style: btn-primary
-                - title: View Theme Wiki
-                  url: https://github.com/linaro-marketing/jumbo-jekyll-theme/wiki
-                  style: btn-primary
+        feature_block_content:
+          position: "left"
+          type: "slider"
+          slider_content:
+            lightbox_enabled: true
+            seconds_per_slide: 2
+            nav: true
+            dots: false
+            xs_items: 1
+            sm_items: 1
+            md_items: 1
+            lg_items: 1
+            items:
+              - image: /assets/images/test/background-image1.jpg
+                alt: Background Image
+                title: Background Image 1
+              - image: /assets/images/breadcrumb-image.jpg
+                alt: Background Image
+                title: Background Image 1
+              - image: /assets/images/breadcrumb-image.jpg
+                alt: Background Image
+                title: Background Image 1
+              - image: /assets/images/test/background-image1.jpg
+                alt: Background Image
+                title: Background Image 1
+              - image: /assets/images/breadcrumb-image.jpg
+                alt: Background Image
+                title: Background Image 1
+              - image: /assets/images/breadcrumb-image.jpg
+                alt: Background Image
+                title: Background Image 1
+              - image: /assets/images/test/background-image1.jpg
+                alt: Background Image
+                title: Background Image 1
+              - image: /assets/images/breadcrumb-image.jpg
+                alt: Background Image
+                title: Background Image 1
+              - image: /assets/images/breadcrumb-image.jpg
+                alt: Background Image
+                title: Background Image 1
+          title: Lightweight & fully optimised
+          text: >
+            The jumbo-jekyll-theme was built to work in an enterpise environment with a focus on speed.
+          buttons:
+            - title: Get Started
+              url: https://github.com/linaro-marketing/jumbo-jekyll-theme/wiki
+              style: btn-primary
+            - title: View Theme Wiki
+              url: https://github.com/linaro-marketing/jumbo-jekyll-theme/wiki
+              style: btn-primary
 jumbotron:
-    class: home
-    inner_class: example_class
-    slider:
-        - title: A feature-packed Jekyll theme
-          title-class: big-title
-          description: >
-            Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur.
-          slide-style: "background-position-y: bottom;"
-          darken: true
-          image: /assets/images/test/background-image1.jpg
-          buttons:
-          - title: View on GitHub
-            url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-            icon: fa fa-github
-        - description: >
-            Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur.
-          darken: true
-          slide-style: "background-position-y: bottom;"
-          image: /assets/images/test/background-image2.png
-          inner-image: /assets/images/test/js-logo.png
-          buttons:
-          - title: View on GitHub
-            url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-            icon: fa fa-github
-          - title: View on GitHub
-            url: https://github.com/linaro-marketing/jumbo-jekyll-theme
-            icon: fa fa-github
-            class: btn-secondary
+  class: home
+  inner_class: example_class
+  slider:
+    - title: A feature-packed Jekyll theme
+      title-class: big-title
+      description: >
+        Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur.
+      slide-style: "background-position-y: bottom;"
+      darken: true
+      image: /assets/images/test/background-image1.jpg
+      buttons:
+        - title: View on GitHub
+          url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+          icon: fa fa-github
+    - description: >
+        Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur.
+      darken: true
+      slide-style: "background-position-y: bottom;"
+      image: /assets/images/breadcrumb-image.jpg
+      inner-image: /assets/images/test/js-logo.png
+      buttons:
+        - title: View on GitHub
+          url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+          icon: fa fa-github
+        - title: View on GitHub
+          url: https://github.com/linaro-marketing/jumbo-jekyll-theme
+          icon: fa fa-github
+          class: btn-secondary
 ---
+
 Lorem ipsum dolor sit amet, dicta omnium concludaturque est no, ut per repudiare appellantur. Has ut wisi vivendum dissentias. Vel nemore copiosae praesent no, blandit instructior nec ut. Dolore libris insolens pro an, no est laudem populo. Te nostro commune officiis qui.
 
 Tacimates pertinax interesset et nam, ne sed agam esse modus. Oratio contentiones disputationi usu ad, vix quodsi consetetur ut, cu wisi consequat cum. Eirmod intellegat duo ea, vero labores omittantur vel et. Zril accusata ea est, aperiam accusam pri ea. Tation fierent eos ad, hinc ornatus prodesset ad vis, nam labore argumentum te.

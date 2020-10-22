@@ -2,12 +2,13 @@
 title: Getting started with the jumbo-jekyll-theme
 date: 2018-11-23 12:00:00
 description: >-
-    This blog post will give you an overview of how to get started with the jumbo-jekyll-theme
-image: /assets/images/test/background-image2.png
+  This blog post will give you an overview of how to get started with the jumbo-jekyll-theme
+image: /assets/images/breadcrumb-image.jpg
 author: john.smith
 category: blog
 keywords: jekyll, note, theme, jumbo-jekyll-theme
 ---
+
 # Introduction
 
 Welcome to **Part - 8** of **Our path to libmraa with 96Boards** series. In
