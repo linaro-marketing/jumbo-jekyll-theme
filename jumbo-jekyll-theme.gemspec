@@ -2,7 +2,7 @@
 Gem::Specification.new do |spec|
     # Main Spec Info
     spec.name          = "jumbo-jekyll-theme"
-    spec.version       = "6.0.2.1"
+    spec.version       = "6.0.2.2"
     spec.authors       = ["Kyle Kirkby"]
     spec.email         = ["kyle.kirkby@linaro.org"]
     spec.summary       = %q{This is a Bootstrap 3 Jekyll Theme built for Linaro Static Websites}
@@ -37,6 +37,6 @@ Gem::Specification.new do |spec|
     spec.add_runtime_dependency 'closure-compiler', '>=1.1.14'
     #spec.add_runtime_dependency "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
     # Development Dependencies
-    spec.add_development_dependency "bundler", "1.17.3"
+    spec.add_development_dependency "bundler"
     spec.add_development_dependency "rake", "13.0.1"
   end
