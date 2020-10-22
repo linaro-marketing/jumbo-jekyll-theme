@@ -1,5 +1,7 @@
 {% if include.object.category %}
     {% assign posts = site.categories[include.object.category] | sort: 'date' | reverse %}
+{% elsif include.object.posts %}
+    {% assign posts = include.object.posts | sort: 'date' | reverse  %}
 {% else %}
     {% assign posts = site.posts | sort: 'date' | reverse %}
 {% endif %}
